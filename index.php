@@ -16,20 +16,16 @@
     <title>Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng
         gi&#225; tốt</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2"
-        crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold Italic.woff2" as="font" type="font/woff2"
-        crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight.woff2" as="font" type="font/woff2"
-        crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight Italic.woff2" as="font" type="font/woff2"
-        crossorigin>
-    <link rel="preload" href="/Content/web/fonts/icon/fonts/hoangha.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" as="script" href="/js-css/web_v1.2.0.5.js">
-    <link rel="preload" as="style" href="/js-css/web_v1.2.0.5.css">
-    <link href="/js-css/web_v1.2.0.5.css" rel="stylesheet" type="text/css">
+    <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Bold Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Semilight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Semilight Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/icon/fonts/hoangha.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" as="script" href="assets/js/main.js">
+    <link rel="preload" as="style" href="assets/css/main.css">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
     <style>
         .product-center .current-product-price label.text-green {
             display: none
@@ -38,41 +34,18 @@
     <script>
         window.insider_object = {};
     </script>
-
-
-
-    <link rel="canonical" href="https://hoanghamobile.com" />
     <meta name="description" content="Si&#234;u thị điện thoại di động gi&#225; rẻ nhất" />
     <meta name="keywords" content="" />
 
-    <meta name="twitter:title"
-        content="Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt" />
+    <meta name="twitter:title" content="Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt" />
     <meta name="twitter:description" content="Si&#234;u thị điện thoại di động gi&#225; rẻ nhất">
-    <meta name="twitter:url" content="https://hoanghamobile.com">
-
-    <meta property="og:title"
-        content="Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt" />
+    <meta property="og:title" content="Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt" />
     <meta property="og:description" content="Si&#234;u thị điện thoại di động gi&#225; rẻ nhất" />
-    <meta property="og:url" content="https://hoanghamobile.com" />
-    <meta property="og:image" content="https://hoanghamobile.com/Content/web/img/logo-text.png" />
-
-
-
-
-
-
-
-    <script async src="//hoanghamobilevn.api.useinsider.com/ins.js?id=10005327"></script>
+    <meta property="og:image" content="assets/images/logo/avt.png" />
+    <script async src="assets/js/ins.js"></script>
 </head>
 
 <body>
-
-    <div class="top-link">
-        <span class="pulse"></span>
-        <p><strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL c&#243; hạn</strong> <a
-                href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang"
-                target="_top">Xem chi tiết</a></p>
-    </div>
     <header>
         <div class="top-navigation">
             <div class="container">
@@ -88,18 +61,14 @@
                 </ul>
             </div>
         </div>
-
-
         <!-- logo and search box -->
         <div class="heading">
             <div class="container">
                 <div class="logo">
-                    <a href="/" title="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
-                        <img src="/Content/web/img/logo-text.png"
-                            alt="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
+                    <a href="index.php" title="Logo">
+                        <img src="assets/images/logo/avt.png"  alt="Logo">
                     </a>
                 </div>
-
                 <div class="search-box">
                     <form method="get" action="/tim-kiem" onsubmit="return submitSearch(this);"
                         enctype="application/x-www-form-urlencoded">
@@ -113,12 +82,12 @@
                 <div class="order-tools">
                     <div class="item check-order">
                         <a id="btnCheckOrder" href="/order/check">
-                            <span class="icon"><i class="icon-truck"></i></span>
+                            <span class="icon"><img src="assets/images/icon/truck.png" alt=""></span>
                             <span class="text">Kiểm tra đơn hàng</span>
                         </a>
                     </div>
                     <div class="item cart">
-                        <a href="/gio-hang"><i class="icon-cart"></i><label><i class="icon-left"></i><span
+                        <a href="/gio-hang"><img src="assets/images/icon/cart.png" alt=""><label><img src="assets/images/icon/left.png" alt="" style="height: 10px;margin-right: -2px;"><span
                                     id="cart-total">0</span></label></a>
                     </div>
                 </div>
@@ -131,7 +100,7 @@
                 <ul class="root">
                     <li id="dien-thoai-di-dong">
                         <a href="/dien-thoai-di-dong" target="_self">
-                            <i class="icon icon-phone"></i>
+                            <img class="icon" src="assets/images/icon/phone.png" alt="">
                             <span>Điện thoại</span>
                         </a>
                         <div class="sub-container">
@@ -217,13 +186,13 @@
                     </li>
                     <li id="apple">
                         <a href="/apple" target="_self">
-                            <i class="icon iconv2 iconv2-iphone"></i>
+                            <img class="icon" src="assets/images/icon/iphone.png" alt="">
                             <span>Apple</span>
                         </a>
                     </li>
                     <li id="laptop">
                         <a href="/laptop" target="_self">
-                            <i class="icon icon-laptop"></i>
+                        <img class="icon" src="assets/images/icon/laptop.png" alt="">
                             <span>Laptop</span>
                         </a>
                         <div class="sub-container">
@@ -279,7 +248,7 @@
                     </li>
                     <li id="tablet">
                         <a href="/tablet" target="_self">
-                            <i class="icon icon-tablet"></i>
+                            <img class="icon" src="assets/images/icon/tablet.png" alt="">
                             <span>Tablet</span>
                         </a>
                         <div class="sub-container">
@@ -864,22 +833,6 @@
         <!-- nav -->
 
     </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- slider -->
     <section>
@@ -10314,17 +10267,10 @@
             <div id="navSocial">
                 <div class="social">
                     <ul>
-                        <li><a href="https://www.facebook.com/hoanghamobilecom"
-                                title="Facebook Ho&#224;ng H&#224; Mobile" target="_blank" class="blue"><span><i
-                                        class="icon-facebook"></i></span></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1"
-                                title="Youtube Ho&#224;ng H&#224; Mobile Channel" target="_blank" class="red"><span><i
-                                        class="icon-youtube"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi"
-                                title="Ho&#224;ng H&#224; Mobile Instagram" target="_blank" class="rainbow"><span><i
-                                        class="icon-instagram"></i></span></a></li>
-                        <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank"
-                                class="black"><span><i class="icon-tiktok"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook Ho&#224;ng H&#224; Mobile" target="_blank" class="blue"><span><img src="assets/images/icon/facebook.png" alt=""></span></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube Ho&#224;ng H&#224; Mobile Channel" target="_blank" class="red"><span><img src="assets/images/icon/youtube.png" alt=""></span></a></li>
+                        <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Ho&#224;ng H&#224; Mobile Instagram" target="_blank" class="rainbow"><span><img src="assets/images/icon/instagram.png" alt=""></span></a></li>
+                        <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black"><span><img src="assets/images/icon/tik-tok.png" alt=""></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -10332,7 +10278,7 @@
 
             <div id="backtoTop">
                 <a id="top" href="javascript:;">
-                    <i class="icon-left"></i>
+                    <img src="assets/images/icon/back-to-top.png" alt="">
                 </a>
             </div>
         </div>
@@ -10345,20 +10291,22 @@
     <div class="footer-stick-right" style="position: fixed; bottom: 175px; right: 33px; display:none">
         <a href="javascript:removeStick();"
             style="background: #4B4B4B;color: #FFF;border-radius: 20px;font-size: 8px;width: 20px;height: 20px;display: flex;text-align: center; position:absolute; right:-5px; top:-5px;">
-            <i class="iconv2-remove" style="display:block; margin:auto;"></i>
+            <img src="assets/images/icon/cancel.png" class="iconv2-remove" style="display:block; margin:auto;" alt="">
         </a>
         <div style="padding-bottom:10px;">
             <a href="/kho-san-pham-cu">
-                <img src="/Content/web/img/maycugiatot.png" />
+                <img src="assets/images/icon/maycugiatot.png" />
             </a>
         </div>
         <div>
             <a href="/dat-hang/thu-cu-doi-moi-iphone-chinh-hang-vn-a-hoanghamobile">
-                <img src="/Content/web/img/thucugiacao.png" />
+                <img src="assets/images/icon/thucugiacao.png" />
             </a>
         </div>
     </div>
-
+    <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
+        <a href="https://chat.zalo.me/" target="_blank"><img src="assets/images/icon/zalo.svg"></a>
+    </div>
 
 
 
@@ -10399,7 +10347,7 @@
     <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqqrmpwwuqeianonpxt")</script>
     <!-- subiz -->
     <!-- accesstrade-->
-    <script src="//static.accesstrade.vn/js/trackingtag/tracking.min.js "></script>
+    <script src="assets/js/tracking.min.js"></script>
     <script type="text/javascript">
         AT.init({ "campaign_id": 626, "is_reoccur": 1, "is_lastclick": 1 });
         AT.track();
@@ -10408,7 +10356,7 @@
 
 
 
-    <script src="/js-css/web_v1.2.0.5.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 

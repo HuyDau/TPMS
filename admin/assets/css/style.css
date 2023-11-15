@@ -1,0 +1,32 @@
+.icon-edit{
+    font-size: 20px;
+    color: rgb(255, 203, 107);
+}
+
+.icon-edit:hover{
+    font-size: 24px;
+    color: orange;
+}
+.icon-delete{
+    font-size: 20px;
+    color: rgb(255, 94, 94);
+}
+.icon-delete:hover{
+    font-size: 24px;
+    color: red;
+}
+
+.image_product{
+    width: 100px;
+}
+
+.content-prod p{
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.badge{
+    font-size: 90% !important;
+}
