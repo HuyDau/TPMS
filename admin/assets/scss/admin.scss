@@ -1,0 +1,101 @@
+
+.waviy{
+    
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 16px;
+
+
+    span {
+        color: rgb(255, 107, 107);
+        font-family: 'Alfa Slab One', cursive;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        animation: waviy 1s infinite;
+        animation-delay: calc(.1s * var(--i));
+        
+    }
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
+.form-edit{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(128, 128, 128,0.2);
+
+}
+
+.form-edit.show{
+  display: block;
+  transition: opacity .15s linear;
+  
+}
+#wrapper {
+  .navbar-custom {
+    .logo-box {
+      .logo {
+        .logo-lg {
+          font-size: 50px;
+          color: #0066b1;
+          font-weight: 700;
+          font-family: BMW_iconFont;
+        }
+      }
+    }
+  }
+  .content-page {
+    .content {
+      .title {
+        .page-title-box {
+          height: 60px;
+        }
+        .row {
+          .col-12 {
+            .card {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      padding: 5px 15px;
+      .row{
+        justify-content: flex-end;
+      }
+      .box-action {
+        .row {
+          justify-content: flex-end;
+          .btn-0 {
+            height: 30px;
+            min-width: 110px;
+            margin: 10px;
+            .btn-1 {
+              width: 100%;
+              height: 100%;
+              padding: 5px 20px;
+
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

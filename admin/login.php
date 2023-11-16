@@ -2,39 +2,37 @@
     session_start();
 
     require_once("../config/config.php");
-    if(isset($_SESSION['user_admin'])){
-        header("location: index.php");
+    if(isset($_SESSION['admin_name'])){
+        header("location: categories/categories.php");
     }
 
     if(isset($_POST['btn_login'])){
         $user = $_POST['username'];
         $pass = $_POST['password'];
-
-       
-
         $user = strip_tags($user);
         $user = addslashes($user);
-
         $pass = strip_tags($pass);
         $pass = addslashes($pass);
         $password = md5($pass);
-        $login = "SELECT * FROM user WHERE username = '$user' AND password = '$password' AND  permission = '1'";
+        $login = "SELECT * FROM tbl_users WHERE username = '$user' AND password = '$password' AND  permission = '1'";
         $querry = mysqli_query($conn, $login);
         $num_rows_login = mysqli_num_rows($querry);
+        
         if($num_rows_login == 0){
-            echo "<script>window.alert('Username or password incorrect !');</script>";
+            $error1 = 'Account';
+            $error2 = 'Not';
+            $error3 = 'Exist';
+            $error4 = "!";
         }else{
             while($data = mysqli_fetch_array($querry)){
-                $_SESSION['user_id'] = $data['id'];
-                $_SESSION['user_admin'] = $data['username'];
-                $_SESSION['pass_admin'] = $data['password'];
-                $_SESSION['email_admin'] = $data['email'];
-                $_SESSION['fullname_admin'] = $data['fullname'];
-                $_SESSION['sdt_admin'] = $data['sdt'];
+                $_SESSION['admin_id'] = $data['id'];
+                $_SESSION['admin_user'] = $data['username'];
+                $_SESSION['admin_pass'] = $data['password'];
+                $_SESSION['admin_mail'] = $data['email'];
+                $_SESSION['admin_name'] = $data['fullname'];
+                $_SESSION['admin_phone'] = $data['sdt'];
             }
-            echo "<script>window.alert('System login successful !');window.location = 'index.php'</script>";
-
-           
+            echo "<script>window.alert('System login successful !');window.location = 'index.php'</script>";     
         }
     }
 
@@ -44,20 +42,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Cake Bakery - Đăng nhập hệ thống</title>
+        <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets\images\fav-icon.png">
+        <link rel="shortcut icon" href="../assets/images/logo/favicon.ico">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- App css -->
         <link href="assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\icons.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\app.min.css" rel="stylesheet" type="text/css">
-
+        <link href="assets\scss\admin.css" rel="stylesheet" type="text/css">
     </head>
 
     <body class="authentication-bg authentication-bg-pattern">
@@ -72,33 +70,45 @@
                                 
                                 <div class="text-center w-75 m-auto">
                                     <a href="login.php">
-                                        <span><img src="assets/images/logo/avt.png" alt="" height="26"></span>
+                                        <span><img src="../assets/images/logo/favicon.ico" alt=""><h3 style="color: #009a82;">TPMS</h3></span>
                                     </a>
                                 </div>
 
-                                <h5 class="auth-title">ĐĂNG NHẬP</h5>
+                                <h5 class="auth-title">SIGN IN</h5>
+                                <?php
+                                    if(isset($error1) && isset($error2) && isset($error3) && isset($error4)){
+                                        ?>
+                                            <div class="waviy">
+                                                <span style="--i:1"><?php echo $error1; ?></span>
+                                                <span style="--i:2"><?php echo $error2; ?></span>
+                                                <span style="--i:3"><?php echo $error3; ?></span>
+                                                <span style="--i:4"><?php echo $error4; ?></span>
+                                            </div>
 
+                                        <?php
+                                    }
+                                ?>
                                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Username: </label>
-                                        <input class="form-control" name="username" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <input class="form-control" name="username" type="email" id="emailaddress" required="" placeholder="Enter Your Username">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Password</label>
-                                        <input class="form-control" name="password" type="password" required="" id="password" placeholder="Enter your password">
+                                        <input class="form-control" name="password" type="password" required="" id="password" placeholder="Enter Your Password">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox checkbox-info">
-                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
                                             <label class="custom-control-label" for="checkbox-signin">Remember me</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-danger btn-block" name="btn_login" type="submit" id="toastr-three">Đăng nhập</button>
+                                        <button class="btn btn-danger btn-block" name="btn_login" type="submit" id="toastr-three">Sign In</button>
                                     </div>
 
                                 </form>
