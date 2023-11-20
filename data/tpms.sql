@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 16, 2023 lúc 10:36 AM
+-- Thời gian đã tạo: Th10 20, 2023 lúc 05:37 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -24,28 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_models`
+-- Cấu trúc bảng cho bảng `tbl_categories`
 --
 
-CREATE TABLE `tbl_models` (
+CREATE TABLE `tbl_categories` (
   `Id` int(11) NOT NULL,
-  `ModelCode` varchar(50) NOT NULL,
-  `ModelName` varchar(50) NOT NULL
+  `categoryCode` varchar(50) NOT NULL,
+  `categoryName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_models`
+-- Đang đổ dữ liệu cho bảng `tbl_categories`
 --
 
-INSERT INTO `tbl_models` (`Id`, `ModelCode`, `ModelName`) VALUES
-(1, '', 'BMW I'),
-(2, '', 'X'),
-(3, '', '3'),
-(4, '', '4'),
-(5, '', '5'),
-(6, '', '7'),
-(7, '', '8'),
-(8, '', 'z4');
+INSERT INTO `tbl_categories` (`Id`, `categoryCode`, `categoryName`) VALUES
+(1, 'CAT1', 'ĐIỆN THOẠI'),
+(2, 'CAT2', 'LAPTOP'),
+(3, 'CAT3', 'TABLET'),
+(4, 'CAT4', 'MÀN HÌNH'),
+(5, 'CAT5', 'SMART TV'),
+(6, 'CAT6', 'ĐỒNG HỒ'),
+(7, 'CAT7', 'ÂM THANH'),
+(8, 'CAT8', 'SMART HOME'),
+(16, 'CAT9', 'PHỤ KIỆN'),
+(17, 'CAT10', 'ĐỒ CHƠI CN'),
+(18, 'CAT11', 'MÁY TRÔI'),
+(19, 'CAT12', 'SỬA CHỮA'),
+(20, 'CAT13', 'DỊCH VỤ');
 
 -- --------------------------------------------------------
 
@@ -113,9 +118,9 @@ INSERT INTO `tbl_users` (`Id`, `username`, `password`, `fullname`, `gmail`, `pho
 --
 
 --
--- Chỉ mục cho bảng `tbl_models`
+-- Chỉ mục cho bảng `tbl_categories`
 --
-ALTER TABLE `tbl_models`
+ALTER TABLE `tbl_categories`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -130,10 +135,10 @@ ALTER TABLE `tbl_products`
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_models`
+-- AUTO_INCREMENT cho bảng `tbl_categories`
 --
-ALTER TABLE `tbl_models`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `tbl_categories`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_products`
@@ -149,7 +154,7 @@ ALTER TABLE `tbl_products`
 -- Các ràng buộc cho bảng `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  ADD CONSTRAINT `tbl_products_ibfk_1` FOREIGN KEY (`ModelID`) REFERENCES `tbl_models` (`Id`);
+  ADD CONSTRAINT `tbl_products_ibfk_1` FOREIGN KEY (`ModelID`) REFERENCES `tbl_categories` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

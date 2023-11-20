@@ -2,12 +2,13 @@
     form{
         .modal-dialog{
             .modal-content{
+                .modal-header{
+                    .close{a{color: #fff;}}
+                }
                 .modal-body{
                     .text-right{
                         .close-form{
-                            a{
-                                color: #fff;
-                            }
+                            a{color: #fff;}
                         }
                     }
                 }

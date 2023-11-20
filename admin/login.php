@@ -32,7 +32,7 @@
                 $_SESSION['admin_name'] = $data['fullname'];
                 $_SESSION['admin_phone'] = $data['sdt'];
             }
-            echo "<script>window.alert('System login successful !');window.location = 'index.php'</script>";     
+            echo "<script>window.location = 'categories/categories.php'</script>";     
         }
     }
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_admin'])) {
+if (!isset($_SESSION['admin_user'])) {
     header("location: ../login.php");
 }
 
@@ -8,10 +8,10 @@ require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlModels = mysqli_query($conn, "SELECT * FROM category WHERE name_category LIKE '%$search%' ");
-    $totalModel = mysqli_num_rows($sqlModels);
+    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
+    $totalCategory = mysqli_num_rows($sqlCategory);
 } else {
-    $sqlModels = mysqli_query($conn, "SELECT * FROM tbl_models");
+    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories");
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
@@ -22,35 +22,34 @@ if (isset($_POST['add'])) {
     $code = $_POST['code'];
     $name = $_POST['name'];
 
-    $modelCode = mysqli_query($conn, "SELECT * FROM tbl_models WHERE Id = '$code' ");
-    $modelName = mysqli_query($conn, "SELECT * FROM tbl_models WHERE ModelName = '$name' ");
+    $categoryName = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName = '$name' ");
 
-    if (mysqli_num_rows($modelCode) > 0 || mysqli_num_rows($modelName) > 0) {
-        echo "<script>window.alert('Model exists !');</script>";
+    if (mysqli_num_rows($categoryName) > 0) {
+        echo "<script>window.alert('Category exists !');</script>";
     } else {
-        $addModel = "INSERT INTO `tbl_models`(`Id`, `ModelCode`, `ModelName`) VALUES ('','$code','$name')";
+        $addCategory = "INSERT INTO `tbl_categories`(`Id`, `categoryCode`, `categoryName`) VALUES ('','$code','$name')";
 
-        $queryAddModel = mysqli_query($conn, $addModel);
-        if ($queryAddModel) {
-            echo "<script>window.alert('Successful!');window.location.href = 'models.php'</script>";
+        $queryAddCategory = mysqli_query($conn, $addCategory);
+        if ($queryAddCategory) {
+            echo "<script>window.alert('Successful!');window.location.href = 'categories.php'</script>";
         }
     }
 }
 
 if(isset($_GET['id'])){
 
-    $idModel = $_GET['id'];
+    $id = $_GET['id'];
 
-    $sqlEditModel = mysqli_query($conn, "SELECT * FROM tbl_models WHERE Id = $idModel");
-    $infoModel = mysqli_fetch_assoc($sqlEditModel);
+    $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
+    $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
 
     if (isset($_POST['edit'])) {
         $codeEdit = $_POST['codeEdit'];
         $nameEdit = $_POST['nameEdit'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_models` SET `ModelCode`='$codeEdit',`ModelName`='$nameEdit' WHERE Id = $idModel");
+        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit' WHERE Id = $id");
 
         if($edit){
-            header("Location: models.php");
+            header("Location: categories.php");
         }
     }
 }
@@ -62,13 +61,13 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>BMS MANAGER SYSTEM - Models</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Categories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="..\assets\images\Logo.svg">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico">
     <!-- third party css -->
     <link href="..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
     <link href="..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
@@ -100,26 +99,26 @@ if(isset($_GET['id'])){
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Model</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Edit Category</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
                         <div>
                             <div class="form-group">
-                                <label class="control-label">Model Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Model Code ..." type="text" name="codeEdit" value="<?php if (isset($infoModel['ModelCode'])) {
-                                                                                                                                            echo $infoModel['ModelCode'];
+                                <label class="control-label">Category Code: </label>
+                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {
+                                                                                                                                            echo $infoCategory['categoryCode'];
                                                                                                                                         } ?>">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Model Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="nameEdit" value="<?php if (isset($infoModel['ModelName'])) {
-                                                                                                                                                echo $infoModel['ModelName'];
+                                <label class="control-label">Category Name: </label>
+                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {
+                                                                                                                                                echo $infoCategory['categoryName'];
                                                                                                                                             } ?>">
                             </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form" onclick="close()"><a href="models.php">Close</a></button>
+                                <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
                             </div>
                         </div>
                     </div> <!-- end modal-body-->
@@ -296,13 +295,12 @@ if(isset($_GET['id'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <!-- <img src="..\assets\images\logo-2.png" alt="" height="24"> -->
-                        BMW
+                        <img src="..\assets\images\logo\avt.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
                         <!-- <span class="logo-sm-text-dark">X</span> -->
-                        <img src="..\assets\images\logo1.svg" alt="" height="28">
+                        <img src="..\assets\images\logo\favicon.png" alt="" height="28">
                     </span>
                 </a>
             </div>
@@ -369,12 +367,12 @@ if(isset($_GET['id'])){
                         <li>
                             <a href="javascript: void(0);">
                                 <i class="la la-cube"></i>
-                                <span> BMS </span>
+                                <span> PRODUCTS </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="models.php">Models</a>
+                                    <a href="models.php">CATEGORIES</a>
                                 </li>
                                 <li>
                                     <a href="../products/product.php">Products</a>
@@ -450,12 +448,12 @@ if(isset($_GET['id'])){
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">BMS MANAGER SYSTEM</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">BMS MANAGER SYSTEM</a></li>
-                                        <li class="breadcrumb-item active">Models</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">TECHNOLOGY PRODUCTS MANAGER SYSTEM</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">TPMS</a></li>
+                                        <li class="breadcrumb-item active">CATEGORIES</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Models</h4>
+                                <h4 class="page-title">CATEGORIES</h4>
                             </div>
                         </div>
                     </div>
@@ -500,9 +498,9 @@ if(isset($_GET['id'])){
                                     <table id="basic-datatable" class="table dt-responsive nowrap">
                                         <thead>
                                             <tr>
-                                                <th>STT</th>
-                                                <th>Model Code</th>
-                                                <th>Model Name</th>
+                                                <th>NO</th>
+                                                <th>CATEGORY Code</th>
+                                                <th>CATEGORY Name</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -511,21 +509,21 @@ if(isset($_GET['id'])){
                                         <tbody>
                                             <?php
                                             $i = 1;
-                                            while ($row = mysqli_fetch_assoc($sqlModels)) {
+                                            while ($row = mysqli_fetch_assoc($sqlCategory)) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <?= $i++ ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['ModelCode'] ?>
+                                                        <?= $row['categoryCode'] ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['ModelName'] ?>
+                                                        <?= $row['categoryName'] ?>
                                                     </td>
 
-                                                    <td><a href="models.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['ModelName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -609,10 +607,10 @@ if(isset($_GET['id'])){
         if(isset($_GET['id'])){
             echo '<script> document.getElementById("form-edit").classList.add("show")</script>';
 
-            $idModel = $_GET['id'];
+            $id = $_GET['id'];
 
-            $sqlEditModel = mysqli_query($conn, "SELECT * FROM tbl_models WHERE Id = $idModel");
-            $infoModel = mysqli_fetch_assoc($sqlEditModel);
+            $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
+            $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
         }
     ?>
     <script src="categories.js"></script>
