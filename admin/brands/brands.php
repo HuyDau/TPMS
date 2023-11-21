@@ -8,10 +8,10 @@ require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
-    $totalCategory = mysqli_num_rows($sqlCategory);
+    $sqlBrand = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandName LIKE '%$search%' OR brandCode LIKE'%$search%' ");
+    $totalBrand = mysqli_num_rows($sqlBrand);
 } else {
-    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories");
+    $sqlBrand = mysqli_query($conn, "SELECT * FROM tbl_brands");
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
@@ -22,16 +22,16 @@ if (isset($_POST['add'])) {
     $code = $_POST['code'];
     $name = $_POST['name'];
 
-    $categoryName = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName = '$name' ");
+    $brandName = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandName = '$name' ");
 
-    if (mysqli_num_rows($categoryName) > 0) {
-        echo "<script>window.alert('Category exists !');</script>";
+    if (mysqli_num_rows($brandName) > 0) {
+        echo "<script>window.alert('Brand exists !');</script>";
     } else {
-        $addCategory = "INSERT INTO `tbl_categories`(`Id`, `categoryCode`, `categoryName`) VALUES ('','$code','$name')";
+        $addCategory = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`) VALUES ('','$code','$name')";
 
         $queryAddCategory = mysqli_query($conn, $addCategory);
         if ($queryAddCategory) {
-            echo "<script>window.alert('Successful!');window.location.href = 'categories.php'</script>";
+            echo "<script>window.alert('Successful!');window.location.href = 'brands.php'</script>";
         }
     }
 }
@@ -40,16 +40,16 @@ if(isset($_GET['id'])){
 
     $id = $_GET['id'];
 
-    $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-    $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
+    $sqlEditBrand = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE id = $id");
+    $infoBrand = mysqli_fetch_assoc($sqlEditBrand);
 
     if (isset($_POST['edit'])) {
         $codeEdit = $_POST['codeEdit'];
         $nameEdit = $_POST['nameEdit'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit' WHERE Id = $id");
+        $edit = mysqli_query($conn, "UPDATE `tbl_brands` SET `brandCode`='$codeEdit',`brandName`='$nameEdit' WHERE id = $id");
 
         if($edit){
-            header("Location: categories.php");
+            header("Location: brands.php");
         }
     }
 }
@@ -61,7 +61,7 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Categories</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Brands</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -82,7 +82,7 @@ if(isset($_GET['id'])){
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="../assets/scss/admin.css">
-    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="banner.css">
     <!-- Font awesome -->
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
     <script src="../assets/fontawesome/js/all.min.js"></script>
@@ -94,31 +94,31 @@ if(isset($_GET['id'])){
 
 <body>
     <!-- Form Edit -->
-    <div class="form-edit form" id="form-edit">
+    <div class="form-edit form" id="form-edit"  class="modal fade" tabindex="-1">
         <form method="POST" class="">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Category</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
+                        <h4 class="modal-title">Edit Brand</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="brands.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
                         <div>
                             <div class="form-group">
-                                <label class="control-label">Category Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {
-                                                                                                                                            echo $infoCategory['categoryCode'];
+                                <label class="control-label">Brand Code: </label>
+                                <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="codeEdit" value="<?php if (isset($infoBrand['brandCode'])) {
+                                                                                                                                            echo $infoBrand['brandCode'];
                                                                                                                                         } ?>">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Category Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {
-                                                                                                                                                echo $infoCategory['categoryName'];
+                                <label class="control-label">Brand Name: </label>
+                                <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="nameEdit" value="<?php if (isset($infoBrand['brandName'])) {
+                                                                                                                                                echo $infoBrand['brandName'];
                                                                                                                                             } ?>">
                             </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
+                                <button class="btn btn-light close-form"><a href="brands.php">Close</a></button>
                             </div>
                         </div>
                     </div> <!-- end modal-body-->
@@ -372,10 +372,10 @@ if(isset($_GET['id'])){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="categories.php">CATEGORIES</a>
+                                    <a href="../categories/categories.php">CATEGORIES</a>
                                 </li>
                                 <li>
-                                    <a href="../brands/brands.php">BRANDS</a>
+                                    <a href="brands.php">BRANDS</a>
                                 </li>
                                 <li>
                                     <a href="customer.php">Customers</a>
@@ -450,35 +450,35 @@ if(isset($_GET['id'])){
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TECHNOLOGY PRODUCTS MANAGER SYSTEM</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TPMS</a></li>
-                                        <li class="breadcrumb-item active">CATEGORIES</li>
+                                        <li class="breadcrumb-item active">BRANDS</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">CATEGORIES</h4>
+                                <h4 class="page-title">BRANDS</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
                     <!--  -->
 
-                    <form method="POST" class="modal fade" id="addModel" tabindex="-1">
+                    <form method="POST" class="modal fade" id="addBrand" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Create New Model</h4>
+                                    <h4 class="modal-title">Create New Brands</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body p-3">
                                     <div>
                                         <div class="form-group">
-                                            <label class="control-label">Model Code: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {
+                                            <label class="control-label">Brand Code: </label>
+                                            <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {
                                                                                                                                                             echo $var['Id'];
                                                                                                                                                         } ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label">Model Name: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {
-                                                                                                                                                            echo $var['ModelName'];
+                                            <label class="control-label">Brand Name: </label>
+                                            <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="name" value="<?php if (isset($var['BrandName'])) {
+                                                                                                                                                            echo $var['BrandName'];
                                                                                                                                                         } ?>">
                                         </div>
                                         <div class="text-right pt-2">
@@ -499,8 +499,8 @@ if(isset($_GET['id'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>CATEGORY Code</th>
-                                                <th>CATEGORY Name</th>
+                                                <th>BRAND CODE</th>
+                                                <th>BRAND NAME</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -509,21 +509,21 @@ if(isset($_GET['id'])){
                                         <tbody>
                                             <?php
                                             $i = 1;
-                                            while ($row = mysqli_fetch_assoc($sqlCategory)) {
+                                            while ($row = mysqli_fetch_assoc($sqlBrand)) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <?= $i++ ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['categoryCode'] ?>
+                                                        <?= $row['brandCode'] ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['categoryName'] ?>
+                                                        <?= $row['brandName'] ?>
                                                     </td>
 
-                                                    <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td><a href="brands.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['brandName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -546,7 +546,7 @@ if(isset($_GET['id'])){
             <footer class="footer">
                 <div class="row">
                     <div class="col-lg-2">
-                        <a href="#" data-toggle="modal" data-target="#addModel" class="btn btn-lg font-13  btn-success btn-block  ">
+                        <a href="#" data-toggle="modal" data-target="#addBrand" class="btn btn-lg font-13  btn-success btn-block  ">
                             <i class="mdi mdi-plus-circle-outline"></i> Add
                         </a>
                     </div>
@@ -577,7 +577,7 @@ if(isset($_GET['id'])){
     <!-- Scritp -->
     <script>
         function Del1(name) {
-            return confirm("Do You Want To Delete: " + name + " ?");
+            return confirm("Do you want to delete: " + name + " ?");
         }
     </script>
 

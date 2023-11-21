@@ -1,8 +1,10 @@
+<?php
+    include "xu-ly-du-lieu.php";
+?>
 <!doctype html>
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="author" content="hoanghamobile.com">
     <meta property='og:site_name' content='hoanghamobile.com' />
@@ -12,10 +14,8 @@
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
-
-    <title>Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng
-        gi&#225; tốt</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Huy Dậu - Mobile Store</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -34,13 +34,7 @@
     <script>
         window.insider_object = {};
     </script>
-    <meta name="description" content="Si&#234;u thị điện thoại di động gi&#225; rẻ nhất" />
     <meta name="keywords" content="" />
-
-    <meta name="twitter:title" content="Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt" />
-    <meta name="twitter:description" content="Si&#234;u thị điện thoại di động gi&#225; rẻ nhất">
-    <meta property="og:title" content="Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt" />
-    <meta property="og:description" content="Si&#234;u thị điện thoại di động gi&#225; rẻ nhất" />
     <meta property="og:image" content="assets/images/logo/avt.png" />
     <script async src="assets/js/ins.js"></script>
 </head>
@@ -109,24 +103,11 @@
                                 <div class="menu g1">
                                     <h4><a href="/dien-thoai-di-dong">H&#227;ng sản xuất</a></h4>
                                     <ul class="display-column format_3">
-                                        <li><a href="/dien-thoai-di-dong/iphone">Apple</a></li>
-                                        <li><a href="/dien-thoai-di-dong/samsung">Samsung</a></li>
-                                        <li><a href="/dien-thoai-di-dong/xiaomi">Xiaomi</a></li>
-                                        <li><a href="/dien-thoai-di-dong/oppo">OPPO</a></li>
-                                        <li><a href="/dien-thoai-di-dong/tecno">TECNO</a></li>
-                                        <li><a href="/dien-thoai-di-dong/nokia">Nokia</a></li>
-                                        <li><a href="/dien-thoai-di-dong/realme">realme</a></li>
-                                        <li><a href="/dien-thoai-di-dong/vivo">Vivo</a></li>
-                                        <li><a href="/dien-thoai-di-dong/honor">HONOR</a></li>
-                                        <li><a href="/dien-thoai-di-dong/htc">HTC</a></li>
-                                        <li><a href="/dien-thoai-di-dong/infinix">Infinix</a></li>
-                                        <li><a href="/dien-thoai-di-dong/asus-rog-phone">ROG</a></li>
-                                        <li><a href="/dien-thoai-di-dong/nubia">Nubia</a></li>
-                                        <li><a href="/dien-thoai-di-dong/xor">XOR</a></li>
-                                        <li><a href="/dien-thoai-di-dong/masstel">Masstel</a></li>
-                                        <li><a href="/dien-thoai-di-dong/tcl">TCL</a></li>
-                                        <li><a href="/dien-thoai-di-dong/itel">Itel</a></li>
-                                        <li><a href="/san-pham-sap-ra-mat-tin-don/dien-thoai">Mới - tin đồn</a></li>
+                                        <?php
+                                            while($itemMenu = mysqli_fetch_assoc($sqlSP)){
+                                                ?><li><a href="/dien-thoai-di-dong/iphone"><?=$itemMenu['brandName']?></a></li><?php
+                                            }
+                                        ?>
                                     </ul>
                                     <h4><a href="/dien-thoai-cao-cap">Điện thoại cao cấp</a></h4>
                                     <ul class="display-row format_1">
@@ -282,8 +263,8 @@
                     </li>
                     <li id="man-hinh">
                         <a href="/man-hinh" target="_self">
-                            <i class="icon icon-monitor"></i>
-                            <span>M&#224;n h&#236;nh</span>
+                            <img class="icon" src="assets/images/icon/monitor.png" alt="">
+                            <span>MÀN HÌNH</span>
                         </a>
                         <div class="sub-container">
                             <div class="sub">
@@ -336,7 +317,7 @@
                     </li>
                     <li id="smart-tv">
                         <a href="/smart-tv" target="_self">
-                            <i class="icon icon-tivi"></i>
+                            <img class="icon" src="assets/images/icon/television.png" alt="">
                             <span>Smart TV</span>
                         </a>
                         <div class="sub-container">
@@ -370,7 +351,7 @@
                     </li>
                     <li id="dong-ho">
                         <a href="/dong-ho" target="_self">
-                            <i class="icon icon-watch"></i>
+                            <img class="icon" src="assets/images/icon/watch.png" alt="">
                             <span>Đồng hồ</span>
                         </a>
                         <div class="sub-container">
@@ -408,8 +389,8 @@
                     </li>
                     <li id="loa-tai-nghe">
                         <a href="/loa-tai-nghe" target="_self">
-                            <i class="icon icon-headphone"></i>
-                            <span>&#194;m thanh</span>
+                            <img class="icon" src="assets/images/icon/headphone.png" alt="">
+                            <span>Âm thanh</span>
                         </a>
                         <div class="sub-container">
                             <div class="sub">
@@ -485,7 +466,7 @@
                     </li>
                     <li id="smart-home">
                         <a href="/smart-home" target="_self">
-                            <i class="icon icon-home"></i>
+                            <img class="icon" src="assets/images/icon/home.png" alt="">
                             <span>Smart Home</span>
                         </a>
                         <div class="sub-container">
@@ -541,7 +522,7 @@
                     </li>
                     <li id="phu-kien">
                         <a href="/phu-kien" target="_self">
-                            <i class="icon icon-sac"></i>
+                            <img class="icon" src="assets/images/icon/usb-charger.png" alt="">
                             <span>Phụ kiện</span>
                         </a>
                         <div class="sub-container">
@@ -636,14 +617,14 @@
                     </li>
                     <li id="do-choi-cong-nghe">
                         <a href="/do-choi-cong-nghe" target="_self">
-                            <i class="icon icon-game"></i>
+                            <img class="icon" src="assets/images/icon/game.png" alt="Đồ chơi CN">
                             <span>Đồ chơi CN</span>
                         </a>
                         <div class="sub-container">
                             <div class="sub">
 
                                 <div class="menu g0">
-                                    <h4><a>Đồ chơi c&#244;ng nghệ</a></h4>
+                                    <h4><a>Đồ chơi công nghệ</a></h4>
                                     <ul class="display-row format_1">
                                         <li><a href="/do-choi-cong-nghe/quat-cam-tay-mini">Quạt cầm tay mini</a></li>
                                         <li><a href="/do-choi-cong-nghe/day-do-nhip-tim">D&#226;y đo nhịp tim</a></li>

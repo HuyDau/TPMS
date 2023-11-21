@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 20, 2023 lúc 05:37 AM
+-- Thời gian đã tạo: Th10 21, 2023 lúc 01:15 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -20,6 +20,78 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `tpms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_banners`
+--
+
+CREATE TABLE `tbl_banners` (
+  `id` int(11) NOT NULL,
+  `bannerTitle` varchar(100) NOT NULL,
+  `bannerContent` varchar(100) NOT NULL,
+  `bannerImage` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_banners`
+--
+
+INSERT INTO `tbl_banners` (`id`, `bannerTitle`, `bannerContent`, `bannerImage`) VALUES
+(1, 'Chương trình ưu đãi Black Friday', 'Ngày đen tối - Săn Sale quên lối', 'black-friday.png'),
+(2, 'a', 'a', 'black-friday.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_brands`
+--
+
+CREATE TABLE `tbl_brands` (
+  `id` int(11) NOT NULL,
+  `brandCode` varchar(50) NOT NULL,
+  `brandName` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_brands`
+--
+
+INSERT INTO `tbl_brands` (`id`, `brandCode`, `brandName`) VALUES
+(1, 'BRAND1', 'APPLE'),
+(2, 'BRAND2', 'SAMSUNG'),
+(3, 'BRAND3', 'XIAOMI'),
+(4, 'BRAND4', 'OPPO'),
+(5, 'BRAND5', 'TECHNO'),
+(6, 'BRAND6', 'NOKIA'),
+(7, 'BRAND7', 'REALME'),
+(8, 'BRAND8', 'VIVO'),
+(9, 'BRAND9', 'HONOR'),
+(10, 'BRAND10', 'HTC'),
+(11, 'BRAND11', 'INFINIX'),
+(12, 'BRAND12', 'ROG'),
+(13, 'BRAND13', 'NUBIA'),
+(14, 'BRAND14', 'XOR'),
+(15, 'BRAND15', 'MASSTEL'),
+(16, 'BRAND16', 'TCL'),
+(17, 'BRAND17', 'ITEL'),
+(18, 'BRAND18', 'MỚI - TIN ĐỒN'),
+(19, 'BRAND19', 'ĐIỆN THOẠI CAO CẤP'),
+(20, 'BRAND20', 'ĐIỆN THOẠI GẬP'),
+(21, 'BRAND21', 'ASUS'),
+(22, 'BRAND22', 'DELL'),
+(23, 'BRAND23', 'ACER'),
+(24, 'BRAND24', 'MSI'),
+(25, 'BRAND25', 'LG'),
+(26, 'BRAND26', 'HUAWEI'),
+(27, 'BRAND27', 'SURFACE'),
+(28, 'BRAND28', 'LENOVO'),
+(29, 'BRAND29', 'HP'),
+(30, 'BRAND30', 'GIGABYTE'),
+(31, 'BRAND31', 'YUHO'),
+(32, 'BRAND32', 'MICROSOFT SURFACE'),
+(33, 'BRAND32', 'TLC');
 
 -- --------------------------------------------------------
 
@@ -118,6 +190,18 @@ INSERT INTO `tbl_users` (`Id`, `username`, `password`, `fullname`, `gmail`, `pho
 --
 
 --
+-- Chỉ mục cho bảng `tbl_banners`
+--
+ALTER TABLE `tbl_banners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tbl_brands`
+--
+ALTER TABLE `tbl_brands`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_categories`
 --
 ALTER TABLE `tbl_categories`
@@ -135,10 +219,22 @@ ALTER TABLE `tbl_products`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_banners`
+--
+ALTER TABLE `tbl_banners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_brands`
+--
+ALTER TABLE `tbl_brands`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_categories`
 --
 ALTER TABLE `tbl_categories`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_products`
