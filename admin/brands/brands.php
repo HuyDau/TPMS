@@ -27,10 +27,10 @@ if (isset($_POST['add'])) {
     if (mysqli_num_rows($brandName) > 0) {
         echo "<script>window.alert('Brand exists !');</script>";
     } else {
-        $addCategory = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`) VALUES ('','$code','$name')";
+        $addBrand = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`) VALUES ('','$code','$name')";
 
-        $queryAddCategory = mysqli_query($conn, $addCategory);
-        if ($queryAddCategory) {
+        $queryAddBrand = mysqli_query($conn, $addBrand);
+        if ($queryAddBrand) {
             echo "<script>window.alert('Successful!');window.location.href = 'brands.php'</script>";
         }
     }
@@ -378,7 +378,7 @@ if(isset($_GET['id'])){
                                     <a href="brands.php">BRANDS</a>
                                 </li>
                                 <li>
-                                    <a href="customer.php">Customers</a>
+                                    <a href="../products/products.php">PRODUCTS</a>
                                 </li>
 
 
@@ -609,8 +609,8 @@ if(isset($_GET['id'])){
 
             $id = $_GET['id'];
 
-            $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-            $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
+            $sqlEditBrand = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
+            $infoBrand = mysqli_fetch_assoc($sqlEditBrand);
         }
     ?>
     <script src="categories.js"></script>

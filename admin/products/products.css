@@ -1,0 +1,27 @@
+.form-edit form .modal-dialog {
+  width: 80%;
+}
+.form-edit form .modal-dialog .modal-content .modal-header .close a {
+  color: #fff;
+}
+.form-edit form .modal-dialog .modal-content .modal-body .text-right .close-form a {
+  color: #fff;
+}
+
+form .modal-dialog {
+  max-width: 90%;
+}
+form .modal-dialog .modal-content .modal-header .close a {
+  color: #fff;
+}
+form .modal-dialog .modal-content .modal-body .text-right .close-form a {
+  color: #fff;
+}
+
+.card-body .table tbody tr p {
+  width: 150px;
+  white-space: initial;
+}
+.card-body .table tbody tr td img {
+  width: 50px;
+}/*# sourceMappingURL=products.css.map */

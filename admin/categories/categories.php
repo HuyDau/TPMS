@@ -378,10 +378,30 @@ if(isset($_GET['id'])){
                                     <a href="../brands/brands.php">BRANDS</a>
                                 </li>
                                 <li>
-                                    <a href="customer.php">Customers</a>
+                                    <a href="../products/products.php">PRODUCTS</a>
                                 </li>
 
 
+
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="la la-connectdevelop"></i>
+                                <span> WEB </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="../web/banner/banner.php">BANNER</a>
+                                </li>
+                                <li>
+                                    <a href="email-read.php">Read Email</a>
+                                </li>
+                                <li>
+                                    <a href="email-compose.php">Compose Email</a>
+                                </li>
 
                             </ul>
                         </li>

@@ -1,16 +1,17 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin_user'])) {
-    header("location: ../../login.php");
+    header("location: ../login.php");
 }
 
-require_once("../../../config/config.php");
+require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_banners WHERE bannerTitle LIKE '%$search%' OR bannerContent LIKE'%$search%' ");
+    $sqlProduct = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
+    $totalCategory = mysqli_num_rows($sqlProduct);
 } else {
-    $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_banners");
+    $sqlProduct = mysqli_query($conn, "SELECT * FROM tbl_products");
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
@@ -18,48 +19,57 @@ if (isset($_POST['all_prd'])) {
 
 
 if (isset($_POST['add'])) {
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+    $category = $_POST['category'];
+    $brand = $_POST['brand'];
+    $code = $_POST['code'];
+    $name = $_POST['name'];
     $image = $_FILES['image']['name'];
     $image_tmp = $_FILES['image']['tmp_name'];
+    $info = $_POST['info'];
+    $des = $_POST['des'];
 
-    $bannerTitle = mysqli_query($conn, "SELECT * FROM tbl_banners WHERE bannerTitle = '$title' ");
+    $productCode = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productCode = '$code' ");
 
-    if (mysqli_num_rows($bannerTitle) > 0) {
-        echo "<script>window.alert('Banner exists !');</script>";
+    if (mysqli_num_rows($productCode) > 0) {
+        echo "<script>window.alert('Product exists !');</script>";
     } else {
-        $addBanner = "INSERT INTO `tbl_banners`(`id`, `bannerTitle`, `bannerContent`, `bannerImage`) VALUES ('','$title','$content','$image')";
+        $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productCode`, `productName`, `productImage`, `productInfo`, `productDescription`) VALUES ('','$category','$brand','$code','$name','$image','$info','$des')";
 
-        $queryAddBanner = mysqli_query($conn, $addBanner);
-        if ($queryAddBanner) {
-            echo "<script>window.alert('Successful!');window.location.href = 'banner.php'</script>";
+        $queryAddProduct = mysqli_query($conn, $addProduct);
+        if ($queryAddProduct) {
+            echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
         }
     }
-
-    move_uploaded_file($image_tmp, '../../assets/images/banner/' . $image);
+    if($category == 1){
+        move_uploaded_file($image_tmp, '../../uploads/product/smartphone/' . $image);
+    }else if($category == 2){
+        move_uploaded_file($image_tmp, '../../uploads/product/laptop/' . $image);
+    }else if($category == 3){
+        move_uploaded_file($image_tmp, '../../uploads/product/tablet/' . $image);
+    }else if($category == 4){
+        move_uploaded_file($image_tmp, '../../uploads/product/monitor/' . $image);
+    }else if($category == 5){
+        move_uploaded_file($image_tmp, '../../uploads/product/smarttv/' . $image);
+    }else if($category == 5){
+        move_uploaded_file($image_tmp, '../../uploads/product/watch/' . $image);
+    }
+    
 }
 
 if(isset($_GET['id'])){
 
     $id = $_GET['id'];
 
-    $sqlEditBanner = mysqli_query($conn, "SELECT * FROM tbl_banners WHERE id = $id");
-    $infoBanner = mysqli_fetch_assoc($sqlEditBanner);
+    $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
+    $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
 
     if (isset($_POST['edit'])) {
-        $bannerTitle = $_POST['bannerTitle'];
-        $bannerContent = $_POST['bannerContent'];
-        if ($_FILES['image']['name'] == "") {
-            $image = $infoBanner['bannerImage'];
-        } else {
-            $image = $_FILES['image']['name'];
-            $image_tmp = $_FILES['image']['tmp_name'];
-            move_uploaded_file($image_tmp, '../../assets/images/banner/' . $image);
-        }
-        $edit = mysqli_query($conn, "UPDATE `tbl_banners` SET `bannerTitle`='$bannerTitle',`bannerContent`='$bannerContent',`bannerImage`='$image' WHERE id = $id");
+        $codeEdit = $_POST['codeEdit'];
+        $nameEdit = $_POST['nameEdit'];
+        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit' WHERE Id = $id");
 
         if($edit){
-            header("Location: banner.php");
+            header("Location: categories.php");
         }
     }
 }
@@ -71,65 +81,64 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Banner</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../../../assets/images/logo/favicon.ico">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico">
     <!-- third party css -->
-    <link href="..\..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\..\assets\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\..\assets\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
     <!-- third party css end -->
     <!-- App css -->
-    <link href="..\..\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="..\..\assets\css\icons.min.css" rel="stylesheet" type="text/css">
-    <link href="..\..\assets\css\app.min.css" rel="stylesheet" type="text/css">
-    <link href="..\..\assets\css\style.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\css\icons.min.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\css\app.min.css" rel="stylesheet" type="text/css">
+    <link href="..\assets\css\style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- Style Css -->
-    <link rel="stylesheet" href="../../assets/scss/admin.css">
-    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="../assets/scss/admin.css">
+    <link rel="stylesheet" href="products.css">
     <!-- Font awesome -->
-    <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css">
-    <script src="../../assets/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="../../assets/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <script src="../assets/fontawesome/js/all.min.js"></script>
+    <link rel="stylesheet" href="../assets/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- CK Editor -->
-    <script src="../../assets/ckeditor/ckeditor.js"></script>
+    <script src="../assets/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
     <!-- Form Edit -->
-    <div class="form-edit form" id="form-edit"  class="modal fade" tabindex="-1">
-        <form method="POST" class="" enctype="multipart/form-data">
+    <div class="form-edit form" id="form-edit">
+        <form method="POST" class="">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Banner</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="banner.php">×</a></button>
+                        <h4 class="modal-title">Edit Category</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
                         <div>
                             <div class="form-group">
-                                <label class="control-label">Banner Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Banner Code ..." type="text" name="bannerTitle" value="<?php if (isset($infoBanner['bannerTitle'])) {echo $infoBanner['bannerTitle'];} ?>">
+                                <label class="control-label">Category Code: </label>
+                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {
+                                                                                                                                            echo $infoCategory['categoryCode'];
+                                                                                                                                        } ?>">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Banner Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Banner Name ..." type="text" name="bannerContent" value="<?php if (isset($infoBanner['bannerContent'])) {echo $infoBanner['bannerContent'];} ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Image: </label>
-                                <input type="file" multiple="multiple" name="image" class="form-control">
-                                <img src="../../assets/images/banner/<?=$infoBanner['bannerImage']?>" style="width: 100%;" alt="">
+                                <label class="control-label">Category Name: </label>
+                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {
+                                                                                                                                                echo $infoCategory['categoryName'];
+                                                                                                                                            } ?>">
                             </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form"><a href="banner.php">Close</a></button>
+                                <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
                             </div>
                         </div>
                     </div> <!-- end modal-body-->
@@ -181,7 +190,7 @@ if(isset($_GET['id'])){
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                 <div class="notify-icon">
-                                    <img src="..\..\assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="..\assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <p class="notify-details">Cristina Pride</p>
                                 <p class="text-muted mb-0 user-msg">
@@ -202,7 +211,7 @@ if(isset($_GET['id'])){
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon">
-                                    <img src="..\..\assets\images\users\user-4.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="..\assets\images\users\user-4.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <p class="notify-details">Karen Robinson</p>
                                 <p class="text-muted mb-0 user-msg">
@@ -253,7 +262,7 @@ if(isset($_GET['id'])){
 
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="..\..\assets\images\users\user-1.jpg" alt="user-image" class="rounded-circle">
+                        <img src="..\assets\images\users\user-1.jpg" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ml-1">
                             <?php if (isset($_SESSION['user_admin'])) {
                                 echo $_SESSION['fullname_admin'];
@@ -306,12 +315,12 @@ if(isset($_GET['id'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="..\..\assets\images\logo\avt.png" alt="" height="24">
+                        <img src="..\assets\images\logo\avt.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
                         <!-- <span class="logo-sm-text-dark">X</span> -->
-                        <img src="..\..\assets\images\logo\favicon.png" alt="" height="28">
+                        <img src="..\assets\images\logo\favicon.png" alt="" height="28">
                     </span>
                 </a>
             </div>
@@ -383,20 +392,20 @@ if(isset($_GET['id'])){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="../../categories/categories.php">CATEGORIES</a>
+                                    <a href="../categories/categories.php">CATEGORIES</a>
                                 </li>
                                 <li>
-                                    <a href="../../brands/brands.php">BRANDS</a>
+                                    <a href="../brands/brands.php">BRANDS</a>
                                 </li>
                                 <li>
-                                    <a href="../../products/products.php">PRODUCTS</a>
+                                    <a href="products.php">PRODUCTS</a>
                                 </li>
 
 
 
                             </ul>
                         </li>
-
+                        
                         <li>
                             <a href="javascript: void(0);">
                                 <i class="la la-connectdevelop"></i>
@@ -405,7 +414,7 @@ if(isset($_GET['id'])){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="banner.php">BANNER</a>
+                                    <a href="../web/banner/banner.php">BANNER</a>
                                 </li>
                                 <li>
                                     <a href="email-read.php">Read Email</a>
@@ -481,37 +490,82 @@ if(isset($_GET['id'])){
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TECHNOLOGY PRODUCTS MANAGER SYSTEM</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TPMS</a></li>
-                                        <li class="breadcrumb-item active">BANNERS</li>
+                                        <li class="breadcrumb-item active">PRODUCTS</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">BANNERS</h4>
+                                <h4 class="page-title">PRODUCTS</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
                     <!--  -->
 
-                    <form method="POST" class="modal fade" id="addBanner" tabindex="-1" enctype="multipart/form-data">
+                    <form method="POST" class="modal fade" id="addModel" tabindex="-1" enctype="multipart/form-data">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">ADD BANNER</h4>
+                                    <h4 class="modal-title">Create New Product</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body p-3">
-                                    <div>
-                                        <div class="form-group">
-                                            <label class="control-label">Title: </label>
-                                            <input class="form-control form-white" placeholder="Enter Banner Code ..." type="text" name="title" value="">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Category: </label>
+                                                <select class="form-control" name="category">
+                                                    <?php
+                                                    $sqlCat = mysqli_query($conn, "SELECT * FROM tbl_categories");
+                                                    while ($rowCat = mysqli_fetch_assoc($sqlCat)) { ?>
+                                                        <option value="<?php echo $rowCat['Id']; ?>"><?php echo $rowCat['categoryName']; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Brand: </label>
+                                                <select class="form-control" name="brand">
+                                                    <?php
+                                                    $sqlBrand = mysqli_query($conn, "SELECT * FROM tbl_brands");
+                                                    while ($rowBrand = mysqli_fetch_assoc($sqlBrand)) { ?>
+                                                        <option value="<?php echo $rowBrand['id']; ?>"><?php echo $rowBrand['brandName']; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Product Code: </label>
+                                                <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Product Name: </label>
+                                                <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="name" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Image: </label>
+                                                <input type="file" multiple="multiple" name="image" class="form-control">
+                                            </div>
+
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Content: </label>
-                                            <input class="form-control form-white" placeholder="Enter Banner Name ..." type="text" name="content" value="">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="">Product Information: </label>
+                                                <textarea name="info" id="info" cols="80" rows="10">
+
+                                                </textarea>
+                                                <script>
+                                                    CKEDITOR.replace('info')
+                                                </script>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Product Description: </label>
+                                                <textarea name="des" id="des" cols="80" rows="10">
+
+                                                </textarea>
+                                                <script>
+                                                    CKEDITOR.replace('des')
+                                                </script>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="">Image: </label>
-                                            <input type="file" multiple="multiple" name="image" class="form-control">
-                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="text-right pt-2">
                                             <button name="add" class="btn btn-primary ml-1">Save</button>
                                             <button type="button" class="btn btn-light " data-dismiss="modal" name="close">Close</button>
@@ -530,9 +584,12 @@ if(isset($_GET['id'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>TITLE</th>
-                                                <th>CONTENT</th>
-                                                <th>IMAGE</th>
+                                                <th>PRODUCT Code</th>
+                                                <th>PRODUCT Name</th>
+                                                <th>CATEGORY</th>
+                                                <th>BRAND</th>
+                                                <th>Image</th>
+                                                <th></th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -541,22 +598,42 @@ if(isset($_GET['id'])){
                                         <tbody>
                                             <?php
                                             $i = 1;
-                                            while ($row = mysqli_fetch_assoc($sqlBanner)) {
+                                            while ($row = mysqli_fetch_assoc($sqlProduct)) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <?= $i++ ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['bannerTitle'] ?>
+                                                        <?= $row['productCode'] ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['bannerContent'] ?>
+                                                        <p><?= $row['productName'] ?></p>
                                                     </td>
-                                                    <td><img class="banner-image" src="../../assets/images/banner/<?=$row['bannerImage']?>" alt=""></td>
+                                                    <td>
+                                                        <?php
+                                                        $idCat = $row['idCategory'];
+                                                        $sqlCat = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $idCat");
+                                                        $sqlCatName = mysqli_fetch_assoc($sqlCat);
+                                                        echo $sqlCatName['categoryName'];
 
-                                                    <td><a href="banner.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['bannerTitle']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        $idBrand = $row['idBrand'];
+                                                        $sqlBrand = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE id = $idBrand");
+                                                        $sqlBrandName = mysqli_fetch_assoc($sqlBrand);
+                                                        echo $sqlBrandName['brandName'];
+
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <img src="../../uploads/product/<?php if($row['idCategory'] == 1){?>smartphone/<?=$row['productImage']?><?php }?>" alt="">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><a href="product.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -579,7 +656,7 @@ if(isset($_GET['id'])){
             <footer class="footer">
                 <div class="row">
                     <div class="col-lg-2">
-                        <a href="#" data-toggle="modal" data-target="#addBanner" class="btn btn-lg font-13  btn-success btn-block  ">
+                        <a href="#" data-toggle="modal" data-target="#addModel" class="btn btn-lg font-13  btn-success btn-block  ">
                             <i class="mdi mdi-plus-circle-outline"></i> Add
                         </a>
                     </div>
@@ -606,35 +683,35 @@ if(isset($_GET['id'])){
     <div class="rightbar-overlay"></div>
 
     <!-- Vendor js -->
-    <script src="..\..\assets\js\vendor.min.js"></script>
+    <script src="..\assets\js\vendor.min.js"></script>
     <!-- Scritp -->
     <script>
         function Del1(name) {
-            return confirm("Do you want to delete: " + name + " ?");
+            return confirm("Do You Want To Delete: " + name + " ?");
         }
     </script>
 
     <!-- third party js -->
-    <script src="..\..\assets\libs\datatables\jquery.dataTables.min.js"></script>
-    <script src="..\..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
-    <script src="..\..\assets\libs\datatables\dataTables.responsive.min.js"></script>
-    <script src="..\..\assets\libs\datatables\responsive.bootstrap4.min.js"></script>
-    <script src="..\..\assets\libs\datatables\dataTables.buttons.min.js"></script>
-    <script src="..\..\assets\libs\datatables\buttons.bootstrap4.min.js"></script>
-    <script src="..\..\assets\libs\datatables\buttons.html5.min.js"></script>
-    <script src="..\..\assets\libs\datatables\buttons.flash.min.js"></script>
-    <script src="..\..\assets\libs\datatables\buttons.print.min.js"></script>
-    <script src="..\..\assets\libs\datatables\dataTables.keyTable.min.js"></script>
-    <script src="..\..\assets\libs\datatables\dataTables.select.min.js"></script>
-    <script src="..\..\assets\libs\pdfmake\pdfmake.min.js"></script>
-    <script src="..\..\assets\libs\pdfmake\vfs_fonts.js"></script>
+    <script src="..\assets\libs\datatables\jquery.dataTables.min.js"></script>
+    <script src="..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
+    <script src="..\assets\libs\datatables\dataTables.responsive.min.js"></script>
+    <script src="..\assets\libs\datatables\responsive.bootstrap4.min.js"></script>
+    <script src="..\assets\libs\datatables\dataTables.buttons.min.js"></script>
+    <script src="..\assets\libs\datatables\buttons.bootstrap4.min.js"></script>
+    <script src="..\assets\libs\datatables\buttons.html5.min.js"></script>
+    <script src="..\assets\libs\datatables\buttons.flash.min.js"></script>
+    <script src="..\assets\libs\datatables\buttons.print.min.js"></script>
+    <script src="..\assets\libs\datatables\dataTables.keyTable.min.js"></script>
+    <script src="..\assets\libs\datatables\dataTables.select.min.js"></script>
+    <script src="..\assets\libs\pdfmake\pdfmake.min.js"></script>
+    <script src="..\assets\libs\pdfmake\vfs_fonts.js"></script>
     <!-- third party js ends -->
 
     <!-- Datatables init -->
-    <script src="..\..\assets\js\pages\datatables.init.js"></script>
+    <script src="..\assets\js\pages\datatables.init.js"></script>
 
     <!-- App js -->
-    <script src="..\..\assets\js\app.min.js"></script>
+    <script src="..\assets\js\app.min.js"></script>
     
     <?php
         if(isset($_GET['id'])){

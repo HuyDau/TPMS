@@ -825,157 +825,23 @@
                         <img src="/Content/web/img/spin.svg" />
                     </div>
                     <div data-u="slides" class="jssor-1200-container">
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/dien-thoai-di-dong/samsung/dien-thoai-gap-samsung/galaxy-z-fold5-z-flip5?source=BannerSlider"
-                                title="Ưu đ&#227;i Samsung Galaxy Z Fold5 | Z Flip5"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/03/1200x375-zfoldzflip-031123.jpg"
-                                    title="Ưu đ&#227;i Samsung Galaxy Z Fold5 | Z Flip5" /></a>
-                            <div u="thumb">
-                                Ưu đ&#227;i Samsung Galaxy Z Fold5 | Z Flip5
-                                <br /><small>Si&#234;u phẩm gập - Mở đẳng cấp</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/dien-thoai-di-dong/vivo-v29e-chinh-hang?source=BannerSlider"
-                                title="vivo V29e - 5G Ch&#237;nh h&#227;ng"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/14/web-v29e-01.jpg"
-                                    title="vivo V29e - 5G Ch&#237;nh h&#227;ng" /></a>
-                            <div u="thumb">
-                                vivo V29e - 5G Ch&#237;nh h&#227;ng
-                                <br /><small>V&#242;ng s&#225;ng Aura cho ảnh đ&#234;m tỏa s&#225;ng</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/may-tinh-bang/samsung-galaxy-tab-s9-fe-wifi-6gb-128gb?source=BannerSlider"
-                                title="Samsung Galaxy Tab S9 FE"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/03/galaxy-tab-s9-fe-1200x375.jpg"
-                                    title="Samsung Galaxy Tab S9 FE" /></a>
-                            <div u="thumb">
-                                Samsung Galaxy Tab S9 FE
-                                <br /><small>Ưu đ&#227;i th&#225;ng 11</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/dien-thoai-di-dong/xiaomi/redmi-note-12-series?source=BannerSlider"
-                                title="Hotsale Xiaomi Redmi Note 12"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/14/web-xiaomi-12-web-222.jpg"
-                                    title="Hotsale Xiaomi Redmi Note 12" /></a>
-                            <div u="thumb">
-                                Hotsale Xiaomi Redmi Note 12
-                                <br /><small>Ưu đ&#227;i chỉ c&#242;n 3.690.000đ</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/honor-90-series?source=BannerSlider"
-                                title="Sản phẩm mới Honor 90 | 90 Lite "><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/09/1200x375-honor-041123.jpg"
-                                    title="Sản phẩm mới Honor 90 | 90 Lite " /></a>
-                            <div u="thumb">
-                                Sản phẩm mới Honor 90 | 90 Lite
-                                <br /><small>Tặng bộ qu&#224; hấp dẫn</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/may-loc-khong-khi/may-loc-khong-khi-xiaomi-air-purifier-4-lite-chinh-hang"
-                                title="M&#225;y lọc kh&#244;ng kh&#237; Xiaomi Air Purifier 4 Lite"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/14/tuan-le-xiaomi-web.jpg"
-                                    title="M&#225;y lọc kh&#244;ng kh&#237; Xiaomi Air Purifier 4 Lite" /></a>
-                            <div u="thumb">
-                                M&#225;y lọc kh&#244;ng kh&#237; Xiaomi Air Purifier 4 Lite
-                                <br /><small>Ưu đ&#227;i giảm sốc</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/laptop/lenovo?source=BannerSlider"
-                                title="Laptop Lenovo"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/1200x375-lenovo.png"
-                                    title="Laptop Lenovo" /></a>
-                            <div u="thumb">
-                                Laptop Lenovo
-                                <br /><small>Gi&#225;ng Sinh rủng rỉnh qu&#224;</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/laptop/msi?source=BannerSlider"
-                                title="Laptop MSI RTX 40 Series"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/1200x375-msi.png"
-                                    title="Laptop MSI RTX 40 Series" /></a>
-                            <div u="thumb">
-                                Laptop MSI RTX 40 Series
-                                <br /><small>Vượt qua mọi giới hạn</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/tai-nghe/tai-nghe-khong-day-sony-wf-1000xm5-chinh-hang?source=BannerSlider"
-                                title="Sony WF-1000XM5"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/1200x375-sony-101123.jpg"
-                                    title="Sony WF-1000XM5" /></a>
-                            <div u="thumb">
-                                Sony WF-1000XM5
-                                <br /><small>Ưu đ&#227;i th&#225;ng 11</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/tai-nghe/tai-nghe-khong-day-marshall-motif-ii-anc-chinh-hang?source=BannerSlider"
-                                title="Marshall Motif II ANC"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/07/tai-nghe-moi-01.jpg"
-                                    title="Marshall Motif II ANC" /></a>
-                            <div u="thumb">
-                                Marshall Motif II ANC
-                                <br /><small>T&#225;i hiện &#226;m thanh s&#226;n khấu</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/dong-ho-thong-minh/dong-ho-thong-minh-huawei-watch-gt4-46mm-chinh-hang?source=BannerSlider"
-                                title="Mở b&#225;n Huawei Watch GT4"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/10/03/new-moban-1200x375-huaweigt4-270923.jpg"
-                                    title="Mở b&#225;n Huawei Watch GT4" /></a>
-                            <div u="thumb">
-                                Mở b&#225;n Huawei Watch GT4
-                                <br /><small>Dẫn lỗi phong c&#225;ch</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit?source=BannerSlider"
-                                title="Tăng cường hiệu suất với 9Fit"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/phu-kien-9fit-1200x375.jpg"
-                                    title="Tăng cường hiệu suất với 9Fit" /></a>
-                            <div u="thumb">
-                                Tăng cường hiệu suất với 9Fit
-                                <br /><small>Sản phẩm phụ kiện mới</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/dien-thoai-di-dong/htc-wildfire-e3-lite-4gb-64gb-chinh-hang?source=BannerSlider"
-                                title="HTC Wildfire E3 lite"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/web-htc-wildfire-e3-lite-02.jpg"
-                                    title="HTC Wildfire E3 lite" /></a>
-                            <div u="thumb">
-                                HTC Wildfire E3 lite
-                                <br /><small>Giảm 200.000đ khi mua k&#232;m HTC A103</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank"
-                                href="https://hoanghamobile.com/tin-khuyen-mai/uu-dai-hot/tcl?source=BannerSlider"
-                                title="Điện thoại - M&#225;y t&#237;nh bảng TCL"><img data-u="image"
-                                    data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/09/06/tcl-1200x375.jpg"
-                                    title="Điện thoại - M&#225;y t&#237;nh bảng TCL" /></a>
-                            <div u="thumb">
-                                Điện thoại - M&#225;y t&#237;nh bảng TCL
-                                <br /><small>Gi&#225; cực tốt chỉ từ 2.290.000đ</small>
-                            </div>
-                        </div>
+                        <?php
+                            while($itemSlide = mysqli_fetch_assoc($sqlSlide)){
+                                ?>
+                                    <div>
+                                        <a target="_blank"
+                                            href="https://hoanghamobile.com/dien-thoai-di-dong/samsung/dien-thoai-gap-samsung/galaxy-z-fold5-z-flip5?source=BannerSlider"
+                                            title="Ưu đ&#227;i Samsung Galaxy Z Fold5 | Z Flip5"><img data-u="image"
+                                                data-src2="admin/assets/images/banner/<?=$itemSlide['bannerImage']?>"
+                                                title="Ưu đ&#227;i Samsung Galaxy Z Fold5 | Z Flip5" /></a>
+                                        <div u="thumb"><?=$itemSlide['bannerTitle']?>
+                                            <br />
+                                            <small><?=$itemSlide['bannerContent']?></small>
+                                        </div>
+                                    </div>
+                                <?php
+                            }
+                        ?>
                     </div>
 
 
@@ -991,10 +857,10 @@
                     </div>
 
                     <div data-u="arrowleft" class="slider-arr slider-arr-l" data-autocenter="2">
-                        <i class="icon-left"></i>
+                        <img src="assets/images/icon/left1.png" alt="icon-left">
                     </div>
                     <div data-u="arrowright" class="slider-arr slider-arr-r" data-autocenter="2">
-                        <i class="icon-right"></i>
+                        <img src="assets/images/icon/right1.png" alt="icon-right">
                     </div>
                 </div>
 
