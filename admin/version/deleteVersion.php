@@ -3,14 +3,14 @@
     require_once("../../config/config.php");
 
     $id = $_GET['id'];
-    $delete = "DELETE FROM tbl_categories WHERE Id = $id";
+    $delete = "DELETE FROM tbl_versions WHERE id = $id";
     $query_deltete = mysqli_query($conn, $delete);
     if(
         $query_deltete
     ){
-        echo "<script>window.alert('Successfully!');window.location.href = 'categories.php'</script>";
+        echo "<script>window.alert('Successfully!');window.location.href = 'version.php'</script>";
     }else{
-        echo "<script>window.alert('Error!');window.location.href = 'categories.php'</script>";
+        echo "<script>window.alert('Error!');window.location.href = 'version.php'</script>";
     }
     
 ?>

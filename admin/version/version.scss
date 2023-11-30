@@ -1,6 +1,7 @@
 .form-edit{
     form{
         .modal-dialog{
+            width: 80%;
             .modal-content{
                 .modal-header{
                     .close{a{color: #fff;}}
@@ -10,6 +11,42 @@
                         .close-form{
                             a{color: #fff;}
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+form{
+    .modal-dialog{
+        max-width: 90%;
+        .modal-content{
+            .modal-header{
+                .close{a{color: #fff;}}
+            }
+            .modal-body{
+                .text-right{
+                    .close-form{
+                        a{color: #fff;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-body{
+    .table{
+        tbody{
+            tr{
+                p{
+                    width: 150px;
+                    white-space: initial;
+                }
+                td{
+                    
+                    img{
+                        width: 50px;
                     }
                 }
             }

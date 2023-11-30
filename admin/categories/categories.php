@@ -61,7 +61,7 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Categories</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - CATEGORIES</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -106,15 +106,11 @@ if(isset($_GET['id'])){
                         <div>
                             <div class="form-group">
                                 <label class="control-label">Category Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {
-                                                                                                                                            echo $infoCategory['categoryCode'];
-                                                                                                                                        } ?>">
+                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {echo $infoCategory['categoryCode'];} ?>" required>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Category Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {
-                                                                                                                                                echo $infoCategory['categoryName'];
-                                                                                                                                            } ?>">
+                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {echo $infoCategory['categoryName'];} ?>" required>
                             </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
@@ -491,15 +487,11 @@ if(isset($_GET['id'])){
                                     <div>
                                         <div class="form-group">
                                             <label class="control-label">Model Code: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {
-                                                                                                                                                            echo $var['Id'];
-                                                                                                                                                        } ?>">
+                                            <input class="form-control form-white" placeholder="Enter Model Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {echo $var['Id']; } ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Model Name: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {
-                                                                                                                                                            echo $var['ModelName'];
-                                                                                                                                                        } ?>">
+                                            <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {echo $var['ModelName'];} ?>" required>
                                         </div>
                                         <div class="text-right pt-2">
                                             <button name="add" class="btn btn-primary ml-1">Save</button>
@@ -543,7 +535,7 @@ if(isset($_GET['id'])){
                                                     </td>
 
                                                     <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="deleteCategory.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }

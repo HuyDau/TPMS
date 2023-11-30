@@ -21,19 +21,20 @@ if (isset($_POST['all_prd'])) {
 if (isset($_POST['add'])) {
     $category = $_POST['category'];
     $brand = $_POST['brand'];
+    $prooductId = $_POST['id'];
     $code = $_POST['code'];
     $name = $_POST['name'];
+    $version = $_POST['version'];
     $image = $_FILES['image']['name'];
     $image_tmp = $_FILES['image']['tmp_name'];
-    $info = $_POST['info'];
-    $des = $_POST['des'];
+    $description = $_POST['description'];
 
     $productCode = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productCode = '$code' ");
 
     if (mysqli_num_rows($productCode) > 0) {
         echo "<script>window.alert('Product exists !');</script>";
     } else {
-        $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productCode`, `productName`, `productImage`, `productInfo`, `productDescription`) VALUES ('','$category','$brand','$code','$name','$image','$info','$des')";
+        $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productId`, `productCode`, `productName`, `productVersion`, `productImage`, `productDescription`) VALUES (NULL,'$category','$brand','$prooductId','$code','$name','$version','$image','$description')";
 
         $queryAddProduct = mysqli_query($conn, $addProduct);
         if ($queryAddProduct) {
@@ -60,16 +61,76 @@ if(isset($_GET['id'])){
 
     $id = $_GET['id'];
 
-    $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-    $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
+    $sqlProduct = mysqli_query($conn, "SELECT * FROM tbl_products WHERE id = $id");
+    $infoProduct = mysqli_fetch_assoc($sqlProduct);
 
-    if (isset($_POST['edit'])) {
-        $codeEdit = $_POST['codeEdit'];
-        $nameEdit = $_POST['nameEdit'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit' WHERE Id = $id");
+    if (isset($_POST['EditProduct'])) {
+        $category1 = $_POST['category1'];
+        $brand1 = $_POST['brand1'];
+        $productId1 = $_POST['id1'];
+        $code1 = $_POST['code1'];
+        $name1 = $_POST['name1'];
+        $version1 = $_POST['version1'];
+        if ($_FILES['image1']['name'] == "") {
+            $image1 = $infoProduct['productImage'];
+        } else {
+            $image1 = $_FILES['image1']['name'];
+            $image1_tmp = $_FILES['image1']['tmp_name'];
+            $category =$category1;
+            if($category == 1){
+                move_uploaded_file($image1_tmp, '../../uploads/product/smartphone/' . $image1);
+            }else if($category == 2){
+                move_uploaded_file($image1_tmp, '../../uploads/product/laptop/' . $image1);
+            }else if($category == 3){
+                move_uploaded_file($image1_tmp, '../../uploads/product/tablet/' . $image1);
+            }else if($category == 4){
+                move_uploaded_file($image1_tmp, '../../uploads/product/monitor/' . $image1);
+            }else if($category == 5){
+                move_uploaded_file($image1_tmp, '../../uploads/product/smarttv/' . $image1);
+            }else if($category == 5){
+                move_uploaded_file($image1_tmp, '../../uploads/product/watch/' . $image1);
+            }
+        }
+        $description1 = $_POST['description1'];
+        $editProduct = mysqli_query($conn, "UPDATE `tbl_products` SET `idCategory`='$category1',`idBrand`='$brand1',`productId`='$productId1',`productCode`='$code1',`productName`='$name1',`productVersion`='$version1',`productImage`='$image1',`productDescription`='$description1' WHERE id = $id");
 
-        if($edit){
-            header("Location: categories.php");
+        if($editProduct){
+            echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
+        }else{
+            echo "<script>window.alert('Error!');window.location.href = 'products.php'</script>";
+        }
+    }
+}
+
+if(isset($_GET['productId'])){
+
+    $id = $_GET['productId'];
+    $idCategory = $_GET['categoryId'];
+    if (isset($_POST['addVersion'])) {
+        $prodId = $_POST['prodId'];
+        $versionCode = $_POST['versionCode'];
+        $versionName = $_POST['versionName'];
+        $versionImage = $_FILES['versionImage']['name'];
+        $versionImage_tmp = $_FILES['versionImage']['tmp_name'];
+        $versionPrice = $_POST['versionPrice'];
+        $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`id`, `productId`, `versionCode`, `versionName`, `versionImage`, `versionPrice`) VALUES (NULL,'$prodId','$versionCode','$versionName','$versionImage','$versionPrice')");
+
+        if($addVersion){
+            header("Location: products.php");
+        }
+
+        if($idCategory == 1){
+            move_uploaded_file($versionImage_tmp, '../../uploads/product/smartphone/' . $versionImage);
+        }else if($idCategory == 2){
+            move_uploaded_file($versionImage_tmp, '../../uploads/product/laptop/' . $versionImage);
+        }else if($idCategory == 3){
+            move_uploaded_file($versionImage_tmp, '../../uploads/product/tablet/' . $versionImage);
+        }else if($idCategory == 4){
+            move_uploaded_file($versionImage_tmp, '../../uploads/product/monitor/' . $versionImage);
+        }else if($idCategory == 5){
+            move_uploaded_file($versionImage_tmp, '../../uploads/product/smarttv/' . $versionImage);
+        }else if($idCategory == 5){
+            move_uploaded_file($versionImage_tmp, '../../uploads/product/watch/' . $versionImage);
         }
     }
 }
@@ -115,30 +176,125 @@ if(isset($_GET['id'])){
 <body>
     <!-- Form Edit -->
     <div class="form-edit form" id="form-edit">
-        <form method="POST" class="">
+        <form method="POST" class="" enctype="multipart/form-data">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Category</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
+                        <h4 class="modal-title">Edit Product</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="products.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
-                        <div>
-                            <div class="form-group">
-                                <label class="control-label">Category Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {
-                                                                                                                                            echo $infoCategory['categoryCode'];
-                                                                                                                                        } ?>">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Category: </label>
+                                    <select name="category1" id="" class="selected form-control form-white">
+                                        <?php
+                                        $sqlCategory = mysqli_query($conn, "SELECT * FROM `tbl_categories`");
+                                        while ($itemCategory = mysqli_fetch_assoc($sqlCategory)) { ?>
+                                            <option value="<?php echo $itemCategory['Id']; ?>" <?php if (isset($itemCategory['Id'])) {if ($itemCategory['Id'] == $infoProduct['idCategory']) {echo "SELECTED";} } ?>><?php echo $itemCategory['categoryName']; ?></option>
+                                        <?php }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Brand: </label>
+                                    <select name="brand1" id="" class="selected form-control form-white">
+                                        <?php
+                                        $sqlBrand = mysqli_query($conn, "SELECT * FROM `tbl_brands`");
+                                        while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) { ?>
+                                            <option value="<?php echo $itemBrand['id']; ?>" <?php if (isset($itemBrand['id'])) {if ($itemBrand['id'] == $infoProduct['idBrand']) {echo "SELECTED";} } ?>><?php echo $itemBrand['brandName']; ?></option>
+                                        <?php }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product ID: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id1" value="<?=$infoProduct['productId']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Code: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code1" value="<?=$infoProduct['productCode']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="name1" value="<?=$infoProduct['productName']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Version: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="version1" value="<?=$infoProduct['productVersion']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Iamge: </label>
+                                    <input type="file" multiple="multiple" name="image1" class="form-control">
+                                    <span><?=$infoProduct['productImage']?></span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Category Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {
-                                                                                                                                                echo $infoCategory['categoryName'];
-                                                                                                                                            } ?>">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Description: </label>
+                                    <textarea name="description1" id="des" cols="150" rows="10" required>
+                                        <?=$infoProduct['productDescription']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('des')
+                                    </script>
+                                </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="text-right pt-2">
-                                <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
+                                <button name="EditProduct" class="btn btn-primary ml-1">Save</button>
+                                <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="products.php">Close</a></button>
+                            </div>
+                        </div>
+                    </div> <!-- end modal-body-->
+                </div> <!-- end modal-content-->
+            </div> <!-- end modal dialog-->
+        </form>
+    </div>
+    <!-- End Form Edit -->
+    <!-- Form Edit -->
+    <div class="form-add-version form" id="form-add-version">
+        <form method="POST" class="" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">ADD NEW VERSION PRODUCT</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="products.php">×</a></button>
+                    </div>
+                    <div class="modal-body p-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Product ID: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product ID ..." type="text" name="prodId" value="<?=$_GET['productId']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Code: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Code ..." type="text" name="versionCode" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Name ..." type="text" name="versionName" value="" required>
+                                </div>
+                                
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Version Image: </label>
+                                    <input type="file" multiple="multiple" name="versionImage" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Price ..." type="text" name="versionPrice" value="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-right pt-2">
+                                <button name="addVersion" class="btn btn-primary ml-1">Save</button>
+                                <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="products.php">Close</a></button>
                             </div>
                         </div>
                     </div> <!-- end modal-body-->
@@ -400,6 +556,9 @@ if(isset($_GET['id'])){
                                 <li>
                                     <a href="products.php">PRODUCTS</a>
                                 </li>
+                                <li>
+                                    <a href="../version/version.php">VERSION</a>
+                                </li>
 
 
 
@@ -531,32 +690,30 @@ if(isset($_GET['id'])){
                                                 </select>
                                             </div>
                                             <div class="form-group">
+                                                <label class="control-label">Product ID: </label>
+                                                <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id" value="" required>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="control-label">Product Code: </label>
-                                                <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code" value="">
+                                                <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code" value="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">Product Name: </label>
-                                                <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="name" value="">
+                                                <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="name" value="" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="">Image: </label>
+                                                <label class="control-label">Product Version: </label>
+                                                <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="version" value="" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Product Iamge: </label>
                                                 <input type="file" multiple="multiple" name="image" class="form-control">
                                             </div>
-
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="">Product Information: </label>
-                                                <textarea name="info" id="info" cols="80" rows="10">
-
-                                                </textarea>
-                                                <script>
-                                                    CKEDITOR.replace('info')
-                                                </script>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">Product Description: </label>
-                                                <textarea name="des" id="des" cols="80" rows="10">
+                                                <label class="control-label">Description: </label>
+                                                <textarea name="description" id="des" cols="150" rows="10" required>
 
                                                 </textarea>
                                                 <script>
@@ -584,11 +741,11 @@ if(isset($_GET['id'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
+                                                <th>PRODUCT ID</th>
                                                 <th>PRODUCT Code</th>
-                                                <th>PRODUCT Name</th>
                                                 <th>CATEGORY</th>
                                                 <th>BRAND</th>
-                                                <th>Image</th>
+                                                <th></th>
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
@@ -605,11 +762,12 @@ if(isset($_GET['id'])){
                                                         <?= $i++ ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['productCode'] ?>
+                                                        <p><?= $row['productId'] ?></p>
                                                     </td>
                                                     <td>
-                                                        <p><?= $row['productName'] ?></p>
+                                                        <?= $row['productCode'] ?>
                                                     </td>
+                                                   
                                                     <td>
                                                         <?php
                                                         $idCat = $row['idCategory'];
@@ -628,11 +786,9 @@ if(isset($_GET['id'])){
 
                                                         ?>
                                                     </td>
-                                                    <td>
-                                                        <img src="../../uploads/product/<?php if($row['idCategory'] == 1){?>smartphone/<?=$row['productImage']?><?php }?>" alt="">
-                                                    </td>
                                                     <td></td>
-                                                    <td><a href="product.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                     <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
@@ -721,6 +877,12 @@ if(isset($_GET['id'])){
 
             $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
             $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
+        }
+    ?>
+    <?php
+        if(isset($_GET['productId'])){
+            echo '<script> document.getElementById("form-add-version").classList.add("show")</script>';
+           
         }
     ?>
     <script src="categories.js"></script>

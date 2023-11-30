@@ -61,7 +61,7 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Brands</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - BRANDS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -82,7 +82,7 @@ if(isset($_GET['id'])){
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="../assets/scss/admin.css">
-    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="brand.css">
     <!-- Font awesome -->
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
     <script src="../assets/fontawesome/js/all.min.js"></script>
@@ -106,15 +106,11 @@ if(isset($_GET['id'])){
                         <div>
                             <div class="form-group">
                                 <label class="control-label">Brand Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="codeEdit" value="<?php if (isset($infoBrand['brandCode'])) {
-                                                                                                                                            echo $infoBrand['brandCode'];
-                                                                                                                                        } ?>">
+                                <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="codeEdit" value="<?php if (isset($infoBrand['brandCode'])) { echo $infoBrand['brandCode'];} ?>" required>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Brand Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="nameEdit" value="<?php if (isset($infoBrand['brandName'])) {
-                                                                                                                                                echo $infoBrand['brandName'];
-                                                                                                                                            } ?>">
+                                <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="nameEdit" value="<?php if (isset($infoBrand['brandName'])) {echo $infoBrand['brandName'];} ?>" required>
                             </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
@@ -471,15 +467,11 @@ if(isset($_GET['id'])){
                                     <div>
                                         <div class="form-group">
                                             <label class="control-label">Brand Code: </label>
-                                            <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {
-                                                                                                                                                            echo $var['Id'];
-                                                                                                                                                        } ?>">
+                                            <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {echo $var['Id']; } ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Brand Name: </label>
-                                            <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="name" value="<?php if (isset($var['BrandName'])) {
-                                                                                                                                                            echo $var['BrandName'];
-                                                                                                                                                        } ?>">
+                                            <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="name" value="<?php if (isset($var['BrandName'])) {echo $var['BrandName'];} ?>" required>
                                         </div>
                                         <div class="text-right pt-2">
                                             <button name="add" class="btn btn-primary ml-1">Save</button>
@@ -523,7 +515,7 @@ if(isset($_GET['id'])){
                                                     </td>
 
                                                     <td><a href="brands.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['brandName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['brandName']; ?>')" class="delete" href="deleteBrand.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }

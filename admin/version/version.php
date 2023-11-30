@@ -8,7 +8,7 @@ require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
+    $sqlVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE versionName LIKE '%$search%' OR versionCode LIKE'%$search%' ");
 
 } else {
     $sqlVersion = mysqli_query($conn, "SELECT * FROM tbl_versions");
@@ -40,15 +40,39 @@ if(isset($_GET['id'])){
 
     $id = $_GET['id'];
 
-    $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-    $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
+    $sqlEditVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE id = $id");
+    $infoVersion = mysqli_fetch_assoc($sqlEditVersion);
 
-    if (isset($_POST['edit'])) {
-        $codeEdit = $_POST['codeEdit'];
-        $nameEdit = $_POST['nameEdit'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit' WHERE Id = $id");
+    if (isset($_POST['editVersion'])) {
+        $prodId = $_POST['prodId'];
+        $versionCode = $_POST['versionCode'];
+        $versionName = $_POST['versionName'];
+        if ($_FILES['versionImage']['name'] == "") {
+            $versionImage = $infoVersion['versionImage'];
+        } else {
+            $versionImage = $_FILES['versionImage']['name'];
+            $versionImage_tmp = $_FILES['versionImage']['tmp_name'];
+            $sqlPrroduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $prodId");
+            $itemProduct = mysqli_fetch_assoc($sqlPrroduct);
+            $idCategory = $itemProduct['idCategory'];
+            if($idCategory == 1){
+                move_uploaded_file($versionImage_tmp, '../../uploads/product/smartphone/' . $versionImage);
+            }else if($idCategory == 2){
+                move_uploaded_file($versionImage_tmp, '../../uploads/product/laptop/' . $versionImage);
+            }else if($idCategory == 3){
+                move_uploaded_file($versionImage_tmp, '../../uploads/product/tablet/' . $versionImage);
+            }else if($idCategory == 4){
+                move_uploaded_file($versionImage_tmp, '../../uploads/product/monitor/' . $versionImage);
+            }else if($idCategory == 5){
+                move_uploaded_file($versionImage_tmp, '../../uploads/product/smarttv/' . $versionImage);
+            }else if($idCategory == 5){
+                move_uploaded_file($versionImage_tmp, '../../uploads/product/watch/' . $versionImage);
+            }
+        }
+        $versionPrice = $_POST['versionPrice'];
+        $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `versionCode`='$versionCode',`versionName`='$versionName',`versionImage`='$versionImage',`versionPrice`='$versionPrice' WHERE id = $id");
 
-        if($edit){
+        if($editVersion){
             header("Location: version.php");
         }
     }
@@ -61,7 +85,7 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - Version</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - VERSION</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -95,30 +119,46 @@ if(isset($_GET['id'])){
 <body>
     <!-- Form Edit -->
     <div class="form-edit form" id="form-edit">
-        <form method="POST" class="">
+        <form method="POST" class="" enctype="multipart/form-data">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Category</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
+                        <h4 class="modal-title">Edit Version</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="version.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
-                        <div>
-                            <div class="form-group">
-                                <label class="control-label">Category Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {
-                                                                                                                                            echo $infoCategory['categoryCode'];
-                                                                                                                                        } ?>">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Product ID: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product ID ..." type="text" name="prodId" value="<?=$infoVersion['productId'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Code: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Code ..." type="text" name="versionCode" value="<?=$infoVersion['versionCode'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Name ..." type="text" name="versionName" value="<?=$infoVersion['versionName'] ?>" required>
+                                </div>
+                                
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Category Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {
-                                                                                                                                                echo $infoCategory['categoryName'];
-                                                                                                                                            } ?>">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Version Image: </label>
+                                    <input type="file" multiple="multiple" name="versionImage" class="form-control">
+                                    <span><?=$infoVersion['versionImage'] ?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Price ..." type="text" name="versionPrice" value="<?=$infoVersion['versionPrice'] ?>" required>
+                                </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="text-right pt-2">
-                                <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
+                                <button name="editVersion" class="btn btn-primary ml-1">Save</button>
+                                <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="version.php">Close</a></button>
                             </div>
                         </div>
                     </div> <!-- end modal-body-->
@@ -482,37 +522,6 @@ if(isset($_GET['id'])){
                     </div>
                     <!-- end page title -->
                     <!--  -->
-
-                    <form method="POST" class="modal fade" id="addModel" tabindex="-1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Create New Model</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                </div>
-                                <div class="modal-body p-3">
-                                    <div>
-                                        <div class="form-group">
-                                            <label class="control-label">Model Code: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {
-                                                                                                                                                            echo $var['Id'];
-                                                                                                                                                        } ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Model Name: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {
-                                                                                                                                                            echo $var['ModelName'];
-                                                                                                                                                        } ?>">
-                                        </div>
-                                        <div class="text-right pt-2">
-                                            <button name="add" class="btn btn-primary ml-1">Save</button>
-                                            <button type="button" class="btn btn-light " data-dismiss="modal" name="close">Close</button>
-                                        </div>
-                                    </div>
-                                </div> <!-- end modal-body-->
-                            </div> <!-- end modal-content-->
-                        </div> <!-- end modal dialog-->
-                    </form>
                     <!--  -->
                     <div class="row">
                         <div class="col-12">
@@ -522,8 +531,11 @@ if(isset($_GET['id'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
+                                                <th>PRODUCT CODE</th>
+                                                <th>VERSION CODE</th>
                                                 <th>VERSION NAME</th>
-                                                <th>PRICE</th>
+                                                <th style="width: 100px;">VERSION IMAGE</th>
+                                                <th>VERSION PRICE</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -532,21 +544,43 @@ if(isset($_GET['id'])){
                                         <tbody>
                                             <?php
                                             $i = 1;
-                                            while ($row = mysqli_fetch_assoc($sqlCategory)) {
+                                            while ($row = mysqli_fetch_assoc($sqlVersion)) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <?= $i++ ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['categoryCode'] ?>
+                                                        <?php
+                                                            $idProd =  $row['productId'] ;
+                                                            $sqlProduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $idProd");
+                                                            $itemProduct = mysqli_fetch_assoc( $sqlProduct);
+                                                            echo $itemProduct['productCode'];
+                                                        ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['categoryName'] ?>
+                                                        <?= $row['versionCode'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $row['versionName'] ?>
+                                                    </td>
+                                                    <td style="width: 100px;">
+                                                        <?php
+                                                            $idProd =  $row['productId'] ;
+                                                            $sqlProduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $idProd");
+                                                            $itemProduct = mysqli_fetch_assoc( $sqlProduct);
+
+                                                            if($itemProduct['idCategory'] == 1){
+                                                                ?> <img style="width: 100%;" src="../../uploads/product/smartphone/<?= $row['versionImage'] ?>" alt="<?= $row['versionImage'] ?>"> <?php
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= number_format($row['versionPrice'],0,"",".") ?>
                                                     </td>
 
-                                                    <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="delete_model.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td><a href="version.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['versionName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -568,11 +602,7 @@ if(isset($_GET['id'])){
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="row">
-                    <div class="col-lg-2">
-                        <a href="#" data-toggle="modal" data-target="#addModel" class="btn btn-lg font-13  btn-success btn-block  ">
-                            <i class="mdi mdi-plus-circle-outline"></i> Add
-                        </a>
-                    </div>
+                    
                     <div class="col-lg-2">
                         <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
                             <i class="las la-download"></i> Export
