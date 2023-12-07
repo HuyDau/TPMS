@@ -5148,7 +5148,7 @@ var sanitizeHTML, RECAPTCHA_API_KEY, specsHeight, setProductContentHeighWithSpec
                     ;
                     i = i("abort");
                     try {
-                        e.send(t.hasContent && t.data || null)
+                        // e.send(t.hasContent && t.data || null)
                     } catch (u) {
                         if (i)
                             throw u;

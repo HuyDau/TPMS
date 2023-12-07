@@ -17,6 +17,15 @@
         $login = "SELECT * FROM tbl_users WHERE username = '$user' AND password = '$password' AND  permission = '1'";
         $querry = mysqli_query($conn, $login);
         $num_rows_login = mysqli_num_rows($querry);
+
+        // $to      = 'lehuydau2312@gmail.com';
+        // $subject = 'the subject';
+        // $message = 'hello';
+        // $headers = 'From: webmaster@example.com'       . "\r\n" .
+        //             'Reply-To: webmaster@example.com' . "\r\n" .
+        //             'X-Mailer: PHP/' . phpversion();
+
+        // mail($to, $subject, $message, $headers);
         
         if($num_rows_login == 0){
             $error1 = 'Account';
@@ -25,14 +34,15 @@
             $error4 = "!";
         }else{
             while($data = mysqli_fetch_array($querry)){
-                $_SESSION['admin_id'] = $data['id'];
+                $_SESSION['admin_id'] = $data['Id'];
                 $_SESSION['admin_user'] = $data['username'];
                 $_SESSION['admin_pass'] = $data['password'];
-                $_SESSION['admin_mail'] = $data['email'];
+                $_SESSION['admin_mail'] = $data['gmail'];
                 $_SESSION['admin_name'] = $data['fullname'];
-                $_SESSION['admin_phone'] = $data['sdt'];
+                $_SESSION['admin_phone'] = $data['phone'];
+                $_SESSION['permission'] = $data['permission'];
             }
-            echo "<script>window.location = 'categories/categories.php'</script>";     
+            // echo "<script>window.location = 'categories/categories.php'</script>";     
         }
     }
 

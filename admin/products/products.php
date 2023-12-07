@@ -19,14 +19,16 @@ if (isset($_POST['all_prd'])) {
 
 
 if (isset($_POST['add'])) {
+    $id = $_POST['id'];
     $category = $_POST['category'];
     $brand = $_POST['brand'];
-    $prooductId = $_POST['id'];
     $code = $_POST['code'];
     $name = $_POST['name'];
     $version = $_POST['version'];
     $image = $_FILES['image']['name'];
     $image_tmp = $_FILES['image']['tmp_name'];
+    $price = $_POST['price'];
+    $prices = $_POST['p-price'];
     $description = $_POST['description'];
 
     $productCode = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productCode = '$code' ");
@@ -34,11 +36,16 @@ if (isset($_POST['add'])) {
     if (mysqli_num_rows($productCode) > 0) {
         echo "<script>window.alert('Product exists !');</script>";
     } else {
-        $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productId`, `productCode`, `productName`, `productVersion`, `productImage`, `productDescription`) VALUES (NULL,'$category','$brand','$prooductId','$code','$name','$version','$image','$description')";
-
-        $queryAddProduct = mysqli_query($conn, $addProduct);
-        if ($queryAddProduct) {
-            echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
+        if($prices > $price ){
+            echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
+        }else{
+            $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productCode`, `productName`, `productVersion`, `productImage`,`productPrice`, `productPromotionalPrice` ,`productDescription`) VALUES ('$id','$category','$brand','$code','$name','$version','$image','$price','$prices','$description')";
+            $addVersion = "INSERT INTO `tbl_versions`(`id`, `productId`, `productVersion`, `productCode`, `productName`, `productImage`, `productPrice`, `productPromotionalPrice`, `productDescription`) VALUES (NULL,'$id','$version','$code','$name','$image','$price','$prices','$description')";
+            $queryAddProduct = mysqli_query($conn, $addProduct);
+            $queryAddVersion = mysqli_query($conn, $addVersion);
+            if ($queryAddProduct && $addVersion) {
+                echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
+            }
         }
     }
     if($category == 1){
@@ -71,6 +78,7 @@ if(isset($_GET['id'])){
         $code1 = $_POST['code1'];
         $name1 = $_POST['name1'];
         $version1 = $_POST['version1'];
+        
         if ($_FILES['image1']['name'] == "") {
             $image1 = $infoProduct['productImage'];
         } else {
@@ -91,13 +99,20 @@ if(isset($_GET['id'])){
                 move_uploaded_file($image1_tmp, '../../uploads/product/watch/' . $image1);
             }
         }
+        $price1 = $_POST['price1'];
+        $prices1 = $_POST['p-price1'];
         $description1 = $_POST['description1'];
-        $editProduct = mysqli_query($conn, "UPDATE `tbl_products` SET `idCategory`='$category1',`idBrand`='$brand1',`productId`='$productId1',`productCode`='$code1',`productName`='$name1',`productVersion`='$version1',`productImage`='$image1',`productDescription`='$description1' WHERE id = $id");
-
-        if($editProduct){
-            echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
+        if($prices1 > $price1){
+            echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
-            echo "<script>window.alert('Error!');window.location.href = 'products.php'</script>";
+            $editProduct = mysqli_query($conn, "UPDATE `tbl_products` SET `idCategory`='$category1',`idBrand`='$brand1',`productCode`='$code1',`productName`='$name1',`productVersion`='$version1',`productImage`='$image1',`productPrice`='$price1',`productPromotionalPrice`='$prices1',`productDescription`='$description1' WHERE id = $id");
+            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `productCode`='$code1',`productName`='$name1',`productVersion`='$version1',`productImage`='$image1',`productPrice`='$price1',`productPromotionalPrice`='$prices1',`productDescription`='$description1' WHERE productId = $id");
+
+            if($editProduct && $editVersion){
+                echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
+            }else{
+                echo "<script>window.alert('Error!');window.location.href = 'products.php'</script>";
+            }
         }
     }
 }
@@ -108,29 +123,37 @@ if(isset($_GET['productId'])){
     $idCategory = $_GET['categoryId'];
     if (isset($_POST['addVersion'])) {
         $prodId = $_POST['prodId'];
-        $versionCode = $_POST['versionCode'];
-        $versionName = $_POST['versionName'];
-        $versionImage = $_FILES['versionImage']['name'];
-        $versionImage_tmp = $_FILES['versionImage']['tmp_name'];
-        $versionPrice = $_POST['versionPrice'];
-        $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`id`, `productId`, `versionCode`, `versionName`, `versionImage`, `versionPrice`) VALUES (NULL,'$prodId','$versionCode','$versionName','$versionImage','$versionPrice')");
+        $prodCode = $_POST['prodCode'];
+        $prodName = $_POST['prodName'];
+        $prodVersion = $_POST['prodVersion'];
+        $prodImage = $_FILES['prodImage']['name'];
+        $prodImage_tmp = $_FILES['prodImage']['tmp_name'];
+        $prodPrice = $_POST['prodPrice'];
+        $prodPromotionalPrice = $_POST['prodPromotionalPrice'];
+        $prodDescription = $_POST['prodDescription'];
+        if($prodPromotionalPrice > $prodPrice){
+            echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
+        }else{
+            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`id`, `productId`, `productVersion`, `productCode`, `productName`, `productImage`, `productPrice`, `productPromotionalPrice`, `productDescription`) VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription')");
 
-        if($addVersion){
-            header("Location: products.php");
+            if($addVersion){
+                header("Location: products.php");
+            }
         }
+        
 
         if($idCategory == 1){
-            move_uploaded_file($versionImage_tmp, '../../uploads/product/smartphone/' . $versionImage);
+            move_uploaded_file($prodImage_tmp, '../../uploads/product/smartphone/' . $prodImage);
         }else if($idCategory == 2){
-            move_uploaded_file($versionImage_tmp, '../../uploads/product/laptop/' . $versionImage);
+            move_uploaded_file($prodImage_tmp, '../../uploads/product/laptop/' . $prodImage);
         }else if($idCategory == 3){
-            move_uploaded_file($versionImage_tmp, '../../uploads/product/tablet/' . $versionImage);
+            move_uploaded_file($prodImage_tmp, '../../uploads/product/tablet/' . $prodImage);
         }else if($idCategory == 4){
-            move_uploaded_file($versionImage_tmp, '../../uploads/product/monitor/' . $versionImage);
+            move_uploaded_file($prodImage_tmp, '../../uploads/product/monitor/' . $prodImage);
         }else if($idCategory == 5){
-            move_uploaded_file($versionImage_tmp, '../../uploads/product/smarttv/' . $versionImage);
+            move_uploaded_file($prodImage_tmp, '../../uploads/product/smarttv/' . $prodImage);
         }else if($idCategory == 5){
-            move_uploaded_file($versionImage_tmp, '../../uploads/product/watch/' . $versionImage);
+            move_uploaded_file($prodImage_tmp, '../../uploads/product/watch/' . $prodImage);
         }
     }
 }
@@ -187,6 +210,10 @@ if(isset($_GET['productId'])){
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
+                                    <label class="control-label">Product ID: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id1" value="<?=$infoProduct['id']?>" required>
+                                </div>
+                                <div class="form-group">
                                     <label class="control-label">Category: </label>
                                     <select name="category1" id="" class="selected form-control form-white">
                                         <?php
@@ -209,10 +236,6 @@ if(isset($_GET['productId'])){
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Product ID: </label>
-                                    <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id1" value="<?=$infoProduct['productId']?>" required>
-                                </div>
-                                <div class="form-group">
                                     <label class="control-label">Product Code: </label>
                                     <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code1" value="<?=$infoProduct['productCode']?>" required>
                                 </div>
@@ -228,6 +251,14 @@ if(isset($_GET['productId'])){
                                     <label class="control-label">Product Iamge: </label>
                                     <input type="file" multiple="multiple" name="image1" class="form-control">
                                     <span><?=$infoProduct['productImage']?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="price1" value="<?=$infoProduct['productPrice']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Promotional Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="p-price1" value="<?=$infoProduct['productPrice']?>" required>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -271,23 +302,39 @@ if(isset($_GET['productId'])){
                                     <input class="form-control form-white" placeholder="Enter Product ID ..." type="text" name="prodId" value="<?=$_GET['productId']?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Version Code: </label>
-                                    <input class="form-control form-white" placeholder="Enter Version Code ..." type="text" name="versionCode" value="" required>
+                                    <label class="control-label">Product Code: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="prodCode" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Version Name: </label>
-                                    <input class="form-control form-white" placeholder="Enter Version Name ..." type="text" name="versionName" value="" required>
+                                    <label class="control-label">Product Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="prodName" value="" required>
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label class="control-label">Product Version: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="prodVersion" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Image: </label>
+                                    <input type="file" multiple="multiple" name="prodImage" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="prodPrice" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Promotional Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="prodPromotionalPrice" value="" required>
+                                </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label class="control-label">Version Image: </label>
-                                    <input type="file" multiple="multiple" name="versionImage" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Version Price: </label>
-                                    <input class="form-control form-white" placeholder="Enter Version Price ..." type="text" name="versionPrice" value="" required>
+                                    <label class="control-label">Description: </label>
+                                    <textarea name="prodDescription" id="des3" cols="150" rows="10" required>
+
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('des3')
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -454,7 +501,7 @@ if(isset($_GET['productId'])){
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="../../logout.php" class="dropdown-item notify-item">
+                        <a href="../logout.php" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Logout</span>
                         </a>
@@ -471,7 +518,7 @@ if(isset($_GET['productId'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="..\assets\images\logo\avt.png" alt="" height="24">
+                        <img src="../../assets/images/logo/logo.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
@@ -668,7 +715,12 @@ if(isset($_GET['productId'])){
                                 </div>
                                 <div class="modal-body p-3">
                                     <div class="row">
+                                        
                                         <div class="col-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Product ID: </label>
+                                                <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id" value="" required>
+                                            </div>
                                             <div class="form-group">
                                                 <label>Category: </label>
                                                 <select class="form-control" name="category">
@@ -690,10 +742,6 @@ if(isset($_GET['productId'])){
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">Product ID: </label>
-                                                <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id" value="" required>
-                                            </div>
-                                            <div class="form-group">
                                                 <label class="control-label">Product Code: </label>
                                                 <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code" value="" required>
                                             </div>
@@ -709,15 +757,23 @@ if(isset($_GET['productId'])){
                                                 <label class="control-label">Product Iamge: </label>
                                                 <input type="file" multiple="multiple" name="image" class="form-control">
                                             </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Price: </label>
+                                                <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="price" value="" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Promotional Price: </label>
+                                                <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="p-price" value="" required>
+                                            </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label class="control-label">Description: </label>
-                                                <textarea name="description" id="des" cols="150" rows="10" required>
+                                                <textarea name="description" id="des1" cols="150" rows="10" required>
 
                                                 </textarea>
                                                 <script>
-                                                    CKEDITOR.replace('des')
+                                                    CKEDITOR.replace('des1')
                                                 </script>
                                             </div>
                                         </div>
@@ -741,14 +797,15 @@ if(isset($_GET['productId'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>PRODUCT ID</th>
                                                 <th>PRODUCT Code</th>
                                                 <th>CATEGORY</th>
                                                 <th>BRAND</th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
+                                                <th>IMAGE</th>
+                                                <th>PRICE</th>
+                                                <th>PROMOTIONAL PRICE</th>
+                                                <th>ADD VERSION</th>
+                                                <th>VIEW AND EDIT</th>
+                                                <th>DELETE</th>
                                             </tr>
                                         </thead>
 
@@ -760,9 +817,6 @@ if(isset($_GET['productId'])){
                                                 <tr>
                                                     <td>
                                                         <?= $i++ ?>
-                                                    </td>
-                                                    <td>
-                                                        <p><?= $row['productId'] ?></p>
                                                     </td>
                                                     <td>
                                                         <?= $row['productCode'] ?>
@@ -786,7 +840,21 @@ if(isset($_GET['productId'])){
 
                                                         ?>
                                                     </td>
-                                                    <td></td>
+                                                    <td>
+                                                        <?php
+                                                            if($row['idCategory'] == 1){
+                                                                ?>
+                                                                    <img src="../../uploads/product/smartphone/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 2){
+                                                                ?>
+                                                                    <img src="../../uploads/product/laptop/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td><?= number_format($row['productPrice'],0,"",".") ?></td>
+                                                    <td><?= number_format($row['productPromotionalPrice'],0,"",".") ?></td>
                                                     <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-edit la la-edit"></i></a></td>
                                                     <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                     <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>

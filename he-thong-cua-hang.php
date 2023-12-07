@@ -4,59 +4,54 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="author" content="hoanghamobile.com">
-    <meta property='og:site_name' content='hoanghamobile.com' />
+    <meta name="author" content="tpms.com">
+    <meta property='og:site_name' content='tpms.com' />
     <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
     <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Hoàn Kiếm, Hanoi, Vietnam" />
+    <meta name="geo.placename" content="Hanoi, Vietnam" />
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
 
-    <title>Hệ thống 123 si&#234;u thị Ho&#224;ng H&#224; Mobile tr&#234;n to&#224;n quốc</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/icon/fonts/hoangha.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" as="script" href="/js-css/web_v1.2.0.5.js">
-    <link rel="preload" as="style" href="/js-css/web_v1.2.0.5.css">
-    <link href="/js-css/web_v1.2.0.5.css" rel="stylesheet" type="text/css">
-    <style>
-        .product-center .current-product-price label.text-green {
-            display: none
-        }
-    </style>
-    <script>
-        window.insider_object = {};
-    </script>
+    <title>Hệ Thống Showroom</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilightItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/hoangha.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" as="script" href="assets/js/main.js">
+    <link rel="preload" as="style" href="assets/css/main.css">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    
+    
 
 
 
 
-    <script async src="//hoanghamobilevn.api.useinsider.com/ins.js?id=10005327"></script>
+    <script async src="assets/js/ins.js"></script>
 </head>
 
 <body>
 
-    <div class="top-link">
+    
+    <!-- <div class="top-link">
         <span class="pulse"></span>
         <p><strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL c&#243; hạn</strong> <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang" target="_top">Xem chi tiết</a></p>
-    </div>
+    </div> -->
     <header>
         <div class="top-navigation">
             <div class="container">
                 <ul>
                     <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
-                    <li><a href="/gioi-thieu-cong-ty">Giới thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản phẩm đ&#227; xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung t&#226;m bảo h&#224;nh</a></li>
+                    <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
+                    <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
+                    <li><a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a></li>
                     <li><a href="/he-thong-cua-hang">Hệ thống 123 si&#234;u thị</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
+                    <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
                     <li><a id="login-modal" href="/Account/Login?ReturnUrl=/he-thong-cua-hang">Đăng nhập</a></li>
                 </ul>
             </div>
@@ -87,7 +82,7 @@
                         <div class="just-center">
                             <img src="/Content/web/content-icon/icon-store.png" style="width:900px; max-width:90%;" />
                         </div>
-                        <h1>Hệ thống 123 si&#234;u thị Ho&#224;ng H&#224; Mobile tr&#234;n to&#224;n quốc</h1>
+                        <h1>Hệ thống 123 si&#234;u thị tr&#234;n to&#224;n quốc</h1>
 
 
                         <div class="selector">
@@ -1408,13 +1403,13 @@
                     <div class="link-content">
                         <h4><a>Hỗ Trợ - Dịch Vụ</a></h4>
                         <ul>
-                            <li><a href="/mua-hang-tra-gop">Mua h&#224;ng trả g&#243;p</a></li>
-                            <li><a href="/huong-dan-dat-hang">Hướng dẫn đặt h&#224;ng v&#224; thanh to&#225;n</a></li>
-                            <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
-                            <li><a href="/chinh-sach-bao-hanh">Ch&#237;nh s&#225;ch bảo h&#224;nh</a></li>
+                            <li><a href="mua-tra-gop.php">Mua h&#224;ng trả g&#243;p</a></li>
+                            <li><a href="huong-dan-dat-hang.php">Hướng Dẫn Đặt Hàng v&#224; thanh to&#225;n</a></li>
+                            <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
+                            <li><a href="chinh-sach-bao-hanh.php">Chính Sách Bảo Hành</a></li>
                             <li><a href="/dat-hang/bao-hanh-mo-rong">Phạm vi, điều khoản g&#243;i bảo h&#224;nh mở rộng</a></li>
-                            <li><a href="/chinh-sach-bao-mat">Ch&#237;nh s&#225;ch bảo mật</a></li>
-                            <li><a href="/chinh-sach-giai-quyet-khieu-nai">Ch&#237;nh s&#225;ch giải quyết khiếu nại</a></li>
+                            <li><a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a></li>
+                            <li><a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a></li>
                             <li><a href="/dieu-khoan-mua-ban-hang-hoa">Điều khoản mua b&#225;n h&#224;ng h&#243;a</a></li>
                             <li><a href="/cau-hoi-thuong-gap">C&#226;u hỏi thường gặp</a></li>
                         </ul>
@@ -1424,9 +1419,9 @@
                         <ul>
                             <li><a href="/mua-hang-online">B&#225;n h&#224;ng Online</a></li>
                             <li><a href="/cham-soc-khach-hang">Chăm s&#243;c kh&#225;ch h&#224;ng</a></li>
-                            <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch vụ sửa chữa Ho&#224;ng H&#224; Care</a></li>
+                            <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a></li>
                             <li><a href="/hop-tac-kinh-doanh">Hợp t&#225;c kinh doanh</a></li>
-                            <li><a href="/trung-tam-bao-hanh">Tra cứu bảo h&#224;nh</a></li>
+                            <li><a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a></li>
                         </ul>
                     </div>
                     <div class="link-content">
@@ -1485,9 +1480,9 @@
             <div id="navSocial">
                 <div class="social">
                     <ul>
-                        <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook Ho&#224;ng H&#224; Mobile" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube Ho&#224;ng H&#224; Mobile Channel" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Ho&#224;ng H&#224; Mobile Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
                         <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
                     </ul>
                 </div>
@@ -1557,7 +1552,7 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        })(window, document, 'script', 'assets/js/analytics.js', 'ga');
 
         ga('create', 'UA-1415779-10', 'auto');
         ga('require', 'GTM-KXZQBMD');
@@ -1600,7 +1595,7 @@
     </script>
     <!-- subiz -->
     <!-- accesstrade-->
-    <script src="//static.accesstrade.vn/js/trackingtag/tracking.min.js "></script>
+    <script src="assets/js/tracking.min.js"></script>
     <script type="text/javascript">
         AT.init({
             "campaign_id": 626,
@@ -1613,7 +1608,7 @@
 
 
 
-    <script src="/js-css/web_v1.2.0.5.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

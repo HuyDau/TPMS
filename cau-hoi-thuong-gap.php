@@ -4,74 +4,67 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="author" content="hoanghamobile.com">
-    <meta property='og:site_name' content='hoanghamobile.com' />
+    <meta name="author" content="tpms.com">
+    <meta property='og:site_name' content='tpms.com' />
     <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
     <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Hoàn Kiếm, Hanoi, Vietnam" />
+    <meta name="geo.placename" content="Hanoi, Vietnam" />
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
-
-    <title>Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại Ho&#224;ng H&#224; Mobile</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/icon/fonts/hoangha.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" as="script" href="/js-css/web_v1.2.0.5.js">
-    <link rel="preload" as="style" href="/js-css/web_v1.2.0.5.css">
-    <link href="/js-css/web_v1.2.0.5.css" rel="stylesheet" type="text/css">
-    <style>
-        .product-center .current-product-price label.text-green {
-            display: none
-        }
-    </style>
-    <script>
-        window.insider_object = {};
-    </script>
+    <title>Tổng Hợp Câu Hỏi Thường Gặp Khi Mua Hàng Tại Showroom</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilightItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/hoangha.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" as="script" href="assets/js/main.js">
+    <link rel="preload" as="style" href="assets/css/main.css">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    
+    
 
 
 
     <link rel="canonical" href="https://hoanghamobile.com/cau-hoi-thuong-gap" />
-    <meta name="description" />
-    <meta name="keywords" />
+    
 
-    <meta name="twitter:title" content="Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại Ho&#224;ng H&#224; Mobile" />
-    <meta name="twitter:description">
+    <meta name="twitter:title" content="Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại" />
+    
     <meta name="twitter:url" content="https://hoanghamobile.com/cau-hoi-thuong-gap">
 
-    <meta property="og:title" content="Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại Ho&#224;ng H&#224; Mobile" />
-    <meta property="og:description" />
+    <meta property="og:title" content="Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại" />
+    
     <meta property="og:url" content="https://hoanghamobile.com/cau-hoi-thuong-gap" />
     <meta property="og:image" content="https://hoanghamobile.com/Content/web/img/no_seo_image.png" />
 
 
 
 
-    <script async src="//hoanghamobilevn.api.useinsider.com/ins.js?id=10005327"></script>
+    <script async src="assets/js/ins.js"></script>
 </head>
 
 <body>
 
-    <div class="top-link">
+    
+    <!-- <div class="top-link">
         <span class="pulse"></span>
         <p><strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL c&#243; hạn</strong> <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang" target="_top">Xem chi tiết</a></p>
-    </div>
+    </div> -->
     <header>
         <div class="top-navigation">
             <div class="container">
                 <ul>
                     <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
-                    <li><a href="/gioi-thieu-cong-ty">Giới thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản phẩm đ&#227; xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung t&#226;m bảo h&#224;nh</a></li>
+                    <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
+                    <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
+                    <li><a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a></li>
                     <li><a href="/he-thong-cua-hang">Hệ thống 123 si&#234;u thị</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
+                    <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
                     <li><a id="login-modal" href="/Account/Login?ReturnUrl=/cau-hoi-thuong-gap">Đăng nhập</a></li>
                 </ul>
             </div>
@@ -82,8 +75,8 @@
         <div class="heading">
             <div class="container">
                 <div class="logo">
-                    <a href="/" title="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
-                        <img src="/Content/web/img/logo-text.png" alt="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
+                   <a href="index.php" title="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
+                        <img src="assets/images/logo/logo.png" alt="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
                     </a>
                 </div>
 
@@ -104,7 +97,7 @@
                         </a>
                     </div>
                     <div class="item cart">
-                        <a href="/gio-hang"><i class="icon-cart"></i><label><i class="icon-left"></i><span id="cart-total">0</span></label></a>
+                        <a href="gio-hang.php"><i class="icon-cart"></i><label><i class="icon-left"></i><span id="cart-total">0</span></label></a>
                     </div>
                 </div>
             </div>
@@ -232,7 +225,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/laptop/laptop-hp-15s-fq5159tu-7c0s0pa-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S" /></a>
+                                            <a href="https://hoanghamobile.com/laptop/laptop-hp-15s-fq5159tu-7c0s0pa-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S" /></a>
                                     </div>
                             </div>
                         </div>
@@ -264,7 +257,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103" /></a>
+                                            <a href="https://hoanghamobile.com/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103" /></a>
                                     </div>
                             </div>
                         </div>
@@ -311,7 +304,7 @@
 
 
                                     <div class="menu ads" style="width:580px">
-                                            <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243" /></a>
+                                            <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="https://hoanghamobile.com/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243" /></a>
                                     </div>
                             </div>
                         </div>
@@ -452,7 +445,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11" /></a>
+                                            <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11" /></a>
                                     </div>
                             </div>
                         </div>
@@ -601,7 +594,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/camera/camera-hanh-trinh-gopro-hero-11-chinh-hang-fpt" target="_blank"><img style="width:600px" src="/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black" /></a>
+                                            <a href="https://hoanghamobile.com/camera/camera-hanh-trinh-gopro-hero-11-chinh-hang-fpt" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black" /></a>
                                     </div>
                             </div>
                         </div>
@@ -767,163 +760,160 @@
                 <meta itemprop="position" content="1" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href="/cau-hoi-thuong-gap" title="Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại Ho&#224;ng H&#224; Mobile" class="actived"><span itemprop="name" content="C&#226;u hỏi thường gặp">C&#226;u hỏi thường gặp</span></a>
+                <a itemprop="item" href="/cau-hoi-thuong-gap" title="Tổng hợp C&#226;u hỏi thường gặp khi mua h&#224;ng tại" class="actived"><span itemprop="name" content="C&#226;u hỏi thường gặp">C&#226;u hỏi thường gặp</span></a>
                 <meta itemprop="position" content="2" />
             </li>
         </ol>
     </div>
 </section>
 
-<style>
-    .page-text {}
-    .page-text img {max-width:100%; height:auto !important;}
-</style>
+
 
 <section>
     <div class="container page-text">
         <p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:18.75pt;
-margin-bottom:.0001pt;text-align:justify;mso-outline-level:3;vertical-align:
-baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;
-color:red;border:none windowtext 1.0pt;mso-border-alt:none windowtext 0in;
-padding:0in">Giải đáp 1 số thắc mắc của khách hàng:</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        margin-bottom:.0001pt;text-align:justify;mso-outline-level:3;vertical-align:
+        baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;
+        color:red;border:none windowtext 1.0pt;mso-border-alt:none windowtext 0in;
+        padding:0in">Giải đáp 1 số thắc mắc của khách hàng:</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">1</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">: Tại sao
-Hoàng Hà Mobile rẻ hơn so với các đại lý khác ?</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">1</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">: Tại sao
+        Hoàng Hà Mobile rẻ hơn so với các đại lý khác ?</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả
-lời:&nbsp;</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;
-color:black">Do chúng tôi lấy lợi nhuận thấp và cập nhật giá liên tục theo giờ
-với phương châm giá luôn phải tốt nhất trên thị trường. Chúng tôi luôn mong muốn
-khách hàng có được những sản phẩm tốt với giá rẻ nhất.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả
+        lời:&nbsp;</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;
+        color:black">Do chúng tôi lấy lợi nhuận thấp và cập nhật giá liên tục theo giờ
+        với phương châm giá luôn phải tốt nhất trên thị trường. Chúng tôi luôn mong muốn
+        khách hàng có được những sản phẩm tốt với giá rẻ nhất.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">2</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">: Cụ thể về
-chính sách bao xài đổi trả trong 15/30 ngày.</span></i><span style="font-size:
-10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">2</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">: Cụ thể về
+        chính sách bao xài đổi trả trong 15/30 ngày.</span></i><span style="font-size:
+        10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời:</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời:</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">A, Trường
-hợp được đổi trả :<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">A, Trường
+        hợp được đổi trả :<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Máy được
-bán ra từ Hoàng Hà Mobile và còn trong thời gian 15/30 ngày tùy theo sản phẩm.
-Tình trạng máy phải bị lỗi phần cứng từ phía nhà sản xuất. Hoàng Hà Mobile sẽ
-giải quyết đổi trả sau khi kiểm tra xác nhận máy lỗi phần cứng do nhà sản xuất
-và máy đủ điều kiện bảo hành đổi trả. Với một số trường hợp nhất định, Hoàng Hà
-Mobile sẽ gửi sản phẩm thẩm định lỗi tại trung tâm bảo hành của hãng và sẽ tiến
-hành đổi máy khi có xác nhận kết quả. Thời gian thẩm định tuỳ thuộc vào TTBH
-của hãng. Trong trường hợp hết máy, chúng tôi sẽ hoàn trả 100% tiền mua máy tại
-thời điểm mua cho khách hàng.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Máy được
+        bán ra từ Hoàng Hà Mobile và còn trong thời gian 15/30 ngày tùy theo sản phẩm.
+        Tình trạng máy phải bị lỗi phần cứng từ phía nhà sản xuất. Hoàng Hà Mobile sẽ
+        giải quyết đổi trả sau khi kiểm tra xác nhận máy lỗi phần cứng do nhà sản xuất
+        và máy đủ điều kiện bảo hành đổi trả. Với một số trường hợp nhất định, Hoàng Hà
+        Mobile sẽ gửi sản phẩm thẩm định lỗi tại trung tâm bảo hành của hãng và sẽ tiến
+        hành đổi máy khi có xác nhận kết quả. Thời gian thẩm định tuỳ thuộc vào TTBH
+        của hãng. Trong trường hợp hết máy, chúng tôi sẽ hoàn trả 100% tiền mua máy tại
+        thời điểm mua cho khách hàng.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">B, Trường
-hợp không được đổi trả:<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">B, Trường
+        hợp không được đổi trả:<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">+ Không
-phải máy của Hoàng Hà Mobile bán ra.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">+ Không
+        phải máy của Hoàng Hà Mobile bán ra.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">+ Thời gian
-sử dụng đã quá 15/30 ngày<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">+ Thời gian
+        sử dụng đã quá 15/30 ngày<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">+ Máy không
-phát sinh lỗi nhưng chủ máy không ưng và muốn trả lại : trường hợp này cửa hàng
-sẽ nhập lại máy với tối đa 85% tùy theo tình trạng mới, cũ của máy.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">+ Máy không
+        phát sinh lỗi nhưng chủ máy không ưng và muốn trả lại : trường hợp này cửa hàng
+        sẽ nhập lại máy với tối đa 85% tùy theo tình trạng mới, cũ của máy.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Tham khảo
-chi tiết về chính sách bao xài, đổi trả </span><a href="https://hoanghamobile.com/chinh-sach-bao-hanh"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif">tại đây</span></b></a><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Tham khảo
+        chi tiết về chính sách bao xài, đổi trả </span><a href="https://hoanghamobile.comchinh-sach-bao-hanh.php"><b><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif">tại đây</span></b></a><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">&nbsp;</span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">&nbsp;</span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">3</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">:
-&nbsp;Khách hàng ở tỉnh làm sao để mua được máy?</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">3</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">:
+        &nbsp;Khách hàng ở tỉnh làm sao để mua được máy?</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời :</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">&nbsp;Bạn
-vui lòng sử dụng dịch vụ mua hàng Online để được ưu tiên. Hoàng Hà Mobile hỗ
-trợ miễn phí hoàn toàn chi phí vận chuyển khi mua hàng trên toàn quốc, thanh
-toán khi nhận hàng bạn nhé. Bên mình sẽ liên hệ lại với bạn ngay khi có sản
-phẩm để xác nhận thông tin nhé.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời :</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">&nbsp;Bạn
+        vui lòng sử dụng dịch vụ mua hàng Online để được ưu tiên. Hoàng Hà Mobile hỗ
+        trợ miễn phí hoàn toàn chi phí vận chuyển khi mua hàng trên toàn quốc, thanh
+        toán khi nhận hàng bạn nhé. Bên mình sẽ liên hệ lại với bạn ngay khi có sản
+        phẩm để xác nhận thông tin nhé.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">&nbsp;<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">&nbsp;<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">4</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">: Khách
-hàng thắc mắc về cách thức và lãi suất khi mua trả góp tại Hoàng Hà Mobile</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">4</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">: Khách
+        hàng thắc mắc về cách thức và lãi suất khi mua trả góp tại Hoàng Hà Mobile</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời:</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời:</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Khách hàng
-mua hàng trả góp theo chương trình của Sacombank.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Khách hàng
+        mua hàng trả góp theo chương trình của Sacombank.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Áp dụng với
-những khách hàng có thẻ tín dụng của Sacombank, khách hàng có thể lựa chọn trả
-góp 6 tháng hoặc 12 tháng với lãi suất 0%. Thủ tục hồ sơ gồm: CMND + Thẻ tín
-dụng. Bạn vui lòng qua trực tiếp các chi nhánh của Hoàng Hà Mobile để được hỗ
-trợ.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Áp dụng với
+        những khách hàng có thẻ tín dụng của Sacombank, khách hàng có thể lựa chọn trả
+        góp 6 tháng hoặc 12 tháng với lãi suất 0%. Thủ tục hồ sơ gồm: CMND + Thẻ tín
+        dụng. Bạn vui lòng qua trực tiếp các chi nhánh của Hoàng Hà Mobile để được hỗ
+        trợ.<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để trả góp
-theo chương trình của Home Credit với ưu điểm lãi xuất thấp, thời gian làm thủ
-tục ngắn gọn. Yêu cầu độ tuổi từ 21 – 60, khi làm thủ tục đăng kí trả góp yêu
-cầu CMND, Bằng lái xe. Chi nhánh hỗ trợ làm thủ tục theo chương trình của Home
-Credit (Không hỗ trợ mua hàng trả góp với sản phẩm cũ) tại 194 Lê Duẩn - ĐT:
-043.51.86.033<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để trả góp
+        theo chương trình của Home Credit với ưu điểm lãi xuất thấp, thời gian làm thủ
+        tục ngắn gọn. Yêu cầu độ tuổi từ 21 – 60, khi làm thủ tục đăng kí trả góp yêu
+        cầu CMND, Bằng lái xe. Chi nhánh hỗ trợ làm thủ tục theo chương trình của Home
+        Credit (Không hỗ trợ mua hàng trả góp với sản phẩm cũ) tại 194 Lê Duẩn - ĐT:
+        043.51.86.033<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để trả góp
-theo chương trình của FE Credit với ưu điểm lãi xuất thấp, thời gian làm thủ
-tục ngắn gọn. Yêu cầu độ tuổi từ 21 – 60, khi làm thủ tục đăng kí trả góp yêu
-cầu CMND, Bằng lái xe, hóa đơn điện nước. Chi nhánh hỗ trợ làm thủ tục trả góp
-theo chương trình của FE Credit (Hỗ trợ mua hàng trả góp với tất cả các sản
-phẩm cho mua hàng trả góp trên trang chủ) tại 95B Phố Huế - ĐT: 0968668995<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để trả góp
+        theo chương trình của FE Credit với ưu điểm lãi xuất thấp, thời gian làm thủ
+        tục ngắn gọn. Yêu cầu độ tuổi từ 21 – 60, khi làm thủ tục đăng kí trả góp yêu
+        cầu CMND, Bằng lái xe, hóa đơn điện nước. Chi nhánh hỗ trợ làm thủ tục trả góp
+        theo chương trình của FE Credit (Hỗ trợ mua hàng trả góp với tất cả các sản
+        phẩm cho mua hàng trả góp trên trang chủ) tại 95B Phố Huế - ĐT: 0968668995<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để biết
-chính xác mức phí trả góp cho từng hình thức để khách hàng có sự lựa chọn phù
-hợp, bạn vui lòng tham khảo trực tiếp tại đây:<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để biết
+        chính xác mức phí trả góp cho từng hình thức để khách hàng có sự lựa chọn phù
+        hợp, bạn vui lòng tham khảo trực tiếp tại đây:<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:18.75pt;
-margin-bottom:.0001pt;text-align:justify;mso-outline-level:3;vertical-align:
-baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;inherit&quot;,serif;
-mso-bidi-font-family:Arial;color:black;border:none windowtext 1.0pt;mso-border-alt:
-none windowtext 0in;padding:0in">5:</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;inherit&quot;,serif;mso-bidi-font-family:Arial;
-color:black;border:none windowtext 1.0pt;mso-border-alt:none windowtext 0in;
-padding:0in">&nbsp;Các cơ sở của Hoàng Hà Mobile ở đâu? Làm sao để liên hệ?</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:18.75pt;
+        margin-bottom:.0001pt;text-align:justify;mso-outline-level:3;vertical-align:
+        baseline"><strong><i><span style="font-size:10.5pt;font-family:&quot;inherit&quot;,serif;
+        mso-bidi-font-family:Arial;color:black;border:none windowtext 1.0pt;mso-border-alt:
+        none windowtext 0in;padding:0in">5:</span></i></strong><i><span style="font-size:10.5pt;font-family:&quot;inherit&quot;,serif;mso-bidi-font-family:Arial;
+        color:black;border:none windowtext 1.0pt;mso-border-alt:none windowtext 0in;
+        padding:0in">&nbsp;Các cơ sở của Hoàng Hà Mobile ở đâu? Làm sao để liên hệ?</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời :</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Trả lời :</span></strong><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để liên hệ
-và xem danh sách các cửa hàng của Hoàng Hà Mobile, khách hàng có thể vào
-website: Hoanghamobile.com xuống dưới cuối trang web truy cập vào link hệ thống
-các siêu thị trên toàn quốc hoặc khách hàng có thể truy cập&nbsp;</span><a href="https://hoanghamobile.com/he-thong-cua-hang" target="_blank"><b><span style="font-size: 10.5pt; font-family: Arial, sans-serif;">Tại đây</span></b></a><b><span style="font-size: 10.5pt; font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></b></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Để liên hệ
+        và xem danh sách các cửa hàng của Hoàng Hà Mobile, khách hàng có thể vào
+        website: Hoanghamobile.com xuống dưới cuối trang web truy cập vào link hệ thống
+        các siêu thị trên toàn quốc hoặc khách hàng có thể truy cập&nbsp;</span><a href="https://hoanghamobile.com/he-thong-cua-hang" target="_blank"><b><span style="font-size: 10.5pt; font-family: Arial, sans-serif;">Tại đây</span></b></a><b><span style="font-size: 10.5pt; font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></b></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Update…<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Update…<o:p></o:p></span></p>
 
-<p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
-text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Chúng tôi
-xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủng hộ chúng tôi.<o:p></o:p></span></p>
+        <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
+        text-align:justify;mso-outline-level:3;vertical-align:baseline"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif;color:black">Chúng tôi
+        xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủng hộ chúng tôi.<o:p></o:p></span></p>
 
-<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
-    </div>
+        <p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+            </div>
 </section>
 
 <iframe src="https://asia.creativecdn.com/tags?id=pr_n4X0y6ApZyJaHX1dNxQd&amp;ncm=1" width="1" height="1" scrolling="no" frameBorder="0" style="display: none;"></iframe>
@@ -941,13 +931,13 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
             <div class="link-content">
             <h4><a>Hỗ Trợ - Dịch Vụ</a></h4>
             <ul>
-                <li><a href="/mua-hang-tra-gop">Mua h&#224;ng trả g&#243;p</a></li>
-                <li><a href="/huong-dan-dat-hang">Hướng dẫn đặt h&#224;ng v&#224; thanh to&#225;n</a></li>
-                <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
-                <li><a href="/chinh-sach-bao-hanh">Ch&#237;nh s&#225;ch bảo h&#224;nh</a></li>
+                <li><a href="mua-tra-gop.php">Mua h&#224;ng trả g&#243;p</a></li>
+                <li><a href="huong-dan-dat-hang.php">Hướng Dẫn Đặt Hàng v&#224; thanh to&#225;n</a></li>
+                <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
+                <li><a href="chinh-sach-bao-hanh.php">Chính Sách Bảo Hành</a></li>
                 <li><a href="/dat-hang/bao-hanh-mo-rong">Phạm vi, điều khoản g&#243;i bảo h&#224;nh mở rộng</a></li>
-                <li><a href="/chinh-sach-bao-mat">Ch&#237;nh s&#225;ch bảo mật</a></li>
-                <li><a href="/chinh-sach-giai-quyet-khieu-nai">Ch&#237;nh s&#225;ch giải quyết khiếu nại</a></li>
+                <li><a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a></li>
+                <li><a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a></li>
                 <li><a href="/dieu-khoan-mua-ban-hang-hoa">Điều khoản mua b&#225;n h&#224;ng h&#243;a</a></li>
                 <li><a href="/cau-hoi-thuong-gap">C&#226;u hỏi thường gặp</a></li>
             </ul>
@@ -957,9 +947,9 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
             <ul>
                 <li><a href="/mua-hang-online">B&#225;n h&#224;ng Online</a></li>
                 <li><a href="/cham-soc-khach-hang">Chăm s&#243;c kh&#225;ch h&#224;ng</a></li>
-                <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch vụ sửa chữa Ho&#224;ng H&#224; Care</a></li>
+                <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a></li>
                 <li><a href="/hop-tac-kinh-doanh">Hợp t&#225;c kinh doanh</a></li>
-                <li><a href="/trung-tam-bao-hanh">Tra cứu bảo h&#224;nh</a></li>
+                <li><a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a></li>
             </ul>
         </div>
             <div class="link-content">
@@ -1020,9 +1010,9 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
                 <div id="navSocial">
                     <div class="social">
                         <ul>
-                                <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook Ho&#224;ng H&#224; Mobile" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube Ho&#224;ng H&#224; Mobile Channel" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
-                                <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Ho&#224;ng H&#224; Mobile Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
+                                <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
+                                <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
                                 <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
                         </ul>
                     </div>
@@ -1059,7 +1049,7 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
 
 
         <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
-            <a href="https://oa.zalo.me/262829019064124420" target="_blank"><img src="/Content/web/img/zalo.svg" /></a>
+            <a href="https://oa.zalo.me/262829019064124420" target="_blank"><img src="assets/images/icon/zalo.svg" /></a>
         </div>
 
     
@@ -1076,7 +1066,7 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    })(window, document, 'script', 'assets/js/analytics.js', 'ga');
 
     ga('create', 'UA-1415779-10', 'auto');
     ga('require', 'GTM-KXZQBMD');
@@ -1100,7 +1090,7 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
 <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqqrmpwwuqeianonpxt")</script>
 <!-- subiz -->
 <!-- accesstrade-->
-<script src="//static.accesstrade.vn/js/trackingtag/tracking.min.js "></script>
+<script src="assets/js/tracking.min.js"></script>
 <script type="text/javascript">
     AT.init({ "campaign_id": 626, "is_reoccur": 1, "is_lastclick": 1 });
     AT.track();
@@ -1109,7 +1099,7 @@ xin chân thành cảm ơn tất cả các khách hàng đã, đang và sẽ ủ
 
 
 
-        <script src="/js-css/web_v1.2.0.5.js"></script>
+        <script src="assets/js/main.js"></script>
     
     
     

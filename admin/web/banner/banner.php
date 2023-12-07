@@ -289,7 +289,7 @@ if(isset($_GET['id'])){
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="../../logout.php" class="dropdown-item notify-item">
+                        <a href="../logout.php" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Logout</span>
                         </a>

@@ -4,74 +4,67 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="author" content="hoanghamobile.com">
-    <meta property='og:site_name' content='hoanghamobile.com' />
+    <meta name="author" content="tpms.com">
+    <meta property='og:site_name' content='tpms.com' />
     <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
     <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Hoàn Kiếm, Hanoi, Vietnam" />
+    <meta name="geo.placename" content="Hanoi, Vietnam" />
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
-
-    <title>Ch&#237;nh s&#225;ch giải quyết khiếu nại</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/icon/fonts/hoangha.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" as="script" href="/js-css/web_v1.2.0.5.js">
-    <link rel="preload" as="style" href="/js-css/web_v1.2.0.5.css">
-    <link href="/js-css/web_v1.2.0.5.css" rel="stylesheet" type="text/css">
-    <style>
-        .product-center .current-product-price label.text-green {
-            display: none
-        }
-    </style>
-    <script>
-        window.insider_object = {};
-    </script>
+    <title>Chính Sách Giải Quyết Khiếu Nại</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilightItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/hoangha.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" as="script" href="assets/js/main.js">
+    <link rel="preload" as="style" href="assets/css/main.css">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    
+    
 
 
 
     <link rel="canonical" href="https://hoanghamobile.com/chinh-sach-giai-quyet-khieu-nai" />
-    <meta name="description" />
-    <meta name="keywords" />
+    
 
-    <meta name="twitter:title" content="Ch&#237;nh s&#225;ch giải quyết khiếu nại" />
-    <meta name="twitter:description">
+    <meta name="twitter:title" content="Chính Sách Giải Quyết Khiếu Nại" />
+    
     <meta name="twitter:url" content="https://hoanghamobile.com/chinh-sach-giai-quyet-khieu-nai">
 
-    <meta property="og:title" content="Ch&#237;nh s&#225;ch giải quyết khiếu nại" />
-    <meta property="og:description" />
+    <meta property="og:title" content="Chính Sách Giải Quyết Khiếu Nại" />
+    
     <meta property="og:url" content="https://hoanghamobile.com/chinh-sach-giai-quyet-khieu-nai" />
     <meta property="og:image" content="https://hoanghamobile.com/Content/web/img/no_seo_image.png" />
 
 
 
 
-    <script async src="//hoanghamobilevn.api.useinsider.com/ins.js?id=10005327"></script>
+    <script async src="assets/js/ins.js"></script>
 </head>
 
 <body>
 
-    <div class="top-link">
+    
+    <!-- <div class="top-link">
         <span class="pulse"></span>
         <p><strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL c&#243; hạn</strong> <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang" target="_top">Xem chi tiết</a></p>
-    </div>
+    </div> -->
     <header>
         <div class="top-navigation">
             <div class="container">
                 <ul>
                     <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
-                    <li><a href="/gioi-thieu-cong-ty">Giới thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản phẩm đ&#227; xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung t&#226;m bảo h&#224;nh</a></li>
+                    <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
+                    <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
+                    <li><a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a></li>
                     <li><a href="/he-thong-cua-hang">Hệ thống 123 si&#234;u thị</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
+                    <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
                     <li><a id="login-modal" href="/Account/Login?ReturnUrl=/chinh-sach-giai-quyet-khieu-nai">Đăng nhập</a></li>
                 </ul>
             </div>
@@ -82,8 +75,8 @@
         <div class="heading">
             <div class="container">
                 <div class="logo">
-                    <a href="/" title="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
-                        <img src="/Content/web/img/logo-text.png" alt="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
+                   <a href="index.php" title="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
+                        <img src="assets/images/logo/logo.png" alt="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
                     </a>
                 </div>
 
@@ -104,7 +97,7 @@
                         </a>
                     </div>
                     <div class="item cart">
-                        <a href="/gio-hang"><i class="icon-cart"></i><label><i class="icon-left"></i><span id="cart-total">0</span></label></a>
+                        <a href="gio-hang.php"><i class="icon-cart"></i><label><i class="icon-left"></i><span id="cart-total">0</span></label></a>
                     </div>
                 </div>
             </div>
@@ -232,7 +225,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/laptop/laptop-hp-15s-fq5159tu-7c0s0pa-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S" /></a>
+                                            <a href="https://hoanghamobile.com/laptop/laptop-hp-15s-fq5159tu-7c0s0pa-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S" /></a>
                                     </div>
                             </div>
                         </div>
@@ -264,7 +257,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103" /></a>
+                                            <a href="https://hoanghamobile.com/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103" /></a>
                                     </div>
                             </div>
                         </div>
@@ -311,7 +304,7 @@
 
 
                                     <div class="menu ads" style="width:580px">
-                                            <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243" /></a>
+                                            <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="https://hoanghamobile.com/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243" /></a>
                                     </div>
                             </div>
                         </div>
@@ -452,7 +445,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11" /></a>
+                                            <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11" /></a>
                                     </div>
                             </div>
                         </div>
@@ -601,7 +594,7 @@
 
 
                                     <div class="menu ads" style="width:600px">
-                                            <a href="https://hoanghamobile.com/camera/camera-hanh-trinh-gopro-hero-11-chinh-hang-fpt" target="_blank"><img style="width:600px" src="/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black" /></a>
+                                            <a href="https://hoanghamobile.com/camera/camera-hanh-trinh-gopro-hero-11-chinh-hang-fpt" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black" /></a>
                                     </div>
                             </div>
                         </div>
@@ -767,17 +760,14 @@
                 <meta itemprop="position" content="1" />
             </li>
             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href="/chinh-sach-giai-quyet-khieu-nai" title="Ch&#237;nh s&#225;ch giải quyết khiếu nại" class="actived"><span itemprop="name" content="Ch&#237;nh s&#225;ch giải quyết khiếu nại">Ch&#237;nh s&#225;ch giải quyết khiếu nại</span></a>
+                <a itemprop="item" href="/chinh-sach-giai-quyet-khieu-nai" title="Chính Sách Giải Quyết Khiếu Nại" class="actived"><span itemprop="name" content="Chính Sách Giải Quyết Khiếu Nại">Chính Sách Giải Quyết Khiếu Nại</span></a>
                 <meta itemprop="position" content="2" />
             </li>
         </ol>
     </div>
 </section>
 
-<style>
-    .page-text {}
-    .page-text img {max-width:100%; height:auto !important;}
-</style>
+
 
 <section>
     <div class="container page-text">
@@ -800,13 +790,13 @@
             <div class="link-content">
             <h4><a>Hỗ Trợ - Dịch Vụ</a></h4>
             <ul>
-                <li><a href="/mua-hang-tra-gop">Mua h&#224;ng trả g&#243;p</a></li>
-                <li><a href="/huong-dan-dat-hang">Hướng dẫn đặt h&#224;ng v&#224; thanh to&#225;n</a></li>
-                <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
-                <li><a href="/chinh-sach-bao-hanh">Ch&#237;nh s&#225;ch bảo h&#224;nh</a></li>
+                <li><a href="mua-tra-gop.php">Mua h&#224;ng trả g&#243;p</a></li>
+                <li><a href="huong-dan-dat-hang.php">Hướng Dẫn Đặt Hàng v&#224; thanh to&#225;n</a></li>
+                <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
+                <li><a href="chinh-sach-bao-hanh.php">Chính Sách Bảo Hành</a></li>
                 <li><a href="/dat-hang/bao-hanh-mo-rong">Phạm vi, điều khoản g&#243;i bảo h&#224;nh mở rộng</a></li>
-                <li><a href="/chinh-sach-bao-mat">Ch&#237;nh s&#225;ch bảo mật</a></li>
-                <li><a href="/chinh-sach-giai-quyet-khieu-nai">Ch&#237;nh s&#225;ch giải quyết khiếu nại</a></li>
+                <li><a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a></li>
+                <li><a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a></li>
                 <li><a href="/dieu-khoan-mua-ban-hang-hoa">Điều khoản mua b&#225;n h&#224;ng h&#243;a</a></li>
                 <li><a href="/cau-hoi-thuong-gap">C&#226;u hỏi thường gặp</a></li>
             </ul>
@@ -816,9 +806,9 @@
             <ul>
                 <li><a href="/mua-hang-online">B&#225;n h&#224;ng Online</a></li>
                 <li><a href="/cham-soc-khach-hang">Chăm s&#243;c kh&#225;ch h&#224;ng</a></li>
-                <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch vụ sửa chữa Ho&#224;ng H&#224; Care</a></li>
+                <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a></li>
                 <li><a href="/hop-tac-kinh-doanh">Hợp t&#225;c kinh doanh</a></li>
-                <li><a href="/trung-tam-bao-hanh">Tra cứu bảo h&#224;nh</a></li>
+                <li><a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a></li>
             </ul>
         </div>
             <div class="link-content">
@@ -879,9 +869,9 @@
                 <div id="navSocial">
                     <div class="social">
                         <ul>
-                                <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook Ho&#224;ng H&#224; Mobile" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube Ho&#224;ng H&#224; Mobile Channel" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
-                                <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Ho&#224;ng H&#224; Mobile Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
+                                <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
+                                <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
                                 <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
                         </ul>
                     </div>
@@ -918,7 +908,7 @@
 
 
         <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
-            <a href="https://oa.zalo.me/262829019064124420" target="_blank"><img src="/Content/web/img/zalo.svg" /></a>
+            <a href="https://oa.zalo.me/262829019064124420" target="_blank"><img src="assets/images/icon/zalo.svg" /></a>
         </div>
 
     
@@ -935,7 +925,7 @@
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    })(window, document, 'script', 'assets/js/analytics.js', 'ga');
 
     ga('create', 'UA-1415779-10', 'auto');
     ga('require', 'GTM-KXZQBMD');
@@ -959,7 +949,7 @@
 <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqqrmpwwuqeianonpxt")</script>
 <!-- subiz -->
 <!-- accesstrade-->
-<script src="//static.accesstrade.vn/js/trackingtag/tracking.min.js "></script>
+<script src="assets/js/tracking.min.js"></script>
 <script type="text/javascript">
     AT.init({ "campaign_id": 626, "is_reoccur": 1, "is_lastclick": 1 });
     AT.track();
@@ -968,7 +958,7 @@
 
 
 
-        <script src="/js-css/web_v1.2.0.5.js"></script>
+        <script src="assets/js/main.js"></script>
     
     
     

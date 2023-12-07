@@ -3,55 +3,48 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="hoanghamobile.com">
-    <meta property='og:site_name' content='hoanghamobile.com' />
+    <meta name="author" content="tpms.com">
+    <meta property='og:site_name' content='tpms.com' />
     <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
     <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Hoàn Kiếm, Hanoi, Vietnam" />
+    <meta name="geo.placename" content="Hanoi, Vietnam" />
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
-    <title>Mua h &#224;ng online ch &#237;nh h &#227;ng gi &#225;rẻ tại Ho &#224;ng H &#224;Mobile</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Bold Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/Segoe UI/Segoe UI Semilight Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Content/web/fonts/icon/fonts/hoangha.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" as="script" href="/js-css/web_v1.2.0.5.js">
-    <link rel="preload" as="style" href="/js-css/web_v1.2.0.5.css">
-    <link href="/js-css/web_v1.2.0.5.css" rel="stylesheet" type="text/css">
-    <style>
-        .product-center .current-product-price label.text-green {
-            display: none
-        }
-    </style>
-    <script>
-        window.insider_object = {};
-    </script>
+    <title>Hướng Dẫn Mua Hàng Online</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/SegoeUISemilightItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SegoeUI/hoangha.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" as="script" href="assets/js/main.js">
+    <link rel="preload" as="style" href="assets/css/main.css">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    
+    
     <link rel="canonical" href="https://hoanghamobile.com/mua-hang-online" />
-    <meta name="description" />
-    <meta name="keywords" />
-    <meta name="twitter:title" content="Mua h&#224;ng online ch&#237;nh h&#227;ng gi&#225; rẻ tại Ho&#224;ng H&#224; Mobile" />
-    <meta name="twitter:description">
+    
+    <meta name="twitter:title" content="Mua h&#224;ng online ch&#237;nh h&#227;ng gi&#225; rẻ tại" />
+    
     <meta name="twitter:url" content="https://hoanghamobile.com/mua-hang-online">
-    <meta property="og:title" content="Mua h&#224;ng online ch&#237;nh h&#227;ng gi&#225; rẻ tại Ho&#224;ng H&#224; Mobile" />
-    <meta property="og:description" />
+    <meta property="og:title" content="Mua h&#224;ng online ch&#237;nh h&#227;ng gi&#225; rẻ tại" />
+    
     <meta property="og:url" content="https://hoanghamobile.com/mua-hang-online" />
     <meta property="og:image" content="https://hoanghamobile.com/Content/web/img/no_seo_image.png" />
-    <script async src="//hoanghamobilevn.api.useinsider.com/ins.js?id=10005327"></script>
+    <script async src="assets/js/ins.js"></script>
 </head>
 
 <body>
-    <div class="top-link">
+    <!-- <div class="top-link">
         <span class="pulse"></span>
         <p>
             <strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL c &#243;hạn</strong>
             <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang" target="_top">Xem chi tiết</a>
         </p>
-    </div>
+    </div> -->
     <header>
         <div class="top-navigation">
             <div class="container">
@@ -60,13 +53,13 @@
                         <a href="/mobileswitch?mobile=true">Bản mobile</a>
                     </li>
                     <li>
-                        <a href="/gioi-thieu-cong-ty">Giới thiệu</a>
+                        <a href="gioi-thieu-cong-ty.php">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="/san-pham-da-xem">Sản phẩm đ &#227;xem</a>
+                        <a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a>
                     </li>
                     <li>
-                        <a href="/trung-tam-bao-hanh">Trung t &#226;m bảo h &#224;nh</a>
+                        <a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a>
                     </li>
                     <li>
                         <a href="/he-thong-cua-hang">Hệ thống 123 si &#234;u thị</a>
@@ -75,7 +68,7 @@
                         <a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a>
                     </li>
                     <li>
-                        <a href="/order/check">Tra cứu đơn h &#224;ng</a>
+                        <a href="/order/check">Tra Cứu Đơn Hàng</a>
                     </li>
                     <li>
                         <a id="login-modal" href="/Account/Login?ReturnUrl=/mua-hang-online">Đăng nhập</a>
@@ -87,8 +80,8 @@
         <div class="heading">
             <div class="container">
                 <div class="logo">
-                    <a href="/" title="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
-                        <img src="/Content/web/img/logo-text.png" alt="C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;">
+                   <a href="index.php" title="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
+                        <img src="assets/images/logo/logo.png" alt="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
                     </a>
                 </div>
                 <div class="search-box">
@@ -357,7 +350,7 @@
                                     </div>
                                     <div class="menu ads" style="width:600px">
                                         <a href="https://hoanghamobile.com/laptop/laptop-hp-15s-fq5159tu-7c0s0pa-chinh-hang?source=Topmenu" target="_blank">
-                                            <img style="width:600px" src="/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S"/>
+                                            <img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S"/>
                                         </a>
                                     </div>
                                 </div>
@@ -412,7 +405,7 @@
                                     </div>
                                     <div class="menu ads" style="width:600px">
                                         <a href="https://hoanghamobile.com/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang?source=Topmenu" target="_blank">
-                                            <img style="width:600px" src="/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103"/>
+                                            <img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103"/>
                                         </a>
                                     </div>
                                 </div>
@@ -495,7 +488,7 @@
                                     </div>
                                     <div class="menu ads" style="width:580px">
                                         <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank">
-                                            <img style="width:580px" src="/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243"/>
+                                            <img style="width:580px" src="https://hoanghamobile.com/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243"/>
                                         </a>
                                     </div>
                                 </div>
@@ -782,7 +775,7 @@
                                     </div>
                                     <div class="menu ads" style="width:600px">
                                         <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank">
-                                            <img style="width:600px" src="/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11"/>
+                                            <img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11"/>
                                         </a>
                                     </div>
                                 </div>
@@ -1043,7 +1036,7 @@
                                     </div>
                                     <div class="menu ads" style="width:600px">
                                         <a href="https://hoanghamobile.com/camera/camera-hanh-trinh-gopro-hero-11-chinh-hang-fpt" target="_blank">
-                                            <img style="width:600px" src="/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black"/>
+                                            <img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black"/>
                                         </a>
                                     </div>
                                 </div>
@@ -1279,7 +1272,7 @@
             <div class="container">
                 <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a itemprop="item" href="/">
+                        <a itemprop="item" href="index.php">
                             <span itemprop="name" content="Trang chủ">
                                 <i class="icon-home" title="Trang chủ"></i>
                                 Trang chủ
@@ -1288,7 +1281,7 @@
                         <meta itemprop="position" content="1"/>
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a itemprop="item" href="/mua-hang-online" title="Mua h&#224;ng online ch&#237;nh h&#227;ng gi&#225; rẻ tại Ho&#224;ng H&#224; Mobile" class="actived">
+                        <a itemprop="item" href="/mua-hang-online" title="Mua h&#224;ng online ch&#237;nh h&#227;ng gi&#225; rẻ tại" class="actived">
                             <span itemprop="name" content="Mua h&#224;ng online">Mua h &#224;ng online</span>
                         </a>
                         <meta itemprop="position" content="2"/>
@@ -1296,15 +1289,7 @@
                 </ol>
             </div>
         </section>
-        <style>
-            .page-text {
-            }
-
-            .page-text img {
-                max-width: 100%;
-                height: auto !important;
-            }
-        </style>
+        
         <section>
             <div class="container page-text">
                 <ul style="margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 15px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; list-style: none;">
@@ -1380,7 +1365,7 @@
                                 <p style="text-align: justify; margin-bottom: 1.5em; color: rgb(46, 46, 46); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 15px; background-color: rgb(244, 244, 244);">
                                     Tham khảo hướng dẫn đặt hàng &nbsp;
                                     <span style="font-weight: bolder;">
-                                        <a href="https://hoanghamobile.com/huong-dan-dat-hang" style="color: var(--e-global-color-primary); box-shadow: none;">tại đây</a>
+                                        <a href="https://hoanghamobile.comhuong-dan-dat-hang.php" style="color: var(--e-global-color-primary); box-shadow: none;">tại đây</a>
                                     </span>
                                     .
                                 </p>
@@ -1491,147 +1476,112 @@
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="/mua-hang-tra-gop">Mua h &#224;ng trả g &#243;p</a>
+                                    <a href="mua-tra-gop.php">Chính Sách Và Hướng Dẫn Mua Hàng Trả Góp</a>
                                 </li>
                                 <li>
-                                    <a href="/huong-dan-dat-hang">Hướng dẫn đặt h &#224;ng v &#224;thanh to &#225;n</a>
+                                    <a href="huong-dan-dat-hang.php">Hướng Dẫn Đặt Hàng Và Thanh Toán</a>
                                 </li>
                                 <li>
-                                    <a href="/order/check">Tra cứu đơn h &#224;ng</a>
+                                    <a href="/order/check">Tra Cứu Đơn Hàng</a>
                                 </li>
                                 <li>
-                                    <a href="/chinh-sach-bao-hanh">Ch &#237;nh s &#225;ch bảo h &#224;nh</a>
+                                    <a href="chinh-sach-bao-hanh.php">Chính Sách Bảo Hành</a>
                                 </li>
                                 <li>
-                                    <a href="/dat-hang/bao-hanh-mo-rong">Phạm vi, điều khoản g &#243;i bảo h &#224;nh mở rộng</a>
+                                    <a href="/dat-hang/bao-hanh-mo-rong">Phạm Vi, Điều Khoản Gói Bảo Hành Mở Rộng</a>
                                 </li>
                                 <li>
-                                    <a href="/chinh-sach-bao-mat">Ch &#237;nh s &#225;ch bảo mật</a>
+                                    <a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a>
                                 </li>
                                 <li>
-                                    <a href="/chinh-sach-giai-quyet-khieu-nai">Ch &#237;nh s &#225;ch giải quyết khiếu nại</a>
+                                    <a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a>
                                 </li>
                                 <li>
-                                    <a href="/dieu-khoan-mua-ban-hang-hoa">Điều khoản mua b &#225;n h &#224;ng h &#243;a</a>
+                                    <a href="/dieu-khoan-mua-ban-hang-hoa">Điều Khoản Mua Bán Hàng Hóa</a>
                                 </li>
                                 <li>
-                                    <a href="/cau-hoi-thuong-gap">C &#226;u hỏi thường gặp</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="link-content">
-                            <h4>
-                                <a>Th &#244;ng Tin Li &#234;n Hệ</a>
-                            </h4>
-                            <ul>
-                                <li>
-                                    <a href="/mua-hang-online">B &#225;n h &#224;ng Online</a>
-                                </li>
-                                <li>
-                                    <a href="/cham-soc-khach-hang">Chăm s &#243;c kh &#225;ch h &#224;ng</a>
-                                </li>
-                                <li>
-                                    <a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch vụ sửa chữa Ho &#224;ng H &#224;Care</a>
-                                </li>
-                                <li>
-                                    <a href="/hop-tac-kinh-doanh">Hợp t &#225;c kinh doanh</a>
-                                </li>
-                                <li>
-                                    <a href="/trung-tam-bao-hanh">Tra cứu bảo h &#224;nh</a>
+                                    <a href="/cau-hoi-thuong-gap">Câu Hỏi Thường Gặp</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="link-content">
                             <h4>
-                                <a href="/he-thong-cua-hang">Hệ thống 123 si &#234;u thị tr &#234;n to &#224;n quốc</a>
+                                <a>Thông Tin Liên Hệ</a>
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="/he-thong-cua-hang">Danh s &#225;ch 123 si &#234;u thị tr &#234;n to &#224;n quốc</a>
+                                    <a href="/mua-hang-online">Bán Hàng Online</a>
+                                </li>
+                                <li>
+                                    <a href="/cham-soc-khach-hang">Chăm Sóc Khách Hàng</a>
+                                </li>
+                                <li>
+                                    <a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a>
+                                </li>
+                                <li>
+                                    <a href="/hop-tac-kinh-doanh">Hợp Tác Kinh Doanh</a>
+                                </li>
+                                <li>
+                                    <a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="link-content">
+                            <h4>
+                                <a href="/he-thong-cua-hang">Hệ Thống Showroom</a>
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="/he-thong-cua-hang">Danh Sách Showroom</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <h4>Tổng đài</h4>
-                            <a class="hotline" href="tel:1900.2091">1900.2091</a>
+                        <a class="hotline" href="tel:0386131716">03.86.13.17.16</a>
                         </div>
                         <div>
                             <h4>Thanh toán miễn phí</h4>
                             <ul class="list-logo">
-                                <li>
-                                    <img src="/Content/web/img/logo-visa.png">
-                                    <img src="/Content/web/img/logo-master.png">
-                                </li>
-                                <li>
-                                    <img src="/Content/web/img/logo-jcb.png">
-                                    <img src="/Content/web/img/logo-samsungpay.png">
-                                </li>
-                                <li>
-                                    <img src="/Content/web/img/logo-atm.png">
-                                    <img src="/Content/web/img/logo-vnpay.png">
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Hình thức vận chuyển</h4>
-                            <ul class="list-logo">
-                                <li>
-                                    <img src="/Content/web/img/nhattin.jpg">
-                                    <img src="/Content/web/img/vnpost.jpg">
-                                </li>
-                            </ul>
-                            <div class="mg-top20">
-                                <a href="http://online.gov.vn/Home/WebDetails/28738" target="_blank">
-                                    <img src="/Content/web/img/logo-bct.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <p>© 2020. C &#212;NG TY CỔ PHẦN X &#194;Y DỰNG V &#192;ĐẦU TƯ THƯƠNG MẠI HO &#192;NG H &#192;. MST:  0106713191. (Đăng k &#253;lần đầu: Ng &#224;y 15 th &#225;ng 12 năm 2014, Đăng k &#253;thay đổi ng &#224;y 24/11/2022)</p>
-                        <p>
-                            <strong>GP số 426/GP-TTĐT do sở TTTT Hà Nội cấp ngày 22/01/2021</strong>
-                        </p>
-                        <p>
-                            Địa chỉ: Số 89 Đường Tam Trinh, Phường Mai Động, Quận Ho &#224;ng Mai, Th &#224;nh Phố H &#224;Nội, Việt Nam. Điện thoại: 1900.2091. Chịu trách nhiệm nội dung: <strong>Hoàng Ngọc Chiến</strong>
-                            . 
-                        </p>
-                    </div>
-                </div>
-                <div id="navSocial">
-                    <div class="social">
-                        <ul>
                             <li>
-                                <a href="https://www.facebook.com/hoanghamobilecom" title="Facebook Ho&#224;ng H&#224; Mobile" target="_blank" class="blue">
-                                    <span>
-                                        <i class="icon-facebook"></i>
-                                    </span>
-                                </a>
+                                <img src="assets/images/logo/logo-visa.png">
+                                <img src="assets/images/logo/logo-master.png">
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube Ho&#224;ng H&#224; Mobile Channel" target="_blank" class="red">
-                                    <span>
-                                        <i class="icon-youtube"></i>
-                                    </span>
-                                </a>
+                                <img src="assets/images/logo/logo-jcb.png">
+                                <img src="assets/images/logo/logo-samsungpay.png">
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Ho&#224;ng H&#224; Mobile Instagram" target="_blank" class="rainbow">
-                                    <span>
-                                        <i class="icon-instagram"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black">
-                                    <span>
-                                        <i class="icon-tiktok"></i>
-                                    </span>
-                                </a>
+                                <img src="assets/images/logo/logo-atm.png">
+                                <img src="assets/images/logo/logo-vnpay.png">
                             </li>
                         </ul>
+                        </div>
+                        <div>
+                        <h4>Hình thức vận chuyển</h4>
+                        <ul class="list-logo">
+                            <li>
+                                <img src="assets/images/logo/nhattin.jpg">
+                                <img src="assets/images/logo/vnpost.jpg">
+                            </li>
+                        </ul>
+                        <div class="mg-top20">
+                            <a href="http://online.gov.vn/Home/WebDetails/28738" target="_blank"><img src="assets/images/logo/logo-bct.png"></a>
+                        </div>
                     </div>
+                    </div>
+                    
                 </div>
+                <div id="navSocial">
+                <div class="social">
+                    <ul>
+                            <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
+                            <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
+                            <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
                 <div id="backtoTop">
                     <a id="top" href="javascript:;">
                         <i class="icon-left"></i>
@@ -1643,25 +1593,23 @@
         <div id="sticker-modal"></div>
         <div class="search-bg"></div>
         <div class="footer-stick-right" style="position: fixed; bottom: 175px; right: 33px; display:none">
-            <a href="javascript:removeStick();" style="background: #4B4B4B;color: #FFF;border-radius: 20px;font-size: 8px;width: 20px;height: 20px;display: flex;text-align: center; position:absolute; right:-5px; top:-5px;">
-                <i class="iconv2-remove" style="display:block; margin:auto;"></i>
+        <a href="javascript:removeStick();" style="background: #4B4B4B;color: #FFF;border-radius: 20px;font-size: 8px;width: 20px;height: 20px;display: flex;text-align: center; position:absolute; right:-5px; top:-5px;">
+            <i class="iconv2-remove" style="display:block; margin:auto;"></i>
+        </a>
+        <div style="padding-bottom:10px;">
+            <a href="/kho-san-pham-cu">
+                <img src="assets/images/icon/maycugiatot.png" />
             </a>
-            <div style="padding-bottom:10px;">
-                <a href="/kho-san-pham-cu">
-                    <img src="/Content/web/img/maycugiatot.png"/>
-                </a>
-            </div>
-            <div>
-                <a href="/dat-hang/thu-cu-doi-moi-iphone-chinh-hang-vn-a-hoanghamobile">
-                    <img src="/Content/web/img/thucugiacao.png"/>
-                </a>
-            </div>
         </div>
+        <div>
+            <a href="/dat-hang/thu-cu-doi-moi-iphone-chinh-hang-vn-a-hoanghamobile">
+                <img src="assets/images/icon/thucugiacao.png" />
+            </a>
+        </div>
+    </div>
         <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
-            <a href="https://oa.zalo.me/262829019064124420" target="_blank">
-                <img src="/Content/web/img/zalo.svg"/>
-            </a>
-        </div>
+        <a href="https://chat.zalo.me/0386131716" target="_blank"><img src="assets/images/icon/zalo.svg" /></a>
+    </div>
         <script type='application/ld+json'>
             {
                 "@context": "https:\/\/schema.org",
@@ -1690,7 +1638,7 @@
                 a.src = g;
                 m.parentNode.insertBefore(a, m)
             }
-            )(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            )(window, document, 'script', 'assets/js/analytics.js', 'ga');
 
             ga('create', 'UA-1415779-10', 'auto');
             ga('require', 'GTM-KXZQBMD');
@@ -1746,7 +1694,7 @@
         </script>
         <!-- subiz -->
         <!-- accesstrade-->
-        <script src="//static.accesstrade.vn/js/trackingtag/tracking.min.js "></script>
+        <script src="assets/js/tracking.min.js"></script>
         <script type="text/javascript">
             AT.init({
                 "campaign_id": 626,
@@ -1756,7 +1704,7 @@
             AT.track();
         </script>
         <!-- accesstrade-->
-        <script src="/js-css/web_v1.2.0.5.js"></script>
+        <script src="assets/js/main.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 showSticker(81);

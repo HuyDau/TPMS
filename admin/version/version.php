@@ -36,22 +36,25 @@ if (isset($_POST['add'])) {
     }
 }
 
-if(isset($_GET['id'])){
+if(isset($_GET['productId'])){
 
-    $id = $_GET['id'];
+    $id = $_GET['productId'];
 
     $sqlEditVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE id = $id");
     $infoVersion = mysqli_fetch_assoc($sqlEditVersion);
 
-    if (isset($_POST['editVersion'])) {
-        $prodId = $_POST['prodId'];
-        $versionCode = $_POST['versionCode'];
-        $versionName = $_POST['versionName'];
-        if ($_FILES['versionImage']['name'] == "") {
-            $versionImage = $infoVersion['versionImage'];
+    if (isset($_POST['EditVersion'])) {
+        $prodId = $_POST['id1'];
+        $code1 = $_POST['code1'];
+        $name1 = $_POST['name1'];
+        $version1 = $_POST['version1'];
+        $price1 = $_POST['price1'];
+        $prices1 = $_POST['p-price1'];
+        if ($_FILES['image1']['name'] == "") {
+            $versionImage = $infoVersion['productImage'];
         } else {
-            $versionImage = $_FILES['versionImage']['name'];
-            $versionImage_tmp = $_FILES['versionImage']['tmp_name'];
+            $versionImage = $_FILES['image1']['name'];
+            $versionImage_tmp = $_FILES['image1']['tmp_name'];
             $sqlPrroduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $prodId");
             $itemProduct = mysqli_fetch_assoc($sqlPrroduct);
             $idCategory = $itemProduct['idCategory'];
@@ -69,12 +72,16 @@ if(isset($_GET['id'])){
                 move_uploaded_file($versionImage_tmp, '../../uploads/product/watch/' . $versionImage);
             }
         }
-        $versionPrice = $_POST['versionPrice'];
-        $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `versionCode`='$versionCode',`versionName`='$versionName',`versionImage`='$versionImage',`versionPrice`='$versionPrice' WHERE id = $id");
-
-        if($editVersion){
-            header("Location: version.php");
+        $description1 = $_POST['description1'];
+        if($prices1 <= $price1){
+            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `productVersion`='$version1',`productCode`='$code1',`productName`='$name1',`productImage`='$versionImage',`productPrice`='$price1',`productPromotionalPrice`='$prices1',`productDescription`='$description1' WHERE id = $id");
+            if($editVersion){
+                header("Location: version.php");
+            }
+        }else{
+            echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'version.php'</script>";
         }
+        
     }
 }
 
@@ -131,33 +138,49 @@ if(isset($_GET['id'])){
                             <div class="col-6">
                                 <div class="form-group">
                                     <label class="control-label">Product ID: </label>
-                                    <input class="form-control form-white" placeholder="Enter Product ID ..." type="text" name="prodId" value="<?=$infoVersion['productId'] ?>" required>
+                                    <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id1" value="<?=$infoVersion['productId']?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Version Code: </label>
-                                    <input class="form-control form-white" placeholder="Enter Version Code ..." type="text" name="versionCode" value="<?=$infoVersion['versionCode'] ?>" required>
+                                    <label class="control-label">Product Code: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code1" value="<?=$infoVersion['productCode']?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Version Name: </label>
-                                    <input class="form-control form-white" placeholder="Enter Version Name ..." type="text" name="versionName" value="<?=$infoVersion['versionName'] ?>" required>
+                                    <label class="control-label">Product Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="name1" value="<?=$infoVersion['productName']?>" required>
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label class="control-label">Product Version: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="version1" value="<?=$infoVersion['productVersion']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Iamge: </label>
+                                    <input type="file" multiple="multiple" name="image1" class="form-control">
+                                    <span><?=$infoVersion['productImage']?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="price1" value="<?=$infoVersion['productPrice']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Promotional Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="p-price1" value="<?=$infoVersion['productPromotionalPrice']?>" required>
+                                </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label class="control-label">Version Image: </label>
-                                    <input type="file" multiple="multiple" name="versionImage" class="form-control">
-                                    <span><?=$infoVersion['versionImage'] ?></span>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Version Price: </label>
-                                    <input class="form-control form-white" placeholder="Enter Version Price ..." type="text" name="versionPrice" value="<?=$infoVersion['versionPrice'] ?>" required>
+                                    <label class="control-label">Description: </label>
+                                    <textarea name="description1" id="des" cols="150" rows="10" required>
+                                        <?=$infoVersion['productDescription']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('des')
+                                    </script>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="text-right pt-2">
-                                <button name="editVersion" class="btn btn-primary ml-1">Save</button>
+                                <button name="EditVersion" class="btn btn-primary ml-1">Save</button>
                                 <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="version.php">Close</a></button>
                             </div>
                         </div>
@@ -318,7 +341,7 @@ if(isset($_GET['id'])){
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="../../logout.php" class="dropdown-item notify-item">
+                        <a href="../logout.php" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Logout</span>
                         </a>
@@ -532,10 +555,11 @@ if(isset($_GET['id'])){
                                             <tr>
                                                 <th>NO</th>
                                                 <th>PRODUCT CODE</th>
-                                                <th>VERSION CODE</th>
-                                                <th>VERSION NAME</th>
-                                                <th style="width: 100px;">VERSION IMAGE</th>
-                                                <th>VERSION PRICE</th>
+                                                <th>CATEGORY</th>
+                                                <th>BRAND</th>
+                                                <th>IMAGE</th>
+                                                <th>PRICE</th>
+                                                <th>PROMOTIONAL PRICE</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -551,36 +575,45 @@ if(isset($_GET['id'])){
                                                         <?= $i++ ?>
                                                     </td>
                                                     <td>
-                                                        <?php
-                                                            $idProd =  $row['productId'] ;
+                                                        <?=  $row['productId'] ; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php 
+                                                            $idProd = $row['productId'];
                                                             $sqlProduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $idProd");
-                                                            $itemProduct = mysqli_fetch_assoc( $sqlProduct);
-                                                            echo $itemProduct['productCode'];
+                                                            $itemProduct = mysqli_fetch_assoc($sqlProduct);
+                                                            $idCat = $itemProduct['idCategory'];
+                                                            $sqlCategory = mysqli_query($conn,"SELECT * FROM tbl_products INNER JOIN tbl_categories ON tbl_categories.Id = tbl_products.idCategory   WHERE idCategory = $idCat");
+                                                            $itemCategory = mysqli_fetch_assoc($sqlCategory);
+                                                            echo $itemCategory['categoryName'];
                                                         ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['versionCode'] ?>
+                                                        <?php 
+                                                            // $idProd = $row['productId'];
+                                                            // $sqlProduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $idProd");
+                                                            // $itemProduct = mysqli_fetch_assoc($sqlProduct);
+                                                            $idBrand = $itemProduct['idBrand'];
+                                                            $sqlBrand = mysqli_query($conn,"SELECT * FROM tbl_products INNER JOIN tbl_brands ON tbl_brands.id = tbl_products.idBrand   WHERE idBrand = $idCat");
+                                                            $itemBrand = mysqli_fetch_assoc($sqlBrand);
+                                                            echo $itemBrand['brandName'];
+                                                        ?>
                                                     </td>
                                                     <td>
-                                                        <?= $row['versionName'] ?>
-                                                    </td>
-                                                    <td style="width: 100px;">
                                                         <?php
-                                                            $idProd =  $row['productId'] ;
-                                                            $sqlProduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $idProd");
-                                                            $itemProduct = mysqli_fetch_assoc( $sqlProduct);
-
                                                             if($itemProduct['idCategory'] == 1){
-                                                                ?> <img style="width: 100%;" src="../../uploads/product/smartphone/<?= $row['versionImage'] ?>" alt="<?= $row['versionImage'] ?>"> <?php
+                                                                ?> <img src="../../uploads/product/smartphone/<?= $row['productImage'] ?>" alt="<?= $row['productName'] ?>"> <?php
                                                             }
                                                         ?>
                                                     </td>
                                                     <td>
-                                                        <?= number_format($row['versionPrice'],0,"",".") ?>
+                                                        <?= number_format($row['productPrice'],0,"",".") ?>
                                                     </td>
-
-                                                    <td><a href="version.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['versionName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td>
+                                                        <?= number_format($row['productPromotionalPrice'],0,"",".") ?>
+                                                    </td>
+                                                    <td><a href="version.php?productId=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['productName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -657,7 +690,7 @@ if(isset($_GET['id'])){
     <script src="..\assets\js\app.min.js"></script>
     
     <?php
-        if(isset($_GET['id'])){
+        if(isset($_GET['productId'])){
             echo '<script> document.getElementById("form-edit").classList.add("show")</script>';
 
             $id = $_GET['id'];

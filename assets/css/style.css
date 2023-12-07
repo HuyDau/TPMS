@@ -1,0 +1,154 @@
+.container-fluid{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+input{
+	font-family: none !important;
+}
+.row{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.imagePreview{
+	width: 100%;
+	visibility: visible;
+}
+.slick-arrow{
+	width: 50px !important;
+	height: 50px !important;
+}
+.slider-single-item{
+	width: 100%;
+}
+.slider-single-item img{
+	width: 100%;
+	height: auto;
+}
+.slider-nav-item img{
+	width: 63px;
+	height: auto;
+}
+.slick-track{width: 650px !important;}
+.slider-nav-item.slick-slide{
+	width: 65px !important;
+}
+
+.js .slider-single > div:nth-child(1n+2) { display: none }
+
+.js .slider-single.slick-initialized > div:nth-child(1n+2) { display: block }
+.slick-next{
+	right: 0px !important;
+}
+.slick-prev{
+	z-index: 100;
+	left: 0px !important;
+}
+
+/* h3 {
+	background: #f0f0f0;
+	color: #3498db;
+	font-size: 2.25rem;
+	margin: .5rem;
+	padding: 2%;
+	position: relative;
+	text-align: center;
+} */
+
+/* .slider-single h3 {
+	line-height: 10rem;
+}
+
+.slider-nav h3::before {
+	content: "";
+	display: block;
+	padding-top: 75%;
+} */
+
+/* .slider-nav h3 span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} */
+
+.slider-nav .slick-slide { cursor: pointer; }
+
+.slick-slide.is-active img {
+	border: #0bbf56 1px solid;
+}
+
+/* Home */
+.heading-row{
+	padding: 20px 0 !important;
+}
+
+/* GIỚI THIỆU */
+.gt-span{font-size: 13pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: 700; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;}
+.gt-span1{font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;}
+.gt-span2{font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: 700; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;}
+.gt-span3{font-size: 18pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: 700; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;}
+.gt-span4{color: rgb(0, 0, 0);font-weight: 400; font-style: italic;}
+.gt-p{line-height:1.295;text-align: justify;margin-top:0pt;margin-bottom:8pt;}
+.gt-p1{line-height:1.295;text-align: justify;margin-top:0pt;margin-bottom:0pt;}
+.gt-p2{line-height:1.295;text-align: center;margin-top:0pt;margin-bottom:8pt;}
+.gt-li{list-style-type:disc;font-size:15pt;font-family:'Noto Sans Symbols',sans-serif;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;}
+.gt-li1{list-style-type:disc;font-size:15pt;font-family:Calibri,sans-serif;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;}
+
+/* Mua Trả Góp */
+.tg-p{line-height: 1.295; margin-top: 0pt; margin-bottom: 7.5pt;}
+.tg-p1{line-height:1.295;margin-top:0pt;margin-bottom:8pt;}
+.tg-p2{line-height:1.2;text-align: center;margin-top:0pt;margin-bottom:0pt;}
+.tg-p3{line-height:1.2;margin-top:0pt;margin-bottom:0pt;}
+.tg-p4{margin-bottom: 10px; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51);}
+.tg-p5{margin: 6pt 0cm 6pt 18pt; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51); text-indent: -18pt; line-height: 16.8px;}
+.tg-p6{margin: 6pt 0cm 6pt 36pt; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51); text-indent: -18pt; line-height: 16.8px;}
+.tg-p7{margin: 6pt 0cm 0cm 18pt; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51); text-indent: -18pt; line-height: 16.8px;}
+.tg-p8{margin: 0cm 0cm 6pt 18pt; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51); text-indent: -27.35pt; line-height: 16.8px;}
+.tg-p9{margin-bottom: 0cm; padding: 0px; text-wrap: wrap; font-family: inherit; font-size: inherit; color: inherit; text-align: center; line-height: normal;}
+
+.tg-span{font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;}
+.tg-span1{line-height: 107%;}
+.tg-span2{font-family: inherit; font-size: inherit; font-weight: 700;}
+.tg-span3{margin: 0px; padding: 0px; font-family: inherit; font-size: inherit; color: rgb(231, 76, 60); vertical-align: baseline;}
+.tg-span4{margin: 0px; padding: 0px; font-family: inherit; font-size: inherit; color: inherit; display: inline; vertical-align: baseline;}
+.tg-span5{margin: 0px; padding: 0px; font-weight: 700; font-family: inherit; font-size: inherit; color: inherit;}
+.tg-span6{margin: 0px; padding: 0px; font-weight: 700; font-size: 13px; color: rgb(22, 160, 133); -webkit-user-drag: none; overflow: visible;}
+.tg-span7{margin: 0px; padding: 0px; font-family: Segoe UI, sans-serif; font-size: 12pt; color: inherit; display: inline; vertical-align: baseline; line-height: 19.2px;}
+.tg-span8{margin: 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: Times New Roman; color: inherit; vertical-align: baseline;}
+.tg-span9{margin: 0px; padding: 0px; font-family: inherit; font-size: inherit; color: inherit; vertical-align: baseline; background: aqua;}
+.tg-span10{margin: 0px; padding: 0px; font-family: Times New Roman, serif; font-size: 12pt; color: inherit; display: inline; vertical-align: baseline; line-height: 19.2px;}
+.tg-span11{margin: 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: Times New Roman; color: inherit; vertical-align: baseline;}
+.tg-span12{margin: 0px; padding: 0px; font-family: Segoe UI, sans-serif; font-size: 10pt; color: black; display: inline; vertical-align: baseline;}
+
+.tg-table{margin: 0px 0px 10px; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51); border: 1px solid rgb(204, 204, 204); width: 912px; max-width: 100%; background-color: rgb(255, 255, 255); table-layout: auto !important;}
+.tg-table1{margin: 0px 0px 10px; padding: 0px; font-family: Inter, sans-serif; color: rgb(51, 51, 51); border: none; width: 912px; max-width: 100%; background-color: rgb(255, 255, 255); table-layout: auto !important;}
+
+.tg-tbody{margin: 0px; padding: 0px; font-family: inherit; font-size: inherit; color: inherit;}
+
+.tg-tr{margin: 0px; padding: 0px; font-family: inherit; font-size: inherit; color: inherit; border: 1px solid rgb(239, 239, 239); height: 23.8pt;}
+.tg-tr1{margin: 0px; padding: 0px; font-family: inherit; font-size: inherit; color: inherit; border: 1px solid rgb(239, 239, 239);}
+
+.tg-td{border-width: 0.5pt 0.75pt 0.75pt; border-style: solid; border-color: rgb(0, 0, 0); vertical-align: top; padding: 6pt; overflow: hidden; overflow-wrap: break-word;}
+.tg-td1{border-left:solid #000000 0.75pt;border-right:solid #000000 0.75pt;border-bottom:solid #000000 0.75pt;border-top:solid #000000 0.75pt;vertical-align:top;padding:6pt 6pt 6pt 6pt;overflow:hidden;overflow-wrap:break-word;}
+.tg-td2{margin: 0px; padding: 0.4em; font-family: inherit; font-size: inherit; color: inherit; position: relative; border: 1px solid rgb(225, 225, 225); background-clip: padding-box;}
+.tg-td3{margin: 0px; padding: 0cm 5.4pt; font-family: inherit; font-size: inherit; color: inherit; position: relative; border: 1pt solid rgb(191, 191, 191); background: rgb(217, 226, 243); width: 45pt; height: 23.8pt;}
+
+
+.tg-li{list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; margin-left: -36pt;}
+
+
+.tg-font{background-color: rgb(255, 255, 0);}
+
+/* Hướng Dẫn Đặt Hàng */
+.dh-p{margin-left:.5in;text-align:justify;text-indent:-.5in;}
+.dh-p1{margin-left: 0.5in; line-height: 150%;}
+.dh-p2{text-align:justify;line-height:150%}
+
+.dh-span{font-size:14.0pt;line-height:150%}
+.dh-span1{font-variant-numeric: normal; font-variant-east-asian: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: Times New Roman;}
+.dh-span2{font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; line-height: normal;}
+
+.dh-lh{line-height: 150%;}
+
+
+

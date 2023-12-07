@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Segoe UI';
-    src: local("Segoe UI"),url('/Content/web/fonts/Segoe UI/Segoe UI.woff2') format("woff2");
+    src: local("Segoe UI"),url('../fonts/SegoeUI/SegoeUI.woff2') format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Segoe UI';
-    src: local("Segoe UI Italic"),url('/Content/web/fonts/Segoe UI/Segoe UI Italic.woff2') format('woff2');
+    src: local("Segoe UI Italic"),url('../fonts/SegoeUI/SegoeUIItalic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Segoe UI';
-    src: local("Segoe UI Bold"),url('/Content/web/fonts/Segoe UI/Segoe UI Bold.woff2') format('woff2');
+    src: local("Segoe UI Bold"),url('../fonts/SegoeUI/SegoeUIBold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'Segoe UI';
-    src: local("Segoe UI Bold Italic"),url('/Content/web/fonts/Segoe UI/Segoe UI Bold Italic.woff2') format('woff2');
+    src: local("Segoe UI Bold Italic"),url('../fonts/SegoeUI/SegoeUIBoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
     font-display: swap
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Segoe UI';
-    src: local("Segoe UI Semilight"),url('/Content/web/fonts/Segoe UI/Segoe UI Semilight.woff2') format('woff2');
+    src: local("Segoe UI Semilight"),url('../fonts/SegoeUI/SegoeUISemilight.woff2') format('woff2');
     font-weight: 100;
     font-style: normal;
     font-display: swap
@@ -40,7 +40,7 @@
 
 @font-face {
     font-family: 'Segoe UI';
-    src: local("Segoe UI Semilight Italic"),url('/Content/web/fonts/Segoe UI/Segoe UI Semilight Italic.woff2') format('woff2');
+    src: local("Segoe UI Semilight Italic"),url('../fonts/SegoeUI/SegoeUISemilightItalic.woff2') format('woff2');
     font-weight: 100;
     font-style: italic;
     font-display: swap
@@ -48,8 +48,8 @@
 
 @font-face {
     font-family: 'hoangha';
-    src: url('/Content/web/fonts/icon/fonts/hoangha9.eot?');
-    src: url('/Content/web/fonts/icon/fonts/hoangha9.eot?#iefix') format('embedded-opentype'),url('/Content/web/fonts/icon/fonts/hoangha9.woff') format('woff'),url('/Content/web/fonts/icon/fonts/hoangha9.ttf') format('truetype'),url('/Content/web/fonts/icon/fonts/hoangha9.svg#hoangha') format('svg');
+    src: url('../fonts/SegoeUI/hoangha9.eot');
+    src: url('../fonts/SegoeUI/hoangha9.eot') format('embedded-opentype'),url('../fonts/SegoeUI/hoangha9.woff') format('woff'),url('../fonts/SegoeUI/hoangha9.ttf') format('truetype'),url('https://hoanghamobile.com/Content/web/fonts/icon/fonts/hoangha9.svg#hoangha') format('svg');
     font-weight: normal;
     font-style: normal
 }
@@ -418,8 +418,8 @@
 
 @font-face {
     font-family: 'hoangha_v2';
-    src: url('/Content/web/fonts/icon/fonts/hoangha_v23.eot?');
-    src: url('/Content/web/fonts/icon/fonts/hoangha_v23.eot?#iefix') format('embedded-opentype'),url('/Content/web/fonts/icon/fonts/hoangha_v23.woff') format('woff'),url('/Content/web/fonts/icon/fonts/hoangha_v23.ttf') format('truetype'),url('/Content/web/fonts/icon/fonts/hoangha_v23.svg#hoangha_v2') format('svg');
+    src: url('../fonts/SegoeUI/hoangha_v23.eot');
+    src: url('../fonts/SegoeUI/hoangha_v23.eot?#iefix') format('embedded-opentype'),url('../fonts/SegoeUI/hoangha_v23.woff') format('woff'),url('../fonts/SegoeUI/hoangha_v23.ttf') format('truetype'),url('https://hoanghamobile.com/Content/web/fonts/icon/fonts/hoangha_v23.svg#hoangha_v2') format('svg');
     font-weight: normal;
     font-style: normal
 }
@@ -2191,14 +2191,14 @@ body.fit-height .container {
 }
 
 body {
-    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI';
-    font-size: 13px;
-    font-weight: 400;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    min-width: 1200px
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI' !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #333 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #f4f4f4 !important;
+    min-width: 1200px !important;
 }
 
 a,a:link,a:visited {
@@ -2575,7 +2575,7 @@ header .heading .order-tools .cart a label {
 header .heading .order-tools .cart a label span {
     text-align: center;
     background: #ff6801;
-    margin-top: -6px;
+    margin-top: 11px;
     margin-left: -1px;
     font-size: 12px;
     display: block;
@@ -5558,8 +5558,40 @@ nav.scroll-to-fixed-fixed ul.root li .sub a,nav.scroll-to-fixed-fixed ul.root li
     max-width: 100%
 }
 
-.product-text h2,.product-text h3,.product-text h4,.product-text h5,.product-text h6 {
-    font-size: 15px
+.product-text h1 {
+    font-size: 36px;
+    padding: 0;
+    margin: 10px 0
+}
+
+.product-text h2 {
+    font-size: 30px;
+    padding: 0;
+    margin: 10px 0
+}
+
+.product-text h3 {
+    font-size: 24px;
+    padding: 0;
+    margin: 10px 0
+}
+
+.product-text h4 {
+    font-size: 20px;
+    padding: 0;
+    margin: 10px 0
+}
+
+.product-text h5 {
+    font-size: 16px;
+    padding: 0;
+    margin: 10px 0
+}
+
+.product-text h6 {
+    font-size: 14px;
+    padding: 0;
+    margin: 10px 0
 }
 
 #productContent {

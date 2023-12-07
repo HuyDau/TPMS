@@ -4,7 +4,7 @@
       var __webpack_modules__ = {
           1154: function (e) {
             e.exports = {
-              generateTime: 1699903658,
+              generateTime: 1701829658,
               partner: {
                 bns: { ls: [], l: 0, r: 75 },
                 wd: !1,
@@ -66,8 +66,8 @@
                 desktopSinglePageStatus: !0,
                 mobileSinglePageStatus: !0,
                 services: [
-                  22, 48, 2, 11, 12, 13, 36, 37, 38, 39, 40, 42, 43, 44, 46, 47,
-                  52, 53, 57, 58, 61, 62, 50,
+                  22, 48, 2, 11, 12, 13, 36, 37, 38, 39, 40, 42, 43, 46, 47, 52,
+                  53, 57, 58, 61, 62, 50, 44,
                 ],
                 unification: !0,
                 isUniqueEsStat: !1,
@@ -100,7 +100,7 @@
                     isRelational: !1,
                   },
                   80: {
-                    test: 'spApi.newReturningUser("returning")===true;',
+                    test: 'Insider.segmentModules.newReturningUser("new")===true;',
                     relationalRule: [],
                     isRelational: !1,
                   },
@@ -419,16 +419,6 @@
                     relationalRule: [],
                     isRelational: !1,
                   },
-                  524: {
-                    test: 'window.location.href.indexOf("vivo")>-1;',
-                    relationalRule: [],
-                    isRelational: !1,
-                  },
-                  525: {
-                    test: 'window.location.href.indexOf("tecno")>-1;',
-                    relationalRule: [],
-                    isRelational: !1,
-                  },
                   545: {
                     test: '1==1===true&&window.location.href.indexOf("https://hoanghamobile.com/tin-tuc/")>-1&&(window.location.href.indexOf("iphone")>-1||window.location.href.indexOf("apple")>-1);',
                     relationalRule: [],
@@ -461,16 +451,6 @@
                   },
                   569: {
                     test: "1==1===true;",
-                    relationalRule: [],
-                    isRelational: !1,
-                  },
-                  597: {
-                    test: '1==1===true&&window.location.href.indexOf("https://hoanghamobile.com/sim-the")>-1;',
-                    relationalRule: [],
-                    isRelational: !1,
-                  },
-                  598: {
-                    test: '1==1===true&&window.location.href.indexOf("https://hoanghamobile.com/sim-the")>-1;',
                     relationalRule: [],
                     isRelational: !1,
                   },
@@ -711,6 +691,26 @@
                     relationalRule: [],
                     isRelational: !1,
                   },
+                  965: {
+                    test: "Insider.systemRules.call('isOnProductPage')===true;",
+                    relationalRule: [],
+                    isRelational: !1,
+                  },
+                  966: {
+                    test: 'Insider.segmentModules.newReturningUser("returning")===true;',
+                    relationalRule: [],
+                    isRelational: !1,
+                  },
+                  973: {
+                    test: '1==1===true&&window.location.href.indexOf("https://hoanghamobile.com/sim-the")>-1;',
+                    relationalRule: [],
+                    isRelational: !1,
+                  },
+                  974: {
+                    test: '1==1===true&&window.location.href.indexOf("https://hoanghamobile.com/sim-the")>-1;',
+                    relationalRule: [],
+                    isRelational: !1,
+                  },
                 },
                 system: {
                   getPaidProducts:
@@ -808,10 +808,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -863,10 +863,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -918,10 +918,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -973,16 +973,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMFByb2R1Y3QtUmV0dXJuJTIwLVZ0Vg==",
                     p: 0,
-                    it: !1,
+                    it: !0,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1028,16 +1028,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMFByb2R1Y3QtUmV0dXJuJTIwLVRWUEM=",
                     p: 0,
-                    it: !1,
+                    it: !0,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1089,10 +1089,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1145,10 +1145,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1201,10 +1201,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1256,10 +1256,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1311,10 +1311,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1372,10 +1372,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1433,10 +1433,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1489,10 +1489,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1545,10 +1545,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1600,10 +1600,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1655,10 +1655,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1711,10 +1711,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1767,10 +1767,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1828,10 +1828,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1889,10 +1889,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -1950,10 +1950,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2011,10 +2011,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2066,10 +2066,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2121,10 +2121,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2177,10 +2177,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2233,10 +2233,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2289,10 +2289,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2345,10 +2345,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2401,10 +2401,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2457,10 +2457,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2513,10 +2513,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2569,10 +2569,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2625,10 +2625,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2681,10 +2681,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2737,10 +2737,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2793,10 +2793,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2849,10 +2849,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2905,10 +2905,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -2961,10 +2961,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3017,10 +3017,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3073,10 +3073,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3129,10 +3129,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3185,10 +3185,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3241,10 +3241,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3296,10 +3296,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3351,10 +3351,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3407,10 +3407,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3463,10 +3463,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3519,10 +3519,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3575,10 +3575,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3631,10 +3631,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3692,10 +3692,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3748,10 +3748,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3803,10 +3803,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3858,10 +3858,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3914,10 +3914,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -3969,10 +3969,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4024,10 +4024,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4079,10 +4079,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4134,10 +4134,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4189,10 +4189,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4244,10 +4244,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4299,10 +4299,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4354,10 +4354,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4410,10 +4410,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4466,10 +4466,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4521,10 +4521,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4576,10 +4576,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4631,10 +4631,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4686,10 +4686,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4742,10 +4742,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4798,10 +4798,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4854,10 +4854,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4910,10 +4910,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -4973,10 +4973,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5036,10 +5036,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5091,10 +5091,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5153,10 +5153,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5215,10 +5215,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5278,10 +5278,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5341,10 +5341,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5404,10 +5404,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5466,10 +5466,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5528,10 +5528,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5590,10 +5590,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5652,10 +5652,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5715,10 +5715,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5778,10 +5778,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5841,10 +5841,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5904,10 +5904,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -5967,10 +5967,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6029,10 +6029,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6092,10 +6092,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6155,10 +6155,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6217,10 +6217,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6279,10 +6279,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6342,10 +6342,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6405,10 +6405,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6461,10 +6461,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6517,10 +6517,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6586,10 +6586,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6655,10 +6655,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6718,10 +6718,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6781,10 +6781,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6844,10 +6844,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6907,10 +6907,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -6970,10 +6970,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7032,10 +7032,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7095,10 +7095,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7158,10 +7158,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7220,10 +7220,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7282,10 +7282,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7302,258 +7302,6 @@
                         type: 2,
                         top: "479.8125",
                         left: "0",
-                        insertAction: "before",
-                        mode: "adaptive",
-                      },
-                      ta: !1,
-                      hc: "",
-                    },
-                    hps: !0,
-                  },
-                  {
-                    id: 2585,
-                    fl: 3,
-                    si: { t: [597], s: null },
-                    pt: 24,
-                    tto: -1e3,
-                    lang: ["vi_VN"],
-                    ads: 1689008400,
-                    ade: 2050234620,
-                    ac: null,
-                    gaEvents: {
-                      impression: !0,
-                      join: !0,
-                      sales: !0,
-                      close: !0,
-                      goal: !1,
-                    },
-                    noteType: -1,
-                    sld: 0,
-                    ct: 0,
-                    ccl: 0,
-                    jcl: 0,
-                    pa: "web-smart-recommender",
-                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
-                    ir: !1,
-                    pl: "web",
-                    ne: !0,
-                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRvcCUyMFNlbGxlcg==",
-                    p: 0,
-                    it: !1,
-                    sbg: !0,
-                    sbre: !0,
-                    sbc: !0,
-                    sbcl: !0,
-                    ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
-                    cnn: { s: !1, bn: !1 },
-                    cna: [],
-                    pageSettings: {
-                      locationConfig: {
-                        frameless: !0,
-                        manualPositionConfig: {
-                          left: "undefined",
-                          right: "undefined",
-                          top: "undefined",
-                          bottom: "undefined",
-                          manualPositionIsActive: !0,
-                        },
-                        selectedElement:
-                          "body > section:eq(2) > div > div:eq(0) > div",
-                        gridIsActive: !1,
-                        type: 2,
-                        top: "1066.1796875",
-                        left: "120",
-                        insertAction: "after",
-                        mode: "adaptive",
-                      },
-                      ta: !1,
-                      hc: "",
-                    },
-                    hps: !0,
-                  },
-                  {
-                    id: 2586,
-                    fl: 3,
-                    si: { t: [597], s: null },
-                    pt: 24,
-                    tto: -1e3,
-                    lang: ["vi_VN"],
-                    ads: 1689008400,
-                    ade: 2050234620,
-                    ac: null,
-                    gaEvents: {
-                      impression: !0,
-                      join: !0,
-                      sales: !0,
-                      close: !0,
-                      goal: !1,
-                    },
-                    noteType: -1,
-                    sld: 0,
-                    ct: 0,
-                    ccl: 0,
-                    jcl: 0,
-                    pa: "web-smart-recommender",
-                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
-                    ir: !1,
-                    pl: "web",
-                    ne: !0,
-                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRyZW5kaW5nJTIwUHJvZHVjdHM=",
-                    p: 0,
-                    it: !1,
-                    sbg: !0,
-                    sbre: !0,
-                    sbc: !0,
-                    sbcl: !0,
-                    ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
-                    cnn: { s: !1, bn: !1 },
-                    cna: [],
-                    pageSettings: {
-                      locationConfig: {
-                        frameless: !0,
-                        manualPositionConfig: {
-                          left: "undefined",
-                          right: "undefined",
-                          top: "undefined",
-                          bottom: "undefined",
-                          manualPositionIsActive: !0,
-                        },
-                        selectedElement:
-                          "body > section:eq(3) > div > div > h1",
-                        gridIsActive: !1,
-                        type: 2,
-                        top: "1066.1796875",
-                        left: "120",
-                        insertAction: "before",
-                        mode: "adaptive",
-                      },
-                      ta: !1,
-                      hc: "",
-                    },
-                    hps: !0,
-                  },
-                  {
-                    id: 2589,
-                    fl: 1,
-                    si: { t: [598], s: null },
-                    pt: 24,
-                    tto: -1e3,
-                    lang: ["vi_VN"],
-                    ads: 1689008400,
-                    ade: 2050236300,
-                    ac: null,
-                    gaEvents: {
-                      impression: !0,
-                      join: !0,
-                      sales: !0,
-                      close: !0,
-                      goal: !1,
-                    },
-                    noteType: -1,
-                    sld: 0,
-                    ct: 0,
-                    ccl: 0,
-                    jcl: 0,
-                    pa: "smart-recommender",
-                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
-                    ir: !1,
-                    pl: "mobile",
-                    ne: !0,
-                    cn: "|-x-|JTVCTSU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRvcCUyMFNlbGxlcg==",
-                    p: 0,
-                    it: !1,
-                    sbg: !0,
-                    sbre: !0,
-                    sbc: !0,
-                    sbcl: !0,
-                    ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
-                    cnn: { s: !1, bn: !1 },
-                    cna: [],
-                    pageSettings: {
-                      locationConfig: {
-                        frameless: !0,
-                        manualPositionConfig: {
-                          left: "undefined",
-                          right: "undefined",
-                          top: "undefined",
-                          bottom: "undefined",
-                          manualPositionIsActive: !0,
-                        },
-                        selectedElement:
-                          "body > div:eq(0) > div:eq(1) > section:eq(3) > div > div > h1",
-                        gridIsActive: !1,
-                        type: 2,
-                        top: "1473.359375",
-                        left: "10",
-                        insertAction: "before",
-                        mode: "adaptive",
-                      },
-                      ta: !1,
-                      hc: "",
-                    },
-                    hps: !0,
-                  },
-                  {
-                    id: 2590,
-                    fl: 1,
-                    si: { t: [598], s: null },
-                    pt: 24,
-                    tto: -1e3,
-                    lang: ["vi_VN"],
-                    ads: 1689008400,
-                    ade: 2050236300,
-                    ac: null,
-                    gaEvents: {
-                      impression: !0,
-                      join: !0,
-                      sales: !0,
-                      close: !0,
-                      goal: !1,
-                    },
-                    noteType: -1,
-                    sld: 0,
-                    ct: 0,
-                    ccl: 0,
-                    jcl: 0,
-                    pa: "smart-recommender",
-                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
-                    ir: !1,
-                    pl: "mobile",
-                    ne: !0,
-                    cn: "|-x-|JTVCTSU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRyZW5kaW5nJTIwUHJvZHVjdHM=",
-                    p: 0,
-                    it: !1,
-                    sbg: !0,
-                    sbre: !0,
-                    sbc: !0,
-                    sbcl: !0,
-                    ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
-                    cnn: { s: !1, bn: !1 },
-                    cna: [],
-                    pageSettings: {
-                      locationConfig: {
-                        frameless: !0,
-                        manualPositionConfig: {
-                          left: "undefined",
-                          right: "undefined",
-                          top: "undefined",
-                          bottom: "undefined",
-                          manualPositionIsActive: !0,
-                        },
-                        selectedElement:
-                          "body > div:eq(0) > div:eq(1) > section:eq(3) > div > div > h1",
-                        gridIsActive: !1,
-                        type: 2,
-                        top: "1473.359375",
-                        left: "10",
                         insertAction: "before",
                         mode: "adaptive",
                       },
@@ -7597,10 +7345,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7660,10 +7408,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7723,10 +7471,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7786,10 +7534,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7849,10 +7597,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7912,10 +7660,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -7975,10 +7723,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8038,10 +7786,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8101,10 +7849,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8164,10 +7912,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8227,10 +7975,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8290,10 +8038,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8353,10 +8101,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8416,10 +8164,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8479,10 +8227,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8542,10 +8290,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8605,10 +8353,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8668,10 +8416,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8731,10 +8479,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8794,10 +8542,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8857,10 +8605,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8920,10 +8668,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -8983,10 +8731,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9045,10 +8793,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9107,10 +8855,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9170,10 +8918,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9233,10 +8981,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9296,10 +9044,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9359,10 +9107,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9422,10 +9170,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9484,10 +9232,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9546,10 +9294,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9608,10 +9356,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9671,10 +9419,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9733,10 +9481,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9795,10 +9543,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9857,10 +9605,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9919,10 +9667,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -9982,10 +9730,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10045,10 +9793,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10108,10 +9856,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10171,10 +9919,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10228,16 +9976,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNSJTIwUGglRTElQkIlQTUlMjBraSVFMSVCQiU4N24lMjBpUGhvbmUlMjAxNCUyMENvcHk=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10297,10 +10045,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10360,10 +10108,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10423,10 +10171,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10486,10 +10234,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10549,10 +10297,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10612,10 +10360,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10675,10 +10423,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10738,10 +10486,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10801,10 +10549,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10864,10 +10612,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10927,10 +10675,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -10990,10 +10738,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11053,10 +10801,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11116,10 +10864,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11179,10 +10927,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11236,16 +10984,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNhbXN1bmclMjBTMjMlMjBJbmxpbmUlMjAtVG9wJTIwc2VsbGVy",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11299,16 +11047,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyMFNhbXN1bmclMjBTMjMtJTIwSW5saW5lJTIwLSUyMFRvcCUyMFNlbGxlcg==",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11362,16 +11110,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNhbXN1bmclMjBTMjMlMjBQb3AlMjB1cC1Ub3AlMjBTZWxsZXI=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11425,16 +11173,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFolMjBGbGlwJTIwLSUyMG9uJTIwUG9wJTIwdXA=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11488,16 +11236,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFolMjBGbGlwJTIwNS0lMjBpbmxpbmU=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11550,16 +11298,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyMFolMjBGbGlwJTIwNSUyMC0lMjBvbiUyMFBvcHVw",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11613,16 +11361,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMExhcHRvcCUyME1hY2Jvb2slMjBJbmxpbmUlMjAlMjBVc2VyLWJhc2VkJTIwQ29weQ==",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11676,16 +11424,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMExhcHRvcCUyME1hY2Jvb2slMjBJbmxpbmUlMjAlMjBUcmVuZGluZyUyMENvcHklMjAy",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11739,16 +11487,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyME1hY2Jvb2slMjBJbmxpbmUlMjAtVXNlciUyMGJhc2Vk",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11802,16 +11550,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyME1hY2Jvb2slMjBJbmxpbmUlMjAtVHJlbmRpbmc=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11865,16 +11613,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyMFolMjBGbGlwJTIwNSUyMC0lMjBpbmxpbmU=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         frameless: !0,
@@ -11892,6 +11640,382 @@
                         top: 2118.484375,
                         left: 0,
                         insertAction: "before",
+                        mode: "adaptive",
+                      },
+                      ta: !1,
+                      hc: "",
+                    },
+                    hps: !0,
+                  },
+                  {
+                    id: 3716,
+                    fl: 3,
+                    si: { t: [965], s: [966] },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1700154e3,
+                    ade: 2050234620,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "web-smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "web",
+                    ne: !0,
+                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMFByb2R1Y3QtUmV0dXJuJTIwbmV3JTIwLSUyMFZpZXclMjB0b2dldGhlcg==",
+                    p: 0,
+                    it: !0,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        frameless: !0,
+                        manualPositionConfig: {
+                          left: "undefined",
+                          right: "undefined",
+                          top: "undefined",
+                          bottom: "undefined",
+                          manualPositionIsActive: !0,
+                        },
+                        selectedElement: "body > section:eq(2) > div > div",
+                        gridIsActive: !1,
+                        type: 2,
+                        top: 1089.7718505859375,
+                        left: 282.8153381347656,
+                        insertAction: "before",
+                        mode: "adaptive",
+                      },
+                      ta: !1,
+                      hc: "",
+                    },
+                    hps: !0,
+                  },
+                  {
+                    id: 3731,
+                    fl: 3,
+                    si: { t: [965], s: [966] },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1700154e3,
+                    ade: 2050234620,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "web-smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "web",
+                    ne: !0,
+                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMFByb2R1Y3QtUmV0dXJuJTIwbmV3LSUyME1Q",
+                    p: 0,
+                    it: !0,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        frameless: !0,
+                        manualPositionConfig: {
+                          left: "undefined",
+                          right: "undefined",
+                          top: "undefined",
+                          bottom: "undefined",
+                          manualPositionIsActive: !0,
+                        },
+                        selectedElement: "body > section:eq(2) > div > div",
+                        gridIsActive: !1,
+                        type: 2,
+                        top: 1170.855224609375,
+                        left: 282.8153381347656,
+                        insertAction: "before",
+                        mode: "adaptive",
+                      },
+                      ta: !1,
+                      hc: "",
+                    },
+                    hps: !0,
+                  },
+                  {
+                    id: 3750,
+                    fl: 3,
+                    si: { t: [973], s: null },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1701019800,
+                    ade: 2050234620,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "web-smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "web",
+                    ne: !0,
+                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRvcCUyMFNlbGw=",
+                    p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        frameless: !0,
+                        manualPositionConfig: {
+                          left: "undefined",
+                          right: "undefined",
+                          top: "undefined",
+                          bottom: "undefined",
+                          manualPositionIsActive: !0,
+                        },
+                        selectedElement:
+                          "body > section:eq(1) > div > div > div:eq(1)",
+                        gridIsActive: !1,
+                        type: 2,
+                        top: 767,
+                        left: 120,
+                        insertAction: "after",
+                        mode: "adaptive",
+                      },
+                      ta: !1,
+                      hc: "",
+                    },
+                    hps: !0,
+                  },
+                  {
+                    id: 3751,
+                    fl: 3,
+                    si: { t: [973], s: null },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1701019800,
+                    ade: 2050234620,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "web-smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "web",
+                    ne: !0,
+                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRyZW5kaW5n",
+                    p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        frameless: !0,
+                        manualPositionConfig: {
+                          left: "undefined",
+                          right: "undefined",
+                          top: "undefined",
+                          bottom: "undefined",
+                          manualPositionIsActive: !0,
+                        },
+                        selectedElement:
+                          "body > section:eq(1) > div > div > div:eq(1)",
+                        gridIsActive: !1,
+                        type: 2,
+                        top: 767,
+                        left: 120,
+                        insertAction: "after",
+                        mode: "adaptive",
+                      },
+                      ta: !1,
+                      hc: "",
+                    },
+                    hps: !0,
+                  },
+                  {
+                    id: 3753,
+                    fl: 1,
+                    si: { t: [974], s: null },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1701018e3,
+                    ade: 2050236300,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "mobile",
+                    ne: !0,
+                    cn: "|-x-|JTVCTSU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRvcCUyMFNlbGw=",
+                    p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        frameless: !0,
+                        manualPositionConfig: {
+                          left: "undefined",
+                          right: "undefined",
+                          top: "undefined",
+                          bottom: "undefined",
+                          manualPositionIsActive: !0,
+                        },
+                        selectedElement:
+                          "body > div:eq(0) > div:eq(1) > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3)",
+                        gridIsActive: !1,
+                        type: 2,
+                        top: 1165.484375,
+                        left: 10,
+                        insertAction: "after",
+                        mode: "adaptive",
+                      },
+                      ta: !1,
+                      hc: "",
+                    },
+                    hps: !0,
+                  },
+                  {
+                    id: 3754,
+                    fl: 1,
+                    si: { t: [974], s: null },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1701018e3,
+                    ade: 2050236300,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "mobile",
+                    ne: !0,
+                    cn: "|-x-|JTVCTSU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMCU3QyUyMFRyZW5kaW5n",
+                    p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        frameless: !0,
+                        manualPositionConfig: {
+                          left: "undefined",
+                          right: "undefined",
+                          top: "undefined",
+                          bottom: "undefined",
+                          manualPositionIsActive: !0,
+                        },
+                        selectedElement:
+                          "body > div:eq(0) > div:eq(1) > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3)",
+                        gridIsActive: !1,
+                        type: 2,
+                        top: 1165.484375,
+                        left: 10,
+                        insertAction: "after",
                         mode: "adaptive",
                       },
                       ta: !1,
@@ -11934,10 +12058,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -11986,10 +12110,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -12031,16 +12155,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMFByb2R1Y3QtUmV0dXJuLUNvbnRyb2wlMjBHcm91cCUyMChpZCUzQTg1KQ==",
                     p: 0,
-                    it: !1,
+                    it: !0,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'section[id="comments"] > div > div',
@@ -12089,10 +12213,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12142,10 +12266,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12195,10 +12319,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > section:eq(5) > div > div",
@@ -12247,10 +12371,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -12298,10 +12422,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12351,10 +12475,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > section:eq(3) > div > div",
@@ -12403,10 +12527,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12456,10 +12580,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -12507,10 +12631,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -12558,10 +12682,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'section[id="comments"] > div > div',
@@ -12610,10 +12734,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12663,10 +12787,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12716,10 +12840,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12769,10 +12893,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12822,10 +12946,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12875,10 +12999,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12928,10 +13052,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -12981,10 +13105,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13034,10 +13158,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13087,10 +13211,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13140,10 +13264,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > section:eq(1) > div > ol",
@@ -13192,10 +13316,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13245,10 +13369,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13298,10 +13422,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'section[id="comments"] > div > div',
@@ -13350,10 +13474,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13403,10 +13527,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -13455,10 +13579,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > section:eq(4) > div > div",
@@ -13507,10 +13631,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -13559,10 +13683,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -13611,10 +13735,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13664,10 +13788,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -13716,10 +13840,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > section:eq(5) > div > div",
@@ -13768,10 +13892,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13821,10 +13945,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13874,10 +13998,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -13927,10 +14051,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > footer > div > div:eq(0)",
@@ -13979,10 +14103,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > section:eq(2) > div > div",
@@ -14031,10 +14155,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14084,10 +14208,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14137,10 +14261,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14190,10 +14314,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -14242,10 +14366,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -14294,10 +14418,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14347,10 +14471,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14400,10 +14524,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14453,10 +14577,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14506,10 +14630,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: 'div[id="page-pager"]',
@@ -14558,10 +14682,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14611,10 +14735,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14664,10 +14788,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -14715,10 +14839,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["bounce"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -14766,10 +14890,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !0 },
                     cna: ["mobileBounceFastScroll"],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14819,10 +14943,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14872,10 +14996,10 @@
                     sbc: !1,
                     sbcl: !1,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -14925,10 +15049,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "body > footer > div > div:eq(0)",
@@ -14977,120 +15101,14 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
                           "body > div:eq(0) > div:eq(1) > footer",
-                        type: 2,
-                        top: "0",
-                        left: "0",
-                        insertAction: "after",
-                      },
-                      ta: !1,
-                      hc: {},
-                    },
-                    hps: !1,
-                  },
-                  {
-                    id: 2584,
-                    fl: 0,
-                    si: { t: [597], s: null },
-                    pt: 24,
-                    tto: -1e3,
-                    lang: ["vi_VN"],
-                    ads: 1689008400,
-                    ade: 2050234620,
-                    ac: null,
-                    gaEvents: {
-                      impression: !0,
-                      join: !0,
-                      sales: !0,
-                      close: !0,
-                      goal: !1,
-                    },
-                    noteType: -1,
-                    sld: 0,
-                    ct: 0,
-                    ccl: 0,
-                    jcl: 0,
-                    pa: "web-smart-recommender",
-                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
-                    ir: !1,
-                    pl: "web",
-                    ne: !0,
-                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbS1Db250cm9sJTIwR3JvdXAlMjAoaWQlM0ExMjE2KQ==",
-                    p: 0,
-                    it: !1,
-                    sbg: !0,
-                    sbre: !0,
-                    sbc: !0,
-                    sbcl: !0,
-                    ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
-                    cnn: { s: !1, bn: !1 },
-                    cna: [],
-                    pageSettings: {
-                      locationConfig: {
-                        selectedElement:
-                          "body > section:eq(2) > div > div:eq(0) > div",
-                        type: 2,
-                        top: "0",
-                        left: "0",
-                        insertAction: "after",
-                      },
-                      ta: !1,
-                      hc: {},
-                    },
-                    hps: !1,
-                  },
-                  {
-                    id: 2588,
-                    fl: 0,
-                    si: { t: [598], s: null },
-                    pt: 24,
-                    tto: -1e3,
-                    lang: ["vi_VN"],
-                    ads: 1689008400,
-                    ade: 2050236300,
-                    ac: null,
-                    gaEvents: {
-                      impression: !0,
-                      join: !0,
-                      sales: !0,
-                      close: !0,
-                      goal: !1,
-                    },
-                    noteType: -1,
-                    sld: 0,
-                    ct: 0,
-                    ccl: 0,
-                    jcl: 0,
-                    pa: "smart-recommender",
-                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
-                    ir: !1,
-                    pl: "mobile",
-                    ne: !0,
-                    cn: "|-x-|JTVCTSU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbS1Db250cm9sJTIwR3JvdXAlMjAoaWQlM0ExMjE3KQ==",
-                    p: 0,
-                    it: !1,
-                    sbg: !0,
-                    sbre: !0,
-                    sbc: !0,
-                    sbcl: !0,
-                    ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
-                    cnn: { s: !1, bn: !1 },
-                    cna: [],
-                    pageSettings: {
-                      locationConfig: {
-                        selectedElement:
-                          "body > div:eq(0) > div:eq(1) > section:eq(3) > div > div > h1",
                         type: 2,
                         top: "0",
                         left: "0",
@@ -15136,10 +15154,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -15189,10 +15207,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -15242,10 +15260,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -15295,10 +15313,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement:
@@ -15348,10 +15366,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15399,10 +15417,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15450,10 +15468,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15501,10 +15519,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15552,10 +15570,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15603,10 +15621,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15654,10 +15672,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15705,10 +15723,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15756,10 +15774,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15807,10 +15825,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15858,10 +15876,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15909,10 +15927,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -15960,10 +15978,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16011,10 +16029,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16062,10 +16080,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16113,10 +16131,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16164,10 +16182,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16209,16 +16227,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNSJTIwUGglRTElQkIlQTUlMjBraSVFMSVCQiU4N24lMjBpUGhvbmUlMjAxNCUyMENvcHktQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcwMSk=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16266,10 +16284,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16317,10 +16335,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16368,10 +16386,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16419,10 +16437,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16470,10 +16488,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16521,10 +16539,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16572,10 +16590,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16623,10 +16641,10 @@
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16668,16 +16686,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMExhcHRvcCUyMElubGluZSUyMCUyMENvcHktQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcxOCk=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16719,16 +16737,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyMFNhbXN1bmclMjBTMjMtJTIwSW5saW5lJTIwLSUyMFRvcCUyMFNlbGxlci1Db250cm9sJTIwR3JvdXAlMjAoaWQlM0ExNzE5KQ==",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16770,16 +16788,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFNhbXN1bmclMjBTMjMlMjBQb3AlMjB1cC1Ub3AlMjBTZWxsZXItQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcyMCk=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16821,16 +16839,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFolMjBGbGlwJTIwLSUyMG9uJTIwUG9wJTIwdXAtQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcyMSk=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16872,16 +16890,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMFolMjBGbGlwJTIwNS0lMjBpbmxpbmUtQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcyMik=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16923,16 +16941,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyMFolMjBGbGlwJTIwNSUyMC0lMjBvbiUyMFBvcHVwLUNvbnRyb2wlMjBHcm91cCUyMChpZCUzQTE3MjMp",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -16974,16 +16992,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCRCU1RCUyMExhcHRvcCUyMElubGluZSUyMCUyMENvcHktQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcyNCk=",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -17025,16 +17043,16 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyME1hY2Jvb2slMjBJbmxpbmUlMjAlMjBDb3B5LUNvbnRyb2wlMjBHcm91cCUyMChpZCUzQTE3MjYp",
                     p: 0,
-                    it: !0,
+                    it: !1,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -17076,16 +17094,169 @@
                     ne: !0,
                     cn: "|-x-|JTVCTSU1RCUyMFolMjBGbGlwJTIwNSUyMC0lMjBpbmxpbmUtQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTcyOSk=",
                     p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        selectedElement: "",
+                        type: 0,
+                        top: "0",
+                        left: "0",
+                      },
+                      ta: !1,
+                      hc: {},
+                    },
+                    hps: !1,
+                  },
+                  {
+                    id: 3715,
+                    fl: 0,
+                    si: { t: [965], s: [966] },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1700154e3,
+                    ade: 2050234620,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "web-smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "web",
+                    ne: !0,
+                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMFByb2R1Y3QtUmV0dXJuJTIwbmV3LUNvbnRyb2wlMjBHcm91cCUyMChpZCUzQTE3NTAp",
+                    p: 0,
                     it: !0,
                     sbg: !0,
                     sbre: !0,
                     sbc: !0,
                     sbcl: !0,
                     ist: !1,
-                    hooks: { show: [], close: [] },
-                    isLTP: !1,
                     cnn: { s: !1, bn: !1 },
                     cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        selectedElement: "",
+                        type: 0,
+                        top: "0",
+                        left: "0",
+                      },
+                      ta: !1,
+                      hc: {},
+                    },
+                    hps: !1,
+                  },
+                  {
+                    id: 3749,
+                    fl: 0,
+                    si: { t: [973], s: null },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1701019800,
+                    ade: 2050234620,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "web-smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "web",
+                    ne: !0,
+                    cn: "|-x-|JTVCRCU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMENvcHktQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTc2Nik=",
+                    p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
+                    pageSettings: {
+                      locationConfig: {
+                        selectedElement: "",
+                        type: 0,
+                        top: "0",
+                        left: "0",
+                      },
+                      ta: !1,
+                      hc: {},
+                    },
+                    hps: !1,
+                  },
+                  {
+                    id: 3752,
+                    fl: 0,
+                    si: { t: [974], s: null },
+                    pt: 24,
+                    tto: -1e3,
+                    lang: ["vi_VN"],
+                    ads: 1701018e3,
+                    ade: 2050236300,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 0,
+                    ct: 0,
+                    ccl: 0,
+                    jcl: 0,
+                    pa: "smart-recommender",
+                    dd: { s: 1, st: "00:00", e: "23:59", d: ["all"] },
+                    ir: !1,
+                    pl: "mobile",
+                    ne: !0,
+                    cn: "|-x-|JTVCTSU1RCUyMFNSJTIwLSUyMElubGluZSUyMCU3QyUyMFNpbSUyMENvcHktQ29udHJvbCUyMEdyb3VwJTIwKGlkJTNBMTc2Nyk=",
+                    p: 0,
+                    it: !1,
+                    sbg: !0,
+                    sbre: !0,
+                    sbc: !0,
+                    sbcl: !0,
+                    ist: !1,
+                    cnn: { s: !1, bn: !1 },
+                    cna: [],
+                    hooks: { show: [], close: [] },
+                    isLTP: !1,
                     pageSettings: {
                       locationConfig: {
                         selectedElement: "",
@@ -17104,88 +17275,6 @@
                 customChannels: [],
                 googleAdsApi: [],
                 webPush: [
-                  {
-                    id: 2374,
-                    si: { s: null, t: [524] },
-                    otherSettings: {
-                      pushType: 2,
-                      productViewCount: "2",
-                      productViewCountInDays: 90,
-                      frameVisibilityChange: 1,
-                      frameVisibilityChangeTime: 3e4,
-                      frameVisibilityChangeType: "any",
-                      silentHours: {
-                        status: 0,
-                        start: "21:00",
-                        end: "08:00",
-                        silentStatus: "after",
-                      },
-                      pat: 1,
-                      pap: 10,
-                    },
-                    resetRule: [],
-                    title: "Mua Smartphone vivo chính hãng",
-                    description:
-                      "Giá chỉ từ hơn 2 Triệu + giảm thêm 800k qua TPBank EVO + Giảm thêm 100k qua VNPAY + Hỗ trợ trả góp 0%",
-                    link: "https://hoanghamobile.com/dien-thoai-di-dong/vivo",
-                    image:
-                      "https://image.useinsider.com/hoanghamobilevn/webPushDefaultImage/J2OQ9kgX7fHRPAtoq7Jp1612269390.png",
-                    buttonFirstUrl:
-                      "https://hoanghamobile.com/dien-thoai-di-dong/vivo",
-                    buttonSecondUrl: "",
-                    banner: "",
-                    ade: 1703930460,
-                    ads: 1683280860,
-                    lang: "vi_VN",
-                    pa: "web-push",
-                    pushTimeout: 0,
-                    ct: 3,
-                    pl: "all",
-                    ebs: !0,
-                    bt: 1,
-                    it: !1,
-                  },
-                  {
-                    id: 2377,
-                    si: { t: [525], s: null },
-                    otherSettings: {
-                      pushType: 2,
-                      productViewCount: "2",
-                      productViewCountInDays: 90,
-                      frameVisibilityChange: 1,
-                      frameVisibilityChangeTime: 3e4,
-                      frameVisibilityChangeType: "any",
-                      silentHours: {
-                        status: 0,
-                        start: "21:00",
-                        end: "08:00",
-                        silentStatus: "after",
-                      },
-                      pat: 1,
-                      pap: 10,
-                    },
-                    resetRule: [],
-                    title: "Mua smartphone Tecno tại Hoàng Hà Mobile để được",
-                    description:
-                      "- Giá chỉ từ 1.99 triệu - Giảm tới 800K khi mở thẻ TPBank EVO - Bảo hành chính hãng - Bao xài đổi trả trong 30 ngày",
-                    link: "https://hoanghamobile.com/dien-thoai-di-dong/tecno",
-                    image:
-                      "https://image.useinsider.com/hoanghamobilevn/webPushDefaultImage/J2OQ9kgX7fHRPAtoq7Jp1612269390.png",
-                    buttonFirstUrl:
-                      "https://hoanghamobile.com/dien-thoai-di-dong/tecno",
-                    buttonSecondUrl: "",
-                    banner: "",
-                    ade: 1704017460,
-                    ads: 1683281460,
-                    lang: "vi_VN",
-                    pa: "web-push",
-                    pushTimeout: 0,
-                    ct: 3,
-                    pl: "all",
-                    ebs: !0,
-                    bt: 1,
-                    it: !1,
-                  },
                   {
                     id: 3548,
                     si: { s: [909], t: [911] },
@@ -17542,6 +17631,39 @@
                     isMainVariation: !0,
                     isDryRun: !1,
                   },
+                  {
+                    id: 3718,
+                    si: "",
+                    pt: 50,
+                    tto: 0,
+                    lang: ["all_ALL"],
+                    ads: 1700215080,
+                    ade: 1702807080,
+                    ac: null,
+                    gaEvents: {
+                      impression: !0,
+                      join: !0,
+                      sales: !0,
+                      close: !0,
+                      goal: !1,
+                    },
+                    noteType: -1,
+                    sld: 336,
+                    ct: 30,
+                    ccl: 336,
+                    jcl: 336,
+                    pa: "journey-builder",
+                    dd: "",
+                    pl: "web",
+                    cn: "|-x-|MjQxMDIzX1JlYWN0aXZhdGVfSW5hY3RpdmVfVXNlcnMlMjAlMjBDb3B5",
+                    p: 0,
+                    it: !1,
+                    sbg: !1,
+                    architectId: 76,
+                    conversionDuration: 10080,
+                    isMainVariation: !0,
+                    isDryRun: !1,
+                  },
                 ],
                 architectWeb: [],
               },
@@ -17677,7 +17799,7 @@
                       ],
                     },
                   },
-                  os: { sutd: !1, idoie: !1 },
+                  os: { sutd: !1, idoie: !1, clfn: 0 },
                   vs: [
                     { vi: 195, ratio: 50, type: "n" },
                     { vi: 194, ratio: 0, type: "cg" },
@@ -19498,42 +19620,6 @@
                   ],
                   fl: 3,
                 },
-                1115: {
-                  s: null,
-                  priority: "",
-                  gaSegmentId: "",
-                  goalBuilderList: {},
-                  os: {
-                    pushType: "2",
-                    priceAlertType: "1",
-                    priceAlertPercentage: "10",
-                    productViewCount: "2",
-                    productViewCountInDays: 90,
-                  },
-                  vs: [
-                    { vi: 2374, ratio: 100, type: "n" },
-                    { vi: 2375, ratio: 0, type: "cg" },
-                  ],
-                  fl: 0,
-                },
-                1116: {
-                  s: null,
-                  priority: "",
-                  gaSegmentId: "",
-                  goalBuilderList: {},
-                  os: {
-                    pushType: "2",
-                    priceAlertType: "1",
-                    priceAlertPercentage: "10",
-                    productViewCount: "2",
-                    productViewCountInDays: 90,
-                  },
-                  vs: [
-                    { vi: 2377, ratio: 100, type: "n" },
-                    { vi: 2376, ratio: 0, type: "cg" },
-                  ],
-                  fl: 0,
-                },
                 1148: {
                   s: null,
                   priority: "",
@@ -19706,116 +19792,6 @@
                     { vi: 2580, ratio: 0, type: "cg" },
                   ],
                   fl: 3,
-                },
-                1216: {
-                  s: null,
-                  priority: "",
-                  gaSegmentId: "",
-                  goalBuilderList: {
-                    2: {
-                      goalId: 2,
-                      goalName: "productpage Rule",
-                      goalJs: "",
-                      type: "rules",
-                      result: "true",
-                      goalList: [
-                        {
-                          id: "sp-goal-1615281573",
-                          selectorString: "1==1 && spApi.isOnProductPage()",
-                        },
-                      ],
-                    },
-                    3: {
-                      goalId: 3,
-                      goalName: "click add to cart",
-                      goalJs: "",
-                      type: "click",
-                      result: "",
-                      goalList: [
-                        {
-                          id: "sp-goal-1615287685689",
-                          selectorString:
-                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(1)",
-                        },
-                      ],
-                    },
-                    4: {
-                      goalId: 4,
-                      goalName: "click_mua_ngay",
-                      goalJs: "",
-                      type: "click",
-                      result: "",
-                      goalList: [
-                        {
-                          id: "sp-goal-1615351121024",
-                          selectorString:
-                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(0)",
-                        },
-                      ],
-                    },
-                  },
-                  os: { sutd: !1, idoie: !1, clfn: 0 },
-                  vs: [
-                    { vi: 2585, ratio: 50, type: "n" },
-                    { vi: 2584, ratio: 0, type: "cg" },
-                    { vi: 2586, ratio: 50, type: "n" },
-                  ],
-                  fl: 0,
-                },
-                1217: {
-                  s: null,
-                  priority: "",
-                  gaSegmentId: "",
-                  goalBuilderList: {
-                    2: {
-                      goalId: 2,
-                      goalName: "productpage Rule",
-                      goalJs: "",
-                      type: "rules",
-                      result: "true",
-                      goalList: [
-                        {
-                          id: "sp-goal-1615281573",
-                          selectorString: "1==1 && spApi.isOnProductPage()",
-                        },
-                      ],
-                    },
-                    3: {
-                      goalId: 3,
-                      goalName: "click add to cart",
-                      goalJs: "",
-                      type: "click",
-                      result: "",
-                      goalList: [
-                        {
-                          id: "sp-goal-1615287685689",
-                          selectorString:
-                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(1)",
-                        },
-                      ],
-                    },
-                    4: {
-                      goalId: 4,
-                      goalName: "click_mua_ngay",
-                      goalJs: "",
-                      type: "click",
-                      result: "",
-                      goalList: [
-                        {
-                          id: "sp-goal-1615351121024",
-                          selectorString:
-                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(0)",
-                        },
-                      ],
-                    },
-                  },
-                  os: { sutd: !1, idoie: !1, clfn: 0 },
-                  vs: [
-                    { vi: 2589, ratio: 50, type: "n" },
-                    { vi: 2588, ratio: 0, type: "cg" },
-                    { vi: 2590, ratio: 50, type: "n" },
-                  ],
-                  fl: 0,
                 },
                 1218: {
                   s: null,
@@ -20576,18 +20552,6 @@
                   ],
                   fl: 0,
                 },
-                1678: {
-                  s: 1,
-                  priority: "",
-                  gaSegmentId: "",
-                  goalBuilderList: {},
-                  os: { pushType: "4" },
-                  vs: [
-                    { vi: 3545, ratio: 100, type: "n" },
-                    { vi: 3544, ratio: 0, type: "cg" },
-                  ],
-                  fl: 3,
-                },
                 1680: {
                   s: 909,
                   priority: "",
@@ -21164,18 +21128,6 @@
                   ],
                   fl: 0,
                 },
-                1710: {
-                  s: 936,
-                  priority: "",
-                  gaSegmentId: "",
-                  goalBuilderList: {},
-                  os: { pushType: "4" },
-                  vs: [
-                    { vi: 3628, ratio: 100, type: "n" },
-                    { vi: 3627, ratio: 0, type: "cg" },
-                  ],
-                  fl: 3,
-                },
                 1713: {
                   s: null,
                   priority: "",
@@ -21617,51 +21569,192 @@
                   ],
                   fl: 0,
                 },
-                1730: {
+                1750: {
+                  s: 966,
+                  priority: "",
+                  gaSegmentId: "",
+                  goalBuilderList: {
+                    2: {
+                      goalId: 2,
+                      goalName: "productpage Rule",
+                      goalJs: "",
+                      type: "rules",
+                      result: "true",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615281573",
+                          selectorString: "1==1 && spApi.isOnProductPage()",
+                        },
+                      ],
+                    },
+                    3: {
+                      goalId: 3,
+                      goalName: "click add to cart",
+                      goalJs: "",
+                      type: "click",
+                      result: "",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615287685689",
+                          selectorString:
+                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(1)",
+                        },
+                      ],
+                    },
+                    4: {
+                      goalId: 4,
+                      goalName: "click_mua_ngay",
+                      goalJs: "",
+                      type: "click",
+                      result: "",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615351121024",
+                          selectorString:
+                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(0)",
+                        },
+                      ],
+                    },
+                  },
+                  os: { sutd: !1, idoie: !1, clfn: 0 },
+                  vs: [
+                    { vi: 3716, ratio: 50, type: "n" },
+                    { vi: 3715, ratio: 0, type: "cg" },
+                    { vi: 3731, ratio: 50, type: "n" },
+                  ],
+                  fl: 3,
+                },
+                1751: {
                   s: null,
                   priority: "",
                   gaSegmentId: "",
                   goalBuilderList: {},
-                  os: { pushType: "1" },
+                  os: {},
                   vs: [
-                    { vi: 3673, ratio: 100, type: "n" },
-                    { vi: 3674, ratio: 0, type: "cg" },
+                    { vi: 3718, ratio: 100, type: "n" },
+                    { vi: 3717, ratio: 0, type: "cg" },
                   ],
                   fl: 0,
                 },
-                1736: {
-                  s: 1,
+                1766: {
+                  s: null,
                   priority: "",
                   gaSegmentId: "",
-                  goalBuilderList: {},
-                  os: { pushType: "4" },
+                  goalBuilderList: {
+                    2: {
+                      goalId: 2,
+                      goalName: "productpage Rule",
+                      goalJs: "",
+                      type: "rules",
+                      result: "true",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615281573",
+                          selectorString: "1==1 && spApi.isOnProductPage()",
+                        },
+                      ],
+                    },
+                    3: {
+                      goalId: 3,
+                      goalName: "click add to cart",
+                      goalJs: "",
+                      type: "click",
+                      result: "",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615287685689",
+                          selectorString:
+                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(1)",
+                        },
+                      ],
+                    },
+                    4: {
+                      goalId: 4,
+                      goalName: "click_mua_ngay",
+                      goalJs: "",
+                      type: "click",
+                      result: "",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615351121024",
+                          selectorString:
+                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(0)",
+                        },
+                      ],
+                    },
+                  },
+                  os: { sutd: !1, idoie: !1, clfn: 0 },
                   vs: [
-                    { vi: 3685, ratio: 100, type: "n" },
-                    { vi: 3686, ratio: 0, type: "cg" },
+                    { vi: 3750, ratio: 50, type: "n" },
+                    { vi: 3749, ratio: 0, type: "cg" },
+                    { vi: 3751, ratio: 50, type: "n" },
                   ],
-                  fl: 3,
+                  fl: 0,
                 },
-                1737: {
-                  s: 1,
+                1767: {
+                  s: null,
                   priority: "",
                   gaSegmentId: "",
-                  goalBuilderList: {},
-                  os: { pushType: "4" },
+                  goalBuilderList: {
+                    2: {
+                      goalId: 2,
+                      goalName: "productpage Rule",
+                      goalJs: "",
+                      type: "rules",
+                      result: "true",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615281573",
+                          selectorString: "1==1 && spApi.isOnProductPage()",
+                        },
+                      ],
+                    },
+                    3: {
+                      goalId: 3,
+                      goalName: "click add to cart",
+                      goalJs: "",
+                      type: "click",
+                      result: "",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615287685689",
+                          selectorString:
+                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(1)",
+                        },
+                      ],
+                    },
+                    4: {
+                      goalId: 4,
+                      goalName: "click_mua_ngay",
+                      goalJs: "",
+                      type: "click",
+                      result: "",
+                      goalList: [
+                        {
+                          id: "sp-goal-1615351121024",
+                          selectorString:
+                            "body > section:eq(1) > div > div > div:eq(1) > div:eq(1) > div:eq(3) > a:eq(0)",
+                        },
+                      ],
+                    },
+                  },
+                  os: { sutd: !1, idoie: !1, clfn: 0 },
                   vs: [
-                    { vi: 3688, ratio: 100, type: "n" },
-                    { vi: 3687, ratio: 0, type: "cg" },
+                    { vi: 3753, ratio: 50, type: "n" },
+                    { vi: 3752, ratio: 0, type: "cg" },
+                    { vi: 3754, ratio: 50, type: "n" },
                   ],
-                  fl: 3,
+                  fl: 0,
                 },
-                1738: {
+                1768: {
                   s: 1,
                   priority: "",
                   gaSegmentId: "",
                   goalBuilderList: {},
                   os: { pushType: "4" },
                   vs: [
-                    { vi: 3690, ratio: 100, type: "n" },
-                    { vi: 3689, ratio: 0, type: "cg" },
+                    { vi: 3756, ratio: 100, type: "n" },
+                    { vi: 3755, ratio: 0, type: "cg" },
                   ],
                   fl: 3,
                 },
@@ -21821,8 +21914,8 @@
               misc: {
                 customSegments: [],
                 services: [
-                  22, 48, 2, 11, 12, 13, 36, 37, 38, 39, 40, 42, 43, 44, 46, 47,
-                  52, 53, 57, 58, 61, 62, 50,
+                  22, 48, 2, 11, 12, 13, 36, 37, 38, 39, 40, 42, 43, 46, 47, 52,
+                  53, 57, 58, 61, 62, 50, 44,
                 ],
                 currencyRates: { VND: { VND: 1 } },
                 preferredCurrency: "VND",
@@ -22437,7 +22530,8 @@
                         this.setCurrentCurrency(),
                         this.setVisitInformation(),
                         this._executeSiteModifyingAndLoggingCodes();
-                    }.bind(this)
+                    }.bind(this),
+                    !0
                   ),
                   !0
                 );
@@ -23213,7 +23307,8 @@
                 (this.userSegment = new _()),
                 (this.excludedUserAgentDetector = new h()),
                 (this.aliases = e || ["all"]),
-                (this.currentLanguage = "");
+                (this.currentLanguage = ""),
+                (this.currentLocale = "");
             }
             f.extend(S, b),
               f.extend(S, T),
@@ -23224,24 +23319,26 @@
                 c.MOBILE_MESSAGING,
               ]),
               (S.prototype.resolve = function (e) {
-                for (var t = [], i = 0; i < e.length; i++) {
-                  var n = e[i];
-                  this.suitsConsentFlow(n) &&
-                    (this.isVariationRatioZero(n.id) ||
-                      this.excludedUserAgentDetector.isExcluded(n) ||
-                      this.isAsyncCampaign(n.id) ||
-                      this.isTriggerable(n) ||
-                      this.isNotTestCandidate(n.id) ||
-                      (this.isAliasMatched(n) &&
-                        this.isCampaignPlatformValid(n) &&
-                        this.isCampaignLanguageValid(n) &&
-                        this.campaignDateIsValid(n) &&
-                        (this.isUserInSegment(n.id) || this.isOnTest(n.id)) &&
-                        this.triggerRuleValid(n) &&
-                        this.segmentRuleValid(n) &&
-                        t.push(n)));
+                for (var t = [], i = [], n = 0; n < e.length; n++) {
+                  var s = e[n];
+                  this.suitsConsentFlow(s) &&
+                    (this.isVariationRatioZero(s.id) ||
+                      this.excludedUserAgentDetector.isExcluded(s) ||
+                      this.isAsyncCampaign(s.id) ||
+                      this.isTriggerable(s) ||
+                      this.isNotTestCandidate(s.id) ||
+                      (this.isAliasMatched(s) &&
+                        this.isCampaignPlatformValid(s) &&
+                        this.isCampaignLanguageValid(s) &&
+                        this.campaignDateIsValid(s) &&
+                        (this.isUserInSegment(s.id) || this.isOnTest(s.id)) &&
+                        this.triggerRuleValid(s) &&
+                        this.segmentRuleValid(s) &&
+                        (this.hasBehavioralCondition(s)
+                          ? i.push(s)
+                          : t.push(s))));
                 }
-                return S.prioritize(t);
+                return S.prioritize(t, i);
               }),
               (S.prototype.suitsConsentFlow = function (e) {
                 return !g.onlyAnalytical() || e.fl <= g.FLOWS.ANALYTICAL;
@@ -23254,7 +23351,8 @@
               (S.prototype.isCampaignLanguageValid = function (e) {
                 return (
                   m.has(e.lang, r.LANGUAGE_ALL) ||
-                  m.has(e.lang, this._getLanguage())
+                  m.has(e.lang, this._getLanguage()) ||
+                  m.has(e.lang, this._getLocale())
                 );
               }),
               (S.prototype._getLanguage = function () {
@@ -23262,6 +23360,13 @@
                   this.currentLanguage ||
                     (this.currentLanguage = this.systemRules.call("getLang")),
                   this.currentLanguage
+                );
+              }),
+              (S.prototype._getLocale = function () {
+                return (
+                  this.currentLocale ||
+                    (this.currentLocale = this.systemRules.call("getLocale")),
+                  this.currentLocale
                 );
               }),
               (S.prototype.isAliasMatched = function (e) {
@@ -23322,8 +23427,8 @@
                   p.isCurrentTimeBetweenRange(e.st, e.e)
                 );
               }),
-              (S.prioritize = function (e) {
-                return m.sortBy(e, "p");
+              (S.prioritize = function (e, t) {
+                return [...m.sortBy(e, "p"), ...m.sortBy(t, "p")];
               }),
               (e.exports = v(S));
           },
@@ -27146,19 +27251,22 @@
               ) {
                 const { tto: n, id: s } = e,
                   o = this._getRequestOptions(e);
-                return D._cache[s]
-                  ? (E.debounce(() => t.call(this, D._cache[s]), n)(), !0)
-                  : (S.get({
-                      url: o.url,
-                      success: E.debounce(
-                        this._fetchHandler.bind(this, e, t),
-                        n
-                      ),
-                      parse: !0,
-                      error: i,
-                      jsonpCallback: o.jsonpCallback,
-                    }),
-                    !0);
+                return (
+                  n > 0 && i(),
+                  D._cache[s]
+                    ? (E.debounce(() => t.call(this, D._cache[s]), n)(), !0)
+                    : (S.get({
+                        url: o.url,
+                        success: E.debounce(
+                          this._fetchHandler.bind(this, e, t),
+                          n
+                        ),
+                        parse: !0,
+                        error: i,
+                        jsonpCallback: o.jsonpCallback,
+                      }),
+                      !0)
+                );
               }),
               (D.prototype._fetchHandler = function (e, t, i) {
                 return (
@@ -31192,6 +31300,7 @@
               currency: "cu",
               unit_price: "up",
               unit_sale_price: "usp",
+              not_converted_unit_sale_price: "nc_usp",
               stock: "st",
               color: "co",
               size: "si",
@@ -31379,6 +31488,7 @@
                       cu: this.systemRules.call("getCurrency", ""),
                       up: e.product.originalPrice,
                       usp: e.product.price,
+                      nc_usp: e.product.notConvertedPrice || e.product.price,
                       url: e.product.url,
                       piu: e.product.img,
                       qu: e.product.quantity,
@@ -33190,7 +33300,7 @@
                 }),
                 (this.JOINED_EVENT = "architect:joined"),
                 (this.ARYUDER_URL = "https://aryuder.api.useinsider.com"),
-                (this.ARYUDER_STATUS_URL = this.ARYUDER_URL + "/v2/status"),
+                (this.ARYUDER_STATUS_URL = this.ARYUDER_URL + "/v3/status"),
                 (this.ARYUDER_SEEN_URL = this.ARYUDER_URL + "/seen"),
                 (this.EVENT_NAMESPACE = ".architectWeb"),
                 (this.ID_PARAMETER = "journeyId"),
@@ -33454,6 +33564,17 @@
                             options: { unique: !0 },
                           },
                         ],
+                      },
+                    ],
+                  },
+                  connectionTestDB: {
+                    name: "INSIDER_INCOGNITO_DB",
+                    version: 1,
+                    tables: [
+                      {
+                        name: "test",
+                        options: { keyPath: "key", autoIncrement: !1 },
+                        indexes: [],
                       },
                     ],
                   },
@@ -35746,108 +35867,92 @@
               (e.exports = c);
           },
           4470: function (e, t, i) {
-            var n = i(6284),
-              s = i(280);
-            function o() {
-              (this.browser = new n()),
-                (this.callback = null),
-                (this.reject = null);
+            const n = i(6284),
+              s = i(280),
+              o = i(1377);
+            function a() {
+              (this.browser = new n()), (this.indexedDB = new o());
             }
-            (o.prototype.check = function () {
+            (a.prototype.check = async function () {
               return new Promise(
-                function (e, t) {
-                  (this.callback = e),
-                    (this.reject = t),
-                    this.browser.isBrowser(n.CHROME) ||
-                    this.browser.isBrowser(n.EDGE_LATEST)
-                      ? this._isPrivateChrome()
-                      : this.browser.isBrowser(n.FIREFOX)
-                      ? this._isPrivateFirefox()
-                      : this.browser.isBrowser(n.SAFARI)
-                      ? this._isPrivateSafari()
-                      : this._reject();
+                function (e) {
+                  this.browser.isBrowser(n.CHROME) ||
+                  this.browser.isBrowser(n.EDGE_LATEST) ||
+                  this.browser.isBrowser(n.OPERA)
+                    ? e(this._isPrivateChromium())
+                    : this.browser.isBrowser(n.FIREFOX)
+                    ? e(this._isPrivateFirefox())
+                    : this.browser.isBrowser(n.SAFARI)
+                    ? e(this._isPrivateSafari())
+                    : e(!1);
                 }.bind(this)
               );
             }),
-              (o.prototype._callback = function (e) {
-                return this.callback(e), !0;
-              }),
-              (o.prototype._reject = function () {
-                return this.reject(), !0;
-              }),
-              (o.prototype._storageQuotaChromePrivateTest = function () {
-                var e = function (e, t) {
-                  var i = 1048576,
-                    n = Math.round(t / i),
-                    s = 2 * Math.round(this._getQuotaLimit() / i);
-                  this._callback(n < s);
-                }.bind(this);
+              (a._checkQuota = function (e) {
+                const t = 1048576;
                 return (
-                  s.isUndefined(navigator.webkitTemporaryStorage) ||
-                    s.isUndefined(
-                      navigator.webkitTemporaryStorage.queryUsageAndQuota
-                    ) ||
-                    navigator.webkitTemporaryStorage.queryUsageAndQuota(
-                      e,
-                      this._reject
-                    ),
-                  !0
+                  Math.round(e / t) < 2 * Math.round(a._getQuotaLimit() / t)
                 );
               }),
-              (o.prototype._getQuotaLimit = function () {
-                var e = window.performance;
+              (a.prototype._storageQuotaChromiumPrivateTest =
+                async function () {
+                  return (
+                    !s.isUndefined(navigator.webkitTemporaryStorage) &&
+                    !s.isUndefined(
+                      navigator.webkitTemporaryStorage.queryUsageAndQuota
+                    ) &&
+                    new Promise((e) => {
+                      navigator.webkitTemporaryStorage.queryUsageAndQuota(
+                        (t, i) => {
+                          e(a._checkQuota(i));
+                        },
+                        () => {
+                          e(!1);
+                        }
+                      );
+                    })
+                  );
+                }),
+              (a._getQuotaLimit = function () {
+                const e = window.performance;
                 return s.isUndefined(e) ||
                   s.isUndefined(e.memory) ||
                   s.isUndefined(e.memory.jsHeapSizeLimit)
                   ? 1073741824
                   : e.memory.jsHeapSizeLimit;
               }),
-              (o.prototype._safariTest = function () {
-                var e = String(Math.random());
-                try {
-                  window.indexedDB.open(e, 1).onupgradeneeded = function (t) {
-                    var i = t.target,
-                      n = null == i ? void 0 : i.result;
-                    try {
-                      n
-                        .createObjectStore("test", { autoIncrement: !0 })
-                        .put(new Blob()),
-                        this._callback(!1);
-                    } catch (e) {
-                      var o,
-                        a = e.message;
-                      if (
-                        (e instanceof Error && (o = null != a ? a : e),
-                        !s.isString(o))
-                      )
-                        return this._callback(!1);
-                      var r = /BlobURLs are not yet supported/.test(o);
-                      return this._callback(r);
-                    } finally {
-                      n.close(), window.indexedDB.deleteDatabase(e);
-                    }
-                  }.bind(this);
-                } catch (e) {
-                  return this.callback(!1);
-                }
+              (a.prototype._safariTest = async function () {
+                return new Promise((e) => {
+                  this.indexedDB.connect("connectionTestDB", (t) => {
+                    t || e(!1),
+                      this.indexedDB.upsert("test", {
+                        key: "key",
+                        value: new Blob(),
+                      }),
+                      this.indexedDB.get("test", "key").then((t) => {
+                        e(!t);
+                      });
+                  });
+                });
               }),
-              (o.prototype._isPrivateSafari = function () {
-                return s.isUndefined(navigator.maxTouchPoints)
-                  ? (this._callback(!1), !0)
-                  : (this._safariTest(), !0);
-              }),
-              (o.prototype._isPrivateChrome = function () {
-                return s.isUndefined(Promise) ||
-                  s.isUndefined(Promise.allSettled)
-                  ? (this._callback(!1), !0)
-                  : (this._storageQuotaChromePrivateTest(), !0);
-              }),
-              (o.prototype._isPrivateFirefox = function () {
+              (a.prototype._isPrivateSafari = async function () {
                 return (
-                  this._callback(s.isUndefined(navigator.serviceWorker)), !0
+                  !s.isUndefined(navigator.maxTouchPoints) && this._safariTest()
                 );
               }),
-              (e.exports = o);
+              (a.prototype._isPrivateChromium = async function () {
+                return (
+                  !s.isUndefined(Promise) &&
+                  !s.isUndefined(Promise.allSettled) &&
+                  this._storageQuotaChromiumPrivateTest().then(function (e) {
+                    return e;
+                  })
+                );
+              }),
+              (a.prototype._isPrivateFirefox = function () {
+                return s.isUndefined(navigator.serviceWorker);
+              }),
+              (e.exports = a);
           },
           4746: function (e) {
             function t() {}
@@ -38454,6 +38559,15 @@
               }),
               (o.prototype.upsert = function (e, t) {
                 return this._getObjectStore(e).put(t), !0;
+              }),
+              (o.prototype.get = function (e, t) {
+                return new Promise(
+                  function (i) {
+                    this._getObjectStore(e).get(t).onsuccess = function (e) {
+                      i(e.target.result);
+                    };
+                  }.bind(this)
+                );
               }),
               (o.prototype._getObjectStore = function (e) {
                 return this.db.transaction([e], n.READWRITE).objectStore(e);
