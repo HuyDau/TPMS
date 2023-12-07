@@ -12,7 +12,7 @@
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
-    <title>TPMS - Chính Sách Bảo Hành</title>
+    <title>TPMS  - Chính Sách Bảo Hành</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIItalic.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,8 +54,8 @@
         <div class="heading">
             <div class="container">
                 <div class="logo">
-                    <a href="index.php" title="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
-                        <img src="assets/images/logo/logo.png" alt="TPMS - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
+                    <a href="index.php" title="TPMS  - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
+                        <img src="assets/images/logo/logo.png" alt="TPMS  - Hệ Thống Bán Lẻ Sản Phẩm Thiết Bị Công Nghệ">
                     </a>
                 </div>
 
@@ -741,9 +741,9 @@
             </p>
 
             <p class="MsoNormal"><span lang="vi">
-                    <font color="#000000"><b>Hoàng Hà Mobile chân
+                    <font color="#000000"><b>TPMS chân
                             thành cảm ơn Quý khách hàng, dưới đây là chi tiết chính sách bảo hành của Hoàng
-                            Hà Mobile áp dụng với tất cả các sản phẩm, Hoàng Hà Mobile luôn nỗ lực để có được
+                            Hà Mobile áp dụng với tất cả các sản phẩm, TPMS luôn nỗ lực để có được
                             chất lượng dịch vụ tốt nhất dành cho Quý khách hàng.</b>
                         <o:p></o:p>
                     </font>
@@ -986,81 +986,95 @@
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">*Đổi mới miễn phí: <o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Áp dụng với sản phẩm có
                         lỗi phần cứng do nhà sản xuất, với một số trường hợp nhất định, Hoàng Hà Mobile
                         sẽ gửi sản phẩm thẩm định lỗi tại trung tâm bảo hành của hãng, thời gian thẩm định
-                        tuỳ thuộc vào TTBH của hãng. Hoàng Hà Mobile cam kết sẽ luôn vì quyền lợi của
+                        tuỳ thuộc vào TTBH của hãng. TPMS cam kết sẽ luôn vì quyền lợi của
                         quý khách hàng!<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Lỗi phần mềm không được
                         áp dụng trong Trường hợp này mà chỉ khắc phục lỗi phần mềm.<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000"><b>Điều kiện đổi mới và trả
                             lại:</b>
                         <o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Hình thức máy và hộp máy
                         như mới<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Phụ kiện và các loại quà
                         tặng đi kèm: còn đầy đủ, nguyên vẹn, không có dấu hiệu móp mép, cong vênh<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Máy không có dấu hiệu
                         tác động từ bên ngoài: Rơi, vỡ, móp méo, cong vênh, trầy xước, bị dung dịch hoá
                         chất và chất lỏng xâm nhập vào.<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Máy đã được gỡ các loại
                         tài khoản cá nhân như iCloud, Gmail, Mi account … <o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi"
                     style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                     <font color="#000000">Lỗi điểm chết màn hình : màn hình có từ 3 điểm chết trở
                         lên hoặc 1 điểm chết có kích thước lớn hơn 1mm đối với điện thoại và từ 5 điểm
                         chết trở lên đối với laptop.</font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000"><b><span style="font-size: 18px;">2. Chính sách về bảo hành</span></b></font>
-                </span></p>
+                </span>
+            </p>
             <p class="MsoNormal"><span lang="VI">Hoàng Hà Mobile
-                    cam kết tất cả các sản phẩm bán ra tại Hoàng Hà Mobile đều là sản phẩm chính
-                    hãng, và nhận được các chế độ bảo hành chính hãng.<o:p></o:p></span></p>
+                    cam kết tất cả các sản phẩm bán ra tại TPMS đều là sản phẩm chính
+                    hãng, và nhận được các chế độ bảo hành chính hãng.<o:p></o:p></span>
+                </p>
             <p class="MsoNormal"><span lang="VI">Quý khách hàng có
                     thể tới trực tiếp các Trung tâm bảo hành chính hãng hoặc tới các cửa hàng Hoàng
-                    Hà Mobile gần nhất để được tiếp nhận bảo hành chính hãng.<o:p></o:p></span></p>
+                    Hà Mobile gần nhất để được tiếp nhận bảo hành chính hãng.<o:p></o:p></span>
+                </p>
             <p class="MsoNormal"><span lang="VI">Quý khách xem địa
                     chỉ trung tâm bảo hành chính hãng tại đây:
-                    https://hoanghamobile.com/trung-tam-bao-hanh<o:p></o:p></span></p>
+                    https://hoanghamobile.com/trung-tam-bao-hanh<o:p></o:p></span>
+                </p>
             <p class="MsoNormal"><span lang="VI">Thời gian bảo
-                    hành áp dụng cho máy mới: 12 tháng hoặc theo quy định của hãng.<o:p></o:p></span></p>
+                    hành áp dụng cho máy mới: 12 tháng hoặc theo quy định của hãng.<o:p></o:p></span>
+                </p>
             <p class="MsoNormal"><span lang="vi">
-
-                    <span lang="VI" style="font-size:12.0pt;font-family:Calibri,sans-serif;">Thời gian bảo hành áp dụng cho
-                        máy cũ: 6 tháng hoặc
-                        theo quy định của Hoàng Hà.</span></span></p>
+                <span lang="VI" style="font-size:12.0pt;font-family:Calibri,sans-serif;">Thời gian bảo hành áp dụng cho
+                    máy cũ: 6 tháng hoặc
+                    theo quy định của Hoàng Hà.</span></span>
+            </p>
             <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="936"
                 style="width: 701.7pt; margin-left: -0.25pt;">
                 <tbody>
@@ -1084,8 +1098,8 @@
                                     Khi đổi sản phẩm, thời hạn bảo hành còn lại của sản phẩm cũ được
                                     chuyển sang sản phẩm tương đương<o:p></o:p></span></p>
                             <p class="MsoNormal"><span style="font-size:11.0pt;color:black">•&nbsp;
-                                    Chính sách bảo hành của Hoàng Hà Mobile chỉ áp dụng cho các sản phẩm
-                                    do Hoàng Hà Mobile cung cấp.<o:p></o:p></span></p>
+                                    Chính sách bảo hành của TPMS chỉ áp dụng cho các sản phẩm
+                                    do TPMS cung cấp.<o:p></o:p></span></p>
                         </td>
                         <td width="463" valign="top" style="width:347.3pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:68.5pt">
                             <p class="MsoNormal"><span style="font-size:11.0pt;color:black">•&nbsp;
@@ -1112,7 +1126,7 @@
                                     Số IMEl trên máy và phiếu bảo hành không trùng khớp với nhau.<o:p></o:p></span></p>
                             <p class="MsoNormal"><span style="font-size:11.0pt;color:black">•&nbsp;
                                     Mất phiếu bảo hành của sản phẩm. Sản phẩm không thể xác định được
-                                    nguồn gốc mua tại Hoàng Hà Mobile một cách hợp lệ.<o:p></o:p></span></p>
+                                    nguồn gốc mua tại TPMS một cách hợp lệ.<o:p></o:p></span></p>
                             <p class="MsoNormal"><span style="font-size:11.0pt;color:black">•&nbsp;
                                     Phiếu bảo hành tự ý sửa đổi hoặc gạch xoá, rách nát không nhìn rõ được
                                     số IMEl, không ghi rõ ngày mua hàng<o:p></o:p></span></p>
@@ -1140,7 +1154,7 @@
                                     không sẽ dễ gây lỗi nguồn sản phẩm)<o:p></o:p></span></p>
                             <p class="MsoNormal"><span style="font-size:11.0pt;color:black">• Quý khách vui lòng tự sao lưu tất
                                     cả các dữ liệu cá nhân trước khi mang sản phẩm tới trung tâm bảo hành, trong
-                                    quá trình bảo hành Hoàng Hà Mobile không chịu trách nhiệm về mọi mất mát dữ liệu
+                                    quá trình bảo hành TPMS không chịu trách nhiệm về mọi mất mát dữ liệu
                                     cá nhân và các ứng dụng cài đặt thêm được lưu trữ trong máy.<o:p></o:p></span></p>
                             <p class="MsoNormal"><span style="font-size:11.0pt;color:black">• Hoàng Hà không chịu trách nhiệm
                                     về phụ kiện không phải của máy khi gửi bảo hạnh như : cường lực, ốp lưng, thẻ
@@ -1165,23 +1179,27 @@
                             hành:</b>
                         <o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Tại cửa hàng Hoàng Hà
-                        Mobile: Theo giờ làm việc của các cửa hàng Hoàng Hà Mobile trên cả nước<o:p></o:p>
+                        Mobile: Theo giờ làm việc của các cửa hàng TPMS trên cả nước<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">Tại TTBH Hãng: Theo giờ
                         làm việc của TTBH hãng.<o:p></o:p>
                     </font>
-                </span></p>
+                </span>
+            </p>
 
             <p class="MsoNormal"><span lang="vi">
                     <font color="#000000">&nbsp;</font>
-                </span></p>
+                </span>
+            </p>
         </div>
     </section>
 
@@ -1210,10 +1228,10 @@
                                 <a href="/dat-hang/bao-hanh-mo-rong">Phạm Vi, Điều Khoản Gói Bảo Hành Mở Rộng</a>
                             </li>
                             <li>
-                                <a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a>
+                                <a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a>
                             </li>
                             <li>
-                                <a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a>
+                                <a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a>
                             </li>
                             <li>
                                 <a href="/dieu-khoan-mua-ban-hang-hoa">Điều Khoản Mua Bán Hàng Hóa</a>
@@ -1235,7 +1253,7 @@
                                 <a href="/cham-soc-khach-hang">Chăm Sóc Khách Hàng</a>
                             </li>
                             <li>
-                                <a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a>
+                                <a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS  Care</a>
                             </li>
                             <li>
                                 <a href="/hop-tac-kinh-doanh">Hợp Tác Kinh Doanh</a>

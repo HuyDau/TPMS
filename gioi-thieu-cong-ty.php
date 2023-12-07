@@ -807,8 +807,8 @@
                             <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
                             <li><a href="chinh-sach-bao-hanh.php">Chính Sách Đổi Mới Và Bảo Hành</a></li>
                             <li><a href="/dat-hang/bao-hanh-mo-rong">Dịch Vụ Bảo Hành Mở Rộng</a></li>
-                            <li><a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a></li>
-                            <li><a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a></li>
+                            <li><a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a></li>
+                            <li><a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a></li>
                             <li><a href="/dieu-khoan-mua-ban-hang-hoa">Quy Chế Hoạt Động</a></li>
                         </ul>
                     </div>

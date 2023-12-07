@@ -1408,8 +1408,8 @@
                             <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
                             <li><a href="chinh-sach-bao-hanh.php">Chính Sách Bảo Hành</a></li>
                             <li><a href="/dat-hang/bao-hanh-mo-rong">Phạm vi, điều khoản g&#243;i bảo h&#224;nh mở rộng</a></li>
-                            <li><a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a></li>
-                            <li><a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a></li>
+                            <li><a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a></li>
+                            <li><a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a></li>
                             <li><a href="/dieu-khoan-mua-ban-hang-hoa">Điều khoản mua b&#225;n h&#224;ng h&#243;a</a></li>
                             <li><a href="/cau-hoi-thuong-gap">C&#226;u hỏi thường gặp</a></li>
                         </ul>

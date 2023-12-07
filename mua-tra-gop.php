@@ -11,7 +11,7 @@
     <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
     <meta name="geo.region" content="VN-Hanoi" />
     <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
-    <title>Mua Hàng Trả Góp</title>
+    <title>TPMS - Mua Hàng Trả Góp</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUIItalic.woff2" as="font" type="font/woff2" crossorigin>
@@ -2869,10 +2869,10 @@
                                 <a href="/dat-hang/bao-hanh-mo-rong">Phạm Vi, Điều Khoản Gói Bảo Hành Mở Rộng</a>
                             </li>
                             <li>
-                                <a href="/chinh-sach-bao-mat">Chính Sách Bảo Mật</a>
+                                <a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a>
                             </li>
                             <li>
-                                <a href="/chinh-sach-giai-quyet-khieu-nai">Chính Sách Giải Quyết Khiếu Nại</a>
+                                <a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a>
                             </li>
                             <li>
                                 <a href="/dieu-khoan-mua-ban-hang-hoa">Điều Khoản Mua Bán Hàng Hóa</a>
