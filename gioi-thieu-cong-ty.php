@@ -809,15 +809,15 @@
                             <li><a href="/dat-hang/bao-hanh-mo-rong">Dịch Vụ Bảo Hành Mở Rộng</a></li>
                             <li><a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a></li>
                             <li><a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a></li>
-                            <li><a href="/dieu-khoan-mua-ban-hang-hoa">Quy Chế Hoạt Động</a></li>
+                            <li><a href="dieu-khoan-mua-ban-hang-hoa.php">Quy Chế Hoạt Động</a></li>
                         </ul>
                     </div>
                         <div class="link-content">
                         <h4><a>Th&#244;ng Tin Li&#234;n Hệ</a></h4>
                         <ul>
-                            <li><a href="/mua-hang-online">Thông Tin Các Trang TMDT</a></li>
+                            <li><a href="mua-hang-online.php">Thông Tin Các Trang TMDT</a></li>
                             <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a></li>
-                            <li><a href="/hop-tac-kinh-doanh">Khách Hàng Doanh Nghiệp B2B</a></li>
+                            <li><a href="hop-tac-kinh-doanh.php">Khách Hàng Doanh Nghiệp B2B</a></li>
                             <li><a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a></li>
                         </ul>
                     </div>
@@ -868,10 +868,10 @@
             <div id="navSocial">
                 <div class="social">
                     <ul>
-                            <li><a href="https://www.facebook.com/hoanghamobilecom" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
+                            <li><a href="https://www.facebook.com/lehuydau2312/" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
                             <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
-                            <li><a href="https://www.instagram.com/hoanghamobile/?hl=vi" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
-                            <li><a href="https://www.tiktok.com/@hoanghaangels?" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
+                            <li><a href="https://www.instagram.com/lehuydau2312?fbclid=IwAR37NMIskkkDEjeCGX9BdRb8njYkAiMOEurf6y9ok0HP1b2Dx8BPMbNMBVQ" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
+                            <li><a href="https://www.tiktok.com/@daulh____" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
                     </ul>
                 </div>
             </div>
