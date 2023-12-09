@@ -124,7 +124,7 @@
                                     </ul>
                                 </div>
                                 <div class="menu g2">
-                                    <h4><a href="/dien-thoai-duoi-1-trieu">Mức gi&#225;</a></h4>
+                                    <h4><a href="/dien-thoai-duoi-1-trieu">Mức Giá</a></h4>
                                     <ul class="display-row format_2">
                                         <li><a href="/dien-thoai-di-dong?filters={%22price%22:%22T100t%22}&amp;search=true">Tr&#234;n 100 triệu</a></li>
                                                 <li><a href="/dien-thoai-di-dong?=&amp;filters={sort:10,price:1t}">Dưới 1 triệu</a></li>
@@ -182,7 +182,7 @@
                                                     <li><a href="/laptop/hang-san-xuat/xiaomi">Xiaomi</a></li>
                                                     <li><a href="/laptop/masstel">Masstel</a></li>
                                             </ul>
-                                            <h4><a>Ph&#226;n loại Sản phẩm</a></h4>
+                                            <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/laptop/cao-cap-sang-trong">Cao cấp - Sang trọng</a></li>
                                                     <li><a href="/laptop/do-hoa-ki-thuat">Đồ họa - Kĩ thuật</a></li>
@@ -192,7 +192,7 @@
                                             </ul>
                                     </div>
                                         <div class="menu g3">
-                                            <h4><a>Mức gi&#225;</a></h4>
+                                            <h4><a>Mức Giá</a></h4>
                                             <ul class="display-row format_2">
                                                     <li><a href="https://hoanghamobile.com/laptop?filters={%22price%22:%2220t-100tr%22}&amp;search=true">Tr&#234;n 20 triệu</a></li>
                                                     <li><a href="https://hoanghamobile.com/laptop?filters={%22price%22:%2212t-15t%22}&amp;search=true">Từ 12 đến 15 Triệu</a></li>
@@ -264,7 +264,7 @@
                                             </ul>
                                     </div>
                                         <div class="menu g2">
-                                            <h4><a>Ph&#226;n loại sản phẩm</a></h4>
+                                            <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-do-hoa">M&#224;n h&#236;nh đồ họa</a></li>
                                                     <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-gaming">M&#224;n h&#236;nh Gaming</a></li>
@@ -521,7 +521,7 @@
                                         <div class="menu g3">
                                             <h4><a href="/phu-kien/phu-kien-apple">Phụ kiện Apple</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện ch&#237;nh h&#227;ng Apple</a></li>
+                                                    <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện Chính Hãng Apple</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-cho-macbook">Phụ kiện cho Macbook</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-iphone-15">Phụ kiện iPhone 15</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đ&#227;i</a></li>
@@ -869,7 +869,7 @@
             <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
             text-align:justify;"><span style="font-size:10.5pt;font-family:Arial,sans-serif;color:black">Để trả góp
                     theo chương trình của Home Credit với ưu điểm lãi xuất thấp, thời gian làm thủ
-                    tục ngắn gọn. Yêu cầu độ tuổi từ 21 – 60, khi làm thủ tục đăng kí trả góp yêu
+                    tục ngắn gọn. Yêu cầu độ tuổi từ 21 - 60, khi làm thủ tục đăng kí trả góp yêu
                     cầu CMND, Bằng lái xe. Chi nhánh hỗ trợ làm thủ tục theo chương trình của Home
                     Credit (Không hỗ trợ mua hàng trả góp với sản phẩm cũ) tại 194 Lê Duẩn - ĐT:
                     043.51.86.033<o:p></o:p></span></p>
@@ -877,7 +877,7 @@
             <p style="margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:18.75pt;
             text-align:justify;"><span style="font-size:10.5pt;font-family:Arial,sans-serif;color:black">Để trả góp
                     theo chương trình của FE Credit với ưu điểm lãi xuất thấp, thời gian làm thủ
-                    tục ngắn gọn. Yêu cầu độ tuổi từ 21 – 60, khi làm thủ tục đăng kí trả góp yêu
+                    tục ngắn gọn. Yêu cầu độ tuổi từ 21 - 60, khi làm thủ tục đăng kí trả góp yêu
                     cầu CMND, Bằng lái xe, hóa đơn điện nước. Chi nhánh hỗ trợ làm thủ tục trả góp
                     theo chương trình của FE Credit (Hỗ trợ mua hàng trả góp với tất cả các sản
                     phẩm cho mua hàng trả góp trên trang chủ) tại 95B Phố Huế - ĐT: 0968668995<o:p></o:p></span></p>
@@ -888,10 +888,8 @@
                     hợp, bạn vui lòng tham khảo trực tiếp tại đây:<o:p></o:p></span></p>
 
             <p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:18.75pt;
-            margin-bottom:.0001pt;text-align:justify;mso-outline-level:3;vertical-align:
-            baseline"><strong><i><span style="font-size:10.5pt;font-family:inherit,serif;
-            mso-bidi-font-family:Arial;color:black;border:none windowtext 1.0pt;mso-border-alt:
-            none windowtext 0in;padding:0in">5:</span></i></strong><i><span style="font-size:10.5pt;font-family:inherit,serif;mso-bidi-font-family:Arial;
+            margin-bottom:.0001pt;text-align:justify;vertical-align:
+            baseline"><strong><i><span style="font-size:10.5pt;font-family:inherit,serif;color:black;border:none windowtext 1.0pt;padding:0in">5:</span></i></strong><i><span style="font-size:10.5pt;font-family:inherit,serif;
             color:black;border:none windowtext 1.0pt;
             padding:0in">&nbsp;Các cơ sở của TPMS ở đâu? Làm sao để liên hệ?</span></i><span
                     style="font-size:10.5pt;font-family:Arial,sans-serif;color:black">

@@ -21,19 +21,22 @@ if (isset($_POST['all_prd'])) {
 if (isset($_POST['add'])) {
     $code = $_POST['code'];
     $name = $_POST['name'];
+    $image = $_FILES['catImage']['name'];
+    $image_tmp = $_FILES['catImage']['tmp_name'];
 
     $categoryName = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName = '$name' ");
 
     if (mysqli_num_rows($categoryName) > 0) {
         echo "<script>window.alert('Category exists !');</script>";
     } else {
-        $addCategory = "INSERT INTO `tbl_categories`(`Id`, `categoryCode`, `categoryName`) VALUES ('','$code','$name')";
+        $addCategory = "INSERT INTO `tbl_categories`(`Id`, `categoryCode`, `categoryName`,`categoryImage`) VALUES ('','$code','$name','$image')";
 
         $queryAddCategory = mysqli_query($conn, $addCategory);
         if ($queryAddCategory) {
             echo "<script>window.alert('Successful!');window.location.href = 'categories.php'</script>";
         }
     }
+    move_uploaded_file($image_tmp, '../assets/images/category/' . $image);
 }
 
 if(isset($_GET['id'])){
@@ -46,7 +49,15 @@ if(isset($_GET['id'])){
     if (isset($_POST['edit'])) {
         $codeEdit = $_POST['codeEdit'];
         $nameEdit = $_POST['nameEdit'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit' WHERE Id = $id");
+        if ($_FILES['catImage1']['name'] == "") {
+            $image1 = $infoCategory['categoryImage'];
+        } else {
+            $image1 = $_FILES['catImage1']['name'];
+            $image1_tmp = $_FILES['catImage1']['tmp_name'];
+            move_uploaded_file($image1_tmp, '../assets/images/category/' . $image1);
+        }
+       
+        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit',`categoryImage`='$image1' WHERE Id = $id");
 
         if($edit){
             header("Location: categories.php");
@@ -95,7 +106,7 @@ if(isset($_GET['id'])){
 <body>
     <!-- Form Edit -->
     <div class="form-edit form" id="form-edit">
-        <form method="POST" class="">
+        <form method="POST" class="" enctype="multipart/form-data">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -112,10 +123,15 @@ if(isset($_GET['id'])){
                                 <label class="control-label">Category Name: </label>
                                 <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {echo $infoCategory['categoryName'];} ?>" required>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label">Categories Image: </label>
+                                <input type="file" multiple="multiple" name="catImage1" class="form-control">
+                            </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
                                 <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
                             </div>
+                            
                         </div>
                     </div> <!-- end modal-body-->
                 </div> <!-- end modal-content-->
@@ -476,7 +492,7 @@ if(isset($_GET['id'])){
                     <!-- end page title -->
                     <!--  -->
 
-                    <form method="POST" class="modal fade" id="addModel" tabindex="-1">
+                    <form method="POST" class="modal fade" id="addModel" tabindex="-1" enctype="multipart/form-data">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -492,6 +508,10 @@ if(isset($_GET['id'])){
                                         <div class="form-group">
                                             <label class="control-label">Model Name: </label>
                                             <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {echo $var['ModelName'];} ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Category Iamge: </label>
+                                            <input type="file" multiple="multiple" name="catImage" class="form-control">
                                         </div>
                                         <div class="text-right pt-2">
                                             <button name="add" class="btn btn-primary ml-1">Save</button>
@@ -511,8 +531,9 @@ if(isset($_GET['id'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>CATEGORY Code</th>
-                                                <th>CATEGORY Name</th>
+                                                <th>CATEGORY CODE</th>
+                                                <th>CATEGORY NAME</th>
+                                                <th>CATEGORY IMAGE</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -533,6 +554,7 @@ if(isset($_GET['id'])){
                                                     <td>
                                                         <?= $row['categoryName'] ?>
                                                     </td>
+                                                    <td><img style="width: 200px;" src="../assets/images/category/<?=$row['categoryImage']?>" alt=""></td>
 
                                                     <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                     <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="deleteCategory.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>

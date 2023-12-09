@@ -133,7 +133,7 @@
                                     </ul>
                                 </div>
                                 <div class="menu g2">
-                                    <h4><a href="/dien-thoai-duoi-1-trieu">Mức gi&#225;</a></h4>
+                                    <h4><a href="/dien-thoai-duoi-1-trieu">Mức Giá</a></h4>
                                     <ul class="display-row format_2">
                                         <li><a href="/dien-thoai-di-dong?filters={%22price%22:%22T100t%22}&amp;search=true">Tr&#234;n 100 triệu</a></li>
                                                 <li><a href="/dien-thoai-di-dong?=&amp;filters={&quot;sort&quot;:&quot;10&quot;,&quot;price&quot;:&quot;1t&quot;}">Dưới 1 triệu</a></li>
@@ -191,7 +191,7 @@
                                                     <li><a href="/laptop/hang-san-xuat/xiaomi">Xiaomi</a></li>
                                                     <li><a href="/laptop/masstel">Masstel</a></li>
                                             </ul>
-                                            <h4><a>Ph&#226;n loại Sản phẩm</a></h4>
+                                            <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/laptop/cao-cap-sang-trong">Cao cấp - Sang trọng</a></li>
                                                     <li><a href="/laptop/do-hoa-ki-thuat">Đồ họa - Kĩ thuật</a></li>
@@ -201,7 +201,7 @@
                                             </ul>
                                     </div>
                                         <div class="menu g3">
-                                            <h4><a>Mức gi&#225;</a></h4>
+                                            <h4><a>Mức Giá</a></h4>
                                             <ul class="display-row format_2">
                                                     <li><a href="https://hoanghamobile.com/laptop?filters={%22price%22:%2220t-100tr%22}&amp;search=true">Tr&#234;n 20 triệu</a></li>
                                                     <li><a href="https://hoanghamobile.com/laptop?filters={%22price%22:%2212t-15t%22}&amp;search=true">Từ 12 đến 15 Triệu</a></li>
@@ -273,7 +273,7 @@
                                             </ul>
                                     </div>
                                         <div class="menu g2">
-                                            <h4><a>Ph&#226;n loại sản phẩm</a></h4>
+                                            <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-do-hoa">M&#224;n h&#236;nh đồ họa</a></li>
                                                     <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-gaming">M&#224;n h&#236;nh Gaming</a></li>
@@ -530,7 +530,7 @@
                                         <div class="menu g3">
                                             <h4><a href="/phu-kien/phu-kien-apple">Phụ kiện Apple</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện ch&#237;nh h&#227;ng Apple</a></li>
+                                                    <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện Chính Hãng Apple</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-cho-macbook">Phụ kiện cho Macbook</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-iphone-15">Phụ kiện iPhone 15</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đ&#227;i</a></li>

@@ -1,3 +1,8 @@
+<?php
+    require_once("config/config.php");
+    include 'handle.php';
+
+?>
 <!doctype html>
 <html>
 
@@ -97,7 +102,7 @@
             <div class="container">
                 <ul class="root">
                     <li id="dien-thoai-di-dong">
-                        <a href="/dien-thoai-di-dong" target="_self">
+                        <a href="san-pham.php?idCat=1" target="_self">
                             <i class="icon icon-phone"></i>
                             <span>Điện thoại</span>
                         </a>
@@ -105,70 +110,53 @@
                             <div class="sub">
 
                                 <div class="menu g1">
-                                    <h4><a href="/dien-thoai-di-dong">H&#227;ng sản xuất</a></h4>
+                                    <h4><a href="san-pham.php?idCat=1">Hãng Sảnn Xuất</a></h4>
                                     <ul class="display-column format_3">
-                                        <li><a href="/dien-thoai-di-dong/iphone">Apple</a></li>
-                                        <li><a href="/dien-thoai-di-dong/samsung">Samsung</a></li>
-                                        <li><a href="/dien-thoai-di-dong/xiaomi">Xiaomi</a></li>
-                                        <li><a href="/dien-thoai-di-dong/oppo">OPPO</a></li>
-                                        <li><a href="/dien-thoai-di-dong/tecno">TECNO</a></li>
-                                        <li><a href="/dien-thoai-di-dong/honor">HONOR</a></li>
-                                        <li><a href="/dien-thoai-di-dong/realme">realme</a></li>
-                                        <li><a href="/dien-thoai-di-dong/vivo">Vivo</a></li>
-                                        <li><a href="/dien-thoai-di-dong/nokia">Nokia</a></li>
-                                        <li><a href="/dien-thoai-di-dong/htc">HTC</a></li>
-                                        <li><a href="/dien-thoai-di-dong/infinix">Infinix</a></li>
-                                        <li><a href="/dien-thoai-di-dong/asus-rog-phone">ROG</a></li>
-                                        <li><a href="/dien-thoai-di-dong/nubia">Nubia</a></li>
-                                        <li><a href="/dien-thoai-di-dong/xor">XOR</a></li>
-                                        <li><a href="/dien-thoai-di-dong/masstel">Masstel</a></li>
-                                        <li><a href="/dien-thoai-di-dong/tcl">TCL</a></li>
-                                        <li><a href="/dien-thoai-di-dong/itel">Itel</a></li>
-                                        <li><a href="/san-pham-sap-ra-mat-tin-don/dien-thoai">Mới - tin đồn</a></li>
+                                        <?php
+                                            while($itemBrand1 = mysqli_fetch_assoc($sqlBrand1)){
+                                                ?>
+                                                    <li><a href="san-pham.php?idCat=1&idBrand=<?=$itemBrand1['id']?>"><?=$itemBrand1['brandName']?></a></li>
+                                                <?php
+                                            }
+                                        ?>
+                                       
                                     </ul>
-                                    <h4><a href="/dien-thoai-cao-cap">Điện thoại cao cấp</a></h4>
+                                    <h4><a href="san-pham.php?idCat=1&idBrand=19">Điện thoại cao cấp</a></h4>
                                     <ul class="display-row format_1">
                                     </ul>
-                                    <h4><a href="/dien-thoai-gap">Điện Thoại Gập</a></h4>
+                                    <h4><a href="san-pham.php?idCat=1&idBrand=20">Điện Thoại Gập</a></h4>
                                     <ul class="display-row format_1">
                                     </ul>
                                 </div>
                                 <div class="menu g2">
-                                    <h4><a href="/dien-thoai-duoi-1-trieu">Mức gi&#225;</a></h4>
+                                    <h4><a href="san-pham.php?idCat=1&priceMax=1000000">Mức Giá</a></h4>
                                     <ul class="display-row format_2">
-                                        <li><a href="/dien-thoai-di-dong?filters={%22price%22:%22T100t%22}&amp;search=true">Tr&#234;n 100 triệu</a></li>
-                                                <li><a href="/dien-thoai-di-dong?=&amp;filters={&quot;sort&quot;:&quot;10&quot;,&quot;price&quot;:&quot;1t&quot;}">Dưới 1 triệu</a></li>
-                                                <li><a href="/dien-thoai-di-dong?=&amp;filters={&quot;sort&quot;:&quot;10&quot;,&quot;price&quot;:&quot;2t-3t&quot;}">Từ 2 đến 3 triệu</a></li>
-                                                <li><a href="/dien-thoai-di-dong?=&amp;filters={&quot;sort&quot;:&quot;10&quot;,&quot;price&quot;:&quot;3t-4t&quot;}">Từ 3 đến 4 triệu</a></li>
-                                                <li><a href="/dien-thoai-di-dong?=&amp;filters={&quot;price&quot;:&quot;6t-8t&quot;}">Từ 6 đến 8 triệu</a></li>
-                                                <li><a href="/dien-thoai-di-dong?=&amp;filters={&quot;price&quot;:&quot;15t-20t&quot;}">Từ 15 đến 20 triệu</a></li>
-                                                <li><a href="/dien-thoai-di-dong?search=true&amp;filters={%22price%22:%2220t-100tr%22}&amp;search=true">Từ 20 đến 100 triệu</a></li>
+                                        <li><a href="san-pham.php?idCat=1&priceMin=100000000">Trên 100 Triệu</a></li>
+                                                <li><a href="san-pham.php?idCat=1&priceMax=1000000">Dưới 1 triệu</a></li>
+                                                <li><a href="san-pham.php?idCat=1&priceMax=3000000&priceMin=2000000">Từ 2 đến 3 triệu</a></li>
+                                                <li><a href="san-pham.php?idCat=1&priceMax=4000000&priceMin=3000000">Từ 3 đến 4 triệu</a></li>
+                                                <li><a href="san-pham.php?idCat=1&priceMax=8000000&priceMin=6000000">Từ 6 đến 8 triệu</a></li>
+                                                <li><a href="san-pham.php?idCat=1&priceMax=20000000&priceMin=15000000">Từ 15 đến 20 triệu</a></li>
+                                                <li><a href="san-pham.php?idCat=1&priceMax=100000000&priceMin=20000000">Từ 20 đến 100 triệu</a></li>
                                         </ul>
                                 </div>
-                                    <div class="menu g3">
-                                        <h4><a>Quan t&#226;m nhất</a></h4>
-                                        <ul class="display-row format_2">
-                                                <li><a href="/dien-thoai-di-dong?filters={&quot;sort&quot;:&quot;6&quot;}">H&#244;m nay</a></li>
-                                                <li><a href="/dien-thoai-di-dong?filters={&quot;sort&quot;:&quot;7&quot;}">Tuần n&#224;y</a></li>
-                                                <li><a href="/dien-thoai-di-dong?filters={&quot;sort&quot;:&quot;8&quot;}">Th&#225;ng n&#224;y</a></li>
-                                                <li><a href="/dien-thoai-di-dong?filters={&quot;sort&quot;:&quot;10&quot;}">Năm nay</a></li>
-                                        </ul>
+                                <?php
+                                    
+                                ?>
+                                <div class="menu ads" style="width:600px">
+                                    <!-- <a href="https://hoanghamobile.com/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang?source=Topmenu" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?=getImageCategory($conn,2)?>" alt="HTC A103"></a> -->
                                 </div>
-
-
-                                    <div class="menu ads" style="width:600px">
-                                    </div>
                             </div>
                         </div>
                     </li>
                     <li id="apple">
-                        <a href="/apple" target="_self">
+                        <a href="san-pham.php?idCat=1&idBrand=1" target="_self">
                             <i class="icon iconv2 iconv2-iphone"></i>
                             <span>Apple</span>
                         </a>
                     </li>
                     <li id="laptop">
-                        <a href="/laptop" target="_self">
+                        <a href="san-pham.php?idCat=2" target="_self">
                             <i class="icon icon-laptop"></i>
                             <span>Laptop</span>
                         </a>
@@ -176,23 +164,18 @@
                                 <div class="sub">
 
                                         <div class="menu g1">
-                                            <h4><a href="/laptop">H&#227;ng sản xuất</a></h4>
+                                            <h4><a href="/laptop">Hãng Sản Xuất</a></h4>
                                             <ul class="display-column format_3">
-                                                    <li><a href="/laptop/macbook">Apple</a></li>
-                                                    <li><a href="/laptop/asus">ASUS</a></li>
-                                                    <li><a href="/laptop/dell">Dell</a></li>
-                                                    <li><a href="/laptop/hang-san-xuat/acer">Acer</a></li>
-                                                    <li><a href="/laptop/msi">MSI</a></li>
-                                                    <li><a href="/laptop/hang-san-xuat/lg">LG</a></li>
-                                                    <li><a href="/laptop/huawei">HUAWEI</a></li>
-                                                    <li><a href="/laptop/lenovo">Lenovo</a></li>
-                                                    <li><a href="/laptop/hp">HP</a></li>
-                                                    <li><a href="/laptop/gigabyte">GIGABYTE</a></li>
-                                                    <li><a href="/laptop/itel">Itel</a></li>
-                                                    <li><a href="/laptop/hang-san-xuat/xiaomi">Xiaomi</a></li>
-                                                    <li><a href="/laptop/masstel">Masstel</a></li>
+                                                <?php
+                                                    $sqlBran = mysqli_query($conn,getBrand($conn,2));
+                                                    while($itemBrand = mysqli_fetch_assoc($sqlBran)){
+                                                        ?>
+                                                            <li><a href="san-pham.php?idCat=2&idBrand=<?=$itemBrand['id']?>"><?=$itemBrand['brandName']?></a></li>
+                                                        <?php
+                                                    }
+                                                ?> 
                                             </ul>
-                                            <h4><a>Ph&#226;n loại Sản phẩm</a></h4>
+                                            <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/laptop/cao-cap-sang-trong">Cao cấp - Sang trọng</a></li>
                                                     <li><a href="/laptop/do-hoa-ki-thuat">Đồ họa - Kĩ thuật</a></li>
@@ -202,23 +185,23 @@
                                             </ul>
                                     </div>
                                         <div class="menu g3">
-                                            <h4><a>Mức gi&#225;</a></h4>
+                                            <h4><a>Mức Giá</a></h4>
                                             <ul class="display-row format_2">
-                                                    <li><a href="https://hoanghamobile.com/laptop?filters={%22price%22:%2220t-100tr%22}&amp;search=true">Tr&#234;n 20 triệu</a></li>
-                                                    <li><a href="https://hoanghamobile.com/laptop?filters={%22price%22:%2212t-15t%22}&amp;search=true">Từ 12 đến 15 Triệu</a></li>
-                                                    <li><a href="https://hoanghamobile.com/laptop?search=true&amp;filters={%22price%22:%2215t-20t%22}&amp;search=true">Từ 15 đến 20 triệu</a></li>
+                                                    <li><a href="san-pham.php?idCat=2&priceMin=20000000">Trên 20 Triệu</a></li>
+                                                    <li><a href="san-pham.php?idCat=1&priceMax=15000000&priceMin=12000000">Từ 12 đến 15 Triệu</a></li>
+                                                    <li><a href="san-pham.php?idCat=1&priceMax=20000000&priceMin=15000000">Từ 15 đến 20 triệu</a></li>
                                             </ul>
                                     </div>
 
 
                                         <div class="menu ads" style="width:600px">
-                                                <a href="https://hoanghamobile.comhttps://hoanghamobile.com/Uploads/2023/11/15/580x266-z-01.png" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/15/580x266-z-01.png" alt="Laptop HP 15S" /></a>
+                                            <a href="san-pham.php?idCat=2" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?=getImageCategory($conn,2)?>" alt="HTC A103"></a>
                                         </div>
                                 </div>
                             </div>
                     </li>
                     <li id="tablet">
-                        <a href="/tablet" target="_self">
+                        <a href="san-pham.php?idCat=3" target="_self">
                             <i class="icon icon-tablet"></i>
                             <span>Tablet</span>
                         </a>
@@ -226,8 +209,16 @@
                                 <div class="sub">
 
                                         <div class="menu g2">
-                                            <h4><a href="/tablet">H&#227;ng sản xuất</a></h4>
+                                            <h4><a href="/tablet">Hãng Sản Xuất</a></h4>
                                             <ul class="display-column format_3">
+                                                    <?php
+                                                        $sqlBran = mysqli_query($conn,getBrand($conn,3));
+                                                        while($itemBrand = mysqli_fetch_assoc($sqlBran)){
+                                                            ?>
+                                                                <li><a href="san-pham.php?idCat=2&idBrand=<?=$itemBrand['id']?>"><?=$itemBrand['brandName']?></a></li>
+                                                            <?php
+                                                        }
+                                                    ?> 
                                                     <li><a href="/tablet/ipad">Apple</a></li>
                                                     <li><a href="/tablet/samsung">Samsung</a></li>
                                                     <li><a href="/tablet/xiaomi">Xiaomi</a></li>
@@ -257,7 +248,7 @@
                                 <div class="sub">
 
                                         <div class="menu g0">
-                                            <h4><a href="/man-hinh">H&#227;ng sản xuất</a></h4>
+                                            <h4><a href="/man-hinh">Hãng Sản Xuất</a></h4>
                                             <ul class="display-column format_2">
                                                     <li><a href="/man-hinh/acer">Acer</a></li>
                                                     <li><a href="/man-hinh/hang-san-xuat/aoc">AOC</a></li>
@@ -274,7 +265,7 @@
                                             </ul>
                                     </div>
                                         <div class="menu g2">
-                                            <h4><a>Ph&#226;n loại sản phẩm</a></h4>
+                                            <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-do-hoa">M&#224;n h&#236;nh đồ họa</a></li>
                                                     <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-gaming">M&#224;n h&#236;nh Gaming</a></li>
@@ -304,7 +295,7 @@
                                 <div class="sub">
 
                                         <div class="menu g1">
-                                            <h4><a href="/smart-tv">H&#227;ng sản xuất</a></h4>
+                                            <h4><a href="/smart-tv">Hãng Sản Xuất</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/smart-tv/tv-xiaomi">Tivi Xiaomi</a></li>
                                                     <li><a href="/smart-tv/tv-casper">Tivi Casper</a></li>
@@ -500,7 +491,7 @@
                                             </ul>
                                     </div>
                                         <div class="menu g1">
-                                            <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">B&#224;n ph&#237;m, Chuột &amp; Gaming Gear</a></h4>
+                                            <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">B&#224;n ph&#237;m, Chuột  Gaming Gear</a></h4>
                                             <ul class="display-column format_2">
                                                     <li><a href="/phu-kien/ban-phim">B&#224;n Ph&#237;m</a></li>
                                                     <li><a href="/phu-kien/chuot">Chuột</a></li>
@@ -531,7 +522,7 @@
                                         <div class="menu g3">
                                             <h4><a href="/phu-kien/phu-kien-apple">Phụ kiện Apple</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện ch&#237;nh h&#227;ng Apple</a></li>
+                                                    <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện Chính Hãng Apple</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-cho-macbook">Phụ kiện cho Macbook</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-iphone-15">Phụ kiện iPhone 15</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đ&#227;i</a></li>
@@ -595,19 +586,19 @@
                                         <div class="menu g0">
                                             <h4><a>H&#224;ng cũ gi&#225; rẻ</a></h4>
                                             <ul class="display-column format_3">
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;1&quot;}">Điện thoại di động</a></li>
-                                                    <li><a href="/kho-san-pham-cu?filters={&quot;type&quot;:&quot;5&quot;}">Đồng hồ th&#244;ng minh</a></li>
-                                                    <li><a href="/kho-san-pham-cu?&amp;filters={&quot;type&quot;:&quot;2&quot;}">M&#225;y t&#237;nh bảng</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;3&quot;}">Laptop</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;7&quot;}">Loa</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;13&quot;}">Tai nghe</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;26&quot;}">Camera</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;10&quot;}">Củ sạc</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;11&quot;}">D&#226;y c&#225;p</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;28&quot;}">M&#225;y lọc kh&#244;ng kh&#237;</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;18&quot;}">Phụ kiện</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;25&quot;}">Sạc dự ph&#242;ng</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=&amp;filters={&quot;type&quot;:&quot;30&quot;}">Tay cầm chống rung</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:1}">Điện thoại di động</a></li>
+                                                    <li><a href="/kho-san-pham-cu?filters={type:5}">Đồng hồ th&#244;ng minh</a></li>
+                                                    <li><a href="/kho-san-pham-cu?filters={type:2}">M&#225;y t&#237;nh bảng</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:3}">Laptop</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:7}">Loa</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:13}">Tai nghe</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:26}">Camera</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:10}">Củ sạc</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:11}">D&#226;y c&#225;p</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:28}">M&#225;y lọc kh&#244;ng kh&#237;</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:18}">Phụ kiện</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:25}">Sạc dự ph&#242;ng</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:30}">Tay cầm chống rung</a></li>
                                             </ul>
                                     </div>
 
@@ -704,13 +695,13 @@
                                         <div class="menu g0">
                                             <h4><a href="/tin-khuyen-mai/uu-dai-hot">Ưu đ&#227;i Hot</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-jbl-harman-kardon">&#226;m thanh - JBL &amp; Harman</a></li>
+                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-jbl-harman-kardon">&#226;m thanh - JBL  Harman</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/combo-uu-dai">Combo ưu đ&#227;i</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/combo-uu-dai-samsung">Combo ưu đ&#227;i samsung</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/tcl">Hot Sale TCL</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-Apple">Khuyến mại Apple</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/samsung-xiaomi-hot">KM Samsung  + Xiaomi</a></li>
-                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop &amp; M&#224;n h&#236;nh HP</a></li>
+                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop  M&#224;n h&#236;nh HP</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit">Mở b&#225;n Phụ kiện 9Fit</a></li>
                                                     <li><a href="/tin-khuyen-mai/san-pham-doc-quyen">Sản phẩm độc quyền</a></li>
                                                     <li><a href="/uu-dai-hot/uu-dai-mophie-zagg">Ưu đ&#227;i Mophie + ZAGG</a></li>
@@ -730,187 +721,79 @@
 
     </header>
 
-    
+    <!-- slider -->
+    <section>
+        <div class="container">
+            <div class="top-slider">
+                <div id="jssor_1" class="jssor-1200">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" class="jssor-spin">
+                        <img src="/Content/web/img/spin.svg" />
+                    </div>
+                    <div data-u="slides" class="jssor-1200-container">
+                        <?php
+                            $queryBanner = mysqli_query($conn,getSlide($conn));
+                            while($itemBanner = mysqli_fetch_assoc($queryBanner)){
+                                ?>
+                                    <div>
+                                        <a target="_blank" href="" title="<?=$itemBanner['bannerTitle']?>"><img data-u="image" data-src2="admin/assets/images/banner/<?=$itemBanner['bannerImage']?>" title="<?=$itemBanner['bannerTitle']?>" /></a>
+                                        <div u="thumb">
+                                            <?=$itemBanner['bannerTitle']?>
+                                                <br /><small><?=$itemBanner['bannerContent']?></small>
+                                        </div>
+                                    </div>
+                                <?php
+                            }
+                        ?>
+                    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- slider -->
-<section>
-    <div class="container">
-        <div class="top-slider">
-            <div id="jssor_1" class="jssor-1200">
-                <!-- Loading Screen -->
-                <div data-u="loading" class="jssor-spin">
-                    <img src="/Content/web/img/spin.svg" />
-                </div>
-                <div data-u="slides" class="jssor-1200-container">
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/samsung/dien-thoai-gap-samsung/galaxy-z-fold5-z-flip5?source=BannerSlider" title="Deal đỉnh trong mơ - Rinh si&#234;u phẩm gập"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/06/fold-5-noen-wweb.png" title="Deal đỉnh trong mơ - Rinh si&#234;u phẩm gập" /></a>
-                            <div u="thumb">
-                                Deal đỉnh trong mơ - Rinh si&#234;u phẩm gập
-                                    <br /><small>Samsung Galaxy Z Flip5 - Z Fold5</small>
+                    <div data-u="thumbnavigator" class="jssor-1200-thumbs">
+                        <div data-u="slides" style="cursor: pointer">
+                            <div data-u="prototype" class="p">
+                                <div class=w><div data-u="thumbnailtemplate"></div></div>
+                                <div class=c></div>
                             </div>
                         </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s23-plus-8gb-256gb-chinh-hang?source=BannerSlider" title="Samsung Galaxy S23 Plus Ch&#237;nh h&#227;ng"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/04/ss-s23noen.png" title="Samsung Galaxy S23 Plus Ch&#237;nh h&#227;ng" /></a>
-                            <div u="thumb">
-                                Samsung Galaxy S23 Plus Ch&#237;nh h&#227;ng
-                                    <br /><small>Ưu đ&#227;i m&#249;a lễ hội</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/xiaomi-redmi-13c-6gb-128gb-chinh-hang" title="Redmi 13C (6GB/128GB)"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/web-redmi-13c-01.jpg" title="Redmi 13C (6GB/128GB)" /></a>
-                            <div u="thumb">
-                                Redmi 13C (6GB/128GB)
-                                    <br /><small>Ưu đ&#227;i giảm th&#234;m 300.000đ</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/htc-wildfire-e3-lite-4gb-64gb-chinh-hang?source=BannerSlider" title="HTC Wildfire E3 lite"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/18/web-htc-wildfire-e3-lite-02.jpg" title="HTC Wildfire E3 lite" /></a>
-                            <div u="thumb">
-                                HTC Wildfire E3 lite
-                                    <br /><small>Giảm 200.000đ khi mua k&#232;m HTC A103</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/honor/honor-90?source=BannerSlider" title="Sản phẩm mới Honor 90 | 90 Lite "><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/04/web-90web.jpg" title="Sản phẩm mới Honor 90 | 90 Lite " /></a>
-                            <div u="thumb">
-                                Sản phẩm mới Honor 90 | 90 Lite 
-                                    <br /><small>Tặng bộ qu&#224; hấp dẫn</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/tai-nghe/tai-nghe-khong-day-sennheiser-accentum-wireles-chinh-hang?source=BannerSlider" title="SENNHEISER Accentum Wireles "><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/20/sennheiser-accentum-wirele-01.jpg" title="SENNHEISER Accentum Wireles " /></a>
-                            <div u="thumb">
-                                SENNHEISER Accentum Wireles 
-                                    <br /><small>Xoay gập - Chống ồn - Pin tới 50 giờ</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/laptop/msi?source=BannerSlider" title="Hot sale Laptop &amp; M&#224;n h&#236;nh MSI"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/04/1200x375-01.png" title="Hot sale Laptop &amp; M&#224;n h&#236;nh MSI" /></a>
-                            <div u="thumb">
-                                Hot sale Laptop &amp; M&#224;n h&#236;nh MSI
-                                    <br /><small>Ưu đ&#227;i cực lớn m&#249;a lễ hội</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/redmi-note-12-4gb-128gb-chinh-hang?source=BannerSlider" title="Redmi Note 12"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/01/redmi-note12-03.jpg" title="Redmi Note 12" /></a>
-                            <div u="thumb">
-                                Redmi Note 12
-                                    <br /><small>Gi&#225; si&#234;u ưu đ&#227;i, chỉ từ 3.890.000đ</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dien-thoai-di-dong/dien-thoai-di-dong-tcl-40-nxtpaper-8gb-256gb-chinh-hang?source=BannerSlider" title="TCL 40 NXTPAPER"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/23/1200x375-tcl-231123.png" title="TCL 40 NXTPAPER" /></a>
-                            <div u="thumb">
-                                TCL 40 NXTPAPER
-                                    <br /><small>Gi&#225; chỉ 4.590.000đ</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/laptop/asus?source=BannerSlider" title="Đại tiệc ROG - Săn qu&#224; tới TUF"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/15/hoangha-1200x382.jpg" title="Đại tiệc ROG - Săn qu&#224; tới TUF" /></a>
-                            <div u="thumb">
-                                Đại tiệc ROG - Săn qu&#224; tới TUF
-                                    <br /><small>Laptop Gaming mạnh nhất Việt Nam</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/tai-nghe/tai-nghe-khong-day-sony-wf-1000xm5-chinh-hang?source=BannerSlider" title="Sony WF-1000XM5"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/1200x375-sony-101123.jpg" title="Sony WF-1000XM5" /></a>
-                            <div u="thumb">
-                                Sony WF-1000XM5
-                                    <br /><small>Ưu đ&#227;i th&#225;ng 11</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/tai-nghe/tai-nghe-khong-day-marshall-motif-ii-anc-chinh-hang?source=BannerSlider" title="Marshall Motif II ANC"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/07/tai-nghe-moi-01.jpg" title="Marshall Motif II ANC" /></a>
-                            <div u="thumb">
-                                Marshall Motif II ANC
-                                    <br /><small>T&#225;i hiện &#226;m thanh s&#226;n khấu</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit?source=BannerSlider" title="Tăng cường hiệu suất với 9Fit"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/10/phu-kien-9fit-1200x375.jpg" title="Tăng cường hiệu suất với 9Fit" /></a>
-                            <div u="thumb">
-                                Tăng cường hiệu suất với 9Fit
-                                    <br /><small>Sản phẩm phụ kiện mới</small>
-                            </div>
-                        </div>
-                        <div>
-                            <a target="_blank" href="https://hoanghamobile.com/dong-ho/kieslect?source=BannerSlider" title="Đồng hồ KIESLECT - Ch&#237;nh h&#227;ng"><img data-u="image" data-src2="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/15/web-dong-ho-kieslect-01.jpg" title="Đồng hồ KIESLECT - Ch&#237;nh h&#227;ng" /></a>
-                            <div u="thumb">
-                                Đồng hồ KIESLECT - Ch&#237;nh h&#227;ng
-                                    <br /><small>Đa t&#237;nh năng - Đa tiện &#237;ch</small>
-                            </div>
-                        </div>
-                </div>
+                    </div>
 
-
-                <div data-u="thumbnavigator" class="jssor-1200-thumbs">
-                    <div data-u="slides" style="cursor: pointer">
-                        <div data-u="prototype" class="p">
-                            <div class=w><div data-u="thumbnailtemplate"></div></div>
-                            <div class=c></div>
-                        </div>
+                    <div data-u="arrowleft" class="slider-arr slider-arr-l" data-autocenter="2">
+                        <i class="icon-left"></i>
+                    </div>
+                    <div data-u="arrowright" class="slider-arr slider-arr-r" data-autocenter="2">
+                        <i class="icon-right"></i>
                     </div>
                 </div>
 
-                <div data-u="arrowleft" class="slider-arr slider-arr-l" data-autocenter="2">
-                    <i class="icon-left"></i>
-                </div>
-                <div data-u="arrowright" class="slider-arr slider-arr-r" data-autocenter="2">
-                    <i class="icon-right"></i>
-                </div>
             </div>
-
         </div>
-    </div>
-</section>
-
-
-<section>
-    <div class="container">
-        <div class="quick-sales">
-                <div class="item">
-                    <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang?source=Sanphamhot" target="_blank">
-                        <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/05/galaxy-s20-fe.png" title="Samsung Galaxy S20 FE" alt="Samsung Galaxy S20 FE" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://hoanghamobile.com/lap-top/macbook-air-13-inch-2020-256gb-chinh-hang-apple-viet-nam-phien-ban-moi?source=Sanphamhot" target="_blank">
-                        <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/27/macbook-air.png" title="MacBook Air M1 8GB/256GB" alt="MacBook Air M1 8GB/256GB" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://hoanghamobile.com/dien-thoai-di-dong/xiaomi-redmi-13c-6gb-128gb-chinh-hang?source=Sanphamhot" target="_blank">
-                        <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/17/redmi-13c_638358386471916868.png" title="Redmi 13C (6GB/128GB)" alt="Redmi 13C (6GB/128GB)" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://hoanghamobile.com/laptop/laptop-asus-vivobook-14-x1404va-nk125w-chinh-hang?source=Sanphamhot" target="_blank">
-                        <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/22/vivobook-14.png" title="Laptop ASUS Vivobook 14 X1404VA-NK125W" alt="Laptop ASUS Vivobook 14 X1404VA-NK125W" />
-                    </a>
-                </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="quick-sales">
+                    <div class="item">
+                        <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang?source=Sanphamhot" target="_blank">
+                            <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/12/05/galaxy-s20-fe.png" title="Samsung Galaxy S20 FE" alt="Samsung Galaxy S20 FE" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://hoanghamobile.comchi-tiet-san-pham.php?idsanpham=<?=$itemApple['productId']?>?source=Sanphamhot" target="_blank">
+                            <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/27/macbook-air.png" title="MacBook Air M1 8GB/256GB" alt="MacBook Air M1 8GB/256GB" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://hoanghamobile.com/dien-thoai-di-dong/xiaomi-redmi-13c-6gb-128gb-chinh-hang?source=Sanphamhot" target="_blank">
+                            <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/17/redmi-13c_638358386471916868.png" title="Redmi 13C (6GB/128GB)" alt="Redmi 13C (6GB/128GB)" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://hoanghamobile.com/laptop/laptop-asus-vivobook-14-x1404va-nk125w-chinh-hang?source=Sanphamhot" target="_blank">
+                            <img src="https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/22/vivobook-14.png" title="Laptop ASUS Vivobook 14 X1404VA-NK125W" alt="Laptop ASUS Vivobook 14 X1404VA-NK125W" />
+                        </a>
+                    </div>
+            </div>
         </div>
-    </div>
-</section>
-
-
-
-
-
-
+    </section>
     <!-- flash sales -->
     <section class="fls" id="fls_6" style="display:block">
         <div class="container">
@@ -989,10 +872,10 @@
                             </div>
                             <div class="item">
                                 <div class="img">
-                                    <a href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang" title="HTC A103 - 10&quot; - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng"><img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/08/24/htc-a103-6.png" alt="HTC A103 - 10&quot; - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng"></a>
+                                    <a href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang" title="HTC A103 - 10 - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng"><img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/08/24/htc-a103-6.png" alt="HTC A103 - 10 - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng"></a>
                                 </div>
                                 <div class="info">
-                                    <a class="title" href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang">HTC A103 - 10&quot; - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng</a>
+                                    <a class="title" href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang">HTC A103 - 10 - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng</a>
                                     <span class="price">
                                         <strong>1,990,000 ₫</strong>
                                         <strike>3,990,000 ₫</strike>
@@ -1863,707 +1746,67 @@
 
 
 
-
-        <section>
-            <div class="container">
-                <div class="box-product-home box-home">
-                    <div class="header-container">
-                        <div class="header">
-                            <h4><a href="/apple">Apple authorised Reseller</a></h4>
-                        </div>
+    <section>
+        <div class="container">
+            <div class="box-product-home box-home">
+                <div class="header-container">
+                    <div class="header">
+                        <h4><a href="san-pham.php?idCat=1&idBrand=1">Apple authorised Reseller</a></h4>
                     </div>
-                    <div class="col-content lts-product">
-
-
-<div class="item">
-
-    <div class="img">
-        <a href="/lap-top/macbook-air-13-inch-2020-256gb-chinh-hang-apple-viet-nam-phien-ban-moi" title="MacBook Air M1 13&quot; (8GB/256GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/11/07/macbook-air-m1-silver.png" alt="MacBook Air M1 13&quot; (8GB/256GB) - Ch&#237;nh h&#227;ng Apple Việt Nam" title="MacBook Air M1 13&quot; (8GB/256GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/lap-top/macbook-air-13-inch-2020-256gb-chinh-hang-apple-viet-nam-phien-ban-moi" class="title" title="MacBook Air M1 13&quot; (8GB/256GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">MacBook Air M1 13&quot; (8GB/256GB) - Ch&#237;nh h&#227;ng Apple Việt Nam</a>
-        <span class="price">
-                <strong>18,890,000 ₫</strong>
-                            <strike>27,990,000 ₫</strike>
-        </span>
-        
-        
-        
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm 100.000đ khi kh&#225;ch mua k&#232;m Bộ d&#225;n MacBook Air 13&#39; 2020 3M INNOSTYLE DIAMOND GUARD 6 IN 1">Giảm 100.000đ khi kh&#225;ch mua k&#232;m Bộ ...</label>
-                    <strong class="text-orange">VÀ 9 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/lap-top/macbook-air-13-inch-2020-256gb-chinh-hang-apple-viet-nam-phien-ban-moi">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm 100.000đ khi kh&#225;ch mua k&#232;m Bộ d&#225;n MacBook Air 13&#39; 2020 3M INNOSTYLE DIAMOND GUARD 6 IN 1</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a" title="iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pro-max-natural-titanium-pure-back-iphone-15-pro-max-natural-titanium-pure-front-2up-screen-usen-1.png" alt="iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a" class="title" title="iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>32,850,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">30,850,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-12-64gb-chinh-hang-vn-a" title="iPhone 12 (64GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/07/18/iphone-12-finish-select-202207-green-removebg-preview.png" alt="iPhone 12 (64GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 12 (64GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-12-64gb-chinh-hang-vn-a" class="title" title="iPhone 12 (64GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 12 (64GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>12,450,000 ₫</strong>
-                            <strike>24,990,000 ₫</strike>
-        </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">11,450,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.">Giảm ngay 150.000đ khi mua k&#232;m SIM ...</label>
-                    <strong class="text-orange">VÀ 9 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-12-64gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-12-128gb-chinh-hang-vn-a" title="iPhone 12 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/07/18/iphone-12-finish-select-202207-green-removebg-preview.png" alt="iPhone 12 (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 12 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-12-128gb-chinh-hang-vn-a" class="title" title="iPhone 12 (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 12 (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>13,990,000 ₫</strong>
-                            <strike>26,990,000 ₫</strike>
-        </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">12,990,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.">Giảm ngay 150.000đ khi mua k&#232;m SIM ...</label>
-                    <strong class="text-orange">VÀ 11 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-12-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-14-128gb-chinh-hang-vn-a" title="iPhone 14 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/07/18/14-removebg-preview.png" alt="iPhone 14 (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 14 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-14-128gb-chinh-hang-vn-a" class="title" title="iPhone 14 (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 14 (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>18,590,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">17,090,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.">Giảm ngay 150.000đ khi mua k&#232;m SIM ...</label>
-                    <strong class="text-orange">VÀ 12 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-14-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-512gb-chinh-hang-vn-a" title="iPhone 15 Pro Max (512GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pro-max-natural-titanium-pure-back-iphone-15-pro-max-natural-titanium-pure-front-2up-screen-usen-1.png" alt="iPhone 15 Pro Max (512GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Pro Max (512GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-512gb-chinh-hang-vn-a" class="title" title="iPhone 15 Pro Max (512GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Pro Max (512GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>38,990,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">36,990,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-512gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-128gb-chinh-hang-vn-a" title="iPhone 15 Pro (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium-removebg-preview-1.png" alt="iPhone 15 Pro (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Pro (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-128gb-chinh-hang-vn-a" class="title" title="iPhone 15 Pro (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Pro (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>27,450,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">25,450,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-256gb-chinh-hang-vn-a" title="iPhone 15 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium-removebg-preview-1.png" alt="iPhone 15 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-256gb-chinh-hang-vn-a" class="title" title="iPhone 15 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>29,990,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">27,990,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-256gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-plus-128gb-chinh-hang-vn-a" title="iPhone 15 Plus (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-plus-blue-pure-back-iphone-15-plus-blue-pure-front-2up-screen-usen.png" alt="iPhone 15 Plus (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Plus (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-plus-128gb-chinh-hang-vn-a" class="title" title="iPhone 15 Plus (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Plus (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>25,290,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">23,290,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-plus-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-128gb-chinh-hang-vn-a" title="iPhone 15 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pink-pure-back-iphone-15-pink-pure-front-2up-screen-usen.png" alt="iPhone 15 (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-128gb-chinh-hang-vn-a" class="title" title="iPhone 15 (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>21,590,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">19,590,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-plus-256gb-chinh-hang-vn-a" title="iPhone 15 Plus (256GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-plus-blue-pure-back-iphone-15-plus-blue-pure-front-2up-screen-usen.png" alt="iPhone 15 Plus (256GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Plus (256GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-plus-256gb-chinh-hang-vn-a" class="title" title="iPhone 15 Plus (256GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Plus (256GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>27,690,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">25,690,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).">ZaloPay - Giảm th&#234;m 550.000đ cho đơ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-plus-256gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</li>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/iphone-11-64gb-chinh-hang-vn-a" title="iPhone 11 (64GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/10/18/iphone-11-black-2-up-vertical-us-en-screen-1.png" alt="iPhone 11 (64GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 11 (64GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/iphone-11-64gb-chinh-hang-vn-a" class="title" title="iPhone 11 (64GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 11 (64GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>10,450,000 ₫</strong>
-                            <strike>19,990,000 ₫</strike>
-        </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">9,950,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.">Giảm ngay 150.000đ khi mua k&#232;m SIM ...</label>
-                    <strong class="text-orange">VÀ 10 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/iphone-11-64gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/tai-nghe/apple-airpods-pro-2-chinh-hang-apple-viet-nam" title="AirPods Pro 2 với Hộp Sạc MagSafe (Lightning) - Ch&#237;nh h&#227;ng Apple Việt Nam">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/08/image-removebg-preview-13.png" alt="AirPods Pro 2 với Hộp Sạc MagSafe (Lightning) - Ch&#237;nh h&#227;ng Apple Việt Nam" title="AirPods Pro 2 với Hộp Sạc MagSafe (Lightning) - Ch&#237;nh h&#227;ng Apple Việt Nam">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/tai-nghe/apple-airpods-pro-2-chinh-hang-apple-viet-nam" class="title" title="AirPods Pro 2 với Hộp Sạc MagSafe (Lightning) - Ch&#237;nh h&#227;ng Apple Việt Nam">AirPods Pro 2 với Hộp Sạc MagSafe (Lightning) - Ch&#237;nh h&#227;ng Apple Việt Nam</a>
-        <span class="price">
-                <strong>4,990,000 ₫</strong>
-                            <strike>7,990,000 ₫</strike>
-        </span>
-        
-        
-        
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.">VNPAY - Giảm th&#234;m tới 200.000đ khi ...</label>
-                    <strong class="text-orange">VÀ 7 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/tai-nghe/apple-airpods-pro-2-chinh-hang-apple-viet-nam">
-                <ul>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                        <li><span class="bag">KM</span> Home PayLater - Trả g&#243;p qua Home PayLater giảm tới 1.000.000đ</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-13-128gb-chinh-hang-vn-a" title="iPhone 13 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/07/18/13-removebg-preview.png" alt="iPhone 13 (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 13 (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-13-128gb-chinh-hang-vn-a" class="title" title="iPhone 13 (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 13 (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>15,490,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">14,490,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.">Giảm ngay 150.000đ khi mua k&#232;m SIM ...</label>
-                    <strong class="text-orange">VÀ 10 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-13-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/may-tinh-bang/apple-ipad-gen-9-10-2-2021-wifi-64gb-chinh-hang-apple-viet-nam" title="iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/09/15/image-removebg-preview-26.png" alt="iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam" title="iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/may-tinh-bang/apple-ipad-gen-9-10-2-2021-wifi-64gb-chinh-hang-apple-viet-nam" class="title" title="iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam</a>
-        <span class="price">
-                <strong>7,290,000 ₫</strong>
-                    </span>
-        
-        
-        
-    </div>
-
-
-
-
-            <div class="note">
-                <span class="bag">KM</span> <label title="Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.">Giảm ngay 150.000đ khi mua k&#232;m SIM ...</label>
-                    <strong class="text-orange">VÀ 8 KM KHÁC</strong>
-            </div>
-        <div class="promote">
-            <a href="/may-tinh-bang/apple-ipad-gen-9-10-2-2021-wifi-64gb-chinh-hang-apple-viet-nam">
-                <ul>
-                        <li><span class="bag">KM</span> Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.</li>
-                        <li><span class="bag">KM</span> VNPAY - Giảm th&#234;m tới 200.000đ khi thanh to&#225;n qua VNPAY.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>                    </div>
+                </div>
+                <div class="col-content lts-product">
+                    <?php
+                        $queryApple = mysqli_query($conn,getProduct($conn,1));
+                        while($itemApple = mysqli_fetch_assoc($queryApple)){
+                            ?>
+                                <div class="item">
+                                    <div class="img">
+                                        <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemApple['idVersion']?>" title="<?=$itemApple['versionName']?>">
+                                            <?php
+                                                if($itemApple['idCategory'] == 1){
+                                                    ?><img src="uploads/product/smartphone/<?=$itemApple['versionImage']?>" alt="<?=$itemApple['versionName']?>" title="<?=$itemApple['versionName']?>"><?php
+                                                }
+                                            ?>
+                                        </a>
+                                    </div>
+
+                                    <div class="sticker sticker-left">
+                                        <span><img src="assets/images/icon/apple.png" title="Chính Hãng Apple" /></span>
+                                    </div>
+
+                                    <div class="info">
+                                        <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemApple['idVersion']?>" class="title"
+                                            title="<?=$itemApple['productName']?>"><?=$itemApple['versionName']?>-<?=$itemApple['versionVersion']?></a>
+                                        <span class="price">
+                                            <strong><?=number_format($itemApple['versionPromotionalPrice'],0,"",".")?> ₫</strong>
+                                            <strike><?=number_format($itemApple['versionPrice'],0,"",".")?> ₫</strike>
+                                        </span>
+
+                                    </div>
+
+                                    <div class="note">
+                                        <span class="bag">KM</span> <label title="Giảm 100.000đ khi khách mua kèm Bộ dán MacBook Air 13' 2020 3M INNOSTYLE DIAMOND GUARD 6 IN 1">Giảm
+                                            100.000đ khi khách mua kèm Bộ ...</label>
+                                        <strong class="text-orange">VÀ 9 KM KHÁC</strong>
+                                    </div>
+                                    <div class="promote">
+                                        <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemApple['idVersion']?>">
+                                            <ul>
+                                                <li><span class="bag">KM</span> Giảm 100.000đ khi khách mua kèm Bộ dán MacBook Air
+                                                    13' 2020 3M INNOSTYLE DIAMOND GUARD 6 IN 1</li>
+                                                <li><span class="bag">KM</span> VNPAY - Giảm thêm tới 200.000đ khi thanh toán qua VNPAY.</li>
+                                                <li><span class="bag">KM</span> ZaloPay - Ưu đãi tới 300.000đ khi thanh toán qua ZaloPay.</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
-        </section>
+        </div>           
+    </section>
 
 
 <section>
@@ -3917,7 +3160,7 @@
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
@@ -3952,7 +3195,7 @@
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
@@ -3987,7 +3230,7 @@
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
@@ -4150,7 +3393,7 @@
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
@@ -6087,14 +5330,14 @@
 <div class="item">
     <div class="img">
         <a href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/08/24/htc-a103-6.png" alt="HTC A103 - 10&quot; - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng" title="HTC A103 - 10&quot; - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng">
+            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/08/24/htc-a103-6.png" alt="HTC A103 - 10 - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng" title="HTC A103 - 10 - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng">
         </a>
     </div>
 
     
 
     <div class="info">
-        <a href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang" class="title">HTC A103 - 10&quot; - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng</a>
+        <a href="/may-tinh-bang/may-tinh-bang-htc-a103-4gb-64gb-chinh-hang" class="title">HTC A103 - 10 - 4G LTE - (4GB/64GB) - Ch&#237;nh h&#227;ng</a>
         <span class="price">
                 <strong>1,990,000 ₫</strong>
                             <strike>3,990,000 ₫</strike>
@@ -6485,18 +5728,18 @@
 <div class="item">
     <div class="img">
         <a href="/may-tinh-bang/apple-ipad-gen-9-10-2-2021-wifi-64gb-chinh-hang-apple-viet-nam">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/09/15/image-removebg-preview-26.png" alt="iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam" title="iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam">
+            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/09/15/image-removebg-preview-26.png" alt="iPad Gen 9 10.2 Wi-Fi (64GB) - Chính Hãng Apple Việt Nam" title="iPad Gen 9 10.2 Wi-Fi (64GB) - Chính Hãng Apple Việt Nam">
         </a>
     </div>
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
     <div class="info">
-        <a href="/may-tinh-bang/apple-ipad-gen-9-10-2-2021-wifi-64gb-chinh-hang-apple-viet-nam" class="title">iPad Gen 9 10.2&quot; Wi-Fi (64GB) - Ch&#237;nh h&#227;ng Apple Việt Nam</a>
+        <a href="/may-tinh-bang/apple-ipad-gen-9-10-2-2021-wifi-64gb-chinh-hang-apple-viet-nam" class="title">iPad Gen 9 10.2 Wi-Fi (64GB) - Chính Hãng Apple Việt Nam</a>
         <span class="price">
                 <strong>7,290,000 ₫</strong>
                     </span>
@@ -6835,18 +6078,18 @@
 <div class="item">
     <div class="img">
         <a href="/tai-nghe/tai-nghe-apple-airpods-pro-chinh-hang-apple">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2020/09/22/Tai nghe Apple AirPods Pro.png" alt="AirPods Pro với Hộp Sạc MagSafe - Ch&#237;nh h&#227;ng Apple Việt Nam" title="AirPods Pro với Hộp Sạc MagSafe - Ch&#237;nh h&#227;ng Apple Việt Nam">
+            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2020/09/22/Tai nghe Apple AirPods Pro.png" alt="AirPods Pro với Hộp Sạc MagSafe - Chính Hãng Apple Việt Nam" title="AirPods Pro với Hộp Sạc MagSafe - Chính Hãng Apple Việt Nam">
         </a>
     </div>
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
     <div class="info">
-        <a href="/tai-nghe/tai-nghe-apple-airpods-pro-chinh-hang-apple" class="title">AirPods Pro với Hộp Sạc MagSafe - Ch&#237;nh h&#227;ng Apple Việt Nam</a>
+        <a href="/tai-nghe/tai-nghe-apple-airpods-pro-chinh-hang-apple" class="title">AirPods Pro với Hộp Sạc MagSafe - Chính Hãng Apple Việt Nam</a>
         <span class="price">
                 <strong>4,650,000 ₫</strong>
                             <strike>7,990,000 ₫</strike>
@@ -6871,18 +6114,18 @@
 <div class="item">
     <div class="img">
         <a href="/tai-nghe/tai-nghe-apple-airpods-2-case-sac-thuong-mv7n2vn-a">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2020/12/15/image-removebg-preview.png" alt="AirPods 2 với Hộp Sạc Lightning - Ch&#237;nh h&#227;ng Apple Việt Nam" title="AirPods 2 với Hộp Sạc Lightning - Ch&#237;nh h&#227;ng Apple Việt Nam">
+            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2020/12/15/image-removebg-preview.png" alt="AirPods 2 với Hộp Sạc Lightning - Chính Hãng Apple Việt Nam" title="AirPods 2 với Hộp Sạc Lightning - Chính Hãng Apple Việt Nam">
         </a>
     </div>
 
             <div class="sticker sticker-left">
                 <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
+" title="Chính Hãng Apple" /></span>
         </div>
 
 
     <div class="info">
-        <a href="/tai-nghe/tai-nghe-apple-airpods-2-case-sac-thuong-mv7n2vn-a" class="title">AirPods 2 với Hộp Sạc Lightning - Ch&#237;nh h&#227;ng Apple Việt Nam</a>
+        <a href="/tai-nghe/tai-nghe-apple-airpods-2-case-sac-thuong-mv7n2vn-a" class="title">AirPods 2 với Hộp Sạc Lightning - Chính Hãng Apple Việt Nam</a>
         <span class="price">
                 <strong>2,690,000 ₫</strong>
                             <strike>4,990,000 ₫</strike>
@@ -8436,110 +7679,122 @@ Tốc độ' và sự chính xác sẽ là mấu chốt của chiến thắng! T
         </div>
     </div>
 </section>
-
-<iframe src="https://asia.creativecdn.com/tags?id=pr_n4X0y6ApZyJaHX1dNxQd_home" width="1" height="1" scrolling="no" frameBorder="0" style="display: none;"></iframe>
-
-
-
-
-
     <footer>
         <div class="container">
-            
-    
-
-
-<div class="bg">
-    <div class="col-content">
-            <div class="link-content">
-            <h4><a>Hỗ Trợ - Dịch Vụ</a></h4>
-            <ul>
-                <li><a href="mua-tra-gop.php">Chính Sách Và Hướng Dẫn Mua Hàng Trả Góp</a></li>
-                <li><a href="huong-dan-dat-hang.php">Hướng Dẫn Mua Hàng Và Chính Sách Vận Chuyểnn</a></li>
-                <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
-                <li><a href="chinh-sach-bao-hanh.php">Chính Sách Đổi Mới Và Bảo Hành</a></li>
-                <li><a href="/dat-hang/bao-hanh-mo-rong">Dịch Vụ Bảo Hành Mở Rộng</a></li>
-                <li><a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a></li>
-                <li><a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a></li>
-                <li><a href="dieu-khoan-mua-ban-hang-hoa.php">Quy Chế Hoạt Động</a></li>
-            </ul>
-        </div>
-            <div class="link-content">
-            <h4><a>Th&#244;ng Tin Li&#234;n Hệ</a></h4>
-            <ul>
-                <li><a href="mua-hang-online.php">Thông Tin Các Trang TMDT</a></li>
-                <li><a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a></li>
-                <li><a href="hop-tac-kinh-doanh.php">Khách Hàng Doanh Nghiệp B2B</a></li>
-                <li><a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a></li>
-            </ul>
-        </div>
-            <div class="link-content">
-            <h4><a href="/he-thong-cua-hang">Hệ Thống Showroom Toàn Quốc</a></h4>
-            <ul>
-                <li><a href="/he-thong-cua-hang">Danh Sách Showroom</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4>Tổng đài</h4>
-            <a class="hotline" href="tel:1900.2091">1900.2091</a>
-        </div>
-
-        <div>
-            <h4>Thanh toán miễn phí</h4>
-            <ul class="list-logo">
-                <li>
-                    <img src="/Content/web/img/logo-visa.png">
-                    <img src="/Content/web/img/logo-master.png">
-                </li>
-                <li>
-                    <img src="/Content/web/img/logo-jcb.png">
-                    <img src="/Content/web/img/logo-samsungpay.png">
-                </li>
-                <li>
-                    <img src="/Content/web/img/logo-atm.png">
-                    <img src="/Content/web/img/logo-vnpay.png">
-                </li>
-            </ul>
-        </div>
-
-        <div>
-            <h4>Hình thức vận chuyển</h4>
-            <ul class="list-logo">
-                <li>
-                    <img src="/Content/web/img/nhattin.jpg">
-                    <img src="/Content/web/img/vnpost.jpg">
-                </li>
-            </ul>
-            <div class="mg-top20">
-                <a href="http://online.gov.vn/Home/WebDetails/28738" target="_blank"><img src="/Content/web/img/logo-bct.png"></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="info">
-        <p>© 2020. C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;. MST:  0106713191. (Đăng k&#253; lần đầu: Ng&#224;y 15 th&#225;ng 12 năm 2014, Đăng k&#253; thay đổi ng&#224;y 24/11/2022)</p>
-        <p><strong>GP số 426/GP-TTĐT do sở TTTT Hà Nội cấp ngày 22/01/2021</strong></p>
-        <p>Địa chỉ: Số 89 Đường Tam Trinh, Phường Mai Động, Quận Ho&#224;ng Mai, Th&#224;nh Phố H&#224; Nội, Việt Nam. Điện thoại: 1900.2091. Chịu trách nhiệm nội dung: <strong>Hoàng Ngọc Chiến</strong>. </p>
-        
-    </div>
-</div>
-
-
-
-
-                <div id="navSocial">
-                    <div class="social">
+            <div class="bg">
+                <div class="col-content">
+                    <div class="link-content">
+                        <h4>
+                            <a>Hỗ Trợ - Dịch Vụ</a>
+                        </h4>
                         <ul>
-                                <li><a href="https://www.facebook.com/lehuydau2312/" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
-                                <li><a href="https://www.instagram.com/lehuydau2312?fbclid=IwAR37NMIskkkDEjeCGX9BdRb8njYkAiMOEurf6y9ok0HP1b2Dx8BPMbNMBVQ" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
-                                <li><a href="https://www.tiktok.com/@daulh____" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
+                            <li>
+                                <a href="mua-tra-gop.php">Chính Sách Và Hướng Dẫn Mua Hàng Trả Góp</a>
+                            </li>
+                            <li>
+                                <a href="huong-dan-dat-hang.php">Hướng Dẫn Đặt Hàng Và Thanh Toán</a>
+                            </li>
+                            <li>
+                                <a href="/order/check">Tra Cứu Đơn Hàng</a>
+                            </li>
+                            <li>
+                                <a href="chinh-sach-bao-hanh.php">Chính Sách Bảo Hành</a>
+                            </li>
+                            <li>
+                                <a href="/dat-hang/bao-hanh-mo-rong">Phạm Vi, Điều Khoản Gói Bảo Hành Mở Rộng</a>
+                            </li>
+                            <li>
+                                <a href="chinh-sach-bao-mat.php">Chính Sách Bảo Mật</a>
+                            </li>
+                            <li>
+                                <a href="chinh-sach-giai-quyet-khieu-nai.php">Chính Sách Giải Quyết Khiếu Nại</a>
+                            </li>
+                            <li>
+                                <a href="dieu-khoan-mua-ban-hang-hoa.php">Điều Khoản Mua Bán Hàng Hóa</a>
+                            </li>
+                            <li>
+                                <a href="cau-hoi-thuong-gap.php">Câu Hỏi Thường Gặp</a>
+                            </li>
                         </ul>
                     </div>
+                    <div class="link-content">
+                        <h4>
+                            <a>Thông Tin Liên Hệ</a>
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="mua-hang-online.php">Bán Hàng Online</a>
+                            </li>
+                            <li>
+                                <a href="cham-soc-khach-hang.php">Chăm Sóc Khách Hàng</a>
+                            </li>
+                            <li>
+                                <a href="/tin-tuc/hoang-ha-care-dich-vu-sua-chua-dien-thoai-may-tinh-bang-voi-gia-tot-nhat-thi-truong">Dịch Vụ Sửa Chữa TPMS Care</a>
+                            </li>
+                            <li>
+                                <a href="hop-tac-kinh-doanh.php">Hợp Tác Kinh Doanh</a>
+                            </li>
+                            <li>
+                                <a href="/trung-tam-bao-hanh">Tra Cứu Bảo Hành</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="link-content">
+                        <h4>
+                            <a href="/he-thong-cua-hang">Hệ Thống Showroom</a>
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="/he-thong-cua-hang">Danh Sách Showroom</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Tổng đài</h4>
+                    <a class="hotline" href="tel:0386131716">03.86.13.17.16</a>
+                    </div>
+                    <div>
+                        <h4>Thanh toán miễn phí</h4>
+                        <ul class="list-logo">
+                        <li>
+                            <img src="assets/images/logo/logo-visa.png">
+                            <img src="assets/images/logo/logo-master.png">
+                        </li>
+                        <li>
+                            <img src="assets/images/logo/logo-jcb.png">
+                            <img src="assets/images/logo/logo-samsungpay.png">
+                        </li>
+                        <li>
+                            <img src="assets/images/logo/logo-atm.png">
+                            <img src="assets/images/logo/logo-vnpay.png">
+                        </li>
+                    </ul>
+                    </div>
+                    <div>
+                    <h4>Hình thức vận chuyển</h4>
+                    <ul class="list-logo">
+                        <li>
+                            <img src="assets/images/logo/nhattin.jpg">
+                            <img src="assets/images/logo/vnpost.jpg">
+                        </li>
+                    </ul>
+                    <div class="mg-top20">
+                        <a href="http://online.gov.vn/Home/WebDetails/28738" target="_blank"><img src="assets/images/logo/logo-bct.png"></a>
+                    </div>
                 </div>
-
-
+                </div>
+                
+            </div>
+            <div id="navSocial">
+                <div class="social">
+                    <ul>
+                            <li><a href="https://www.facebook.com/lehuydau2312/" title="Facebook" target="_blank" class="blue"><span><i class="icon-facebook"></i></span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCJm_GdFJzT8h1odq1oMu_7Q?sub_confirmation=1" title="Youtube" target="_blank" class="red"><span><i class="icon-youtube"></i></span></a></li>
+                            <li><a href="https://www.instagram.com/lehuydau2312?fbclid=IwAR37NMIskkkDEjeCGX9BdRb8njYkAiMOEurf6y9ok0HP1b2Dx8BPMbNMBVQ" title="Instagram" target="_blank" class="rainbow"><span><i class="icon-instagram"></i></span></a></li>
+                            <li><a href="https://www.tiktok.com/@daulh____" title="Tiktok" target="_blank" class="black"><span><i class="icon-tiktok"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
             <div id="backtoTop">
                 <a id="top" href="javascript:;">
                     <i class="icon-left"></i>
@@ -8550,73 +7805,62 @@ Tốc độ' và sự chính xác sẽ là mấu chốt của chiến thắng! T
     <div id="popup-modal"></div>
     <div id="sticker-modal"></div>
     <div class="search-bg"></div>
-
-
     <div class="footer-stick-right" style="position: fixed; bottom: 175px; right: 33px; display:none">
         <a href="javascript:removeStick();" style="background: #4B4B4B;color: #FFF;border-radius: 20px;font-size: 8px;width: 20px;height: 20px;display: flex;text-align: center; position:absolute; right:-5px; top:-5px;">
             <i class="iconv2-remove" style="display:block; margin:auto;"></i>
         </a>
         <div style="padding-bottom:10px;">
             <a href="/kho-san-pham-cu">
-                <img src="/Content/web/img/maycugiatot.png" />
+                <img src="assets/images/icon/maycugiatot.png" />
             </a>
         </div>
         <div>
             <a href="/dat-hang/thu-cu-doi-moi-iphone-chinh-hang-vn-a-hoanghamobile">
-                <img src="/Content/web/img/thucugiacao.png" />
+                <img src="assets/images/icon/thucugiacao.png" />
             </a>
         </div>
     </div>
+    <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
+        <a href="https://chat.zalo.me/0386131716" target="_blank"><img src="assets/images/icon/zalo.svg" /></a>
+    </div>
+    <!-- analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'assets/js/analytics.js', 'ga');
 
+        ga('create', 'UA-1415779-10', 'auto');
+        ga('require', 'GTM-KXZQBMD');
+        ga('require', 'GTM-WPLRWHK');
+        ga('send', 'pageview');
 
-        <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
-            <a href="https://oa.zalo.me/262829019064124420" target="_blank"><img src="assets/images/icon/zalo.svg" /></a>
-        </div>
-
-    
-
-
-<script type='application/ld+json'>
-    {"@context":"https:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/hoanghamobile.com\/","name":"Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt","potentialAction":{"@type":"SearchAction","target":"https:\/\/hoanghamobile.com\/tim-kiem?kwd={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-
-<!-- analytics -->
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'assets/js/analytics.js', 'ga');
-
-    ga('create', 'UA-1415779-10', 'auto');
-    ga('require', 'GTM-KXZQBMD');
-    ga('require', 'GTM-WPLRWHK');
-    ga('send', 'pageview');
-
-</script>
-<!-- analytics -->
-<!-- Google Tag Manager -->
-<script>
-    (function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5QM3X2');</script>
-<!-- End Google Tag Manager -->
-<!-- subiz -->
-<script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqqrmpwwuqeianonpxt")</script>
-<!-- subiz -->
-<!-- accesstrade-->
-<script src="assets/js/tracking.min.js"></script>
-<script type="text/javascript">
-    AT.init({ "campaign_id": 626, "is_reoccur": 1, "is_lastclick": 1 });
-    AT.track();
-</script>
-<!-- accesstrade-->
+    </script>
+    <!-- analytics -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5QM3X2');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- subiz -->
+    <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqqrmpwwuqeianonpxt")</script>
+    <!-- subiz -->
+    <!-- accesstrade-->
+    <script src="assets/js/tracking.min.js"></script>
+    <script type="text/javascript">
+        AT.init({ "campaign_id": 626, "is_reoccur": 1, "is_lastclick": 1 });
+        AT.track();
+    </script>
+    <!-- accesstrade-->
 
 
 
@@ -8627,17 +7871,11 @@ Tốc độ' và sự chính xác sẽ là mấu chốt của chiến thắng! T
     <script type="text/javascript">
         hh_home();
     </script>
-
-
-    
-
-    
-
-            <script type="text/javascript">
-            $(document).ready(function () {
-                showSticker(82);
-            });
-        </script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            showSticker(82);
+        });
+    </script>
 
 
     <script type="text/javascript">

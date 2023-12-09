@@ -22,9 +22,9 @@ if (isset($_POST['add'])) {
     $code = $_POST['code'];
     $name = $_POST['name'];
 
-    $brandName = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandName = '$name' ");
+    $brandCode = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandCode = '$code'");
 
-    if (mysqli_num_rows($brandName) > 0) {
+    if (mysqli_num_rows($brandCode) > 0) {
         echo "<script>window.alert('Brand exists !');</script>";
     } else {
         $addBrand = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`) VALUES ('','$code','$name')";
