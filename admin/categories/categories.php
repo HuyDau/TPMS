@@ -307,7 +307,7 @@ if(isset($_GET['id'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="..\assets\images\logo\avt.png" alt="" height="24">
+                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">

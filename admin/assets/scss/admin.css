@@ -29,8 +29,22 @@
   display: none;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   background-color: rgba(128, 128, 128, 0.2);
+}
+.form-edit form {
+  height: 95%;
+}
+.form-edit form .modal-dialog {
+  height: 100%;
+}
+.form-edit form .modal-dialog .modal-content {
+  height: 95%;
+  overflow: auto;
+}
+.form-edit form .modal-dialog .modal-content::-webkit-scrollbar {
+  height: 95%;
+  display: none;
 }
 
 .form-add-version {
@@ -43,6 +57,23 @@
   height: 100%;
   overflow: hidden;
   background-color: rgba(128, 128, 128, 0.2);
+}
+
+.form-add-specifications {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.form-add-specifications.show {
+  display: block;
+  transition: opacity 0.15s linear;
 }
 
 .form-edit.show {

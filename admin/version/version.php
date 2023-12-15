@@ -40,7 +40,7 @@ if(isset($_GET['productId'])){
 
     $id = $_GET['productId'];
 
-    $sqlEditVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE id = $id");
+    $sqlEditVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE idVersion = $id");
     $infoVersion = mysqli_fetch_assoc($sqlEditVersion);
 
     if (isset($_POST['EditVersion'])) {
@@ -51,7 +51,7 @@ if(isset($_GET['productId'])){
         $price1 = $_POST['price1'];
         $prices1 = $_POST['p-price1'];
         if ($_FILES['image1']['name'] == "") {
-            $versionImage = $infoVersion['productImage'];
+            $versionImage = $infoVersion['versionImage'];
         } else {
             $versionImage = $_FILES['image1']['name'];
             $versionImage_tmp = $_FILES['image1']['tmp_name'];
@@ -73,8 +73,9 @@ if(isset($_GET['productId'])){
             }
         }
         $description1 = $_POST['description1'];
+        $specifications = $_POST['specifications'];
         if($prices1 <= $price1){
-            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `productVersion`='$version1',`productCode`='$code1',`productName`='$name1',`productImage`='$versionImage',`productPrice`='$price1',`productPromotionalPrice`='$prices1',`productDescription`='$description1' WHERE id = $id");
+            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `versionVersion`='$version1',`productCode`='$code1',`versionName`='$name1',`versionImage`='$versionImage',`versionPrice`='$price1',`versionPromotionalPrice`='$prices1',`versionDescription`='$description1', `versionSpecifications` =  '$specifications' WHERE idVersion = $id");
             if($editVersion){
                 header("Location: version.php");
             }
@@ -85,6 +86,66 @@ if(isset($_GET['productId'])){
     }
 }
 
+if(isset($_GET['versionId'])){
+    $id = $_GET['versionId'];
+
+    if(isset($_POST['ADDSPECIFICATION'])){
+        $screen = $_POST['screen'];
+        $rearCamera = $_POST['rearCamera'];
+        $frontCamera = $_POST['frontCamera'];
+        $cpu = $_POST['cpu'];
+        $memoryStorage = $_POST['memoryStorage'];
+        $connect = $_POST['connect'];
+        $utilities = $_POST['utilities'];
+        $generalInformation = $_POST['generalInformation'];
+        $batteryandCharger = $_POST['batteryandCharger'];
+        $card = $_POST['card'];
+        $sizeWeight = $_POST['sizeWeight'];
+        $otherInformation = $_POST['otherInformation'];
+
+        $sql = mysqli_query($conn,"SELECT * FROM `tbl_specifications` WHERE versionId = $id");
+        
+        if(mysqli_num_rows($sql)>0){
+            echo "<script>window.alert('Error!');</script>";
+        }else{
+            $add = mysqli_query($conn,"INSERT INTO `tbl_specifications`(`specificationsId`, `versionId`, `screen`, `rearCamera`, `frontCamera`, `CPU`, `MemoryStorage`, `Connect`, `Utilities`, `generalInformation`, `BatteryandCharger`, `card`, `sizeWeight`, `otherInformation`) 
+        VALUES (NULL,'$id','$screen','$rearCamera','$frontCamera','$cpu','$memoryStorage','$connect','$utilities','$generalInformation','$batteryandCharger','$card','$sizeWeight','$otherInformation')");
+            if($add){
+                echo "<script>window.alert('Successful!');window.location.href = 'version.php'</script>";
+            }
+        }
+        
+    }
+}
+
+if(isset($_GET['specificationsId'])){
+    $id = $_GET['specificationsId'];
+    $sqlSpecifications1 = mysqli_query($conn,"SELECT * FROM tbl_specifications WHERE specificationsId = $id");
+    $itemSpecifications1 = mysqli_fetch_assoc( $sqlSpecifications1);
+    if(isset($_POST['EDITSPECIFICATION'])){
+        $screen1 = $_POST['screen1'];
+        $rearCamera1 = $_POST['rearCamera1'];
+        $frontCamera1 = $_POST['frontCamera1'];
+        $cpu1 = $_POST['cpu1'];
+        $memoryStorage1 = $_POST['memoryStorage1'];
+        $connect1 = $_POST['connect1'];
+        $utilities1 = $_POST['utilities1'];
+        $generalInformation1 = $_POST['generalInformation1'];
+        $batteryandCharger1 = $_POST['batteryandCharger1'];
+        $card1 = $_POST['card1'];
+        $sizeWeight1 = $_POST['sizeWeight1'];
+        $otherInformation1 = $_POST['otherInformation1'];
+
+        $edit = mysqli_query($conn,"UPDATE `tbl_specifications` SET `screen`='$screen1',`rearCamera`='$rearCamera1',`frontCamera`='$frontCamera1',`CPU`='$cpu1',`MemoryStorage`='$memoryStorage1',`Connect`='$connect1',`Utilities`='$utilities1',`generalInformation`='$generalInformation1',`BatteryandCharger`='$batteryandCharger1',`card`='$card1',`sizeWeight`='$sizeWeight1',`otherInformation`='$otherInformation1' WHERE `specificationsId` = $id");
+        
+        if($edit){
+            echo "<script>window.alert('Successful!');window.location.href = 'version.php'</script>";
+        }else{
+            echo "<script>window.alert('Error!');window.location.href = 'version.php'</script>";
+        }
+        
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -121,6 +182,7 @@ if(isset($_GET['productId'])){
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- CK Editor -->
     <script src="../assets/ckeditor/ckeditor.js"></script>
+    <!-- <script src="../assets/ckeditorme/build/ckeditor.js"></script> -->
 </head>
 
 <body>
@@ -145,35 +207,44 @@ if(isset($_GET['productId'])){
                                     <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code1" value="<?=$infoVersion['productCode']?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Product Name: </label>
-                                    <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="name1" value="<?=$infoVersion['productName']?>" required>
+                                    <label class="control-label">Version Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Name ..." type="text" name="name1" value="<?=$infoVersion['versionName']?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Product Version: </label>
-                                    <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="version1" value="<?=$infoVersion['productVersion']?>" required>
+                                    <label class="control-label">Version: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="version1" value="<?=$infoVersion['versionVersion']?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Product Iamge: </label>
+                                    <label class="control-label">Version Iamge: </label>
                                     <input type="file" multiple="multiple" name="image1" class="form-control">
-                                    <span><?=$infoVersion['productImage']?></span>
+                                    <span><?=$infoVersion['versionImage']?></span>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Price: </label>
-                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="price1" value="<?=$infoVersion['productPrice']?>" required>
+                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="price1" value="<?=$infoVersion['versionPrice']?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Promotional Price: </label>
-                                    <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="p-price1" value="<?=$infoVersion['productPromotionalPrice']?>" required>
+                                    <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="p-price1" value="<?=$infoVersion['versionPromotionalPrice']?>" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <label class="control-label">Description: </label>
                                     <textarea name="description1" id="des" cols="150" rows="10" required>
-                                        <?=$infoVersion['productDescription']?>
+                                        <?=$infoVersion['versionDescription']?>
                                     </textarea>
                                     <script>
                                         CKEDITOR.replace('des')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Specifications: </label>
+                                    <textarea name="specifications" id="des1" cols="150" rows="10" required>
+                                        <?=$infoVersion['versionSpecifications']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('des1')
                                     </script>
                                 </div>
                             </div>
@@ -190,6 +261,285 @@ if(isset($_GET['productId'])){
         </form>
     </div>
     <!-- End Form Edit -->
+    <!-- ADD Specifications-->
+    <div class="form-add-specifications form" id="form-add-specifications">
+        <form method="POST" class="" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">ADD SPECIFICATION</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="version.php">×</a></button>
+                    </div>
+                    <div class="modal-body p-3 specification">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label class="control-label">Screen: </label>
+                                    <textarea name="screen" id="screen" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('screen')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Rear Camera: </label>
+                                    <textarea name="rearCamera" id="rearCamera" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('rearCamera')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Front Camera: </label>
+                                    <textarea name="frontCamera" id="frontCamera" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('frontCamera')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">CPU: </label>
+                                    <textarea name="cpu" id="cpu" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('cpu')
+                                    </script>
+                                </div>
+                                
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label class="control-label">Memory & Storage: </label>
+                                    <textarea name="memoryStorage" id="memoryStorage" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('memoryStorage')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Connect: </label>
+                                    <textarea name="connect" id="connect" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('connect')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Utilities: </label>
+                                    <textarea name="utilities" id="utilities" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('utilities')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">General Information: </label>
+                                    <textarea name="generalInformation" id="generalInformation" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('generalInformation')
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                
+                                <div class="form-group">
+                                    <label class="control-label">Battery & Charger: </label>
+                                    <textarea name="batteryandCharger" id="batteryandCharger" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('batteryandCharger')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Card: </label>
+                                    <textarea name="card" id="card" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('card')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Size Weight: </label>
+                                    <textarea name="sizeWeight" id="sizeWeight" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('sizeWeight')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Other Information: </label>
+                                    <textarea name="otherInformation" id="otherInformation" cols="100" rows="5" required>
+                                        
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('otherInformation')
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-right pt-2">
+                                <button name="ADDSPECIFICATION" class="btn btn-primary ml-1">Save</button>
+                                <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="version.php">Close</a></button>
+                            </div>
+                        </div>
+                    </div> <!-- end modal-body-->
+                </div> <!-- end modal-content-->
+            </div> <!-- end modal dialog-->
+        </form>
+    </div>
+    <div class="form-add-specifications form" id="form-edit-specifications">
+        <form method="POST" class="" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">EDIT  SPECIFICATION</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="version.php">×</a></button>
+                    </div>
+                    <div class="modal-body p-3 specification">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label class="control-label">Screen: </label>
+                                    <textarea name="screen1" id="screen1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['screen']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('screen1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Rear Camera: </label>
+                                    <textarea name="rearCamera1" id="rearCamera1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['rearCamera']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('rearCamera1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Front Camera: </label>
+                                    <textarea name="frontCamera1" id="frontCamera1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['frontCamera']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('frontCamera1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">CPU: </label>
+                                    <textarea name="cpu1" id="cpu1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['CPU']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('cpu1')
+                                    </script>
+                                </div>
+                                
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label class="control-label">Memory & Storage: </label>
+                                    <textarea name="memoryStorage1" id="memoryStorage1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['MemoryStorage']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('memoryStorage1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Connect: </label>
+                                    <textarea name="connect1" id="connect1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['Connect']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('connect1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Utilities: </label>
+                                    <textarea name="utilities1" id="utilities1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['Utilities']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('utilities1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">General Information: </label>
+                                    <textarea name="generalInformation1" id="generalInformation1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['generalInformation']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('generalInformation1')
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                
+                                <div class="form-group">
+                                    <label class="control-label">Battery & Charger: </label>
+                                    <textarea name="batteryandCharger1" id="batteryandCharger1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['BatteryandCharger']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('batteryandCharger1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Card: </label>
+                                    <textarea name="card1" id="card1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['card']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('card1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Size Weight: </label>
+                                    <textarea name="sizeWeight1" id="sizeWeight1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['sizeWeight']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('sizeWeight1')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Other Information: </label>
+                                    <textarea name="otherInformation1" id="otherInformation1" cols="100" rows="5" required>
+                                        <?=$itemSpecifications1['otherInformation']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('otherInformation1')
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-right pt-2">
+                                <button name="EDITSPECIFICATION" class="btn btn-primary ml-1">Save</button>
+                                <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="version.php">Close</a></button>
+                            </div>
+                        </div>
+                    </div> <!-- end modal-body-->
+                </div> <!-- end modal-content-->
+            </div> <!-- end modal dialog-->
+        </form>
+    </div>
+    <!-- END Specifications  -->
+
     <!-- Begin page -->
     <div id="wrapper" class="">
         <!-- Topbar Start -->
@@ -358,7 +708,7 @@ if(isset($_GET['productId'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="..\assets\images\logo\avt.png" alt="" height="24">
+                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
@@ -441,11 +791,12 @@ if(isset($_GET['productId'])){
                                     <a href="../brands/brands.php">BRANDS</a>
                                 </li>
                                 <li>
-                                    <a href="version.php">VERSIONS</a>
-                                </li>
-                                <li>
                                     <a href="../products/products.php">PRODUCTS</a>
                                 </li>
+                                <li>
+                                    <a href="version.php">VERSIONS</a>
+                                </li>
+                                
 
 
 
@@ -554,14 +905,17 @@ if(isset($_GET['productId'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
+                                                <th>PRODUCT ID</th>
                                                 <th>PRODUCT CODE</th>
                                                 <th>CATEGORY</th>
                                                 <th>BRAND</th>
                                                 <th>IMAGE</th>
                                                 <th>PRICE</th>
                                                 <th>PROMOTIONAL PRICE</th>
-                                                <th></th>
-                                                <th></th>
+                                                <th>VIEW AND EDIT VERSION</th>
+                                                <th>ADD SPECIFICATIONS</th>
+                                                <th>VIEW AND EDIT SPECIFICATIONS</th>
+                                                <th>DELETE</th>
                                             </tr>
                                         </thead>
 
@@ -569,6 +923,10 @@ if(isset($_GET['productId'])){
                                             <?php
                                             $i = 1;
                                             while ($row = mysqli_fetch_assoc($sqlVersion)) {
+                                                $versionId = $row['idVersion'];
+                                                $sqlSpecifications = mysqli_query($conn,"SELECT * FROM tbl_specifications WHERE versionId =  $versionId");
+                                                $iSpecifications = mysqli_fetch_assoc($sqlSpecifications);
+
                                             ?>
                                                 <tr>
                                                     <td>
@@ -576,6 +934,9 @@ if(isset($_GET['productId'])){
                                                     </td>
                                                     <td>
                                                         <?=  $row['productId'] ; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?=  $row['productCode'] ; ?>
                                                     </td>
                                                     <td>
                                                         <?php 
@@ -590,11 +951,8 @@ if(isset($_GET['productId'])){
                                                     </td>
                                                     <td>
                                                         <?php 
-                                                            // $idProd = $row['productId'];
-                                                            // $sqlProduct = mysqli_query($conn,"SELECT * FROM tbl_products WHERE id = $idProd");
-                                                            // $itemProduct = mysqli_fetch_assoc($sqlProduct);
                                                             $idBrand = $itemProduct['idBrand'];
-                                                            $sqlBrand = mysqli_query($conn,"SELECT * FROM tbl_products INNER JOIN tbl_brands ON tbl_brands.id = tbl_products.idBrand   WHERE idBrand = $idCat");
+                                                            $sqlBrand = mysqli_query($conn,"SELECT * FROM tbl_products INNER JOIN tbl_brands ON tbl_brands.id = tbl_products.idBrand   WHERE idBrand = $idBrand");
                                                             $itemBrand = mysqli_fetch_assoc($sqlBrand);
                                                             echo $itemBrand['brandName'];
                                                         ?>
@@ -602,18 +960,30 @@ if(isset($_GET['productId'])){
                                                     <td>
                                                         <?php
                                                             if($itemProduct['idCategory'] == 1){
-                                                                ?> <img src="../../uploads/product/smartphone/<?= $row['productImage'] ?>" alt="<?= $row['productName'] ?>"> <?php
+                                                                ?> <img src="../../uploads/product/smartphone/<?= $row['versionImage'] ?>" alt="<?= $row['versionName'] ?>"> <?php
+                                                            }else if($itemProduct['idCategory'] == 2){
+                                                                ?> <img src="../../uploads/product/laptop/<?= $row['versionImage'] ?>" alt="<?= $row['versionName'] ?>"> <?php
+                                                            }else if($itemProduct['idCategory'] == 3){
+                                                                ?> <img src="../../uploads/product/tablet/<?= $row['versionImage'] ?>" alt="<?= $row['versionName'] ?>"> <?php
+                                                            }else if($itemProduct['idCategory'] == 4){
+                                                                ?> <img src="../../uploads/product/monitor/<?= $row['versionImage'] ?>" alt="<?= $row['versionName'] ?>"> <?php
+                                                            }else if($itemProduct['idCategory'] == 5){
+                                                                ?> <img src="../../uploads/product/smarttv/<?= $row['versionImage'] ?>" alt="<?= $row['versionName'] ?>"> <?php
+                                                            }else if($itemProduct['idCategory'] == 6){
+                                                                ?> <img src="../../uploads/product/watch/<?= $row['versionImage'] ?>" alt="<?= $row['versionName'] ?>"> <?php
                                                             }
                                                         ?>
                                                     </td>
                                                     <td>
-                                                        <?= number_format($row['productPrice'],0,"",".") ?>
+                                                        <?= number_format($row['versionPrice'],0,"",".") ?>
                                                     </td>
                                                     <td>
-                                                        <?= number_format($row['productPromotionalPrice'],0,"",".") ?>
+                                                        <?= number_format($row['versionPromotionalPrice'],0,"",".") ?>
                                                     </td>
-                                                    <td><a href="version.php?productId=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['productName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <td><a href="version.php?productId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a href="version.php?versionId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-add las la-plus-circle"></i></a></td>
+                                                    <td><a href="version.php?specificationsId=<?php echo $iSpecifications['specificationsId']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['versionName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['idVersion']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -693,10 +1063,25 @@ if(isset($_GET['productId'])){
         if(isset($_GET['productId'])){
             echo '<script> document.getElementById("form-edit").classList.add("show")</script>';
 
-            $id = $_GET['id'];
+            $id = $_GET['productId'];
 
             $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
             $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
+        }
+    ?>
+
+    <?php
+        if(isset($_GET['versionId'])){
+            echo '<script> document.getElementById("form-add-specifications").classList.add("show")</script>';
+            $id = $_GET['versionId'];
+            
+        }
+    ?>
+    <?php
+        if(isset($_GET['specificationsId'])){
+            echo '<script> document.getElementById("form-edit-specifications").classList.add("show")</script>';
+            $id = $_GET['specificationsId'];
+            
         }
     ?>
     <script src="version.js"></script>

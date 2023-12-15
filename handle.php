@@ -45,16 +45,45 @@
         return $sqlSlide;
     }
 
-    // Product
-    function getProduct($conn, $i){
+    // GET PRODUCT
+    function getProduct( $i){
         // GET Apple
         if($i == 1){
-            $sqlApple = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idBrand = $i";
+            $sqlApple = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idBrand = 1 OR tbl_products.idBrand = 21 OR tbl_products.idBrand = 35 LIMIT 5";
             return $sqlApple;
+        }else if($i == 2){
+            // GET LAPTOP PRODUCT
+            $sqlLaptop = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $i";
+            return $sqlLaptop;
+        }if($i == 3){
+            // GET SMARTPHONE PRODUCT
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 1 LIMIT 10";
+            return $sqlSmartPhone;
+        }if($i == 4){
+            // GET TABLET PRODUCT
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 3 LIMIT 15";
+            return $sqlSmartPhone;
+        }if($i == 5){
+            // GET MONITOR PRODUCT
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 4 LIMIT 15";
+            return $sqlSmartPhone;
+        }if($i == 6){
+            // GET SMART TV PRODUCT
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 5 LIMIT 15";
+            return $sqlSmartPhone;
+        }if($i == 7){
+            // GET WATCH PRODUCT
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 6 LIMIT 15";
+            return $sqlSmartPhone;
         }
-        
     }
 
+    // GET LAPTOP PRODUCTS
+
+    function getLaptopProduct($conn, $i){
+        
+        
+    }
     // GET IMAGE PRODUCT
     function getImageProduct($i){
         $sqlImageProduct = "SELECT * FROM `tbl_versions` WHERE productId = $i";
@@ -67,4 +96,31 @@
         return $sqlDetailProduct;
     }
 
+    // GET SIMILAR PRODUCT
+    function getSimilarProduct($conn, $i){
+        $sqlGetDetailProd = mysqli_query($conn,"SELECT * FROM `tbl_products` INNER JOIN `tbl_versions` ON tbl_products.id = tbl_versions.productId WHERE idVersion = $i");
+        $iGetDetailProd = mysqli_fetch_assoc($sqlGetDetailProd);
+        $idBrand = $iGetDetailProd['idBrand'];
+        $sqlSimilarProduct = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE idBrand = $idBrand LIMIT 5";
+        return $sqlSimilarProduct;
+    }
+
+    // GET LIST VERSION
+    function getListVersion($i){
+        $sqlGetListVersion = "SELECT * FROM `tbl_versions` WHERE productId = $i";
+        return $sqlGetListVersion;
+    }
+
+
+    // GET COMMENT
+    function getListComment($i){
+        $sqlGetListComment = "SELECT * FROM `tbl_comments` WHERE versionId = $i";
+        return $sqlGetListComment;
+    }
+
+    // GET REP COMMENT
+    function getListRepComment($i){
+        $sqlGetListRepComment = "SELECT * FROM `tbl_repcomments` WHERE commentId = $i";
+        return $sqlGetListRepComment;
+    }
 ?>

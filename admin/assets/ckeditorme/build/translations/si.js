@@ -1,0 +1,1 @@
+(function(i){const n=i["si"]=i["si"]||{};n.dictionary=Object.assign(n.dictionary||{},{"%0 of %1":"",Cancel:"",Clear:"",Redo:"නැවත කරන්න","Rich Text Editor. Editing area: %0":"","Show more items":"",Undo:"අහෝසි කරන්න"});n.getPluralForm=function(i){return i!=1}})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

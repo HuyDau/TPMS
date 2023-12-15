@@ -8,6 +8,16 @@
   color: #fff;
 }
 
+.form-add-specifications form .modal-dialog {
+  width: 80%;
+}
+.form-add-specifications form .modal-dialog .modal-content .modal-header .close a {
+  color: #fff;
+}
+.form-add-specifications form .modal-dialog .modal-content .modal-body .text-right .close-form a {
+  color: #fff;
+}
+
 form .modal-dialog {
   max-width: 90%;
 }
@@ -24,4 +34,19 @@ form .modal-dialog .modal-content .modal-body .text-right .close-form a {
 }
 .card-body .table tbody tr td img {
   width: 50px;
+}
+
+.form-add-specifications form {
+  height: 95%;
+}
+.form-add-specifications form .modal-dialog {
+  height: 100%;
+}
+.form-add-specifications form .modal-dialog .modal-content {
+  height: 100% !important;
+  overflow: auto;
+}
+
+.specification .cke_top {
+  display: none;
 }/*# sourceMappingURL=version.css.map */

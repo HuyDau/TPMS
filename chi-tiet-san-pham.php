@@ -1,8 +1,36 @@
 <?php
     require_once("config/config.php");
     include 'handle.php';
-    $queryDetailProduct = mysqli_query($conn,getDetailProduct($_GET['idsanpham']));
-    $itemDetailProduct = mysqli_fetch_assoc($queryDetailProduct);
+    if(isset($_GET['idsanpham'])){
+        $queryDetailProduct = mysqli_query($conn,getDetailProduct($_GET['idsanpham']));
+        $itemDetailProduct = mysqli_fetch_assoc($queryDetailProduct);
+    }
+    
+
+    // POST COMMENT
+    if(isset($_POST['submitComment'])){
+        $idsanpham = $_POST['idsanpham'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $content = $_POST['content'];
+
+        $addComment = mysqli_query($conn,"INSERT INTO `tbl_comments`(`id`, `versionId`, `name`, `phone`, `email`, `content`) VALUES (NULL,'$idsanpham','$name','$phone','$email','$content')");
+        
+    }
+
+    // POST REP COMMENT
+    if(isset($_POST['btnRepComment'])){
+        $versionId = $_POST['versionId'];
+        $commentId = $_POST['commentId'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $content = $_POST['content'];
+
+        $addRepComment = mysqli_query($conn,"INSERT INTO `tbl_repcomments`(`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`) VALUES (NULL,'$versionId','$commentId','$name','$phone','$email','$content')");
+        // echo "INSERT INTO `tbl_repcomments`(`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`) VALUES (NULL,'$versionId','$commentId','$name','$phone','$email','$content')";
+    }
 ?>
 <!doctype html>
 <html>
@@ -29,6 +57,7 @@
     <link rel="preload" as="script" href="assets/js/main.js">
     <link rel="preload" as="style" href="assets/css/main.css">
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+
     <!-- Slick Slide -->
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick-theme.css"/>
@@ -739,109 +768,114 @@
             </ol>
         </div>
     </section>
-
-<section>
-    <div class="container">
-        <div class="product-details">
-            <div class="top-product">
-                <h1><?=$itemDetailProduct['versionName']?> - <?=$itemDetailProduct['versionVersion']?></h1>
-                
-            </div>
-            <div class="product-details-container">
-                <div class="product-image">
-                    <div class="love-this-button">
-                        <a title="Thêm vào sản phẩm yêu thích" href="javascript:wishProduct(3694, false)">
-                            <i class="icon-love-1"></i>
-                            <i class="icon-love-2"></i>
-                        </a>
-                    </div>
-
-                    <div id="imagePreview">
-                        <!-- Loading Screen -->
-                        <div data-u="loading" class="loading">
-                            <div class="filter"></div>
-                            <div class="load-bg"></div>
-                        </div>
-                        <div data-u="slides" class="viewer">
-                            <div>
-                                <a data-fancybox="gallery" rel="group" href="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
-                                <div data-u="thumb">
-                                    <?php
-                                        if($itemDetailProduct['idCategory'] == 1){
-                                            ?><img class="i" src="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>" /><?php
-                                        }
-                                    ?>
-                                </div>
-                            </div>
-                            <?php
-                                $queryImageProduct = mysqli_query($conn,getImageProduct($itemDetailProduct['productId']));
-                                while($itemImageProduct = mysqli_fetch_assoc($queryImageProduct)){
-                                    ?>
-                                        <div>
-                                            <a data-fancybox="gallery" rel="group" href="uploads/product/smartphone/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/smartphone/<?=$itemImageProduct['versionImage']?>" title="" /></a>
-                                            <div data-u="thumb">
-                                                <?php
-                                                    if($itemDetailProduct['idCategory'] == 1){
-                                                        ?><img class="i" src="uploads/product/smartphone/<?=$itemImageProduct['versionImage']?>" /><?php
-                                                    }
-                                                ?>
-                                            </div>
-                                        </div>
-                                    <?php
-                                }
-                            ?>
-                        </div>
-
-                        <!-- Thumbnail Navigator -->
-                        <div data-u="thumbnavigator" class="jssort11" data-autocenter="1" data-scale-bottom="0.75">
-                            <!-- Thumbnail Item Skin Begin -->
-                            <div class="bg-shadow" style="top: 0;left: -30px;width: 370px;height: 80px;position: absolute;box-shadow: 0px 4px 6px #00000029; border-radius: 8px;"></div>
-                            <div data-u="slides" style="cursor:pointer;">
-                                <div data-u="prototype" class="p">
-                                    <div data-u="thumbnailtemplate" class="tp"></div>
-                                </div>
-                            </div>
-
-                            <span class="slider-t-l">
-                                <i class="icon-right"></i>
-                            </span>
-                            <span class="slider-t-r">
-                                <i class="icon-right"></i>
-                            </span>
-                            <!-- Thumbnail Item Skin End -->
-                        </div>
-
-
-
-                        <!-- Arrow Navigator -->
-                        <span data-u="arrowleft" class="slider-l" data-autocenter="2">
-                            <i class="icon-left"></i>
-                        </span>
-                        <span data-u="arrowright" class="slider-r" data-autocenter="2">
-                            <i class="icon-right"></i>
-                        </span>
-
-                    </div>
+    <section>
+        <div class="container">
+            <div class="product-details">
+                <div class="top-product">
+                    <h1><?=$itemDetailProduct['versionName']?> - <?=$itemDetailProduct['versionVersion']?></h1>
+                    
                 </div>
+                <div class="product-details-container">
+                    <div class="product-image">
+                        <div class="love-this-button">
+                            <a title="Thêm vào sản phẩm yêu thích" href="javascript:wishProduct(3694, false)">
+                                <i class="icon-love-1"></i>
+                                <i class="icon-love-2"></i>
+                            </a>
+                        </div>
+
+                        <div id="imagePreview">
+                            <!-- Loading Screen -->
+                            <div data-u="loading" class="loading">
+                                <div class="filter"></div>
+                                <div class="load-bg"></div>
+                            </div>
+                            <div data-u="slides" class="viewer">
+                                <?php
+                                    if($itemDetailProduct['idCategory'] == 1){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 2){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/laptop/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/laptop/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/laptop/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }
+                                ?>
+                                <?php
+                                    $queryImageProduct = mysqli_query($conn,getImageProduct($itemDetailProduct['productId']));
+                                    while($itemImageProduct = mysqli_fetch_assoc($queryImageProduct)){
+                                        if($itemDetailProduct['idCategory'] == 1){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/smartphone/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/smartphone/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/smartphone/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 2){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/laptop/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/laptop/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/laptop/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }
+                                        
+                                    }
+                                ?>
+                            </div>
+
+                            <!-- Thumbnail Navigator -->
+                            <div data-u="thumbnavigator" class="jssort11" data-autocenter="1" data-scale-bottom="0.75">
+                                <!-- Thumbnail Item Skin Begin -->
+                                <div class="bg-shadow" style="top: 0;left: -30px;width: 370px;height: 80px;position: absolute;box-shadow: 0px 4px 6px #00000029; border-radius: 8px;"></div>
+                                <div data-u="slides" style="cursor:pointer;">
+                                    <div data-u="prototype" class="p">
+                                        <div data-u="thumbnailtemplate" class="tp"></div>
+                                    </div>
+                                </div>
+
+                                <span class="slider-t-l">
+                                    <i class="icon-right"></i>
+                                </span>
+                                <span class="slider-t-r">
+                                    <i class="icon-right"></i>
+                                </span>
+                                <!-- Thumbnail Item Skin End -->
+                            </div>
+
+
+
+                            <!-- Arrow Navigator -->
+                            <span data-u="arrowleft" class="slider-l" data-autocenter="2">
+                                <i class="icon-left"></i>
+                            </span>
+                            <span data-u="arrowright" class="slider-r" data-autocenter="2">
+                                <i class="icon-right"></i>
+                            </span>
+
+                        </div>
+                    </div>
 
                     <div class="product-center" style="position:relative;">
                         <p class="price current-product-price">
-                            <strong>
-                                32,490,000 ₫
-                            </strong>
-
-                            <i> | Giá đã bao gồm VAT</i>
-                            
-                            
+                            <strong><?=number_format($itemDetailProduct['versionPromotionalPrice'],0,"",".")?>₫ </strong><i> | Giá đã bao gồm VAT</i> 
                         </p>
-                        <p class="freeship">
-                                <i class="icon-freeship-truck"></i>
-                                <span>
-                                    Miễn phí vận chuyển toàn quốc
-                                </span>
-                        </p>
-
-
+                        <p class="freeship"><i class="icon-freeship-truck"></i><span> Miễn phí vận chuyển toàn quốc </span> </p>
                         <div style="position:absolute; right:0; display:none;">
                             <label>SKU:</label> <strong id="dfSKU">MU7A3VN</strong>
                         </div>
@@ -849,77 +883,23 @@
                             <div class="product-option version">
                                 <strong class="label">Lựa chọn phiên bản</strong>
                                 <div class="options" id="versionOption" data-id="5">
-                                        <div data-sku="MU7A3VN" class="item selected">
-                                            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a">
-                                                <span><label><strong>256GB</strong></label></span>
-                                                <strong>32,490,000 ₫</strong>
-                                            </a>
-                                        </div>
-                                        <div data-sku="MU7F3VN" class="item ">
-                                            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-512gb-chinh-hang-vn-a">
-                                                <span><label><strong>512GB</strong></label></span>
-                                                <strong>38,990,000 ₫</strong>
-                                            </a>
-                                        </div>
-                                        <div data-sku="MU7K3VN" class="item ">
-                                            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-max-1tb-chinh-hang-vn-a">
-                                                <span><label><strong>1TB</strong></label></span>
-                                                <strong>44,490,000 ₫</strong>
-                                            </a>
-                                        </div>
+                                    <?php
+                                        $queryGetListVersion = mysqli_query($conn,getListVersion($itemDetailProduct['productId']));
+                                        while($itemGetListVersion = mysqli_fetch_assoc($queryGetListVersion)){
+                                            ?>
+                                                    <div data-sku="MU7A3VN" class="item <?php if($itemDetailProduct['idVersion'] == $itemGetListVersion['idVersion']){echo 'selected';} ?>">
+                                                    <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemGetListVersion['idVersion']?>">
+                                                        <span><label><strong><?=$itemGetListVersion['versionVersion']?></strong></label></span>
+                                                        <strong><?=number_format($itemGetListVersion['versionPromotionalPrice'],0,"",".")?>₫</strong>
+                                                    </a>
+                                                </div>
+                                            <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
-
-                            <div class="product-option color">
-                                <strong class="label">Lựa chọn màu và xem địa chỉ còn hàng</strong>
-                                <div class="options" id="colorOptions">
-                                        <div data-name="Titan Xanh" data-hotsale="" data-pricenote="" data-buyonline="true" data-bestPrice="32,490,000 ₫" data-lastPrice="" data-idx="0" data-hex="#3d4555" data-title="" data-id="395" data-sku="MU7A3VN" class="item selected">
-                                            <span><label><strong>Titan Xanh</strong></label></span>
-                                            <strong>32,490,000 ₫</strong>
-                                            <div class="colorGuide" style="background:#3d4555">
-                                                <label><strong>Titan Xanh</strong></label>
-                                            </div>
-                                        </div>
-                                        <div data-name="Titan Đen" data-hotsale="" data-pricenote="" data-buyonline="true" data-bestPrice="32,690,000 ₫" data-lastPrice="" data-idx="1" data-hex="#3f4042" data-title="" data-id="397" data-sku="MU773VN" class="item ">
-                                            <span><label><strong>Titan Đen</strong></label></span>
-                                            <strong>32,690,000 ₫</strong>
-                                            <div class="colorGuide" style="background:#3f4042">
-                                                <label><strong>Titan Đen</strong></label>
-                                            </div>
-                                        </div>
-                                        <div data-name="Titan Trắng" data-hotsale="" data-pricenote="" data-buyonline="true" data-bestPrice="33,390,000 ₫" data-lastPrice="" data-idx="2" data-hex="#f2f1eb" data-title="" data-id="396" data-sku="MU783VN" class="item ">
-                                            <span><label><strong>Titan Trắng</strong></label></span>
-                                            <strong>33,390,000 ₫</strong>
-                                            <div class="colorGuide" style="background:#f2f1eb">
-                                                <label><strong>Titan Trắng</strong></label>
-                                            </div>
-                                        </div>
-                                        <div data-name="Titan Tự Nhi&#234;n" data-hotsale="" data-pricenote="" data-buyonline="true" data-bestPrice="33,390,000 ₫" data-lastPrice="" data-idx="3" data-hex="#bab4a9" data-title="" data-id="394" data-sku="MU793VN" class="item ">
-                                            <span><label><strong>Titan Tự Nhi&#234;n</strong></label></span>
-                                            <strong>33,390,000 ₫</strong>
-                                            <div class="colorGuide" style="background:#bab4a9">
-                                                <label><strong>Titan Tự Nhi&#234;n</strong></label>
-                                            </div>
-                                        </div>
-
-                                </div>
-                            </div>
-
-
-                        <div style="display:flex;">
-
-
-                                <div class="renew" style="border:1px solid #ddd; border-radius:5px; margin:5px 0; padding:8px; background:#fff; text-align:center; flex-grow:2">
-                                    <div>Trợ giá lên tới <strong data-val="2000000" class="renewPrice">2,000,000 ₫</strong> khi thu cũ đổi mới</div>
-                                    <div style="font-weight:bold; font-size:23px;"><strong class="renewValue text-red">30,490,000 ₫ </strong></div>
-                                </div>
-                        </div>
-
-
-
-
                             <div class="product-promotion">
-                                <strong class="label text-green">KHUYẾN M&#195;I</strong>
+                                <strong class="label text-green">KHUYẾN MÃI</strong>
                                 <ul>
 
                                             <li><span class="bag">KM 1</span></li>
@@ -969,21 +949,14 @@
                                 </div>
 
                                 <div>
-                                    <strong class="label">ƯU Đ&#195;I ĐI K&#200;M</strong>
+                                    <strong class="label">ƯU ĐÃI ĐI KÈM</strong>
                                     <ul>
 
-                                            <li>
-                                                <i class="icon-checked text-green"></i>
-Ưu đ&#227;i giảm ngay 300.000đ khi mua Ốp Lưng Trong Suốt / Silicon MagSafe cho d&#242;ng iPhone 15 k&#232;m theo m&#225;y.                                            </li>
-                                            <li>
-                                                <i class="icon-checked text-green"></i>
-Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&#227;i 2GB Data/ng&#224;y - Miễn ph&#237; 1000 ph&#250;t nội mạng.                                            </li>
+                                            <li><i class="icon-checked text-green"></i>Ưu đãi giảm ngay 300.000đ khi mua Ốp Lưng Trong Suốt / Silicon MagSafe cho dòng iPhone 15 kèm theo máy.</li>
+                                            <li><i class="icon-checked text-green"></i>Giảm ngay 150.000đ khi mua kèm SIM số đẹp Vinaphone Happy - Ưu đãi 2GB Data/ngày - Miễn phí 1000 phút nội mạng. </li>
                                     </ul>
                                 </div>
                         </div>
-
-
-
                         <div class="product-promotion">
                             <div class="mg-top15">
                                 <ul>
@@ -2357,555 +2330,377 @@ Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&
                                 </div>
                             </div>
                     </div>
-
-
+                </div>
             </div>
+
         </div>
-
-    </div>
-</section>
-
-
-
-<section>
-    <div class="container">
-        <div class="product-layout product-layout-grid">
-            <div class="product-left">
-                    <div class="product-text" id="productContent">
-                        <p class="MsoNormal"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Tất cả iPhone chính hãng VN/A được phân phối tại Hoàng Hà Mobile đều được nhập trực tiếp từ Công ty TNHH Apple Việt Nam. Hoàng Hà Mobile là nhà bán lẻ ủy quyền chính thức của Apple tại Việt Nam.<o:p></o:p></span></p><p style="margin-bottom: 6pt; line-height: 26.25px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/10/10/tem-ict-apple.jpg"></p><blockquote style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><p><span style="font-weight: 700;"><span lang="vi" style="font-size: 12pt; line-height: 24px;"><a href="https://hoanghamobile.com/dien-thoai-di-dong/iphone/iphone-15-series" target="_blank"><font color="#397b21">iPhone 15 Pro Max</font></a></span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;"> đã chính thức được ra mắt trong sự kiện Wonderlust tại nhà hát Steve Jobs, California (Mỹ) vào lúc 10h sáng 12/9 tức 0h ngày 13/9 (giờ Việt Nam). Chiếc <a href="https://hoanghamobile.com/dien-thoai-di-dong/iphone" target="_blank"><font color="#397b21"><span style="font-weight: 700;">iPhone</span></font></a> mới trong series mới đem đến cho người dùng trải nghiệm ổn định hơn với thế hệ <span style="font-weight: 700;">chip A17 Pro </span>mới nhất, cùng công nghệ <span style="font-weight: 700;">Wi-Fi 6E</span>. Bộ camera của iPhone 15 Pro Max cũng được nâng cấp thêm với<span style="font-weight: 700;"> ống kính tele</span> với khả năng zoom quang học 5x với thiết kế tetraprism hiện đại.<o:p></o:p></span></p></blockquote><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 18pt; line-height: 36px;">iPhone 15 Pro Max màu sắc sang chảnh, iFans cháy túi</span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">iPhone 15 Pro Max </span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;">đem đến cho người dùng đa dạng sự lựa chọn với ba phiên bản bộ nhớ trong lần lượt là 256GB/512GB/1TB và bốn lựa chọn màu gồm Titan Tự Nhiên/Titan Trắng/Titan Xanh/Titan Đen. Ngoài việc sử dụng chất liệu Titan mới, những cải tiến về cấu hình được Apple cập nhật và trang bị hứa hẹn đem đến trải nghiệm người dùng nâng cao hơn.</span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-1a-natural-titanium-color.jpg" alt="iPhone 15 Pro Max Màu Titan Tự Nhiên"><br></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 16pt; line-height: 32px;">Thiết kế khung viền titan nhẹ hơn, bền hơn<o:p></o:p></span></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Đối với iPhone 15 Pro Max, Apple đã quyết định loại bỏ lớp khung thép không gỉ truyền thống và chuyển sang sử dụng titan giúp thiết bị nhẹ hơn khoảng 10% so với các phiên bản trước đó. Ngoài đem đến trải nghiệm cầm nắm thuận tiện hơn, chất liệu titan có tính chất chống ăn mòn và chịu được va đập tốt sẽ mang lại độ bền cao hơn cho iPhone 15 Pro Max.</span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-2-design.jpg" alt="iPhone 15 Pro Max Màu Titan Tự Nhiên"><span lang="vi" style="font-size: 12pt; line-height: 24px;"><br></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 16pt; line-height: 32px;">Wi-Fi 6E tốc độ kết nối mạng không dây nhanh gấp 2</span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">iPhone 15 Pro Max có tốc độ kết nối mạng nhanh gấp đôi với cải tiến Wi-Fi 6E hoàn toàn mới, cung cấp kết nối ổn định và nhanh chóng, bạn hoàn toàn có thể tải xuống các tập tin nhanh như chớp. </span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;"><br></span><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-3-design-detail.jpg" alt="iPhone 15 Pro Max Thiết kế"></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Khả năng sửa chữa tiếp tục được nâng cấp trên iPhone 15 Pro Max trong việc sửa chữa màn hình. Apple tiếp tục triển khai việc sử dụng các linh kiện và mô-đun màn hình có thể được thay thế một cách dễ dàng hơn, mà không cần phải tháo rời nhiều phần khác nhau của thiết bị, giúp giảm thời gian và công sức cần thiết cho quá trình sửa chữa, đồng thời giảm nguy cơ gây hư hỏng hoặc tổn thất linh kiện khác.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 16pt; line-height: 32px;">Camera được nâng cấp với ống kính tele độ phân giải lớn<o:p></o:p></span></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Apple giữ nguyên cụm camera chính trên iPhone 15 Pro Max và trang bị thêm ống kính tele và ống kính siêu rộng, giúp người dùng có được những bức ảnh chất lượng cao hơn với đầy đủ các chi tiết và màu sắc trung thực.</span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-5-colors.jpg" alt="iPhone 15 Pro Max Màu Sắc"><br></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Ngoài ra, Apple cũng đang phát triển camera Telephoto với ống kính thiết kế tetraprism mới cho iPhone 15 Pro Max. Ống kính này giúp tăng độ khả năng zoom quang học từ 3x lên 5x ở tiêu cự 120mm mà không làm giảm chất lượng ảnh với cảm biến lớn hơn 25% so với 14 Pro Max cùng khẩu độ f/2.8. Những cải tiến camera này hỗ trợ người dùng thực hiện chụp ảnh từ xa với độ chi tiết cao và khả năng ghi lại các chi tiết nhỏ hiệu quả hơn.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 16pt; line-height: 32px;">iPhone 15 Pro Max trang bị chip A17 Pro nâng cao hiệu suất và tiết kiệm pin</span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Chip Apple A17 Pro được trang bị cho iPhone 15 Pro Max là con chip được sản xuất trên tiến trình 3 nm mới nhất của TSMC. A17 Pro có khoảng 19 tỷ bóng bán dẫn gấp 1,5 lần bóng bán dẫn trong A16 Bionic.</span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-6-feature-story.jpg" alt="iPhone 15 Pro Max Tin Nổi Bật"><br></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Với tiến trình mới áp dụng trên A17 Pro, con chip này sẽ giúp iPhone 15 Pro Max cải thiện hiệu suất GPU lên đến 20% bên cạnh việc công nghệ dò tia dựa trên phần mềm nhanh hơn 4 lần so với con chip tiền nhiệm. Khi hiệu suất và mức tiêu thụ năng lượng được cải thiện, tuổi thị viên pin của  iPhone 15 Pro Max được đánh giá là sẽ bền bỉ hơn so với dòng sản phẩm cũ.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 16pt; line-height: 32px;">Thời lượng pin Pro<o:p></o:p></span></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Dù được trang bị rất nhiều tính năng mới tiên tiến để phục vụ nhu cầu sử dụng cao của người dùng, iPhone 15 Pro vẫn mang đến cho chúng ta thời lượng pin dùng thoải mái cả ngày dài đầy ấn tượng. Dung lượng pin trên iPhone 15 Pro Max cho bạn thời gian xem video liên tục lên đến 29 giờ, dài hơn 9 giờ so với dung lượng pin trên iPhone 12 Pro Max. </span><span style="font-size: 12pt;">Bên cạnh đó, máy được hỗ trợ USB 3.0 đem đến cho người dùng trải nghiệm truyền và xử lý dữ liệu tốc độ nhanh gấp 20 lần.</span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-7-features-specs.jpg" alt="iPhone 15 Pro Max Tính Năng & Thông Số Kỹ Thuật"><span lang="vi" style="font-size: 12pt; line-height: 24px;"><br></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 18pt; line-height: 36px;">Giá dự kiến của iPhone 15 Pro Max</span></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Giá bán khởi điểm của iPhone 15 Pro Max khởi điểm điểm từ 1.199 USD (khoảng 28 triệu VNĐ). Giá bán sản phẩm dành cho người dùng Việt thay đổi tùy thuộc vào phiên bản bộ nhớ cũng như thời gian cập bến thị trường Việt Nam. Theo thông tin mở bán mới nhất trên trang web chính thức của Apple, mức giá cho mỗi phiên bản iPhone 15 Pro Max hiện tại lần lượt như sau:<o:p></o:p></span></p><p class="MsoNormal" style="margin: 0in 0in 6pt 0.5in; line-height: 21px; text-align: justify; text-indent: -0.25in;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">-<span times="" new="" roman";"="" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">       </span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;">iPhone 15 Pro Max 256GB: 1.199 USD (Khoảng 28 triệu VNĐ)<o:p></o:p></span></p><p class="MsoNormal" style="margin: 0in 0in 6pt 0.5in; line-height: 21px; text-align: justify; text-indent: -0.25in;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">-<span times="" new="" roman";"="" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">       </span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;">iPhone 15 Pro Max 512GB: 1.399 USD (Khoảng 33 triệu VNĐ)<o:p></o:p></span></p><p class="MsoNormal" style="margin: 0in 0in 6pt 0.5in; line-height: 21px; text-align: justify; text-indent: -0.25in;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">-<span times="" new="" roman";"="" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">       </span></span><span lang="vi" style="font-size: 12pt; line-height: 24px;">iPhone 15 Pro Max 1TB: 1.599 USD (Khoảng 38 triệu VNĐ)</span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><img src="https://admin.hoanghamobile.com/Uploads/2023/09/14/vn-iphone-15-pro-max-natural-titanium-pdp-image-position-8-usb-c-charge-cable.jpg" alt="iPhone 15 Pro Max Cáp Sạc USB-C"></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span style="font-weight: 700;"><span lang="vi" style="font-size: 16pt; line-height: 32px;">Nhận thông tin của iPhone 15 Pro Max tại Hoàng Hà Mobile<o:p></o:p></span></span></p><p class="MsoNormal" style="margin-bottom: 6pt; line-height: 21px; text-align: justify;"><span lang="vi" style="font-size: 12pt; line-height: 24px;">Hoàng Hà Mobile - Đại lý uy tín chuyên cung cấp các sản phẩm công nghệ chất lượng hàng đầu, hân hạnh thông báo đến quý khách hàng về sự ra mắt đặc biệt của iPhone 15 Pro Max. Trong khi chờ đợi thiết bị cập bến và sẵn sàng trên hệ thống của Hoàng Hà, quý khách hàng có thể đăng ký tại đây để nhận những thông tin mới nhất về iPhone 15 Pro Max ngay hôm nay.</span></p>
-                    </div>
-                    <div class="view-more-container">
-                        <a href="javascript:;" id="viewMoreContent">Xem thêm</a>
-                    </div>
-            </div>
-
-            <div class="product-right">
-                <div class="product-specs">
-                    <h3>Thông số kỹ thuật iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</h3>
-                    <div class="product-spect-img">
-                        <img src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/09/13/iphone-15-pro-max-natural-titanium-pure-back-iphone-15-pro-max-natural-titanium-pure-front-2up-screen-usen-1.png" />
-                            <a data-padding="0px" data-width="600px" class="ajax-modal product-specs-button" href="/Ajax/fullspecs/3694"><span class="icon-config"></span> <strong>Cấu hình chi tiết</strong></a>
-                    </div>
-
-                    <div class="specs-special">
-                            <ol>
-                                <li>
-                                    <strong>C&#244;ng nghệ m&#224;n h&#236;nh:</strong>
-                                    <span>M&#224;n h&#236;nh Super Retina XDR, Tấm nền OLED, Dynamic Island, C&#244;ng nghệ ProMotion với tốc độ l&#224;m mới th&#237;ch ứng l&#234;n đến 120Hz, M&#224;n h&#236;nh Lu&#244;n Bật, M&#224;n h&#236;nh HDR, Tỷ lệ tương phản 2.000.000:1 (ti&#234;u chuẩn), M&#224;n h&#236;nh True Tone, M&#224;n h&#236;nh c&#243; dải m&#224;u rộng (P3), Haptic Touch</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>Độ ph&#226;n giải:</strong>
-                                    <span>1290 x 2796, Ch&#237;nh: 48MP, khẩu độ ƒ/1.78, Ultra Wide: 12MP, khẩu độ ƒ/2.2, Telephoto: 12MP, khẩu độ ƒ/2.8, Camera trước TrueDepth 12MP, khẩu độ ƒ/1.9</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>K&#237;ch thước m&#224;n h&#236;nh:</strong>
-                                    <span>6.7&quot;</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>Hệ điều h&#224;nh:</strong>
-                                    <span>iOS 17</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>Vi xử l&#253;:</strong>
-                                    <span>A17 Pro</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>Bộ nhớ trong:</strong>
-                                    <span>256GB</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>RAM:</strong>
-                                    <span>8GB</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>Mạng di động:</strong>
-                                    <span>2G, 3G, 4G, 5G</span>
-                                </li>
-                            </ol>
-                            <ol>
-                                <li>
-                                    <strong>Số khe SIM:</strong>
-                                    <span>SIM k&#233;p (nano SIM v&#224; eSIM), Hỗ trợ hai eSIM</span>
-                                </li>
-                            </ol>
-                    </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="product-layout product-layout-grid">
+                <div class="product-left">
+                        <div class="product-text" id="productContent">
+                            <?=$itemDetailProduct['versionDescription']?>
+                        </div>
+                        <div class="view-more-container">
+                            <a href="javascript:;" id="viewMoreContent">Xem thêm</a>
+                        </div>
                 </div>
 
+                <div class="product-right">
+                    <div class="product-specs">
+                        <h3>Thông số kỹ thuật <?=$itemDetailProduct['productName']?> - <?=$itemDetailProduct['versionVersion']?> </h3>
+                        <div class="product-spect-img">
+                            <?php
+                                if($itemDetailProduct['idCategory'] == 1){
+                                    ?><img class="i" src="uploads/product/smartphone/<?=$itemDetailProduct['versionImage']?>" /><?php
+                                }else if($itemDetailProduct['idCategory'] == 2){
+                                    ?><img class="i" src="uploads/product/laptop/<?=$itemDetailProduct['versionImage']?>" /><?php
+                                }
+                            ?>
+                            <img src="uploads/product//" />
+                                <a data-padding="0px" data-width="600px" class="ajax-modal product-specs-button" href="/Ajax/fullspecs/3694"><span class="icon-config"></span> <strong>Cấu hình chi tiết</strong></a>
+                        </div>
 
-
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section>
-    <div class="container">
-        <div class="full-width-content">
-            <div class="product-quick-compare">
-                <div class="header">
-                    <h3>So sánh sản phẩm tương tự</h3>
-                    <div class="search-box">
-                        <div class="border">
-                            <input id="kwdCompare" type="text" placeholder="Nhập tên sản phẩm cần so sánh" />
-                            <button type="button" class="search"><i class="icon-search"></i></button>
+                        <div class="specs-special">
+                            <?=$itemDetailProduct['versionSpecifications']?>       
                         </div>
                     </div>
+
+
+
                 </div>
-
-                <div class="lts-product lts-product-bgwhite equaHeight" data-obj="a.title">
-
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-14 pro-max-256gb-chinh-hang-vn-a" title="iPhone 14 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/02/01/1111.png" alt="iPhone 14 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 14 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-14 pro-max-256gb-chinh-hang-vn-a" class="title" title="iPhone 14 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 14 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>28,990,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">27,490,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-        <div class="info-compare">
-            <a href="/so-sanh/apple-iphone-14 pro-max-256gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.2358.3694" title="So s&#225;nh Điện thoại với iPhone 14 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A"><i class="icon-controls"></i> <span>So sánh</span></a>
-        </div>
-
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-14 pro-max-256gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Home PayLater - Trả g&#243;p qua Home PayLater giảm tới 1.000.000đ</li>
-                        <li><span class="bag">KM</span> VPBank - Mở thẻ VPBank, ưu đ&#227;i tới 1.250.000đ.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-14-pro-max-128gb-chinh-hang-vn-a" title="iPhone 14 Pro Max (128GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/06/05/my-project.png" alt="iPhone 14 Pro Max (128GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 14 Pro Max (128GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-14-pro-max-128gb-chinh-hang-vn-a" class="title" title="iPhone 14 Pro Max (128GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 14 Pro Max (128GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>26,190,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">24,690,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-        <div class="info-compare">
-            <a href="/so-sanh/apple-iphone-14-pro-max-128gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.2375.3694" title="So s&#225;nh Điện thoại với iPhone 14 Pro Max (128GB) - Ch&#237;nh h&#227;ng VN/A"><i class="icon-controls"></i> <span>So sánh</span></a>
-        </div>
-
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-14-pro-max-128gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Home PayLater - Trả g&#243;p qua Home PayLater giảm tới 1.000.000đ</li>
-                        <li><span class="bag">KM</span> VPBank - Mở thẻ VPBank, ưu đ&#227;i tới 1.250.000đ.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-512gb-chinh-hang-vn-a" title="iPhone 15 Pro (512GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium-removebg-preview-1.png" alt="iPhone 15 Pro (512GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 Pro (512GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-pro-512gb-chinh-hang-vn-a" class="title" title="iPhone 15 Pro (512GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 Pro (512GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>36,490,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">34,490,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-        <div class="info-compare">
-            <a href="/so-sanh/apple-iphone-15-pro-512gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.3706.3694" title="So s&#225;nh Điện thoại với iPhone 15 Pro (512GB) - Ch&#237;nh h&#227;ng VN/A"><i class="icon-controls"></i> <span>So sánh</span></a>
-        </div>
-
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-pro-512gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> Giảm th&#234;m 30% gi&#225; trị m&#225;y cũ, tối đa 2.000.000đ khi tham gia thu cũ, đổi mới iPhone 15 Series.</li>
-                        <li><span class="bag">KM</span> Home PayLater - Trả g&#243;p qua Home PayLater giảm tới 1.000.000đ</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-14-pro-256gb-chinh-hang-vn-a" title="iPhone 14 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/02/01/1111.png" alt="iPhone 14 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 14 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-14-pro-256gb-chinh-hang-vn-a" class="title" title="iPhone 14 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 14 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>25,990,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">24,490,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-        <div class="info-compare">
-            <a href="/so-sanh/apple-iphone-14-pro-256gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.2355.3694" title="So s&#225;nh Điện thoại với iPhone 14 Pro (256GB) - Ch&#237;nh h&#227;ng VN/A"><i class="icon-controls"></i> <span>So sánh</span></a>
-        </div>
-
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-14-pro-256gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> Home PayLater - Trả g&#243;p qua Home PayLater giảm tới 1.000.000đ</li>
-                        <li><span class="bag">KM</span> VPBank - Mở thẻ VPBank, ưu đ&#227;i tới 1.250.000đ.</li>
-                        <li><span class="bag">KM</span> ZaloPay - Ưu đ&#227;i tới 300.000đ khi thanh to&#225;n qua ZaloPay.</li>
-                </ul>
-            </a>
-        </div>
-</div>
-<div class="item">
-
-    <div class="img">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-512gb-chinh-hang-vn-a" title="iPhone 15 (512GB) - Ch&#237;nh h&#227;ng VN/A">
-            <img src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/09/13/iphone-15-pink-pure-back-iphone-15-pink-pure-front-2up-screen-usen.png" alt="iPhone 15 (512GB) - Ch&#237;nh h&#227;ng VN/A" title="iPhone 15 (512GB) - Ch&#237;nh h&#227;ng VN/A">
-        </a>
-    </div>
-
-
-            <div class="sticker sticker-left">
-                <span><img src="/Content/web/sticker/apple.png
-" title="Ch&#237;nh h&#227;ng Apple" /></span>
-        </div>
-
-
-
-    <div class="info">
-        <a href="/dien-thoai-di-dong/apple-iphone-15-512gb-chinh-hang-vn-a" class="title" title="iPhone 15 (512GB) - Ch&#237;nh h&#227;ng VN/A">iPhone 15 (512GB) - Ch&#237;nh h&#227;ng VN/A</a>
-        <span class="price">
-                <strong>30,490,000 ₫</strong>
-                    </span>
-        
-        
-        
-            <div style="padding-top:8px; font-style:italic; text-align:left;">
-                <label>Giá lên đời từ: <strong class="text-red">28,490,000 ₫</strong></label>
-            </div>
-    </div>
-
-
-
-        <div class="info-compare">
-            <a href="/so-sanh/apple-iphone-15-512gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.3711.3694" title="So s&#225;nh Điện thoại với iPhone 15 (512GB) - Ch&#237;nh h&#227;ng VN/A"><i class="icon-controls"></i> <span>So sánh</span></a>
-        </div>
-
-        <div class="promote">
-            <a href="/dien-thoai-di-dong/apple-iphone-15-512gb-chinh-hang-vn-a">
-                <ul>
-                        <li><span class="bag">KM</span> ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</li>
-                        <li><span class="bag">KM</span> Giảm th&#234;m 30% gi&#225; trị m&#225;y cũ, tối đa 2.000.000đ khi tham gia thu cũ, đổi mới iPhone 15 Series.</li>
-                        <li><span class="bag">KM</span> Home PayLater - Trả g&#243;p qua Home PayLater giảm tới 1.000.000đ</li>
-                </ul>
-            </a>
-        </div>
-</div>                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section>
+        <div class="container">
+            <div class="full-width-content">
+                <div class="product-quick-compare">
+                    <div class="header">
+                        <h3>So sánh sản phẩm tương tự</h3>
+                        <div class="search-box">
+                            <div class="border">
+                                <input id="kwdCompare" type="text" placeholder="Nhập tên sản phẩm cần so sánh" />
+                                <button type="button" class="search"><i class="icon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="lts-product lts-product-bgwhite equaHeight" data-obj="a.title">
+                        <?php
+                            $querySimilarProduct = mysqli_query($conn, getSimilarProduct($conn, $_GET['idsanpham']));
+                            while($itemSimilarProduct = mysqli_fetch_assoc($querySimilarProduct)){
+                                ?>
+                                    <div class="item">
+                                        <div class="img">
+                                            <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemSimilarProduct['idVersion']?>" title="<?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>">
+                                                <?php
+                                                    if($itemSimilarProduct['idCategory']==1){
+                                                        ?>
+                                                            <img src="uploads/product/smartphone/<?=$itemSimilarProduct['versionImage']?>"alt="<?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>"title="<?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>">
+                                                        <?php
+                                                    }if($itemSimilarProduct['idCategory']==2){
+                                                        ?>
+                                                            <img src="uploads/product/laptop/<?=$itemSimilarProduct['versionImage']?>"alt="<?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>"title="<?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>">
+                                                        <?php
+                                                    }
+                                                ?>
+                                            </a>
+                                        </div>
+                                        <?php
+                                            if($itemSimilarProduct['idBrand'] == 1 || $itemSimilarProduct['idBrand'] == 21){
+                                                ?>
+                                                    <div class="sticker sticker-left">
+                                                        <span><img src="assets/images/icon/apple.png" title="Chính Hãng Apple" /></span>
+                                                    </div>
+                                                <?php
+                                            }
+                                        ?>
+                                        <div class="info">
+                                            <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemSimilarProduct['idVersion']?>" class="title"title="<?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>"><?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?></a>
+                                            <span class="price">
+                                                <strong><?=number_format($itemSimilarProduct['versionPromotionalPrice'],0,"",".")?> ₫ </strong>
+                                            </span>
+                                        </div>
 
+                                        <div class="info-compare">
+                                            <a href="/so-sanh/apple-iphone-14 pro-max-256gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.2358.3694"
+                                                title="So sánh Điện thoại với <?=$itemSimilarProduct['versionName']?> - <?=$itemSimilarProduct['versionVersion']?>"><i class="icon-controls"></i> <span>So sánh</span></a>
+                                        </div>
 
-<!-- news -->
+                                        <div class="promote">
+                                            <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemSimilarProduct['idVersion']?>">
+                                                <ul>
+                                                    <li><span class="bag">KM</span> Home PayLater - Trả góp qua Home PayLater giảm tới 1.000.000đ</li>
+                                                    <li><span class="bag">KM</span> VPBank - Mở thẻ VPBank, ưu đãi tới 1.250.000đ. </li>
+                                                    <li><span class="bag">KM</span> ZaloPay - Ưu đãi tới 300.000đ khi thanh toán qua ZaloPay.</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        </div>
+                                <?php
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- news -->
+    <section class="product-review product-comment" id="comments">
+        <div class="container">
+            <div class="full-width-content">
+                <form method="POST" action="">
+                    <input type="hidden" name="idsanpham" value="<?=$_GET['idsanpham']?>" />
+                    <div class="heading">
+                        <h3>Bình luận về <?=$itemDetailProduct['versionName']?> - <?=$itemDetailProduct['versionVersion']?></h3>
+                    </div>
+                    <div class="rc-form review-form">
+                        <div class="rc-form comment-form">
+                            <div class="row">
 
+                                <div class="col">
+                                    <div class="control">
+                                        <input type="text" name="name" placeholder="Họ tên *" data-required="1" required />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="control">
+                                        <input type="tel" name="phone" placeholder="Điện thoại" required />
+                                    </div>
+                                </div>
 
+                                <div class="col">
+                                    <div class="control">
+                                        <input type="email" name="email" placeholder="Email" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="control">
+                                        <textarea title="Nội dung" placeholder="Nội dung. Tối thiểu 15 ký tự *" name="content"
+                                            spellcheck="false" data-required="1" data-minlength="15" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="col">
+                                    <p class="note">Để gửi bình luận, bạn cần nhập tối thiểu trường họ tên và nội dung</p>
+                                </div>
+                                <div class="col col-end">
+                                    <button name="submitComment" type="submit"><i class="icon-sending"></i> Gửi bình luận</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-<section class="product-review product-comment" id="comments">
-	<div class="container">
-		<div class="full-width-content">
-			<form onsubmit="return replyComment(this)" data-container=".comment-content" data-child="true">
-				<input name="__RequestVerificationToken" type="hidden" value="L-HnBgptjLY5yBp7ajCBaVbgKf__z0kSzpbiGy3jqYKblCtDLaZQQ8sg47CJXTc4tLWYsiHLyJxer_oxlb77HlTb3Ug1" />
-				<input type="hidden" name="ModelID" value="3694" />
-				<input type="hidden" name="SystemTypeID" value="3" />
-				<div class="heading">
-					<h3>Bình luận về iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</h3>
-				</div>
-				<div class="rc-form review-form">
-					<div class="rc-form comment-form">
-							<div class="row">
-								<div class="col">
-									<div class="control">
-										<input type="text" name="Title" placeholder="Họ tên *" data-required="1" />
-									</div>
-								</div>
-								<div class="col">
-									<div class="control">
-										<input type="tel" name="Phone" placeholder="Điện thoại" />
-									</div>
-								</div>
-								
-								<div class="col">
-									<div class="control">
-										<input type="email" name="Email" placeholder="Email" />
-									</div>
-								</div>
-							</div>
-						<div class="row">
-							<div class="col">
-								<div class="control">
-									<textarea title="Nội dung" placeholder="Nội dung. Tối thiểu 15 ký tự *" name="Content" spellcheck="false" data-required="1" data-minlength="15"></textarea>
-								</div>
-							</div>
-						</div>
+            <div class="review-content comment-content" id="commentContent">
+                
+                <?php
+                    $queryListComment = mysqli_query($conn,getListComment($_GET['idsanpham']));
+                    while($itemCommnet = mysqli_fetch_assoc($queryListComment)){
+                        ?>
+                            <div class="item">
+                                <div class="avt">
+                                    <img src="assets/images/icon/no-avt.png">
+                                </div>
+                                <div class="info">
+                                    <p>
+                                        <strong class="name"><?=$itemCommnet['name']?></strong>
+                                    </p>
+                                    <p><label><i>1 giờ trước</i></label></p>
+                                    <div class="content">
+                                        <?=$itemCommnet['content']?>
+                                    </div>
+                                    <div class="childs">
+                                        <div class="comment-list">
+                                            <?php
+                                                $commnetId = $itemCommnet['id'];
+                                                $queryListRepComment = mysqli_query($conn,getListRepComment($commnetId));
+                                                while($itemRepComment = mysqli_fetch_assoc($queryListRepComment)){
+                                                    ?>
+                                                        <div class="item">
+                                                            <div class="avt">
+                                                                <img src="assets/images/icon/icon-member.png">
+                                                            </div>
+                                                            <div class="info">
+                                                                <p>
+                                                                    <strong class="name"><?=$itemRepComment['name']?></strong>
+                                                                    <i class="icon-checked"></i> <span>QTV TPMS</span>
+                                                                </p>
+                                                                <p><label><i>1 giờ trước</i></label></p>
+                                                                <div class="content">
+                                                                    <?=$itemRepComment['content']?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <?php
+                                                }
+                                            ?>
+                                            
+                                        </div>
 
-						<div class="row">
-							<div class="col">
-								<p class="note">Để gửi bình luận, bạn cần nhập tối thiểu trường họ tên và nội dung</p>
-							</div>
-							<div class="col col-end">
-								<button type="submit"><i class="icon-sending"></i> Gửi bình luận</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
+                                        <div class="replyHolder replyCommentHolder btn-rep-<?=$itemCommnet['id']?>">
+                                            <input type="text" placeholder="Nhập bình luận của bạn" data-id="<?=$itemCommnet['id']?>" onclick="viewformrepcomment(<?=$itemCommnet['id']?>)">
+                                            <button><i class="icon-sending"></i></button>
+                                        </div>
+                                        <div class="form-container form-container-<?=$itemCommnet['id']?>">
+                                            <form method="POST" action="">
+                                                <input type="hidden" name="commentId" value="<?=$itemCommnet['id']?>">
+                                                <input type="hidden" name="versionId" value="<?=$_GET['idsanpham']?>">
+                                                <div class="rc-form comment-form">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="control">
+                                                                <input type="text" name="name" placeholder="Họ tên *" data-required="1" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="control">
+                                                                <input type="tel" name="phone" placeholder="Điện thoại" required>
+                                                            </div>
+                                                        </div>
 
-			<div class="review-content comment-content" id="commentContent">
+                                                        <div class="col">
+                                                            <div class="control">
+                                                                <input type="email" name="email" placeholder="Email" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="control">
+                                                                <textarea title="Nội dung" placeholder="Nội dung. Tối thiểu 15 ký tự *"
+                                                                    name="content" spellcheck="false" data-required="1"
+                                                                    data-minlength="15" required></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-			</div>
-		</div>
-	</div>
-</section>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <p class="note">Để gửi bình luận, bạn cần nhập tối thiểu trường họ tên và nội dung
+                                                            </p>
+                                                        </div>
+                                                        <div class="col col-end">
+                                                            <button name="btnRepComment" type="submit"><i class="icon-sending"></i> Gửi bình luận</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
+
+                ?>
+            </div>
+        </div>
+    </section>
 	
-
-
-
-<section class="product-review" id="reviews">
-	<div class="container">
-		<div class="full-width-content">
-			<form id="reviewForm">
-				<input name="__RequestVerificationToken" type="hidden" value="JZo74n_QBzkB228yGTMrj5sPmFfrnYb65DCEy9reB2cgkY1d-YNW88jHx7_V8Ilx-lzWyJut5Y0FLOZX4yk3E43ZfAo1" />
-				<input type="hidden" name="ModelID" value="3694" />
-				<input type="hidden" name="SystemTypeID" value="3" />
-				<input type="hidden" name="Rate" />
-				<div class="heading">
-					<h3>Đánh giá về iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</h3>
-					<div class="stats">
-						<div class="display-rating rating-medium" data-rate-value="3.72222222222222"></div>
-						<span>(TB 3.72 / 9 lượt đánh giá)</span>
-					</div>
-				</div>
-				<div class="rc-form review-form">
-						<div class="col">
-							<div class="control">
-								<textarea title="Nội dung" placeholder="Nội dung. Tối thiểu 15 ký tự" name="Content" spellcheck="false" data-required="1" data-minlength="15"></textarea>
-							</div>
-						</div>
-						<div class="col">
-							<div class="row">
-								<div class="control">
-									<input type="text" name="Title" placeholder="Họ tên" data-required="1" />
-								</div>
-							</div>
-							<div class="row">
-								<div class="control">
-									<input type="tel" name="Phone" placeholder="Số điện thoại mua hàng" data-required="1" />
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="row">
-								<div class="control">
-									<input type="email" name="Email" placeholder="Email" data-required="1" />
-								</div>
-							</div>
-							<div class="row row-rate">
-								<strong>Đánh giá của bạn: </strong>
-								<div class="display-rating rating"></div>
-							</div>
-						</div>
-				</div>
-			</form>
-
-			<div class="review-content" id="reviewContent">
-
-			</div>
-		</div>
-	</div>
-</section>
-
-
-	<script type=application/ld+json>
-		{
-			"@context":"https://schema.org/",
-			"@type":"Product",
-			"name":"iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A",
-			"image": ["https://hoanghamobile.com/preview/Uploads/2023/09/13/iphone-15-pro-max-blue-titanium-pure-back-iphone-15-pro-max-blue-titanium-pure-front-2up-screen-usen.png","https://hoanghamobile.com/preview/Uploads/2023/09/13/iphone-15-pro-max-black-titanium-pure-back-iphone-15-pro-max-black-titanium-pure-front-2up-screen-usen.png","https://hoanghamobile.com/preview/Uploads/2023/09/13/iphone-15-pro-max-white-titanium-pure-back-iphone-15-pro-max-white-titanium-pure-front-2up-screen-usen.png","https://hoanghamobile.com/preview/Uploads/2023/09/13/iphone-15-pro-max-natural-titanium-pure-back-iphone-15-pro-max-natural-titanium-pure-front-2up-screen-usen.png"],
-			"description":"Mua  Điện thoại iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A  Gi&#225; Rẻ, Nhiều Ưu Đ&#227;i Tại Ho&#224;ng H&#224; Mobile. Free Ship To&#224;n Quốc.",
-			"sku":"MU7A3VN",
-			"mpn":"",
-			"brand":{
-				"@type":"Brand",
-				"name":"Apple"
-			},
-"review": {"@type": "Review","reviewRating": {"@type": "Rating","ratingValue": "5","bestRating": "5"},"author": {"@type": "Person","name": "hoang kim thanh"}},
-"aggregateRating": { "@type":"AggregateRating", "ratingValue":"3.72222222222222", "reviewCount":"9"},
-			"offers": {
-				"@type": "Offer",
-				"url": "https://hoanghamobile.com/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a",
-				"priceCurrency": "VND",
-				"price": "32490000",
-				"priceValidUntil": "2023-12-09",
-				"availability": "https://schema.org/InStock"
-			}
-		}
-	</script>
-   
-
-
-
-
-
-
-<section>
-    <div class="container">
-        <div class="corevalue">
-                <div class="item">
-                    <span class="icon">
-                        <i class="icon-chinhhang"></i>
-                    </span>
-                    <div class="text">
-                        <span>Sản phẩm</span>
-                        <strong>CH&#205;NH H&#195;NG</strong>
+    <section class="product-review" id="reviews">
+        <div class="container">
+            <div class="full-width-content">
+                <form id="reviewForm">
+                    <input name="__RequestVerificationToken" type="hidden" value="JZo74n_QBzkB228yGTMrj5sPmFfrnYb65DCEy9reB2cgkY1d-YNW88jHx7_V8Ilx-lzWyJut5Y0FLOZX4yk3E43ZfAo1" />
+                    <input type="hidden" name="ModelID" value="3694" />
+                    <input type="hidden" name="SystemTypeID" value="3" />
+                    <input type="hidden" name="Rate" />
+                    <div class="heading">
+                        <h3>Đánh giá về iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</h3>
+                        <div class="stats">
+                            <div class="display-rating rating-medium" data-rate-value="3.72222222222222"></div>
+                            <span>(TB 3.72 / 9 lượt đánh giá)</span>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <span class="icon">
-                        <i class="icon-freeship"></i>
-                    </span>
-                    <div class="text">
-                        <span>Miễn ph&#237; vận chuyển</span>
-                        <strong>TO&#192;N QUỐC</strong>
+                    <div class="rc-form review-form">
+                            <div class="col">
+                                <div class="control">
+                                    <textarea title="Nội dung" placeholder="Nội dung. Tối thiểu 15 ký tự" name="Content" spellcheck="false" data-required="1" data-minlength="15"></textarea>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="control">
+                                        <input type="text" name="Title" placeholder="Họ tên" data-required="1" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="control">
+                                        <input type="tel" name="Phone" placeholder="Số điện thoại mua hàng" data-required="1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="control">
+                                        <input type="email" name="Email" placeholder="Email" data-required="1" />
+                                    </div>
+                                </div>
+                                <div class="row row-rate">
+                                    <strong>Đánh giá của bạn: </strong>
+                                    <div class="display-rating rating"></div>
+                                </div>
+                            </div>
                     </div>
+                </form>
+
+                <div class="review-content" id="reviewContent">
+
                 </div>
-                <div class="item">
-                    <span class="icon">
-                        <i class="icon-hotline"></i>
-                    </span>
-                    <div class="text">
-                        <span>Hotline hỗ trợ</span>
-                        <strong>1900.2091</strong>
-                    </div>
-                </div>
-                <div class="item">
-                    <span class="icon">
-                        <i class="icon-doitra"></i>
-                    </span>
-                    <div class="text">
-                        <span>Thủ tục đổi trả</span>
-                        <strong>DỄ D&#192;NG</strong>
-                    </div>
-                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-
-<iframe src="https://asia.creativecdn.com/tags?id=pr_n4X0y6ApZyJaHX1dNxQd_offer_3694" width="1" height="1" scrolling="no" frameBorder="0" style="display: none;"></iframe>
-
-
-
-
-
-
+    <section>
+        <div class="container">
+            <div class="corevalue">
+                    <div class="item">
+                        <span class="icon">
+                            <i class="icon-chinhhang"></i>
+                        </span>
+                        <div class="text">
+                            <span>Sản phẩm</span>
+                            <strong>CH&#205;NH H&#195;NG</strong>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="icon">
+                            <i class="icon-freeship"></i>
+                        </span>
+                        <div class="text">
+                            <span>Miễn ph&#237; vận chuyển</span>
+                            <strong>TO&#192;N QUỐC</strong>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="icon">
+                            <i class="icon-hotline"></i>
+                        </span>
+                        <div class="text">
+                            <span>Hotline hỗ trợ</span>
+                            <strong>1900.2091</strong>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span class="icon">
+                            <i class="icon-doitra"></i>
+                        </span>
+                        <div class="text">
+                            <span>Thủ tục đổi trả</span>
+                            <strong>DỄ D&#192;NG</strong>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -3173,15 +2968,11 @@ Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&
 		});
 
     </script>
-
-
-    
-
-            <script type="text/javascript">
-            $(document).ready(function () {
-                showSticker(82);
-            });
-        </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            showSticker(82);
+        });
+    </script>
 
 
     <script type="text/javascript">
@@ -3199,6 +2990,58 @@ Giảm ngay 150.000đ khi mua k&#232;m SIM số đẹp Vinaphone Happy - Ưu đ&
             }
         });
 
+    </script>
+    <script>
+        function postComentSuccess(){
+            $.toast({ 
+                heading: 'Bạn đã để lại nhận xét thành công !',  
+                showHideTransition: 'fade',
+                icon: 'success',
+                hideAfter: 3e3
+            });
+            
+        }
+    </script>
+    <?php
+        if(isset($addComment)){
+            echo "<script>postComentSuccess();</script>";
+            echo "<script>
+                const sleep = (ms) => {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                    }
+                    (async () => {
+                    await sleep(3000)
+                    window.location.href = 'chi-tiet-san-pham.php?idsanpham=".$_GET['idsanpham']."';
+                    })()
+            </script>";
+        }
+    ?>
+    <?php
+        if(isset($addRepComment)){
+            echo "<script>postComentSuccess();</script>";
+            echo "<script>
+                const sleep = (ms) => {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                    }
+                    (async () => {
+                    await sleep(3000)
+                    window.location.href = 'chi-tiet-san-pham.php?idsanpham=".$_GET['idsanpham']."';
+                    })()
+            </script>";
+        }
+    ?>
+
+    <script>
+        function viewformrepcomment(a){
+            b = '.btn-rep-'+a;
+            var iclass = document.querySelector(b);
+           
+            iclass.classList.add("none");
+
+            c = '.form-container-'+a;
+            var cclass = document.querySelector(c);
+            cclass.classList.add("show");
+        }
     </script>
 
 </body>

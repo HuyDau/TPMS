@@ -32,15 +32,16 @@ if (isset($_POST['add'])) {
     $description = $_POST['description'];
 
     $productCode = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productCode = '$code' ");
-
-    if (mysqli_num_rows($productCode) > 0) {
+    $productId = mysqli_query($conn, "SELECT * FROM tbl_products WHERE id = '$id' ");
+    if (mysqli_num_rows($productCode) > 0 && mysqli_num_rows($productId)) {
         echo "<script>window.alert('Product exists !');</script>";
     } else {
         if($prices > $price ){
             echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
             $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productCode`, `productName`, `productVersion`, `productImage`,`productPrice`, `productPromotionalPrice` ,`productDescription`) VALUES ('$id','$category','$brand','$code','$name','$version','$image','$price','$prices','$description')";
-            $addVersion = "INSERT INTO `tbl_versions`(`id`, `productId`, `productVersion`, `productCode`, `productName`, `productImage`, `productPrice`, `productPromotionalPrice`, `productDescription`) VALUES (NULL,'$id','$version','$code','$name','$image','$price','$prices','$description')";
+            $addVersion = "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`)  VALUES (NULL,'$id','$version','$code','$name','$image','$price','$prices','$description')";
+            
             $queryAddProduct = mysqli_query($conn, $addProduct);
             $queryAddVersion = mysqli_query($conn, $addVersion);
             if ($queryAddProduct && $addVersion) {
@@ -106,7 +107,7 @@ if(isset($_GET['id'])){
             echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
             $editProduct = mysqli_query($conn, "UPDATE `tbl_products` SET `idCategory`='$category1',`idBrand`='$brand1',`productCode`='$code1',`productName`='$name1',`productVersion`='$version1',`productImage`='$image1',`productPrice`='$price1',`productPromotionalPrice`='$prices1',`productDescription`='$description1' WHERE id = $id");
-            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `productCode`='$code1',`productName`='$name1',`productVersion`='$version1',`productImage`='$image1',`productPrice`='$price1',`productPromotionalPrice`='$prices1',`productDescription`='$description1' WHERE productId = $id");
+            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `productCode`='$code1',`versionName`='$name1',`versionVersion`='$version1',`versionImage`='$image1',`versionPrice`='$price1',`versionPromotionalPrice`='$prices1',`versionDescription`='$description1' WHERE productId = $id");
 
             if($editProduct && $editVersion){
                 echo "<script>window.alert('Successful!');window.location.href = 'products.php'</script>";
@@ -120,6 +121,9 @@ if(isset($_GET['id'])){
 if(isset($_GET['productId'])){
 
     $id = $_GET['productId'];
+    $sqlDetalProd = mysqli_query($conn,"SELECT * FROM `tbl_products` WHERE id = $id");
+    $itemDetailProd = mysqli_fetch_assoc($sqlDetalProd);
+
     $idCategory = $_GET['categoryId'];
     if (isset($_POST['addVersion'])) {
         $prodId = $_POST['prodId'];
@@ -134,10 +138,10 @@ if(isset($_GET['productId'])){
         if($prodPromotionalPrice > $prodPrice){
             echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
-            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`id`, `productId`, `productVersion`, `productCode`, `productName`, `productImage`, `productPrice`, `productPromotionalPrice`, `productDescription`) VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription')");
+            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`,`versionSpecifications`)  VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription','')");
 
             if($addVersion){
-                header("Location: products.php");
+                header("Location: ../version/version.php");
             }
         }
         
@@ -303,11 +307,11 @@ if(isset($_GET['productId'])){
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Product Code: </label>
-                                    <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="prodCode" value="" required>
+                                    <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="prodCode" value="<?=$itemDetailProd['productCode']?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Product Name: </label>
-                                    <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="prodName" value="" required>
+                                    <input class="form-control form-white" placeholder="Enter Product Name ..." type="text" name="prodName" value="<?=$itemDetailProd['productName']?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Product Version: </label>
@@ -319,7 +323,7 @@ if(isset($_GET['productId'])){
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Price: </label>
-                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="prodPrice" value="" required>
+                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="prodPrice" value="<?=$itemDetailProd['productPrice']?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Promotional Price: </label>
@@ -330,7 +334,7 @@ if(isset($_GET['productId'])){
                                 <div class="form-group">
                                     <label class="control-label">Description: </label>
                                     <textarea name="prodDescription" id="des3" cols="150" rows="10" required>
-
+                                        <?=$itemDetailProd['productDescription']?>
                                     </textarea>
                                     <script>
                                         CKEDITOR.replace('des3')
@@ -518,7 +522,7 @@ if(isset($_GET['productId'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="../../assets/images/logo/logo.png" alt="" height="24">
+                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
@@ -718,8 +722,13 @@ if(isset($_GET['productId'])){
                                         
                                         <div class="col-6">
                                             <div class="form-group">
+                                                <?php
+                                                    $sqlIdProduct = mysqli_query($conn, "SELECT * FROM `tbl_products` ORDER BY `tbl_products`.`id` DESC LIMIT 1");
+                                                   $itemIdProd = mysqli_fetch_assoc($sqlIdProduct);
+                                                   $idProd = $itemIdProd['id'] + 1;
+                                                ?>
                                                 <label class="control-label">Product ID: </label>
-                                                <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id" value="" required>
+                                                <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id" value="<?=$idProd?>" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>Category: </label>
@@ -850,12 +859,28 @@ if(isset($_GET['productId'])){
                                                                 ?>
                                                                     <img src="../../uploads/product/laptop/<?=$row['productImage']?>" alt="">
                                                                 <?php
+                                                            }else if($row['idCategory'] == 3){
+                                                                ?>
+                                                                    <img src="../../uploads/product/tablet/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 4){
+                                                                ?>
+                                                                    <img src="../../uploads/product/monitor/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 5){
+                                                                ?>
+                                                                    <img src="../../uploads/product/smarttv/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 6){
+                                                                ?>
+                                                                    <img src="../../uploads/product/watch/<?=$row['productImage']?>" alt="">
+                                                                <?php
                                                             }
                                                         ?>
                                                     </td>
                                                     <td><?= number_format($row['productPrice'],0,"",".") ?></td>
                                                     <td><?= number_format($row['productPromotionalPrice'],0,"",".") ?></td>
-                                                    <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-add las la-plus-circle"></i></a></td>
                                                     <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                     <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>

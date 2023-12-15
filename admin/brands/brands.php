@@ -21,13 +21,14 @@ if (isset($_POST['all_prd'])) {
 if (isset($_POST['add'])) {
     $code = $_POST['code'];
     $name = $_POST['name'];
+    $category = $_POST['category'];
 
     $brandCode = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandCode = '$code'");
 
     if (mysqli_num_rows($brandCode) > 0) {
         echo "<script>window.alert('Brand exists !');</script>";
     } else {
-        $addBrand = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`) VALUES ('','$code','$name')";
+        $addBrand = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`, `categoryId`) VALUES ('','$code','$name','$category')";
 
         $queryAddBrand = mysqli_query($conn, $addBrand);
         if ($queryAddBrand) {
@@ -46,7 +47,8 @@ if(isset($_GET['id'])){
     if (isset($_POST['edit'])) {
         $codeEdit = $_POST['codeEdit'];
         $nameEdit = $_POST['nameEdit'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_brands` SET `brandCode`='$codeEdit',`brandName`='$nameEdit' WHERE id = $id");
+        $category1 = $_POST['category1'];
+        $edit = mysqli_query($conn, "UPDATE `tbl_brands` SET `brandCode`='$codeEdit',`brandName`='$nameEdit',`categoryId`='$category1'  WHERE id = $id");
 
         if($edit){
             header("Location: brands.php");
@@ -112,6 +114,17 @@ if(isset($_GET['id'])){
                                 <label class="control-label">Brand Name: </label>
                                 <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="nameEdit" value="<?php if (isset($infoBrand['brandName'])) {echo $infoBrand['brandName'];} ?>" required>
                             </div>
+                            <div class="form-group">
+                                    <label class="control-label">Category: </label>
+                                    <select name="category1" id="" class="selected form-control form-white">
+                                        <?php
+                                        $sqlCategory = mysqli_query($conn, "SELECT * FROM `tbl_categories`");
+                                        while ($itemCategory = mysqli_fetch_assoc($sqlCategory)) { ?>
+                                            <option value="<?php echo $itemCategory['Id']; ?>" <?php if (isset($itemCategory['Id'])) {if ($itemCategory['Id'] == $infoBrand['categoryId']) {echo "SELECTED";} } ?>><?php echo $itemCategory['categoryName']; ?></option>
+                                        <?php }
+                                        ?>
+                                    </select>
+                                </div>
                             <div class="text-right pt-2">
                                 <button name="edit" class="btn btn-primary ml-1">Save</button>
                                 <button class="btn btn-light close-form"><a href="brands.php">Close</a></button>
@@ -291,7 +304,7 @@ if(isset($_GET['id'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="..\assets\images\logo\avt.png" alt="" height="24">
+                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
@@ -473,6 +486,16 @@ if(isset($_GET['id'])){
                                             <label class="control-label">Brand Name: </label>
                                             <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="name" value="<?php if (isset($var['BrandName'])) {echo $var['BrandName'];} ?>" required>
                                         </div>
+                                        <div class="form-group">
+                                            <label>Category: </label>
+                                            <select class="form-control" name="category">
+                                                <?php
+                                                $sqlCat = mysqli_query($conn, "SELECT * FROM tbl_categories");
+                                                while ($rowCat = mysqli_fetch_assoc($sqlCat)) { ?>
+                                                    <option value="<?php echo $rowCat['Id']; ?>"><?php echo $rowCat['categoryName']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
                                         <div class="text-right pt-2">
                                             <button name="add" class="btn btn-primary ml-1">Save</button>
                                             <button type="button" class="btn btn-light " data-dismiss="modal" name="close">Close</button>
@@ -493,6 +516,7 @@ if(isset($_GET['id'])){
                                                 <th>NO</th>
                                                 <th>BRAND CODE</th>
                                                 <th>BRAND NAME</th>
+                                                <th>CATEGORY NAME</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -512,6 +536,14 @@ if(isset($_GET['id'])){
                                                     </td>
                                                     <td>
                                                         <?= $row['brandName'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                            $idCat = $row['categoryId'];
+                                                            $sqlCat = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $idCat");
+                                                            $sqlCatName = mysqli_fetch_assoc($sqlCat);
+                                                            echo $sqlCatName['categoryName'];
+                                                        ?>
                                                     </td>
 
                                                     <td><a href="brands.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>

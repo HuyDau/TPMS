@@ -2,6 +2,14 @@
 .login-btn:hover{
     color: #4bd396;
 }
+.icon-add{
+    font-size: 20px;
+    color: #4bd396;
+}
+.icon-add:hover{
+    font-size: 24px;
+    color: #1ab871;
+}
 
 .icon-edit{
     font-size: 20px;

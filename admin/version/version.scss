@@ -17,6 +17,25 @@
         }
     }
 }
+.form-add-specifications{
+    form{
+        .modal-dialog{
+            width: 80%;
+            .modal-content{
+                .modal-header{
+                    .close{a{color: #fff;}}
+                }
+                .modal-body{
+                    .text-right{
+                        .close-form{
+                            a{color: #fff;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 form{
     .modal-dialog{
         max-width: 90%;
@@ -52,4 +71,20 @@ form{
             }
         }
     }
+}
+.form-add-specifications{
+    form{
+        height: 95%;
+        .modal-dialog{
+            height: 100%;
+            .modal-content{
+                height: 100% !important;
+                overflow: auto;
+            }
+        }
+    }
+}
+
+.specification {
+    .cke_top {display: none;}
 }

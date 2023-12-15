@@ -3323,7 +3323,9 @@ section .flash-sales .content .item {
 
 section .flash-sales .content .item a.title {
     font-weight: bold;
-    color: #000
+    color: #000;
+    width: 100%;
+    overflow: hidden;
 }
 
 section .flash-sales .content .item a.title:hover {
@@ -3457,7 +3459,9 @@ section .box-home .header h4 a:hover {
 .lts-product .item .info a.title,.lts-product .item .info a.title:link,.lts-product .item .info a.title:visited {
     color: #000;
     font-weight: bold;
-    display: block
+    display: block;
+    width: 100%;
+    overflow: hidden;
 }
 
 .lts-product .item .info a.title:hover {
@@ -6168,6 +6172,24 @@ nav.scroll-to-fixed-fixed ul.root li .sub a,nav.scroll-to-fixed-fixed ul.root li
     display: flex;
     padding: 0 10px
 }
+.replyHolder.none {
+   display: none;
+}
+
+.replyHolder.none input{
+    display: none;
+ }
+ .replyHolder.none button{
+    display: none;
+ }
+
+ .form-container{
+    display: none;
+ }
+.form-container.show{
+    display: block !important;
+}
+
 
 .replyHolder input {
     outline: none;
