@@ -54,6 +54,11 @@
     font-style: normal
 }
 
+/* .body-home{
+    background-image: url(../images/bg/a.png) !important;
+    background-color: rgb(147, 0, 0) !important;
+} */
+
 [class*='icon-']:before {
     display: inline-block;
     font-family: 'hoangha';

@@ -9,41 +9,74 @@
     if(isset($_POST['btn_login'])){
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        $user = strip_tags($user);
-        $user = addslashes($user);
-        $pass = strip_tags($pass);
-        $pass = addslashes($pass);
         $password = md5($pass);
-        $login = "SELECT * FROM tbl_users WHERE username = '$user' AND password = '$password' AND  permission = '1'";
-        $querry = mysqli_query($conn, $login);
-        $num_rows_login = mysqli_num_rows($querry);
+        $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_users WHERE username = '$user'");
+        $infoUser = mysqli_fetch_assoc($sqlUser);
+        $permission = $infoUser['permission'];
+        if($permission == 1){
+            $login = "SELECT * FROM tbl_users WHERE username = '$user' AND password = '$password' AND  permission = '1'";
+            $querry = mysqli_query($conn, $login);
+            $num_rows_login = mysqli_num_rows($querry);
 
-        // $to      = 'lehuydau2312@gmail.com';
-        // $subject = 'the subject';
-        // $message = 'hello';
-        // $headers = 'From: webmaster@example.com'       . "\r\n" .
-        //             'Reply-To: webmaster@example.com' . "\r\n" .
-        //             'X-Mailer: PHP/' . phpversion();
+            // $to      = 'lehuydau2312@gmail.com';
+            // $subject = 'the subject';
+            // $message = 'hello';
+            // $headers = 'From: webmaster@example.com'       . "\r\n" .
+            //             'Reply-To: webmaster@example.com' . "\r\n" .
+            //             'X-Mailer: PHP/' . phpversion();
 
-        // mail($to, $subject, $message, $headers);
-        
-        if($num_rows_login == 0){
-            $error1 = 'Account';
-            $error2 = 'Not';
-            $error3 = 'Exist';
-            $error4 = "!";
-        }else{
-            while($data = mysqli_fetch_array($querry)){
-                $_SESSION['admin_id'] = $data['Id'];
-                $_SESSION['admin_user'] = $data['username'];
-                $_SESSION['admin_pass'] = $data['password'];
-                $_SESSION['admin_mail'] = $data['gmail'];
-                $_SESSION['admin_name'] = $data['fullname'];
-                $_SESSION['admin_phone'] = $data['phone'];
-                $_SESSION['permission'] = $data['permission'];
+            // mail($to, $subject, $message, $headers);
+            
+            if($num_rows_login == 0){
+                $error1 = 'Account';
+                $error2 = 'Not';
+                $error3 = 'Exist';
+                $error4 = "!";
+            }else{
+                while($data = mysqli_fetch_array($querry)){
+                    $_SESSION['admin_id'] = $data['Id'];
+                    $_SESSION['admin_user'] = $data['username'];
+                    $_SESSION['admin_pass'] = $data['password'];
+                    $_SESSION['admin_mail'] = $data['gmail'];
+                    $_SESSION['admin_name'] = $data['fullname'];
+                    $_SESSION['admin_phone'] = $data['phone'];
+                    $_SESSION['permission'] = $data['permission'];
+                }
+                // echo "<script>window.location = 'categories/categories.php'</script>";     
             }
-            // echo "<script>window.location = 'categories/categories.php'</script>";     
+        }else{
+            $login = "SELECT * FROM tbl_users WHERE username = '$user' AND password = '$password' AND permission = '2'";
+            $querry = mysqli_query($conn, $login);
+            $num_rows_login = mysqli_num_rows($querry);
+
+            // $to      = 'lehuydau2312@gmail.com';
+            // $subject = 'the subject';
+            // $message = 'hello';
+            // $headers = 'From: webmaster@example.com'       . "\r\n" .
+            //             'Reply-To: webmaster@example.com' . "\r\n" .
+            //             'X-Mailer: PHP/' . phpversion();
+
+            // mail($to, $subject, $message, $headers);
+            
+            if($num_rows_login == 0){
+                $error1 = 'Account';
+                $error2 = 'Not';
+                $error3 = 'Exist';
+                $error4 = "!";
+            }else{
+                while($data = mysqli_fetch_array($querry)){
+                    $_SESSION['admin_id'] = $data['Id'];
+                    $_SESSION['admin_user'] = $data['username'];
+                    $_SESSION['admin_pass'] = $data['password'];
+                    $_SESSION['admin_mail'] = $data['gmail'];
+                    $_SESSION['admin_name'] = $data['fullname'];
+                    $_SESSION['admin_phone'] = $data['phone'];
+                    $_SESSION['permission'] = $data['permission'];
+                }
+                // echo "<script>window.location = 'categories/categories.php'</script>";     
+            }
         }
+        
     }
 
 ?>

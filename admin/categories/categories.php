@@ -110,21 +110,21 @@ if(isset($_GET['id'])){
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Category</h4>
+                        <h4 class="modal-title">EDIT CATEGORY</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
                         <div>
                             <div class="form-group">
-                                <label class="control-label">Category Code: </label>
+                                <label class="control-label">CATEGORY CODE: </label>
                                 <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {echo $infoCategory['categoryCode'];} ?>" required>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Category Name: </label>
+                                <label class="control-label">CATEGORY NAME: </label>
                                 <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {echo $infoCategory['categoryName'];} ?>" required>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Categories Image: </label>
+                                <label class="control-label">CATEGORY IMAGE: </label>
                                 <input type="file" multiple="multiple" name="catImage1" class="form-control">
                             </div>
                             <div class="text-right pt-2">
@@ -392,6 +392,9 @@ if(isset($_GET['id'])){
                                 <li>
                                     <a href="../products/products.php">PRODUCTS</a>
                                 </li>
+                                <li>
+                                    <a href="../version/version.php">VERSIONS</a>
+                                </li>
 
 
 
@@ -496,21 +499,21 @@ if(isset($_GET['id'])){
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Create New Model</h4>
+                                    <h4 class="modal-title">CREATE NEW CATEGORY</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body p-3">
                                     <div>
                                         <div class="form-group">
-                                            <label class="control-label">Model Code: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {echo $var['Id']; } ?>" required>
+                                            <label class="control-label">CATEGORY CODE: </label>
+                                            <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {echo $var['Id']; } ?>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label">Model Name: </label>
-                                            <input class="form-control form-white" placeholder="Enter Model Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {echo $var['ModelName'];} ?>" required>
+                                            <label class="control-label">CATEGORY NAME: </label>
+                                            <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {echo $var['ModelName'];} ?>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label">Category Iamge: </label>
+                                            <label class="control-label">CATEGORY IMAGE: </label>
                                             <input type="file" multiple="multiple" name="catImage" class="form-control">
                                         </div>
                                         <div class="text-right pt-2">
@@ -556,8 +559,15 @@ if(isset($_GET['id'])){
                                                     </td>
                                                     <td><img style="width: 200px;" src="../assets/images/category/<?=$row['categoryImage']?>" alt=""></td>
 
-                                                    <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="deleteCategory.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <?php
+                                                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
+                                                            ?>
+                                                                <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                                <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="deleteCategory.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                            <?php
+                                                        }
+                                                    ?>
+                                                    
                                                 </tr>
                                             <?php
                                             }
@@ -579,11 +589,18 @@ if(isset($_GET['id'])){
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="row">
-                    <div class="col-lg-2">
-                        <a href="#" data-toggle="modal" data-target="#addModel" class="btn btn-lg font-13  btn-success btn-block  ">
-                            <i class="mdi mdi-plus-circle-outline"></i> Add
-                        </a>
-                    </div>
+                    <?php
+                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
+                            ?>
+                                <div class="col-lg-2">
+                                    <a href="#" data-toggle="modal" data-target="#addModel" class="btn btn-lg font-13  btn-success btn-block  ">
+                                        <i class="mdi mdi-plus-circle-outline"></i> Add
+                                    </a>
+                                </div>
+                            <?php
+                        }
+                    ?>
+                    
                     <div class="col-lg-2">
                         <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
                             <i class="las la-download"></i> Export

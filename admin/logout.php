@@ -1,7 +1,13 @@
 <?php 
     session_start();
-    if(isset($_SESSION['admin_name'])){
+    if(isset($_SESSION['admin_id'])){
+        unset($_SESSION['admin_id']);
+        unset($_SESSION['admin_user']);
+        unset($_SESSION['admin_pass']);
+        unset($_SESSION['admin_mail']);
         unset($_SESSION['admin_name']);
+        unset($_SESSION['admin_phone']);
+        unset($_SESSION['permission']);
     }
 ?>
 

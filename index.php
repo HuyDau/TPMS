@@ -43,7 +43,7 @@
     <script async src="assets/js/ins.js"></script>
 </head>
 
-<body>
+<body class="body-home">
     <!-- <div class="top-link">
         <span class="pulse"></span>
         <p><strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL có hạn</strong> <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang" target="_top">Xem chi tiết</a></p>
@@ -720,7 +720,23 @@
         <!-- nav -->
 
     </header>
-
+    <section class="xmas-2023">
+    <!-- <div class="container">
+        <div class="bg">
+            <div class="img">
+                <img src="assets/images/bg/logo.png">
+            </div>
+			
+            <div class="btn">
+                <a href="/giang-sinh-gia-xinh?utm_source=web&amp;utm_medium=Homebanner&amp;utm_content=xmas2023&amp;utm_campaign=xmas2023">
+                    Xem ngay
+                </a>
+            </div>
+			
+        </div>
+        
+    </div> -->
+    </section>
     <!-- slider -->
     <section>
         <div class="container">
@@ -4104,7 +4120,7 @@ Tốc độ' và sự chính xác sẽ là mấu chốt của chiến thắng! T
     <div class="container">
         <div class="subscript">
             <div class="icon-text">
-                <img src="/Content/web/img/sub-logo.png" />
+                <img src="assets/images/icon/sub-logo.png" />
                 <div class="text">
                     <h4>Đăng ký nhận tin</h4>
                     <p>Đăng ký để nhận những chương trình khuyến mại hot nhất của Hoàng Hà Mobile</p>

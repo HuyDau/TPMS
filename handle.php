@@ -49,31 +49,31 @@
     function getProduct( $i){
         // GET Apple
         if($i == 1){
-            $sqlApple = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idBrand = 1 OR tbl_products.idBrand = 21 OR tbl_products.idBrand = 35 LIMIT 5";
+            $sqlApple = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE (tbl_products.idBrand = 1 OR tbl_products.idBrand = 21 OR tbl_products.idBrand = 35) AND tbl_versions.isActive = 2 LIMIT 5  ";
             return $sqlApple;
         }else if($i == 2){
             // GET LAPTOP PRODUCT
-            $sqlLaptop = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $i";
+            $sqlLaptop = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $i AND tbl_versions.isActive = 2";
             return $sqlLaptop;
         }if($i == 3){
             // GET SMARTPHONE PRODUCT
-            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 1 LIMIT 10";
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 1 AND tbl_versions.isActive = 2 LIMIT 10";
             return $sqlSmartPhone;
         }if($i == 4){
             // GET TABLET PRODUCT
-            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 3 LIMIT 15";
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 3 AND tbl_versions.isActive = 2 LIMIT 15";
             return $sqlSmartPhone;
         }if($i == 5){
             // GET MONITOR PRODUCT
-            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 4 LIMIT 15";
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 4 AND tbl_versions.isActive = 2 LIMIT 15";
             return $sqlSmartPhone;
         }if($i == 6){
             // GET SMART TV PRODUCT
-            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 5 LIMIT 15";
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 5 AND tbl_versions.isActive = 2 LIMIT 15";
             return $sqlSmartPhone;
         }if($i == 7){
             // GET WATCH PRODUCT
-            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 6 LIMIT 15";
+            $sqlSmartPhone = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = 6 AND tbl_versions.isActive = 2 LIMIT 15";
             return $sqlSmartPhone;
         }
     }

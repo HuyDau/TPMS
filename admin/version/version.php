@@ -146,6 +146,20 @@ if(isset($_GET['specificationsId'])){
         
     }
 }
+if(isset($_GET['isActive'])){
+    $idVersion = $_GET['isActive'];
+    $sqlUpdate = mysqli_query($conn,"UPDATE `tbl_versions` SET `isActive`='2' WHERE idVersion = $idVersion");
+    if($sqlUpdate){
+        header("Location: version.php");
+    }
+}
+if(isset($_GET['offActive'])){
+    $idVersion = $_GET['offActive'];
+    $sqlUpdate = mysqli_query($conn,"UPDATE `tbl_versions` SET `isActive`='1' WHERE idVersion = $idVersion");
+    if($sqlUpdate){
+        header("Location: version.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -915,6 +929,7 @@ if(isset($_GET['specificationsId'])){
                                                 <th>VIEW AND EDIT VERSION</th>
                                                 <th>ADD SPECIFICATIONS</th>
                                                 <th>VIEW AND EDIT SPECIFICATIONS</th>
+                                                <th>ACTIVE</th>
                                                 <th>DELETE</th>
                                             </tr>
                                         </thead>
@@ -983,6 +998,19 @@ if(isset($_GET['specificationsId'])){
                                                     <td><a href="version.php?productId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                     <td><a href="version.php?versionId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-add las la-plus-circle"></i></a></td>
                                                     <td><a href="version.php?specificationsId=<?php echo $iSpecifications['specificationsId']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td>
+                                                        <?php 
+                                                            if($row['isActive'] == 1){
+                                                                ?>
+                                                                    <a onclick="return On('<?php echo $row['versionName']; ?>')" href="version.php?isActive=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
+                                                                <?php 
+                                                            }else{
+                                                                ?>
+                                                                    <a onclick="return Off('<?php echo $row['versionName']; ?>')" href="version.php?offActive=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-on.png" alt=""></a>
+                                                                <?php 
+                                                            }
+                                                        ?>
+                                                    </td>
                                                     <td><a onclick="return Del1('<?php echo $row['versionName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['idVersion']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
@@ -1034,6 +1062,14 @@ if(isset($_GET['specificationsId'])){
     <script>
         function Del1(name) {
             return confirm("Do You Want To Delete: " + name + " ?");
+        }
+        
+        function On(name){
+            return confirm("Do You Want To Turn On: " + name + " ?");
+        }
+
+        function Off(name){
+            return confirm("Do You Want To Turn Off: " + name + " ?");
         }
     </script>
 

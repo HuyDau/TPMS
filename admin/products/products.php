@@ -39,8 +39,8 @@ if (isset($_POST['add'])) {
         if($prices > $price ){
             echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
-            $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productCode`, `productName`, `productVersion`, `productImage`,`productPrice`, `productPromotionalPrice` ,`productDescription`) VALUES ('$id','$category','$brand','$code','$name','$version','$image','$price','$prices','$description')";
-            $addVersion = "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`)  VALUES (NULL,'$id','$version','$code','$name','$image','$price','$prices','$description')";
+            $addProduct = "INSERT INTO `tbl_products`(`id`, `idCategory`, `idBrand`, `productCode`, `productName`, `productVersion`, `productImage`,`productPrice`, `productPromotionalPrice` ,`productDescription`,`isActive`) VALUES ('$id','$category','$brand','$code','$name','$version','$image','$price','$prices','$description','2')";
+            $addVersion = "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`,`isActive`)  VALUES (NULL,'$id','$version','$code','$name','$image','$price','$prices','$description','2')";
             
             $queryAddProduct = mysqli_query($conn, $addProduct);
             $queryAddVersion = mysqli_query($conn, $addVersion);
@@ -138,7 +138,7 @@ if(isset($_GET['productId'])){
         if($prodPromotionalPrice > $prodPrice){
             echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
-            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`,`versionSpecifications`)  VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription','')");
+            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`,`versionSpecifications`,`isActive`)  VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription','','2')");
 
             if($addVersion){
                 header("Location: ../version/version.php");
@@ -159,6 +159,21 @@ if(isset($_GET['productId'])){
         }else if($idCategory == 5){
             move_uploaded_file($prodImage_tmp, '../../uploads/product/watch/' . $prodImage);
         }
+    }
+}
+
+if(isset($_GET['isActive'])){
+    $idProduct = $_GET['isActive'];
+    $sqlUpdate = mysqli_query($conn,"UPDATE `tbl_products` SET `isActive`='2' WHERE id = $idProduct");
+    if($sqlUpdate){
+        header("Location: products.php");
+    }
+}
+if(isset($_GET['offActive'])){
+    $idProduct = $_GET['offActive'];
+    $sqlUpdate = mysqli_query($conn,"UPDATE `tbl_products` SET `isActive`='1' WHERE id = $idProduct");
+    if($sqlUpdate){
+        header("Location: products.php");
     }
 }
 
@@ -714,7 +729,7 @@ if(isset($_GET['productId'])){
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Create New Product</h4>
+                                    <h4 class="modal-title">CREATE NEW PRODUCT</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body p-3">
@@ -814,6 +829,7 @@ if(isset($_GET['productId'])){
                                                 <th>PROMOTIONAL PRICE</th>
                                                 <th>ADD VERSION</th>
                                                 <th>VIEW AND EDIT</th>
+                                                <th>ACTIVE</th>
                                                 <th>DELETE</th>
                                             </tr>
                                         </thead>
@@ -882,6 +898,19 @@ if(isset($_GET['productId'])){
                                                     <td><?= number_format($row['productPromotionalPrice'],0,"",".") ?></td>
                                                     <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-add las la-plus-circle"></i></a></td>
                                                     <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td>
+                                                        <?php 
+                                                            if($row['isActive'] == 0){
+                                                                ?>
+                                                                    <a onclick="return On('<?php echo $row['productName']; ?>')" href="products.php?isActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
+                                                                <?php 
+                                                            }else{
+                                                                ?>
+                                                                    <a onclick="return Off('<?php echo $row['productName']; ?>')" href="products.php?offActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-on.png" alt=""></a>
+                                                                <?php 
+                                                            }
+                                                        ?>
+                                                    </td>
                                                     <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
@@ -937,6 +966,13 @@ if(isset($_GET['productId'])){
     <script>
         function Del1(name) {
             return confirm("Do You Want To Delete: " + name + " ?");
+        }
+        function On(name){
+            return confirm("Do You Want To Turn On: " + name + " ?");
+        }
+
+        function Off(name){
+            return confirm("Do You Want To Turn Off: " + name + " ?");
         }
     </script>
 

@@ -1,57 +1,55 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin_user'])) {
-    header("location: ../login.php");
+    header("location: ../../login.php");
 }
 
-require_once("../../config/config.php");
+require_once("../../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlBrand = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandName LIKE '%$search%' OR brandCode LIKE'%$search%' ");
-    $totalBrand = mysqli_num_rows($sqlBrand);
+    $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_staff WHERE bannerTitle LIKE '%$search%' OR bannerContent LIKE'%$search%' ");
 } else {
-    $sqlBrand = mysqli_query($conn, "SELECT * FROM tbl_brands");
+    $sqlStaff = mysqli_query($conn, "SELECT * FROM tbl_staff ");
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
 }
 
 
-if (isset($_POST['add'])) {
-    $code = $_POST['code'];
+if (isset($_POST['addPosition'])) {
+    $agent = $_POST['agent'];
     $name = $_POST['name'];
-    $category = $_POST['category'];
+    $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $gmail = $_POST['gmail'];
+    $position = $_POST['position'];
 
-    $brandCode = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE brandCode = '$code'");
-
-    if (mysqli_num_rows($brandCode) > 0) {
-        echo "<script>window.alert('Brand exists !');</script>";
-    } else {
-        $addBrand = "INSERT INTO `tbl_brands`(`id`, `brandCode`, `brandName`, `categoryId`) VALUES ('','$code','$name','$category')";
-
-        $queryAddBrand = mysqli_query($conn, $addBrand);
-        if ($queryAddBrand) {
-            echo "<script>window.alert('Successful!');window.location.href = 'brands.php'</script>";
-        }
+    $querySatff = mysqli_query($conn, "INSERT INTO `tbl_staff` (`id`, `idAgent`, `staffName`, `staffPhone`, `staffAddress`, `staffGmail`, `idPosition`) VALUES (NULL, '$agent', '$name', '$phone', '$address', '$gmail', '$position');");
+    if ($querySatff) {
+        echo "<script>window.alert('Successful!');window.location.href = 'list-staff.php'</script>";
     }
 }
 
-if(isset($_GET['id'])){
+if(isset($_GET['idStaff'])){
 
-    $id = $_GET['id'];
+    $idStaff = $_GET['idStaff'];
 
-    $sqlEditBrand = mysqli_query($conn, "SELECT * FROM tbl_brands WHERE id = $id");
-    $infoBrand = mysqli_fetch_assoc($sqlEditBrand);
+    $sqlEditStaff = mysqli_query($conn, "SELECT * FROM tbl_staff WHERE id = $idStaff");
+    $infoStaff = mysqli_fetch_assoc($sqlEditStaff);
 
-    if (isset($_POST['edit'])) {
-        $codeEdit = $_POST['codeEdit'];
-        $nameEdit = $_POST['nameEdit'];
-        $category1 = $_POST['category1'];
-        $edit = mysqli_query($conn, "UPDATE `tbl_brands` SET `brandCode`='$codeEdit',`brandName`='$nameEdit',`categoryId`='$category1'  WHERE id = $id");
+    if (isset($_POST['editStaff'])) {
+        $agent1 = $_POST['agent1'];
+        $name1 = $_POST['name1'];
+        $address1 = $_POST['address1'];
+        $phone1 = $_POST['phone1'];
+        $gmail1 = $_POST['gmail1'];
+        $position1 = $_POST['position1'];
+        //echo "UPDATE `tbl_staff` SET `idAgent`='$agent1',`staffName`='$name1',`staffPhone`='$phone1',`staffAddress`='$address1',`staffGmail`='$gmail1',`staffPosition`='$position1' WHERE id = $id";
+        $edit = mysqli_query($conn, "UPDATE `tbl_staff` SET `idAgent`='$agent1',`staffName`='$name1',`staffPhone`='$phone1',`staffAddress`='$address1',`staffGmail`='$gmail1',`idPosition`='$position1' WHERE id = $idStaff");
 
         if($edit){
-            header("Location: brands.php");
+            header("Location: list-staff.php");
         }
     }
 }
@@ -63,71 +61,88 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - BRANDS</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - STAFF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico">
+    <link rel="shortcut icon" href="../../../assets/images/logo/favicon.ico">
     <!-- third party css -->
-    <link href="..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
     <!-- third party css end -->
     <!-- App css -->
-    <link href="..\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\css\icons.min.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\css\app.min.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\css\style.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\css\icons.min.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\css\app.min.css" rel="stylesheet" type="text/css">
+    <link href="..\..\assets\css\style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- Style Css -->
-    <link rel="stylesheet" href="../assets/scss/admin.css">
-    <link rel="stylesheet" href="brand.css">
+    <link rel="stylesheet" href="../../assets/scss/admin.css">
+    <link rel="stylesheet" href="banner.css">
     <!-- Font awesome -->
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
-    <script src="../assets/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="../assets/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css">
+    <script src="../../assets/fontawesome/js/all.min.js"></script>
+    <link rel="stylesheet" href="../../assets/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- CK Editor -->
-    <script src="../assets/ckeditor/ckeditor.js"></script>
+    <script src="../../assets/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
     <!-- Form Edit -->
     <div class="form-edit form" id="form-edit"  class="modal fade" tabindex="-1">
-        <form method="POST" class="">
+        <form method="POST" class="" enctype="multipart/form-data">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Brand</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="brands.php">×</a></button>
+                        <h4 class="modal-title">EDIT STAFF</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="list-staff.php">×</a></button>
                     </div>
                     <div class="modal-body p-3">
                         <div>
                             <div class="form-group">
-                                <label class="control-label">Brand Code: </label>
-                                <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="codeEdit" value="<?php if (isset($infoBrand['brandCode'])) { echo $infoBrand['brandCode'];} ?>" required>
+                                <label>AGENT: </label>
+                                <select class="form-control" name="agent1">
+                                    <?php
+                                    $sqlAgent = mysqli_query($conn, "SELECT * FROM tbl_agents");
+                                    while ($rowAgent = mysqli_fetch_assoc($sqlAgent)) { ?>
+                                        <option value="<?php echo $rowAgent['id']; ?>" <?php if (isset($infoStaff['id'])) {if ($rowAgent['id'] == $infoStaff['idAgent']) {echo "SELECTED";} } ?>><?php echo $rowAgent['agentName']; ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Brand Name: </label>
-                                <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="nameEdit" value="<?php if (isset($infoBrand['brandName'])) {echo $infoBrand['brandName'];} ?>" required>
+                                <label class="control-label">STAFF NAME: </label>
+                                <input class="form-control form-white" placeholder="Enter Staff Name ..." type="text" name="name1" value="<?php if(isset($infoStaff['staffName'])){echo $infoStaff['staffName'];}?>" required>
                             </div>
                             <div class="form-group">
-                                    <label class="control-label">Category: </label>
-                                    <select name="category1" id="" class="selected form-control form-white">
-                                        <?php
-                                        $sqlCategory = mysqli_query($conn, "SELECT * FROM `tbl_categories`");
-                                        while ($itemCategory = mysqli_fetch_assoc($sqlCategory)) { ?>
-                                            <option value="<?php echo $itemCategory['Id']; ?>" <?php if (isset($itemCategory['Id'])) {if ($itemCategory['Id'] == $infoBrand['categoryId']) {echo "SELECTED";} } ?>><?php echo $itemCategory['categoryName']; ?></option>
-                                        <?php }
-                                        ?>
-                                    </select>
-                                </div>
+                                <label class="control-label">STAFF PHONE: </label>
+                                <input class="form-control form-white" placeholder="Enter Staff Phone ..." type="text" name="phone1" value="<?=$infoStaff['staffPhone']?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">STAFF ADDRESS: </label>
+                                <input class="form-control form-white" placeholder="Enter Staff Address ..." type="text" name="address1" value="<?=$infoStaff['staffAddress']?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">STAFF GMAIL: </label>
+                                <input class="form-control form-white" placeholder="Enter Staff Gmail ..." type="text" name="gmail1" value="<?=$infoStaff['staffGmail']?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>POSITION: </label>
+                                <select class="form-control" name="position1">
+                                    <?php
+                                    $sqlPosition = mysqli_query($conn, "SELECT * FROM tbl_position");
+                                    while ($rowPosition = mysqli_fetch_assoc($sqlPosition)) { ?>
+                                        <option value="<?php echo $rowPosition['id']; ?>" <?php if (isset($infoStaff['id'])) {if ($rowPosition['id'] == $infoStaff['idPosition']) {echo "SELECTED";} } ?>><?php echo $rowPosition['positionName']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                             <div class="text-right pt-2">
-                                <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form"><a href="brands.php">Close</a></button>
+                                <button name="editStaff" class="btn btn-primary ml-1">Save</button>
+                                <button class="btn btn-light close-form"><a href="list-staff.php">Close</a></button>
                             </div>
                         </div>
                     </div> <!-- end modal-body-->
@@ -179,7 +194,7 @@ if(isset($_GET['id'])){
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                 <div class="notify-icon">
-                                    <img src="..\assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="..\..\assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <p class="notify-details">Cristina Pride</p>
                                 <p class="text-muted mb-0 user-msg">
@@ -200,7 +215,7 @@ if(isset($_GET['id'])){
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon">
-                                    <img src="..\assets\images\users\user-4.jpg" class="img-fluid rounded-circle" alt="">
+                                    <img src="..\..\assets\images\users\user-4.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <p class="notify-details">Karen Robinson</p>
                                 <p class="text-muted mb-0 user-msg">
@@ -251,7 +266,7 @@ if(isset($_GET['id'])){
 
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="..\assets\images\users\user-1.jpg" alt="user-image" class="rounded-circle">
+                        <img src="..\..\assets\images\users\user-1.jpg" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ml-1">
                             <?php if (isset($_SESSION['user_admin'])) {
                                 echo $_SESSION['fullname_admin'];
@@ -304,12 +319,12 @@ if(isset($_GET['id'])){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
+                        <img src="..\../../assets/images/logo/logo-dark.png" alt="" height="24">
                         <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
                         <!-- <span class="logo-sm-text-dark">X</span> -->
-                        <img src="..\assets\images\logo\favicon.png" alt="" height="28">
+                        <img src="..\..\assets\images\logo\favicon.png" alt="" height="28">
                     </span>
                 </a>
             </div>
@@ -381,19 +396,62 @@ if(isset($_GET['id'])){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="../categories/categories.php">CATEGORIES</a>
+                                    <a href="../../categories/categories.php">CATEGORIES</a>
                                 </li>
                                 <li>
-                                    <a href="brands.php">BRANDS</a>
+                                    <a href="../../brands/brands.php">BRANDS</a>
                                 </li>
                                 <li>
-                                    <a href="../products/products.php">PRODUCTS</a>
+                                    <a href="../../products/products.php">PRODUCTS</a>
                                 </li>
                                 <li>
-                                    <a href="../version/version.php">VERSIONS</a>
+                                    <a href="../../version/version.php">VERSIONS</a>
                                 </li>
 
 
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="la la-cube"></i>
+                                <span> TPMS </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="../list-agent/list-agent.php">AGENTS</a>
+                                </li>
+                                <li>
+                                    <a href="list-staff.php">STAFF</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="../../products/products.php">PRODUCTS</a>
+                                </li>
+                                <li>
+                                    <a href="../../version/version.php">VERSIONS</a>
+                                </li> -->
+
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="la la-connectdevelop"></i>
+                                <span> WEB </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="banner.php">BANNER</a>
+                                </li>
+                                <li>
+                                    <a href="email-read.php">Read Email</a>
+                                </li>
+                                <li>
+                                    <a href="email-compose.php">Compose Email</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -462,45 +520,62 @@ if(isset($_GET['id'])){
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TECHNOLOGY PRODUCTS MANAGER SYSTEM</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TPMS</a></li>
-                                        <li class="breadcrumb-item active">BRANDS</li>
+                                        <li class="breadcrumb-item active">LIST STAFF</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">BRANDS</h4>
+                                <h4 class="page-title">LIST STAFF</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
                     <!--  -->
 
-                    <form method="POST" class="modal fade" id="addBrand" tabindex="-1">
+                    <form method="POST" class="modal fade" id="addBanner" tabindex="-1" enctype="multipart/form-data">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Create New Brands</h4>
+                                    <h4 class="modal-title">ADD STAFF</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body p-3">
                                     <div>
                                         <div class="form-group">
-                                            <label class="control-label">Brand Code: </label>
-                                            <input class="form-control form-white" placeholder="Enter Brand Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {echo $var['Id']; } ?>" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Brand Name: </label>
-                                            <input class="form-control form-white" placeholder="Enter Brand Name ..." type="text" name="name" value="<?php if (isset($var['BrandName'])) {echo $var['BrandName'];} ?>" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Category: </label>
-                                            <select class="form-control" name="category">
+                                            <label>AGENT: </label>
+                                            <select class="form-control" name="agent">
                                                 <?php
-                                                $sqlCat = mysqli_query($conn, "SELECT * FROM tbl_categories");
-                                                while ($rowCat = mysqli_fetch_assoc($sqlCat)) { ?>
-                                                    <option value="<?php echo $rowCat['Id']; ?>"><?php echo $rowCat['categoryName']; ?></option>
+                                                $sqlAgent = mysqli_query($conn, "SELECT * FROM tbl_agents");
+                                                while ($rowAgent = mysqli_fetch_assoc($sqlAgent)) { ?>
+                                                    <option value="<?php echo $rowAgent['id']; ?>"><?php echo $rowAgent['agentName']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">STAFF NAME: </label>
+                                            <input class="form-control form-white" placeholder="Enter Staff Name ..." type="text" name="name" value="" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">STAFF PHONE: </label>
+                                            <input class="form-control form-white" placeholder="Enter Staff Phone ..." type="text" name="phone" value="" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">STAFF ADDRESS: </label>
+                                            <input class="form-control form-white" placeholder="Enter Staff Address ..." type="text" name="address" value="" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">STAFF GMAIL: </label>
+                                            <input class="form-control form-white" placeholder="Enter Staff Gmail ..." type="text" name="gmail" value="" required>
+                                        </div><div class="form-group">
+                                            <label class="control-label">STAFF POSITION: </label>
+                                            <select class="form-control" name="position">
+                                                <?php
+                                                $sqlPosition = mysqli_query($conn, "SELECT * FROM tbl_position");
+                                                while ($rowPosition = mysqli_fetch_assoc($sqlPosition)) { ?>
+                                                    <option value="<?php echo $rowPosition['id']; ?>"><?php echo $rowPosition['positionName']; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                         <div class="text-right pt-2">
-                                            <button name="add" class="btn btn-primary ml-1">Save</button>
+                                            <button name="addPosition" class="btn btn-primary ml-1">Save</button>
                                             <button type="button" class="btn btn-light " data-dismiss="modal" name="close">Close</button>
                                         </div>
                                     </div>
@@ -517,9 +592,12 @@ if(isset($_GET['id'])){
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>BRAND CODE</th>
-                                                <th>BRAND NAME</th>
-                                                <th>CATEGORY NAME</th>
+                                                <th>AGENT</th>
+                                                <th>STAFF NAME</th>
+                                                <th>STAFF PHONE</th>
+                                                <th>STAFF ADDRESS</th>
+                                                <th>STAFF GMAIL</th>
+                                                <th>STAFF POSITION</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -528,37 +606,22 @@ if(isset($_GET['id'])){
                                         <tbody>
                                             <?php
                                             $i = 1;
-                                            while ($row = mysqli_fetch_assoc($sqlBrand)) {
+                                            while ($row = mysqli_fetch_assoc($sqlStaff)) {
                                             ?>
                                                 <tr>
                                                     <td>
                                                         <?= $i++ ?>
                                                     </td>
+                                                    <td><?php $idAgent = $row['idAgent']; $sqlNameAgent = mysqli_query($conn,"SELECT * FROM tbl_agents WHERE id = $idAgent"); $infoAgent = mysqli_fetch_assoc($sqlNameAgent); echo $infoAgent['agentName']; ?></td>
                                                     <td>
-                                                        <?= $row['brandCode'] ?>
+                                                        <?= $row['staffName'] ?>
                                                     </td>
-                                                    <td>
-                                                        <?= $row['brandName'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php
-                                                            $idCat = $row['categoryId'];
-                                                            $sqlCat = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $idCat");
-                                                            $sqlCatName = mysqli_fetch_assoc($sqlCat);
-                                                            echo $sqlCatName['categoryName'];
-                                                        ?>
-                                                    </td>
-
-                                                    <?php
-                                                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
-                                                            ?>
-                                                                <td><a href="brands.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                                <td><a onclick="return Del1('<?php echo $row['brandName']; ?>')" class="delete" href="deleteBrand.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
-                                                            <?php
-                                                        }
-                                                    ?>
-
-                                                    
+                                                    <td>0<?= $row['staffPhone'] ?></td>
+                                                    <td><?= $row['staffAddress'] ?></td>
+                                                    <td><?= $row['staffGmail'] ?></td>
+                                                    <td><?php $idPosition = $row['idPosition']; $sqlNamePosition = mysqli_query($conn,"SELECT * FROM tbl_position WHERE id = $idPosition"); $infoPosition = mysqli_fetch_assoc($sqlNamePosition); echo $infoPosition['positionName']; ?></td>
+                                                    <td><a href="list-staff.php?idStaff=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                    <td><a onclick="return Del1('<?php echo $row['staffName']; ?>')" class="delete" href="delete_staff.php?id=<?php echo $row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
                                                 </tr>
                                             <?php
                                             }
@@ -580,18 +643,11 @@ if(isset($_GET['id'])){
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="row">
-                    <?php
-                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
-                            ?>
-                                <div class="col-lg-2">
-                                    <a href="#" data-toggle="modal" data-target="#addBrand" class="btn btn-lg font-13  btn-success btn-block  ">
-                                        <i class="mdi mdi-plus-circle-outline"></i> Add
-                                    </a>
-                                </div>
-                            <?php
-                        } 
-                    ?>
-                    
+                    <div class="col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#addBanner" class="btn btn-lg font-13  btn-success btn-block  ">
+                            <i class="mdi mdi-plus-circle-outline"></i> Add
+                        </a>
+                    </div>
                     <div class="col-lg-2">
                         <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
                             <i class="las la-download"></i> Export
@@ -615,7 +671,7 @@ if(isset($_GET['id'])){
     <div class="rightbar-overlay"></div>
 
     <!-- Vendor js -->
-    <script src="..\assets\js\vendor.min.js"></script>
+    <script src="..\..\assets\js\vendor.min.js"></script>
     <!-- Scritp -->
     <script>
         function Del1(name) {
@@ -624,35 +680,31 @@ if(isset($_GET['id'])){
     </script>
 
     <!-- third party js -->
-    <script src="..\assets\libs\datatables\jquery.dataTables.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.responsive.min.js"></script>
-    <script src="..\assets\libs\datatables\responsive.bootstrap4.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.buttons.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.bootstrap4.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.html5.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.flash.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.print.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.keyTable.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.select.min.js"></script>
-    <script src="..\assets\libs\pdfmake\pdfmake.min.js"></script>
-    <script src="..\assets\libs\pdfmake\vfs_fonts.js"></script>
+    <script src="..\..\assets\libs\datatables\jquery.dataTables.min.js"></script>
+    <script src="..\..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
+    <script src="..\..\assets\libs\datatables\dataTables.responsive.min.js"></script>
+    <script src="..\..\assets\libs\datatables\responsive.bootstrap4.min.js"></script>
+    <script src="..\..\assets\libs\datatables\dataTables.buttons.min.js"></script>
+    <script src="..\..\assets\libs\datatables\buttons.bootstrap4.min.js"></script>
+    <script src="..\..\assets\libs\datatables\buttons.html5.min.js"></script>
+    <script src="..\..\assets\libs\datatables\buttons.flash.min.js"></script>
+    <script src="..\..\assets\libs\datatables\buttons.print.min.js"></script>
+    <script src="..\..\assets\libs\datatables\dataTables.keyTable.min.js"></script>
+    <script src="..\..\assets\libs\datatables\dataTables.select.min.js"></script>
+    <script src="..\..\assets\libs\pdfmake\pdfmake.min.js"></script>
+    <script src="..\..\assets\libs\pdfmake\vfs_fonts.js"></script>
     <!-- third party js ends -->
 
     <!-- Datatables init -->
-    <script src="..\assets\js\pages\datatables.init.js"></script>
+    <script src="..\..\assets\js\pages\datatables.init.js"></script>
 
     <!-- App js -->
-    <script src="..\assets\js\app.min.js"></script>
+    <script src="..\..\assets\js\app.min.js"></script>
     
     <?php
-        if(isset($_GET['id'])){
+        if(isset($_GET['idStaff'])){
             echo '<script> document.getElementById("form-edit").classList.add("show")</script>';
 
-            $id = $_GET['id'];
-
-            $sqlEditBrand = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-            $infoBrand = mysqli_fetch_assoc($sqlEditBrand);
         }
     ?>
     <script src="categories.js"></script>

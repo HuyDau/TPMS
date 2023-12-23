@@ -391,7 +391,9 @@ if(isset($_GET['id'])){
                                 <li>
                                     <a href="../../products/products.php">PRODUCTS</a>
                                 </li>
-
+                                <li>
+                                    <a href="../../version/version.php">VERSIONS</a>
+                                </li>
 
 
                             </ul>
