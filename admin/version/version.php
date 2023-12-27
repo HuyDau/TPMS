@@ -160,6 +160,31 @@ if(isset($_GET['offActive'])){
         header("Location: version.php");
     }
 }
+if(isset($_GET['productIdUpdate'])){
+    $idProduct = $_GET['productIdUpdate'];
+    $agentId = $_SESSION['admin_id'];
+
+    $sqlEditVersion = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE idVersion = $idProduct");
+    $infoVersion = mysqli_fetch_assoc($sqlEditVersion);
+
+    $q = $_GET['quantity'];
+    if(isset($_POST['EditVersionQ'])){
+        $quantity = $_POST['quantity'];
+        $newQuantity = $q + $quantity;
+
+        $sqlW = mysqli_query($conn,"SELECT * FROM tbl_warehouse WHERE versionId = $idProduct AND agentId = $agentId");
+        $infoW = mysqli_fetch_assoc($sqlW);
+        if(mysqli_num_rows($sqlW) > 0){
+            $idW = $infoW['id'];
+            $sqlUpdateW = mysqli_query($conn,"UPDATE `tbl_warehouse` SET `quantity`='$newQuantity' WHERE id = $idW");
+        }else{
+            $sqlUpdateW = mysqli_query($conn,"INSERT INTO `tbl_warehouse`(`id`, `versionId`, `agentId`, `quantity`) VALUES (NULL,'$idProduct','$agentId','$newQuantity')");
+        }
+    }
+    
+    
+
+}  
 ?>
 
 <!DOCTYPE html>
@@ -266,6 +291,83 @@ if(isset($_GET['offActive'])){
                         <div class="row">
                             <div class="text-right pt-2">
                                 <button name="EditVersion" class="btn btn-primary ml-1">Save</button>
+                                <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="version.php">Close</a></button>
+                            </div>
+                        </div>
+                    </div> <!-- end modal-body-->
+                </div> <!-- end modal-content-->
+            </div> <!-- end modal dialog-->
+        </form>
+    </div>
+    <div class="form-edit form" id="form-edit1">
+        <form method="POST" class="" enctype="multipart/form-data">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Version</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="version.php">×</a></button>
+                    </div>
+                    <div class="modal-body p-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Product ID: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Id ..." type="text" name="id1" value="<?=$infoVersion['productId']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Product Code: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Code ..." type="text" name="code1" value="<?=$infoVersion['productCode']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Name: </label>
+                                    <input class="form-control form-white" placeholder="Enter Version Name ..." type="text" name="name1" value="<?=$infoVersion['versionName']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version: </label>
+                                    <input class="form-control form-white" placeholder="Enter Product Version ..." type="text" name="version1" value="<?=$infoVersion['versionVersion']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Version Iamge: </label>
+                                    <input type="file" multiple="multiple" name="image1" class="form-control">
+                                    <span><?=$infoVersion['versionImage']?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Price ..." type="text" name="price1" value="<?=$infoVersion['versionPrice']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Promotional Price: </label>
+                                    <input class="form-control form-white" placeholder="Enter Promotional Price ..." type="text" name="p-price1" value="<?=$infoVersion['versionPromotionalPrice']?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Quantity Update: </label>
+                                    <input class="form-control form-white" placeholder="Enter Quantity ..." type="number" min="0" step="1" name="quantity" value="0" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="control-label">Description: </label>
+                                    <textarea name="description1" id="des11" cols="150" rows="10" required>
+                                        <?=$infoVersion['versionDescription']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('des11')
+                                    </script>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Specifications: </label>
+                                    <textarea name="specifications" id="des12" cols="150" rows="10" required>
+                                        <?=$infoVersion['versionSpecifications']?>
+                                    </textarea>
+                                    <script>
+                                        CKEDITOR.replace('des12')
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-right pt-2">
+                                <button name="EditVersionQ" class="btn btn-primary ml-1">Save</button>
                                 <button type="button" class="btn btn-light " data-dismiss="modal" name="close"><a style="color: #fff;" href="version.php">Close</a></button>
                             </div>
                         </div>
@@ -926,11 +1028,20 @@ if(isset($_GET['offActive'])){
                                                 <th>IMAGE</th>
                                                 <th>PRICE</th>
                                                 <th>PROMOTIONAL PRICE</th>
-                                                <th>VIEW AND EDIT VERSION</th>
-                                                <th>ADD SPECIFICATIONS</th>
-                                                <th>VIEW AND EDIT SPECIFICATIONS</th>
-                                                <th>ACTIVE</th>
-                                                <th>DELETE</th>
+                                                <?php
+                                                    if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
+                                                        ?>
+                                                            <th>VIEW AND EDIT VERSION</th>
+                                                            <th>ADD SPECIFICATIONS</th>
+                                                            <th>VIEW AND EDIT SPECIFICATIONS</th>
+                                                            <th>ACTIVE</th>
+                                                            <th>DELETE</th>
+                                                        <?php
+                                                    }else{
+                                                        ?><th>QUANTITY</th><?php
+                                                        ?><th>UPDATE</th><?php
+                                                    }
+                                                ?>
                                             </tr>
                                         </thead>
 
@@ -995,23 +1106,44 @@ if(isset($_GET['offActive'])){
                                                     <td>
                                                         <?= number_format($row['versionPromotionalPrice'],0,"",".") ?>
                                                     </td>
-                                                    <td><a href="version.php?productId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td><a href="version.php?versionId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-add las la-plus-circle"></i></a></td>
-                                                    <td><a href="version.php?specificationsId=<?php echo $iSpecifications['specificationsId']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td>
-                                                        <?php 
-                                                            if($row['isActive'] == 1){
+                                                    <?php
+                                                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
+                                                            ?>
+                                                                <td><a href="version.php?productId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                                <td><a href="version.php?versionId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-add las la-plus-circle"></i></a></td>
+                                                                <td><a href="version.php?specificationsId=<?php echo $iSpecifications['specificationsId']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                                <td>
+                                                                    <?php 
+                                                                        if($row['isActive'] == 1){
+                                                                            ?>
+                                                                                <a onclick="return On('<?php echo $row['versionName']; ?>')" href="version.php?isActive=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
+                                                                            <?php 
+                                                                        }else{
+                                                                            ?>
+                                                                                <a onclick="return Off('<?php echo $row['versionName']; ?>')" href="version.php?offActive=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-on.png" alt=""></a>
+                                                                            <?php 
+                                                                        }
+                                                                    ?>
+                                                                </td>
+                                                                <td><a onclick="return Del1('<?php echo $row['versionName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['idVersion']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                            <?php
+                                                        }else{
+                                                            $versionID1 = $row['idVersion'];
+                                                            $idAgent = $_SESSION['admin_id'];
+                                                            $sqlQuantity = mysqli_query($conn,"SELECT * FROM tbl_warehouse WHERE  versionId = $versionID1 AND agentId = $idAgent");
+                                                            $infoQuantity = mysqli_fetch_assoc($sqlQuantity);
+                                                            if(isset($infoQuantity['quantity'])){
                                                                 ?>
-                                                                    <a onclick="return On('<?php echo $row['versionName']; ?>')" href="version.php?isActive=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
-                                                                <?php 
-                                                            }else{
-                                                                ?>
-                                                                    <a onclick="return Off('<?php echo $row['versionName']; ?>')" href="version.php?offActive=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-on.png" alt=""></a>
-                                                                <?php 
-                                                            }
-                                                        ?>
-                                                    </td>
-                                                    <td><a onclick="return Del1('<?php echo $row['versionName']; ?>')" class="delete" href="deleteVersion.php?id=<?php echo $row['idVersion']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                                    <td><?=$infoQuantity['quantity']?></td>
+                                                                    <td><a href="version.php?productIdUpdate=<?php echo $row['idVersion'];?>&quantity=<?php if(isset($infoQuantity['quantity'])){echo $infoQuantity['quantity']; }else{echo "0";} ?> " name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                                <?php
+                                                            }else {?>
+                                                                <td>0</td>
+                                                                <td><a href="version.php?productIdUpdate=<?php echo $row['idVersion'];?>&quantity=<?php if(isset($infoQuantity['quantity'])){echo $infoQuantity['quantity']; }else{echo "0";} ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                            <?php }
+                                                        }
+                                                    ?>
+                                                    
                                                 </tr>
                                             <?php
                                             }
@@ -1117,6 +1249,14 @@ if(isset($_GET['offActive'])){
         if(isset($_GET['specificationsId'])){
             echo '<script> document.getElementById("form-edit-specifications").classList.add("show")</script>';
             $id = $_GET['specificationsId'];
+            
+        }
+    ?>
+    <?php
+        if(isset($_GET['productIdUpdate'])){
+            echo '<script> document.getElementById("form-edit1").classList.add("show")</script>';
+
+            $id = $_GET['productId'];
             
         }
     ?>

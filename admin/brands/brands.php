@@ -392,56 +392,59 @@ if(isset($_GET['id'])){
                                 <li>
                                     <a href="../version/version.php">VERSIONS</a>
                                 </li>
-
-
-
                             </ul>
                         </li>
-
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="la la-envelope"></i>
-                                <span> Email </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="email-inbox.php">Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="email-read.php">Read Email</a>
-                                </li>
-                                <li>
-                                    <a href="email-compose.php">Compose Email</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class=" fab fa-opencart"></i>
-                                <span> Order </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="order.php">List Order</a>
-                                </li>
-                                <li>
-                                    <a href="list_complete_order.php">List Complete Order</a>
-                                </li>
-                                <li>
-                                    <a href="list_cancel_order.php">List Cancel Order</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
+                                ?>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class="la la-envelope"></i>
+                                            <span> Email </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="email-inbox.php">Inbox</a>
+                                            </li>
+                                            <li>
+                                                <a href="email-read.php">Read Email</a>
+                                            </li>
+                                            <li>
+                                                <a href="email-compose.php">Compose Email</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class=" fab fa-opencart"></i>
+                                            <span> Order </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="order.php">List Order</a>
+                                            </li>
+                                            <li>
+                                                <a href="list_complete_order.php">List Complete Order</a>
+                                            </li>
+                                            <li>
+                                                <a href="list_cancel_order.php">List Cancel Order</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }else if(isset($_SESSION['permission']) && $_SESSION['permission'] == 2){
+                                ?>
+                                    <a href="">Huy Dậu</a>
+                                <?php
+                            }
+                        ?>
+                        
                     </ul>
-
                 </div>
                 <!-- End Sidebar -->
-
                 <div class="clearfix"></div>
-
             </div>
             <!-- Sidebar -left -->
         </div>
@@ -557,8 +560,6 @@ if(isset($_GET['id'])){
                                                             <?php
                                                         }
                                                     ?>
-
-                                                    
                                                 </tr>
                                             <?php
                                             }

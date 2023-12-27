@@ -2,11 +2,24 @@
     session_start();
     if(isset($_SESSION['admin_id'])){
         unset($_SESSION['admin_id']);
-        unset($_SESSION['admin_user']);
+    }
+    if(isset($_SESSION['admin_user'])){
+    }
+    if(isset($_SESSION['admin_pass'])){
         unset($_SESSION['admin_pass']);
+    }
+    if(isset($_SESSION['admin_mail'])){
         unset($_SESSION['admin_mail']);
+    }
+    if(isset($_SESSION['admin_name'])){
         unset($_SESSION['admin_name']);
         unset($_SESSION['admin_phone']);
+        unset($_SESSION['permission']);
+    }
+    if(isset($_SESSION['admin_phone'])){
+        unset($_SESSION['admin_phone']);
+    }
+    if(isset($_SESSION['permission'])){
         unset($_SESSION['permission']);
     }
 ?>
