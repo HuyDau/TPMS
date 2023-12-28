@@ -227,46 +227,7 @@ function timer(n, t, i) {
         document.getElementById(n).innerHTML = "")
     }, 1e3)
 }
-function init_Review() {
-    var t = $("#reviewForm"), n = $(t).serializeObject(), i;
-    ajaxLoadReview(n.ModelID, n.SystemTypeID, 1, $("#reviews .review-content"));
-    i = {
-        max_value: 5,
-        step_size: .5,
-        selected_symbol_type: "hhicon",
-        cursor: "default",
-        readonly: !1,
-        change_once: !1
-    };
-    $(".rating").rate(i);
-    $(".rating").on("change", function(i, r) {
-        var u = validateForm(t);
-        u == "" ? ($(t).find("input[name=Rate]").val(r.to),
-        n = $(t).serializeObject(),
-        $.post("/api/review", n, function(i) {
-            i.Errors ? $.toast({
-                heading: "Có lỗi khi gửi review.",
-                text: i.Message,
-                showHideTransition: "fade",
-                icon: "error",
-                hideAfter: 15e3
-            }) : ($.toast({
-                heading: i.Title,
-                showHideTransition: "fade",
-                icon: "success",
-                hideAfter: 15e3
-            }),
-            $(t).find("textarea").val(""),
-            ajaxLoadReview(n.ModelID, n.SystemTypeID, 1, $("#reviewContent")))
-        })) : $.toast({
-            heading: "Bạn cần kiểm tra lại thông tin.",
-            text: u,
-            showHideTransition: "fade",
-            icon: "error",
-            hideAfter: 15e3
-        })
-    })
-}
+
 function init_Comment() {
     var t = $("#comments form")
       , n = $(t).serializeObject();

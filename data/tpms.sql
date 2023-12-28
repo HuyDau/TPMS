@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 27, 2023 lúc 01:42 PM
+-- Thời gian đã tạo: Th12 28, 2023 lúc 12:28 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -237,7 +237,8 @@ CREATE TABLE `tbl_comments` (
 
 INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `content`) VALUES
 (105, 7, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Huy Dậu đã để lại comment'),
-(106, 7, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Sản Phẩm đẹp lắm');
+(106, 7, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Sản Phẩm đẹp lắm'),
+(107, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a');
 
 -- --------------------------------------------------------
 
@@ -326,7 +327,8 @@ CREATE TABLE `tbl_repcomments` (
 
 INSERT INTO `tbl_repcomments` (`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`) VALUES
 (1, 7, 106, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a'),
-(2, 7, 106, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Đẹp lắm');
+(2, 7, 106, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Đẹp lắm'),
+(3, 5, 107, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Điện thoại rất đẹp');
 
 -- --------------------------------------------------------
 
@@ -465,7 +467,8 @@ CREATE TABLE `tbl_warehouse` (
 
 INSERT INTO `tbl_warehouse` (`id`, `versionId`, `agentId`, `quantity`) VALUES
 (1, 5, 3, 15),
-(4, 6, 2, 5);
+(4, 6, 2, 5),
+(5, 5, 2, 15);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -605,7 +608,7 @@ ALTER TABLE `tbl_colors`
 -- AUTO_INCREMENT cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`
@@ -623,7 +626,7 @@ ALTER TABLE `tbl_products`
 -- AUTO_INCREMENT cho bảng `tbl_repcomments`
 --
 ALTER TABLE `tbl_repcomments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_specifications`
@@ -653,7 +656,7 @@ ALTER TABLE `tbl_versions`
 -- AUTO_INCREMENT cho bảng `tbl_warehouse`
 --
 ALTER TABLE `tbl_warehouse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

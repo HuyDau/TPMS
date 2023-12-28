@@ -464,7 +464,7 @@
                                         <div class="menu g4">
                                             <h4><a href="/smart-home">Gia dụng th&#244;ng minh</a></h4>
                                             <ul class="display-row format_2">
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi">M&#225;y lọc kh&#244;ng kh&#237;</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi">M&#225;y lọc kh&#244;ng khí</a></li>
                                                     <li><a href="/do-gia-dung/robot-hut-bui">Robot, M&#225;y h&#250;t bụi</a></li>
                                                     <li><a href="/smart-home/phu-kien-gia-dung">Phụ kiện gia dụng</a></li>
                                                     <li><a href="/phu-kien/smart-home/fpt-play-box">FPT Play box</a></li>
@@ -479,13 +479,13 @@
                                             </ul>
                                     </div>
                                         <div class="menu g0">
-                                            <h4><a href="/do-gia-dung/may-loc-khong-khi">M&#225;y Lọc Kh&#244;ng kh&#237;</a></h4>
+                                            <h4><a href="/do-gia-dung/may-loc-khong-khi">M&#225;y Lọc Kh&#244;ng khí</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/clair">M&#225;y lọc kh&#244;ng kh&#237; h&#227;ng Clair</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/daikin">M&#225;y lọc kh&#244;ng kh&#237; h&#227;ng Daikin</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-philips">M&#225;y lọc kh&#244;ng kh&#237; h&#227;ng Philips</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-xiaomi">M&#225;y lọc kh&#244;ng kh&#237; h&#227;ng Xiaomi</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-levoit">M&#225;y lọc kh&#244;ng kh&#237; Levoit</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/clair">M&#225;y lọc kh&#244;ng khí hãng Clair</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/daikin">M&#225;y lọc kh&#244;ng khí hãng Daikin</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-philips">M&#225;y lọc kh&#244;ng khí hãng Philips</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-xiaomi">M&#225;y lọc kh&#244;ng khí hãng Xiaomi</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-levoit">M&#225;y lọc kh&#244;ng khí Levoit</a></li>
                                             </ul>
                                     </div>
 
@@ -512,14 +512,14 @@
                                                     <li><a href="/op-lung-dien-thoai">Bao da - Ốp lưng</a></li>
                                                     <li><a href="/phu-kien/mieng-dan-man-hinh">Miếng d&#225;n m&#224;n h&#236;nh</a></li>
                                             </ul>
-                                            <h4><a href="/phu-kien/xa-ton-phu-kien-gia-soc">Xả tồn phụ kiện - GI&#193; SỐC</a></h4>
+                                            <h4><a href="/phu-kien/xa-ton-phu-kien-gia-soc">Xả tồn phụ kiện - GIÁ SỐC</a></h4>
                                             <ul class="display-column format_1">
                                             </ul>
                                     </div>
                                         <div class="menu g1">
-                                            <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">B&#224;n ph&#237;m, Chuột  Gaming Gear</a></h4>
+                                            <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">B&#224;n phím, Chuột  Gaming Gear</a></h4>
                                             <ul class="display-column format_2">
-                                                    <li><a href="/phu-kien/ban-phim">B&#224;n Ph&#237;m</a></li>
+                                                    <li><a href="/phu-kien/ban-phim">B&#224;n Phím</a></li>
                                                     <li><a href="/phu-kien/chuot">Chuột</a></li>
                                                     <li><a href="/phu-kien/ban-phim-chuot-gaming-gear/tay-cam-choi-game">Tay cầm chơi game</a></li>
                                             </ul>
@@ -533,13 +533,13 @@
                                             </ul>
                                     </div>
                                         <div class="menu g2">
-                                            <h4><a href="/phu-kien/linh-kien-may-tinh">Linh kiện m&#225;y t&#237;nh </a></h4>
+                                            <h4><a href="/phu-kien/linh-kien-may-tinh">Linh kiện m&#225;y tính </a></h4>
                                             <ul class="display-column format_2">
                                                     <li><a href="/phu-kien/phu-kien-may-tinh/o-cung">Ổ cứng</a></li>
                                                     <li><a href="/phu-kien/linh-kien-may-tinh/phan-mem">Phần mềm</a></li>
                                                     <li><a href="/phu-kien/phu-kien-may-tinh/ram">RAM</a></li>
                                             </ul>
-                                            <h4><a href="/phu-kien/pin-man-hinh">Pin, M&#224;n h&#236;nh ch&#237;nh h&#227;ng</a></h4>
+                                            <h4><a href="/phu-kien/pin-man-hinh">Pin, M&#224;n h&#236;nh chính hãng</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/phu-kien/pin-man-hinh/man-hinh-iphone">M&#224;n h&#236;nh iPhone</a></li>
                                                     <li><a href="/phu-kien/pin-man-hinh/pin">Pin iPhone</a></li>
@@ -551,7 +551,7 @@
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện Chính Hãng Apple</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-cho-macbook">Phụ kiện cho Macbook</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/phu-kien-iphone-15">Phụ kiện iPhone 15</a></li>
-                                                    <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đ&#227;i</a></li>
+                                                    <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đãi</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/thiet-bi-dinh-vi-thong-minh">Thiết bị định vị th&#244;ng minh</a></li>
                                             </ul>
                                             <h4><a href="/phu-kien/phu-kien-khac">Phụ kiện kh&#225;c</a></h4>
@@ -562,7 +562,7 @@
                                         <div class="menu g4">
                                             <h4><a href="/phu-kien/thiet-bi-mang">Thiết bị mạng</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/phu-kien/thiet-bi-mang/bo-kich-song">Bộ k&#237;ch s&#243;ng</a></li>
+                                                    <li><a href="/phu-kien/thiet-bi-mang/bo-kich-song">Bộ kích s&#243;ng</a></li>
                                                     <li><a href="/phu-kien/thiet-bi-mang/bo-phat-wifi-di-dong-3g-4g">Bộ ph&#225;t Wifi di động (3G/4G)</a></li>
                                                     <li><a href="/phu-kien/thiet-bi-mang/router-modem">Router/Modem</a></li>
                                                     <li><a href="/phu-kien/thiet-bi-mang/thuong-hieu">Thương hiệu</a></li>
@@ -588,7 +588,7 @@
                                             <ul class="display-row format_1">
                                                     <li><a href="/do-choi-cong-nghe/quat-cam-tay-mini">Quạt cầm tay mini</a></li>
                                                     <li><a href="/do-choi-cong-nghe/day-do-nhip-tim">D&#226;y đo nhịp tim</a></li>
-                                                    <li><a href="/do-choi-cong-nghe/kinh-thuc-te-ao">K&#237;nh thực tế ảo</a></li>
+                                                    <li><a href="/do-choi-cong-nghe/kinh-thuc-te-ao">Kính thực tế ảo</a></li>
                                                     <li><a href="/do-choi-cong-nghe/tay-cam-chong-rung">Tay cầm chống rung</a></li>
                                                     <li><a href="/do-choi-cong-nghe/camera-hanh-trinh">Camera h&#224;nh tr&#236;nh</a></li>
                                             </ul>
@@ -614,14 +614,14 @@
                                             <ul class="display-column format_3">
                                                     <li><a href="/kho-san-pham-cu?=filters={type:1}">Điện thoại di động</a></li>
                                                     <li><a href="/kho-san-pham-cu?filters={type:5}">Đồng hồ th&#244;ng minh</a></li>
-                                                    <li><a href="/kho-san-pham-cu?filters={type:2}">M&#225;y t&#237;nh bảng</a></li>
+                                                    <li><a href="/kho-san-pham-cu?filters={type:2}">M&#225;y tính bảng</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:3}">Laptop</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:7}">Loa</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:13}">Tai nghe</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:26}">Camera</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:10}">Củ sạc</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:11}">D&#226;y c&#225;p</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=filters={type:28}">M&#225;y lọc kh&#244;ng kh&#237;</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:28}">M&#225;y lọc kh&#244;ng khí</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:18}">Phụ kiện</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:25}">Sạc dự ph&#242;ng</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:30}">Tay cầm chống rung</a></li>
@@ -653,9 +653,9 @@
                                             <h4><a href="/dich-vu-sua-chua/apple/iphone">Apple iPhone</a></h4>
                                             <ul class="display-column format_2">
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/camera-truoc">Camera Trước</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/cap-phim-am-luong-phim-nguon">C&#225;p ph&#237;m &#226;m lượng - C&#225;p ph&#237;m nguồn</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/cap-phim-am-luong-phim-nguon">C&#225;p phím &#226;m lượng - C&#225;p phím nguồn</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/loa-trong-loa-ngoai">Loa Trong - Loa Ngo&#224;i</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/vo-kinh">Vỏ - K&#237;nh Lưng</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/vo-kinh">Vỏ - Kính Lưng</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/camera">Camera Sau</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/man-hinh">M&#224;n h&#236;nh</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/cac-loai-cap">C&#225;p bo sạc IPhone</a></li>
@@ -713,24 +713,24 @@
                     <li id="tin-khuyen-maiuu-dai-hot">
                         <a href="/tin-khuyen-mai/uu-dai-hot" target="_blank">
                             <i class="icon icon-flash"></i>
-                            <span>Ưu đ&#227;i</span>
+                            <span>Ưu đãi</span>
                         </a>
                             <div class="sub-container">
                                 <div class="sub">
 
                                         <div class="menu g0">
-                                            <h4><a href="/tin-khuyen-mai/uu-dai-hot">Ưu đ&#227;i Hot</a></h4>
+                                            <h4><a href="/tin-khuyen-mai/uu-dai-hot">Ưu đãi Hot</a></h4>
                                             <ul class="display-row format_1">
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-jbl-harman-kardon">&#226;m thanh - JBL  Harman</a></li>
-                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/combo-uu-dai">Combo ưu đ&#227;i</a></li>
-                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/combo-uu-dai-samsung">Combo ưu đ&#227;i samsung</a></li>
+                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/combo-uu-dai">Combo ưu đãi</a></li>
+                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/combo-uu-dai-samsung">Combo ưu đãi samsung</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/tcl">Hot Sale TCL</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-Apple">Khuyến mại Apple</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/samsung-xiaomi-hot">KM Samsung  + Xiaomi</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop  M&#224;n h&#236;nh HP</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit">Mở b&#225;n Phụ kiện 9Fit</a></li>
                                                     <li><a href="/tin-khuyen-mai/san-pham-doc-quyen">Sản phẩm độc quyền</a></li>
-                                                    <li><a href="/uu-dai-hot/uu-dai-mophie-zagg">Ưu đ&#227;i Mophie + ZAGG</a></li>
+                                                    <li><a href="/uu-dai-hot/uu-dai-mophie-zagg">Ưu đãi Mophie + ZAGG</a></li>
                                             </ul>
                                     </div>
 
@@ -904,7 +904,7 @@
 
                                             <li><span class="bag">KM 1</span></li>
                                             <li>
-                                                    <a href="https://hoanghamobile.com/tin-tuc/nhan-ma-giam-gia-toi-300-000d-qua-zalopay/" style="font-weight:normal">ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (&#193;p dụng với ho&#225; đơn tr&#234;n 20 Triệu).</a>
+                                                    <a href="https://hoanghamobile.com/tin-tuc/nhan-ma-giam-gia-toi-300-000d-qua-zalopay/" style="font-weight:normal">ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (Áp dụng với ho&#225; đơn tr&#234;n 20 Triệu).</a>
                                             </li>
                                             <li><span class="bag">KM 2</span></li>
                                             <li>
@@ -926,16 +926,16 @@
 
                         <div class="product-promotion" style="padding:8px; border-radius:6px; background:#fff; margin-top:15px;">
                                 <div>
-                                    <strong class="label">ƯU Đ&#195;I THANH TO&#193;N</strong>
+                                    <strong class="label">ƯU ĐÃI THANH TOÁN</strong>
                                     <ul>
 
                                             <li>
                                                 <i class="icon-checked text-green"></i>
-                                                    <a href="https://hoanghamobile.com/tin-tuc/mua-sam-do-cong-nghe-tha-ga-nhap-ma-vnpay-giam-them-toi-300k/" style="font-weight:normal">VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (&#193;p dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</a>
+                                                    <a href="https://hoanghamobile.com/tin-tuc/mua-sam-do-cong-nghe-tha-ga-nhap-ma-vnpay-giam-them-toi-300k/" style="font-weight:normal">VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (Áp dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</a>
                                             </li>
                                             <li>
                                                 <i class="icon-checked text-green"></i>
-                                                    <a href="https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-onlineplus-2in1&amp;utm_source=Public_Website&amp;utm_medium=PNS_HoangHaMobile&amp;utm_content=HoangHaMobileVIBQRCode&amp;product=card" style="font-weight:normal">VIB - Nhận Voucher 250.000đ khi mở thẻ t&#237;n dụng VIB th&#224;nh c&#244;ng.</a>
+                                                    <a href="https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-onlineplus-2in1&amp;utm_source=Public_Website&amp;utm_medium=PNS_HoangHaMobile&amp;utm_content=HoangHaMobileVIBQRCode&amp;product=card" style="font-weight:normal">VIB - Nhận Voucher 250.000đ khi mở thẻ tín dụng VIB th&#224;nh c&#244;ng.</a>
                                             </li>
                                             <li>
                                                 <i class="icon-checked text-green"></i>
@@ -943,7 +943,7 @@
                                             </li>
                                             <li>
                                                 <i class="icon-checked text-green"></i>
-                                                    <a href="https://hoanghamobile.com/tin-tuc/mo-the-vpbank-nhan-uu-dai-toi-15-trieu-dong-tai-hoang-ha-mobile" style="font-weight:normal">VPBank - Mở thẻ VPBank, ưu đ&#227;i tới 1.250.000đ.</a>
+                                                    <a href="https://hoanghamobile.com/tin-tuc/mo-the-vpbank-nhan-uu-dai-toi-15-trieu-dong-tai-hoang-ha-mobile" style="font-weight:normal">VPBank - Mở thẻ VPBank, ưu đãi tới 1.250.000đ.</a>
                                             </li>
                                     </ul>
                                 </div>
@@ -970,7 +970,7 @@
                     <div class="product-shop">
                         <div class="warranty">
                             <h4>THÔNG TIN BẢO HÀNH</h4>
-                                <p><i class="icon-shield"></i> <span><strong>Bảo h&#224;nh 12 th&#225;ng ch&#237;nh h&#227;ng tại c&#225;c TTBH uỷ quyền của Apple tại Việt Nam.</strong></span></p>
+                                <p><i class="icon-shield"></i> <span><strong>Bảo h&#224;nh 12 th&#225;ng chính hãng tại c&#225;c TTBH uỷ quyền của Apple tại Việt Nam.</strong></span></p>
 
                                 <p><a href="/chinh-sach-bao-hanh"><i class="icon-shield"></i><strong><span>1 đổi 1 trong 30 ng&#224;y đầu nếu c&#243; lỗi phần cứng do nh&#224; sản xuất.</span></strong></a></p>
                                                     </div>
@@ -1021,7 +1021,7 @@
                                             <li data-id="36" id="city_36" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(36);">Ph&#250; Y&#234;n</a></li>
                                             <li data-id="29" id="city_29" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(29);">Quảng B&#236;nh</a></li>
                                             <li data-id="33" id="city_33" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(33);">Quảng Nam</a></li>
-                                            <li data-id="34" id="city_34" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(34);">Quảng Ng&#227;i</a></li>
+                                            <li data-id="34" id="city_34" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(34);">Quảng Ngãi</a></li>
                                             <li data-id="14" id="city_14" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(14);">Quảng Ninh</a></li>
                                             <li data-id="30" id="city_30" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(30);">Quảng Trị</a></li>
                                             <li data-id="61" id="city_61" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(61);">S&#243;c Trăng</a></li>
@@ -1108,11 +1108,11 @@
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>102 Phố Xốm, Ph&#250; L&#227;m, H&#224; Đ&#244;ng, H&#224; Nội</label>
+                                                    <label>102 Phố Xốm, Ph&#250; Lãm, H&#224; Đ&#244;ng, H&#224; Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0818.576.586">0818.576.586</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="	102 Phố Xốm, Ph&#250; L&#227;m, H&#224; Đ&#244;ng, H&#224; Nội" href="/102-pho-xom-phu-lam-ha-dong-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="	102 Phố Xốm, Ph&#250; Lãm, H&#224; Đ&#244;ng, H&#224; Nội" href="/102-pho-xom-phu-lam-ha-dong-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1168,11 +1168,11 @@
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>205 X&#227; Đ&#224;n, P.Nam Đồng, H&#224; Nội </label>
+                                                    <label>205 Xã Đ&#224;n, P.Nam Đồng, H&#224; Nội </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936.231.213">0936.231.213</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="205 X&#227; Đ&#224;n, P.Nam Đồng, H&#224; Nội" href="/797-799-xa-dan-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="205 Xã Đ&#224;n, P.Nam Đồng, H&#224; Nội" href="/797-799-xa-dan-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1188,11 +1188,11 @@
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>101 Kim M&#227; - Phường Kim M&#227; - Quận Ba Đ&#204;nh - H&#224; Nội</label>
+                                                    <label>101 Kim Mã - Phường Kim Mã - Quận Ba Đ&#204;nh - H&#224; Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:088.6868.101">088.6868.101</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="101 Kim M&#227; - Phường Kim M&#227; - Quận Ba Đ&#204;nh - H&#224; Nội" href="/101-kim-ma-phuong-kim-ma-quan-ba-dinh-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="101 Kim Mã - Phường Kim Mã - Quận Ba Đ&#204;nh - H&#224; Nội" href="/101-kim-ma-phuong-kim-ma-quan-ba-dinh-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1228,11 +1228,11 @@
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>208 Trần Lư. Thường T&#237;n, H&#224; Nội</label>
+                                                    <label>208 Trần Lư. Thường Tín, H&#224; Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:088.6868.223">088.6868.223</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="208 Trần Lư. Thường T&#237;n, H&#224; Nội" href="/208-tran-lu-thuong-tin-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="208 Trần Lư. Thường Tín, H&#224; Nội" href="/208-tran-lu-thuong-tin-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1328,11 +1328,11 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>156 Trần N&#227;o, P. An Kh&#225;nh, Tp Thủ Đức, Hồ Ch&#237; Minh</label>
+                                                    <label>156 Trần Não, P. An Kh&#225;nh, Tp Thủ Đức, Hồ Chí Minh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0909222156">0909222156</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="156 Trần N&#227;o, P. An Kh&#225;nh, Tp Thủ Đức, Hồ Ch&#237; Minh" href="/156-tran-nao-p-an-khanh-quan-2-tp-hcm">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="156 Trần Não, P. An Kh&#225;nh, Tp Thủ Đức, Hồ Chí Minh" href="/156-tran-nao-p-an-khanh-quan-2-tp-hcm">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1348,21 +1348,21 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>397 Nguyễn Thị T&#250;, Phường B&#236;nh Hưng H&#242;a B, Quận B&#236;nh T&#226;n, TP.Hồ Ch&#237; Minh</label>
+                                                    <label>397 Nguyễn Thị T&#250;, Phường B&#236;nh Hưng H&#242;a B, Quận B&#236;nh T&#226;n, TP.Hồ Chí Minh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0787.395.397">0787.395.397</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="397 Nguyễn Thị T&#250;, Phường B&#236;nh Hưng H&#242;a B, Quận B&#236;nh T&#226;n, TP.Hồ Ch&#237; Minh" href="/397-nguyen-thj-tu-phuong-binh-hung-hoa-b-quan-binh-tan-tp-ho-chi-minh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="397 Nguyễn Thị T&#250;, Phường B&#236;nh Hưng H&#242;a B, Quận B&#236;nh T&#226;n, TP.Hồ Chí Minh" href="/397-nguyen-thj-tu-phuong-binh-hung-hoa-b-quan-binh-tan-tp-ho-chi-minh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="outstock city_50" data-sku='["MU773VN","MU783VN","MU793VN"]'>
                                                 <span>
-                                                    <label>572-574 Tỉnh Lộ 10, Phường B&#236;nh Trị Đ&#244;ng, Quận B&#236;nh T&#226;n, Tp Hồ Ch&#237; Minh</label>
+                                                    <label>572-574 Tỉnh Lộ 10, Phường B&#236;nh Trị Đ&#244;ng, Quận B&#236;nh T&#226;n, Tp Hồ Chí Minh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0705.572.574">0705.572.574</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="572-574 Tỉnh Lộ 10, Phường B&#236;nh Trị Đ&#244;ng, Quận B&#236;nh T&#226;n, Tp Hồ Ch&#237; Minh" href="/572-574-tinh-lo-10-binh-tan-ho-chi-minh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="572-574 Tỉnh Lộ 10, Phường B&#236;nh Trị Đ&#244;ng, Quận B&#236;nh T&#226;n, Tp Hồ Chí Minh" href="/572-574-tinh-lo-10-binh-tan-ho-chi-minh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1388,11 +1388,11 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>663-665 Hậu Giang, Phường 11, Quận 6, TP.Hồ Ch&#237; Minh</label>
+                                                    <label>663-665 Hậu Giang, Phường 11, Quận 6, TP.Hồ Chí Minh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0768.663.665">0768.663.665</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="663-665 Hậu Giang, Phường 11, Quận 6, TP.Hồ Ch&#237; Minh" href="/663-665-hau-giang-phuong-11-quan-6-tp-ho-chi-minh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="663-665 Hậu Giang, Phường 11, Quận 6, TP.Hồ Chí Minh" href="/663-665-hau-giang-phuong-11-quan-6-tp-ho-chi-minh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1438,7 +1438,7 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>347 Ho&#224;ng Văn Thụ, Quận T&#226;n B&#236;nh, TP. Hồ Ch&#237; Minh (V&#242;ng xoay Lăng Cha Cả)</label>
+                                                    <label>347 Ho&#224;ng Văn Thụ, Quận T&#226;n B&#236;nh, TP. Hồ Chí Minh (V&#242;ng xoay Lăng Cha Cả)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:083.830.22.55">083.830.22.55</a></strong>
@@ -1498,11 +1498,11 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>867 Lũy B&#225;n B&#237;ch, P. T&#226;n Th&#224;nh, Q. T&#226;n Ph&#250;, TP HCM</label>
+                                                    <label>867 Lũy B&#225;n Bích, P. T&#226;n Th&#224;nh, Q. T&#226;n Ph&#250;, TP HCM</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0828.25.2255">0828.25.2255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="867 Lũy B&#225;n B&#237;ch, Q. T&#226;n Ph&#250;, TP. HCM" href="/867-luy-ban-bich-p-tan-thanh-q-tan-phu-tp-hcm">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="867 Lũy B&#225;n Bích, Q. T&#226;n Ph&#250;, TP. HCM" href="/867-luy-ban-bich-p-tan-thanh-q-tan-phu-tp-hcm">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1788,11 +1788,11 @@
                                             </li>
                                             <li class="instock city_48" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label> 92 Nguyễn &#193;i Quốc, KP 8A, Phường T&#226;n Bi&#234;n, Tp. Bi&#234;n H&#242;a, Đồng Nai (Gần c&#244;ng vi&#234;n 30/4)</label>
+                                                    <label> 92 Nguyễn Ái Quốc, KP 8A, Phường T&#226;n Bi&#234;n, Tp. Bi&#234;n H&#242;a, Đồng Nai (Gần c&#244;ng vi&#234;n 30/4)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0933362255">0933362255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title=" 92 Nguyễn &#193;i Quốc, KP 8A, Phường T&#226;n Bi&#234;n, Tp. Bi&#234;n H&#242;a, Đồng Nai (Gần c&#244;ng vi&#234;n 30/4)" href="/so-92-duong-nguyen-ai-quoc-pho-8a-p-tan-bien-tp-bien-hoa-tinh-dong-nai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title=" 92 Nguyễn Ái Quốc, KP 8A, Phường T&#226;n Bi&#234;n, Tp. Bi&#234;n H&#242;a, Đồng Nai (Gần c&#244;ng vi&#234;n 30/4)" href="/so-92-duong-nguyen-ai-quoc-pho-8a-p-tan-bien-tp-bien-hoa-tinh-dong-nai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1848,11 +1848,11 @@
                                             </li>
                                             <li class="instock city_56" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>85 Nguyễn Huệ, P.1, TP. Cao L&#227;nh, Đồng Th&#225;p</label>
+                                                    <label>85 Nguyễn Huệ, P.1, TP. Cao Lãnh, Đồng Th&#225;p</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0786.91.88.99">0786.91.88.99</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="85 Nguyễn Huệ, P.1, TP. Cao L&#227;nh, Đồng Th&#225;p" href="/85-nguyen-hue-p-1-tp-cao-lanh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="85 Nguyễn Huệ, P.1, TP. Cao Lãnh, Đồng Th&#225;p" href="/85-nguyen-hue-p-1-tp-cao-lanh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1938,21 +1938,21 @@
                                             </li>
                                             <li class="instock city_11" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>479 - 481 C&#249; Ch&#237;nh Lan - Tp.H&#242;a B&#236;nh - Tỉnh H&#242;a B&#236;nh</label>
+                                                    <label>479 - 481 C&#249; Chính Lan - Tp.H&#242;a B&#236;nh - Tỉnh H&#242;a B&#236;nh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel: 0976651585"> 0976651585</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="479 - 481 C&#249; Ch&#237;nh Lan - Tp.H&#242;a B&#236;nh - Tỉnh H&#242;a B&#236;nh" href="/479-481-cu-chinh-lan-tp-hoa-binh-tinh-hoa-binh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="479 - 481 C&#249; Chính Lan - Tp.H&#242;a B&#236;nh - Tỉnh H&#242;a B&#236;nh" href="/479-481-cu-chinh-lan-tp-hoa-binh-tinh-hoa-binh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_21" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị X&#227; Mỹ H&#224;o, Tỉnh Hưng Y&#234;n (Trung t&#226;m ng&#227; tư Phố Nối) </label>
+                                                    <label>Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị Xã Mỹ H&#224;o, Tỉnh Hưng Y&#234;n (Trung t&#226;m ngã tư Phố Nối) </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0766.38.6633">0766.38.6633</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị X&#227; Mỹ H&#224;o, Tỉnh Hưng Y&#234;n (Trung t&#226;m ng&#227; tư Phố Nối) " href="/so-2-pho-noi-phuong-ban-yen-nhan-thi-xa-my-hao-tinh-hung-yen">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị Xã Mỹ H&#224;o, Tỉnh Hưng Y&#234;n (Trung t&#226;m ngã tư Phố Nối) " href="/so-2-pho-noi-phuong-ban-yen-nhan-thi-xa-my-hao-tinh-hung-yen">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2008,11 +2008,11 @@
                                             </li>
                                             <li class="instock city_6" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>L&#244; 10, Ng&#227; 6 Phố L&#253; C&#244;ng Uẩn, TP. L&#224;o Cai</label>
+                                                    <label>L&#244; 10, Ngã 6 Phố L&#253; C&#244;ng Uẩn, TP. L&#224;o Cai</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:078912.83.83">078912.83.83</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="L&#244; 10, Ng&#227; 6 Phố L&#253; C&#244;ng Uẩn, TP. L&#224;o Cai" href="/lo-10-nga-6-pho-ly-cong-uan-tp-lao-cai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="L&#244; 10, Ngã 6 Phố L&#253; C&#244;ng Uẩn, TP. L&#224;o Cai" href="/lo-10-nga-6-pho-ly-cong-uan-tp-lao-cai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2118,21 +2118,21 @@
                                             </li>
                                             <li class="instock city_34" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>222 Quang Trung, P.L&#234; Hồng Phong, TP Quảng Ng&#227;i,  Quảng Ng&#227;i</label>
+                                                    <label>222 Quang Trung, P.L&#234; Hồng Phong, TP Quảng Ngãi,  Quảng Ngãi</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0788.56.7676">0788.56.7676</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="222 Quang Trung, P.L&#234; Hồng Phong, TP Quảng Ng&#227;i, Quảng Ng&#227;i" href="/222-quang-trung-p-le-hong-phong-tp-quang-ngai-quang-ngai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="222 Quang Trung, P.L&#234; Hồng Phong, TP Quảng Ngãi, Quảng Ngãi" href="/222-quang-trung-p-le-hong-phong-tp-quang-ngai-quang-ngai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_14" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>297 Quang Trung, TP. U&#244;ng B&#237;, Quảng Ninh</label>
+                                                    <label>297 Quang Trung, TP. U&#244;ng Bí, Quảng Ninh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936.866.297">0936.866.297</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="297 Quang Trung, TP. U&#244;ng B&#237;, Quảng Ninh" href="/297-quang-trung-tp-uong-bi-quang-ninh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="297 Quang Trung, TP. U&#244;ng Bí, Quảng Ninh" href="/297-quang-trung-tp-uong-bi-quang-ninh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2228,11 +2228,11 @@
                                             </li>
                                             <li class="instock city_26" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>306 Nguyễn Tr&#227;i, Phường T&#226;n Sơn, TP Thanh H&#243;a</label>
+                                                    <label>306 Nguyễn Trãi, Phường T&#226;n Sơn, TP Thanh H&#243;a</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:07054.024.02">07054.024.02</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="306 Nguyễn Tr&#227;i, Phường T&#226;n Sơn, TP Thanh H&#243;a" href="/306-nguyen-trai-phuong-tan-son-tp-thanh-hoa">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="306 Nguyễn Trãi, Phường T&#226;n Sơn, TP Thanh H&#243;a" href="/306-nguyen-trai-phuong-tan-son-tp-thanh-hoa">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2317,8 +2317,8 @@
                                                 </span>
                                             </li>
                                 </ul>
-                                <p class="out-stock hide"><strong>iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A <span class="colorName"></span></strong> chưa có sẵn tại khu vực này. Quý khách vui lòng chọn khu vực khác hoặc gọi đến số Hotline để biết thêm chi tiết.</p>
-                                <p class="out-noonline hide"><strong>iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A <span class="colorName"></span></strong> tạm thời dừng nhận đơn online. Quý khách vui lòng liên hệ , đến các cửa hàng đang có sẵn hàng để mua trực tiếp.</p>
+                                <p class="out-stock hide"><strong>iPhone 15 Pro Max (256GB) - Chính hãng VN/A <span class="colorName"></span></strong> chưa có sẵn tại khu vực này. Quý khách vui lòng chọn khu vực khác hoặc gọi đến số Hotline để biết thêm chi tiết.</p>
+                                <p class="out-noonline hide"><strong>iPhone 15 Pro Max (256GB) - Chính hãng VN/A <span class="colorName"></span></strong> tạm thời dừng nhận đơn online. Quý khách vui lòng liên hệ , đến các cửa hàng đang có sẵn hàng để mua trực tiếp.</p>
                             </div>
                         </div>
                             <div class="out-date">
@@ -2614,7 +2614,7 @@
                     <input type="hidden" name="SystemTypeID" value="3" />
                     <input type="hidden" name="Rate" />
                     <div class="heading">
-                        <h3>Đánh giá về iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A</h3>
+                        <h3>Đánh giá về <?=$itemDetailProduct['versionName']?></h3>
                         <div class="stats">
                             <div class="display-rating rating-medium" data-rate-value="3.72222222222222"></div>
                             <span>(TB 3.72 / 9 lượt đánh giá)</span>
@@ -2646,7 +2646,18 @@
                                 </div>
                                 <div class="row row-rate">
                                     <strong>Đánh giá của bạn: </strong>
-                                    <div class="display-rating rating"></div>
+                                    <div class="rating">
+                                        <input type="radio" name="rating" id="rating-5">
+                                        <label for="rating-5"></label>
+                                        <input type="radio" name="rating" id="rating-4">
+                                        <label for="rating-4"></label>
+                                        <input type="radio" name="rating" id="rating-3">
+                                        <label for="rating-3"></label>
+                                        <input type="radio" name="rating" id="rating-2">
+                                        <label for="rating-2"></label>
+                                        <input type="radio" name="rating" id="rating-1">
+                                        <label for="rating-1"></label>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -2668,7 +2679,7 @@
                         </span>
                         <div class="text">
                             <span>Sản phẩm</span>
-                            <strong>CH&#205;NH H&#195;NG</strong>
+                            <strong>CH&#205;NH HÃNG</strong>
                         </div>
                     </div>
                     <div class="item">
@@ -2676,7 +2687,7 @@
                             <i class="icon-freeship"></i>
                         </span>
                         <div class="text">
-                            <span>Miễn ph&#237; vận chuyển</span>
+                            <span>Miễn phí vận chuyển</span>
                             <strong>TO&#192;N QUỐC</strong>
                         </div>
                     </div>
@@ -2933,7 +2944,7 @@
 				items: [
 					{
 						item_id: "MU7A3VN",
-						item_name: "iPhone 15 Pro Max (256GB) - Ch&#237;nh h&#227;ng VN/A",
+						item_name: "iPhone 15 Pro Max (256GB) - Chính hãng VN/A",
 						affiliation: "Google Merchandise Store",
 						coupon: "",
 						discount: 0,
