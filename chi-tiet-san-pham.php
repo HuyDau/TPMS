@@ -14,8 +14,10 @@
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $content = $_POST['content'];
+        $star = $_POST['star'];
+        $date = date("Y-m-d H:i:s");
 
-        $addComment = mysqli_query($conn,"INSERT INTO `tbl_comments`(`id`, `versionId`, `name`, `phone`, `email`, `content`) VALUES (NULL,'$idsanpham','$name','$phone','$email','$content')");
+        $addComment = mysqli_query($conn,"INSERT INTO `tbl_comments`(`id`, `versionId`, `name`, `phone`, `email`, `content`,`star`,`datetime`) VALUES (NULL,'$idsanpham','$name','$phone','$email','$content','$star','$date')");
         
     }
 
@@ -2487,8 +2489,20 @@
                             </div>
 
                             <div class="row">
-                                <div class="col">
-                                    <p class="note">Để gửi bình luận, bạn cần nhập tối thiểu trường họ tên và nội dung</p>
+                                <div class="col list-star">
+                                    <strong class="col-6">Đánh giá của bạn: </strong>
+                                    <div class="rating col-6">
+                                        <input type="radio" name="star" value="5" id="rating-5" checked>
+                                        <label for="rating-5"></label>
+                                        <input type="radio" name="star" value="4" id="rating-4">
+                                        <label for="rating-4"></label>
+                                        <input type="radio" name="star" value="3" id="rating-3">
+                                        <label for="rating-3"></label>
+                                        <input type="radio" name="star" value="2" id="rating-2">
+                                        <label for="rating-2"></label>
+                                        <input type="radio" name="star" value="1" id="rating-1">
+                                        <label for="rating-1"></label>
+                                    </div>
                                 </div>
                                 <div class="col col-end">
                                     <button name="submitComment" type="submit"><i class="icon-sending"></i> Gửi bình luận</button>
@@ -2513,7 +2527,7 @@
                                     <p>
                                         <strong class="name"><?=$itemCommnet['name']?></strong>
                                     </p>
-                                    <p><label><i>1 giờ trước</i></label></p>
+                                    <p><label><i><?php $date1 = $itemCommnet['datetime'];$date2 = date("Y-m-d H:i:s"); echo date_diff($date1,$date2);  ?></i></label></p>
                                     <div class="content">
                                         <?=$itemCommnet['content']?>
                                     </div>
@@ -2584,8 +2598,21 @@
 
                                                     <div class="row">
                                                         <div class="col">
-                                                            <p class="note">Để gửi bình luận, bạn cần nhập tối thiểu trường họ tên và nội dung
-                                                            </p>
+                                                        <div class="row row-rate">
+                                                            <strong>Đánh giá của bạn: </strong>
+                                                            <div class="rating">
+                                                                <input type="radio" name="rating" id="rating-5">
+                                                                <label for="rating-5"></label>
+                                                                <input type="radio" name="rating" id="rating-4">
+                                                                <label for="rating-4"></label>
+                                                                <input type="radio" name="rating" id="rating-3">
+                                                                <label for="rating-3"></label>
+                                                                <input type="radio" name="rating" id="rating-2">
+                                                                <label for="rating-2"></label>
+                                                                <input type="radio" name="rating" id="rating-1">
+                                                                <label for="rating-1"></label>
+                                                            </div>
+                                                        </div>
                                                         </div>
                                                         <div class="col col-end">
                                                             <button name="btnRepComment" type="submit"><i class="icon-sending"></i> Gửi bình luận</button>
@@ -2605,7 +2632,7 @@
         </div>
     </section>
 	
-    <section class="product-review" id="reviews">
+    <!-- <section class="product-review" id="reviews">
         <div class="container">
             <div class="full-width-content">
                 <form id="reviewForm">
@@ -2668,7 +2695,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section>
         <div class="container">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 28, 2023 lúc 12:28 PM
+-- Thời gian đã tạo: Th12 29, 2023 lúc 10:15 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -228,17 +228,23 @@ CREATE TABLE `tbl_comments` (
   `name` varchar(100) NOT NULL,
   `phone` int(15) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `content` varchar(10000) NOT NULL
+  `content` varchar(10000) NOT NULL,
+  `star` int(11) NOT NULL,
+  `datetime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_comments`
 --
 
-INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `content`) VALUES
-(105, 7, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Huy Dậu đã để lại comment'),
-(106, 7, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Sản Phẩm đẹp lắm'),
-(107, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a');
+INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `content`, `star`, `datetime`) VALUES
+(105, 7, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Huy Dậu đã để lại comment', 5, NULL),
+(106, 7, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Sản Phẩm đẹp lắm', 5, NULL),
+(107, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, NULL),
+(108, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản Phẩm rất tốt tôi rất thích', 5, NULL),
+(109, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, NULL),
+(110, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản Phẩm rất tốt', 5, '2023-12-29 09:50:04'),
+(111, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất OK', 4, '2023-12-29 09:59:21');
 
 -- --------------------------------------------------------
 
@@ -608,7 +614,7 @@ ALTER TABLE `tbl_colors`
 -- AUTO_INCREMENT cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`
