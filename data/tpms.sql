@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 29, 2023 lúc 10:15 AM
+-- Thời gian đã tạo: Th1 02, 2024 lúc 07:16 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -238,13 +238,8 @@ CREATE TABLE `tbl_comments` (
 --
 
 INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `content`, `star`, `datetime`) VALUES
-(105, 7, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Huy Dậu đã để lại comment', 5, NULL),
-(106, 7, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Sản Phẩm đẹp lắm', 5, NULL),
-(107, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, NULL),
-(108, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản Phẩm rất tốt tôi rất thích', 5, NULL),
-(109, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, NULL),
-(110, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản Phẩm rất tốt', 5, '2023-12-29 09:50:04'),
-(111, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất OK', 4, '2023-12-29 09:59:21');
+(114, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2023-11-28 18:21:12'),
+(115, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-02 18:34:20');
 
 -- --------------------------------------------------------
 
@@ -326,15 +321,6 @@ CREATE TABLE `tbl_repcomments` (
   `email` varchar(100) NOT NULL,
   `content` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_repcomments`
---
-
-INSERT INTO `tbl_repcomments` (`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`) VALUES
-(1, 7, 106, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a'),
-(2, 7, 106, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Đẹp lắm'),
-(3, 5, 107, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Điện thoại rất đẹp');
 
 -- --------------------------------------------------------
 
@@ -537,8 +523,8 @@ ALTER TABLE `tbl_products`
 --
 ALTER TABLE `tbl_repcomments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `commentId` (`commentId`),
-  ADD KEY `versionId` (`versionId`);
+  ADD KEY `versionId` (`versionId`),
+  ADD KEY `commentId` (`commentId`);
 
 --
 -- Chỉ mục cho bảng `tbl_specifications`
@@ -614,7 +600,7 @@ ALTER TABLE `tbl_colors`
 -- AUTO_INCREMENT cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`
@@ -691,8 +677,8 @@ ALTER TABLE `tbl_products`
 -- Các ràng buộc cho bảng `tbl_repcomments`
 --
 ALTER TABLE `tbl_repcomments`
-  ADD CONSTRAINT `tbl_repcomments_ibfk_1` FOREIGN KEY (`commentId`) REFERENCES `tbl_comments` (`id`),
-  ADD CONSTRAINT `tbl_repcomments_ibfk_2` FOREIGN KEY (`versionId`) REFERENCES `tbl_versions` (`idVersion`);
+  ADD CONSTRAINT `tbl_repcomments_ibfk_2` FOREIGN KEY (`versionId`) REFERENCES `tbl_versions` (`idVersion`),
+  ADD CONSTRAINT `tbl_repcomments_ibfk_3` FOREIGN KEY (`commentId`) REFERENCES `tbl_comments` (`id`);
 
 --
 -- Các ràng buộc cho bảng `tbl_specifications`

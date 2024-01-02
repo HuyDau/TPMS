@@ -905,54 +905,54 @@ function btnInstallment() {
             return !1
     })
 }
-function AddCart() {
-    $(".add-cart").not(".disabled").not(".btn-outstock").click(function(n) {
-        var o = $(this), s = $(".add-cart").hasClass("disabled") || $(".btnQuickOrder").hasClass("btn-outstock"), t, i;
-        if (!s) {
-            var u = []
-              , f = $(this).attr("data-sku")
-              , r = $("#colorOptions .selected").attr("data-id")
-              , e = $(this).attr("data-colorid");
-            f.indexOf(",") > 0 ? u = f.split(",") : u.push(f);
-            t = cartGetCookie();
-            u.forEach(function(n) {
-                if (t) {
-                    var i = t.findIndex(t=>t.sku == n);
-                    r && e != "-1" && (i = t.findIndex(t=>t.sku == n && t.color == r));
-                    i >= 0 ? t[i].number++ : (t.push({
-                        sku: n,
-                        number: 1,
-                        color: e ? e : r
-                    }),
-                    flyToElement(o, $("#cart-total")))
-                } else
-                    t.push({
-                        sku: n,
-                        number: 1,
-                        color: r
-                    })
-            });
-            $.cookie("_cart", JSON.stringify(t), {
-                path: "/"
-            });
-            checkTotalCart();
-            n.preventDefault();
-            this.blur();
-            i = '<div class="cart-msg">';
-            i += '<p><i class="icon-checked"><\/i> <span>Thêm giỏ hàng thành công<\/span><\/p>';
-            i += '<a class="button" href="/gio-hang">Xem giỏ hàng và thanh toán<\/a>';
-            i += "<\/div>";
-            $.toast({
-                text: i,
-                position: "bottom-center",
-                stack: !1,
-                loader: !1,
-                hideAfter: 1e4
-            })
-        }
-    });
-    checkTotalCart()
-}
+// function AddCart() {
+//     $(".add-cart").not(".disabled").not(".btn-outstock").click(function(n) {
+//         var o = $(this), s = $(".add-cart").hasClass("disabled") || $(".btnQuickOrder").hasClass("btn-outstock"), t, i;
+//         if (!s) {
+//             var u = []
+//               , f = $(this).attr("data-sku")
+//               , r = $("#colorOptions .selected").attr("data-id")
+//               , e = $(this).attr("data-colorid");
+//             f.indexOf(",") > 0 ? u = f.split(",") : u.push(f);
+//             t = cartGetCookie();
+//             u.forEach(function(n) {
+//                 if (t) {
+//                     var i = t.findIndex(t=>t.sku == n);
+//                     r && e != "-1" && (i = t.findIndex(t=>t.sku == n && t.color == r));
+//                     i >= 0 ? t[i].number++ : (t.push({
+//                         sku: n,
+//                         number: 1,
+//                         color: e ? e : r
+//                     }),
+//                     flyToElement(o, $("#cart-total")))
+//                 } else
+//                     t.push({
+//                         sku: n,
+//                         number: 1,
+//                         color: r
+//                     })
+//             });
+//             $.cookie("_cart", JSON.stringify(t), {
+//                 path: "/"
+//             });
+//             checkTotalCart();
+//             n.preventDefault();
+//             this.blur();
+//             i = '<div class="cart-msg">';
+//             i += '<p><i class="icon-checked"><\/i> <span>Thêm giỏ hàng thành công<\/span><\/p>';
+//             i += '<a class="button" href="/gio-hang">Xem giỏ hàng và thanh toán<\/a>';
+//             i += "<\/div>";
+//             $.toast({
+//                 text: i,
+//                 position: "bottom-center",
+//                 stack: !1,
+//                 loader: !1,
+//                 hideAfter: 1e4
+//             })
+//         }
+//     });
+//     checkTotalCart()
+// }
 function checkTotalCart() {
     var t = 0
       , n = cartGetCookie();
@@ -15793,7 +15793,7 @@ $(document).ready(function() {
     $("textarea").autoHeight();
     $("#reviews").length > 0 && init_Review();
     $("#comments").length > 0 && init_Comment();
-    AddCart();
+    // AddCart();
     quickOrder();
     quickSub();
     btnInstallment()

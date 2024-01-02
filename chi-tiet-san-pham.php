@@ -270,7 +270,7 @@
                     <li id="man-hinh">
                         <a href="/man-hinh" target="_self">
                             <i class="icon icon-monitor"></i>
-                            <span>M&#224;n h&#236;nh</span>
+                            <span>Màn h&#236;nh</span>
                         </a>
                             <div class="sub-container">
                                 <div class="sub">
@@ -295,21 +295,21 @@
                                         <div class="menu g2">
                                             <h4><a>Phân Loại Sản Phẩm</a></h4>
                                             <ul class="display-column format_1">
-                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-do-hoa">M&#224;n h&#236;nh đồ họa</a></li>
-                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-gaming">M&#224;n h&#236;nh Gaming</a></li>
-                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-van-phong">M&#224;n h&#236;nh văn ph&#242;ng</a></li>
-                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-di-dong">M&#224;n h&#236;nh di động</a></li>
+                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-do-hoa">Màn h&#236;nh đồ họa</a></li>
+                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-gaming">Màn h&#236;nh Gaming</a></li>
+                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-van-phong">Màn h&#236;nh văn ph&#242;ng</a></li>
+                                                    <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-di-dong">Màn h&#236;nh di động</a></li>
                                             </ul>
                                     </div>
                                         <div class="menu g3">
-                                            <h4><a href="/phu-kien/phu-kien-man-hinh">Phụ kiện m&#224;n h&#236;nh</a></h4>
+                                            <h4><a href="/phu-kien/phu-kien-man-hinh">Phụ kiện màn h&#236;nh</a></h4>
                                             <ul class="display-row format_1">
                                             </ul>
                                     </div>
 
 
                                         <div class="menu ads" style="width:580px">
-                                                <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="https://hoanghamobile.com/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243" /></a>
+                                                <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="https://hoanghamobile.com/Uploads/2023/11/07/580x266-01.png" alt="Màn h&#236;nh MSI PRO MP243" /></a>
                                         </div>
                                 </div>
                             </div>
@@ -375,7 +375,7 @@
 
 
                                         <div class="menu ads" style="width:600px">
-                                                <a href="https://hoanghamobile.com/dong-ho/garmin?source=BannerSlider" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/12/05/garmin-02-thumb.jpg" alt="Garmin th&#225;ng 12" /></a>
+                                                <a href="https://hoanghamobile.com/dong-ho/garmin?source=BannerSlider" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/12/05/garmin-02-thumb.jpg" alt="Garmin tháng 12" /></a>
                                         </div>
                                 </div>
                             </div>
@@ -450,7 +450,7 @@
 
 
                                         <div class="menu ads" style="width:600px">
-                                                <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/08/web-top.jpg" alt="JBL th&#225;ng 11" /></a>
+                                                <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/08/web-top.jpg" alt="JBL tháng 11" /></a>
                                         </div>
                                 </div>
                             </div>
@@ -466,14 +466,14 @@
                                         <div class="menu g4">
                                             <h4><a href="/smart-home">Gia dụng th&#244;ng minh</a></h4>
                                             <ul class="display-row format_2">
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi">M&#225;y lọc kh&#244;ng khí</a></li>
-                                                    <li><a href="/do-gia-dung/robot-hut-bui">Robot, M&#225;y h&#250;t bụi</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi">Máy lọc kh&#244;ng khí</a></li>
+                                                    <li><a href="/do-gia-dung/robot-hut-bui">Robot, Máy h&#250;t bụi</a></li>
                                                     <li><a href="/smart-home/phu-kien-gia-dung">Phụ kiện gia dụng</a></li>
                                                     <li><a href="/phu-kien/smart-home/fpt-play-box">FPT Play box</a></li>
                                                     <li><a href="/smart-home/can-thong-minh">C&#226;n th&#244;ng minh</a></li>
                                                     <li><a href="/smart-home/dth-tivi-box-k">DTH/Tivi Box K+</a></li>
                                                     <li><a href="/smart-home/khuyen-mai-do-gia-dung-xiaomi">Khuyến mại đồ gia dụng Xiaomi</a></li>
-                                                    <li><a href="/smart-home/may-chieu">M&#225;y Chiếu</a></li>
+                                                    <li><a href="/smart-home/may-chieu">Máy Chiếu</a></li>
                                                     <li><a href="/smart-home/noi-chien-khong-dau">Nồi chi&#234;n kh&#244;ng dầu</a></li>
                                                     <li><a href="/phu-kien/do-gia-dung/o-cam-dien">Ổ Cắm điện</a></li>
                                                     <li><a href="/smart-home/quat-dien">Quạt Điện</a></li>
@@ -481,13 +481,13 @@
                                             </ul>
                                     </div>
                                         <div class="menu g0">
-                                            <h4><a href="/do-gia-dung/may-loc-khong-khi">M&#225;y Lọc Kh&#244;ng khí</a></h4>
+                                            <h4><a href="/do-gia-dung/may-loc-khong-khi">Máy Lọc Kh&#244;ng khí</a></h4>
                                             <ul class="display-row format_1">
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/clair">M&#225;y lọc kh&#244;ng khí hãng Clair</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/daikin">M&#225;y lọc kh&#244;ng khí hãng Daikin</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-philips">M&#225;y lọc kh&#244;ng khí hãng Philips</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-xiaomi">M&#225;y lọc kh&#244;ng khí hãng Xiaomi</a></li>
-                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-levoit">M&#225;y lọc kh&#244;ng khí Levoit</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/clair">Máy lọc kh&#244;ng khí hãng Clair</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/daikin">Máy lọc kh&#244;ng khí hãng Daikin</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-philips">Máy lọc kh&#244;ng khí hãng Philips</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-xiaomi">Máy lọc kh&#244;ng khí hãng Xiaomi</a></li>
+                                                    <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-levoit">Máy lọc kh&#244;ng khí Levoit</a></li>
                                             </ul>
                                     </div>
 
@@ -509,41 +509,41 @@
                                             <h4><a href="/phu-kien/phu-kien-dien-thoai">Phụ kiện điện thoại</a></h4>
                                             <ul class="display-column format_1">
                                                     <li><a href="/sac-du-phong">Sạc dự ph&#242;ng</a></li>
-                                                    <li><a href="/cu-sac-day-cap">Củ sạc, d&#226;y c&#225;p</a></li>
+                                                    <li><a href="/cu-sac-day-cap">Củ sạc, d&#226;y cáp</a></li>
                                                     <li><a href="/the-nho-usb">Thẻ nhớ - USB</a></li>
                                                     <li><a href="/op-lung-dien-thoai">Bao da - Ốp lưng</a></li>
-                                                    <li><a href="/phu-kien/mieng-dan-man-hinh">Miếng d&#225;n m&#224;n h&#236;nh</a></li>
+                                                    <li><a href="/phu-kien/mieng-dan-man-hinh">Miếng dán màn h&#236;nh</a></li>
                                             </ul>
                                             <h4><a href="/phu-kien/xa-ton-phu-kien-gia-soc">Xả tồn phụ kiện - GIÁ SỐC</a></h4>
                                             <ul class="display-column format_1">
                                             </ul>
                                     </div>
                                         <div class="menu g1">
-                                            <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">B&#224;n phím, Chuột  Gaming Gear</a></h4>
+                                            <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">Bàn phím, Chuột  Gaming Gear</a></h4>
                                             <ul class="display-column format_2">
-                                                    <li><a href="/phu-kien/ban-phim">B&#224;n Phím</a></li>
+                                                    <li><a href="/phu-kien/ban-phim">Bàn Phím</a></li>
                                                     <li><a href="/phu-kien/chuot">Chuột</a></li>
                                                     <li><a href="/phu-kien/ban-phim-chuot-gaming-gear/tay-cam-choi-game">Tay cầm chơi game</a></li>
                                             </ul>
-                                            <h4><a href="/camera-an-ninh">Camera an ninh - H&#224;nh tr&#236;nh</a></h4>
+                                            <h4><a href="/camera-an-ninh">Camera an ninh - Hành tr&#236;nh</a></h4>
                                             <ul class="display-row format_1">
                                                     <li><a href="/camera-an-ninh/camera-an-ninh">Camera an ninh</a></li>
-                                                    <li><a href="/camera-an-ninh/camera-hanh-trinh">Camera h&#224;nh tr&#236;nh</a></li>
+                                                    <li><a href="/camera-an-ninh/camera-hanh-trinh">Camera hành tr&#236;nh</a></li>
                                             </ul>
                                             <h4><a href="/phu-kien/phu-kien-smart-tv">Phụ kiện Smart TV</a></h4>
                                             <ul class="display-row format_1">
                                             </ul>
                                     </div>
                                         <div class="menu g2">
-                                            <h4><a href="/phu-kien/linh-kien-may-tinh">Linh kiện m&#225;y tính </a></h4>
+                                            <h4><a href="/phu-kien/linh-kien-may-tinh">Linh kiện máy tính </a></h4>
                                             <ul class="display-column format_2">
                                                     <li><a href="/phu-kien/phu-kien-may-tinh/o-cung">Ổ cứng</a></li>
                                                     <li><a href="/phu-kien/linh-kien-may-tinh/phan-mem">Phần mềm</a></li>
                                                     <li><a href="/phu-kien/phu-kien-may-tinh/ram">RAM</a></li>
                                             </ul>
-                                            <h4><a href="/phu-kien/pin-man-hinh">Pin, M&#224;n h&#236;nh chính hãng</a></h4>
+                                            <h4><a href="/phu-kien/pin-man-hinh">Pin, Màn h&#236;nh chính hãng</a></h4>
                                             <ul class="display-column format_1">
-                                                    <li><a href="/phu-kien/pin-man-hinh/man-hinh-iphone">M&#224;n h&#236;nh iPhone</a></li>
+                                                    <li><a href="/phu-kien/pin-man-hinh/man-hinh-iphone">Màn h&#236;nh iPhone</a></li>
                                                     <li><a href="/phu-kien/pin-man-hinh/pin">Pin iPhone</a></li>
                                             </ul>
                                     </div>
@@ -556,16 +556,16 @@
                                                     <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đãi</a></li>
                                                     <li><a href="/phu-kien/phu-kien-apple/thiet-bi-dinh-vi-thong-minh">Thiết bị định vị th&#244;ng minh</a></li>
                                             </ul>
-                                            <h4><a href="/phu-kien/phu-kien-khac">Phụ kiện kh&#225;c</a></h4>
+                                            <h4><a href="/phu-kien/phu-kien-khac">Phụ kiện khác</a></h4>
                                             <ul class="display-column format_1">
-                                                    <li><a href="/phu-kien/tui-xach-balo-chong-soc">Balo - t&#250;i x&#225;ch - t&#250;i chống sốc</a></li>
+                                                    <li><a href="/phu-kien/tui-xach-balo-chong-soc">Balo - t&#250;i xách - t&#250;i chống sốc</a></li>
                                             </ul>
                                     </div>
                                         <div class="menu g4">
                                             <h4><a href="/phu-kien/thiet-bi-mang">Thiết bị mạng</a></h4>
                                             <ul class="display-row format_1">
                                                     <li><a href="/phu-kien/thiet-bi-mang/bo-kich-song">Bộ kích s&#243;ng</a></li>
-                                                    <li><a href="/phu-kien/thiet-bi-mang/bo-phat-wifi-di-dong-3g-4g">Bộ ph&#225;t Wifi di động (3G/4G)</a></li>
+                                                    <li><a href="/phu-kien/thiet-bi-mang/bo-phat-wifi-di-dong-3g-4g">Bộ phát Wifi di động (3G/4G)</a></li>
                                                     <li><a href="/phu-kien/thiet-bi-mang/router-modem">Router/Modem</a></li>
                                                     <li><a href="/phu-kien/thiet-bi-mang/thuong-hieu">Thương hiệu</a></li>
                                             </ul>
@@ -592,7 +592,7 @@
                                                     <li><a href="/do-choi-cong-nghe/day-do-nhip-tim">D&#226;y đo nhịp tim</a></li>
                                                     <li><a href="/do-choi-cong-nghe/kinh-thuc-te-ao">Kính thực tế ảo</a></li>
                                                     <li><a href="/do-choi-cong-nghe/tay-cam-chong-rung">Tay cầm chống rung</a></li>
-                                                    <li><a href="/do-choi-cong-nghe/camera-hanh-trinh">Camera h&#224;nh tr&#236;nh</a></li>
+                                                    <li><a href="/do-choi-cong-nghe/camera-hanh-trinh">Camera hành tr&#236;nh</a></li>
                                             </ul>
                                     </div>
 
@@ -606,24 +606,24 @@
                     <li id="kho-san-pham-cu">
                         <a href="/kho-san-pham-cu" target="_self">
                             <i class="icon icon-maycu"></i>
-                            <span>M&#225;y tr&#244;i</span>
+                            <span>Máy tr&#244;i</span>
                         </a>
                             <div class="sub-container">
                                 <div class="sub">
 
                                         <div class="menu g0">
-                                            <h4><a>H&#224;ng cũ gi&#225; rẻ</a></h4>
+                                            <h4><a>Hàng cũ giá rẻ</a></h4>
                                             <ul class="display-column format_3">
                                                     <li><a href="/kho-san-pham-cu?=filters={type:1}">Điện thoại di động</a></li>
                                                     <li><a href="/kho-san-pham-cu?filters={type:5}">Đồng hồ th&#244;ng minh</a></li>
-                                                    <li><a href="/kho-san-pham-cu?filters={type:2}">M&#225;y tính bảng</a></li>
+                                                    <li><a href="/kho-san-pham-cu?filters={type:2}">Máy tính bảng</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:3}">Laptop</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:7}">Loa</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:13}">Tai nghe</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:26}">Camera</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:10}">Củ sạc</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=filters={type:11}">D&#226;y c&#225;p</a></li>
-                                                    <li><a href="/kho-san-pham-cu?=filters={type:28}">M&#225;y lọc kh&#244;ng khí</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:11}">D&#226;y cáp</a></li>
+                                                    <li><a href="/kho-san-pham-cu?=filters={type:28}">Máy lọc kh&#244;ng khí</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:18}">Phụ kiện</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:25}">Sạc dự ph&#242;ng</a></li>
                                                     <li><a href="/kho-san-pham-cu?=filters={type:30}">Tay cầm chống rung</a></li>
@@ -647,20 +647,20 @@
                                             <ul class="display-column format_2">
                                                     <li><a href="/dich-vu-sua-chua/android/pin">Pin</a></li>
                                                     <li><a href="/dich-vu-sua-chua/android/camera">Camera</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/android/man-hinh">M&#224;n h&#236;nh</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/android/vo-va-mat-lung">Vỏ v&#224; mặt lưng</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/android/man-hinh">Màn h&#236;nh</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/android/vo-va-mat-lung">Vỏ và mặt lưng</a></li>
                                             </ul>
                                     </div>
                                         <div class="menu g1">
                                             <h4><a href="/dich-vu-sua-chua/apple/iphone">Apple iPhone</a></h4>
                                             <ul class="display-column format_2">
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/camera-truoc">Camera Trước</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/cap-phim-am-luong-phim-nguon">C&#225;p phím &#226;m lượng - C&#225;p phím nguồn</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/loa-trong-loa-ngoai">Loa Trong - Loa Ngo&#224;i</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/cap-phim-am-luong-phim-nguon">Cáp phím &#226;m lượng - Cáp phím nguồn</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/loa-trong-loa-ngoai">Loa Trong - Loa Ngoài</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/vo-kinh">Vỏ - Kính Lưng</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/iphone/camera">Camera Sau</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/man-hinh">M&#224;n h&#236;nh</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/cac-loai-cap">C&#225;p bo sạc IPhone</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/man-hinh">Màn h&#236;nh</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/iphone/cac-loai-cap">Cáp bo sạc IPhone</a></li>
                                             </ul>
                                     </div>
                                         <div class="menu g2">
@@ -668,7 +668,7 @@
                                             <ul class="display-row format_3">
                                                     <li><a href="/dich-vu-sua-chua/apple/ipad/pin">Pin</a></li>
                                                     <li><a href="/dich-vu-sua-chua/apple/ipad/cam-ung">Cảm ứng</a></li>
-                                                    <li><a href="/dich-vu-sua-chua/apple/ipad/man-hinh">M&#224;n h&#236;nh</a></li>
+                                                    <li><a href="/dich-vu-sua-chua/apple/ipad/man-hinh">Màn h&#236;nh</a></li>
                                             </ul>
                                     </div>
 
@@ -729,8 +729,8 @@
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/tcl">Hot Sale TCL</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-Apple">Khuyến mại Apple</a></li>
                                                     <li><a href="/tin-khuyen-mai/uu-dai-hot/samsung-xiaomi-hot">KM Samsung  + Xiaomi</a></li>
-                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop  M&#224;n h&#236;nh HP</a></li>
-                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit">Mở b&#225;n Phụ kiện 9Fit</a></li>
+                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop  Màn h&#236;nh HP</a></li>
+                                                    <li><a href="/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit">Mở bán Phụ kiện 9Fit</a></li>
                                                     <li><a href="/tin-khuyen-mai/san-pham-doc-quyen">Sản phẩm độc quyền</a></li>
                                                     <li><a href="/uu-dai-hot/uu-dai-mophie-zagg">Ưu đãi Mophie + ZAGG</a></li>
                                             </ul>
@@ -906,11 +906,11 @@
 
                                             <li><span class="bag">KM 1</span></li>
                                             <li>
-                                                    <a href="https://hoanghamobile.com/tin-tuc/nhan-ma-giam-gia-toi-300-000d-qua-zalopay/" style="font-weight:normal">ZaloPay - Giảm th&#234;m 550.000đ cho đơn h&#224;ng mua iPhone 15 series (Áp dụng với ho&#225; đơn tr&#234;n 20 Triệu).</a>
+                                                    <a href="https://hoanghamobile.com/tin-tuc/nhan-ma-giam-gia-toi-300-000d-qua-zalopay/" style="font-weight:normal">ZaloPay - Giảm th&#234;m 550.000đ cho đơn hàng mua iPhone 15 series (Áp dụng với hoá đơn tr&#234;n 20 Triệu).</a>
                                             </li>
                                             <li><span class="bag">KM 2</span></li>
                                             <li>
-                                                    <a href="https://hoanghamobile.com/tin-tuc/chuong-trinh-thu-cu-len-doi-iphone-vn-a-tai-hoang-ha-mobile/" style="font-weight:normal">Giảm th&#234;m 30% gi&#225; trị m&#225;y cũ, tối đa 2.000.000đ khi tham gia thu cũ, đổi mới iPhone 15 Series.</a>
+                                                    <a href="https://hoanghamobile.com/tin-tuc/chuong-trinh-thu-cu-len-doi-iphone-vn-a-tai-hoang-ha-mobile/" style="font-weight:normal">Giảm th&#234;m 30% giá trị máy cũ, tối đa 2.000.000đ khi tham gia thu cũ, đổi mới iPhone 15 Series.</a>
                                             </li>
 
                                 </ul>
@@ -920,7 +920,7 @@
 
                                     <a title="Mua ngay" data-sku="MU7A3VN" href="javascript:;" class="btn-red btnQuickOrder btnbuy"><strong>MUA NGAY</strong><span> Giao tận nhà (COD) <br />Hoặc Nhận tại cửa hàng</span></a>
                                     <a title="Mua trả góp" href="/tra-gop/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a" class="btnInstallment btn-green btnbuy"><strong>TRẢ GÓP</strong><span>Công ty Tài chính <br /> Hoặc 0% qua thẻ tín dụng</span></a>
-                                    <a style="width:43px; display:flex; flex-direction:column; max-width:80px; padding:5px;" title="Thêm vào giỏ hàng" data-sku="MU7A3VN" href="javascript:;" class="add-cart btn-orange btnbuy btn-icon"><i class="icon-cart"></i><span class="cart-plus" style="right:21px;"><i class="icon-plus"></i></span><label style="font-size:11px;">Thêm giỏ hàng</label></a>
+                                    <a style="width:43px; display:flex; flex-direction:column; max-width:80px; padding:5px;" title="Thêm vào giỏ hàng" href="" class="add-cart btn-orange btnbuy btn-icon"><i class="icon-cart"></i><span class="cart-plus" style="right:21px;"><i class="icon-plus"></i></span><label style="font-size:11px;">Thêm giỏ hàng</label></a>
                         </div>
 
 
@@ -933,11 +933,11 @@
 
                                             <li>
                                                 <i class="icon-checked text-green"></i>
-                                                    <a href="https://hoanghamobile.com/tin-tuc/mua-sam-do-cong-nghe-tha-ga-nhap-ma-vnpay-giam-them-toi-300k/" style="font-weight:normal">VNPAY - Giảm th&#234;m 300.000đ khi thanh to&#225;n qua VNPAY (Áp dụng cho đơn h&#224;ng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</a>
+                                                    <a href="https://hoanghamobile.com/tin-tuc/mua-sam-do-cong-nghe-tha-ga-nhap-ma-vnpay-giam-them-toi-300k/" style="font-weight:normal">VNPAY - Giảm th&#234;m 300.000đ khi thanh toán qua VNPAY (Áp dụng cho đơn hàng tr&#234;n 20 Triệu c&#243; mua 1 sản phẩm thuộc d&#242;ng iPhone 15).</a>
                                             </li>
                                             <li>
                                                 <i class="icon-checked text-green"></i>
-                                                    <a href="https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-onlineplus-2in1&amp;utm_source=Public_Website&amp;utm_medium=PNS_HoangHaMobile&amp;utm_content=HoangHaMobileVIBQRCode&amp;product=card" style="font-weight:normal">VIB - Nhận Voucher 250.000đ khi mở thẻ tín dụng VIB th&#224;nh c&#244;ng.</a>
+                                                    <a href="https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-onlineplus-2in1&amp;utm_source=Public_Website&amp;utm_medium=PNS_HoangHaMobile&amp;utm_content=HoangHaMobileVIBQRCode&amp;product=card" style="font-weight:normal">VIB - Nhận Voucher 250.000đ khi mở thẻ tín dụng VIB thành c&#244;ng.</a>
                                             </li>
                                             <li>
                                                 <i class="icon-checked text-green"></i>
@@ -972,9 +972,9 @@
                     <div class="product-shop">
                         <div class="warranty">
                             <h4>THÔNG TIN BẢO HÀNH</h4>
-                                <p><i class="icon-shield"></i> <span><strong>Bảo h&#224;nh 12 th&#225;ng chính hãng tại c&#225;c TTBH uỷ quyền của Apple tại Việt Nam.</strong></span></p>
+                                <p><i class="icon-shield"></i> <span><strong>Bảo hành 12 tháng chính hãng tại các TTBH uỷ quyền của Apple tại Việt Nam.</strong></span></p>
 
-                                <p><a href="/chinh-sach-bao-hanh"><i class="icon-shield"></i><strong><span>1 đổi 1 trong 30 ng&#224;y đầu nếu c&#243; lỗi phần cứng do nh&#224; sản xuất.</span></strong></a></p>
+                                <p><a href="/chinh-sach-bao-hanh"><i class="icon-shield"></i><strong><span>1 đổi 1 trong 30 ngày đầu nếu c&#243; lỗi phần cứng do nhà sản xuất.</span></strong></a></p>
                                                     </div>
 
                         <div class="check-stock" id="marketFilter">
@@ -984,10 +984,10 @@
                                 <div class="list">
                                     <ul>
                                             <li data-id="0" id="city_0"><a href="javascript:marketFilters(0);">Xem tất cả</a></li>
-                                                                                    <li data-id="1" id="city_1" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(1);">H&#224; Nội</a></li>
+                                                                                    <li data-id="1" id="city_1" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(1);">Hà Nội</a></li>
                                             <li data-id="50" id="city_50" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(50);">TP HCM</a></li>
                                             <li data-id="57" id="city_57" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(57);">An Giang</a></li>
-                                            <li data-id="49" id="city_49" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(49);">B&#224; Rịa - Vũng T&#224;u</a></li>
+                                            <li data-id="49" id="city_49" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(49);">Bà Rịa - Vũng Tàu</a></li>
                                             <li data-id="15" id="city_15" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(15);">Bắc Giang</a></li>
                                             <li data-id="62" id="city_62" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(62);">Bạc Li&#234;u</a></li>
                                             <li data-id="18" id="city_18" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(18);">Bắc Ninh</a></li>
@@ -995,25 +995,25 @@
                                             <li data-id="47" id="city_47" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(47);">B&#236;nh Dương</a></li>
                                             <li data-id="45" id="city_45" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(45);">B&#236;nh Phước</a></li>
                                             <li data-id="39" id="city_39" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(39);">B&#236;nh Thuận</a></li>
-                                            <li data-id="63" id="city_63" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(63);">C&#224; Mau</a></li>
+                                            <li data-id="63" id="city_63" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(63);">Cà Mau</a></li>
                                             <li data-id="59" id="city_59" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(59);">Cần Thơ</a></li>
-                                            <li data-id="32" id="city_32" class="instock" data-sku='["MU773VN","MU783VN","MU7A3VN","MU793VN"]'><a href="javascript:marketFilters(32);">Đ&#224; Nẵng</a></li>
+                                            <li data-id="32" id="city_32" class="instock" data-sku='["MU773VN","MU783VN","MU7A3VN","MU793VN"]'><a href="javascript:marketFilters(32);">Đà Nẵng</a></li>
                                             <li data-id="42" id="city_42" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(42);">Đắk Lắk</a></li>
                                             <li data-id="43" id="city_43" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(43);">Đắk N&#244;ng</a></li>
                                             <li data-id="7" id="city_7" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(7);">Điện Bi&#234;n</a></li>
                                             <li data-id="48" id="city_48" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(48);">Đồng Nai</a></li>
-                                            <li data-id="56" id="city_56" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(56);">Đồng Th&#225;p</a></li>
+                                            <li data-id="56" id="city_56" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(56);">Đồng Tháp</a></li>
                                             <li data-id="41" id="city_41" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(41);">Gia Lai</a></li>
-                                            <li data-id="23" id="city_23" class="instock" data-sku='["MU773VN","MU7A3VN"]'><a href="javascript:marketFilters(23);">H&#224; Nam</a></li>
-                                            <li data-id="28" id="city_28" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(28);">H&#224; Tĩnh</a></li>
+                                            <li data-id="23" id="city_23" class="instock" data-sku='["MU773VN","MU7A3VN"]'><a href="javascript:marketFilters(23);">Hà Nam</a></li>
+                                            <li data-id="28" id="city_28" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(28);">Hà Tĩnh</a></li>
                                             <li data-id="19" id="city_19" class="instock" data-sku='["MU773VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(19);">Hải Dương</a></li>
                                             <li data-id="20" id="city_20" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(20);">Hải Ph&#242;ng</a></li>
-                                            <li data-id="11" id="city_11" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(11);">Ho&#224; B&#236;nh</a></li>
+                                            <li data-id="11" id="city_11" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(11);">Hoà B&#236;nh</a></li>
                                             <li data-id="21" id="city_21" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(21);">Hưng Y&#234;n</a></li>
-                                            <li data-id="37" id="city_37" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(37);">Kh&#225;nh H&#242;a</a></li>
+                                            <li data-id="37" id="city_37" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(37);">Khánh H&#242;a</a></li>
                                             <li data-id="58" id="city_58" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(58);">Ki&#234;n Giang</a></li>
                                             <li data-id="44" id="city_44" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(44);">L&#226;m Đồng</a></li>
-                                            <li data-id="6" id="city_6" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(6);">L&#224;o Cai</a></li>
+                                            <li data-id="6" id="city_6" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(6);">Lào Cai</a></li>
                                             <li data-id="51" id="city_51" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(51);">Long An</a></li>
                                             <li data-id="24" id="city_24" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(24);">Nam Định</a></li>
                                             <li data-id="27" id="city_27" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(27);">Nghệ An</a></li>
@@ -1029,15 +1029,15 @@
                                             <li data-id="61" id="city_61" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(61);">S&#243;c Trăng</a></li>
                                             <li data-id="9" id="city_9" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(9);">Sơn La</a></li>
                                             <li data-id="46" id="city_46" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(46);">T&#226;y Ninh</a></li>
-                                            <li data-id="22" id="city_22" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(22);">Th&#225;i B&#236;nh</a></li>
-                                            <li data-id="12" id="city_12" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(12);">Th&#225;i Nguy&#234;n</a></li>
+                                            <li data-id="22" id="city_22" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(22);">Thái B&#236;nh</a></li>
+                                            <li data-id="12" id="city_12" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(12);">Thái Nguy&#234;n</a></li>
                                             <li data-id="26" id="city_26" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(26);">Thanh H&#243;a</a></li>
                                             <li data-id="31" id="city_31" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(31);">Thừa Thi&#234;n Huế</a></li>
                                             <li data-id="52" id="city_52" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(52);">Tiền Giang</a></li>
                                             <li data-id="5" id="city_5" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(5);">Tuy&#234;n Quang</a></li>
                                             <li data-id="55" id="city_55" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(55);">Vĩnh Long</a></li>
                                             <li data-id="17" id="city_17" class="instock" data-sku='["MU783VN","MU793VN","MU7A3VN","MU773VN"]'><a href="javascript:marketFilters(17);">Vĩnh Ph&#250;c</a></li>
-                                            <li data-id="10" id="city_10" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(10);">Y&#234;n B&#225;i</a></li>
+                                            <li data-id="10" id="city_10" class="instock" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'><a href="javascript:marketFilters(10);">Y&#234;n Bái</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1050,301 +1050,301 @@
                                 <ul>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>194 L&#234; Duẩn, H&#224; Nội</label>
+                                                    <label>194 L&#234; Duẩn, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0962.066.208">0962.066.208</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="194 L&#234; Duẩn, H&#224; Nội" href="/194-le-duan-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="194 L&#234; Duẩn, Hà Nội" href="/194-le-duan-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>382 Nguyễn Văn Cừ, H&#224; Nội</label>
+                                                    <label>382 Nguyễn Văn Cừ, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0915.963.222">0915.963.222</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="382 Nguyễn Văn Cừ, H&#224; Nội" href="/382-nguyen-van-cu-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="382 Nguyễn Văn Cừ, Hà Nội" href="/382-nguyen-van-cu-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>122 Th&#225;i H&#224;, H&#224; Nội </label>
+                                                    <label>122 Thái Hà, Hà Nội </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0973.790.122">0973.790.122</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="122 Th&#225;i H&#224;, H&#224; Nội" href="/122-thai-ha-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="122 Thái Hà, Hà Nội" href="/122-thai-ha-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>126 Phố Huế, H&#224; Nội</label>
+                                                    <label>126 Phố Huế, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0968.668.995">0968.668.995</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="126 Phố Huế, H&#224; Nội" href="/95b-pho-hue-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="126 Phố Huế, Hà Nội" href="/95b-pho-hue-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>392 Cầu Giấy, H&#224; Nội</label>
+                                                    <label>392 Cầu Giấy, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0968.32.33.99">0968.32.33.99</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="	392 Cầu Giấy, H&#224; Nội" href="/392-cau-giay-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="	392 Cầu Giấy, Hà Nội" href="/392-cau-giay-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>348 Hồ T&#249;ng Mậu, Cầu Diễn, Từ Li&#234;m, H&#224; Nội</label>
+                                                    <label>348 Hồ T&#249;ng Mậu, Cầu Diễn, Từ Li&#234;m, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0965.868.348">0965.868.348</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="348 Hồ T&#249;ng Mậu, Cầu Diễn, Từ Li&#234;m, H&#224; Nội" href="/348-ho-tung-mau-cau-dien-tu-liem">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="348 Hồ T&#249;ng Mậu, Cầu Diễn, Từ Li&#234;m, Hà Nội" href="/348-ho-tung-mau-cau-dien-tu-liem">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>102 Phố Xốm, Ph&#250; Lãm, H&#224; Đ&#244;ng, H&#224; Nội</label>
+                                                    <label>102 Phố Xốm, Ph&#250; Lãm, Hà Đ&#244;ng, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0818.576.586">0818.576.586</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="	102 Phố Xốm, Ph&#250; Lãm, H&#224; Đ&#244;ng, H&#224; Nội" href="/102-pho-xom-phu-lam-ha-dong-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="	102 Phố Xốm, Ph&#250; Lãm, Hà Đ&#244;ng, Hà Nội" href="/102-pho-xom-phu-lam-ha-dong-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>392 Trương Định, Ho&#224;ng Mai, H&#224; Nội</label>
+                                                    <label>392 Trương Định, Hoàng Mai, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:083.263.9292">083.263.9292</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="392 Trương Định, Ho&#224;ng Mai, H&#224; Nội" href="/392-truong-dinh-hoang-mai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="392 Trương Định, Hoàng Mai, Hà Nội" href="/392-truong-dinh-hoang-mai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 15 Trần Ph&#250;, Ba Đ&#236;nh, H&#224; Nội (Shop cũ 12 Điện Bi&#234;n Phủ)</label>
+                                                    <label>Số 15 Trần Ph&#250;, Ba Đ&#236;nh, Hà Nội (Shop cũ 12 Điện Bi&#234;n Phủ)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:089.66.777.12">089.66.777.12</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 15 Trần Ph&#250;, Ba Đ&#236;nh, H&#224; Nội (Shop cũ 12 Điện Bi&#234;n Phủ)" href="/12-dien-bien-phu-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 15 Trần Ph&#250;, Ba Đ&#236;nh, Hà Nội (Shop cũ 12 Điện Bi&#234;n Phủ)" href="/12-dien-bien-phu-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>28 Trần Ph&#250;, H&#224; Đ&#244;ng, H&#224; Nội </label>
+                                                    <label>28 Trần Ph&#250;, Hà Đ&#244;ng, Hà Nội </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0911.266.669">0911.266.669</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="28 Trần Ph&#250;, H&#224; Đ&#244;ng, H&#224; Nội" href="/28-tran-phu-ha-dong">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="28 Trần Ph&#250;, Hà Đ&#244;ng, Hà Nội" href="/28-tran-phu-ha-dong">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 82 Khu 7, Thị trấn Trạm Tr&#244;i, Huyện Ho&#224;i Đức, H&#224; Nội.</label>
+                                                    <label>Số 82 Khu 7, Thị trấn Trạm Tr&#244;i, Huyện Hoài Đức, Hà Nội.</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0899.559.669">0899.559.669</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 82 Khu 7, Thị trấn Trạm Tr&#244;i, Huyện Ho&#224;i Đức, H&#224; Nội." href="/so-20-khu-7-thi-tran-tram-troi-huyen-hoai-duc-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 82 Khu 7, Thị trấn Trạm Tr&#244;i, Huyện Hoài Đức, Hà Nội." href="/so-20-khu-7-thi-tran-tram-troi-huyen-hoai-duc-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>176 Ch&#249;a Th&#244;ng, P. Sơn Lộc, TX Sơn T&#226;y, H&#224; Nội </label>
+                                                    <label>176 Ch&#249;a Th&#244;ng, P. Sơn Lộc, TX Sơn T&#226;y, Hà Nội </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:088.686.39.38">088.686.39.38</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="176 Ch&#249;a Th&#244;ng, P. Sơn Lộc, TX Sơn T&#226;y, H&#224; Nội" href="/176-chua-thong-p-son-loc-tx-son-tay-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="176 Ch&#249;a Th&#244;ng, P. Sơn Lộc, TX Sơn T&#226;y, Hà Nội" href="/176-chua-thong-p-son-loc-tx-son-tay-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>205 Xã Đ&#224;n, P.Nam Đồng, H&#224; Nội </label>
+                                                    <label>205 Xã Đàn, P.Nam Đồng, Hà Nội </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936.231.213">0936.231.213</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="205 Xã Đ&#224;n, P.Nam Đồng, H&#224; Nội" href="/797-799-xa-dan-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="205 Xã Đàn, P.Nam Đồng, Hà Nội" href="/797-799-xa-dan-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>749 Giải Ph&#243;ng, P.Gi&#225;p B&#225;t, Q.Ho&#224;ng Mai, H&#224; Nội (Shop cũ 797 - 799 Giải Ph&#243;ng)</label>
+                                                    <label>749 Giải Ph&#243;ng, P.Giáp Bát, Q.Hoàng Mai, Hà Nội (Shop cũ 797 - 799 Giải Ph&#243;ng)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936.396.799">0936.396.799</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="749 Giải Ph&#243;ng, P.Gi&#225;p B&#225;t, Q.Ho&#224;ng Mai, H&#224; Nội (Shop cũ 797 - 799 Giải Ph&#243;ng)" href="/213-giai-phong-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="749 Giải Ph&#243;ng, P.Giáp Bát, Q.Hoàng Mai, Hà Nội (Shop cũ 797 - 799 Giải Ph&#243;ng)" href="/213-giai-phong-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>101 Kim Mã - Phường Kim Mã - Quận Ba Đ&#204;nh - H&#224; Nội</label>
+                                                    <label>101 Kim Mã - Phường Kim Mã - Quận Ba Đ&#204;nh - Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:088.6868.101">088.6868.101</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="101 Kim Mã - Phường Kim Mã - Quận Ba Đ&#204;nh - H&#224; Nội" href="/101-kim-ma-phuong-kim-ma-quan-ba-dinh-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="101 Kim Mã - Phường Kim Mã - Quận Ba Đ&#204;nh - Hà Nội" href="/101-kim-ma-phuong-kim-ma-quan-ba-dinh-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>336 Phạm Văn Đồng, Quận Bắc Từ Li&#234;m, H&#224; Nội</label>
+                                                    <label>336 Phạm Văn Đồng, Quận Bắc Từ Li&#234;m, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0886.868.010">0886.868.010</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="336 Phạm Văn Đồng, Quận Bắc Từ Li&#234;m, H&#224; Nội" href="/1a-co-nhue-quan-bac-tu-liem-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="336 Phạm Văn Đồng, Quận Bắc Từ Li&#234;m, Hà Nội" href="/1a-co-nhue-quan-bac-tu-liem-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>259 Lạc Long Qu&#226;n, Phường Nghĩa Đ&#244;, Quận Cầu Giấy, H&#224; Nội</label>
+                                                    <label>259 Lạc Long Qu&#226;n, Phường Nghĩa Đ&#244;, Quận Cầu Giấy, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0968.590.259">0968.590.259</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="259 Lạc Long Qu&#226;n, Phường Nghĩa Đ&#244;, Quận Cầu Giấy, H&#224; Nội" href="/259-lac-long-quan-phuong-nghia-do-quan-cau-giay-ha-noi-khai-truong-ngay-02-10">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="259 Lạc Long Qu&#226;n, Phường Nghĩa Đ&#244;, Quận Cầu Giấy, Hà Nội" href="/259-lac-long-quan-phuong-nghia-do-quan-cau-giay-ha-noi-khai-truong-ngay-02-10">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>182 Cao Lỗ, H. Đ&#244;ng Anh, H&#224; Nội</label>
+                                                    <label>182 Cao Lỗ, H. Đ&#244;ng Anh, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:090.228.93.39">090.228.93.39</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="182 Cao Lỗ, H. Đ&#244;ng Anh, H&#224; Nội" href="/182-cao-lo-h-dong-anh-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="182 Cao Lỗ, H. Đ&#244;ng Anh, Hà Nội" href="/182-cao-lo-h-dong-anh-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>208 Trần Lư. Thường Tín, H&#224; Nội</label>
+                                                    <label>208 Trần Lư. Thường Tín, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:088.6868.223">088.6868.223</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="208 Trần Lư. Thường Tín, H&#224; Nội" href="/208-tran-lu-thuong-tin-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="208 Trần Lư. Thường Tín, Hà Nội" href="/208-tran-lu-thuong-tin-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>196 Quang Trung, H&#224; Đ&#244;ng, H&#224; Nội</label>
+                                                    <label>196 Quang Trung, Hà Đ&#244;ng, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:098.2468.196">098.2468.196</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="196 Quang Trung, H&#224; Đ&#244;ng, H&#224; Nội" href="/196-quang-trung-ha-dong-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="196 Quang Trung, Hà Đ&#244;ng, Hà Nội" href="/196-quang-trung-ha-dong-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>258 Ng&#244; Gia Tự, Long Bi&#234;n, H&#224; Nội</label>
+                                                    <label>258 Ng&#244; Gia Tự, Long Bi&#234;n, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0836886258">0836886258</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="258 Ng&#244; Gia Tự, Long Bi&#234;n, H&#224; Nội" href="/258-ngo-gia-tu-long-bien-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="258 Ng&#244; Gia Tự, Long Bi&#234;n, Hà Nội" href="/258-ngo-gia-tu-long-bien-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>651 Nguyễn Văn Linh, Long Bi&#234;n, H&#224; Nội</label>
+                                                    <label>651 Nguyễn Văn Linh, Long Bi&#234;n, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0968.789.651">0968.789.651</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="651 Nguyễn Văn Linh, Long Bi&#234;n, H&#224; Nội" href="/651-nguyen-van-linh-long-bien-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="651 Nguyễn Văn Linh, Long Bi&#234;n, Hà Nội" href="/651-nguyen-van-linh-long-bien-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>89 Tam Trinh, Ho&#224;ng Mai, H&#224; Nội</label>
+                                                    <label>89 Tam Trinh, Hoàng Mai, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0815.86.79.89">0815.86.79.89</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="89 Tam Trinh, Ho&#224;ng Mai, H&#224; Nội" href="/89-tam-trinh-hoang-mai-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="89 Tam Trinh, Hoàng Mai, Hà Nội" href="/89-tam-trinh-hoang-mai-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>109 Trần Duy Hưng, Cầu Giấy, H&#224; Nội</label>
+                                                    <label>109 Trần Duy Hưng, Cầu Giấy, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0985568109">0985568109</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="109 Trần Duy Hưng, Cầu Giấy, H&#224; Nội" href="/109-tran-duy-hung-cau-giay-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="109 Trần Duy Hưng, Cầu Giấy, Hà Nội" href="/109-tran-duy-hung-cau-giay-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 59 Quang Trung, TT V&#226;n Đ&#236;nh, Ứng H&#242;a, H&#224; Nội</label>
+                                                    <label>Số 59 Quang Trung, TT V&#226;n Đ&#236;nh, Ứng H&#242;a, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936045959">0936045959</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 59 Quang Trung, TT V&#226;n Đ&#236;nh, Ứng H&#242;a, H&#224; Nội" href="/so-59-quang-trung-tt-van-dinh-ung-hoa-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 59 Quang Trung, TT V&#226;n Đ&#236;nh, Ứng H&#242;a, Hà Nội" href="/so-59-quang-trung-tt-van-dinh-ung-hoa-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 110 Cầu Bươu, T&#226;n Triều, Thanh Tr&#236;, H&#224; Nội</label>
+                                                    <label>Số 110 Cầu Bươu, T&#226;n Triều, Thanh Tr&#236;, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0978866110">0978866110</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 110 Cầu Bươu, T&#226;n Triều, Thanh Tr&#236;, H&#224; Nội" href="/so-110-cau-buou-tan-trieu-thanh-tri-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 110 Cầu Bươu, T&#226;n Triều, Thanh Tr&#236;, Hà Nội" href="/so-110-cau-buou-tan-trieu-thanh-tri-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 372 H&#224; Huy Tập, TT Y&#234;n Vi&#234;n, Gia L&#226;m, H&#224; Nội</label>
+                                                    <label>Số 372 Hà Huy Tập, TT Y&#234;n Vi&#234;n, Gia L&#226;m, Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:086.8866.372">086.8866.372</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 372 H&#224; Huy Tập, TT Y&#234;n Vi&#234;n, Gia L&#226;m, H&#224; Nội" href="/so-372-ha-huy-tap-tt-yen-vien-gia-lam-ha-noi">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 372 Hà Huy Tập, TT Y&#234;n Vi&#234;n, Gia L&#226;m, Hà Nội" href="/so-372-ha-huy-tap-tt-yen-vien-gia-lam-ha-noi">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_1" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 52 H&#224;ng Đậu - Đồng Xu&#226;n - Ho&#224;n Kiếm - H&#224; Nội</label>
+                                                    <label>Số 52 Hàng Đậu - Đồng Xu&#226;n - Hoàn Kiếm - Hà Nội</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:090.215.5252">090.215.5252</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 52 H&#224;ng Đậu - Đồng Xu&#226;n - Ho&#224;n Kiếm - H&#224; Nội" href="/so-52-hang-dau-dong-xuan-hoan-kiem-ha-noi-sap-khai-truong">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 52 Hàng Đậu - Đồng Xu&#226;n - Hoàn Kiếm - Hà Nội" href="/so-52-hang-dau-dong-xuan-hoan-kiem-ha-noi-sap-khai-truong">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>156 Trần Não, P. An Kh&#225;nh, Tp Thủ Đức, Hồ Chí Minh</label>
+                                                    <label>156 Trần Não, P. An Khánh, Tp Thủ Đức, Hồ Chí Minh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0909222156">0909222156</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="156 Trần Não, P. An Kh&#225;nh, Tp Thủ Đức, Hồ Chí Minh" href="/156-tran-nao-p-an-khanh-quan-2-tp-hcm">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="156 Trần Não, P. An Khánh, Tp Thủ Đức, Hồ Chí Minh" href="/156-tran-nao-p-an-khanh-quan-2-tp-hcm">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>1680 Huỳnh Tấn Ph&#225;t, TT. Nh&#224; B&#232;, Nh&#224; B&#232;, Tp. HCM</label>
+                                                    <label>1680 Huỳnh Tấn Phát, TT. Nhà B&#232;, Nhà B&#232;, Tp. HCM</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0909051680">0909051680</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="1680 Huỳnh Tấn Ph&#225;t, TT. Nh&#224; B&#232;, Nh&#224; B&#232;, Tp. HCM" href="/1680-huynh-tan-phat-tt-nha-be-nha-be-tp-hcm">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="1680 Huỳnh Tấn Phát, TT. Nhà B&#232;, Nhà B&#232;, Tp. HCM" href="/1680-huynh-tan-phat-tt-nha-be-nha-be-tp-hcm">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1440,21 +1440,21 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>347 Ho&#224;ng Văn Thụ, Quận T&#226;n B&#236;nh, TP. Hồ Chí Minh (V&#242;ng xoay Lăng Cha Cả)</label>
+                                                    <label>347 Hoàng Văn Thụ, Quận T&#226;n B&#236;nh, TP. Hồ Chí Minh (V&#242;ng xoay Lăng Cha Cả)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:083.830.22.55">083.830.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="347 Ho&#224;ng Văn Thụ, Quận T&#226;n B&#236;nh, TP. HCM (V&#242;ng xoay Lăng Cha Cả)" href="/347-hoang-van-thu-quan-tan-binh-tp-ho-chi-minh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="347 Hoàng Văn Thụ, Quận T&#226;n B&#236;nh, TP. HCM (V&#242;ng xoay Lăng Cha Cả)" href="/347-hoang-van-thu-quan-tan-binh-tp-ho-chi-minh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>419 Nguyễn Ảnh Thủ (đối diện chợ Trung Ch&#225;nh), Quận 12, TP.HCM</label>
+                                                    <label>419 Nguyễn Ảnh Thủ (đối diện chợ Trung Chánh), Quận 12, TP.HCM</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0902.840.419">0902.840.419</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="419 Nguyễn Ảnh Thủ (đối diện chợ Trung Ch&#225;nh) , HCM" href="/419-nguyen-anh-thu-doi-dien-cho-trung-chanh-quan-12-tp-hcm">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="419 Nguyễn Ảnh Thủ (đối diện chợ Trung Chánh) , HCM" href="/419-nguyen-anh-thu-doi-dien-cho-trung-chanh-quan-12-tp-hcm">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1470,11 +1470,11 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>621D C&#225;ch Mạng Th&#225;ng 8, Phường 15, Quận 10, TP HCM</label>
+                                                    <label>621D Cách Mạng Tháng 8, Phường 15, Quận 10, TP HCM</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0972.89.22.55">0972.89.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="621D C&#225;ch Mạng Th&#225;ng 8, Phường 15, Quận 10, TP HCM" href="/621d-cach-mang-thang-8-phuong-15-quan-10-tp-ho-chi-minh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="621D Cách Mạng Tháng 8, Phường 15, Quận 10, TP HCM" href="/621d-cach-mang-thang-8-phuong-15-quan-10-tp-ho-chi-minh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1500,11 +1500,11 @@
                                             </li>
                                             <li class="instock city_50" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>867 Lũy B&#225;n Bích, P. T&#226;n Th&#224;nh, Q. T&#226;n Ph&#250;, TP HCM</label>
+                                                    <label>867 Lũy Bán Bích, P. T&#226;n Thành, Q. T&#226;n Ph&#250;, TP HCM</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0828.25.2255">0828.25.2255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="867 Lũy B&#225;n Bích, Q. T&#226;n Ph&#250;, TP. HCM" href="/867-luy-ban-bich-p-tan-thanh-q-tan-phu-tp-hcm">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="867 Lũy Bán Bích, Q. T&#226;n Ph&#250;, TP. HCM" href="/867-luy-ban-bich-p-tan-thanh-q-tan-phu-tp-hcm">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1530,31 +1530,31 @@
                                             </li>
                                             <li class="instock city_49" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>605 Trương C&#244;ng Định, Phường 7, TP. Vũng T&#224;u</label>
+                                                    <label>605 Trương C&#244;ng Định, Phường 7, TP. Vũng Tàu</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:090.889.22.55">090.889.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="	605 Trương C&#244;ng Định, Phường 7, TP. Vũng T&#224;u" href="/605-truong-cong-dinh-phuong-7-tp-vung-tau">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="	605 Trương C&#244;ng Định, Phường 7, TP. Vũng Tàu" href="/605-truong-cong-dinh-phuong-7-tp-vung-tau">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_49" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 158 Nguyễn Thanh Đằng, Phường Phước Hiệp, TP. B&#224; Rịa, Tỉnh B&#224; Rịa - Vũng T&#224;u</label>
+                                                    <label>Số 158 Nguyễn Thanh Đằng, Phường Phước Hiệp, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:079216.22.55">079216.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 158 Nguyễn Thanh Đằng, TP. B&#224; Rịa" href="/so-158-nguyen-thanh-dang-phuong-phuoc-hiep-tp-ba-ria-tinh-ba-ria-vung-tau">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 158 Nguyễn Thanh Đằng, TP. Bà Rịa" href="/so-158-nguyen-thanh-dang-phuong-phuoc-hiep-tp-ba-ria-tinh-ba-ria-vung-tau">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_49" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 631 đường 30 Th&#225;ng 4, P. Rạch Dừa, Tp. Vũng T&#224;u, Tỉnh B&#224; Rịa – Vũng T&#224;u </label>
+                                                    <label>Số 631 đường 30 Tháng 4, P. Rạch Dừa, Tp. Vũng Tàu, Tỉnh Bà Rịa – Vũng Tàu </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0933032255">0933032255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 631 đường 30 Th&#225;ng 4, P. Rạch Dừa, Tp. Vũng T&#224;u, Tỉnh B&#224; Rịa – Vũng T&#224;u " href="/so-631-duong-30-thang-4-p-rach-dua-tp-vung-tau-tinh-ba-ria-–-vung-tau">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 631 đường 30 Tháng 4, P. Rạch Dừa, Tp. Vũng Tàu, Tỉnh Bà Rịa – Vũng Tàu " href="/so-631-duong-30-thang-4-p-rach-dua-tp-vung-tau-tinh-ba-ria-–-vung-tau">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1590,11 +1590,11 @@
                                             </li>
                                             <li class="instock city_18" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>40 Trần Ph&#250; - Đ&#244;ng Ng&#224;n - Từ Sơn - Bắc Ninh</label>
+                                                    <label>40 Trần Ph&#250; - Đ&#244;ng Ngàn - Từ Sơn - Bắc Ninh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0886869338">0886869338</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="40 Trần Ph&#250; - Đ&#244;ng Ng&#224;n - Từ Sơn - Bắc Ninh" href="/40-tran-phu-dong-ngan-tu-son-bac-ninh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="40 Trần Ph&#250; - Đ&#244;ng Ngàn - Từ Sơn - Bắc Ninh" href="/40-tran-phu-dong-ngan-tu-son-bac-ninh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1620,11 +1620,11 @@
                                             </li>
                                             <li class="instock city_35" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 232 Nguyễn Th&#225;i Học, P.Ng&#244; M&#226;y, TP.Quy Nhơn, B&#236;nh Định</label>
+                                                    <label>Số 232 Nguyễn Thái Học, P.Ng&#244; M&#226;y, TP.Quy Nhơn, B&#236;nh Định</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0898.19.83.83">0898.19.83.83</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 232 Nguyễn Th&#225;i Học, P.Ng&#244; M&#226;y, TP.Quy Nhơn, B&#236;nh Định" href="/so-232-nguyen-thai-hoc-p-ngo-may-tp-quy-nhon-binh-dinh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 232 Nguyễn Thái Học, P.Ng&#244; M&#226;y, TP.Quy Nhơn, B&#236;nh Định" href="/so-232-nguyen-thai-hoc-p-ngo-may-tp-quy-nhon-binh-dinh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1650,11 +1650,11 @@
                                             </li>
                                             <li class="instock city_47" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>57C-57D Nguyễn Văn Tiết, KP. B&#236;nh H&#242;a, P.L&#225;i Thi&#234;u, TP Thuận An, B&#236;nh Dương </label>
+                                                    <label>57C-57D Nguyễn Văn Tiết, KP. B&#236;nh H&#242;a, P.Lái Thi&#234;u, TP Thuận An, B&#236;nh Dương </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:078.67.222.55">078.67.222.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="57C-57D Nguyễn Văn Tiết, KP. B&#236;nh H&#242;a, P.L&#225;i Thi&#234;u, TP Thuận An, B&#236;nh Dương" href="/57c-57d-nguyen-van-tiet-kp-binh-hoa-p-lai-thieu-tp-thuan-an-binh-duong">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="57C-57D Nguyễn Văn Tiết, KP. B&#236;nh H&#242;a, P.Lái Thi&#234;u, TP Thuận An, B&#236;nh Dương" href="/57c-57d-nguyen-van-tiet-kp-binh-hoa-p-lai-thieu-tp-thuan-an-binh-duong">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1670,11 +1670,11 @@
                                             </li>
                                             <li class="instock city_45" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>1057 Ph&#250; Riềng Đỏ, P.T&#226;n B&#236;nh, TP Đồng Xo&#224;i, B&#236;nh Phước</label>
+                                                    <label>1057 Ph&#250; Riềng Đỏ, P.T&#226;n B&#236;nh, TP Đồng Xoài, B&#236;nh Phước</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:079.757.22.55">079.757.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="1057 Ph&#250; Riềng Đỏ, TP Đồng Xo&#224;i, B&#236;nh Phước" href="/1057-phu-rieng-do-p-tan-binh-tp-dong-xoai-binh-phuoc">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="1057 Ph&#250; Riềng Đỏ, TP Đồng Xoài, B&#236;nh Phước" href="/1057-phu-rieng-do-p-tan-binh-tp-dong-xoai-binh-phuoc">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1690,61 +1690,61 @@
                                             </li>
                                             <li class="instock city_63" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>132c Nguyễn Tất Th&#224;nh, Phường 8, TP. C&#224; Mau</label>
+                                                    <label>132c Nguyễn Tất Thành, Phường 8, TP. Cà Mau</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0763.928899">0763.928899</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="132c Nguyễn Tất Th&#224;nh, Phường 8, TP. C&#224; Mau" href="/132c-nguyen-tat-thanh-phuong-8-tp-ca-mau">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="132c Nguyễn Tất Thành, Phường 8, TP. Cà Mau" href="/132c-nguyen-tat-thanh-phuong-8-tp-ca-mau">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_59" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>To&#224; nh&#224; STS, 11B Đại Lộ Ho&#224; B&#236;nh, T&#226;n An, Ninh Kiều, Cần Thơ (Shop SIS MobiFone)</label>
+                                                    <label>Toà nhà STS, 11B Đại Lộ Hoà B&#236;nh, T&#226;n An, Ninh Kiều, Cần Thơ (Shop SIS MobiFone)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0794.30.88.99">0794.30.88.99</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="To&#224; nh&#224; STS, 11B Đại Lộ Ho&#224; B&#236;nh, T&#226;n An, Ninh Kiều, Cần Thơ" href="/11-dai-lo-hoa-binh-tan-an-ninh-kieu-can-tho-shop-sis-mobifone">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Toà nhà STS, 11B Đại Lộ Hoà B&#236;nh, T&#226;n An, Ninh Kiều, Cần Thơ" href="/11-dai-lo-hoa-binh-tan-an-ninh-kieu-can-tho-shop-sis-mobifone">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_59" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>221 Đường 3 Th&#225;ng 2 - Ninh Kiều - Cần Thơ</label>
+                                                    <label>221 Đường 3 Tháng 2 - Ninh Kiều - Cần Thơ</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:08.285.222.55">08.285.222.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="221 Đường 3 Th&#225;ng 2 - Ninh Kiều - Cần Thơ" href="/221-duong-3-thang-2-ninh-kieu-can-tho">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="221 Đường 3 Tháng 2 - Ninh Kiều - Cần Thơ" href="/221-duong-3-thang-2-ninh-kieu-can-tho">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_32" data-sku='["MU773VN","MU783VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>153-155 Nguyễn Văn Linh, TP Đ&#224; Nẵng</label>
+                                                    <label>153-155 Nguyễn Văn Linh, TP Đà Nẵng</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0788.655.155">0788.655.155</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="153-155 Nguyễn Văn Linh, Đ&#224; Nẵng" href="/153-155-nguyen-van-linh-tp-da-nang">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="153-155 Nguyễn Văn Linh, Đà Nẵng" href="/153-155-nguyen-van-linh-tp-da-nang">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_32" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 580-582 Điện Bi&#234;n Phủ, Thanh Kh&#234; Đ&#244;ng, Thanh Kh&#234;, Đ&#224; Nẵng (Đối diện Tượng đ&#224;i Mẹ Nhu)</label>
+                                                    <label>Số 580-582 Điện Bi&#234;n Phủ, Thanh Kh&#234; Đ&#244;ng, Thanh Kh&#234;, Đà Nẵng (Đối diện Tượng đài Mẹ Nhu)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0905.582.580">0905.582.580</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 580 - 582 Điện Bi&#234;n Phủ, Thanh Kh&#234; Đ&#244;ng, Thanh Kh&#234;, Đ&#224; Nẵng (Đối diện Tượng đ&#224;i Mẹ Nhu)" href="/580-582-dien-bien-phu-thanh-khe-dong-thanh-khe-da-nang">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 580 - 582 Điện Bi&#234;n Phủ, Thanh Kh&#234; Đ&#244;ng, Thanh Kh&#234;, Đà Nẵng (Đối diện Tượng đài Mẹ Nhu)" href="/580-582-dien-bien-phu-thanh-khe-dong-thanh-khe-da-nang">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_32" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>460 462 Đ.T&#244;n Đức Thắng, P.Ho&#224; Kh&#225;nh Nam, Q.Li&#234;n Chiểu, TP Đ&#224; Nẵng</label>
+                                                    <label>460 462 Đ.T&#244;n Đức Thắng, P.Hoà Khánh Nam, Q.Li&#234;n Chiểu, TP Đà Nẵng</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0777.499.899 ">0777.499.899 </a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 460 - 462 Đ.T&#244;n Đức Thắng, P.Ho&#224; Kh&#225;nh Nam, Q.Li&#234;n Chiểu, TP Đ&#224; Nẵng" href="/460-462-duong-ton-duc-thang-phuong-hoa-khanh-nam-quan-lien-chieu-tp-da-nang">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 460 - 462 Đ.T&#244;n Đức Thắng, P.Hoà Khánh Nam, Q.Li&#234;n Chiểu, TP Đà Nẵng" href="/460-462-duong-ton-duc-thang-phuong-hoa-khanh-nam-quan-lien-chieu-tp-da-nang">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1770,21 +1770,21 @@
                                             </li>
                                             <li class="instock city_43" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>25 Huỳnh Th&#250;c Kh&#225;ng, P.Nghĩa Th&#224;nh, Gia Nghĩa, Đăk N&#244;ng</label>
+                                                    <label>25 Huỳnh Th&#250;c Kháng, P.Nghĩa Thành, Gia Nghĩa, Đăk N&#244;ng</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0896.48.8383">0896.48.8383</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="25 Huỳnh Th&#250;c Kh&#225;ng, P. Nghĩa Th&#224;nh, Gia Nghĩa, Đăk N&#244;ng" href="/25-huynh-thuc-khang-p-nghia-thanh-gia-nghia-dak-nong">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="25 Huỳnh Th&#250;c Kháng, P. Nghĩa Thành, Gia Nghĩa, Đăk N&#244;ng" href="/25-huynh-thuc-khang-p-nghia-thanh-gia-nghia-dak-nong">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_7" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label> Số 896 Đ. V&#245; Nguy&#234;n Gi&#225;p, P. Mường Thanh, Tp. Điện Bi&#234;n Phủ, Tỉnh Điện Bi&#234;n (Đối diện quảng trưởng 07-05)</label>
+                                                    <label> Số 896 Đ. V&#245; Nguy&#234;n Giáp, P. Mường Thanh, Tp. Điện Bi&#234;n Phủ, Tỉnh Điện Bi&#234;n (Đối diện quảng trưởng 07-05)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:089.982.9966">089.982.9966</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title=" Số 896 Đ. V&#245; Nguy&#234;n Gi&#225;p, P. Mường Thanh, Tp. Điện Bi&#234;n Phủ, Tỉnh Điện Bi&#234;n (Đối diện quảng trưởng 07-05)" href="/so-896-duong-vo-nguyen-giap-phuong-muong-thanh-thanh-pho-dien-bien-phu-tinh-dien-bien">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title=" Số 896 Đ. V&#245; Nguy&#234;n Giáp, P. Mường Thanh, Tp. Điện Bi&#234;n Phủ, Tỉnh Điện Bi&#234;n (Đối diện quảng trưởng 07-05)" href="/so-896-duong-vo-nguyen-giap-phuong-muong-thanh-thanh-pho-dien-bien-phu-tinh-dien-bien">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1800,61 +1800,61 @@
                                             </li>
                                             <li class="instock city_48" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 188 đường B&#249;i Văn Ho&#224;, Khu phố 3A, Long B&#236;nh T&#226;n, Tp. Bi&#234;n Ho&#224;</label>
+                                                    <label>Số 188 đường B&#249;i Văn Hoà, Khu phố 3A, Long B&#236;nh T&#226;n, Tp. Bi&#234;n Hoà</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0933812255">0933812255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 188 đường B&#249;i Văn Ho&#224;, Khu phố 3A, Long B&#236;nh T&#226;n, Tp. Bi&#234;n Ho&#224;" href="/so-188-duong-bui-van-hoa-khu-pho-3a-long-binh-tan-tp-bien-hoa">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 188 đường B&#249;i Văn Hoà, Khu phố 3A, Long B&#236;nh T&#226;n, Tp. Bi&#234;n Hoà" href="/so-188-duong-bui-van-hoa-khu-pho-3a-long-binh-tan-tp-bien-hoa">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_48" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>149 H&#249;ng Vương, Th&#224;nh Phố Long Kh&#225;nh, Tỉnh Đồng Nai </label>
+                                                    <label>149 H&#249;ng Vương, Thành Phố Long Khánh, Tỉnh Đồng Nai </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0908592255">0908592255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="149 H&#249;ng Vương, Th&#224;nh Phố Long Kh&#225;nh, Tỉnh Đồng Nai" href="/149-hung-vuong-thanh-pho-long-khanh-tinh-dong-nai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="149 H&#249;ng Vương, Thành Phố Long Khánh, Tỉnh Đồng Nai" href="/149-hung-vuong-thanh-pho-long-khanh-tinh-dong-nai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_48" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>692 Phạm Văn Thuận, Tam Hiệp, TP Bi&#234;n Ho&#224;, Đồng Nai (Gần chợ T&#226;n Mai) </label>
+                                                    <label>692 Phạm Văn Thuận, Tam Hiệp, TP Bi&#234;n Hoà, Đồng Nai (Gần chợ T&#226;n Mai) </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:082.520.2255">082.520.2255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="692 Phạm Văn Thuận, Tam Hiệp, TP Bi&#234;n Ho&#224;, Đồng Nai (Gần chợ T&#226;n Mai)" href="/692-pham-van-thuan-tam-hiep-bien-hoa-dong-nai-gan-cho-tan-mai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="692 Phạm Văn Thuận, Tam Hiệp, TP Bi&#234;n Hoà, Đồng Nai (Gần chợ T&#226;n Mai)" href="/692-pham-van-thuan-tam-hiep-bien-hoa-dong-nai-gan-cho-tan-mai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_48" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>260D Phạm Văn Thuận, TP. Bi&#234;n Ho&#224;, Đồng Nai </label>
+                                                    <label>260D Phạm Văn Thuận, TP. Bi&#234;n Hoà, Đồng Nai </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:079269.22.55">079269.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="	260D Phạm Văn Thuận, TP. Bi&#234;n Ho&#224;, Đồng Nai" href="/260d-pham-van-thuan-so-moi-1331-gan-nga-tu-vincom-tp-bien-hoa-dong-nai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="	260D Phạm Văn Thuận, TP. Bi&#234;n Hoà, Đồng Nai" href="/260d-pham-van-thuan-so-moi-1331-gan-nga-tu-vincom-tp-bien-hoa-dong-nai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_48" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>246-256 L&#234; Duẩn, TT. Long Th&#224;nh, Đồng Nai</label>
+                                                    <label>246-256 L&#234; Duẩn, TT. Long Thành, Đồng Nai</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:093.732.2255">093.732.2255</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="246-256 L&#234; Duẩn, TT. Long Th&#224;nh, Đồng Nai" href="/246-256-le-duan-tt-long-thanh-dong-nai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="246-256 L&#234; Duẩn, TT. Long Thành, Đồng Nai" href="/246-256-le-duan-tt-long-thanh-dong-nai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_56" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>85 Nguyễn Huệ, P.1, TP. Cao Lãnh, Đồng Th&#225;p</label>
+                                                    <label>85 Nguyễn Huệ, P.1, TP. Cao Lãnh, Đồng Tháp</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0786.91.88.99">0786.91.88.99</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="85 Nguyễn Huệ, P.1, TP. Cao Lãnh, Đồng Th&#225;p" href="/85-nguyen-hue-p-1-tp-cao-lanh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="85 Nguyễn Huệ, P.1, TP. Cao Lãnh, Đồng Tháp" href="/85-nguyen-hue-p-1-tp-cao-lanh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1864,27 +1864,27 @@
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0899.32.8383">0899.32.8383</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="82 Trần Ph&#250;, phường Di&#234;n Hồng, Th&#224;nh phố Pleiku, Tỉnh Gia Lai" href="/82-tran-phu-phuong-dien-hong-tp-pleiku-tinh-gia-lai-viet-nam">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="82 Trần Ph&#250;, phường Di&#234;n Hồng, Thành phố Pleiku, Tỉnh Gia Lai" href="/82-tran-phu-phuong-dien-hong-tp-pleiku-tinh-gia-lai-viet-nam">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_23" data-sku='["MU773VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>222 L&#234; Ho&#224;n, Tp. Phủ L&#253;, H&#224; Nam </label>
+                                                    <label>222 L&#234; Hoàn, Tp. Phủ L&#253;, Hà Nam </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0789.15.98.98">0789.15.98.98</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="222 L&#234; Ho&#224;n, Tp. Phủ L&#253;, H&#224; Nam" href="/222-le-hoan-tp-phu-ly-ha-nam">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="222 L&#234; Hoàn, Tp. Phủ L&#253;, Hà Nam" href="/222-le-hoan-tp-phu-ly-ha-nam">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_28" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>161 Trần Ph&#250;, TP. H&#224; Tĩnh</label>
+                                                    <label>161 Trần Ph&#250;, TP. Hà Tĩnh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:089963.91.91">089963.91.91</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="161 Trần Ph&#250;, TP. H&#224; Tĩnh" href="/161-tran-phu-tp-ha-tinh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="161 Trần Ph&#250;, TP. Hà Tĩnh" href="/161-tran-phu-tp-ha-tinh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1920,11 +1920,11 @@
                                             </li>
                                             <li class="instock city_20" data-sku='["MU773VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 147 Đ&#224; Nẵng, P. Lạc Vi&#234;n, Q. Ng&#244; Quyền, Tp. Hải Ph&#242;ng</label>
+                                                    <label>Số 147 Đà Nẵng, P. Lạc Vi&#234;n, Q. Ng&#244; Quyền, Tp. Hải Ph&#242;ng</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936511516">0936511516</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 147 Đ&#224; Nẵng, P. Lạc Vi&#234;n, Q. Ng&#244; Quyền, Tp. Hải Ph&#242;ng" href="/so-147-da-nang-p-lac-vien-q-ngo-quyen-tp-hai-phong">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 147 Đà Nẵng, P. Lạc Vi&#234;n, Q. Ng&#244; Quyền, Tp. Hải Ph&#242;ng" href="/so-147-da-nang-p-lac-vien-q-ngo-quyen-tp-hai-phong">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -1950,41 +1950,41 @@
                                             </li>
                                             <li class="instock city_21" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị Xã Mỹ H&#224;o, Tỉnh Hưng Y&#234;n (Trung t&#226;m ngã tư Phố Nối) </label>
+                                                    <label>Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị Xã Mỹ Hào, Tỉnh Hưng Y&#234;n (Trung t&#226;m ngã tư Phố Nối) </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0766.38.6633">0766.38.6633</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị Xã Mỹ H&#224;o, Tỉnh Hưng Y&#234;n (Trung t&#226;m ngã tư Phố Nối) " href="/so-2-pho-noi-phuong-ban-yen-nhan-thi-xa-my-hao-tinh-hung-yen">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 2, Phố Nối, Phường Bần Y&#234;n Nh&#226;n, Thị Xã Mỹ Hào, Tỉnh Hưng Y&#234;n (Trung t&#226;m ngã tư Phố Nối) " href="/so-2-pho-noi-phuong-ban-yen-nhan-thi-xa-my-hao-tinh-hung-yen">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_37" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>69 Quang Trung, Lộc Thọ, TP. Nha Trang, T. Kh&#225;nh Ho&#224; </label>
+                                                    <label>69 Quang Trung, Lộc Thọ, TP. Nha Trang, T. Khánh Hoà </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:089 638 8383">089 638 8383</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="69 Quang Trung, Lộc Thọ, TP. Nha Trang, T. Kh&#225;nh Ho&#224;" href="/69-quang-trung-loc-tho-tp-nha-trang-t-khanh-hoa">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="69 Quang Trung, Lộc Thọ, TP. Nha Trang, T. Khánh Hoà" href="/69-quang-trung-loc-tho-tp-nha-trang-t-khanh-hoa">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_37" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 580 Đường 2 th&#225;ng 4, Vĩnh Phước, Tp.Nha Trang, Tỉnh Kh&#225;nh H&#242;a</label>
+                                                    <label>Số 580 Đường 2 tháng 4, Vĩnh Phước, Tp.Nha Trang, Tỉnh Khánh H&#242;a</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0793.68.8383">0793.68.8383</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 580 Đường 2 th&#225;ng 4, Vĩnh Phước, Tp.Nha Trang, Tỉnh Kh&#225;nh H&#242;a" href="/so-28a-duong-2-thang-4-vinh-phuoc-tp-nha-trang-tinh-khanh-hoa">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 580 Đường 2 tháng 4, Vĩnh Phước, Tp.Nha Trang, Tỉnh Khánh H&#242;a" href="/so-28a-duong-2-thang-4-vinh-phuoc-tp-nha-trang-tinh-khanh-hoa">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_58" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>148 Nguyễn Trung Trực, Rạch Gi&#225;, Ki&#234;n Giang</label>
+                                                    <label>148 Nguyễn Trung Trực, Rạch Giá, Ki&#234;n Giang</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0902.050.148">0902.050.148</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="148 Nguyễn Trung Trực, Rạch Gi&#225;, Ki&#234;n Giang" href="/148-nguyen-trung-truc-rach-gia-kien-giang">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="148 Nguyễn Trung Trực, Rạch Giá, Ki&#234;n Giang" href="/148-nguyen-trung-truc-rach-gia-kien-giang">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2000,21 +2000,21 @@
                                             </li>
                                             <li class="instock city_44" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>6A L&#234; Hồng Phong, Phường 4, Đ&#224; Lạt, L&#226;m Đồng</label>
+                                                    <label>6A L&#234; Hồng Phong, Phường 4, Đà Lạt, L&#226;m Đồng</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:079.869.22.55">079.869.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="6A L&#234; Hồng Phong, Phường 4, Đ&#224; Lạt, L&#226;m Đồng" href="/6a-le-hong-phong-phuong-4-da-lat">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="6A L&#234; Hồng Phong, Phường 4, Đà Lạt, L&#226;m Đồng" href="/6a-le-hong-phong-phuong-4-da-lat">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_6" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>L&#244; 10, Ngã 6 Phố L&#253; C&#244;ng Uẩn, TP. L&#224;o Cai</label>
+                                                    <label>L&#244; 10, Ngã 6 Phố L&#253; C&#244;ng Uẩn, TP. Lào Cai</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:078912.83.83">078912.83.83</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="L&#244; 10, Ngã 6 Phố L&#253; C&#244;ng Uẩn, TP. L&#224;o Cai" href="/lo-10-nga-6-pho-ly-cong-uan-tp-lao-cai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="L&#244; 10, Ngã 6 Phố L&#253; C&#244;ng Uẩn, TP. Lào Cai" href="/lo-10-nga-6-pho-ly-cong-uan-tp-lao-cai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2030,11 +2030,11 @@
                                             </li>
                                             <li class="instock city_24" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 4 Th&#224;nh Chung, TP. Nam Định, Tỉnh Nam Định</label>
+                                                    <label>Số 4 Thành Chung, TP. Nam Định, Tỉnh Nam Định</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:089.662.82.26">089.662.82.26</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 4 Th&#224;nh Chung, TP. Nam Định, Tỉnh Nam Định" href="/so-4-thanh-chung-tp-nam-dinh-tinh-nam-dinh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 4 Thành Chung, TP. Nam Định, Tỉnh Nam Định" href="/so-4-thanh-chung-tp-nam-dinh-tinh-nam-dinh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2050,11 +2050,11 @@
                                             </li>
                                             <li class="instock city_27" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label> Số 34 Nguyễn Sỹ S&#225;ch, Phường Hưng B&#236;nh, Th&#224;nh Phố Vinh, Nghệ An</label>
+                                                    <label> Số 34 Nguyễn Sỹ Sách, Phường Hưng B&#236;nh, Thành Phố Vinh, Nghệ An</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0763.162.162">0763.162.162</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title=" Số 34 Nguyễn Sỹ S&#225;ch, Phường Hưng B&#236;nh, Th&#224;nh Phố Vinh, Nghệ An" href="/so-34-nguyen-sy-sach-phuong-hung-binh-thanh-pho-vinh-nghe-an">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title=" Số 34 Nguyễn Sỹ Sách, Phường Hưng B&#236;nh, Thành Phố Vinh, Nghệ An" href="/so-34-nguyen-sy-sach-phuong-hung-binh-thanh-pho-vinh-nghe-an">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2070,11 +2070,11 @@
                                             </li>
                                             <li class="instock city_38" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>Số 44 Đường 16 th&#225;ng 4, P.Tấn T&#224;i, TP.Phan Rang-Th&#225;p Ch&#224;m, Ninh Thuận</label>
+                                                    <label>Số 44 Đường 16 tháng 4, P.Tấn Tài, TP.Phan Rang-Tháp Chàm, Ninh Thuận</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:079.218.22.55">079.218.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="Số 44 Đường 16 th&#225;ng 4, P.Tấn T&#224;i, TP.Phan Rang-Th&#225;p Ch&#224;m, Ninh Thuận" href="/so-44-duong-16-thang-4-p-tan-tai-tp-phan-rang-thap-cham-ninh-thuan">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="Số 44 Đường 16 tháng 4, P.Tấn Tài, TP.Phan Rang-Tháp Chàm, Ninh Thuận" href="/so-44-duong-16-thang-4-p-tan-tai-tp-phan-rang-thap-cham-ninh-thuan">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2150,11 +2150,11 @@
                                             </li>
                                             <li class="instock city_14" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>T&#242;a nh&#224; MobiFone, đường 25/4, Hồng Gai, TP. Hạ Long, Quảng Ninh</label>
+                                                    <label>T&#242;a nhà MobiFone, đường 25/4, Hồng Gai, TP. Hạ Long, Quảng Ninh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0789.268.616">0789.268.616</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="T&#242;a nh&#224; MobiFone, đường 25/4, Hồng Gai, TP. Hạ Long, Quảng Ninh" href="/toa-nha-mobifone-duong-25-4-hong-gai-tp-ha-long-quang-ninh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="T&#242;a nhà MobiFone, đường 25/4, Hồng Gai, TP. Hạ Long, Quảng Ninh" href="/toa-nha-mobifone-duong-25-4-hong-gai-tp-ha-long-quang-ninh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2170,11 +2170,11 @@
                                             </li>
                                             <li class="instock city_30" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>139 Quốc Lộ 9, Phường 5, TP Đ&#244;ng H&#224;, Quảng Trị (Shop cũ: 94 Quốc Lộ 9, P1)</label>
+                                                    <label>139 Quốc Lộ 9, Phường 5, TP Đ&#244;ng Hà, Quảng Trị (Shop cũ: 94 Quốc Lộ 9, P1)</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0777.450.550">0777.450.550</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="139 Quốc Lộ 9, Phường 5, TP Đ&#244;ng H&#224;, Quảng Trị (Shop cũ: 94 Quốc Lộ 9, P1) " href="/50-hung-vuong-tp-dong-ha-tinh-quang-tri-shop-sis-mobifone">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="139 Quốc Lộ 9, Phường 5, TP Đ&#244;ng Hà, Quảng Trị (Shop cũ: 94 Quốc Lộ 9, P1) " href="/50-hung-vuong-tp-dong-ha-tinh-quang-tri-shop-sis-mobifone">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2200,31 +2200,31 @@
                                             </li>
                                             <li class="instock city_46" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>935 C&#225;ch Mạng Th&#225;ng 8, TP. T&#226;y Ninh </label>
+                                                    <label>935 Cách Mạng Tháng 8, TP. T&#226;y Ninh </label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:079.773.22.55">079.773.22.55</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="935 C&#225;ch Mạng Th&#225;ng 8, TP. T&#226;y Ninh" href="/935-cach-mang-thang-8-tp-tay-ninh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="935 Cách Mạng Tháng 8, TP. T&#226;y Ninh" href="/935-cach-mang-thang-8-tp-tay-ninh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_22" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>390 L&#253; B&#244;n, TP. Th&#225;i B&#236;nh</label>
+                                                    <label>390 L&#253; B&#244;n, TP. Thái B&#236;nh</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0896.639.638">0896.639.638</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="390 L&#253; B&#244;n, TP. Th&#225;i B&#236;nh" href="/390-ly-bon-tp-thai-binh">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="390 L&#253; B&#244;n, TP. Thái B&#236;nh" href="/390-ly-bon-tp-thai-binh">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
                                             <li class="instock city_12" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>135A C&#225;ch Mạng Th&#225;ng 8, TP. Th&#225;i Nguy&#234;n</label>
+                                                    <label>135A Cách Mạng Tháng 8, TP. Thái Nguy&#234;n</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0936.53.31.35">0936.53.31.35</a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="135A C&#225;ch Mạng Th&#225;ng 8, TP. Th&#225;i Nguy&#234;n" href="/135a-duong-cach-mang-t8-tp-thai-nguyen">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="135A Cách Mạng Tháng 8, TP. Thái Nguy&#234;n" href="/135a-duong-cach-mang-t8-tp-thai-nguyen">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2310,11 +2310,11 @@
                                             </li>
                                             <li class="instock city_10" data-sku='["MU773VN","MU783VN","MU793VN","MU7A3VN"]'>
                                                 <span>
-                                                    <label>24 Nguyễn Th&#225;i Học, Th&#224;nh Phố Y&#234;n B&#225;i</label>
+                                                    <label>24 Nguyễn Thái Học, Thành Phố Y&#234;n Bái</label>
 
                                                     <label class="data">
                                                         <strong><i class="icon-hotline"></i> <a href="tel:0899159688 ">0899159688 </a></strong>
-                                                        - <i class="icon-localtion"></i> <a title="24 Nguyễn Th&#225;i Học, Th&#224;nh Phố Y&#234;n B&#225;i" href="/24-nguyen-thai-hoc-thanh-pho-yen-bai">Chỉ đường</a>
+                                                        - <i class="icon-localtion"></i> <a title="24 Nguyễn Thái Học, Thành Phố Y&#234;n Bái" href="/24-nguyen-thai-hoc-thanh-pho-yen-bai">Chỉ đường</a>
                                                     </label>
                                                 </span>
                                             </li>
@@ -2324,7 +2324,7 @@
                             </div>
                         </div>
                             <div class="out-date">
-                                <p class="title"><strong><a href="/kho-san-pham-cu/iphone-15-pro-max-256gb-chinh-hang-vn-a-p41375">ĐTDĐ Apple iPhone 15 Pro Max 256GB Blue Titanium_MU7A3VN/A - TBH 89 Tam Trinh, Ho&#224;ng Mai, H&#224; Nội  - TBH</a></strong></p>
+                                <p class="title"><strong><a href="/kho-san-pham-cu/iphone-15-pro-max-256gb-chinh-hang-vn-a-p41375">ĐTDĐ Apple iPhone 15 Pro Max 256GB Blue Titanium_MU7A3VN/A - TBH 89 Tam Trinh, Hoàng Mai, Hà Nội  - TBH</a></strong></p>
                                 <div class="note">
                                     <p><i>Giá chỉ từ:</i> <strong class="text-red">30,190,000 ₫</strong></p>
                                     <p><i>Tiết kiệm:</i> <strong class="text-red">2,300,000 ₫</strong></p>
@@ -2527,7 +2527,29 @@
                                     <p>
                                         <strong class="name"><?=$itemCommnet['name']?></strong>
                                     </p>
-                                    <p><label><i><?php $date1 = $itemCommnet['datetime'];$date2 = date("Y-m-d H:i:s"); echo date_diff($date1,$date2);  ?></i></label></p>
+                                    <p>
+                                        <label>
+                                            <i>
+                                            <?php 
+                                                $diff = abs(strtotime(date("Y-m-d H:i:s")) - strtotime($itemCommnet['datetime'])); 
+                                                $years = floor($diff / (365*60*60*24));
+                                                $months = floor(($diff) / (30*60*60*24));
+                                                $days = floor(($diff) / (60*60*24));
+                                                $hours = floor(($diff) / (60*60));
+                                                $minutes = floor(($diff) / 60);
+                                                $seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minutes*60));
+                                                if($hours > 24){
+                                                    echo "$days ngày trước";
+                                                }else{
+                                                    if($minutes > 60){
+                                                        echo "$hours giờ trước";
+                                                    }else{
+                                                        echo "$minutes phút trước";
+                                                    }
+                                                }
+                                            ?></i>
+                                        </label>
+                                    </p>
                                     <div class="content">
                                         <?=$itemCommnet['content']?>
                                     </div>
@@ -2925,17 +2947,7 @@
 
 
     <script src="assets/js/main.js"></script>
-    <script>
-	dataLayer.push({
-	  'dr_event_type' : 'view_item',
-	  'dr_value' : 32490000,   // product price
-	  'dr_items' : [{
-		  'id': '3694',   // should be the same as the id in Google Merchant Center,
-		  'google_business_vertical': 'retail'
-		}],
-	  'event':'dynamic_remarketing'
-	});
-    </script>
+    
 
     <script type="text/javascript">
 
@@ -2958,53 +2970,6 @@
 			updateViewProduct(3694);
 			productDetails();
 		});
-    </script>
-
-
-
-
-    <script>
-
-		var gaData = {
-				currency: "VND",
-				value: 32490000,
-				items: [
-					{
-						item_id: "MU7A3VN",
-						item_name: "iPhone 15 Pro Max (256GB) - Chính hãng VN/A",
-						affiliation: "Google Merchandise Store",
-						coupon: "",
-						discount: 0,
-						index: 0,
-						item_brand: "Apple",
-						item_category: "iPhone 15 Pro Max",
-						item_list_id: "Điện thoại Apple",
-						item_list_name: "Điện thoại Apple",
-						location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-						price: 32490000,
-						quantity: 1
-					}
-				]
-			};
-
-		dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-        dataLayer.push({
-            event: "view_item",
-            ecommerce: gaData
-		});
-
-
-		$(document).ready(function () {
-            $(".btnQuickOrder, .btnbuy").on("click", function () {
-
-                dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-                dataLayer.push({
-                    event: "add_to_cart",
-                    ecommerce: gaData
-                });
-            });
-		});
-
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
