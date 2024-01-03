@@ -15748,18 +15748,6 @@ $(document).ready(function() {
             scrollTop: t.offset().top - 10
         }, 1e3))
     });
-    $("#login-modal").click(function(n) {
-        n.preventDefault();
-        this.blur();
-        $.get(this.href, function(n) {
-            $(n).appendTo("body").modal({
-                escapeClose: !1,
-                clickClose: !1,
-                closeClass: "icon-minutes",
-                closeText: " "
-            })
-        })
-    });
     $(".ajax-modal").click(function(n) {
         n.preventDefault();
         this.blur();

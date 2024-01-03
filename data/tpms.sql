@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 02, 2024 lúc 07:16 PM
+-- Thời gian đã tạo: Th1 03, 2024 lúc 06:54 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -240,6 +240,34 @@ CREATE TABLE `tbl_comments` (
 INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `content`, `star`, `datetime`) VALUES
 (114, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2023-11-28 18:21:12'),
 (115, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-02 18:34:20');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_customer`
+--
+
+CREATE TABLE `tbl_customer` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(13) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `ward` varchar(50) NOT NULL,
+  `address` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_customer`
+--
+
+INSERT INTO `tbl_customer` (`id`, `username`, `password`, `name`, `email`, `phone`, `city`, `district`, `ward`, `address`) VALUES
+(1, 'lehuydau2312@gmail.com', '46f94c8de14fb36680850768ff1b7f2a', 'Lê Huy Dậu', 'lehuydau2312@gmail.com', 386131716, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội'),
+(3, 'user1@gmail.com', '202cb962ac59075b964b07152d234b70', 'User 1', 'user1@gmail.com', 987654321, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội'),
+(9, 'user2@gmail.com', '202cb962ac59075b964b07152d234b70', 'User 2', 'user2@gmail.com', 98789789, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội');
 
 -- --------------------------------------------------------
 
@@ -505,6 +533,12 @@ ALTER TABLE `tbl_comments`
   ADD KEY `versionId` (`versionId`);
 
 --
+-- Chỉ mục cho bảng `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_position`
 --
 ALTER TABLE `tbl_position`
@@ -601,6 +635,12 @@ ALTER TABLE `tbl_colors`
 --
 ALTER TABLE `tbl_comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`
