@@ -8,14 +8,24 @@ if(isset($_POST['login'])){
     $newpassword = md5($password);
 
     $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_customer WHERE username = '$username' AND password = '$newpassword'");
-    if(isset($sqlUser)){}
+    if(mysqli_num_rows($sqlUser) == 0){
+        $error1 = 'Tài';
+        $error2 = 'khoản';
+        $error3 = 'không';
+        $error4 = "tồn";
+        $error5 = "tại";
+        $error6 = "!";
+    }else{
+        while($data = mysqli_fetch_array($sqlUser)){
+            $_SESSION['userId'] = $data['id'];
+        }
+        echo "<script>window.location.href = 'index.php'</script>";
+    }
 }
 ?>
 <!doctype html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="author" content="tpms.com">
     <meta property='og:site_name' content='tpms.com' />
@@ -736,6 +746,21 @@ if(isset($_POST['login'])){
                     <div class="split">
                         <p>Hoặc</p>
                     </div>
+                    <?php
+                        if(isset($error1) && isset($error2) && isset($error3) && isset($error4)){
+                            ?>
+                                <div class="waviy">
+                                    <span style="--i:1"><?php echo $error1; ?></span>
+                                    <span style="--i:2"><?php echo $error2; ?></span>
+                                    <span style="--i:3"><?php echo $error3; ?></span>
+                                    <span style="--i:4"><?php echo $error4; ?></span>
+                                    <span style="--i:5"><?php echo $error5; ?></span>
+                                    <span style="--i:6"><?php echo $error6; ?></span>
+                                </div>
+
+                            <?php
+                        }
+                    ?>
 
                     <div class="internal">
                         <form method="POST" action="dang-nhap.php">

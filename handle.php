@@ -2,6 +2,18 @@
     session_start();
     require_once("config/config.php");
 
+    // Get info user
+    if (isset($_SESSION['userId'])){
+        $userID = $_SESSION['userId'];
+        $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_customer WHERE id = $userID");
+    }
+    function getInfoUser($conn,$i){
+        $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_customer WHERE id = $i");
+        $infoUser = mysqli_fetch_assoc($sqlUser);
+        return $infoUser;
+    }
+    
+
     // Category 
     $sqlBrand1 = mysqli_query($conn,"SELECT * FROM `tbl_categories` WHERE id BETWEEN 1 AND 18");
 

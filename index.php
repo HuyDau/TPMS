@@ -7,7 +7,6 @@ include 'handle.php';
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="author" content="tpms.com">
     <meta property='og:site_name' content='tpms.com' />
@@ -59,7 +58,35 @@ include 'handle.php';
                     <li><a href="/he-thong-cua-hang">Hệ Thống Showroom</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
                     <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
-                    <li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li>
+                    <?php
+                        if (isset($_SESSION['userId'])) {
+                            $infoUser = getInfoUser($conn,$_SESSION['userId']);
+                            ?>
+                                <li class="member">
+                                    <i class="icon-account"></i> <a class="account" href="/Account"><strong><?=$infoUser['name']?></strong></a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="bang-dieu-khien.php"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
+                                            <li><a href="/account/info"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
+                                            <li><a href="/account/order"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
+                                            <li><a href="/account/wishlist"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
+                                            <li><a href="/account/comment"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
+                                            <li><a href="/account/review"><i class="icon-edit-squad"></i><span>Quản lý đánh giá</span></a></li>
+                                            <li>
+                                                <form action="/Account/LogOff" id="logoutForm" method="post">
+                                                    <input type="hidden" name="ReturnUrl" id="ReturnUrl" value="/">
+                                                    <input name="__RequestVerificationToken" type="hidden" value="GCBt6unvKmAoP-qQJihj4UXrdv3SVsw5rDcngofGMjs5DrFnQrqDXgs5qtW9xbdbUs0AYLW22TLu1AJudVa_mWI6s6Ce19qnGoaMwT5bdU7Hgz8qjrQwTHyL3GsyL_U86Nsk2w2">
+                                                    <a href="dang-xuat.php"><i class="icon-logout"></i><span>Đăng xuất</span></a>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            <?php
+                        }else{
+                            ?><li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li><?php
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -1779,12 +1806,12 @@ include 'handle.php';
                                     <?php
                                     if ($itemApple['idCategory'] == 1) {
                                     ?><img src="uploads/product/smartphone/<?= $itemApple['versionImage'] ?>" alt="<?= $itemApple['versionName'] ?>" title="<?= $itemApple['versionName'] ?>"><?php
-                                                                                                                                                                                                    } else if ($itemApple['idCategory'] == 2) {
-                                                                                                                                                                                                        ?><img src="uploads/product/laptop/<?= $itemApple['versionImage'] ?>" alt="<?= $itemApple['versionName'] ?>" title="<?= $itemApple['versionName'] ?>"><?php
-                                                                                                                                                                                                    } else if ($itemApple['idCategory'] == 3) {
-                                                                                                                                                                                                    ?><img src="uploads/product/tablet/<?= $itemApple['versionImage'] ?>" alt="<?= $itemApple['versionName'] ?>" title="<?= $itemApple['versionName'] ?>"><?php
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                    ?>
+                                                                                                                                                                                            } else if ($itemApple['idCategory'] == 2) {
+                                                                                                                                                                                                ?><img src="uploads/product/laptop/<?= $itemApple['versionImage'] ?>" alt="<?= $itemApple['versionName'] ?>" title="<?= $itemApple['versionName'] ?>"><?php
+                                                                                                                                                                                                                                                                                                                                                            } else if ($itemApple['idCategory'] == 3) {
+                                                                                                                                                                                                                                                                                                                                                                ?><img src="uploads/product/tablet/<?= $itemApple['versionImage'] ?>" alt="<?= $itemApple['versionName'] ?>" title="<?= $itemApple['versionName'] ?>"><?php
+                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                            ?>
                                 </a>
                             </div>
 

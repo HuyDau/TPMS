@@ -821,7 +821,6 @@ if(isset($_POST['register'])){
                                                 </select>
                                             </div>
                                         </div>
-
                                         <div class="form-controls">
                                             <label>Quận/Huyện:</label>
                                             <div class="controls">
