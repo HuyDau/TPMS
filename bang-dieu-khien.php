@@ -98,7 +98,7 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                             <i class="icon-account"></i> <a class="account" href="/Account"><strong><?= $infoUser['name'] ?></strong></a>
                             <div class="sub">
                                 <ul>
-                                    <li><a href="bang-dieu-khien.php"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
+                                    <li><a href="bang-dieu-khien.php?page=index" ><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
                                     <li><a href="/account/info"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
                                     <li><a href="/account/order"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
                                     <li><a href="/account/wishlist"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
@@ -148,10 +148,10 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="bang-dieu-khien.php?page=index"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
-                        <li><a href="bang-dieu-khien.php?page=info"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
+                        <li><a href="bang-dieu-khien.php?page=index" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "index"){echo "actived";}} ?>"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
+                        <li><a href="bang-dieu-khien.php?page=info" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "info"){echo "actived";}} ?>"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
                         <li><a href="bang-dieu-khien.php?page=wishlist"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
-                        <li><a href="bang-dieu-khien.php?page=wishlist"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
+                        <li><a href="bang-dieu-khien.php?page=wishlist" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "wishlist"){echo "actived";}} ?>"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
                         <li><a href="/account/comment"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
                         <li><a href="dang-xuat.php"><i class="icon-logout"></i><span>Đăng xuất</span></a></li>
                     </ul>
@@ -235,13 +235,68 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                                 <div class="box-bg-white" style="padding:25px;">
 
                                     <div class="tools">
-                                        <a href="/account/wishlist" title="Chỉnh sửa danh sách sản phẩm yêu thích"><i class="icon-edit-squad"></i></a>
+                                        <a href="bang-dieu-khien.php?page=wishlist" title="Chỉnh sửa danh sách sản phẩm yêu thích"><i class="icon-edit-squad"></i></a>
                                     </div>
 
-                                    <div style="max-width:100%; padding:0 30px;">
-                                        <div class="owl-carousel owl-reponsive lr-slider">
-                                            <p>Chưa có sản phẩm nào trong danh sách yêu thích của bạn.</p>
-                                        </div>
+                                    <div class="owl-carousel lr-slider wishlist">
+                                        <?php
+                                            if(isset($_SESSION['userId'])){
+                                                $WishList = getWishList($conn,$_SESSION['userId']);
+                                                while($itemWishList = mysqli_fetch_assoc($WishList)){
+                                                    $prodId = $itemWishList['productId'];
+                                                    $sqlProd = getDetailProduct($prodId);
+                                                    $queryProd = mysqli_query($conn,$sqlProd);
+                                                    $infoProd = mysqli_fetch_assoc($queryProd);
+                                                    ?>
+                                                        <div class="item">
+                                                            <div class="img">
+                                                                <a href="chi-tiet-san-pham.php?idsanpham=<?=$infoProd['idVersion']?>" title="<?=$infoProd['versionName']?>">
+                                                                    <?php
+                                                                        if($infoProd['idCategory'] == 1){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/smartphone/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 2){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/laptop/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 3){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/tablet/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 4){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/monitor/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 5){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/smarttv/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 6){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/watch/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 7){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/voice/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 8){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/smarthome/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 16){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/accessory/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 17){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/toys/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 18){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/driftingmachine/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 19){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/repair/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }else if($infoProd['idCategory'] == 20){
+                                                                            ?><img style="width: 180px;height: auto;" src="uploads/product/service/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                        }
+                                                                    ?>
+                                                                    
+                                                                </a>
+                                                            </div>
+                                                            <div class="info">
+                                                                <a class="title" href="chi-tiet-san-pham.php?idsanpham=<?=$infoProd['idVersion']?>"><?=$infoProd['versionName']?></a>
+                                                                <span class="price">
+                                                                    <strong><?=number_format($infoProd['versionPromotionalPrice'],0,"",".")?> ₫</strong>
+                                                                    <strike><?=number_format($infoProd['versionPrice'],0,"",".")?> ₫</strike>
+                                                                </span>
+                
+                                                            </div>
+                                                        </div>
+                                                    <?php
+                                                }
+                                            }
+                                        
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -417,6 +472,7 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                         </div>
                     </div>
                     <div class="row" style="padding: 100px 0; ">
+                        <h3>Sản phẩm yêu thích</h3>
                         <div class="owl-carousel lr-slider wishlist">
                             <?php
                                 if(isset($_SESSION['userId'])){
@@ -597,23 +653,7 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
     <!-- accesstrade-->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/app.users.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var reqPath = '/account' + location.pathname.toLowerCase();
-            var hasActived = false;
-            $('nav ul li a').each(function(idx, value) {
-                var href = $(this).attr('href').toLowerCase();
-                if (href && reqPath.indexOf(href) >= 0) {
-                    $(this).addClass('actived');
-                    hasActived = true;
-                }
-            });
-
-            if (!hasActived) {
-                $('nav ul li:eq(0) a').addClass('actived');
-            }
-        });
-    </script>
+    
     <script type="text/javascript">
         $('.lr-slider').owlCarousel({
             nav: true,

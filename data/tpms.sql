@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 05, 2024 lúc 08:11 PM
+-- Thời gian đã tạo: Th1 05, 2024 lúc 05:26 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -295,7 +295,8 @@ INSERT INTO `tbl_favorite` (`id`, `productId`, `userId`, `status`) VALUES
 (11, 8, 3, 2),
 (12, 9, 3, 2),
 (13, 20, 3, 2),
-(14, 19, 3, 1);
+(14, 19, 3, 1),
+(15, 9, 9, 2);
 
 -- --------------------------------------------------------
 
@@ -680,7 +681,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_favorite`
 --
 ALTER TABLE `tbl_favorite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`

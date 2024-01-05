@@ -3309,6 +3309,10 @@ section .flash-sales .content .item {
     padding-bottom: 50px
 }
 
+.wishlist .owl-stage-outer .owl-stage .lr-item .item{
+    padding-bottom: 0px
+}
+
 .lr-slider .item .note {
     position: absolute;
     bottom: 0
