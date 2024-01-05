@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 04, 2024 lúc 07:52 PM
+-- Thời gian đã tạo: Th1 05, 2024 lúc 08:11 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -241,7 +241,8 @@ INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `conten
 (114, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2023-11-28 18:21:12'),
 (115, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-02 18:34:20'),
 (116, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-04 19:07:37'),
-(117, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-04 19:08:54');
+(117, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-04 19:08:54'),
+(118, 9, 'User 1', 999999999, 'user1@gmail.com', 'a', 5, '2024-01-05 10:57:27');
 
 -- --------------------------------------------------------
 
@@ -268,8 +269,33 @@ CREATE TABLE `tbl_customer` (
 
 INSERT INTO `tbl_customer` (`id`, `username`, `password`, `name`, `email`, `phone`, `city`, `district`, `ward`, `address`) VALUES
 (1, 'lehuydau2312@gmail.com', '46f94c8de14fb36680850768ff1b7f2a', 'Lê Huy Dậu', 'lehuydau2312@gmail.com', 386131716, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội'),
-(3, 'user1@gmail.com', '202cb962ac59075b964b07152d234b70', 'User 1', 'user1@gmail.com', 987654321, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Nghĩa Đô', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội'),
+(3, 'user1@gmail.com', '202cb962ac59075b964b07152d234b70', 'User 1', 'user1@gmail.com', 987654321, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội'),
 (9, 'user2@gmail.com', '202cb962ac59075b964b07152d234b70', 'User 2', 'user2@gmail.com', 98789789, 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_favorite`
+--
+
+CREATE TABLE `tbl_favorite` (
+  `id` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_favorite`
+--
+
+INSERT INTO `tbl_favorite` (`id`, `productId`, `userId`, `status`) VALUES
+(1, 6, 3, 2),
+(10, 5, 3, 2),
+(11, 8, 3, 2),
+(12, 9, 3, 2),
+(13, 20, 3, 2),
+(14, 19, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -541,6 +567,12 @@ ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_favorite`
+--
+ALTER TABLE `tbl_favorite`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_position`
 --
 ALTER TABLE `tbl_position`
@@ -636,13 +668,19 @@ ALTER TABLE `tbl_colors`
 -- AUTO_INCREMENT cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_favorite`
+--
+ALTER TABLE `tbl_favorite`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`

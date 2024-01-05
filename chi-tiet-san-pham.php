@@ -33,6 +33,26 @@
         $addRepComment = mysqli_query($conn,"INSERT INTO `tbl_repcomments`(`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`) VALUES (NULL,'$versionId','$commentId','$name','$phone','$email','$content')");
         // echo "INSERT INTO `tbl_repcomments`(`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`) VALUES (NULL,'$versionId','$commentId','$name','$phone','$email','$content')";
     }
+
+    // LIKE
+    if(isset($_GET['like'])){
+        $prodId = $_GET['idsanpham'];
+        $userId = $_SESSION['userId'];
+        $sqlFavourite = mysqli_query($conn,"SELECT * FROM  tbl_favorite WHERE  productId = $prodId AND userId = $userId");
+        if(mysqli_num_rows($sqlFavourite) == 0 && $_GET['like']=="add"){
+            $addLike = mysqli_query($conn,"INSERT INTO `tbl_favorite`(`id`, `productId`, `userId`, `status`) VALUES (NULL,'$prodId','$userId','2')");
+            
+        }else if($_GET['like']== "dislike"){
+            $idLike = $_GET['idlike'];
+            $dislike = mysqli_query($conn,"UPDATE `tbl_favorite` SET `status`= 1 WHERE id = '$idLike'");
+            
+        }else if($_GET['like']== "like"){
+            $idLike = $_GET['idlike'];
+            $like = mysqli_query($conn,"UPDATE `tbl_favorite` SET `status`= 2 WHERE id = '$idLike'");
+            
+        }
+    }
+    
 ?>
 <!doctype html>
 <html>
@@ -62,7 +82,7 @@
 
     <!-- Slick Slide -->
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick-theme.css"/> <script src="assets/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick-theme.css"/> <script src="assets/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <meta property="og:image" content="assets/images/logo/logo.png" />
@@ -82,7 +102,7 @@
                     <li><a href="/he-thong-cua-hang">Hệ Thống Showroom</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
                     <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
-                    <li><a id="login-modal" href="/Account/Login?ReturnUrl=/gioi-thieu-cong-ty">Đăng nhập</a></li>
+                    <li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li>
                 </ul>
             </div>
         </div>
@@ -774,12 +794,28 @@
                 </div>
                 <div class="product-details-container">
                     <div class="product-image">
-                        <div class="love-this-button">
-                            <a title="Thêm vào sản phẩm yêu thích" href="javascript:wishProduct(3694, false)">
-                                <i class="icon-love-1"></i>
-                                <i class="icon-love-2"></i>
-                            </a>
-                        </div>
+                        <?php
+                            if(isset($_SESSION['userId'])){
+                                $prodId = $_GET['idsanpham'];
+                                $userId = $_SESSION['userId'];
+                                $sqlFavorite = mysqli_query($conn,"SELECT * FROM tbl_favorite WHERE productId = $prodId AND userId = $userId ");
+                                $favourite = mysqli_fetch_assoc($sqlFavorite);
+
+                                if(mysqli_num_rows( $sqlFavorite) == 0){
+                                    ?><div class="love-this-button"> <a title="Thêm vào sản phẩm yêu thích" href="chi-tiet-san-pham.php?idsanpham=<?=$prodId?>&like=add"><i class="icon-love-1"></i><i class="icon-love-2"></i> </div><?php
+                                }else{
+                                    if($favourite['status'] == 2){
+                                        
+                                        ?> <div class="love-this-button">  <a title="Thêm vào sản phẩm yêu thích" href="chi-tiet-san-pham.php?idsanpham=<?=$prodId?>&idlike=<?=$favourite['id'];?>&like=dislike" class="inlist"><i class="icon-love-1"></i> <i class="icon-love-2"></i> </a></div> <?php
+                                    }else{
+                                        ?><div class="love-this-button"> <a title="Thêm vào sản phẩm yêu thích" href="chi-tiet-san-pham.php?idsanpham=<?=$prodId?>&idlike=<?=$favourite['id'];?>&like=like"><i class="icon-love-1"></i><i class="icon-love-2"></i> </div><?php
+                                    }
+                                }
+                                ?>
+                                <?php
+                            }
+
+                        ?>  
 
                         <div id="imagePreview">
                             <!-- Loading Screen -->
@@ -808,6 +844,106 @@
                                             </div>
                                         <?php
                                     }
+                                    else if($itemDetailProduct['idCategory'] == 3){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/tablet/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/tablet/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/tablet/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 4){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/monitor/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/monitor/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/monitor/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 5){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/smarttv/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/smarttv/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/smarttv/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 6){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/watch/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/watch/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/watch/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 7){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/voice/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/voice/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/voice/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 8){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/smarthome/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/smarthome/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/smarthome/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 16){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/accessory/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/accessory/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/accessory/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 17){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/toys/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/toys/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/toys/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 18){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/driftingmachine/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/driftingmachine/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/driftingmachine/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 19){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/repair/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/repair/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/repair/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }else if($itemDetailProduct['idCategory'] == 20){
+                                        ?>
+                                            <div>
+                                                <a data-fancybox="gallery" rel="group" href="uploads/product/service/<?=$itemDetailProduct['versionImage']?>"><img data-u="image" src="uploads/product/service/<?=$itemDetailProduct['versionImage']?>" title="" /></a>
+                                                <div data-u="thumb">
+                                                <img class="i" src="uploads/product/service/<?=$itemDetailProduct['versionImage']?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                    }
                                 ?>
                                 <?php
                                     $queryImageProduct = mysqli_query($conn,getImageProduct($itemDetailProduct['productId']));
@@ -827,6 +963,105 @@
                                                     <a data-fancybox="gallery" rel="group" href="uploads/product/laptop/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/laptop/<?=$itemImageProduct['versionImage']?>" title="" /></a>
                                                     <div data-u="thumb">
                                                         <img class="i" src="uploads/product/laptop/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 3){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/tablet/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/tablet/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/tablet/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 4){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/monitor/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/monitor/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/monitor/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 5){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/monitor/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/monitor/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/smarttv/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 6){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/watch/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/watch/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/watch/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 7){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/voice/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/voice/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/voice/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 8){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/smarthome/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/smarthome/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/smarthome/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 16){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/accessory/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/accessory/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/accessory/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 17){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/toys/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/toys/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/toys/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 18){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/driftingmachine/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/driftingmachine/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/driftingmachine/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 19){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/repair/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/repair/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/repair/<?=$itemImageProduct['versionImage']?>" />
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        }else if($itemDetailProduct['idCategory'] == 20){
+                                            ?>
+                                                <div>
+                                                    <a data-fancybox="gallery" rel="group" href="uploads/product/service/<?=$itemImageProduct['versionImage']?>"><img data-u="image" src="uploads/product/service/<?=$itemImageProduct['versionImage']?>" title="" /></a>
+                                                    <div data-u="thumb">
+                                                        <img class="i" src="uploads/product/service/<?=$itemImageProduct['versionImage']?>" />
                                                     </div>
                                                 </div>
                                             <?php
@@ -3041,6 +3276,46 @@
             cclass.classList.add("show");
         }
     </script>
+    
+    <?php
+        if(isset($addLike)){
+            ?>
+                <script>
+                     $.toast({ 
+                        heading: 'Bạn đã thêm vào sản phẩm yêu thích !',  
+                        showHideTransition: 'fade',
+                        icon: 'success',
+                        hideAfter: 3e3
+                    });
+            
+                </script>
+            <?php
+        }else if(isset($like)){
+            ?>
+                <script>
+                     $.toast({ 
+                        heading: 'Bạn đã thêm vào sản phẩm yêu thích !',  
+                        showHideTransition: 'fade',
+                        icon: 'success',
+                        hideAfter: 3e3
+                    });
+            
+                </script>
+            <?php
+        }else if(isset($dislike)){
+            ?>
+                <script>
+                     $.toast({ 
+                        heading: 'Bạn đã bỏ khỏi sản phẩm yêu thích !',  
+                        showHideTransition: 'fade',
+                        icon: 'error',
+                        hideAfter: 3e3
+                    });
+            
+                </script>
+            <?php
+        }
+    ?>
 
 </body>
 </html>

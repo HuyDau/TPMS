@@ -3115,7 +3115,14 @@ section .flash-sales .content .item {
     top: 40%;
     right: -45px
 }
-
+.wishlist.wishlist .owl-next{
+    top: 25%;
+    right: 0;
+}
+.wishlist.wishlist .owl-prev{
+    top: 25%;
+    left: 0;
+}
 .lr-slider .owl-nav .owl-next span {
     display: none
 }

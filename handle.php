@@ -135,4 +135,10 @@
         $sqlGetListRepComment = "SELECT * FROM `tbl_repcomments` WHERE commentId = $i";
         return $sqlGetListRepComment;
     }
+
+    // GET WISHLIST 
+    function getWishList($conn, $a){
+        $sqlWishList = mysqli_query($conn,"SELECT * FROM tbl_favorite WHERE userId = $a AND status = 2");
+        return  $sqlWishList;
+    }
 ?>

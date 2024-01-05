@@ -1,20 +1,4 @@
-function applyVoucher() {
-    var n = $("#quickForm").serializeObject();
-    return $.post("/Ajax/Applyvoucher", n, function(n) {
-        n.Errors ? $.toast({
-            heading: "Có lỗi xảy ra.",
-            text: n.Message,
-            showHideTransition: "fade",
-            icon: "error",
-            hideAfter: 1e4
-        }) : $("#voucher").html(n.Message)
-    }),
-    !1
-}
-function removeVoucher() {
-    $("#voucher").html("");
-    $("#PromoteCode").val("")
-}
+
 function removeKwd(n, t) {
     var i = kwdGetCookie();
     i.removeByValue(n);
@@ -500,33 +484,7 @@ function init_quickOrder() {
     }).get());
     $(".options .option a").width(n)
 }
-function wishProduct(n, t) {
-    var i = '<div class="cart-msg">';
-    t ? $.post("/api/account/wish", {
-        ID: n
-    }, function(n) {
-        n.Errors || $(".love-this-button a").toggleClass("inlist");
-        i += '<p><i class="icon-checked text-red"><\/i> <span>' + n.Title + "<\/span><\/p>";
-        i += '<a class="button button-red" href="/account/wishlist">Quản lý danh sách<\/a>';
-        i += "<\/div>";
-        $.toast({
-            text: i,
-            position: "bottom-center",
-            stack: !1,
-            loader: !1,
-            hideAfter: 5e3
-        })
-    }) : (i += '<p><i class="icon-minutes text-red"><\/i> <span>Bạn cần đăng nhập để sử dụng chức năng này<\/span><\/p>',
-    i += '<a class="button button-red" href="/account/login">Đăng nhập/Đăng ký<\/a>',
-    i += "<\/div>",
-    $.toast({
-        text: i,
-        position: "bottom-center",
-        stack: !1,
-        loader: !1,
-        hideAfter: 5e3
-    }))
-}
+
 function checkWarranty(n) {
     var t = $(n)
       , i = validateForm(t)

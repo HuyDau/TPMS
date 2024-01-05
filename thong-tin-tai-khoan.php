@@ -6,8 +6,9 @@ if (isset($_SESSION['userId'])) {
 }else{
     header("Location: index.php");
 }
+if(isset($_SESSION['success'])){unset($_SESSION['success']);}
 
-if(isset($_POST['submit'])){
+if(!isset($_SESSION['success']) && isset($_POST['submit'])){
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
@@ -22,11 +23,11 @@ if(isset($_POST['submit'])){
 
     if($password == "" && $password == "" ){
         $update1 = mysqli_query($conn,"UPDATE `tbl_customer` SET `name`='$name',`email`='$email',`phone`='$phone',`city`='$city',`district`='$district',`ward`='$ward',`address`='$address' WHERE `id`='$userId'");
-        $success  = "Cập nhật thông tin thành công";
+        $_SESSION['success'] = $update1;
     }else{
         if($password == $repassword){
-            $update2 = mysqli_query($conn,"UPDATE `tbl_customer` SET `password`='$newpassword',`name`='$name',`email`='$email',`phone`='$phone',`city`='$city',`district`='$district',`ward`='$ward',`address`='$address' WHERE `id`='$userId'");
-            $success  = "Cập nhật thông tin thành công";
+            $update1 = mysqli_query($conn,"UPDATE `tbl_customer` SET `password`='$newpassword',`name`='$name',`email`='$email',`phone`='$phone',`city`='$city',`district`='$district',`ward`='$ward',`address`='$address' WHERE `id`='$userId'");
+            $_SESSION['success'] = $update1;
         }else{
             $error = "Mật khẩu không trùng khớp";
         }
@@ -177,7 +178,6 @@ if(isset($_POST['submit'])){
                 <div class="row equaHeight" data-obj=".col .box-bg-white">
                     <div class="col col-lg">
                         <h3>Cập nhật thông tin cá nhân</h3> 
-                        <?php if(isset($success)){echo $success;}else if(isset($error)){echo $error;} ?>
                         <div class="box-bg-white" style="height: 807.066px;">
                             <div class="account-form">
                                 <form method="POST" action="thong-tin-tai-khoan.php">
@@ -505,28 +505,33 @@ if(isset($_POST['submit'])){
         }
     </script>
     <?php
-        if(isset($update1)){
+        if(isset($update1 )){
            ?>
                 <script>
                     $.toast({ 
-                        heading: 'Bạn đã để lại nhận xét thành công !',  
+                        heading: 'Cập nhật thông tin thành công !',  
                         showHideTransition: 'fade',
                         icon: 'success',
                         hideAfter: 3e3
                     });
                 </script>
            <?php
-            // echo "<script>
-            //     const sleep = (ms) => {
-            //         return new Promise(resolve => setTimeout(resolve, ms));
-            //         }
-            //         (async () => {
-            //         await sleep(3000)
-            //         window.location.href = 'chi-tiet-san-pham.php?idsanpham=".$_GET['idsanpham']."';
-            //         })()
-            // </script>";
         }
     ?>
+    <?php
+        if(isset($error)){
+       ?>
+            <script>
+                $.toast({ 
+                    heading: 'Cập nhật thông thất bại !',  
+                    showHideTransition: 'fade',
+                    icon: 'error',
+                    hideAfter: 3e3
+                });
+            </script>
+       <?php
+    }
+?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         referrerpolicy="no-referrer"></script>
 </body>

@@ -47,7 +47,7 @@
                     <li><a href="/he-thong-cua-hang">Hệ Thống Showroom</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
                     <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
-                    <li><a id="login-modal" href="/Account/Login?ReturnUrl=/gioi-thieu-cong-ty">Đăng nhập</a></li>
+                    <li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li>
                 </ul>
             </div>
         </div>
