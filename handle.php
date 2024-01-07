@@ -21,7 +21,7 @@
         
         $sqlCatImage = mysqli_query($conn,"SELECT * FROM `tbl_categories` WHERE Id = $id");
         $itemCatImage = mysqli_fetch_assoc($sqlCatImage);
-        echo $itemCatImage['categoryImage'];
+        return $itemCatImage['categoryImage'];
     }
     // GET NAME CATEGORY
     function getNameCategory($conn,$id){
@@ -33,13 +33,7 @@
     $sqlBrand1 = mysqli_query($conn,"SELECT * FROM `tbl_brands` WHERE id BETWEEN 1 AND 18");
 
     function getBrand($conn, $i){
-        if($i == 1){
-            $querry = "SELECT * FROM `tbl_brands` WHERE id BETWEEN 1 AND 18";
-        }else if($i === 2){
-            $querry = "SELECT * FROM `tbl_brands` WHERE id BETWEEN 21 AND 33";
-        }else if($i === 3){
-            $querry = "SELECT * FROM `tbl_brands` WHERE id BETWEEN 21 AND 33";
-        }
+        $querry = "SELECT * FROM `tbl_brands` WHERE categoryId =  $i";
         return $querry;
         
     }
@@ -140,5 +134,51 @@
     function getWishList($conn, $a){
         $sqlWishList = mysqli_query($conn,"SELECT * FROM tbl_favorite WHERE userId = $a AND status = 2");
         return  $sqlWishList;
+    }
+
+    // GET COMMENT
+    function getComments($conn, $a){
+        $sqlComment = mysqli_query($conn,"SELECT * FROM tbl_comments WHERE userId = $a ");
+        return $sqlComment;
+    }
+
+    // GET LAST CART 
+    function getCart($conn,$a){
+        $sqlCart = mysqli_query($conn,"SELECT * FROM tbl_cart INNER JOIN tbl_detailcart ON tbl_cart.id = tbl_detailcart.cartId WHERE userId = $a ORDER BY tbl_cart.id DESC LIMIT 1");
+        return $sqlCart;
+    }
+
+    // GET CART
+    function getCartDetail($conn,$a){
+        $sqlCartDetail = mysqli_query($conn,"SELECT * FROM tbl_cart INNER JOIN tbl_detailcart ON tbl_cart.id = tbl_detailcart.cartId WHERE tbl_cart.id = $a ");
+        return $sqlCartDetail;
+    }
+
+    
+
+    // GET PAYMENT
+    function getPayment($conn,$a){
+        $sqlPayment = mysqli_query($conn,"SELECT * FROM tbl_payment WHERE id = $a");
+        $infoPayment = mysqli_fetch_assoc($sqlPayment);
+        return $infoPayment['paymentName'];
+    }
+
+    // GET STATUS
+    function getStatus($conn,$a){
+        $sqlStatus = mysqli_query($conn,"SELECT * FROM tbl_status WHERE id = $a");
+        $infoStatus = mysqli_fetch_assoc($sqlStatus);
+        return $infoStatus['statusName'];
+    }
+
+    // GET DETAIL CART 
+    function getDetailCart($conn,$a){
+        $sqlDetailCart = mysqli_query($conn,"SELECT * FROM tbl_detailcart WHERE cartId = $a");
+        return $sqlDetailCart;
+    }
+
+    // GET DETAIL Product 
+    function getDetailProd($conn,$a){
+        $sqlDetailProd = mysqli_query($conn,"SELECT * FROM tbl_versions WHERE idVersion = $a");
+        return $sqlDetailProd;
     }
 ?>

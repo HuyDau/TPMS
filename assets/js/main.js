@@ -116,60 +116,7 @@ function RemoveReview(n, t) {
         }
     })
 }
-function HideComment(n, t) {
-    confirm("Bạn có muốn ẩn bình luận này!") && $.post("/api/comment/hide", {
-        id: n
-    }, function(n) {
-        if (n.Errors)
-            $.toast({
-                heading: "Có lỗi xảy ra.",
-                text: n.Title,
-                showHideTransition: "fade",
-                icon: "error",
-                hideAfter: 15e3
-            });
-        else {
-            $.toast({
-                heading: n.Title,
-                showHideTransition: "fade",
-                icon: "success",
-                hideAfter: 5e3
-            });
-            var r = $(t).parent().find("input[name=commentReq]").val()
-              , i = JSON.parse(r);
-            $.post(i.path, i, function(n) {
-                $(t).parent().html(n)
-            })
-        }
-    })
-}
-function RemoveComment(n, t) {
-    confirm("Bạn có muốn xóa bình luận này!") && $.post("/api/comment/remove", {
-        id: n
-    }, function(n) {
-        if (n.Errors)
-            $.toast({
-                heading: "Có lỗi xảy ra.",
-                text: n.Title,
-                showHideTransition: "fade",
-                icon: "error",
-                hideAfter: 15e3
-            });
-        else {
-            $.toast({
-                heading: n.Title,
-                showHideTransition: "fade",
-                icon: "success",
-                hideAfter: 5e3
-            });
-            var r = $(t).parent().find("input[name=commentReq]").val()
-              , i = JSON.parse(r);
-            $.post(i.path, i, function(n) {
-                $(t).parent().html(n)
-            })
-        }
-    })
-}
+
 function showFLS(n) {
     $("section.fls").hide();
     $("section#" + n).show()
@@ -410,75 +357,6 @@ function init_quickSub() {
         $(this).addClass("selectedOption").removeClass("changeOption");
         $(this).find("i.icon-border").addClass("icon-checked").removeClass("icon-border")
     });
-    var n = Math.max.apply(null, $(".options .option a").map(function() {
-        return $(this).width()
-    }).get());
-    $(".options .option a").width(n)
-}
-function init_quickOrder() {
-    $("a.changeOption").click(function() {
-        var i = $(this).attr("data-sku"), n = $(this).attr("data-id"), t;
-        n = n ? n : 0;
-        t = "/ajax/quickorder?skuId=" + i + "&colorId=" + n;
-        postValue = $("#quickForm").serializeObject();
-        $.post(t, postValue, function(n) {
-            $("#popup-modal").html(n)
-        })
-    });
-    $("input.cart-promote:not(:checked)").click(function() {
-        var n = [];
-        $("input.cart-promote:checked").each(function() {
-            n.push($(this).val())
-        });
-        var t = n.join(",")
-          , i = $("#quickForm input[name=SKU]").val()
-          , r = $("#quickForm input[name=COLOR]").val()
-          , u = "/ajax/quickorder?skuId=" + i + "&colorId=" + r + "&offerId=" + t;
-        postValue = $("#quickForm").serializeObject();
-        $.post(u, postValue, function(n) {
-            $("#popup-modal").html(n)
-        })
-    });
-    $(".control #btnMinutes").click(function() {
-        var n = $(".control #Number").val(), t, i;
-        return n = n > 1 ? n - 1 : n,
-        $(".control #Number").val(n),
-        t = $("#quickOrderPrice").attr("data-value"),
-        i = t * n,
-        $("#quickOrderPrice").text((new Intl.NumberFormat).format(i)),
-        t = $("#quickOrderPriceLast").attr("data-value"),
-        i = t * n,
-        $("#quickOrderPriceLast").text((new Intl.NumberFormat).format(i)),
-        !1
-    });
-    $(".control #btnPlus").click(function() {
-        var n = $(".control #Number").val(), t, i;
-        return n++,
-        $(".control #Number").val(n),
-        t = $("#quickOrderPrice").attr("data-value"),
-        i = t * n,
-        $("#quickOrderPrice").text((new Intl.NumberFormat).format(i)),
-        t = $("#quickOrderPriceLast").attr("data-value"),
-        i = t * n,
-        $("#quickOrderPriceLast").text((new Intl.NumberFormat).format(i)),
-        !1
-    });
-    $(".cart-paymentTypeId").click(function() {
-        var n = $(this).val();
-        $(".payment-opt").removeClass("payment-selected");
-        n == 1 ? ($("#payType_1").addClass("payment-selected"),
-        $("#f_payType_1").show(),
-        $("#f_payType_5").hide(),
-        $("#SystemCityID, #SystemDistrictID, #Address").attr("data-required", 1),
-        $("#SystemMarketID").removeAttr("data-required")) : ($("#payType_5").addClass("payment-selected"),
-        $("#f_payType_5").show(),
-        $("#f_payType_1").hide(),
-        $("#SystemMarketID").attr("data-required", 1),
-        $("#SystemCityID, #SystemDistrictID, #Address").removeAttr("data-required"));
-        $("#SystemCityID").change();
-        $("#MKSystemCityID").change()
-    });
-    $(".cart-paymentTypeId:checked").click();
     var n = Math.max.apply(null, $(".options .option a").map(function() {
         return $(this).width()
     }).get());
@@ -757,105 +635,6 @@ function validFormOrder_v2(n) {
     }),
     !1
 }
-function validFormOrder_v3(n) {
-    var t = $(n)
-      , i = validateForm(t);
-    return i == "" ? grecaptcha.ready(function() {
-        grecaptcha.execute(RECAPTCHA_API_KEY, {
-            action: "order"
-        }).then(function(n) {
-            $("#hdnGoogleRecaptcha").val(n);
-            postValue = $(t).serializeObject();
-            $.post("/api/cart/checkout", postValue, function(n) {
-                n.Errors ? $.toast({
-                    heading: "Có lỗi khi gửi thông tin đơn hàng.",
-                    text: n.Message,
-                    showHideTransition: "fade",
-                    icon: "error",
-                    hideAfter: 15e3
-                }) : ($.toast({
-                    heading: n.Title,
-                    showHideTransition: "fade",
-                    icon: "success",
-                    hideAfter: 15e3
-                }),
-                location.href = "/cart/checkout")
-            })
-        })
-    }) : $.toast({
-        heading: "Bạn cần kiểm tra lại thông tin.",
-        text: i,
-        showHideTransition: "fade",
-        icon: "error",
-        hideAfter: 15e3
-    }),
-    !1
-}
-function cartGetCookie() {
-    var t = []
-      , n = $.cookie("_cart");
-    return n && n != "null" && (t = JSON.parse(n)),
-    t
-}
-function cartChangeOffer(n) {
-    var t = cartGetCookie(), r = t.findIndex(t=>t.sku == n), i;
-    r >= 0 && (i = [],
-    $("#of_" + n).find(":checked").each(function() {
-        i.push($(this).val())
-    }),
-    t[r].offer = i);
-    $.cookie("_cart", JSON.stringify(t), {
-        path: "/"
-    });
-    console.log(t);
-    cartReload()
-}
-function cartMinutes(n) {
-    var t = cartGetCookie()
-      , i = t.findIndex(t=>t.sku == n);
-    if (i >= 0) {
-        if (t[i].number == 1) {
-            cartDelete(n);
-            return
-        }
-        t[i].number--;
-        $.cookie("_cart", JSON.stringify(t), {
-            path: "/"
-        })
-    }
-    cartReload()
-}
-function cartPlus(n) {
-    var t = cartGetCookie()
-      , i = t.findIndex(t=>t.sku == n);
-    i >= 0 && (t[i].number++,
-    $.cookie("_cart", JSON.stringify(t), {
-        path: "/"
-    }));
-    cartReload()
-}
-function cartChange() {
-    cartReload()
-}
-function cartDelete(n) {
-    var t = cartGetCookie()
-      , i = t.findIndex(t=>t.sku == n);
-    i >= 0 && (t.splice(i, 1),
-    $.cookie("_cart", JSON.stringify(t), {
-        path: "/"
-    }));
-    cartReload()
-}
-function cartEdit() {
-    cartReload()
-}
-function cartReload() {
-    var t = cartGetCookie(), n;
-    t.length > 0 ? (n = "/Ajax/CartItems",
-    $.get(n, function(n) {
-        $("#cartInfo").html(n)
-    })) : location.href = "/gio-hang"
-}
 function btnInstallment() {
     $(".btnInstallment").click(function() {
         var n = $(".btnInstallment").hasClass("disabled") || $(".btnQuickOrder").hasClass("btn-outstock");
@@ -863,54 +642,7 @@ function btnInstallment() {
             return !1
     })
 }
-// function AddCart() {
-//     $(".add-cart").not(".disabled").not(".btn-outstock").click(function(n) {
-//         var o = $(this), s = $(".add-cart").hasClass("disabled") || $(".btnQuickOrder").hasClass("btn-outstock"), t, i;
-//         if (!s) {
-//             var u = []
-//               , f = $(this).attr("data-sku")
-//               , r = $("#colorOptions .selected").attr("data-id")
-//               , e = $(this).attr("data-colorid");
-//             f.indexOf(",") > 0 ? u = f.split(",") : u.push(f);
-//             t = cartGetCookie();
-//             u.forEach(function(n) {
-//                 if (t) {
-//                     var i = t.findIndex(t=>t.sku == n);
-//                     r && e != "-1" && (i = t.findIndex(t=>t.sku == n && t.color == r));
-//                     i >= 0 ? t[i].number++ : (t.push({
-//                         sku: n,
-//                         number: 1,
-//                         color: e ? e : r
-//                     }),
-//                     flyToElement(o, $("#cart-total")))
-//                 } else
-//                     t.push({
-//                         sku: n,
-//                         number: 1,
-//                         color: r
-//                     })
-//             });
-//             $.cookie("_cart", JSON.stringify(t), {
-//                 path: "/"
-//             });
-//             checkTotalCart();
-//             n.preventDefault();
-//             this.blur();
-//             i = '<div class="cart-msg">';
-//             i += '<p><i class="icon-checked"><\/i> <span>Thêm giỏ hàng thành công<\/span><\/p>';
-//             i += '<a class="button" href="/gio-hang">Xem giỏ hàng và thanh toán<\/a>';
-//             i += "<\/div>";
-//             $.toast({
-//                 text: i,
-//                 position: "bottom-center",
-//                 stack: !1,
-//                 loader: !1,
-//                 hideAfter: 1e4
-//             })
-//         }
-//     });
-//     checkTotalCart()
-// }
+
 function checkTotalCart() {
     var t = 0
       , n = cartGetCookie();

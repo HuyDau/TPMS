@@ -29,12 +29,8 @@ if(isset($_POST['login'])){
     <meta charset="utf-8">
     <meta name="author" content="tpms.com">
     <meta property='og:site_name' content='tpms.com' />
-    <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
-    <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Vietnam" />
-    <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
-    <meta name="geo.region" content="VN-Hanoi" />
-    <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
+    
+    
     <title>TPMS - ĐĂNG NHẬP HỆ THỐNG</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
@@ -99,7 +95,25 @@ if(isset($_POST['login'])){
                         </a>
                     </div>
                     <div class="item cart">
-                        <a href="gio-hang.php"><i class="icon-cart"></i><label><i class="icon-left"></i><span id="cart-total">0</span></label></a>
+                        <a href="gio-hang.php">
+                            <i class="icon-cart"></i>
+                            <label><i class="icon-left">
+                                </i><span id="cart-total">
+                                    <?php
+                                        $quantity = 0;
+                                        if (!empty($_SESSION["cart"])) {
+                                            $sqlProd = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE idVersion IN (" . implode(",", array_keys($_SESSION['cart'])) . ") ");
+                                            while(mysqli_fetch_array($sqlProd)){
+                                                $quantity ++;
+                                            }
+                                            echo "$quantity";
+                                        }else{
+                                            echo $quantity;
+                                        }
+                                    ?>
+                                </span>
+                            </label>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -110,30 +124,19 @@ if(isset($_POST['login'])){
             <div class="container">
                 <ul class="root">
                     <li id="dien-thoai-di-dong">
-                        <a href="san-pham.php?idCat=1" target="_self">
-                            <i class="icon icon-phone"></i>
-                            <span>Điện thoại</span>
-                        </a>
+                        <a href="san-pham.php?idCat=1" target="_self"><i class="icon icon-phone"></i><span>Điện thoại</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g1">
                                     <h4><a href="san-pham.php?idCat=1">Hãng Sảnn Xuất</a></h4>
                                     <ul class="display-column format_3">
                                         <?php
                                         while ($itemBrand1 = mysqli_fetch_assoc($sqlBrand1)) {
                                         ?>
-                                            <li><a href="san-pham.php?idCat=1&idBrand=<?= $itemBrand1['id'] ?>"><?= $itemBrand1['brandName'] ?></a></li>
+                                            <li><a href="san-pham.php?idCat=1&idBrand=<?= $itemBrand1['id'] ?>"><?= str_replace(' - ĐIỆN THOẠI',"",$itemBrand1['brandName']) ?></a></li>
                                         <?php
                                         }
                                         ?>
-
-                                    </ul>
-                                    <h4><a href="san-pham.php?idCat=1&idBrand=19">Điện thoại cao cấp</a></h4>
-                                    <ul class="display-row format_1">
-                                    </ul>
-                                    <h4><a href="san-pham.php?idCat=1&idBrand=20">Điện Thoại Gập</a></h4>
-                                    <ul class="display-row format_1">
                                     </ul>
                                 </div>
                                 <div class="menu g2">
@@ -148,48 +151,28 @@ if(isset($_POST['login'])){
                                         <li><a href="san-pham.php?idCat=1&priceMax=100000000&priceMin=20000000">Từ 20 đến 100 triệu</a></li>
                                     </ul>
                                 </div>
-                                <?php
-
-                                ?>
                                 <div class="menu ads" style="width:600px">
-                                    <!-- <a href="https://hoanghamobile.comchi-tiet-san-pham.php?idsanpham=<?= $itemTablet['idVersion'] ?>?source=Topmenu" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 2) ?>" alt="HTC A103"></a> -->
+                                    <?php if(getImageCategory($conn,1) != ""){echo "";}else{?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 1) ?>" alt=""></a><?php } ?>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li id="apple">
-                        <a href="san-pham.php?idCat=1&idBrand=1" target="_self">
-                            <i class="icon iconv2 iconv2-iphone"></i>
-                            <span>Apple</span>
-                        </a>
-                    </li>
+                    <li id="apple"> <a href="san-pham.php?idCat=1&idBrand=1" target="_self"> <i class="icon iconv2 iconv2-iphone"></i><span>Apple</span></a></li>
                     <li id="laptop">
-                        <a href="san-pham.php?idCat=2" target="_self">
-                            <i class="icon icon-laptop"></i>
-                            <span>Laptop</span>
-                        </a>
+                        <a href="san-pham.php?idCat=2" target="_self"><i class="icon icon-laptop"></i><span>Laptop</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g1">
-                                    <h4><a href="/laptop">Hãng Sản Xuất</a></h4>
+                                    <h4><a href="san-pham.php?idCat=2">Hãng Sản Xuất</a></h4>
                                     <ul class="display-column format_3">
                                         <?php
-                                        $sqlBran = mysqli_query($conn, getBrand($conn, 2));
-                                        while ($itemBrand = mysqli_fetch_assoc($sqlBran)) {
+                                            $sqlBran = mysqli_query($conn, getBrand($conn, 2));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBran)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=2&idBrand=<?= $itemBrand['id'] ?>"><?= str_replace(" - LAPTOP","",$itemBrand['brandName']) ?></a></li>
+                                            <?php
+                                            }
                                         ?>
-                                            <li><a href="san-pham.php?idCat=2&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
-                                        <?php
-                                        }
-                                        ?>
-                                    </ul>
-                                    <h4><a>Phân Loại Sản Phẩm</a></h4>
-                                    <ul class="display-column format_1">
-                                        <li><a href="/laptop/cao-cap-sang-trong">Cao cấp - Sang trọng</a></li>
-                                        <li><a href="/laptop/do-hoa-ki-thuat">Đồ họa - Kĩ thuật</a></li>
-                                        <li><a href="/laptop/hoc-tap-van-phong">Học tập - Văn ph&#242;ng</a></li>
-                                        <li><a href="/laptop/laptop-gaming">Laptop Gaming</a></li>
-                                        <li><a href="/laptop/mong-nhe">Mỏng nhẹ</a></li>
                                     </ul>
                                 </div>
                                 <div class="menu g3">
@@ -200,498 +183,248 @@ if(isset($_POST['login'])){
                                         <li><a href="san-pham.php?idCat=1&priceMax=20000000&priceMin=15000000">Từ 15 đến 20 triệu</a></li>
                                     </ul>
                                 </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                    <a href="san-pham.php?idCat=2" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 2) ?>" alt="HTC A103"></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,2) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 2) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="tablet">
-                        <a href="san-pham.php?idCat=3" target="_self">
-                            <i class="icon icon-tablet"></i>
-                            <span>Tablet</span>
-                        </a>
+                        <a href="san-pham.php?idCat=3" target="_self"><i class="icon icon-tablet"></i><span>Tablet</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g2">
-                                    <h4><a href="/tablet">Hãng Sản Xuất</a></h4>
+                                    <h4><a href="san-pham.php?idCat=3">Hãng Sản Xuất</a></h4>
                                     <ul class="display-column format_3">
                                         <?php
-                                        $sqlBran = mysqli_query($conn, getBrand($conn, 3));
-                                        while ($itemBrand = mysqli_fetch_assoc($sqlBran)) {
+                                        $sqlBrand = mysqli_query($conn, getBrand($conn,3));
+                                        while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
                                         ?>
-                                            <li><a href="san-pham.php?idCat=2&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
+                                            <li><a href="san-pham.php?idCat=3&idBrand=<?= $itemBrand['id'] ?>"><?= str_replace(" - TABLET","",$itemBrand['brandName']) ?></a></li>
                                         <?php
                                         }
                                         ?>
-                                        <li><a href="/tablet/ipad">Apple</a></li>
-                                        <li><a href="/tablet/samsung">Samsung</a></li>
-                                        <li><a href="/tablet/xiaomi">Xiaomi</a></li>
-                                        <li><a href="/tablet/nokia">Nokia</a></li>
-                                        <li><a href="/tablet/tcl">TCL</a></li>
-                                        <li><a href="/tablet/lenovo">Lenovo</a></li>
-                                        <li><a href="/tablet/oppo">OPPO</a></li>
-                                        <li><a href="/tablet/huawei">HUAWEI</a></li>
-                                        <li><a href="/tablet/htc">HTC</a></li>
-                                        <li><a href="/tablet/yuho">Yuho</a></li>
                                     </ul>
                                 </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                    <a href="https://hoanghamobile.comchi-tiet-san-pham.php?idsanpham=<?= $itemTablet['idVersion'] ?>?source=Topmenu" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/13/htc-a103-top-menu.png" alt="HTC A103" /></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,3) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 3) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="man-hinh">
-                        <a href="/man-hinh" target="_self">
-                            <i class="icon icon-monitor"></i>
-                            <span>M&#224;n h&#236;nh</span>
-                        </a>
+                        <a href="san-pham.php?idCat=4" target="_self"><i class="icon icon-monitor"></i><span>Màn hình</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
-                                    <h4><a href="/man-hinh">Hãng Sản Xuất</a></h4>
+                                    <h4><a href="san-pham.php?idCat=4">Hãng Sản Xuất</a></h4>
                                     <ul class="display-column format_2">
-                                        <li><a href="/man-hinh/acer">Acer</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/aoc">AOC</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/asus">Asus</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/dell">Dell</a></li>
-                                        <li><a href="/man-hinh/gigabyte">GIGABYTE</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/hp">HP</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/huawei">HUAWEI</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/lenovo">Lenovo</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/lg">LG</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/msi">MSI</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/samsung">Samsung</a></li>
-                                        <li><a href="/man-hinh/hang-san-xuat/viewsonic">ViewSonic</a></li>
-                                    </ul>
-                                </div>
-                                <div class="menu g2">
-                                    <h4><a>Phân Loại Sản Phẩm</a></h4>
-                                    <ul class="display-column format_1">
-                                        <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-do-hoa">M&#224;n h&#236;nh đồ họa</a></li>
-                                        <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-gaming">M&#224;n h&#236;nh Gaming</a></li>
-                                        <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-van-phong">M&#224;n h&#236;nh văn ph&#242;ng</a></li>
-                                        <li><a href="/man-hinh/phan-loai-san-pham/man-hinh-di-dong">M&#224;n h&#236;nh di động</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,4));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=4&idBrand=<?= $itemBrand['id'] ?>"><?= str_replace(" - MÀN HÌNH","",$itemBrand['brandName']) ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
                                 <div class="menu g3">
-                                    <h4><a href="/phu-kien/phu-kien-man-hinh">Phụ kiện m&#224;n h&#236;nh</a></h4>
+                                    <h4><a href="">Phụ kiện màn hình</a></h4>
                                     <ul class="display-row format_1">
                                     </ul>
                                 </div>
-
-
-                                <div class="menu ads" style="width:580px">
-                                    <a href="https://hoanghamobile.com/man-hinh/man-hinh-msi-pro-mp243x-chinh-hang?source=Topmenu" target="_blank"><img style="width:580px" src="https://hoanghamobile.com/Uploads/2023/11/07/580x266-01.png" alt="M&#224;n h&#236;nh MSI PRO MP243" /></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,4) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 4) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="smart-tv">
-                        <a href="/smart-tv" target="_self">
-                            <i class="icon icon-tivi"></i>
-                            <span>Smart TV</span>
-                        </a>
+                        <a href="san-pham.php?idCat=5" target="_self"><i class="icon icon-tivi"></i><span>Smart TV</span> </a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g1">
-                                    <h4><a href="/smart-tv">Hãng Sản Xuất</a></h4>
+                                    <h4><a href="san-pham.php?idCat=5">Hãng Sản Xuất</a></h4>
                                     <ul class="display-column format_1">
-                                        <li><a href="/smart-tv/tv-xiaomi">Tivi Xiaomi</a></li>
-                                        <li><a href="/smart-tv/tv-casper">Tivi Casper</a></li>
-                                        <li><a href="/smart-tv/tv-coocaa">TV Coocaa</a></li>
-                                        <li><a href="/smart-tv/itel">TV Itel</a></li>
-                                        <li><a href="/smart-tv/samsung">TV Samsung</a></li>
-                                        <li><a href="/smart-tv/tv-skyworth">TV SKYWORTH</a></li>
-                                        <li><a href="/smart-tv/tv-toshiba">TV Toshiba</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,5));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=5&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                     <h4><a href="/phu-kien/phu-kien-smart-tv">Phụ kiện TV</a></h4>
                                     <ul class="display-column format_1">
                                     </ul>
                                 </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                    <a href="https://hoanghamobile.com/smart-tv/tv-xiaomi?source=Topmenu" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/12/04/tv-xiaomi-t12-580x266.png" alt="TV Xiaomi m&#249;a lễ hội" /></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,5) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 5) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="dong-ho">
-                        <a href="/dong-ho" target="_self">
-                            <i class="icon icon-watch"></i>
-                            <span>Đồng hồ</span>
-                        </a>
+                        <a href="san-pham.php?idCat=6" target="_self"><i class="icon icon-watch"></i><span>Đồng hồ</span> </a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
                                     <h4><a>Đồng hồ</a></h4>
                                     <ul class="display-column format_4">
-                                        <li><a href="/dong-ho/apple-watch">Apple</a></li>
-                                        <li><a href="/dong-ho/sam-sung">Samsung</a></li>
-                                        <li><a href="/dong-ho/garmin">Garmin</a></li>
-                                        <li><a href="/dong-ho/huawei">HUAWEI</a></li>
-                                        <li><a href="/dong-ho/xiaomi">Xiaomi</a></li>
-                                        <li><a href="/dong-ho/dong-ho-tre-em">Đồng hồ trẻ em</a></li>
-                                        <li><a href="/dong-ho/realme">realme</a></li>
-                                        <li><a href="/dong-ho/huami">Amazfit</a></li>
-                                        <li><a href="/dong-ho/masstel">Masstel</a></li>
-                                        <li><a href="/dong-ho/oppo">OPPO</a></li>
-                                        <li><a href="/dong-ho/top-vong-deo-tay">Top v&#242;ng đeo tay</a></li>
-                                        <li><a href="/dong-ho/soundpeats">SoundPEATS</a></li>
-                                        <li><a href="/dong-ho/kieslect">Kieslect</a></li>
-                                        <li><a href="/dong-ho/fitbit">Fitbit</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,6));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=6&idBrand=<?= $itemBrand['id'] ?>"><?= str_replace("- ĐỒNG HỒ","",$itemBrand['brandName']) ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                    <a href="https://hoanghamobile.com/dong-ho/garmin?source=BannerSlider" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/12/05/garmin-02-thumb.jpg" alt="Garmin tháng 12" /></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,6) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 6) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="loa-tai-nghe">
-                        <a href="/loa-tai-nghe" target="_self">
-                            <i class="icon icon-headphone"></i>
-                            <span>&#194;m thanh</span>
-                        </a>
+                        <a href="san-pham.php?idCat=7" target="_self"><i class="icon icon-headphone"></i><span>Âm thanh</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
-                                    <h4><a href="/loa">Loa</a></h4>
+                                    <h4><a href="san-pham.php?idCat=7">THƯƠNG HIỆU</a></h4>
                                     <ul class="display-column format_2">
-                                        <li><a href="/loa/samsung">Samsung</a></li>
-                                        <li><a href="/loa/harman-kardon">Harman Kardon</a></li>
-                                        <li><a href="/loa/jbl">JBL</a></li>
-                                        <li><a href="/loa/monster">MONSTER</a></li>
-                                        <li><a href="/loa/sony">Sony</a></li>
-                                        <li><a href="/loa/alpha-works">Alpha Works</a></li>
-                                        <li><a href="/loa/edifier">Edifier</a></li>
-                                        <li><a href="/loa/energizer">Energizer</a></li>
-                                        <li><a href="/loa/havit">Havit</a></li>
-                                        <li><a href="/loa/huawei">HUAWEI</a></li>
-                                        <li><a href="/loa/lg">LG</a></li>
-                                        <li><a href="/loa/loa-mic-cam-tay">Loa mic cầm tay</a></li>
-                                        <li><a href="/loa/marshall">Marshall</a></li>
-                                        <li><a href="/loa/soundpeats">SoundPEATS</a></li>
-                                        <li><a href="/loa/tekin">Tekin</a></li>
-                                        <li><a href="/loa/apple">Apple</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,7));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=7&idBrand=<?= $itemBrand['id'] ?>"><?= str_replace("- ÂM THANH","",$itemBrand['brandName']) ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-                                <div class="menu g1">
-                                    <h4><a href="/tai-nghe">Tai nghe</a></h4>
-                                    <ul class="display-column format_3">
-                                        <li><a href="/tai-nghe/sony">Sony</a></li>
-                                        <li><a href="/tai-nghe/jbl">JBL</a></li>
-                                        <li><a href="/tai-nghe/soundpeats">Soundpeats</a></li>
-                                        <li><a href="/tai-nghe/apple-airpods">Apple</a></li>
-                                        <li><a href="/tai-nghe/asus">Asus</a></li>
-                                        <li><a href="/tai-nghe/beats">Beats</a></li>
-                                        <li><a href="/tai-nghe/denon">Denon </a></li>
-                                        <li><a href="/tai-nghe/edifier">Edifier</a></li>
-                                        <li><a href="/tai-nghe/energizer">Energizer</a></li>
-                                        <li><a href="/tai-nghe/havit">Havit</a></li>
-                                        <li><a href="/tai-nghe/haylou">Haylou</a></li>
-                                        <li><a href="/tai-nghe/huawei">HUAWEI</a></li>
-                                        <li><a href="/tai-nghe/iwalk">iWalk</a></li>
-                                        <li><a href="/tai-nghe/lg">LG</a></li>
-                                        <li><a href="/tai-nghe/monster">MONSTER</a></li>
-                                        <li><a href="/tai-nghe/motorola">Motorola</a></li>
-                                        <li><a href="/tai-nghe/myalo">myAlo</a></li>
-                                        <li><a href="/tai-nghe/nokia">Nokia</a></li>
-                                        <li><a href="/tai-nghe/philips">PHILIPS</a></li>
-                                        <li><a href="/tai-nghe/pioneer">Pioneer</a></li>
-                                        <li><a href="/tai-nghe/pisen">Pisen</a></li>
-                                        <li><a href="/tai-nghe/plantronics">Plantronics</a></li>
-                                        <li><a href="/tai-nghe/rapoo">Rapoo</a></li>
-                                        <li><a href="/tai-nghe/razer">Razer</a></li>
-                                        <li><a href="/tai-nghe/realme">realme</a></li>
-                                        <li><a href="/tai-nghe/samsung">Samsung</a></li>
-                                        <li><a href="/tai-nghe/sennheiser">Sennheiser</a></li>
-                                        <li><a href="/tai-nghe/shokz">Shokz</a></li>
-                                        <li><a href="/tai-nghe/baseus">Tai nghe Baseus</a></li>
-                                        <li><a href="/tai-nghe/tai-nghe-marshall">Tai nghe Marshall</a></li>
-                                        <li><a href="/tai-nghe/oppo">Tai nghe OPPO</a></li>
-                                        <li><a href="/tai-nghe/xiaomi">Xiaomi</a></li>
-                                        <li><a href="/tai-nghe/yamaha">YAMAHA</a></li>
-                                    </ul>
-                                </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                    <a href="https://hoanghamobile.com/tim-kiem?kwd=beam" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/08/web-top.jpg" alt="JBL tháng 11" /></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,7) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 7) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="smart-home">
-                        <a href="/smart-home" target="_self">
-                            <i class="icon icon-home"></i>
-                            <span>Smart Home</span>
-                        </a>
+                        <a href="san-pham.php?idCat=8" target="_self"><i class="icon icon-home"></i><span>Smart Home</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g4">
-                                    <h4><a href="/smart-home">Gia dụng th&#244;ng minh</a></h4>
+                                    <h4><a href="san-pham.php?idCat=8">Gia dụng thông minh</a></h4>
                                     <ul class="display-row format_2">
-                                        <li><a href="/do-gia-dung/may-loc-khong-khi">Máy lọc kh&#244;ng kh&#237;</a></li>
-                                        <li><a href="/do-gia-dung/robot-hut-bui">Robot, Máy h&#250;t bụi</a></li>
-                                        <li><a href="/smart-home/phu-kien-gia-dung">Phụ kiện gia dụng</a></li>
-                                        <li><a href="/phu-kien/smart-home/fpt-play-box">FPT Play box</a></li>
-                                        <li><a href="/smart-home/can-thong-minh">C&#226;n th&#244;ng minh</a></li>
-                                        <li><a href="/smart-home/dth-tivi-box-k">DTH/Tivi Box K+</a></li>
-                                        <li><a href="/smart-home/khuyen-mai-do-gia-dung-xiaomi">Khuyến mại đồ gia dụng Xiaomi</a></li>
-                                        <li><a href="/smart-home/may-chieu">Máy Chiếu</a></li>
-                                        <li><a href="/smart-home/noi-chien-khong-dau">Nồi chiên kh&#244;ng dầu</a></li>
-                                        <li><a href="/phu-kien/do-gia-dung/o-cam-dien">Ổ Cắm điện</a></li>
-                                        <li><a href="/smart-home/quat-dien">Quạt Điện</a></li>
-                                        <li><a href="/smart-home/thiet-bi-dinh-vi-thong-minh">Thiết bị định vị th&#244;ng minh</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,8));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=8&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-                                <div class="menu g0">
-                                    <h4><a href="/do-gia-dung/may-loc-khong-khi">Máy Lọc Kh&#244;ng kh&#237;</a></h4>
-                                    <ul class="display-row format_1">
-                                        <li><a href="/do-gia-dung/may-loc-khong-khi/clair">Máy lọc kh&#244;ng kh&#237; hãng Clair</a></li>
-                                        <li><a href="/do-gia-dung/may-loc-khong-khi/daikin">Máy lọc kh&#244;ng kh&#237; hãng Daikin</a></li>
-                                        <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-philips">Máy lọc kh&#244;ng kh&#237; hãng Philips</a></li>
-                                        <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-hang-xiaomi">Máy lọc kh&#244;ng kh&#237; hãng Xiaomi</a></li>
-                                        <li><a href="/do-gia-dung/may-loc-khong-khi/may-loc-khong-khi-levoit">Máy lọc kh&#244;ng kh&#237; Levoit</a></li>
-                                    </ul>
-                                </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,8) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 8) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="phu-kien">
-                        <a href="/phu-kien" target="_self">
-                            <i class="icon icon-sac"></i>
-                            <span>Phụ kiện</span>
-                        </a>
+                        <a href="san-pham.php?idCat=16" target="_self"><i class="icon icon-sac"></i><span>Phụ kiện</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
-                                    <h4><a href="/phu-kien/phu-kien-dien-thoai">Phụ kiện điện thoại</a></h4>
+                                    <h4><a href="san-pham.php?idCat=16">Phụ kiện</a></h4>
                                     <ul class="display-column format_1">
-                                        <li><a href="/sac-du-phong">Sạc dự ph&#242;ng</a></li>
-                                        <li><a href="/cu-sac-day-cap">Củ sạc, d&#226;y cáp</a></li>
-                                        <li><a href="/the-nho-usb">Thẻ nhớ - USB</a></li>
-                                        <li><a href="/op-lung-dien-thoai">Bao da - Ốp lưng</a></li>
-                                        <li><a href="/phu-kien/mieng-dan-man-hinh">Miếng dán m&#224;n h&#236;nh</a></li>
-                                    </ul>
-                                    <h4><a href="/phu-kien/xa-ton-phu-kien-gia-soc">Xả tồn phụ kiện - GI&#193; SỐC</a></h4>
-                                    <ul class="display-column format_1">
-                                    </ul>
-                                </div>
-                                <div class="menu g1">
-                                    <h4><a href="/phu-kien/ban-phim-chuot-gaming-gear">B&#224;n ph&#237;m, Chuột Gaming Gear</a></h4>
-                                    <ul class="display-column format_2">
-                                        <li><a href="/phu-kien/ban-phim">B&#224;n Ph&#237;m</a></li>
-                                        <li><a href="/phu-kien/chuot">Chuột</a></li>
-                                        <li><a href="/phu-kien/ban-phim-chuot-gaming-gear/tay-cam-choi-game">Tay cầm chơi game</a></li>
-                                    </ul>
-                                    <h4><a href="/camera-an-ninh">Camera an ninh - H&#224;nh tr&#236;nh</a></h4>
-                                    <ul class="display-row format_1">
-                                        <li><a href="/camera-an-ninh/camera-an-ninh">Camera an ninh</a></li>
-                                        <li><a href="/camera-an-ninh/camera-hanh-trinh">Camera h&#224;nh tr&#236;nh</a></li>
-                                    </ul>
-                                    <h4><a href="/phu-kien/phu-kien-smart-tv">Phụ kiện Smart TV</a></h4>
-                                    <ul class="display-row format_1">
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,16));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=16&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-                                <div class="menu g2">
-                                    <h4><a href="/phu-kien/linh-kien-may-tinh">Linh kiện máy t&#237;nh </a></h4>
-                                    <ul class="display-column format_2">
-                                        <li><a href="/phu-kien/phu-kien-may-tinh/o-cung">Ổ cứng</a></li>
-                                        <li><a href="/phu-kien/linh-kien-may-tinh/phan-mem">Phần mềm</a></li>
-                                        <li><a href="/phu-kien/phu-kien-may-tinh/ram">RAM</a></li>
-                                    </ul>
-                                    <h4><a href="/phu-kien/pin-man-hinh">Pin, M&#224;n h&#236;nh ch&#237;nh hãng</a></h4>
-                                    <ul class="display-column format_1">
-                                        <li><a href="/phu-kien/pin-man-hinh/man-hinh-iphone">M&#224;n h&#236;nh iPhone</a></li>
-                                        <li><a href="/phu-kien/pin-man-hinh/pin">Pin iPhone</a></li>
-                                    </ul>
-                                </div>
-                                <div class="menu g3">
-                                    <h4><a href="/phu-kien/phu-kien-apple">Phụ kiện Apple</a></h4>
-                                    <ul class="display-row format_1">
-                                        <li><a href="/phu-kien/phu-kien-apple/phu-kien-chinh-hang-apple">Phụ kiện Chính Hãng Apple</a></li>
-                                        <li><a href="/phu-kien/phu-kien-apple/phu-kien-cho-macbook">Phụ kiện cho Macbook</a></li>
-                                        <li><a href="/phu-kien/phu-kien-apple/phu-kien-iphone-15">Phụ kiện iPhone 15</a></li>
-                                        <li><a href="/phu-kien/phu-kien-apple/san-pham-uu-dai">Sản phẩm Ưu đãi</a></li>
-                                        <li><a href="/phu-kien/phu-kien-apple/thiet-bi-dinh-vi-thong-minh">Thiết bị định vị th&#244;ng minh</a></li>
-                                    </ul>
-                                    <h4><a href="/phu-kien/phu-kien-khac">Phụ kiện khác</a></h4>
-                                    <ul class="display-column format_1">
-                                        <li><a href="/phu-kien/tui-xach-balo-chong-soc">Balo - t&#250;i xách - t&#250;i chống sốc</a></li>
-                                    </ul>
-                                </div>
-                                <div class="menu g4">
-                                    <h4><a href="/phu-kien/thiet-bi-mang">Thiết bị mạng</a></h4>
-                                    <ul class="display-row format_1">
-                                        <li><a href="/phu-kien/thiet-bi-mang/bo-kich-song">Bộ k&#237;ch sóng</a></li>
-                                        <li><a href="/phu-kien/thiet-bi-mang/bo-phat-wifi-di-dong-3g-4g">Bộ phát Wifi di động (3G/4G)</a></li>
-                                        <li><a href="/phu-kien/thiet-bi-mang/router-modem">Router/Modem</a></li>
-                                        <li><a href="/phu-kien/thiet-bi-mang/thuong-hieu">Thương hiệu</a></li>
-                                    </ul>
-                                </div>
-
-
-                                <div class="menu ads" style="width:300px">
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,16) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 16) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="do-choi-cong-nghe">
-                        <a href="/do-choi-cong-nghe" target="_self">
-                            <i class="icon icon-game"></i>
-                            <span>Đồ chơi CN</span>
-                        </a>
+                        <a href="san-pham.php?idCat=17" target="_self"><i class="icon icon-game"></i><span>Đồ chơi CN</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
-                                    <h4><a>Đồ chơi c&#244;ng nghệ</a></h4>
+                                    <h4><a>Đồ chơi công nghệ</a></h4>
                                     <ul class="display-row format_1">
-                                        <li><a href="/do-choi-cong-nghe/quat-cam-tay-mini">Quạt cầm tay mini</a></li>
-                                        <li><a href="/do-choi-cong-nghe/day-do-nhip-tim">D&#226;y đo nhịp tim</a></li>
-                                        <li><a href="/do-choi-cong-nghe/kinh-thuc-te-ao">K&#237;nh thực tế ảo</a></li>
-                                        <li><a href="/do-choi-cong-nghe/tay-cam-chong-rung">Tay cầm chống rung</a></li>
-                                        <li><a href="/do-choi-cong-nghe/camera-hanh-trinh">Camera h&#224;nh tr&#236;nh</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,17));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=17&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-
-
-                                <div class="menu ads" style="width:600px">
-                                    <a href="https://hoanghamobile.com/camera/camera-hanh-trinh-gopro-hero-11-chinh-hang-fpt" target="_blank"><img style="width:600px" src="https://hoanghamobile.com/Uploads/2023/11/07/17nov-01.jpg" alt="Hero 11 Black" /></a>
-                                </div>
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,17) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 17) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="kho-san-pham-cu">
-                        <a href="/kho-san-pham-cu" target="_self">
-                            <i class="icon icon-maycu"></i>
-                            <span>Máy tr&#244;i</span>
-                        </a>
+                        <a href="san-pham.php?idCat=18" target="_self"><i class="icon icon-maycu"></i><span>Máy trôi</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
-                                    <h4><a>H&#224;ng cũ giá rẻ</a></h4>
+                                    <h4><a>Hàng cũ giá rẻ</a></h4>
                                     <ul class="display-column format_3">
-                                        <li><a href="/kho-san-pham-cu?=filters={type:1}">Điện thoại di động</a></li>
-                                        <li><a href="/kho-san-pham-cu?filters={type:5}">Đồng hồ th&#244;ng minh</a></li>
-                                        <li><a href="/kho-san-pham-cu?filters={type:2}">Máy t&#237;nh bảng</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:3}">Laptop</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:7}">Loa</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:13}">Tai nghe</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:26}">Camera</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:10}">Củ sạc</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:11}">D&#226;y cáp</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:28}">Máy lọc kh&#244;ng kh&#237;</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:18}">Phụ kiện</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:25}">Sạc dự ph&#242;ng</a></li>
-                                        <li><a href="/kho-san-pham-cu?=filters={type:30}">Tay cầm chống rung</a></li>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,18));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=18&idBrand=<?= $itemBrand['id'] ?>"><?= str_replace(" - MÁY TRÔI","",$itemBrand['brandName']) ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-
-
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,18) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 18) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="dich-vu-sua-chua">
-                        <a href="/dich-vu-sua-chua" target="_self">
-                            <i class="icon icon-suachua"></i>
-                            <span>Sửa chữa</span>
-                        </a>
+                        <a href="san-pham.php?idCat=19" target="_self"><i class="icon icon-suachua"></i><span>Sửa chữa</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
                                 <div class="menu g0">
-                                    <h4><a href="/dich-vu-sua-chua/android">Android</a></h4>
-                                    <ul class="display-column format_2">
-                                        <li><a href="/dich-vu-sua-chua/android/pin">Pin</a></li>
-                                        <li><a href="/dich-vu-sua-chua/android/camera">Camera</a></li>
-                                        <li><a href="/dich-vu-sua-chua/android/man-hinh">M&#224;n h&#236;nh</a></li>
-                                        <li><a href="/dich-vu-sua-chua/android/vo-va-mat-lung">Vỏ v&#224; mặt lưng</a></li>
+                                    <h4><a>Dịch vụ sửa chữa</a></h4>
+                                    <ul>
+                                        <?php
+                                            $sqlBrand = mysqli_query($conn, getBrand($conn,19));
+                                            while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                            ?>
+                                                <li><a href="san-pham.php?idCat=19&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></li>
+                                            <?php
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
-                                <div class="menu g1">
-                                    <h4><a href="/dich-vu-sua-chua/apple/iphone">Apple iPhone</a></h4>
-                                    <ul class="display-column format_2">
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/camera-truoc">Camera Trước</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/cap-phim-am-luong-phim-nguon">Cáp ph&#237;m &#226;m lượng - Cáp ph&#237;m nguồn</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/loa-trong-loa-ngoai">Loa Trong - Loa Ngo&#224;i</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/vo-kinh">Vỏ - K&#237;nh Lưng</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/camera">Camera Sau</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/man-hinh">M&#224;n h&#236;nh</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/iphone/cac-loai-cap">Cáp bo sạc IPhone</a></li>
-                                    </ul>
-                                </div>
-                                <div class="menu g2">
-                                    <h4><a href="/dich-vu-sua-chua/apple/ipad">Apple iPad</a></h4>
-                                    <ul class="display-row format_3">
-                                        <li><a href="/dich-vu-sua-chua/apple/ipad/pin">Pin</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/ipad/cam-ung">Cảm ứng</a></li>
-                                        <li><a href="/dich-vu-sua-chua/apple/ipad/man-hinh">M&#224;n h&#236;nh</a></li>
-                                    </ul>
-                                </div>
-
-
+                                <div class="menu ads" style="width:600px">  <?php if(getImageCategory($conn,19) == ''){?> <?php }else{ ?><a href="" target="_blank"><img style="width:600px" src="admin/assets/images/category/<?= getImageCategory($conn, 19) ?>" ></a><?php }?>  </div>
                             </div>
                         </div>
                     </li>
                     <li id="dich-vu">
-                        <a href="/dich-vu" target="_self">
-                            <i class="icon icon-simthe"></i>
-                            <span>Dịch Vụ</span>
-                        </a>
+                        <a href="san-pham.php?idCat=20" target="_self"><i class="icon icon-simthe"></i><span>Dịch Vụ</span></a>
                         <div class="sub-container">
                             <div class="sub">
-
-                                <div class="menu g0">
-                                    <h4><a href="/sim-the/sim-the">Sim Thẻ</a></h4>
-                                    <ul class="display-row format_3">
-                                        <li><a href="/sim-the/sim-wintel">SIM Wintel</a></li>
-                                        <li><a href="/sim-the/sim-the/sim-mobifone">SIM MobiFone</a></li>
-                                        <li><a href="/sim-the/sim-the/sim-viettel">SIM Viettel</a></li>
-                                        <li><a href="/sim-the/sim-the/sim-vinaphone">SIM Vinaphone</a></li>
-                                        <li><a href="/sim-the/sim-the/sim-itel">SIM iTel</a></li>
-                                        <li><a href="/sim-the/sim-the/sim-local">SIM Local</a></li>
-                                        <li><a href="/sim-the/sim-the/sim-vietnamobile">SIM Vietnamobile</a></li>
-                                    </ul>
-                                </div>
-                                <div class="menu g1">
-                                    <h4><a href="/phu-kien/bo-phat-wifi/truyen-hinh-k">Mua truyền h&#236;nh K+</a></h4>
-                                    <ul class="display-row format_1">
-                                    </ul>
-                                </div>
-
-
+                                <?php
+                                    $sqlBrand = mysqli_query($conn, getBrand($conn,20));
+                                    while ($itemBrand = mysqli_fetch_assoc($sqlBrand)) {
+                                    ?>
+                                        <div class="menu g1">
+                                            <h4><a href="san-pham.php?idCat=20&idBrand=<?= $itemBrand['id'] ?>"><?= $itemBrand['brandName'] ?></a></h4>
+                                            <ul class="display-row format_1">
+                                            </ul>
+                                        </div>
+                                    <?php
+                                    }
+                                ?>
                             </div>
                         </div>
                     </li>
-                    <li id="tin-tuc">
-                        <a href="/tin-tuc" target="_self">
-                            <i class="icon icon-news"></i>
-                            <span>Tin hot</span>
-                        </a>
-                    </li>
+                    <li id="tin-tuc"> <a href="tin-tuc.php" target="_self"><i class="icon icon-news"></i><span>Tin hot</span></a></li>
                     <li id="tin-khuyen-maiuu-dai-hot">
                         <a href="/tin-khuyen-mai/uu-dai-hot" target="_blank">
                             <i class="icon icon-flash"></i>
@@ -709,7 +442,7 @@ if(isset($_POST['login'])){
                                         <li><a href="/tin-khuyen-mai/uu-dai-hot/tcl">Hot Sale TCL</a></li>
                                         <li><a href="/tin-khuyen-mai/uu-dai-hot/khuyen-mai-Apple">Khuyến mại Apple</a></li>
                                         <li><a href="/tin-khuyen-mai/uu-dai-hot/samsung-xiaomi-hot">KM Samsung + Xiaomi</a></li>
-                                        <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop M&#224;n h&#236;nh HP</a></li>
+                                        <li><a href="/tin-khuyen-mai/uu-dai-hot/laptop-man-hinh-hp">Laptop Màn hình HP</a></li>
                                         <li><a href="/tin-khuyen-mai/uu-dai-hot/mo-ban-phu-kien-9fit">Mở bán Phụ kiện 9Fit</a></li>
                                         <li><a href="/tin-khuyen-mai/san-pham-doc-quyen">Sản phẩm độc quyền</a></li>
                                         <li><a href="/uu-dai-hot/uu-dai-mophie-zagg">Ưu đãi Mophie + ZAGG</a></li>

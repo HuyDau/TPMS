@@ -1,3 +1,8 @@
+<?php
+require_once("config/config.php");
+include 'handle.php';
+
+?>
 <!doctype html>
 <html>
 
@@ -6,12 +11,6 @@
     <meta charset="utf-8">
     <meta name="author" content="tpms.com">
     <meta property='og:site_name' content='tpms.com' />
-    <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
-    <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Vietnam" />
-    <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
-    <meta name="geo.region" content="VN-Hanoi" />
-    <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
     <title>Trung Tâm Bảo Hành</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,12 +23,6 @@
     <link rel="preload" as="script" href="assets/js/main.js">
     <link rel="preload" as="style" href="assets/css/main.css">
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
-    
-    
-
-
-
-
     <script async src="assets/js/ins.js"></script>
 </head>
 
@@ -4279,7 +4272,7 @@
                             <i class="icon-right"></i>
                             <div class="info">
                                 <p>27A Nguyễn C&#244;ng Trứ, Hai B&#224; Trưng, HN.</p>
-                                <p>ĐT: 19002091</p>
+                                <p>ĐT: 038613.1716</p>
                                 <p>HĐ: 08h30 - 21h30</p>
                                 <p><a target="_blank" href="https://www.google.com/maps/search/27A Nguyễn C&#244;ng Trứ, Hai B&#224; Trưng, HN.">Bản đồ đường đi</a></p>
                             </div>
@@ -6100,7 +6093,7 @@
 
                     <div>
                         <h4>Tổng đài</h4>
-                        <a class="hotline" href="tel:1900.2091">1900.2091</a>
+                        <a class="hotline" href="tel:03.86.13.17.16">03.86.13.17.16</a>
                     </div>
 
                     <div>
@@ -6138,7 +6131,7 @@
                 <div class="info">
                     <p>© 2020. C&#212;NG TY CỔ PHẦN X&#194;Y DỰNG V&#192; ĐẦU TƯ THƯƠNG MẠI HO&#192;NG H&#192;. MST: 0106713191. (Đăng k&#253; lần đầu: Ng&#224;y 15 th&#225;ng 12 năm 2014, Đăng k&#253; thay đổi ng&#224;y 24/11/2022)</p>
                     <p><strong>GP số 426/GP-TTĐT do sở TTTT Hà Nội cấp ngày 22/01/2021</strong></p>
-                    <p>Địa chỉ: Số 89 Đường Tam Trinh, Phường Mai Động, Quận Ho&#224;ng Mai, Th&#224;nh Phố H&#224; Nội, Việt Nam. Điện thoại: 1900.2091. Chịu trách nhiệm nội dung: <strong>Hoàng Ngọc Chiến</strong>. </p>
+                    <p>Địa chỉ: Số 89 Đường Tam Trinh, Phường Mai Động, Quận Ho&#224;ng Mai, Th&#224;nh Phố H&#224; Nội, Việt Nam. Điện thoại: 03.86.13.17.16. Chịu trách nhiệm nội dung: <strong>Hoàng Ngọc Chiến</strong>. </p>
 
                 </div>
             </div>

@@ -44,12 +44,8 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta name="author" content="hoanghamobile.com">
     <meta property='og:site_name' content='hoanghamobile.com' />
-    <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
-    <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
-    <meta name="geo.placename" content="Hanoi, Hoàn Kiếm, Hanoi, Vietnam" />
-    <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
-    <meta name="geo.region" content="VN-Hanoi" />
-    <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
+    
+    
     <title>Bảng điều khiển</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
@@ -134,15 +130,12 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                     </div>
                     <div class="info">
                         <div class="avt" id="myAvatar">
-                            <strong>T</strong>
+                            <strong><?php if (isset($_SESSION['userId'])) { echo substr($infoUser['name'], 0 , 1); } ?></strong>
                         </div>
 
                         <div class="summer">
-                            <p><strong><?php if (isset($_SESSION['userId'])) {
-                                            echo $infoUser['name'];
-                                        } ?></strong></p>
-                            <p class="change-avatar"><a href="javascript:;" onclick="$('#avtImage').trigger('click'); return false;"><i class="icon-change-avatar"></i> Thay đổi ảnh đại diện</a></p>
-                            <input type="file" name="upfile" id="avtImage" accept="image/*" style="display: none;" />
+                            <p><strong><?php if (isset($_SESSION['userId'])) { echo $infoUser['name']; } ?></strong></p>
+                            <p class="change-avatar"><a href="bang-dieu-khien.php?page=info"><i class="icon-change-avatar"></i> Thông tin cá nhân</a></p>
                         </div>
                     </div>
                 </div>
@@ -150,98 +143,406 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                     <ul>
                         <li><a href="bang-dieu-khien.php?page=index" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "index"){echo "actived";}} ?>"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
                         <li><a href="bang-dieu-khien.php?page=info" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "info"){echo "actived";}} ?>"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
-                        <li><a href="bang-dieu-khien.php?page=wishlist"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
+                        <li><a href="bang-dieu-khien.php?page=order" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "order"){echo "actived";}} ?>"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
                         <li><a href="bang-dieu-khien.php?page=wishlist" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "wishlist"){echo "actived";}} ?>"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
-                        <li><a href="/account/comment"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
+                        <li><a href="bang-dieu-khien.php?page=comment" class="<?php if(isset($_GET['page'])){if($_GET['page'] == "comment"){echo "actived";}} ?>"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
                         <li><a href="dang-xuat.php"><i class="icon-logout"></i><span>Đăng xuất</span></a></li>
                     </ul>
                 </nav>
                 <div class="hotline">
                     <div>
                         <strong>Bạn cần hỗ trợ?</strong>
-                        <a href="tel:19002091"><i class="icon-calling"></i> <strong>1900.2091</strong></a>
+                        <a href="tel:038613.1716"><i class="icon-calling"></i> <strong>03.86.13.17.16</strong></a>
                     </div>
                 </div>
             </div>
         </div>
         <?php
-        if (isset($_GET['page'])) {
+        if (isset($_GET['page']) && !isset($_GET['idcart'])) {
             if ($_GET['page'] == "index") {
-        ?>
-                <div class="body-content">
-                    <h1>Bảng điều khiển</h1>
-                    <div class="header">
-                        <div class="bg">
-                            <div class="text">
-                                <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
-                                                                echo $infoUser['name'];
-                                                            } ?></h2>
-                                <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
+                ?>
+                    <div class="body-content">
+                        <h1>Bảng điều khiển</h1>
+                        <div class="header">
+                            <div class="bg">
+                                <div class="text">
+                                    <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
+                                                                    echo $infoUser['name'];
+                                                                } ?></h2>
+                                    <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <img src="assets/images/img/icon-account-home.png" />
                             </div>
                         </div>
-                        <div class="icon">
-                            <img src="assets/images/img/icon-account-home.png" />
-                        </div>
-                    </div>
-                    <div class="account-layout">
-                        <div class="row equaHeight" data-obj=".col .box-bg-white">
-                            <div class="col">
-                                <h3>Thông tin cá nhân</h3>
-                                <div class="box-bg-white">
-                                    <div class="account-info">
+                        <div class="account-layout">
+                            <div class="row equaHeight" data-obj=".col .box-bg-white">
+                                <div class="col">
+                                    <h3>Thông tin cá nhân</h3>
+                                    <div class="box-bg-white">
+                                        <div class="account-info">
+                                            <div class="tools">
+                                                <a href="bang-dieu-khien.php?page=info" title="Thay đổi thông tin cá nhân"><i class="icon-edit-squad"></i></a>
+                                            </div>
+
+                                            <p><strong>Họ tên:</strong> <i><?php if (isset($_SESSION['userId'])) {
+                                                                                echo $infoUser['name'];
+                                                                            } ?></i></p>
+                                            <p><strong>Tài khoản:</strong> <i><?php if (isset($_SESSION['userId'])) {
+                                                                                    echo $infoUser['username'];
+                                                                                } ?></i></p>
+                                            <p><strong>Email:</strong> <i><?php if (isset($_SESSION['userId'])) {
+                                                                                echo $infoUser['email'];
+                                                                            } ?></i></p>
+                                            <p><strong>Địa chỉ:</strong> <i><?php if (isset($_SESSION['userId'])) {
+                                                                                echo  $infoUser['address'] . ' - ' . $infoUser['ward'] . ' - ' . $infoUser['district'] . ' - ' . $infoUser['city'];
+                                                                            } ?></i></p>
+                                            <p><strong>Số điện thoại:</strong> <i>0987897890</i></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h3>Đơn hàng đã đặt</h3>
+                                    <div class="box-bg-white">
+                                        <div style="padding:25px;">
+                                            <table class="table table-border table-lgpading">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Mã đơn hàng</th>
+                                                    <th>Ngày đặt</th>
+                                                    <th>Tổng tiền</th>
+                                                    <th>Trạng thái</th>
+                                                </tr>
+                                                <?php 
+                                                    $i = 1;
+                                                    if(isset($_SESSION['userId'])){
+                                                        $userId = $_SESSION['userId'];
+                                                        $sqlCartOrder = mysqli_query($conn,"SELECT * FROM tbl_cart  WHERE userId =  $userId");
+                                                        while($item =  mysqli_fetch_assoc($sqlCartOrder)){
+                                                            ?>
+                                                                <tr>
+                                                                    <td><?=$i++?></td>
+                                                                    <td><a href="bang-dieu-khien.php?page=order&idcart=<?=$item['id']?>"><strong class="text-orange">#<?=strtotime($item['time'])?><?=$item['id']?></strong></a></td>
+                                                                    <td><?=date("H:i:s d-m-Y",strtotime($item['time']))?></td>
+                                                                    <td><?=number_format($item['total'],0,"",".")?> ₫</td>
+                                                                    <td <?php if($item['idstatus']==1){echo "style='color: #3a79eb;font-weight: 700;'";}else if($item['idstatus']==2){echo "style='color: orange;font-weight: 700;'";}else if($item['idstatus']==3){echo "style='color: #00ad45;font-weight: 700;'";}else if($item['idstatus']==4){echo "style='color: #fb1a1a;font-weight: 700;'";} ?>><?=getStatus($conn,$item['idstatus'])?></td>
+                                                                </tr>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="max-width:100%;">
+                                    <h3>Sản phẩm yêu thích</h3>
+                                    <div class="box-bg-white" style="padding:25px;">
+
                                         <div class="tools">
-                                            <a href="/account/info" title="Thay đổi thông tin cá nhân"><i class="icon-edit-squad"></i></a>
+                                            <a href="bang-dieu-khien.php?page=wishlist" title="Chỉnh sửa danh sách sản phẩm yêu thích"><i class="icon-edit-squad"></i></a>
                                         </div>
 
-                                        <p><strong>Họ tên:</strong> <i><?php if (isset($_SESSION['userId'])) {
-                                                                            echo $infoUser['name'];
-                                                                        } ?></i></p>
-                                        <p><strong>Tài khoản:</strong> <i><?php if (isset($_SESSION['userId'])) {
-                                                                                echo $infoUser['username'];
-                                                                            } ?></i></p>
-                                        <p><strong>Email:</strong> <i><?php if (isset($_SESSION['userId'])) {
-                                                                            echo $infoUser['email'];
-                                                                        } ?></i></p>
-                                        <p><strong>Địa chỉ:</strong> <i><?php if (isset($_SESSION['userId'])) {
-                                                                            echo  $infoUser['address'] . ' - ' . $infoUser['ward'] . ' - ' . $infoUser['district'] . ' - ' . $infoUser['city'];
-                                                                        } ?></i></p>
-                                        <p><strong>Số điện thoại:</strong> <i>0987897890</i></p>
-
+                                        <div class="owl-carousel lr-slider wishlist">
+                                            <?php
+                                                if(isset($_SESSION['userId'])){
+                                                    $WishList = getWishList($conn,$_SESSION['userId']);
+                                                    
+                                                    if(mysqli_num_rows($WishList) == 0){
+                                                        ?><p style="margin: 20px;">Không có sản phẩm yêu thích !</p><?php
+                                                    }else{
+                                                        while($itemWishList = mysqli_fetch_assoc($WishList)){
+                                                            $prodId = $itemWishList['productId'];
+                                                            $sqlProd = getDetailProduct($prodId);
+                                                            $queryProd = mysqli_query($conn,$sqlProd);
+                                                            $infoProd = mysqli_fetch_assoc($queryProd);
+                                                            ?>
+                                                                <div class="item">
+                                                                    <div class="img">
+                                                                        <a href="chi-tiet-san-pham.php?idsanpham=<?=$infoProd['idVersion']?>" title="<?=$infoProd['versionName']?>">
+                                                                            <?php
+                                                                                if($infoProd['idCategory'] == 1){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/smartphone/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 2){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/laptop/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 3){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/tablet/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 4){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/monitor/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 5){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/smarttv/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 6){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/watch/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 7){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/voice/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 8){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/smarthome/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 16){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/accessory/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 17){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/toys/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 18){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/driftingmachine/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 19){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/repair/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }else if($infoProd['idCategory'] == 20){
+                                                                                    ?><img style="width: 180px;height: auto;" src="uploads/product/service/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                                                                }
+                                                                            ?>
+                                                                            
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <a class="title" href="chi-tiet-san-pham.php?idsanpham=<?=$infoProd['idVersion']?>"><?=$infoProd['versionName']?></a>
+                                                                        <span class="price">
+                                                                            <strong><?=number_format($infoProd['versionPromotionalPrice'],0,"",".")?> ₫</strong>
+                                                                            <strike><?=number_format($infoProd['versionPrice'],0,"",".")?> ₫</strike>
+                                                                        </span>
+                        
+                                                                    </div>
+                                                                </div>
+                                                            <?php
+                                                        }
+                                                    }
+                                                }
+                                            
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <h3>Đơn hàng đã đặt</h3>
-                                <div class="box-bg-white">
-                                    <div style="padding:25px;">
-                                        <table class="table table-border table-lgpading">
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Mã đơn hàng</th>
-                                                <th>Ngày đặt</th>
-                                                <th>Tổng tiền</th>
-                                                <th>Giảm giá</th>
-                                                <th>Sản phẩm đặt hàng</th>
-                                            </tr>
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Quản lý bình luận</h3>
 
-                                        </table>
+                                    <div class="box-bg-white" style="padding:25px;">
+                                        <div class="tools">
+                                            <a href="bang-dieu-khien.php?page=comment" title="Xem tất cả các bình luận bạn đã gửi"><i class="icon-eye"></i></a>
+                                        </div>
+                                        <div class="review-content comment-content" style="max-width:100%; padding:0 30px;">
+                                            <?php
+                                                if(isset($_SESSION['userId'])){
+                                                    $getComment = getComments($conn,$_SESSION['userId']);
+                                                    if(mysqli_num_rows($getComment) == 0){
+                                                        ?> <p>Bạn chưa gửi bình luận nào cả.</p><?php
+                                                    }else{
+                                                        while($itemComment = mysqli_fetch_assoc($getComment)) {
+                                                            ?>
+                                                                <div class="item item-selected">
+                                                                    <div class="avt">
+                                                                            <strong>T</strong>
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <p>
+                                                                            <strong class="name"><?=$itemComment['name']?></strong>
+                                                                        </p>
+                                                                        <p>
+                                                                            <label>
+                                                                                <i>
+                                                                                <?php 
+                                                                                    $diff = abs(strtotime(date("Y-m-d H:i:s")) - strtotime($itemComment['datetime'])); 
+                                                                                    $years = floor($diff / (365*60*60*24));
+                                                                                    $months = floor(($diff) / (30*60*60*24));
+                                                                                    $days = floor(($diff) / (60*60*24));
+                                                                                    $hours = floor(($diff) / (60*60));
+                                                                                    $minutes = floor(($diff) / 60);
+                                                                                    $seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minutes*60));
+                                                                                    if($hours > 24){
+                                                                                        echo "$days ngày trước";
+                                                                                    }else{
+                                                                                        if($minutes > 60){
+                                                                                            echo "$hours giờ trước";
+                                                                                        }else{
+                                                                                            echo "$minutes phút trước";
+                                                                                        }
+                                                                                    }
+                                                                                ?>
+                                                                                    <span>- bài viết gốc:</span> <a target="_blank" href="chi-tiet-san-pham.php?idsanpham=<?=$itemComment['versionId']?>"><?php $idVersion = $itemComment['versionId'] ;$sqlNameProd = mysqli_query($conn,"SELECT * FROM tbl_versions WHERE idVersion = $idVersion");$infoProd = mysqli_fetch_assoc($sqlNameProd);echo $infoProd['versionName']; ?></a>
+                                                                                </i>
+                                                                            </label>
+                                                                        </p>
+                                                                        <div class="content"> <?=$itemComment['content']?></div>
+                                                                        <div class="childs">
+                                                                            <div class="comment-list">
+                                                                                    <div class="item ">
+                                                                                        <div class="avt">
+                                                                                                <img src="/avatar/Uploads/Avatar/29848-linhdt106-637702321889068869.jpg">
+    
+                                                                                            
+    
+    
+                                                                                        </div>
+                                                                                        <div class="info">
+                                                                                            <p>
+                                                                                                <strong class="name">Đỗ Mỹ Linh</strong>
+                                                                                                    <i class="icon-checked"></i> <span>QTV Hoàng Hà Mobile</span>
+                                                                                            </p>
+                                                                                            <p><label><i>29 phút trước</i></label></p>
+                                                                                            <div class="content">
+                                                                                                Dạ Hoàng Hà Mobile xin chào anh/chị,<br>Cảm ơn anh/chị đã đưa ra ý kiến cho sản phẩm của Hoàng Hà Mobile. Nếu trong quá trình sử dụng sản phẩm cần hỗ trợ thông tin anh/chị có thể liên hệ tới tổng đài 19002091 để được hỗ trợ anh/chị nhé.<br>Hoàng Hà Mobile rất hân hạnh được phục vụ anh/chị!
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            <?php
+                                                        }
+                                                    }
+                                                }
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col" style="max-width:100%;">
-                                <h3>Sản phẩm yêu thích</h3>
-                                <div class="box-bg-white" style="padding:25px;">
+                    </div>
+                <?php
+            } else if ($_GET['page'] == "info") {
+                ?>
+                    <div class="body-content">
+                        <h1>Bảng điều khiển</h1>
+                        <div class="header">
+                            <div class="bg">
+                                <div class="text">
+                                    <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
+                                                                    echo $infoUser['name'];
+                                                                } ?></h2>
+                                    <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <img src="assets/images/img/icon-account-home.png" />
+                            </div>
+                        </div>
+                        <div class="account-layout ">
+                            <div class="row equaHeight" data-obj=".col .box-bg-white">
+                                <div class="col col-lg">
+                                    <h3>Cập nhật thông tin cá nhân</h3>
+                                    <div class="box-bg-white" style="height: 807.066px;">
+                                        <div class="account-form">
+                                            <form method="POST" action="bang-dieu-khien.php?page=info">
+                                                <div class="form-controls">
+                                                    <label>Họ tên:</label>
+                                                    <div class="controls">
+                                                        <input type="text" value="<?php if (isset($_SESSION['userId'])) {echo $infoUser['name'];} ?>" name="name" id="Title" placeholder="Họ tên *" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Điện thoại:</label>
+                                                    <div class="controls">
+                                                        <input type="tel" value="0<?php if (isset($_SESSION['userId'])) { echo $infoUser['phone'];} ?>" name="phone" id="PhoneNumber" placeholder="Điện thoại *" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Email:</label>
+                                                    <div class="controls">
+                                                        <input type="text" value="<?php if (isset($_SESSION['userId'])) {echo $infoUser['email'];} ?>" name="email" id="Email" placeholder="Email *">
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Tỉnh/Thành phố:</label>
+                                                    <div class="controls">
+                                                        <select id="city" name="city" placeholder="Tỉnh/Thành phố" required>
+                                                            <option value="<?php if (isset($_SESSION['userId'])) {
+                                                                                echo $infoUser['city'];
+                                                                            } ?>" selected><?php if (isset($_SESSION['userId'])) {
+                                                                                                                                                            echo $infoUser['city'];
+                                                                                                                                                        } ?></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Quận/Huyện:</label>
+                                                    <div class="controls">
+                                                        <select id="district" name="district" placeholder="Quận/ Huyện" required>
+                                                            <option value="" selected><?php if (isset($_SESSION['userId'])) {
+                                                                                            echo $infoUser['district'];
+                                                                                        } ?></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Phường/ Xã:</label>
+                                                    <div class="controls">
+                                                        <select id="ward" name="ward" placeholder="Phường/ Xã" required>
+                                                            <option value="" selected><?php if (isset($_SESSION['userId'])) {
+                                                                                            echo $infoUser['ward'];
+                                                                                        } ?></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Địa chỉ:</label>
+                                                    <div class="controls">
+                                                        <input type="text" value="Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội" name="address" id="Address" placeholder="Địa chỉ *" required>
+                                                    </div>
+                                                </div>
 
-                                    <div class="tools">
-                                        <a href="bang-dieu-khien.php?page=wishlist" title="Chỉnh sửa danh sách sản phẩm yêu thích"><i class="icon-edit-squad"></i></a>
+                                                <div class="form-controls">
+                                                    <div class="controls submit-controls">
+                                                        <p style="text-align:center;">Để trống nếu không muốn thay đổi mật khẩu.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Mật khẩu mới: </label>
+                                                    <div class="controls">
+                                                        <input type="password" value="" name="password" id="PasswordHash" placeholder="Mật khẩu mới">
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <label>Nhập lại mật khẩu mới: </label>
+                                                    <div class="controls">
+                                                        <input type="password" value="" name="repassword" id="SecurityStamp" placeholder="Nhập lại mật khẩu mới">
+                                                    </div>
+                                                </div>
+                                                <div class="form-controls">
+                                                    <div class="controls submit-controls">
+                                                        <button type="submit" name="submit">XÁC NHẬN</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="owl-carousel lr-slider wishlist">
-                                        <?php
-                                            if(isset($_SESSION['userId'])){
-                                                $WishList = getWishList($conn,$_SESSION['userId']);
+                        </div>
+                    </div>
+                <?php
+            } else if ($_GET['page'] == "wishlist") {
+                ?>
+                    <div class="body-content">
+                        <h1>Bảng điều khiển</h1>
+                        <div class="header">
+                            <div class="bg">
+                                <div class="text">
+                                    <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
+                                                                    echo $infoUser['name'];
+                                                                } ?></h2>
+                                    <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <img src="assets/images/img/icon-account-home.png" />
+                            </div>
+                        </div>
+                        <div class="account-layout">
+                            <h3 class="col">Sản phẩm yêu thích</h3>
+                            <div class="row">
+                                <div class="box-bg-white col owl-carousel lr-slider wishlist">
+                                    <?php
+                                        if(isset($_SESSION['userId'])){
+                                            $WishList = getWishList($conn,$_SESSION['userId']);
+                                            if(mysqli_num_rows($WishList) == 0){
+                                                ?><p style="margin: 20px;">Không có sản phẩm yêu thích !</p><?php
+                                            }else{
                                                 while($itemWishList = mysqli_fetch_assoc($WishList)){
                                                     $prodId = $itemWishList['productId'];
                                                     $sqlProd = getDetailProduct($prodId);
@@ -295,248 +596,283 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                                                     <?php
                                                 }
                                             }
-                                        
-                                        ?>
+                                        }
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                <?php
+            }else if ($_GET['page'] == "comment") {
+                ?>
+                    <div class="body-content">
+                        <h1>Bảng điều khiển</h1>
+                        <div class="header">
+                            <div class="bg">
+                                <div class="text">
+                                    <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
+                                                                    echo $infoUser['name'];
+                                                                } ?></h2>
+                                    <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <img src="assets/images/img/icon-account-home.png" />
+                            </div>
+                        </div>
+                        <div class="account-layout">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Quản lý bình luận</h3>
+
+                                    <div class="box-bg-white" style="padding:25px;">
+                                        <div class="review-content comment-content" style="max-width:100%; padding:0 30px;">
+                                            <?php
+                                                if(isset($_SESSION['userId'])){
+                                                    $getComment = getComments($conn,$_SESSION['userId']);
+                                                    if(mysqli_num_rows($getComment) == 0){
+                                                        ?> <p>Bạn chưa gửi bình luận nào cả.</p><?php
+                                                    }else{
+                                                        while($itemComment = mysqli_fetch_assoc($getComment)) {
+                                                            ?>
+                                                                <div class="item item-selected">
+                                                                    <div class="avt">
+                                                                            <strong>T</strong>
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <p>
+                                                                            <strong class="name"><?=$itemComment['name']?></strong>
+                                                                        </p>
+                                                                        <p>
+                                                                            <label>
+                                                                                <i>
+                                                                                <?php 
+                                                                                    $diff = abs(strtotime(date("Y-m-d H:i:s")) - strtotime($itemComment['datetime'])); 
+                                                                                    $years = floor($diff / (365*60*60*24));
+                                                                                    $months = floor(($diff) / (30*60*60*24));
+                                                                                    $days = floor(($diff) / (60*60*24));
+                                                                                    $hours = floor(($diff) / (60*60));
+                                                                                    $minutes = floor(($diff) / 60);
+                                                                                    $seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minutes*60));
+                                                                                    if($hours > 24){
+                                                                                        echo "$days ngày trước";
+                                                                                    }else{
+                                                                                        if($minutes > 60){
+                                                                                            echo "$hours giờ trước";
+                                                                                        }else{
+                                                                                            echo "$minutes phút trước";
+                                                                                        }
+                                                                                    }
+                                                                                ?>
+                                                                                    <span>- bài viết gốc:</span> <a target="_blank" href="chi-tiet-san-pham.php?idsanpham=<?=$itemComment['versionId']?>"><?php $idVersion = $itemComment['versionId'] ;$sqlNameProd = mysqli_query($conn,"SELECT * FROM tbl_versions WHERE idVersion = $idVersion");$infoProd = mysqli_fetch_assoc($sqlNameProd);echo $infoProd['versionName']; ?></a>
+                                                                                </i>
+                                                                            </label>
+                                                                        </p>
+                                                                        <div class="content"> <?=$itemComment['content']?></div>
+                                                                        <div class="childs">
+                                                                            <div class="comment-list">
+                                                                                    <div class="item ">
+                                                                                        <div class="avt">
+                                                                                                <img src="/avatar/Uploads/Avatar/29848-linhdt106-637702321889068869.jpg">
+        
+                                                                                            
+        
+        
+                                                                                        </div>
+                                                                                        <div class="info">
+                                                                                            <p>
+                                                                                                <strong class="name">Đỗ Mỹ Linh</strong>
+                                                                                                    <i class="icon-checked"></i> <span>QTV Hoàng Hà Mobile</span>
+                                                                                            </p>
+                                                                                            <p><label><i>29 phút trước</i></label></p>
+                                                                                            <div class="content">
+                                                                                                Dạ Hoàng Hà Mobile xin chào anh/chị,<br>Cảm ơn anh/chị đã đưa ra ý kiến cho sản phẩm của Hoàng Hà Mobile. Nếu trong quá trình sử dụng sản phẩm cần hỗ trợ thông tin anh/chị có thể liên hệ tới tổng đài 19002091 để được hỗ trợ anh/chị nhé.<br>Hoàng Hà Mobile rất hân hạnh được phục vụ anh/chị!
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            <?php
+                                                        }
+                                                    }
+                                                }
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <h3>Quản lý đánh giá</h3>
-
-                                <div class="box-bg-white" style="padding:25px;">
-
-                                    <div class="tools">
-                                        <a href="/account/review" title="Xem tất cả các đánh giá bạn đã gửi"><i class="icon-eye"></i></a>
-                                    </div>
-
-                                    <div class="review-content comment-content" style="max-width:100%; padding:0 30px;">
-                                        <p>Bạn chưa gửi đánh giá nào cả.</p>
-                                    </div>
+                        
+                    </div>
+                <?php
+            }else if ($_GET['page'] == "order") {
+                ?>
+                    <div class="body-content">
+                        <h1>Bảng điều khiển</h1>
+                        <div class="header">
+                            <div class="bg">
+                                <div class="text">
+                                    <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
+                                                                    echo $infoUser['name'];
+                                                                } ?></h2>
+                                    <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h3>Quản lý bình luận</h3>
-
-                                <div class="box-bg-white" style="padding:25px;">
-
-                                    <div class="tools">
-                                        <a href="/account/comment" title="Xem tất cả các bình luận bạn đã gửi"><i class="icon-eye"></i></a>
-                                    </div>
-
-                                    <div class="review-content comment-content" style="max-width:100%; padding:0 30px;">
-                                        <p>Bạn chưa gửi bình luận nào cả.</p>
-                                    </div>
-                                </div>
+                            <div class="icon">
+                                <img src="assets/images/img/icon-account-home.png" />
                             </div>
                         </div>
-                    </div>
-                </div>
-            <?php
-            } else if ($_GET['page'] == "info") {
-            ?>
-                <div class="body-content">
-                    <h1>Bảng điều khiển</h1>
-                    <div class="header">
-                        <div class="bg">
-                            <div class="text">
-                                <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
-                                                                echo $infoUser['name'];
-                                                            } ?></h2>
-                                <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
-                            </div>
-                        </div>
-                        <div class="icon">
-                            <img src="assets/images/img/icon-account-home.png" />
-                        </div>
-                    </div>
-                    <div class="account-layout ">
-                        <div class="row equaHeight" data-obj=".col .box-bg-white">
-                            <div class="col col-lg">
-                                <h3>Cập nhật thông tin cá nhân</h3>
-                                <div class="box-bg-white" style="height: 807.066px;">
-                                    <div class="account-form">
-                                        <form method="POST" action="bang-dieu-khien.php?page=info">
-                                            <div class="form-controls">
-                                                <label>Họ tên:</label>
-                                                <div class="controls">
-                                                    <input type="text" value="<?php if (isset($_SESSION['userId'])) {
-                                                                                    echo $infoUser['name'];
-                                                                                } ?>" name="name" id="Title" placeholder="Họ tên *" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Điện thoại:</label>
-                                                <div class="controls">
-                                                    <input type="tel" value="0<?php if (isset($_SESSION['userId'])) {
-                                                                                    echo $infoUser['phone'];
-                                                                                } ?>" name="phone" id="PhoneNumber" placeholder="Điện thoại *" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Email:</label>
-                                                <div class="controls">
-                                                    <input type="text" value="<?php if (isset($_SESSION['userId'])) {
-                                                                                    echo $infoUser['email'];
-                                                                                } ?>" name="email" id="Email" placeholder="Email *">
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Tỉnh/Thành phố:</label>
-                                                <div class="controls">
-                                                    <select id="city" name="city" placeholder="Tỉnh/Thành phố" required>
-                                                        <option value="<?php if (isset($_SESSION['userId'])) {
-                                                                            echo $infoUser['city'];
-                                                                        } ?>" selected><?php if (isset($_SESSION['userId'])) {
-                                                                                                                                                        echo $infoUser['city'];
-                                                                                                                                                    } ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Quận/Huyện:</label>
-                                                <div class="controls">
-                                                    <select id="district" name="district" placeholder="Quận/ Huyện" required>
-                                                        <option value="" selected><?php if (isset($_SESSION['userId'])) {
-                                                                                        echo $infoUser['district'];
-                                                                                    } ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Phường/ Xã:</label>
-                                                <div class="controls">
-                                                    <select id="ward" name="ward" placeholder="Phường/ Xã" required>
-                                                        <option value="" selected><?php if (isset($_SESSION['userId'])) {
-                                                                                        echo $infoUser['ward'];
-                                                                                    } ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Địa chỉ:</label>
-                                                <div class="controls">
-                                                    <input type="text" value="Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội" name="address" id="Address" placeholder="Địa chỉ *" required>
-                                                </div>
-                                            </div>
+                        <div class="account-layout">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Quản lý đơn hàng</h3>
 
-                                            <div class="form-controls">
-                                                <div class="controls submit-controls">
-                                                    <p style="text-align:center;">Để trống nếu không muốn thay đổi mật khẩu.</p>
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Mật khẩu mới: </label>
-                                                <div class="controls">
-                                                    <input type="password" value="" name="password" id="PasswordHash" placeholder="Mật khẩu mới">
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <label>Nhập lại mật khẩu mới: </label>
-                                                <div class="controls">
-                                                    <input type="password" value="" name="repassword" id="SecurityStamp" placeholder="Nhập lại mật khẩu mới">
-                                                </div>
-                                            </div>
-                                            <div class="form-controls">
-                                                <div class="controls submit-controls">
-                                                    <button type="submit" name="submit">XÁC NHẬN</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            <?php
-            } else if ($_GET['page'] == "wishlist") {
-            ?>
-                <div class="body-content">
-                    <h1>Bảng điều khiển</h1>
-                    <div class="header">
-                        <div class="bg">
-                            <div class="text">
-                                <h2>CHÀO MỪNG QUAY TRỞ LẠI, <?php if (isset($_SESSION['userId'])) {
-                                                                echo $infoUser['name'];
-                                                            } ?></h2>
-                                <p><i>Tổng quát các hoạt động của bạn tại đây</i></p>
-                            </div>
-                        </div>
-                        <div class="icon">
-                            <img src="assets/images/img/icon-account-home.png" />
-                        </div>
-                    </div>
-                    <div class="row" style="padding: 100px 0; ">
-                        <h3>Sản phẩm yêu thích</h3>
-                        <div class="owl-carousel lr-slider wishlist">
-                            <?php
-                                if(isset($_SESSION['userId'])){
-                                    $WishList = getWishList($conn,$_SESSION['userId']);
-                                    while($itemWishList = mysqli_fetch_assoc($WishList)){
-                                        $prodId = $itemWishList['productId'];
-                                        $sqlProd = getDetailProduct($prodId);
-                                        $queryProd = mysqli_query($conn,$sqlProd);
-                                        $infoProd = mysqli_fetch_assoc($queryProd);
-                                        ?>
-                                            <div class="item">
-                                                <div class="img">
-                                                    <a href="chi-tiet-san-pham.php?idsanpham=<?=$infoProd['idVersion']?>" title="<?=$infoProd['versionName']?>">
-                                                        <?php
-                                                            if($infoProd['idCategory'] == 1){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/smartphone/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 2){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/laptop/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 3){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/tablet/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 4){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/monitor/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 5){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/smarttv/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 6){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/watch/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 7){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/voice/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 8){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/smarthome/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 16){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/accessory/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 17){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/toys/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 18){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/driftingmachine/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 19){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/repair/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
-                                                            }else if($infoProd['idCategory'] == 20){
-                                                                ?><img style="width: 180px;height: auto;" src="uploads/product/service/<?=$infoProd['versionImage']?>" alt="<?=$infoProd['versionName']?>"><?php
+                                    <div class="col">
+                                        <div class="box-bg-white">
+                                            <div style="padding:25px;">
+                                                <table class="table table-border table-lgpading">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Mã đơn hàng</th>
+                                                        <th>Ngày đặt</th>
+                                                        <th>Tổng tiền</th>
+                                                        <th>Trạng thái</th>
+                                                    </tr>
+                                                    <?php 
+                                                        $i = 1;
+                                                        if(isset($_SESSION['userId'])){
+                                                            $userId = $_SESSION['userId'];
+                                                            $sqlCartOrder = mysqli_query($conn,"SELECT * FROM tbl_cart  WHERE userId =  $userId");
+                                                            while($item =  mysqli_fetch_assoc($sqlCartOrder)){
+                                                                ?>
+                                                                    <tr>
+                                                                        <td><?=$i++?></td>
+                                                                        <td><a href="bang-dieu-khien.php?page=order&idcart=<?=$item['id']?>"><strong class="text-orange">#<?=strtotime($item['time'])?><?=$item['id']?></strong></a></td>
+                                                                        <td><?=date("H:i:s d-m-Y",strtotime($item['time']))?></td>
+                                                                        <td><?=number_format($item['total'],0,"",".")?> ₫</td>
+                                                                        <td <?php if($item['idstatus']==1){echo "style='color: #3a79eb;font-weight: 700;'";}else if($item['idstatus']==2){echo "style='color: orange;font-weight: 700;'";}else if($item['idstatus']==3){echo "style='color: #00ad45;font-weight: 700;'";}else if($item['idstatus']==4){echo "style='color: #fb1a1a;font-weight: 700;'";} ?>><?=getStatus($conn,$item['idstatus'])?></td>
+                                                                    </tr>
+                                                                <?php
                                                             }
-                                                        ?>
+                                                        }
                                                         
-                                                    </a>
-                                                </div>
-                                                <div class="info">
-                                                    <a class="title" href="chi-tiet-san-pham.php?idsanpham=<?=$infoProd['idVersion']?>"><?=$infoProd['versionName']?></a>
-                                                    <span class="price">
-                                                        <strong><?=number_format($infoProd['versionPromotionalPrice'],0,"",".")?> ₫</strong>
-                                                        <strike><?=number_format($infoProd['versionPrice'],0,"",".")?> ₫</strike>
-                                                    </span>
-    
-                                                </div>
+                                                    ?>
+                                                </table>
                                             </div>
-                                        <?php
-                                    }
-                                }
-                               
-                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
-                </div>
-        <?php
+                <?php
             }
+        }else if(isset($_GET['idcart'])) {
+            $cartId = $_GET['idcart'];
+            $infoCart = mysqli_fetch_assoc(getCartDetail($conn,$cartId));
+            ?>
+                <div class="body-content">
+                    <section>
+                        <div class="container">
+                            <div class="cart cart-checkout">
+
+                                <div class="just-center">
+                                    <div class="cart-icon">
+                                        <i class="icon-cart-index"></i>
+                                        <label>THÔNG TIN ĐƠN HÀNG SỐ <span class="text-orange"><?=strtotime($infoCart['time'])?><?=$infoCart['id']?></span></label>
+
+                                    </div>
+                                </div>
+
+                                <div class="order-infomation">
+                                    <h3>1. Thông tin người đặt hàng</h3>
+
+                                    <table class="table talbe-order">
+                                        <tbody>
+                                            <tr>
+                                                <td class="label" style="width:110px;">Họ tên</td> <td class="content" style="width:320px;"><?=$infoCart['name']?></td>
+                                                <td class="label" style="width:95px;">Điện thoại</td> <td class="content">0<?=$infoCart['phone']?></td>
+                                                <td class="label" style="width:75px;">Email</td> <td class="content"><?=$infoCart['email']?></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Phương thức</td> <td class="content"><?php echo getPayment($conn,$infoCart['idpayment']); ?></td>
+                                                <td class="label">Trạng thái</td><td class="content" colspan="3"><strong style="color:Green"><?=getStatus($conn,$infoCart['idstatus'])?></strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Địa chỉ</td><td class="content" colspan="5"><?=$infoCart['address']?> - <?=$infoCart['ward']?> - <?=$infoCart['district']?> - <?=$infoCart['city']?></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Ghi chú</td> <td colspan="5"><?=$infoCart['note']?></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Mốc thời gian</td> <td colspan="5"><?= date("H:i:s d-m-Y", strtotime($infoCart['time']))?></td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="order-infomation">
+                                    <h3>2. Danh sách sản phẩm đặt hàng</h3>
+
+                                    <table class="table table-border talbe-order table-product">
+                                        <tbody>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Tên sản phẩm</th>
+                                                <th>Phiên bản</th>
+                                                <th>SL</th>
+                                                <th>Giá tiền</th>
+                                                <th>Tổng (SLxG)</th>
+                                            </tr>
+                                            <?php 
+                                                $cartId = $infoCart['cartId'];
+                                                $sqlDetailCart = mysqli_query($conn,"SELECT * FROM  tbl_detailcart WHERE cartId = $cartId");
+                                                $i = 1;
+                                                while($item = mysqli_fetch_assoc($sqlDetailCart)){
+                                                    $idProd = $item['versionId'];
+                                                    $itemProd = mysqli_fetch_assoc(getDetailProd($conn,$idProd));
+                                                    ?>
+                                                        <tr>
+                                                            <td align="center" valign="middle" ><?=$i++?></td>
+                                                            <td><strong><?=$itemProd['versionName']?></td>
+                                                            <td align="center"><?=$itemProd['versionVersion']?></td>
+                                                            <td align="center"><?=$infoCart['quantity']?></td>
+                                                            <td align="center"><?=number_format($itemProd['versionPromotionalPrice'],0,"",".")?> ₫</td>
+                                                            <td align="center"><?=number_format($itemProd['versionPromotionalPrice']*$infoCart['quantity'],0,"",".")?> ₫</td>
+                                                        </tr>
+                                                    <?php
+                                                }
+                                            ?>
+                                            <tr class="no-border">
+                                                <td colspan="5" align="right">Tổng tiền:</td>
+                                                <td><?=number_format($infoCart['total'],0,"",".")?> ₫</td>
+                                            </tr>
+
+                                            <tr class="no-border">
+                                                <td colspan="5" align="right">Giảm giá:</td>
+                                                <td>-00 ₫</td>
+                                            </tr>
+                                            <tr class="no-border">
+                                                <td colspan="5" align="right">Tổng tiền thanh toán:</td>
+                                                <td><strong class="text-red"><?=number_format($infoCart['total'],0,"",".")?> ₫</strong></td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            <?php
         }
         ?>
     </section>
