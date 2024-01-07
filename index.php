@@ -45,13 +45,10 @@ include 'handle.php';
         <div class="top-navigation">
             <div class="container">
                 <ul>
-                    <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
                     <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a></li>
-                    <li><a href="/he-thong-cua-hang">Hệ Thống Showroom</a></li>
-                    <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
+                    <li><a href="trung-tam-bao-hanh.php">Trung Tâm Bảo Hành</a></li>
+                    <li><a href="he-thong-cua-hang.php">Hệ Thống Showroom</a></li>
+                    <li><a href="bang-dieu-khien.php?page=order">Tra Cứu Đơn Hàng</a></li>
                     <?php
                         if (isset($_SESSION['userId'])) {
                             $infoUser = getInfoUser($conn,$_SESSION['userId']);
@@ -70,10 +67,7 @@ include 'handle.php';
                                     </div>
                                 </li>
                             <?php
-                        }else{
-                            ?><li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li><?php
-                        }
-                    ?>
+                        }else{ ?><li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li><?php } ?>
                 </ul>
             </div>
         </div>

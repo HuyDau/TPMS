@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once("../../config/config.php");
+include '../handle.php';
 if (!isset($_SESSION['admin_user'])) {
     header("location: ../login.php");
 }
@@ -11,56 +12,30 @@ if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
     $totalCategory = mysqli_num_rows($sqlCategory);
 } else {
-    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories");
+    $queryOnlineOrder = getOnlineOrder($conn);
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
 }
 
-
-if (isset($_POST['add'])) {
-    $code = $_POST['code'];
-    $name = $_POST['name'];
-    $image = $_FILES['catImage']['name'];
-    $image_tmp = $_FILES['catImage']['tmp_name'];
-
-    $categoryName = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName = '$name' ");
-
-    if (mysqli_num_rows($categoryName) > 0) {
-        echo "<script>window.alert('Category exists !');</script>";
-    } else {
-        $addCategory = "INSERT INTO `tbl_categories`(`Id`, `categoryCode`, `categoryName`,`categoryImage`) VALUES ('','$code','$name','$image')";
-
-        $queryAddCategory = mysqli_query($conn, $addCategory);
-        if ($queryAddCategory) {
-            echo "<script>window.alert('Successful!');window.location.href = 'categories.php'</script>";
+if(isset($_GET['action']) && $_GET['id']){
+    if($_GET['action'] == "confirm"){
+        $cartId = $_GET['id'];
+        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='2' WHERE id = $cartId");
+        if($update){
+            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
         }
-    }
-    move_uploaded_file($image_tmp, '../assets/images/category/' . $image);
-}
-
-if(isset($_GET['id'])){
-
-    $id = $_GET['id'];
-
-    $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-    $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
-
-    if (isset($_POST['edit'])) {
-        $codeEdit = $_POST['codeEdit'];
-        $nameEdit = $_POST['nameEdit'];
-        if ($_FILES['catImage1']['name'] == "") {
-            $image1 = $infoCategory['categoryImage'];
-        } else {
-            $image1 = $_FILES['catImage1']['name'];
-            $image1_tmp = $_FILES['catImage1']['tmp_name'];
-            move_uploaded_file($image1_tmp, '../assets/images/category/' . $image1);
+    }else if($_GET['action'] == "complete"){
+        $cartId = $_GET['id'];
+        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='3' WHERE id = $cartId");
+        if($update){
+            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
         }
-       
-        $edit = mysqli_query($conn, "UPDATE `tbl_categories` SET `categoryCode`='$codeEdit',`categoryName`='$nameEdit',`categoryImage`='$image1' WHERE Id = $id");
-
-        if($edit){
-            header("Location: categories.php");
+    }else if($_GET['action'] == "cancel"){
+        $cartId = $_GET['id'];
+        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='4' WHERE id = $cartId");
+        if($update){
+            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
         }
     }
 }
@@ -72,7 +47,7 @@ if(isset($_GET['id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - CATEGORIES</title>
+    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - ONLINE ORDER</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -93,7 +68,6 @@ if(isset($_GET['id'])){
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="../assets/scss/admin.css">
-    <link rel="stylesheet" href="categories.css">
     <!-- Font awesome -->
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
     <script src="../assets/fontawesome/js/all.min.js"></script>
@@ -104,41 +78,6 @@ if(isset($_GET['id'])){
 </head>
 
 <body>
-    <!-- Form Edit -->
-    <div class="form-edit form" id="form-edit">
-        <form method="POST" class="" enctype="multipart/form-data">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">EDIT CATEGORY</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><a href="categories.php">×</a></button>
-                    </div>
-                    <div class="modal-body p-3">
-                        <div>
-                            <div class="form-group">
-                                <label class="control-label">CATEGORY CODE: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="codeEdit" value="<?php if (isset($infoCategory['categoryCode'])) {echo $infoCategory['categoryCode'];} ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">CATEGORY NAME: </label>
-                                <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="nameEdit" value="<?php if (isset($infoCategory['categoryName'])) {echo $infoCategory['categoryName'];} ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">CATEGORY IMAGE: </label>
-                                <input type="file" multiple="multiple" name="catImage1" class="form-control">
-                            </div>
-                            <div class="text-right pt-2">
-                                <button name="edit" class="btn btn-primary ml-1">Save</button>
-                                <button class="btn btn-light close-form"><a href="categories.php">Close</a></button>
-                            </div>
-                            
-                        </div>
-                    </div> <!-- end modal-body-->
-                </div> <!-- end modal-content-->
-            </div> <!-- end modal dialog-->
-        </form>
-    </div>
-    <!-- End Form Edit -->
     <!-- Begin page -->
     <div id="wrapper" class="">
         <!-- Topbar Start -->
@@ -510,138 +449,176 @@ if(isset($_GET['id'])){
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TECHNOLOGY PRODUCTS MANAGER SYSTEM</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TPMS</a></li>
-                                        <li class="breadcrumb-item active">CATEGORIES</li>
+                                        <li class="breadcrumb-item active">ONLINE ORDERS</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">CATEGORIES</h4>
+                                <h4 class="page-title" onclick=confirm()>ONLINE ORDERS</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
                     <!--  -->
-
-                    <form method="POST" class="modal fade" id="addModel" tabindex="-1" enctype="multipart/form-data">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">CREATE NEW CATEGORY</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                </div>
-                                <div class="modal-body p-3">
-                                    <div>
-                                        <div class="form-group">
-                                            <label class="control-label">CATEGORY CODE: </label>
-                                            <input class="form-control form-white" placeholder="Enter Category Code ..." type="text" name="code" value="<?php if (isset($var['Id'])) {echo $var['Id']; } ?>" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label">CATEGORY NAME: </label>
-                                            <input class="form-control form-white" placeholder="Enter Category Name ..." type="text" name="name" value="<?php if (isset($var['ModelName'])) {echo $var['ModelName'];} ?>" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label">CATEGORY IMAGE: </label>
-                                            <input type="file" multiple="multiple" name="catImage" class="form-control">
-                                        </div>
-                                        <div class="text-right pt-2">
-                                            <button name="add" class="btn btn-primary ml-1">Save</button>
-                                            <button type="button" class="btn btn-light " data-dismiss="modal" name="close">Close</button>
+                    <div class="row no-gutters">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="widget-rounded-circle bg-soft-primary rounded-0 card-box mb-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="avatar-lg rounded-circle bg-soft-primary">
+                                            <i class="fe-tag font-22 avatar-title text-primary"></i>
                                         </div>
                                     </div>
-                                </div> <!-- end modal-body-->
-                            </div> <!-- end modal-content-->
-                        </div> <!-- end modal dialog-->
-                    </form>
-                    <!--  -->
+                                    <div class="col-6">
+                                        <div class="text-right">
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
+                                                    <?= $count_o ?>
+                                                </span></h3>
+                                            <p class="text-primary mb-1 text-truncate">Total Tickets</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div> <!-- end widget-rounded-circle-->
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="widget-rounded-circle bg-soft-warning rounded-0 card-box mb-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="avatar-lg rounded-circle bg-soft-warning">
+                                            <i class="fe-clock font-22 avatar-title text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-right">
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
+                                                    <?= $count_confirm_o ?>
+                                                </span></h3>
+                                            <p class="text-warning mb-1 text-truncate">Pending Tickets</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div> <!-- end widget-rounded-circle-->
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="widget-rounded-circle bg-soft-success rounded-0 card-box mb-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="avatar-lg rounded-circle bg-soft-success">
+                                            <i class="fe-check-circle font-22 avatar-title text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-right">
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
+                                                    <?= $count_complete_o ?>
+                                                </span></h3>
+                                            <p class="text-success mb-1 text-truncate">Complete Order</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div> <!-- end widget-rounded-circle-->
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="widget-rounded-circle bg-soft-danger rounded-0 card-box mb-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="avatar-lg rounded-circle bg-soft-danger">
+                                            <i class="fe-trash-2 font-22 avatar-title text-danger"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-right">
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
+                                                    <?= $count_cancel_o ?>
+                                                </span></h3>
+                                            <p class="text-danger mb-1 text-truncate">Deleted Tickets</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div> <!-- end widget-rounded-circle-->
+                        </div> <!-- end col-->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a href="export_order.php" class="btn btn-lg font-16 btn-success btn-block  ">
+                                <i class="las la-download"></i>    Export
+                            </a>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <table id="basic-datatable" class="table dt-responsive nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>NO</th>
-                                                <th>CATEGORY CODE</th>
-                                                <th>CATEGORY NAME</th>
-                                                <th>CATEGORY IMAGE</th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
+                            <div class="card-box">
+                                <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100"
+                                    id="tickets-table">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Total</th>
+                                            <th>Time</th>
+                                            <th>Payments</th>
+                                            <th>Status</th>
+                                            <th>Detail</th>
+                                            <th class="hidden-sm">Action</th>
+                                        </tr>
+                                    </thead>
 
-                                        <tbody>
-                                            <?php
+                                    <tbody>
+                                        <?php
+                                        if (!empty($queryOnlineOrder)) {
                                             $i = 1;
-                                            while ($row = mysqli_fetch_assoc($sqlCategory)) {
-                                            ?>
+                                            while ($itemOnlineOrder = mysqli_fetch_array($queryOnlineOrder)) {
+                                                ?>
                                                 <tr>
+                                                    <td> <?= $i++; ?></td>
+                                                    <td><a href="javascript: void(0);" class="text-body"><span class="ml-2"><?= $itemOnlineOrder['name'] ?></a></td>
+                                                    <td>0<?=$itemOnlineOrder['phone'] ?></td>
+                                                    <td>$<?= number_format($itemOnlineOrder['total'],0,"",".") ?></td>
+                                                    <td><?= date("H:i:s d-m-Y", strtotime($itemOnlineOrder['time'])) ?></td>
+                                                    <td><?= $itemOnlineOrder['paymentName'] ?></td>
                                                     <td>
-                                                        <?= $i++ ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $row['categoryCode'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $row['categoryName'] ?>
-                                                    </td>
-                                                    <td><img style="width: 200px;" src="../assets/images/category/<?=$row['categoryImage']?>" alt=""></td>
-
-                                                    <?php
-                                                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
-                                                            ?>
-                                                                <td><a href="categories.php?id=<?php echo $row['Id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                                <td><a onclick="return Del1('<?php echo $row['categoryName']; ?>')" class="delete" href="deleteCategory.php?id=<?php echo $row['Id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
-                                                            <?php
+                                                        <?php
+                                                        if ($itemOnlineOrder['idstatus'] == 1) {
+                                                            echo '<span class="badge badge-pink">' . $itemOnlineOrder['statusName'] . '</span>';
+                                                        } elseif ($itemOnlineOrder['idstatus'] == 2) {
+                                                            echo '<span class="badge badge-warning">' . $itemOnlineOrder['statusName'] . '</span>';
+                                                        } elseif ($itemOnlineOrder['idstatus'] == 3) {
+                                                            echo '<span class="badge badge-success">' . $itemOnlineOrder['statusName'] . '</span>';
+                                                        } else {
+                                                            echo '<span class="badge badge-danger">' . $itemOnlineOrder['statusName'] . '</span>';
                                                         }
-                                                    ?>
-                                                    
+                                                        ?>
+                                                    </td>
+                                                    <td><a href="detail_order.php?id=<?= $itemOnlineOrder['cartId'] ?>"><span class="badge badge-light-pink">Detail</span></a></td>
+                                                    <td>
+                                                        <div class="btn-group dropdown">
+                                                            <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <?php if($itemOnlineOrder['idstatus']==2){}else{?><a class="dropdown-item"  href="orderonline.php?action=confirm&id=<?= $itemOnlineOrder['cartId'] ?>" ><i  class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Confirm</a><?php }?>
+                                                                <a class="dropdown-item"  href="orderonline.php?action=complete&id=<?= $itemOnlineOrder['cartId'] ?>"><i  class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Complete</a>
+                                                                <a class="dropdown-item"  href="orderonline.php?action=cancel&id=<?= $itemOnlineOrder['cartId'] ?>"><i  class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Cancel</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
                                                 </tr>
-                                            <?php
+                                                <?php
                                             }
-                                            ?>
-                                        </tbody>
-
-                                    </table>
-
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!-- end col -->
                     </div>
                     <!-- end row-->
-
                 </div> <!-- container -->
-
             </div> <!-- content -->
-
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="row">
-                    <?php
-                        if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
-                            ?>
-                                <div class="col-lg-2">
-                                    <a href="#" data-toggle="modal" data-target="#addModel" class="btn btn-lg font-13  btn-success btn-block  ">
-                                        <i class="mdi mdi-plus-circle-outline"></i> Add
-                                    </a>
-                                </div>
-                            <?php
-                        }
-                    ?>
-                    
-                    <div class="col-lg-2">
-                        <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
-                            <i class="las la-download"></i> Export
-                        </a>
-                    </div>
-                </div>
-            </footer>
-            <!-- end Footer -->
-
         </div>
-
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
-
-
     </div>
     <!-- END wrapper -->
 
@@ -651,12 +628,7 @@ if(isset($_GET['id'])){
     <!-- Vendor js -->
     <script src="..\assets\js\vendor.min.js"></script>
     <!-- Scritp -->
-    <script>
-        function Del1(name) {
-            return confirm("Do You Want To Delete: " + name + " ?");
-        }
-    </script>
-
+    
     <!-- third party js -->
     <script src="..\assets\libs\datatables\jquery.dataTables.min.js"></script>
     <script src="..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
@@ -678,18 +650,6 @@ if(isset($_GET['id'])){
 
     <!-- App js -->
     <script src="..\assets\js\app.min.js"></script>
-    
-    <?php
-        if(isset($_GET['id'])){
-            echo '<script> document.getElementById("form-edit").classList.add("show")</script>';
-
-            $id = $_GET['id'];
-
-            $sqlEditCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE Id = $id");
-            $infoCategory = mysqli_fetch_assoc($sqlEditCategory);
-        }
-    ?>
-    <script src="categories.js"></script>
     
 </body>
 

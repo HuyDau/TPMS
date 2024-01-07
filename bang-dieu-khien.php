@@ -44,8 +44,12 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta name="author" content="hoanghamobile.com">
     <meta property='og:site_name' content='hoanghamobile.com' />
-    
-    
+    <meta name="google-site-verification" content="JOFGGI7j9vWfBf-xpElM5Tec0UJ1k_CfdNjpaHm5z10" />
+    <meta name="msvalidate.01" content="5C8CDF0992489498A30F9E5F6668A4D5" />
+    <meta name="geo.placename" content="Hanoi, Hoàn Kiếm, Hanoi, Vietnam" />
+    <meta name="geo.position" content="21.017249242314964;105.84134504199028" />
+    <meta name="geo.region" content="VN-Hanoi" />
+    <meta name="ICBM" content="21.017249242314964, 105.84134504199028" />
     <title>Bảng điều khiển</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
@@ -74,51 +78,36 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
 </head>
 
 <body class="account">
-
     <header>
         <div class="top-navigation">
             <div class="container">
                 <ul>
-                    <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
-                    <li><a href="/gioi-thieu-cong-ty">Giới thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản phẩm đ&#227; xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung t&#226;m bảo h&#224;nh</a></li>
-                    <li><a href="/he-thong-cua-hang">Hệ thống 128 si&#234;u thị</a></li>
-                    <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra cứu đơn h&#224;ng</a></li>
+                    <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
+                    <li><a href="trung-tam-bao-hanh.php">Trung Tâm Bảo Hành</a></li>
+                    <li><a href="he-thong-cua-hang.php">Hệ Thống Showroom</a></li>
+                    <li><a href="bang-dieu-khien.php?page=order">Tra Cứu Đơn Hàng</a></li>
                     <?php
-                    if (isset($_SESSION['userId'])) {
-                        $infoUser = getInfoUser($conn, $_SESSION['userId']);
-                    ?>
-                        <li class="member">
-                            <i class="icon-account"></i> <a class="account" href="/Account"><strong><?= $infoUser['name'] ?></strong></a>
-                            <div class="sub">
-                                <ul>
-                                    <li><a href="bang-dieu-khien.php?page=index" ><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
-                                    <li><a href="/account/info"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
-                                    <li><a href="/account/order"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
-                                    <li><a href="/account/wishlist"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
-                                    <li><a href="/account/comment"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
-                                    <li><a href="/account/review"><i class="icon-edit-squad"></i><span>Quản lý đánh giá</span></a></li>
-                                    <li>
-                                        <form action="/Account/LogOff" id="logoutForm" method="post">
-                                            <input type="hidden" name="ReturnUrl" id="ReturnUrl" value="/">
-                                            <input name="__RequestVerificationToken" type="hidden" value="GCBt6unvKmAoP-qQJihj4UXrdv3SVsw5rDcngofGMjs5DrFnQrqDXgs5qtW9xbdbUs0AYLW22TLu1AJudVa_mWI6s6Ce19qnGoaMwT5bdU7Hgz8qjrQwTHyL3GsyL_U86Nsk2w2">
-                                            <a href="dang-xuat.php"><i class="icon-logout"></i><span>Đăng xuất</span></a>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    <?php
-                    } else {
-                    ?><li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li><?php
-                                                                                                }
-                                                                                                    ?>
+                        if (isset($_SESSION['userId'])) {
+                            $infoUser = getInfoUser($conn,$_SESSION['userId']);
+                            ?>
+                                <li class="member">
+                                    <i class="icon-account"></i> <a class="account" href="/Account"><strong><?=$infoUser['name']?></strong></a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="bang-dieu-khien.php?page=index"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=info"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=order"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=wishlist"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=comment"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
+                                            <li><a href="dang-xuat.php"><i class="icon-logout"></i><span>Đăng xuất</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            <?php
+                        }else{ ?><li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li><?php } ?>
                 </ul>
             </div>
         </div>
-
     </header>
 
     <section class="account">
@@ -224,7 +213,7 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                                                             ?>
                                                                 <tr>
                                                                     <td><?=$i++?></td>
-                                                                    <td><a href="bang-dieu-khien.php?page=order&idcart=<?=$item['id']?>"><strong class="text-orange">#<?=strtotime($item['time'])?><?=$item['id']?></strong></a></td>
+                                                                    <td><a href="/order/details/714360GIVRM"><strong class="text-orange">#<?=strtotime($item['time'])?><?=$item['id']?></strong></a></td>
                                                                     <td><?=date("H:i:s d-m-Y",strtotime($item['time']))?></td>
                                                                     <td><?=number_format($item['total'],0,"",".")?> ₫</td>
                                                                     <td <?php if($item['idstatus']==1){echo "style='color: #3a79eb;font-weight: 700;'";}else if($item['idstatus']==2){echo "style='color: orange;font-weight: 700;'";}else if($item['idstatus']==3){echo "style='color: #00ad45;font-weight: 700;'";}else if($item['idstatus']==4){echo "style='color: #fb1a1a;font-weight: 700;'";} ?>><?=getStatus($conn,$item['idstatus'])?></td>

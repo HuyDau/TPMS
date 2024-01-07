@@ -40,7 +40,7 @@ include 'handle.php';
                     <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
                     <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
                     <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a></li>
+                    <li><a href="trung-tam-bao-hanh.php">Trung Tâm Bảo Hành</a></li>
                     <li><a href="/he-thong-cua-hang">Hệ thống 123 si&#234;u thị</a></li>
                     <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
                     <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>

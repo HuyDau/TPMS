@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 05, 2024 lúc 05:26 PM
+-- Thời gian đã tạo: Th1 07, 2024 lúc 06:51 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -133,9 +133,9 @@ INSERT INTO `tbl_brands` (`id`, `brandCode`, `brandName`, `categoryId`) VALUES
 (42, 'BRAND41', 'HUAWEI - TABLET', 3),
 (43, 'BRAND42', 'HTC - TABLET', 3),
 (44, 'BRAND43', 'YUHO - TABLET', 3),
-(45, 'BRAND44', 'ACER - MÀN HINH', 4),
+(45, 'BRAND44', 'ACER - MÀN HÌNH', 4),
 (46, 'BRAND45', 'AOC - MÀN HÌNH', 4),
-(47, 'BRAND46', 'ASUS - MÀN HINH', 4),
+(47, 'BRAND46', 'ASUS - MÀN HÌNH', 4),
 (48, 'BRAND47', 'DELL - MÀN HÌNH', 4),
 (49, 'BRAND48', 'GIGABYTE - MÀN HÌNH', 4),
 (50, 'BRAND49', 'HP - MÀN HÌNH', 4),
@@ -170,7 +170,57 @@ INSERT INTO `tbl_brands` (`id`, `brandCode`, `brandName`, `categoryId`) VALUES
 (79, 'BRAND78', 'TOP VÒNG ĐEO TAY - ĐỒNG HỒ', 6),
 (80, 'BRAND79', 'SOUNDPEATS - ĐỒNG HỒ', 6),
 (81, 'BRAND80', 'KISLECT - ĐỒNG HỒ', 6),
-(82, 'BRAND81', 'FITBIT - ĐỒNG HỒ', 6);
+(82, 'BRAND81', 'FITBIT - ĐỒNG HỒ', 6),
+(83, 'BRAND82', 'SONY - ÂM THANH', 7),
+(84, 'BRAND83', 'ANKER - ÂM THANH', 7),
+(85, 'BRAND84', 'APPLE - ÂM THANH', 7),
+(86, 'BRAND 85', 'MÁY LỌC KHÔNG KHÍ', 8),
+(87, 'BRAND86', 'ROBOT, MÁY HÚT BỤI', 8),
+(88, 'BRAND87', 'MÁY CHIẾU', 8),
+(89, 'BRAND88', 'SẠC DỰ PHÒNG', 16),
+(90, 'BRAND89', 'CỦ SẠC - DÂY CÁP', 16),
+(91, 'BRAND90', 'BAO DA, ỐP LƯNG', 16),
+(92, 'BRAND91', 'KÍNH THỰC TẾ ẢO', 17),
+(93, 'BRAND92', 'TAY CẦM CHƠI GAME', 17),
+(94, 'BRAND93', 'ĐIỆN THOẠI - MÁY TRÔI', 18),
+(95, 'BRAND94', 'LAPTOP - MÁY TRÔI', 18),
+(96, 'RBAND95', 'TABLET - MÁY TRÔI', 18),
+(97, 'BRAND96', 'PIN', 19),
+(98, 'BRAND97', 'MÀN HÌNH', 19),
+(99, 'BRAND98', 'SIM THẺ', 20),
+(100, 'BRAND99', 'TRUYỀN HÌNH K+', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_cart`
+--
+
+CREATE TABLE `tbl_cart` (
+  `id` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `phone` int(15) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `ward` varchar(50) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `note` varchar(1000) NOT NULL,
+  `total` int(20) NOT NULL,
+  `time` datetime NOT NULL,
+  `idtype` int(11) NOT NULL,
+  `idstatus` int(11) NOT NULL,
+  `idpayment` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_cart`
+--
+
+INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES
+(1, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', 'aaa', 65700000, '2024-01-07 10:22:12', 1, 2, 1),
+(5, 9, 'User 2', 98789789, '', 'Thành phố Hà Nội', 'Quận Ba Đình', 'Phường Phúc Xá', 'ádasdas', 'ádasdas', 33190000, '2024-01-07 10:37:58', 1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -225,6 +275,7 @@ CREATE TABLE `tbl_colors` (
 CREATE TABLE `tbl_comments` (
   `id` int(11) NOT NULL,
   `versionId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone` int(15) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -237,12 +288,9 @@ CREATE TABLE `tbl_comments` (
 -- Đang đổ dữ liệu cho bảng `tbl_comments`
 --
 
-INSERT INTO `tbl_comments` (`id`, `versionId`, `name`, `phone`, `email`, `content`, `star`, `datetime`) VALUES
-(114, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2023-11-28 18:21:12'),
-(115, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-02 18:34:20'),
-(116, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-04 19:07:37'),
-(117, 5, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'a', 5, '2024-01-04 19:08:54'),
-(118, 9, 'User 1', 999999999, 'user1@gmail.com', 'a', 5, '2024-01-05 10:57:27');
+INSERT INTO `tbl_comments` (`id`, `versionId`, `userId`, `name`, `phone`, `email`, `content`, `star`, `datetime`) VALUES
+(119, 7, 3, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2024-01-06 10:18:27'),
+(120, 6, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2024-01-06 11:50:03');
 
 -- --------------------------------------------------------
 
@@ -275,6 +323,28 @@ INSERT INTO `tbl_customer` (`id`, `username`, `password`, `name`, `email`, `phon
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tbl_detailcart`
+--
+
+CREATE TABLE `tbl_detailcart` (
+  `id` int(11) NOT NULL,
+  `cartId` int(11) NOT NULL,
+  `versionId` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `versionPromotionalPrice` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_detailcart`
+--
+
+INSERT INTO `tbl_detailcart` (`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES
+(1, 1, 5, 2, 32850000),
+(5, 5, 6, 1, 33190000);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_favorite`
 --
 
@@ -296,7 +366,32 @@ INSERT INTO `tbl_favorite` (`id`, `productId`, `userId`, `status`) VALUES
 (12, 9, 3, 2),
 (13, 20, 3, 2),
 (14, 19, 3, 1),
-(15, 9, 9, 2);
+(15, 9, 9, 2),
+(16, 7, 9, 2),
+(17, 8, 9, 2),
+(18, 5, 9, 2),
+(19, 6, 9, 2),
+(20, 10, 9, 2),
+(21, 20, 9, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_payment`
+--
+
+CREATE TABLE `tbl_payment` (
+  `id` int(11) NOT NULL,
+  `paymentName` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_payment`
+--
+
+INSERT INTO `tbl_payment` (`id`, `paymentName`) VALUES
+(1, 'Thanh toán Khi nhận hàng'),
+(2, 'Thánh toán Momo');
 
 -- --------------------------------------------------------
 
@@ -428,6 +523,46 @@ CREATE TABLE `tbl_staff` (
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tbl_status`
+--
+
+CREATE TABLE `tbl_status` (
+  `id` int(11) NOT NULL,
+  `statusName` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_status`
+--
+
+INSERT INTO `tbl_status` (`id`, `statusName`) VALUES
+(1, 'Đang chờ xử lý'),
+(2, 'Đã xác nhận'),
+(3, 'Hoàn thành'),
+(4, 'Hủy');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_type`
+--
+
+CREATE TABLE `tbl_type` (
+  `id` int(11) NOT NULL,
+  `typeName` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_type`
+--
+
+INSERT INTO `tbl_type` (`id`, `typeName`) VALUES
+(1, 'Đơn hàng online'),
+(2, 'Đơn hàng ofline');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_users`
 --
 
@@ -543,6 +678,15 @@ ALTER TABLE `tbl_brands`
   ADD KEY `categoryId` (`categoryId`);
 
 --
+-- Chỉ mục cho bảng `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idpayment` (`idpayment`),
+  ADD KEY `idstatus` (`idstatus`),
+  ADD KEY `idtype` (`idtype`);
+
+--
 -- Chỉ mục cho bảng `tbl_categories`
 --
 ALTER TABLE `tbl_categories`
@@ -568,9 +712,22 @@ ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_detailcart`
+--
+ALTER TABLE `tbl_detailcart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cartId` (`cartId`);
+
+--
 -- Chỉ mục cho bảng `tbl_favorite`
 --
 ALTER TABLE `tbl_favorite`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tbl_payment`
+--
+ALTER TABLE `tbl_payment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -609,6 +766,18 @@ ALTER TABLE `tbl_staff`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_agent` (`idAgent`),
   ADD KEY `idPosition` (`idPosition`);
+
+--
+-- Chỉ mục cho bảng `tbl_status`
+--
+ALTER TABLE `tbl_status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tbl_type`
+--
+ALTER TABLE `tbl_type`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `tbl_users`
@@ -651,7 +820,13 @@ ALTER TABLE `tbl_banners`
 -- AUTO_INCREMENT cho bảng `tbl_brands`
 --
 ALTER TABLE `tbl_brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_categories`
@@ -669,7 +844,7 @@ ALTER TABLE `tbl_colors`
 -- AUTO_INCREMENT cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
@@ -678,10 +853,22 @@ ALTER TABLE `tbl_customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_detailcart`
+--
+ALTER TABLE `tbl_detailcart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_favorite`
 --
 ALTER TABLE `tbl_favorite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_payment`
+--
+ALTER TABLE `tbl_payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_position`
@@ -714,6 +901,18 @@ ALTER TABLE `tbl_staff`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_status`
+--
+ALTER TABLE `tbl_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_type`
+--
+ALTER TABLE `tbl_type`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_users`
 --
 ALTER TABLE `tbl_users`
@@ -742,10 +941,24 @@ ALTER TABLE `tbl_brands`
   ADD CONSTRAINT `tbl_brands_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `tbl_categories` (`Id`);
 
 --
+-- Các ràng buộc cho bảng `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD CONSTRAINT `tbl_cart_ibfk_1` FOREIGN KEY (`idpayment`) REFERENCES `tbl_payment` (`id`),
+  ADD CONSTRAINT `tbl_cart_ibfk_2` FOREIGN KEY (`idstatus`) REFERENCES `tbl_status` (`id`),
+  ADD CONSTRAINT `tbl_cart_ibfk_3` FOREIGN KEY (`idtype`) REFERENCES `tbl_type` (`id`);
+
+--
 -- Các ràng buộc cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
   ADD CONSTRAINT `tbl_comments_ibfk_1` FOREIGN KEY (`versionId`) REFERENCES `tbl_versions` (`idVersion`);
+
+--
+-- Các ràng buộc cho bảng `tbl_detailcart`
+--
+ALTER TABLE `tbl_detailcart`
+  ADD CONSTRAINT `tbl_detailcart_ibfk_1` FOREIGN KEY (`cartId`) REFERENCES `tbl_cart` (`id`);
 
 --
 -- Các ràng buộc cho bảng `tbl_products`

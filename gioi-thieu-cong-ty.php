@@ -49,14 +49,29 @@ include 'handle.php';
         <div class="top-navigation">
             <div class="container">
                 <ul>
-                    <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
                     <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
-                    <li><a href="/trung-tam-bao-hanh">Trung Tâm Bảo Hành</a></li>
-                    <li><a href="/he-thong-cua-hang">Hệ Thống Showroom</a></li>
-                    <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
-                    <li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li>
+                    <li><a href="trung-tam-bao-hanh.php">Trung Tâm Bảo Hành</a></li>
+                    <li><a href="he-thong-cua-hang.php">Hệ Thống Showroom</a></li>
+                    <li><a href="bang-dieu-khien.php?page=order">Tra Cứu Đơn Hàng</a></li>
+                    <?php
+                        if (isset($_SESSION['userId'])) {
+                            $infoUser = getInfoUser($conn,$_SESSION['userId']);
+                            ?>
+                                <li class="member">
+                                    <i class="icon-account"></i> <a class="account" href="/Account"><strong><?=$infoUser['name']?></strong></a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="bang-dieu-khien.php?page=index"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=info"><i class="icon-account"></i><span>Thông tin tài khoản</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=order"><i class="icon-order-mgr"></i><span>Đơn hàng của bạn</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=wishlist"><i class="icon-love"></i><span>Sản phẩm yêu thích</span></a></li>
+                                            <li><a href="bang-dieu-khien.php?page=comment"><i class="icon-comment"></i><span>Quản lý bình luận</span></a></li>
+                                            <li><a href="dang-xuat.php"><i class="icon-logout"></i><span>Đăng xuất</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            <?php
+                        }else{ ?><li><a id="login-modal" href="dang-nhap.php">Đăng nhập</a></li><?php } ?>
                 </ul>
             </div>
         </div>
