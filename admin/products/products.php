@@ -688,6 +688,30 @@ if(isset($_GET['offActive'])){
                                 </li>
                             </ul>
                         </li>
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
+                                ?>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class=" fab fa-opencart"></i>
+                                            <span>Online Order </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="../orderonline/orderonline.php">List Online Order</a>
+                                            </li>
+                                            <li>
+                                                <a href="list_complete_order.php">List Complete Online Order</a>
+                                            </li>
+                                            <li>
+                                                <a href="list_cancel_order.php">List Cancel Online Order</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }
+                        ?>
                     </ul>
 
                 </div>

@@ -2408,7 +2408,7 @@ if (isset($_GET['like'])) {
                                 </div>
 
                                 <div class="info-compare">
-                                    <a href="/so-sanh/apple-iphone-14 pro-max-256gb-chinh-hang-vn-a-voi-apple-iphone-15-pro-max-256gb-chinh-hang-vn-a-ss.2358.3694" title="So sánh Điện thoại với <?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>"><i class="icon-controls"></i> <span>So sánh</span></a>
+                                    <a href="so-sanh.php?sp1=<?=$_GET['idsanpham']?>&sp2=<?=$itemSimilarProduct['idVersion']?>" title="So sánh Điện thoại với <?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>"><i class="icon-controls"></i> <span>So sánh</span></a>
                                 </div>
 
                                 <div class="promote">

@@ -12,7 +12,19 @@ if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
     $totalCategory = mysqli_num_rows($sqlCategory);
 } else {
-    $queryOnlineOrder = getOnlineOrder($conn);
+   if(isset($_GET['type'])){
+        if($_GET['type'] == "order"){
+            $queryOnlineOrder = getOnlineOrder($conn,1);
+        }else if($_GET['type'] == "confirm"){
+            $queryOnlineOrder = getOnlineOrder($conn,2);
+        }else if($_GET['type'] == "complete"){
+            $queryOnlineOrder = getOnlineOrder($conn,3);
+        }else if($_GET['type'] == "cancel"){
+            $queryOnlineOrder = getOnlineOrder($conn,4);
+        }
+   }else{
+        $queryOnlineOrder = getOnlineOrder($conn,0);
+   }
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
@@ -323,7 +335,7 @@ if(isset($_GET['action']) && $_GET['id']){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="categories.php">CATEGORIES</a>
+                                    <a href="../categories/categories.php">CATEGORIES</a>
                                 </li>
                                 <li>
                                     <a href="../brands/brands.php">BRANDS</a>
@@ -390,7 +402,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                     <a href="order.php">List Order</a>
                                 </li>
                                 <li>
-                                    <a href="list_complete_order.php">List Complete Order</a>
+                                    <a href="">List Complete Order</a>
                                 </li>
                                 <li>
                                     <a href="list_cancel_order.php">List Cancel Order</a>
@@ -459,7 +471,7 @@ if(isset($_GET['action']) && $_GET['id']){
                     <!-- end page title -->
                     <!--  -->
                     <div class="row no-gutters">
-                        <div class="col-md-6 col-xl-3">
+                        <a href="orderonline.php?type=order" class="col-md-6 col-xl-3">
                             <div class="widget-rounded-circle bg-soft-primary rounded-0 card-box mb-0">
                                 <div class="row">
                                     <div class="col-6">
@@ -470,16 +482,16 @@ if(isset($_GET['action']) && $_GET['id']){
                                     <div class="col-6">
                                         <div class="text-right">
                                             <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= $count_o ?>
+                                                    <?= countListOrder($conn,0) ?>
                                                 </span></h3>
-                                            <p class="text-primary mb-1 text-truncate">Total Tickets</p>
+                                            <p class="text-primary mb-1 text-truncate">Total Order</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
                             </div> <!-- end widget-rounded-circle-->
-                        </div> <!-- end col-->
+                        </a> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <a href="orderonline.php?type=confirm" class="col-md-6 col-xl-3">
                             <div class="widget-rounded-circle bg-soft-warning rounded-0 card-box mb-0">
                                 <div class="row">
                                     <div class="col-6">
@@ -490,16 +502,16 @@ if(isset($_GET['action']) && $_GET['id']){
                                     <div class="col-6">
                                         <div class="text-right">
                                             <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= $count_confirm_o ?>
+                                                    <?= countListOrder($conn,2) ?>
                                                 </span></h3>
-                                            <p class="text-warning mb-1 text-truncate">Pending Tickets</p>
+                                            <p class="text-warning mb-1 text-truncate">Confirm Order</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
                             </div> <!-- end widget-rounded-circle-->
-                        </div> <!-- end col-->
+                        </a> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <a href="orderonline.php?type=complete" class="col-md-6 col-xl-3">
                             <div class="widget-rounded-circle bg-soft-success rounded-0 card-box mb-0">
                                 <div class="row">
                                     <div class="col-6">
@@ -510,16 +522,16 @@ if(isset($_GET['action']) && $_GET['id']){
                                     <div class="col-6">
                                         <div class="text-right">
                                             <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= $count_complete_o ?>
+                                                    <?=countListOrder($conn,3) ?>
                                                 </span></h3>
                                             <p class="text-success mb-1 text-truncate">Complete Order</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
                             </div> <!-- end widget-rounded-circle-->
-                        </div> <!-- end col-->
+                        </a> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <a href="orderonline.php?type=cancel" class="col-md-6 col-xl-3">
                             <div class="widget-rounded-circle bg-soft-danger rounded-0 card-box mb-0">
                                 <div class="row">
                                     <div class="col-6">
@@ -530,14 +542,14 @@ if(isset($_GET['action']) && $_GET['id']){
                                     <div class="col-6">
                                         <div class="text-right">
                                             <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= $count_cancel_o ?>
+                                                    <?= countListOrder($conn,4) ?>
                                                 </span></h3>
-                                            <p class="text-danger mb-1 text-truncate">Deleted Tickets</p>
+                                            <p class="text-danger mb-1 text-truncate">Cancel Tickets</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
                             </div> <!-- end widget-rounded-circle-->
-                        </div> <!-- end col-->
+                        </a> <!-- end col-->
                     </div>
                     <div class="row">
                         <div class="col-lg-3">

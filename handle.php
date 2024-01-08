@@ -2,7 +2,7 @@
     session_start();
     require_once("config/config.php");
 
-    // Get info user
+    // GET INFO USER
     if (isset($_SESSION['userId'])){
         $userID = $_SESSION['userId'];
         $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_customer WHERE id = $userID");
@@ -14,7 +14,7 @@
     }
     
 
-    // Category 
+    // CATEGORY 
     $sqlBrand1 = mysqli_query($conn,"SELECT * FROM `tbl_categories` WHERE id BETWEEN 1 AND 18");
 
     function getImageCategory($conn, $id){
@@ -29,7 +29,7 @@
         $itemCatName = mysqli_fetch_assoc($sqlNameCategory);
         echo $itemCatName['categoryName'];
     }
-    // Brand 
+    // BRAND 
     $sqlBrand1 = mysqli_query($conn,"SELECT * FROM `tbl_brands` WHERE id BETWEEN 1 AND 18");
 
     function getBrand($conn, $i){
@@ -181,4 +181,6 @@
         $sqlDetailProd = mysqli_query($conn,"SELECT * FROM tbl_versions WHERE idVersion = $a");
         return $sqlDetailProd;
     }
+
+
 ?>
