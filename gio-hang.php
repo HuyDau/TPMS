@@ -45,7 +45,13 @@ if (isset($_GET["action"])) {
             if (isset($_POST['updateCart'])) {
                 update_cart();
                 header('Location: gio-hang.php');
-            }else{
+            }else if(isset($_POST['addCouple'])){
+                $discountCode = $_POST['discount'];
+                $sqlDiscount = mysqli_query($conn,"SELECT * FROM tbl_couple WHERE coupleCode = '$discountCode'");
+                $itemDiscount = mysqli_fetch_assoc($sqlDiscount);
+                $discountValue = $itemDiscount['coupleValue'];
+            }
+            else{
                 if (isset($_POST['order'])){
                     $pay_method = $_POST['pay_method'];
                     $userId = $_SESSION["userId"];
@@ -74,8 +80,8 @@ if (isset($_GET["action"])) {
 
                         $addDetail = mysqli_query($conn, "INSERT INTO `tbl_detailcart`(`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES " . $insertString . "");
                         if($addDetail){
-                            unset($_SESSION['cart']);
-                            echo "<script>window.location.href = 'dat-hang.php'</script>";
+                            // unset($_SESSION['cart']);
+                            // echo "<script>window.location.href = 'dat-hang.php'</script>";
                         }
                         
                         
@@ -329,13 +335,17 @@ if (isset($_GET["action"])) {
                                             }
                                         ?>
                                     </div>
-
-                                        <div class="cart-total">
-                                            <p>Tổng giá trị: <strong class="price"><?=number_format($total,0,"",".")?> ₫</strong> </p>
-                                                <p>Giảm giá: <strong class="price">- 00 ₫</strong></p>
-                                            <p>Tổng thanh toán: <strong class="price text-red"><?=number_format($total,0,"",".")?> ₫</strong></p>
-                                            <button class="next">Tiếp tục</button>
-                                        </div>
+                                    <div class="cart-total" style="display: flex;">
+                                        <p style="width: 30%;padding: 10px;">Mã giảm giá:</p> <input  class="col-8" style="outline: none;width: 70%;background: none; border: 1px solid #006e5d;border-radius: 20px;font-size: 13px;color: #444;padding: 10px;" type="text" name="discount" placeholder="Mã giảm giá ... "><button type="submit" name="addCouple">Áp dụng</button>
+                                    </div>
+                                    <div class="cart-total">
+                                        <p>Tổng giá trị: <strong class="price">
+                                            <?php if(isset($discountValue)){echo number_format($total - $discountValue,0,"",".");}else{echo number_format($total,0,"",".");} ?> ₫</strong> 
+                                        </p>
+                                            <p>Giảm giá: <strong class="price">- 00 ₫</strong></p>
+                                        <p>Tổng thanh toán: <strong class="price text-red"><?=number_format($total,0,"",".")?> ₫</strong></p>
+                                        <button class="next">Tiếp tục</button>
+                                    </div>
 
                                 </div>
                                 <div class="cart-form">
@@ -364,7 +374,7 @@ if (isset($_GET["action"])) {
                                         <div class="row shInfo">
                                             <div class="col">
                                                 <div class="control">
-                                                    <input value="<?=$infoCus['email']?>" name="Email" type="email" placeholder="Email" />
+                                                    <input value="<?=$infoCus['email']?>" name="email" type="email" placeholder="Email" />
                                                 </div>
                                             </div>
                                         </div>

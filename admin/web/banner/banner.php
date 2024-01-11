@@ -1,11 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_user'])) {
+if (!isset($_SESSION['admin_id'])) {
     header("location: ../../login.php");
 }
-
 require_once("../../../config/config.php");
-
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
     $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_banners WHERE bannerTitle LIKE '%$search%' OR bannerContent LIKE'%$search%' ");
@@ -15,8 +13,6 @@ if (isset($_POST['sbm']) && !empty($_POST['search'])) {
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
 }
-
-
 if (isset($_POST['add'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
@@ -35,17 +31,13 @@ if (isset($_POST['add'])) {
             echo "<script>window.alert('Successful!');window.location.href = 'banner.php'</script>";
         }
     }
-
     move_uploaded_file($image_tmp, '../../assets/images/banner/' . $image);
 }
 
 if(isset($_GET['id'])){
-
     $id = $_GET['id'];
-
     $sqlEditBanner = mysqli_query($conn, "SELECT * FROM tbl_banners WHERE id = $id");
     $infoBanner = mysqli_fetch_assoc($sqlEditBanner);
-
     if (isset($_POST['edit'])) {
         $bannerTitle = $_POST['bannerTitle'];
         $bannerContent = $_POST['bannerContent'];
@@ -65,7 +57,6 @@ if(isset($_GET['id'])){
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,34 +67,27 @@ if(isset($_GET['id'])){
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- App favicon -->
+
     <link rel="shortcut icon" href="../../../assets/images/logo/favicon.ico">
-    <!-- third party css -->
     <link href="..\..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
     <link href="..\..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
     <link href="..\..\assets\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
     <link href="..\..\assets\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
-    <!-- third party css end -->
-    <!-- App css -->
     <link href="..\..\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="..\..\assets\css\icons.min.css" rel="stylesheet" type="text/css">
     <link href="..\..\assets\css\app.min.css" rel="stylesheet" type="text/css">
     <link href="..\..\assets\css\style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <!-- Style Css -->
     <link rel="stylesheet" href="../../assets/scss/admin.css">
     <link rel="stylesheet" href="banner.css">
-    <!-- Font awesome -->
     <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css">
     <script src="../../assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="../../assets/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <!-- CK Editor -->
     <script src="../../assets/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
-    <!-- Form Edit -->
     <div class="form-edit form" id="form-edit"  class="modal fade" tabindex="-1">
         <form method="POST" class="" enctype="multipart/form-data">
             <div class="modal-dialog">
@@ -132,15 +116,12 @@ if(isset($_GET['id'])){
                                 <button class="btn btn-light close-form"><a href="banner.php">Close</a></button>
                             </div>
                         </div>
-                    </div> <!-- end modal-body-->
-                </div> <!-- end modal-content-->
-            </div> <!-- end modal dialog-->
+                    </div> 
+                </div> 
+            </div> 
         </form>
     </div>
-    <!-- End Form Edit -->
-    <!-- Begin page -->
     <div id="wrapper" class="">
-        <!-- Topbar Start -->
         <div class="navbar-custom">
             <ul class="list-unstyled topnav-menu float-right mb-0">
                 <li class="d-none d-sm-block">
@@ -157,7 +138,6 @@ if(isset($_GET['id'])){
                         </div>
                     </form>
                 </li>
-
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <i class="fe-bell noti-icon"></i>
@@ -165,7 +145,6 @@ if(isset($_GET['id'])){
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
-                        <!-- item-->
                         <div class="dropdown-item noti-title">
                             <h5 class="m-0 text-white">
                                 <span class="float-right">
@@ -178,8 +157,7 @@ if(isset($_GET['id'])){
 
                         <div class="slimscroll noti-scroll">
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                 <div class="notify-icon">
                                     <img src="..\..\assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
@@ -189,8 +167,7 @@ if(isset($_GET['id'])){
                                 </p>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon bg-primary">
                                     <i class="mdi mdi-comment-account-outline"></i>
                                 </div>
@@ -199,8 +176,7 @@ if(isset($_GET['id'])){
                                 </p>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon">
                                     <img src="..\..\assets\images\users\user-4.jpg" class="img-fluid rounded-circle" alt="">
                                 </div>
@@ -210,8 +186,7 @@ if(isset($_GET['id'])){
                                 </p>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon bg-warning">
                                     <i class="mdi mdi-account-plus"></i>
                                 </div>
@@ -220,8 +195,7 @@ if(isset($_GET['id'])){
                                 </p>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon bg-info">
                                     <i class="mdi mdi-comment-account-outline"></i>
                                 </div>
@@ -230,8 +204,7 @@ if(isset($_GET['id'])){
                                 </p>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <div class="notify-icon bg-secondary">
                                     <i class="mdi mdi-heart text-danger"></i>
                                 </div>
@@ -242,7 +215,7 @@ if(isset($_GET['id'])){
                             </a>
                         </div>
 
-                        <!-- All-->
+                        
                         <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                             View All
                             <i class="fi-arrow-right"></i>
@@ -261,26 +234,22 @@ if(isset($_GET['id'])){
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                        <!-- item-->
                         <div class="dropdown-item noti-title">
                             <h5 class="m-0 text-white">
                                 Welcome !
                             </h5>
                         </div>
 
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <i class="fe-user"></i>
                             <span>Account</span>
                         </a>
 
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <i class="fe-settings"></i>
                             <span>Setting</span>
                         </a>
 
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <i class="fe-lock"></i>
                             <span>Screen Block</span>
@@ -288,7 +257,6 @@ if(isset($_GET['id'])){
 
                         <div class="dropdown-divider"></div>
 
-                        <!-- item-->
                         <a href="../logout.php" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Logout</span>
@@ -296,21 +264,13 @@ if(isset($_GET['id'])){
 
                     </div>
                 </li>
-
-
-
-
             </ul>
-
-            <!-- LOGO -->
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
                         <img src="..\../../assets/images/logo/logo-dark.png" alt="" height="24">
-                        <!-- <span class="logo-lg-text-light">BMS MANAGER SYSTEM</span> -->
                     </span>
                     <span class="logo-sm">
-                        <!-- <span class="logo-sm-text-dark">X</span> -->
                         <img src="..\..\assets\images\logo\favicon.png" alt="" height="28">
                     </span>
                 </a>
@@ -331,19 +291,15 @@ if(isset($_GET['id'])){
                         <i class="mdi mdi-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
                             Financial report
                         </a>
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
                             Báo cáo hàng tháng
                         </a>
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
                             Monthly report
                         </a>
-                        <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item">
                             Support
                         </a>
@@ -352,11 +308,9 @@ if(isset($_GET['id'])){
                 </li>
             </ul>
         </div>
-        <!-- end Topbar -->
-        <!-- ========== Left Sidebar Start ========== -->
         <div class="left-side-menu">
             <div class="slimscroll-menu">
-                <!--- Sidemenu -->
+                
                 <div id="sidebar-menu">
                     <ul class="metismenu" id="side-menu">
                         <li>
@@ -367,14 +321,58 @@ if(isset($_GET['id'])){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="index.php">Statistical</a>
+                                    <a href="../../index.php">Statistical</a>
                                 </li>
                                 <li>
-                                    <a href="index2.php">Details Statistical</a>
+                                    <a href="../../index2.php">Details Statistical</a>
                                 </li>
                             </ul>
                         </li>
-
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
+                                ?>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class="la la-connectdevelop"></i>
+                                            <span> WEB </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="banner.php">BANNER</a>
+                                            </li>
+                                            <li>
+                                                <a href="email-read.php">Read Email</a>
+                                            </li>
+                                            <li>
+                                                <a href="email-compose.php">Compose Email</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }
+                        ?>
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
+                                ?>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class="la la-home"></i>
+                                            <span> AGENT </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="../../agent/list-agent/list-agent.php">LIST AGENT</a>
+                                            </li>
+                                            <li>
+                                                <a href="../../agent/list-staff/list-staff.php">LIST STAFF</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }
+                        ?>
                         <li>
                             <a href="javascript: void(0);">
                                 <i class="la la-cube"></i>
@@ -394,50 +392,26 @@ if(isset($_GET['id'])){
                                 <li>
                                     <a href="../../version/version.php">VERSIONS</a>
                                 </li>
-
-
                             </ul>
                         </li>
-
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="la la-connectdevelop"></i>
-                                <span> WEB </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="banner.php">BANNER</a>
-                                </li>
-                                <li>
-                                    <a href="email-read.php">Read Email</a>
-                                </li>
-                                <li>
-                                    <a href="email-compose.php">Compose Email</a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="la la-envelope"></i>
-                                <span> Email </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="email-inbox.php">Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="email-read.php">Read Email</a>
-                                </li>
-                                <li>
-                                    <a href="email-compose.php">Compose Email</a>
-                                </li>
-
-                            </ul>
-                        </li>
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
+                                ?>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class="la la-envelope"></i>
+                                            <span> Comment </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="../../comment/list-comment.php">List Comment</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }
+                        ?>
                         <li>
                             <a href="javascript: void(0);">
                                 <i class=" fab fa-opencart"></i>
@@ -446,36 +420,42 @@ if(isset($_GET['id'])){
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="order.php">List Order</a>
+                                    <a href="../../order/create-new-order.php">Create New Order</a>
                                 </li>
                                 <li>
-                                    <a href="list_complete_order.php">List Complete Order</a>
-                                </li>
-                                <li>
-                                    <a href="list_cancel_order.php">List Cancel Order</a>
+                                    <a href="../../order/list-order.php">List Order</a>
                                 </li>
                             </ul>
                         </li>
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
+                                ?>
+                                    <li>
+                                        <a href="javascript: void(0);">
+                                            <i class=" fab fa-opencart"></i>
+                                            <span>Online Order </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="nav-second-level" aria-expanded="false">
+                                            <li>
+                                                <a href="../../orderonline/orderonline.php">List Online Order</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <?php
+                            }
+                        ?>
                     </ul>
-
                 </div>
-                <!-- End Sidebar -->
-
                 <div class="clearfix"></div>
-
-            </div>
-            <!-- Sidebar -left -->
+            </div>   
         </div>
-        <!-- Left Sidebar End -->
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
         <div class="content-page">
             <div class="content">
 
-                <!-- Start Content-->
+                
                 <div class="container-fluid title">
-                    <!-- start page title -->
+                   
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
@@ -490,9 +470,6 @@ if(isset($_GET['id'])){
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
-                    <!--  -->
-
                     <form method="POST" class="modal fade" id="addBanner" tabindex="-1" enctype="multipart/form-data">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -519,11 +496,10 @@ if(isset($_GET['id'])){
                                             <button type="button" class="btn btn-light " data-dismiss="modal" name="close">Close</button>
                                         </div>
                                     </div>
-                                </div> <!-- end modal-body-->
-                            </div> <!-- end modal-content-->
-                        </div> <!-- end modal dialog-->
+                                </div> 
+                            </div> 
+                        </div> 
                     </form>
-                    <!--  -->
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -564,20 +540,13 @@ if(isset($_GET['id'])){
                                             }
                                             ?>
                                         </tbody>
-
                                     </table>
-
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
+                                </div> 
+                            </div> 
+                        </div>
                     </div>
-                    <!-- end row-->
-
-                </div> <!-- container -->
-
-            </div> <!-- content -->
-
-            <!-- Footer Start -->
+                </div> 
+            </div> 
             <footer class="footer">
                 <div class="row">
                     <div class="col-lg-2">
@@ -592,31 +561,16 @@ if(isset($_GET['id'])){
                     </div>
                 </div>
             </footer>
-            <!-- end Footer -->
-
         </div>
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-
-
     </div>
-    <!-- END wrapper -->
-
-    <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
-
-    <!-- Vendor js -->
     <script src="..\..\assets\js\vendor.min.js"></script>
-    <!-- Scritp -->
+    
     <script>
         function Del1(name) {
             return confirm("Do you want to delete: " + name + " ?");
         }
     </script>
-
-    <!-- third party js -->
     <script src="..\..\assets\libs\datatables\jquery.dataTables.min.js"></script>
     <script src="..\..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
     <script src="..\..\assets\libs\datatables\dataTables.responsive.min.js"></script>
@@ -630,12 +584,10 @@ if(isset($_GET['id'])){
     <script src="..\..\assets\libs\datatables\dataTables.select.min.js"></script>
     <script src="..\..\assets\libs\pdfmake\pdfmake.min.js"></script>
     <script src="..\..\assets\libs\pdfmake\vfs_fonts.js"></script>
-    <!-- third party js ends -->
-
-    <!-- Datatables init -->
+    
     <script src="..\..\assets\js\pages\datatables.init.js"></script>
 
-    <!-- App js -->
+    
     <script src="..\..\assets\js\app.min.js"></script>
     
     <?php

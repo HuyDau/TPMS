@@ -33,10 +33,10 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- App favicon -->
+       
         <link rel="shortcut icon" href="../assets/images/logo/favicon.ico">
 
-        <!-- App css -->
+        
         <link href="assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\icons.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\app.min.css" rel="stylesheet" type="text/css">
@@ -74,35 +74,32 @@
                                     <p class="text-muted font-13"> You have successfully signed out.. </p>
                                 </div>
 
-                            </div> <!-- end card-body -->
+                            </div> 
         
                         </div>
-                        <!-- end card -->
+                        
 
                         <div class="row">
                             <div class="col-12 text-center">
                                 <p class="text-muted"><a href="login.php" class="text-muted ml-1"><b class="font-weight-semibold login-btn">LOGIN</b></a></p>
-                            </div> <!-- end col -->
+                            </div> 
                         </div>
-                        <!-- end row -->
+                        
     
-                    </div> <!-- end col -->
+                    </div> 
                 </div>
-                <!-- end row -->
+                
             </div>
-            <!-- end container -->
+            
         </div>
-        <!-- end page -->
-
-
         <footer class="footer footer-alt">
             2023 &copy; Design by <a href="" class="text-muted">Le Huy Dau</a> 
         </footer>
 
-        <!-- Vendor js -->
+        
         <script src="assets\js\vendor.min.js"></script>
 
-        <!-- App js -->
+        
         <script src="assets\js\app.min.js"></script>
         
     </body>

@@ -3,7 +3,7 @@
 
     require_once("../config/config.php");
     if(isset($_SESSION['admin_name'])){
-        header("location: categories/categories.php");
+        header("location: index.php");
     }
 
     if(isset($_POST['btn_login'])){
@@ -90,11 +90,8 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/logo/favicon.ico">
-
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- App css -->
         <link href="assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\icons.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\app.min.css" rel="stylesheet" type="text/css">
@@ -155,7 +152,6 @@
                                     </div>
 
                                 </form>
-
                                 <div class="text-center">
                                     <h5 class="mt-3 text-muted">Sign in with</h5>
                                     <ul class="social-list list-inline mt-3 mb-0">
@@ -174,38 +170,23 @@
                                     </ul>
                                 </div>
 
-                            </div> <!-- end card-body -->
+                            </div> 
                         </div>
-                        <!-- end card -->
-
                         <div class="row mt-3">
                             <div class="col-12 text-center">
                                 <p> <a href="pages-recoverpw.html" class="text-muted ml-1">Forgot your password?</a></p>
-                            </div> <!-- end col -->
+                            </div> 
                         </div>
-                        <!-- end row -->
-
-                    </div> <!-- end col -->
+                    </div> 
                 </div>
-                <!-- end row -->
             </div>
-            <!-- end container -->
         </div>
-        <!-- end page -->
-
-
         <footer class="footer footer-alt">
             2023 &copy; Design by <a href="" class="text-muted">Le Huy Dau</a> 
         </footer>
-
-        <!-- Vendor js -->
         <script src="assets\js\vendor.min.js"></script>
-        <!-- Tost-->
         <script src="assets\libs\jquery-toast\jquery.toast.min.js"></script>
-
-        <!-- toastr init js-->
         <script src="assets\js\pages\toastr.init.js"></script>
-        <!-- App js -->
         <script src="assets\js\app.min.js"></script>
         
     </body>

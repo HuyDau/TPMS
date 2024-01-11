@@ -56,7 +56,6 @@ if(isset($_POST['register'])){
     <!-- Slick Slide -->
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick-theme.css" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <meta property="og:image" content="assets/images/logo/logo.png" />
     <script async src="assets/js/ins.js"></script>
@@ -95,7 +94,7 @@ if(isset($_POST['register'])){
         </div>
 
 
-        <!-- logo and search box -->
+        
         <div class="heading">
             <div class="container">
                 <div class="logo">
@@ -145,7 +144,7 @@ if(isset($_POST['register'])){
             </div>
         </div>
 
-        <!-- nav -->
+        
         <nav>
             <div class="container">
                 <ul class="root">
@@ -484,7 +483,7 @@ if(isset($_POST['register'])){
                 </ul>
             </div>
         </nav>
-        <!-- nav -->
+        
 
     </header>
     <div class="jquery-modal blocker current">

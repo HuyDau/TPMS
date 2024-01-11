@@ -1,102 +1,46 @@
 <?php
 require_once("../../config/config.php");
 include '../handle.php';
-if (!isset($_SESSION['admin_user'])) {
-    header("location: ../login.php");
+if (!isset($_SESSION['admin_id']) && isset($_SESSION['permission']) && $_SESSION['permission'] != 1) {
+    header("location: login.php");
 }
-
-require_once("../../config/config.php");
-
-if (isset($_POST['sbm']) && !empty($_POST['search'])) {
-    $search = $_POST['search'];
-    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
-    $totalCategory = mysqli_num_rows($sqlCategory);
-} else {
-   if(isset($_GET['type'])){
-        if($_GET['type'] == "order"){
-            $queryOnlineOrder = getOnlineOrder($conn,1);
-        }else if($_GET['type'] == "confirm"){
-            $queryOnlineOrder = getOnlineOrder($conn,2);
-        }else if($_GET['type'] == "complete"){
-            $queryOnlineOrder = getOnlineOrder($conn,3);
-        }else if($_GET['type'] == "cancel"){
-            $queryOnlineOrder = getOnlineOrder($conn,4);
-        }
-   }else{
-        $queryOnlineOrder = getOnlineOrder($conn,0);
-   }
-}
-if (isset($_POST['all_prd'])) {
-    unset($_POST['sbm']);
-}
-
-if(isset($_GET['action']) && $_GET['id']){
-    if($_GET['action'] == "confirm"){
-        $cartId = $_GET['id'];
-        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='2' WHERE id = $cartId");
-        if($update){
-            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
-        }
-    }else if($_GET['action'] == "complete"){
-        $cartId = $_GET['id'];
-        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='3' WHERE id = $cartId");
-        if($update){
-            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
-        }
-    }else if($_GET['action'] == "cancel"){
-        $cartId = $_GET['id'];
-        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='4' WHERE id = $cartId");
-        if($update){
-            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
-        }
-    }
-}
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>TECHNOLOGY PRODUCTS MANAGER SYSTEM - ONLINE ORDER</title>
+    <title>TPMS - LIST COMMENT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
    
     <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico">
-    <link href="..\assets\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
+    
+    <link href="..\assets\libs\jquery-vectormap\jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+    
     <link href="..\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="..\assets\css\icons.min.css" rel="stylesheet" type="text/css">
     <link href="..\assets\css\app.min.css" rel="stylesheet" type="text/css">
-    <link href="..\assets\css\style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-     <link rel="stylesheet" href="../assets/scss/admin.css">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
-    <script src="../assets/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="../assets/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <!-- CK Editor -->
-    <script src="../assets/ckeditor/ckeditor.js"></script>
+
 </head>
 
 <body>
+
     
-    <div id="wrapper" class="">
+    <div id="wrapper">
+
         
         <div class="navbar-custom">
             <ul class="list-unstyled topnav-menu float-right mb-0">
                 <li class="d-none d-sm-block">
-                    <form class="app-search" method="POST">
+                    <form class="app-search">
                         <div class="app-search-box">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search...">
+                                <input type="text" class="form-control" placeholder="Search...">
                                 <div class="input-group-append">
-                                    <button class="btn" name="sbm" type="submit">
+                                    <button class="btn" type="submit">
                                         <i class="fe-search"></i>
                                     </button>
                                 </div>
@@ -224,7 +168,7 @@ if(isset($_GET['action']) && $_GET['id']){
 
                         <div class="dropdown-divider"></div>
 
-                        <a href="../logout.php" class="dropdown-item notify-item">
+                        <a href="logout.php" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Logout</span>
                         </a>
@@ -241,12 +185,12 @@ if(isset($_GET['action']) && $_GET['id']){
             <div class="logo-box">
                 <a href="index.php" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
-                        
+                        <img src="..\assets\images\logo-2.png" alt="" height="24">
+                        <!-- <span class="logo-lg-text-light">Cake Bakery</span> -->
                     </span>
                     <span class="logo-sm">
                         
-                        <img src="..\assets\images\logo\favicon.png" alt="" height="28">
+                        <img src="..\assets\images\fav-icon.png" alt="" height="28">
                     </span>
                 </a>
             </div>
@@ -262,19 +206,10 @@ if(isset($_GET['action']) && $_GET['id']){
 
                 <li class="dropdown d-none d-lg-block">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        Report
+                        Support
                         <i class="mdi mdi-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Financial report
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Báo cáo hàng tháng
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Monthly report
-                        </a>
                         <a href="javascript:void(0);" class="dropdown-item">
                             Support
                         </a>
@@ -380,7 +315,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                         </a>
                                         <ul class="nav-second-level" aria-expanded="false">
                                             <li>
-                                                <a href="../comment/list-comment.php">List Comment</a>
+                                                <a href="list-comment.php">List Comment</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -413,7 +348,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                         </a>
                                         <ul class="nav-second-level" aria-expanded="false">
                                             <li>
-                                                <a href="orderonline.php">List Online Order</a>
+                                                <a href="../orderonline/orderonline.php">List Online Order</a>
                                             </li>
                                             
                                         </ul>
@@ -430,176 +365,117 @@ if(isset($_GET['action']) && $_GET['id']){
             <div class="content">
 
                 
-                <div class="container-fluid title">
+                <div class="container-fluid">
+
                    
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">TECHNOLOGY PRODUCTS MANAGER SYSTEM</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">TPMS</a></li>
-                                        <li class="breadcrumb-item active">ONLINE ORDERS</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Comment</a></li>
+                                        <li class="breadcrumb-item active">List Comment</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title" onclick=confirm()>ONLINE ORDERS</h4>
+                                <h4 class="page-title">Comment</h4>
                             </div>
                         </div>
-                    </div>                    <div class="row no-gutters">
-                        <a href="orderonline.php?type=order" class="col-md-6 col-xl-3">
-                            <div class="widget-rounded-circle bg-soft-primary rounded-0 card-box mb-0">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="avatar-lg rounded-circle bg-soft-primary">
-                                            <i class="fe-tag font-22 avatar-title text-primary"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= countListOrder($conn,0) ?>
-                                                </span></h3>
-                                            <p class="text-primary mb-1 text-truncate">Total Order</p>
-                                        </div>
-                                    </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
-                        </a>
-
-                        <a href="orderonline.php?type=confirm" class="col-md-6 col-xl-3">
-                            <div class="widget-rounded-circle bg-soft-warning rounded-0 card-box mb-0">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="avatar-lg rounded-circle bg-soft-warning">
-                                            <i class="fe-clock font-22 avatar-title text-warning"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= countListOrder($conn,2) ?>
-                                                </span></h3>
-                                            <p class="text-warning mb-1 text-truncate">Confirm Order</p>
-                                        </div>
-                                    </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
-                        </a>
-
-                        <a href="orderonline.php?type=complete" class="col-md-6 col-xl-3">
-                            <div class="widget-rounded-circle bg-soft-success rounded-0 card-box mb-0">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="avatar-lg rounded-circle bg-soft-success">
-                                            <i class="fe-check-circle font-22 avatar-title text-success"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?=countListOrder($conn,3) ?>
-                                                </span></h3>
-                                            <p class="text-success mb-1 text-truncate">Complete Order</p>
-                                        </div>
-                                    </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
-                        </a>
-
-                        <a href="orderonline.php?type=cancel" class="col-md-6 col-xl-3">
-                            <div class="widget-rounded-circle bg-soft-danger rounded-0 card-box mb-0">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="avatar-lg rounded-circle bg-soft-danger">
-                                            <i class="fe-trash-2 font-22 avatar-title text-danger"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= countListOrder($conn,4) ?>
-                                                </span></h3>
-                                            <p class="text-danger mb-1 text-truncate">Cancel Tickets</p>
-                                        </div>
-                                    </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
-                        </a>
                     </div>
+                    
+
+
                     <div class="row">
-                        <div class="col-lg-3">
-                            <a href="export_order.php" class="btn btn-lg font-16 btn-success btn-block  ">
-                                <i class="las la-download"></i>    Export
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
+
+                        
                         <div class="col-12">
                             <div class="card-box">
-                                <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100"
-                                    id="tickets-table">
-                                    <thead>
-                                        <tr>
-                                            <th>STT</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Total</th>
-                                            <th>Time</th>
-                                            <th>Payments</th>
-                                            <th>Status</th>
-                                            <th>Detail</th>
-                                            <th class="hidden-sm">Action</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <?php
-                                        if (!empty($queryOnlineOrder)) {
-                                            $i = 1;
-                                            while ($itemOnlineOrder = mysqli_fetch_array($queryOnlineOrder)) {
-                                                ?>
-                                                <tr>
-                                                    <td> <?= $i++; ?></td>
-                                                    <td><a href="javascript: void(0);" class="text-body"><span class="ml-2"><?= $itemOnlineOrder['name'] ?></a></td>
-                                                    <td>0<?=$itemOnlineOrder['phone'] ?></td>
-                                                    <td>$<?= number_format($itemOnlineOrder['total'],0,"",".") ?></td>
-                                                    <td><?= date("H:i:s d-m-Y", strtotime($itemOnlineOrder['time'])) ?></td>
-                                                    <td><?= $itemOnlineOrder['paymentName'] ?></td>
-                                                    <td>
-                                                        <?php
-                                                        if ($itemOnlineOrder['idstatus'] == 1) {
-                                                            echo '<span class="badge badge-pink">' . $itemOnlineOrder['statusName'] . '</span>';
-                                                        } elseif ($itemOnlineOrder['idstatus'] == 2) {
-                                                            echo '<span class="badge badge-warning">' . $itemOnlineOrder['statusName'] . '</span>';
-                                                        } elseif ($itemOnlineOrder['idstatus'] == 3) {
-                                                            echo '<span class="badge badge-success">' . $itemOnlineOrder['statusName'] . '</span>';
-                                                        } else {
-                                                            echo '<span class="badge badge-danger">' . $itemOnlineOrder['statusName'] . '</span>';
-                                                        }
-                                                        ?>
-                                                    </td>
-                                                    <td><a href="detail_order.php?id=<?= $itemOnlineOrder['cartId'] ?>"><span class="badge badge-light-pink">Detail</span></a></td>
-                                                    <td>
-                                                        <div class="btn-group dropdown">
-                                                            <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <?php if($itemOnlineOrder['idstatus']==2){}else{?><a class="dropdown-item"  href="orderonline.php?action=confirm&id=<?= $itemOnlineOrder['cartId'] ?>" ><i  class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Confirm</a><?php }?>
-                                                                <a class="dropdown-item"  href="orderonline.php?action=complete&id=<?= $itemOnlineOrder['cartId'] ?>"><i  class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Complete</a>
-                                                                <a class="dropdown-item"  href="orderonline.php?action=cancel&id=<?= $itemOnlineOrder['cartId'] ?>"><i  class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Cancel</a>
-                                                            </div>
+                                <div>
+                                    <div class="mt-3">
+                                        <ul class="message-list">
+                                            <?php
+                                            $sqlComment = mysqli_query($conn, "SELECT * FROM tbl_comments");
+                                            while ($itemComment = mysqli_fetch_assoc($sqlComment)) {
+                                            ?>
+                                                <li class="unread" style="display: flex;">
+                                                    <div class="col-mail col-8">
+                                                        <?= $itemComment['star'] ?><span class="star-toggle far fa-star text-warning" style=" margin: auto 10px;"></span>
+                                                        <a style="margin-right: 10px;" href="rep-comment.php?commentId=<?= $itemComment['id'] ?>" class="title"> <?= $itemComment['name'] ?> </a> || <a style="margin-left: 10px;" href="../../chi-tiet-san-pham.php?idsanpham=<?= $itemComment['versionId'] ?>"> <?= getDetailProduct($conn, $itemComment['versionId'])['versionName'] ?></a>
+                                                    </div>
+                                                    <div class="col-mail col-4" style="justify-content: space-between;">
+                                                        <a href="rep-comment.php?commentId=<?= $itemComment['id'] ?>" class="subject">
+                                                            <span class="teaser"> <?= $itemComment['content'] ?> </span>
+                                                        </a>
+                                                        <div class="date">
+                                                            <?php $date_now = strtotime($itemComment['datetime']);
+                                                            echo date("M  d,  Y", $date_now);
+                                                            ?>
                                                         </div>
-                                                    </td>
-                                                </tr>
-                                                <?php
+                                                    </div>
+                                                </li>
+                                            <?php
                                             }
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+                                            ?>
+
+                                        </ul>
+                                    </div>
+                                    <!-- end .mt-4 -->
+
+                                    <div class="row">
+                                        <div class="col-7 mt-1">
+                                            Showing 1 - 20 of <?php $count_contact = mysqli_num_rows($sqlComment);
+                                                                echo $count_contact; ?>
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="btn-group float-right">
+                                                <button type="button" class="btn btn-light btn-sm"><i class="mdi mdi-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-info btn-sm"><i class="mdi mdi-chevron-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    </div>
+                               
+
+                                <div class="clearfix"></div>
+                            </div> 
+
+                        </div> 
+                    </div>
+
+
+                </div> 
+
+            </div> 
+
+           
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            2023 &copy; Design by <a href="">Le Huy Dau</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript:void(0);">About Us</a>
+                                <a href="javascript:void(0);">Help</a>
+                                <a href="javascript:void(0);">Contact Us</a>
                             </div>
                         </div>
                     </div>
-                                    </div> 
-            </div> 
+                </div>
+            </footer>
+            
+
         </div>
+
         
+
+
     </div>
+    
+
+    
+
     
 
     
@@ -607,30 +483,13 @@ if(isset($_GET['action']) && $_GET['id']){
 
     
     <script src="..\assets\js\vendor.min.js"></script>
-    
-    
-    <!-- third party js -->
-    <script src="..\assets\libs\datatables\jquery.dataTables.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.responsive.min.js"></script>
-    <script src="..\assets\libs\datatables\responsive.bootstrap4.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.buttons.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.bootstrap4.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.html5.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.flash.min.js"></script>
-    <script src="..\assets\libs\datatables\buttons.print.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.keyTable.min.js"></script>
-    <script src="..\assets\libs\datatables\dataTables.select.min.js"></script>
-    <script src="..\assets\libs\pdfmake\pdfmake.min.js"></script>
-    <script src="..\assets\libs\pdfmake\vfs_fonts.js"></script>
-    <!-- third party js ends -->
 
-    <!-- Datatables init -->
-    <script src="..\assets\js\pages\datatables.init.js"></script>
+    
+    <script src="..\assets\js\pages\inbox.js"></script>
 
     
     <script src="..\assets\js\app.min.js"></script>
-    
+
 </body>
 
 </html>

@@ -1,12 +1,17 @@
 <?php
     session_start();
     require_once("config/config.php");
-
+    // GET TOP SALE
+    function getTopSale($conn){
+        $sqlTopSale = mysqli_query($conn,"SELECT *, SUM(tbl_detailcart.quantity) AS total_sales   FROM tbl_detailcart INNER JOIN tbl_versions ON tbl_detailcart.versionId = tbl_versions.idVersion INNER JOIN tbl_products ON tbl_products.id = tbl_versions.productId  GROUP BY tbl_detailcart.versionId ORDER BY total_sales DESC  LIMIT 10;");
+        return  $sqlTopSale;
+    }
     // GET INFO USER
     if (isset($_SESSION['userId'])){
         $userID = $_SESSION['userId'];
         $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_customer WHERE id = $userID");
     }
+    
     function getInfoUser($conn,$i){
         $sqlUser = mysqli_query($conn,"SELECT * FROM tbl_customer WHERE id = $i");
         $infoUser = mysqli_fetch_assoc($sqlUser);
@@ -84,6 +89,15 @@
         }
     }
 
+    // GET PRODUCT WITH BRAND AND CATEGORY
+    function getListProduct( $conn,$a,$b){
+        if($b!=0){
+            $sqlListProduct = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $a AND tbl_products.idBrand = $b AND tbl_products.isActive = 2");
+        }else{
+            $sqlListProduct = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $a  AND tbl_products.isActive = 2");
+        }
+        return $sqlListProduct;
+    }
     // GET LAPTOP PRODUCTS
 
     function getLaptopProduct($conn, $i){
@@ -124,7 +138,7 @@
         return $sqlGetListComment;
     }
 
-    // GET REP COMMENT
+    // GET LIST REP COMMENT
     function getListRepComment($i){
         $sqlGetListRepComment = "SELECT * FROM `tbl_repcomments` WHERE commentId = $i";
         return $sqlGetListRepComment;
@@ -140,6 +154,11 @@
     function getComments($conn, $a){
         $sqlComment = mysqli_query($conn,"SELECT * FROM tbl_comments WHERE userId = $a ");
         return $sqlComment;
+    }
+    // GET REP COMMENT
+    function getRepComments($conn, $a){
+        $sqlRepComment = mysqli_query($conn,"SELECT * FROM tbl_repcomments WHERE commentId = $a ");
+        return $sqlRepComment;
     }
 
     // GET LAST CART 
@@ -182,5 +201,7 @@
         return $sqlDetailProd;
     }
 
+
+   
 
 ?>

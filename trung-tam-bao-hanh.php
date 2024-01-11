@@ -60,7 +60,7 @@ include 'handle.php';
             <div class="cart">
                 <div class="header">
                     <div class="back">
-                        <a href="/">
+                        <a href="index.php">
                             <i class="icon-leftar"></i>
                             <strong>Về trang chủ</strong>
                         </a>

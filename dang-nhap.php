@@ -29,8 +29,6 @@ if(isset($_POST['login'])){
     <meta charset="utf-8">
     <meta name="author" content="tpms.com">
     <meta property='og:site_name' content='tpms.com' />
-    
-    
     <title>TPMS - ĐĂNG NHẬP HỆ THỐNG</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.ico" />
     <link rel="preload" href="assets/fonts/SegoeUI/SegoeUI.woff2" as="font" type="font/woff2" crossorigin>
@@ -46,8 +44,7 @@ if(isset($_POST['login'])){
     <!-- Slick Slide -->
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="assets/slick/slick/slick-theme.css" />
-     <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <meta property="og:image" content="assets/images/logo/logo.png" />
     <script async src="assets/js/ins.js"></script>
 </head>
@@ -84,7 +81,7 @@ if(isset($_POST['login'])){
         </div>
 
 
-        <!-- logo and search box -->
+        
         <div class="heading">
             <div class="container">
                 <div class="logo">
@@ -134,7 +131,7 @@ if(isset($_POST['login'])){
             </div>
         </div>
 
-        <!-- nav -->
+        
         <nav>
             <div class="container">
                 <ul class="root">
@@ -473,7 +470,7 @@ if(isset($_POST['login'])){
                 </ul>
             </div>
         </nav>
-        <!-- nav -->
+        
 
     </header>
     <div class="jquery-modal blocker current">

@@ -66,7 +66,7 @@ include 'handle.php';
                 </ul>
             </div>
         </div>
-        <!-- logo and search box -->
+        
         <div class="heading">
             <div class="container">
                 <div class="logo">
@@ -115,7 +115,7 @@ include 'handle.php';
                 </div>
             </div>
         </div>
-        <!-- nav -->
+        
         <nav>
             <div class="container">
                 <ul class="root">
@@ -454,7 +454,7 @@ include 'handle.php';
                 </ul>
             </div>
         </nav>
-        <!-- nav -->
+        
     </header>
     <section>
         <div class="container">

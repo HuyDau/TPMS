@@ -72,7 +72,7 @@ $infoProduct2 = mysqli_fetch_assoc($queryProduct2) ;
         </div>
 
 
-        <!-- logo and search box -->
+        
         <div class="heading">
             <div class="container">
                 <div class="logo">
@@ -122,7 +122,7 @@ $infoProduct2 = mysqli_fetch_assoc($queryProduct2) ;
             </div>
         </div>
 
-        <!-- nav -->
+        
         <nav>
             <div class="container">
                 <ul class="root">
@@ -461,7 +461,7 @@ $infoProduct2 = mysqli_fetch_assoc($queryProduct2) ;
                 </ul>
             </div>
         </nav>
-        <!-- nav -->
+        
 
     </header>
     <section>

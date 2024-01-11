@@ -34,7 +34,6 @@ include 'handle.php';
     <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="assets/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
     <meta name="twitter:title" content="Giới Thiệu Về Hệ Thống Showroom TPMS" />
@@ -75,7 +74,7 @@ include 'handle.php';
                 </ul>
             </div>
         </div>
-        <!-- logo and search box -->
+        
         <div class="heading">
             <div class="container">
                 <div class="logo">
@@ -125,7 +124,7 @@ include 'handle.php';
             </div>
         </div>
 
-        <!-- nav -->
+        
         <nav>
             <div class="container">
                 <ul class="root">
@@ -464,7 +463,7 @@ include 'handle.php';
                 </ul>
             </div>
         </nav>
-    <!-- nav -->
+    
 
     </header>
 

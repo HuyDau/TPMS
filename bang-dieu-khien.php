@@ -324,7 +324,7 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                                                             ?>
                                                                 <div class="item item-selected">
                                                                     <div class="avt">
-                                                                            <strong>T</strong>
+                                                                            <strong><?php if (isset($_SESSION['userId'])) { echo substr($infoUser['name'], 0 , 1); } ?></strong>
                                                                     </div>
                                                                     <div class="info">
                                                                         <p>
@@ -356,29 +356,6 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                                                                             </label>
                                                                         </p>
                                                                         <div class="content"> <?=$itemComment['content']?></div>
-                                                                        <div class="childs">
-                                                                            <div class="comment-list">
-                                                                                    <div class="item ">
-                                                                                        <div class="avt">
-                                                                                                <img src="/avatar/Uploads/Avatar/29848-linhdt106-637702321889068869.jpg">
-    
-                                                                                            
-    
-    
-                                                                                        </div>
-                                                                                        <div class="info">
-                                                                                            <p>
-                                                                                                <strong class="name">Đỗ Mỹ Linh</strong>
-                                                                                                    <i class="icon-checked"></i> <span>QTV Hoàng Hà Mobile</span>
-                                                                                            </p>
-                                                                                            <p><label><i>29 phút trước</i></label></p>
-                                                                                            <div class="content">
-                                                                                                Dạ Hoàng Hà Mobile xin chào anh/chị,<br>Cảm ơn anh/chị đã đưa ra ý kiến cho sản phẩm của Hoàng Hà Mobile. Nếu trong quá trình sử dụng sản phẩm cần hỗ trợ thông tin anh/chị có thể liên hệ tới tổng đài 19002091 để được hỗ trợ anh/chị nhé.<br>Hoàng Hà Mobile rất hân hạnh được phục vụ anh/chị!
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                            </div>
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             <?php
@@ -660,29 +637,6 @@ if (!isset($_SESSION['success']) && isset($_POST['submit'])) {
                                                                             </label>
                                                                         </p>
                                                                         <div class="content"> <?=$itemComment['content']?></div>
-                                                                        <div class="childs">
-                                                                            <div class="comment-list">
-                                                                                    <div class="item ">
-                                                                                        <div class="avt">
-                                                                                                <img src="/avatar/Uploads/Avatar/29848-linhdt106-637702321889068869.jpg">
-        
-                                                                                            
-        
-        
-                                                                                        </div>
-                                                                                        <div class="info">
-                                                                                            <p>
-                                                                                                <strong class="name">Đỗ Mỹ Linh</strong>
-                                                                                                    <i class="icon-checked"></i> <span>QTV Hoàng Hà Mobile</span>
-                                                                                            </p>
-                                                                                            <p><label><i>29 phút trước</i></label></p>
-                                                                                            <div class="content">
-                                                                                                Dạ Hoàng Hà Mobile xin chào anh/chị,<br>Cảm ơn anh/chị đã đưa ra ý kiến cho sản phẩm của Hoàng Hà Mobile. Nếu trong quá trình sử dụng sản phẩm cần hỗ trợ thông tin anh/chị có thể liên hệ tới tổng đài 19002091 để được hỗ trợ anh/chị nhé.<br>Hoàng Hà Mobile rất hân hạnh được phục vụ anh/chị!
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                            </div>
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             <?php
