@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 08, 2024 lúc 07:13 PM
+-- Thời gian đã tạo: Th1 12, 2024 lúc 06:41 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_agents` (
   `id` int(11) NOT NULL,
+  `cityId` int(11) NOT NULL,
   `agentName` varchar(100) NOT NULL,
   `agentAddress` varchar(100) NOT NULL,
   `agentPhone` int(11) NOT NULL,
@@ -39,9 +40,10 @@ CREATE TABLE `tbl_agents` (
 -- Đang đổ dữ liệu cho bảng `tbl_agents`
 --
 
-INSERT INTO `tbl_agents` (`id`, `agentName`, `agentAddress`, `agentPhone`, `agentGmail`) VALUES
-(9, 'TPMS - Hà Nội', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội1', 989898989, 'tpms@hanoi.com'),
-(11, 'TPMS - Hồ Chí Minh', 'Quận 1 - Thành Phố Hồ Chí Minh', 88888888, 'tpms@hcm.com');
+INSERT INTO `tbl_agents` (`id`, `cityId`, `agentName`, `agentAddress`, `agentPhone`, `agentGmail`) VALUES
+(9, 1, 'TPMS - Hà Nội', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', 989898989, 'tpms@hanoi.com'),
+(11, 50, 'TPMS - Hồ Chí Minh', 'Quận 1 - Thành Phố Hồ Chí Minh', 88888888, 'tpms@hcm.com'),
+(12, 19, 'TPMS HẢI DƯƠNG', 'Bình Giang - Hải Dương', 386131716, 'tpms@haiduong.com');
 
 -- --------------------------------------------------------
 
@@ -220,7 +222,23 @@ CREATE TABLE `tbl_cart` (
 
 INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES
 (1, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', 'aaa', 65700000, '2024-01-07 10:22:12', 1, 2, 1),
-(5, 9, 'User 2', 98789789, '', 'Thành phố Hà Nội', 'Quận Ba Đình', 'Phường Phúc Xá', 'ádasdas', 'ádasdas', 33190000, '2024-01-07 10:37:58', 1, 4, 1);
+(5, 9, 'User 2', 98789789, '', 'Thành phố Hà Nội', 'Quận Ba Đình', 'Phường Phúc Xá', 'ádasdas', 'ádasdas', 33190000, '2024-01-07 10:37:58', 1, 3, 1),
+(6, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:43:06', 1, 1, 1),
+(7, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-30 19:43:26', 1, 3, 1),
+(8, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-31 19:43:31', 1, 3, 1),
+(9, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-01 19:44:04', 1, 3, 1),
+(10, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-02 19:44:07', 1, 3, 1),
+(11, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:44:09', 1, 3, 1),
+(12, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-03 19:44:10', 1, 3, 1),
+(13, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-04 19:44:12', 1, 3, 1),
+(14, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-05 19:44:13', 1, 3, 1),
+(15, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-06 19:44:20', 1, 3, 1),
+(16, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-07 19:46:01', 1, 3, 1),
+(17, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-08 19:46:04', 1, 3, 1),
+(18, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:46:05', 1, 3, 1),
+(19, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-10 09:40:41', 1, 1, 1),
+(26, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 132080000, '2024-01-12 11:43:48', 1, 1, 1),
+(27, 3, 'User 1', 987654321, 'user1@gmail.com', 'Tỉnh Bắc Giang', 'Thành phố Bắc Giang', 'Phường Thọ Xương', 'Bắc Giang', 'Ship luôn', 32850000, '2024-01-12 18:29:21', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -253,6 +271,79 @@ INSERT INTO `tbl_categories` (`Id`, `categoryCode`, `categoryName`, `categoryIma
 (18, 'CAT11', 'MÁY TRÔI', ''),
 (19, 'CAT12', 'SỬA CHỮA', ''),
 (20, 'CAT13', 'DỊCH VỤ', '');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_city`
+--
+
+CREATE TABLE `tbl_city` (
+  `id` int(11) NOT NULL,
+  `cityId` varchar(50) NOT NULL,
+  `cityName` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_city`
+--
+
+INSERT INTO `tbl_city` (`id`, `cityId`, `cityName`) VALUES
+(0, 'city_0', 'Xem tất cả'),
+(1, 'city_1', 'Hà Nội'),
+(50, 'city_50', 'TP HCM'),
+(57, 'city_57', 'An Giang'),
+(49, 'city_49', 'Bà Rịa - Vũng Tàu'),
+(15, 'city_15', 'Bắc Giang'),
+(62, 'city_62', 'Bạc Liêu'),
+(18, 'city_18', 'Bắc Ninh'),
+(35, 'city_35', 'Bình Định'),
+(47, 'city_47', 'Bình Dương'),
+(45, 'city_45', 'Bình Phước'),
+(39, 'city_39', 'Bình Thuận'),
+(63, 'city_63', 'Cà Mau'),
+(59, 'city_59', 'Cần Thơ'),
+(32, 'city_32', 'Đà Nẵng'),
+(42, 'city_42', 'Đắk Lắk'),
+(43, 'city_43', 'Đắk Nông'),
+(7, 'city_7', 'Điện Biên'),
+(48, 'city_48', 'Đồng Nai'),
+(56, 'city_56', 'Đồng Tháp'),
+(41, 'city_41', 'Gia Lai'),
+(23, 'city_23', 'Hà Nam'),
+(28, 'city_28', 'Hà Tĩnh'),
+(19, 'city_19', 'Hải Dương'),
+(20, 'city_20', 'Hải Phòng'),
+(11, 'city_11', 'Hoà Bình'),
+(21, 'city_21', 'Hưng Yên'),
+(37, 'city_37', 'Khánh Hòa'),
+(58, 'city_58', 'Kiên Giang'),
+(44, 'city_44', 'Lâm Đồng'),
+(6, 'city_6', 'Lào Cai'),
+(51, 'city_51', 'Long An'),
+(24, 'city_24', 'Nam Định'),
+(27, 'city_27', 'Nghệ An'),
+(25, 'city_25', 'Ninh Bình'),
+(38, 'city_38', 'Ninh Thuận'),
+(16, 'city_16', 'Phú Thọ'),
+(36, 'city_36', 'Phú Yên'),
+(29, 'city_29', 'Quảng Bình'),
+(33, 'city_33', 'Quảng Nam'),
+(34, 'city_34', 'Quảng Ngãi'),
+(14, 'city_14', 'Quảng Ninh'),
+(30, 'city_30', 'Quảng Trị'),
+(61, 'city_61', 'Sóc Trăng'),
+(9, 'city_9', 'Sơn La'),
+(46, 'city_46', 'Tây Ninh'),
+(22, 'city_22', 'Thái Bình'),
+(12, 'city_12', 'Thái Nguyên'),
+(26, 'city_26', 'Thanh Hóa'),
+(31, 'city_31', 'Thừa Thiên Huế'),
+(52, 'city_52', 'Tiền Giang'),
+(5, 'city_5', 'Tuyên Quang'),
+(55, 'city_55', 'Vĩnh Long'),
+(17, 'city_17', 'Vĩnh Phúc'),
+(10, 'city_10', 'Yên Bái');
 
 -- --------------------------------------------------------
 
@@ -290,7 +381,29 @@ CREATE TABLE `tbl_comments` (
 
 INSERT INTO `tbl_comments` (`id`, `versionId`, `userId`, `name`, `phone`, `email`, `content`, `star`, `datetime`) VALUES
 (119, 7, 3, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2024-01-06 10:18:27'),
-(120, 6, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2024-01-06 11:50:03');
+(120, 6, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Sản phẩm rất tốt', 5, '2024-01-06 11:50:03'),
+(121, 9, 9, 'User 2', 98789789, 'user2@gmail.com', 'Cho mình xin mã khuyến mãi', 5, '2024-01-10 19:08:30');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_couple`
+--
+
+CREATE TABLE `tbl_couple` (
+  `coupleId` int(11) NOT NULL,
+  `coupleCode` varchar(10) NOT NULL,
+  `coupleValue` int(11) NOT NULL,
+  `dateFrom` date NOT NULL,
+  `dateTo` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_couple`
+--
+
+INSERT INTO `tbl_couple` (`coupleId`, `coupleCode`, `coupleValue`, `dateFrom`, `dateTo`) VALUES
+(1, 'tet2024', 500000, '2024-01-10', '2024-01-15');
 
 -- --------------------------------------------------------
 
@@ -340,7 +453,24 @@ CREATE TABLE `tbl_detailcart` (
 
 INSERT INTO `tbl_detailcart` (`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES
 (1, 1, 5, 2, 32850000),
-(5, 5, 6, 1, 33190000);
+(5, 5, 6, 1, 33190000),
+(6, 6, 9, 1, 69990000),
+(7, 7, 9, 1, 69990000),
+(8, 8, 9, 1, 69990000),
+(9, 9, 9, 1, 69990000),
+(10, 10, 9, 1, 69990000),
+(11, 11, 9, 1, 69990000),
+(12, 12, 9, 1, 69990000),
+(13, 13, 9, 1, 69990000),
+(14, 14, 9, 1, 69990000),
+(15, 15, 9, 1, 69990000),
+(16, 16, 9, 1, 69990000),
+(17, 17, 9, 1, 69990000),
+(18, 18, 9, 1, 69990000),
+(19, 19, 9, 1, 69990000),
+(32, 26, 5, 2, 32850000),
+(33, 26, 6, 2, 33190000),
+(34, 27, 5, 1, 32850000);
 
 -- --------------------------------------------------------
 
@@ -471,8 +601,21 @@ CREATE TABLE `tbl_repcomments` (
   `name` varchar(100) NOT NULL,
   `phone` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `content` varchar(10000) NOT NULL
+  `content` varchar(10000) NOT NULL,
+  `time` datetime NOT NULL,
+  `permission` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_repcomments`
+--
+
+INSERT INTO `tbl_repcomments` (`id`, `versionId`, `commentId`, `name`, `phone`, `email`, `content`, `time`, `permission`) VALUES
+(4, 7, 119, 'Admin', 386131716, 'admin@tpms.com', 'Cảm ơn bạn', '2024-01-10 11:19:58', 1),
+(5, 6, 120, 'Admin', 386131716, 'admin@tpms.com', 'Cảm ơn bạn rất nhiều !', '2024-01-10 11:25:37', 1),
+(6, 7, 119, 'Admin', 386131716, 'admin@tpms.com', 'Chúc bạn ngày mới vui vẻ', '2024-01-10 14:24:35', 1),
+(7, 7, 119, 'Admin', 386131716, 'admin@tpms.com', 'Bạn cho mình xin số điện thoại để mình gọi tư vấn !', '2024-01-10 14:26:38', 1),
+(8, 7, 119, 'User 1', 987654321, 'user1@gmail.com', 'Khi nào sản phẩm được giảm giá', '2024-01-10 17:33:41', 2);
 
 -- --------------------------------------------------------
 
@@ -581,9 +724,10 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`Id`, `username`, `password`, `fullname`, `gmail`, `phone`, `permission`) VALUES
-(1, 'admin@tpms.com', 'e3afed0047b08059d0fada10f400c1e5', 'Admin', 'admin@bms.com', 386131716, 1),
-(2, 'tpms@hanoi.com', '21232f297a57a5a743894a0e4a801fc3', 'TPMS - Hà Nội', 'tpms@hanoi.com', 989898989, 2),
-(3, 'tpms@hcm.com', '21232f297a57a5a743894a0e4a801fc3', 'TPMS - Hồ Chí Minh', 'tpms@hcm.com', 88888888, 2);
+(1, 'admin@tpms.com', 'e3afed0047b08059d0fada10f400c1e5', 'Admin', 'admin@tpms.com', 386131716, 1),
+(2, 'tpms@hanoi.com', 'c3284d0f94606de1fd2af172aba15bf3', 'TPMS - Hà Nội', 'tpms@hanoi.com', 989898989, 2),
+(3, 'tpms@hcm.com', '21232f297a57a5a743894a0e4a801fc3', 'TPMS - Hồ Chí Minh', 'tpms@hcm.com', 88888888, 2),
+(4, 'tpms@haiduong.com', '77e2edcc9b40441200e31dc57dbb8829', 'TPMS HẢI DƯƠNG', 'tpms@haiduong.com', 386131716, 2);
 
 -- --------------------------------------------------------
 
@@ -706,6 +850,12 @@ ALTER TABLE `tbl_comments`
   ADD KEY `versionId` (`versionId`);
 
 --
+-- Chỉ mục cho bảng `tbl_couple`
+--
+ALTER TABLE `tbl_couple`
+  ADD PRIMARY KEY (`coupleId`);
+
+--
 -- Chỉ mục cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
@@ -808,7 +958,7 @@ ALTER TABLE `tbl_warehouse`
 -- AUTO_INCREMENT cho bảng `tbl_agents`
 --
 ALTER TABLE `tbl_agents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_banners`
@@ -826,7 +976,7 @@ ALTER TABLE `tbl_brands`
 -- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_categories`
@@ -844,7 +994,13 @@ ALTER TABLE `tbl_colors`
 -- AUTO_INCREMENT cho bảng `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_couple`
+--
+ALTER TABLE `tbl_couple`
+  MODIFY `coupleId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
@@ -856,7 +1012,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_detailcart`
 --
 ALTER TABLE `tbl_detailcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_favorite`
@@ -886,7 +1042,7 @@ ALTER TABLE `tbl_products`
 -- AUTO_INCREMENT cho bảng `tbl_repcomments`
 --
 ALTER TABLE `tbl_repcomments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_specifications`
@@ -916,7 +1072,7 @@ ALTER TABLE `tbl_type`
 -- AUTO_INCREMENT cho bảng `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_versions`

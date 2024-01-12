@@ -46,10 +46,16 @@ if (isset($_GET["action"])) {
                 update_cart();
                 header('Location: gio-hang.php');
             }else if(isset($_POST['addCouple'])){
-                $discountCode = $_POST['discount'];
-                $sqlDiscount = mysqli_query($conn,"SELECT * FROM tbl_couple WHERE coupleCode = '$discountCode'");
-                $itemDiscount = mysqli_fetch_assoc($sqlDiscount);
-                $discountValue = $itemDiscount['coupleValue'];
+                if(!isset($_SESSION['discount']) && !isset($_SESSION['discountCode'])){
+                    $discountCode = $_POST['discount'];
+                    $sqlDiscount = mysqli_query($conn,"SELECT * FROM tbl_couple WHERE coupleCode = '$discountCode'");
+                    $itemDiscount = mysqli_fetch_assoc($sqlDiscount);
+                    $_SESSION['discount'] = $itemDiscount['coupleValue'];
+                    $_SESSION['discountCode'] = $itemDiscount['coupleCode'];
+                }else{
+                    $discountExist = "Bạn đã dùng voucher này !";
+                }
+               
             }
             else{
                 if (isset($_POST['order'])){
@@ -66,25 +72,42 @@ if (isset($_GET["action"])) {
                                 $total += $row["versionPromotionalPrice"] * $_POST["quantity"][$row["idVersion"]];
                             }
                         }
-                       
-                        $addCart = mysqli_query($conn, "INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES (NULL,'$userId','".$_POST['name']."','".$_POST['phone']."','".$_POST['email']."','".$_POST['city']."','".$_POST['district']."','".$_POST['ward']."','".$_POST['address']."','".$_POST['note']."','$total','$date','1','1','1')");
-                        $cart_id = $conn->insert_id;
-                        $insertString = "";
+                        if(isset($_POST['ReceiveTypeID']) && $_POST['ReceiveTypeID'] == 1){
+                            $city = $_POST['city'];
+                            $district = $_POST['district'];
+                            $ward = $_POST['ward'];
+                            $address = $_POST['address'];
+                        }else if(isset($_POST['ReceiveTypeID']) && $_POST['ReceiveTypeID'] == 5){
+                            $city = $_POST['city1'];
+                            $district = $_POST['district1'];
+                            $ward = $_POST['ward1'];
+                            $address = $_POST['address1'];
+                        }
+                        if(isset($_SESSION['discount'])){
+                            $newTotal = $total - $_SESSION['discount'];
+                        }else{
+                            $newTotal = $tota;
+                        }
+                        if(isset($_POST['name']) && $_POST['name'] != '' && isset($_POST['phone']) && $_POST['phone'] != ''&& isset($_POST['email']) && $_POST['email'] != '' && $city != '' && $district != '' && $ward != '' && $address != '' ){
+                            $addCart = mysqli_query($conn, "INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES (NULL,'$userId','".$_POST['name']."','".$_POST['phone']."','".$_POST['email']."','$city','$district','$ward','$address','".$_POST['note']."','$newTotal','$date','1','1','1')");
+                            $cart_id = $conn->insert_id;
+                            $insertString = "";
 
-                        foreach ($orderProduct as $key => $product) {
-                            $insertString .= "(NULL, '" . $cart_id . "', '" . $product['idVersion'] . "','" . $_POST['quantity'][$product['idVersion']] . "', '" . $product['versionPromotionalPrice'] . "')";
-                            if ($key != count($orderProduct) - 1) {
-                                $insertString .= ",";
+                            foreach ($orderProduct as $key => $product) {
+                                $insertString .= "(NULL, '" . $cart_id . "', '" . $product['idVersion'] . "','" . $_POST['quantity'][$product['idVersion']] . "', '" . $product['versionPromotionalPrice'] . "')";
+                                if ($key != count($orderProduct) - 1) {
+                                    $insertString .= ",";
+                                }
                             }
-                        }
 
-                        $addDetail = mysqli_query($conn, "INSERT INTO `tbl_detailcart`(`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES " . $insertString . "");
-                        if($addDetail){
-                            // unset($_SESSION['cart']);
-                            // echo "<script>window.location.href = 'dat-hang.php'</script>";
+                            $addDetail = mysqli_query($conn, "INSERT INTO `tbl_detailcart`(`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES " . $insertString . "");
+                            if($addDetail){
+                                unset($_SESSION['cart']);
+                                echo "<script>window.location.href = 'dat-hang.php'</script>";
+                            }
+                        }else{
+                            ?><script>window.alert('<?=$district?>')</script><?php
                         }
-                        
-                        
 
                     }
                     // elseif($pay_method == 3){
@@ -335,22 +358,29 @@ if (isset($_GET["action"])) {
                                             }
                                         ?>
                                     </div>
-                                    <div class="cart-total" style="display: flex;">
-                                        <p style="width: 30%;padding: 10px;">Mã giảm giá:</p> <input  class="col-8" style="outline: none;width: 70%;background: none; border: 1px solid #006e5d;border-radius: 20px;font-size: 13px;color: #444;padding: 10px;" type="text" name="discount" placeholder="Mã giảm giá ... "><button type="submit" name="addCouple">Áp dụng</button>
+                                    <div class="cart-total">
+                                        <?php 
+                                            if(isset($_SESSION['discount'])){ 
+                                                ?><div style="display: flex;">
+                                                    <p style="width: 30%;padding: 10px;">Mã giảm giá:</p> 
+                                                    <input  class="col-8" style="outline: none;width: 70%;background: none; border: 1px solid #006e5d;border-radius: 20px;font-size: 13px;color: #444;padding: 10px;" type="text" value="<?php if(isset($_SESSION['discountCode'])){echo $_SESSION['discountCode'];}?>">
+                                                </div><?php 
+                                            }else{?><div style="display: flex;"><p style="width: 30%;padding: 10px;">Mã giảm giá:</p> <input  class="col-8" style="outline: none;width: 70%;background: none; border: 1px solid #006e5d;border-radius: 20px;font-size: 13px;color: #444;padding: 10px;" type="text" name="discount" placeholder="Mã giảm giá ... "><button type="submit" name="addCouple" style="background: transparent linear-gradient(180deg,#009981 0%,#00483d 100%) 0% 0% no-repeat padding-box;margin-left: 10px; font-weight: bold;width: 100px; border: none; outline: none; box-shadow: 0 4px 6px #00000029; border-radius: 8px;color: #fff;font-size: 13px;text-align: center;padding: 10px;">Áp dụng</button></div><?php } ?>
+                                        <?php if(isset($_SESSION['discount'])){ ?><p>Bạn đã thêm voucher thành công !</p><?php } ?>
                                     </div>
                                     <div class="cart-total">
                                         <p>Tổng giá trị: <strong class="price">
-                                            <?php if(isset($discountValue)){echo number_format($total - $discountValue,0,"",".");}else{echo number_format($total,0,"",".");} ?> ₫</strong> 
+                                        <?=number_format($total,0,"",".")?> ₫</strong> 
                                         </p>
-                                            <p>Giảm giá: <strong class="price">- 00 ₫</strong></p>
-                                        <p>Tổng thanh toán: <strong class="price text-red"><?=number_format($total,0,"",".")?> ₫</strong></p>
+                                            <p>Giảm giá: <strong class="price">- <?php  if(isset($_SESSION['discount'])){echo $_SESSION['discount'];}else{echo "00";} ?> ₫</strong></p>
+                                        <p>Tổng thanh toán: <strong class="price text-red"><?php if(isset($_SESSION['discount'])){echo number_format($total - $_SESSION['discount'],0,"",".");}else{echo number_format($total,0,"",".");} ?> ₫</strong></p>
                                         <button class="next">Tiếp tục</button>
                                     </div>
 
                                 </div>
                                 <div class="cart-form">
                                     <div>
-                                         <h3>Thông tin đặt hàng</h3>
+                                         <h3>Thông tin người nhận</h3>
                                         
                                         <p class="text-gray"><i>Bạn cần nhập đầy đủ các trường thông tin có dấu *</i></p>
                                         <div class="row"><span class="group"><strong>Đại chỉ nhận hàng</strong></span></div>
@@ -371,45 +401,94 @@ if (isset($_GET["action"])) {
                                         </div>
 
 
-                                        <div class="row shInfo">
+                                        <div class="row">
                                             <div class="col">
                                                 <div class="control">
                                                     <input value="<?=$infoCus['email']?>" name="email" type="email" placeholder="Email" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row"><span class="group"><strong>Đại chỉ nhận hàng</strong></span></div>
+                                        <div class="row"><span class="group"><strong>Địa chỉ nhận hàng</strong></span></div>
+
                                         <div class="row">
                                             <div class="col">
-                                                <div class="control">
-                                                <select id="city" name="city" placeholder="Tỉnh/Thành phố" required>
-                                                    <option value="" selected>Chọn tỉnh thành</option>
-                                                </select>
+                                                <div id="payType_1" class="payment-opt">
+                                                    <label class="radio-ctn">
+                                                        <span>Nhận hàng tại nhà</span>
+                                                        <input name="ReceiveTypeID" type="radio" id="ReceiveTypeID1" value="1" checked class="cart-paymentTypeId" >
+                                                        <span class="checkmark"></span>
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="control">
-                                                    <select id="district" name="district" placeholder="Quận/ Huyện" required>
-                                                        <option value="" selected>Chọn quận huyện</option>
-                                                    </select>
+                                                <div id="payType_5" class="payment-opt">
+                                                    <label class="radio-ctn">
+                                                        <span>Nhận hàng địa chỉ khác</span>
+                                                        <input name="ReceiveTypeID" type="radio" id="ReceiveTypeID5" value="5" class="cart-paymentTypeId" >
+                                                        <span class="checkmark"></span>
+                                                    </label>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="control">
-                                                    <select id="ward" name="ward" placeholder="Phường/ Xã" required>
-                                                        <option value="" selected>Chọn phường xã</option>
-                                                    </select>
+
+                                        </div>
+                                        <div id="f_payType_1" style="display: none;">
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="control"><input type="text" name="city" value="<?=$infoCus['city']?>" readonly></div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="control"><input type="text" name="district" value="<?=$infoCus['district']?>" readonly></div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="control"><input type="text" name="ward" value="<?=$infoCus['ward']?>" readonly></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row shInfo">
+                                                <div class="col">
+                                                    <div class="control">
+                                                        <input id="Address" name="address" type="text"  value="<?=$infoCus['address']?>" placeholder="Địa chỉ nhận hàng *" data-required="1" readonly>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row shInfo">
-                                            <div class="col">
-                                                <div class="control">
-                                                    <input value="" id="Address" name="address" type="text" placeholder="Địa chỉ nhận hàng *" data-required="1" />
+                                        <div id="f_payType_5" style="display: none;">
+                                            <div class="row">
+                                                <span class="group"><strong>Nơi nhận hàng</strong></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="control">
+                                                    <select id="city" name="city1" placeholder="Tỉnh/Thành phố" >
+                                                        <option value="" selected>Chọn tỉnh thành</option>
+                                                    </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="control">
+                                                        <select id="district" name="district1" placeholder="Quận/ Huyện" >
+                                                            <option value="" selected>Chọn quận huyện</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="control">
+                                                        <select id="ward" name="ward1" placeholder="Phường/ Xã" >
+                                                            <option value="" selected>Chọn phường xã</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row shInfo">
+                                                <div class="col">
+                                                    <div class="control">
+                                                        <input value="" id="Address" name="address1" type="text" placeholder="Địa chỉ nhận hàng *" data-required="1" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row shInfo">
+                                        <div class="row ">
                                             <div class="col">
                                                 <div class="control">
                                                     <textarea name="note" placeholder="Ghi chú" spellcheck="false" data-minlength="15"></textarea>
@@ -431,7 +510,7 @@ if (isset($_GET["action"])) {
                                                 
                                             </div>
                                         </div>
-                                        <div class="row shInfo">
+                                        <div class="row">
                                             <div class="control-button">
                                                 <button name="order" type="submit">XÁC NHẬN VÀ ĐẶT HÀNG</button>
                                             </div>
@@ -652,7 +731,24 @@ if (isset($_GET["action"])) {
 
         }
     </script>
+    <script type="text/javascript">
+        $('input[name="ReceiveTypeID"]').on("click", function() {
+            var Number = $('input[name = "ReceiveTypeID"]:checked').val();
+            if( Number == 1){
+                $("#f_payType_1").show();
+                $("#f_payType_5").hide();
+            }
+            if( Number == 5){
+                $("#f_payType_1").hide();
+                $("#f_payType_5").show();
+            }
+        });
 
+        if( $('input[name = "ReceiveTypeID"]:checked').val() ==  1){
+            $("#f_payType_1").show();
+            $("#f_payType_5").hide();
+        }
+    </script>
 </body>
 </html>
 
