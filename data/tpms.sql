@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 12, 2024 lúc 06:41 PM
+-- Thời gian đã tạo: Th1 13, 2024 lúc 11:16 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -238,7 +238,9 @@ INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `distr
 (18, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:46:05', 1, 3, 1),
 (19, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-10 09:40:41', 1, 1, 1),
 (26, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 132080000, '2024-01-12 11:43:48', 1, 1, 1),
-(27, 3, 'User 1', 987654321, 'user1@gmail.com', 'Tỉnh Bắc Giang', 'Thành phố Bắc Giang', 'Phường Thọ Xương', 'Bắc Giang', 'Ship luôn', 32850000, '2024-01-12 18:29:21', 1, 1, 1);
+(27, 3, 'User 1', 987654321, 'user1@gmail.com', 'Tỉnh Bắc Giang', 'Thành phố Bắc Giang', 'Phường Thọ Xương', 'Bắc Giang', 'Ship luôn', 32850000, '2024-01-12 18:29:21', 1, 1, 1),
+(41, 9, 'User 2', 98789789, 'user2@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 21290000, '2024-01-13 10:26:23', 1, 1, 2),
+(42, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Tỉnh Hải Dương', 'Huyện Bình Giang', 'Xã Thái Hòa', 'Phủ Bình', 'Chủ Shop Dây', 65540000, '2024-01-13 10:47:34', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -470,7 +472,10 @@ INSERT INTO `tbl_detailcart` (`id`, `cartId`, `versionId`, `quantity`, `versionP
 (19, 19, 9, 1, 69990000),
 (32, 26, 5, 2, 32850000),
 (33, 26, 6, 2, 33190000),
-(34, 27, 5, 1, 32850000);
+(34, 27, 5, 1, 32850000),
+(48, 41, 8, 1, 21790000),
+(49, 42, 5, 1, 32850000),
+(50, 42, 6, 1, 33190000);
 
 -- --------------------------------------------------------
 
@@ -503,6 +508,31 @@ INSERT INTO `tbl_favorite` (`id`, `productId`, `userId`, `status`) VALUES
 (19, 6, 9, 2),
 (20, 10, 9, 2),
 (21, 20, 9, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_momo`
+--
+
+CREATE TABLE `tbl_momo` (
+  `id` int(11) NOT NULL,
+  `cartId` int(11) NOT NULL,
+  `partnerCode` varchar(100) NOT NULL,
+  `orderId` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `orderInfo` varchar(100) NOT NULL,
+  `orderType` varchar(100) NOT NULL,
+  `transId` int(11) NOT NULL,
+  `payType` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_momo`
+--
+
+INSERT INTO `tbl_momo` (`id`, `cartId`, `partnerCode`, `orderId`, `amount`, `orderInfo`, `orderType`, `transId`, `payType`) VALUES
+(14, 41, 'MOMOBKUN20180529', 1705116383, 21, 'Payment MoMo', 'momo_wallet', 2147483647, 'qr');
 
 -- --------------------------------------------------------
 
@@ -875,6 +905,13 @@ ALTER TABLE `tbl_favorite`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_momo`
+--
+ALTER TABLE `tbl_momo`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cartId` (`cartId`);
+
+--
 -- Chỉ mục cho bảng `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
@@ -976,7 +1013,7 @@ ALTER TABLE `tbl_brands`
 -- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_categories`
@@ -1012,13 +1049,19 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_detailcart`
 --
 ALTER TABLE `tbl_detailcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_favorite`
 --
 ALTER TABLE `tbl_favorite`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_momo`
+--
+ALTER TABLE `tbl_momo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_payment`
@@ -1115,6 +1158,12 @@ ALTER TABLE `tbl_comments`
 --
 ALTER TABLE `tbl_detailcart`
   ADD CONSTRAINT `tbl_detailcart_ibfk_1` FOREIGN KEY (`cartId`) REFERENCES `tbl_cart` (`id`);
+
+--
+-- Các ràng buộc cho bảng `tbl_momo`
+--
+ALTER TABLE `tbl_momo`
+  ADD CONSTRAINT `tbl_momo_ibfk_1` FOREIGN KEY (`cartId`) REFERENCES `tbl_cart` (`id`);
 
 --
 -- Các ràng buộc cho bảng `tbl_products`

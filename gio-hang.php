@@ -12,6 +12,27 @@ if(!isset($_SESSION['userId'])){
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
+function execPostRequest($url, $data){
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt(
+            $ch,
+            CURLOPT_HTTPHEADER,
+            array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($data)
+            )
+        );
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        //execute post
+        $result = curl_exec($ch);
+        //close connection
+        curl_close($ch);
+        return $result;
+    }
 
 if (isset($_GET["action"])) {
     function update_cart($add = false)
@@ -86,7 +107,7 @@ if (isset($_GET["action"])) {
                         if(isset($_SESSION['discount'])){
                             $newTotal = $total - $_SESSION['discount'];
                         }else{
-                            $newTotal = $tota;
+                            $newTotal = $total;
                         }
                         if(isset($_POST['name']) && $_POST['name'] != '' && isset($_POST['phone']) && $_POST['phone'] != ''&& isset($_POST['email']) && $_POST['email'] != '' && $city != '' && $district != '' && $ward != '' && $address != '' ){
                             $addCart = mysqli_query($conn, "INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES (NULL,'$userId','".$_POST['name']."','".$_POST['phone']."','".$_POST['email']."','$city','$district','$ward','$address','".$_POST['note']."','$newTotal','$date','1','1','1')");
@@ -103,6 +124,8 @@ if (isset($_GET["action"])) {
                             $addDetail = mysqli_query($conn, "INSERT INTO `tbl_detailcart`(`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES " . $insertString . "");
                             if($addDetail){
                                 unset($_SESSION['cart']);
+                                unset( $_SESSION['discount']);
+                                unset($_SESSION['discountCode']);
                                 echo "<script>window.location.href = 'dat-hang.php'</script>";
                             }
                         }else{
@@ -110,79 +133,101 @@ if (isset($_GET["action"])) {
                         }
 
                     }
-                    // elseif($pay_method == 3){
-                    //     if(!empty($_POST['quantity'])){
-                    //         $products = mysqli_query($conn, "SELECT * FROM sanpham WHERE idsanpham IN (" . implode(",", array_keys($_POST['quantity'])) . ")");
-                    //         $total = 0;
-                    //         $orderProduct = array();
-                    //         while ($row = mysqli_fetch_array($products)) {
-                    //             $orderProduct[] = $row;
-                    //             $total += $row["giakhuyenmai"] * $_POST["quantity"][$row["idsanpham"]];
-                    //         }
-                    //     }
-                    //     $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
+                    elseif($pay_method == 3){
+                        if(!empty($_POST['quantity'])){
+                            $sqlProd = mysqli_query($conn, "SELECT * FROM tbl_versions WHERE idVersion IN (" . implode(",", array_keys($_POST['quantity'])) . ")");
+                            $total = 0;
+                            $orderProduct = array();
+                            while ($row = mysqli_fetch_array($sqlProd)) {
+                                $orderProduct[] = $row;
+                                $total += $row["versionPromotionalPrice"] * $_POST["quantity"][$row["idVersion"]];
+                            }
+                        }
+                        if(isset($_SESSION['discount'])){
+                            $newTotal = $total - $_SESSION['discount'];
+                        }else{
+                            $newTotal = $total;
+                        }
+                        $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
 
-                    //     $partnerCode = 'MOMOBKUN20180529';
-                    //     $accessKey = 'klm05TvNBzhg7h7j';
-                    //     $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
+                        $partnerCode = 'MOMOBKUN20180529';
+                        $accessKey = 'klm05TvNBzhg7h7j';
+                        $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 
-                    //     $orderInfo = "Payment MoMo";
-                    //     $amount = $total ;
-                    //     $orderId = time() . "";
-                    //     $redirectUrl = "http://localhost/gaminggear/don-hang.php";
-                    //     $ipnUrl = "http://localhost/gaminggear/don-hang.php";
-                    //     $extraData = "";
+                        $orderInfo = "Payment MoMo";
+                        $amount = round($newTotal/1000000) ;
+                        $orderId = time() . "";
+                        $redirectUrl = "http://localhost/TPMS/bang-dieu-khien.php?page=order";
+                        $ipnUrl = "http://localhost/TPMS/bang-dieu-khien.php?page=order";
+                        $extraData = "";
 
 
-                    //     $requestId = time() . "";
-                    //     $requestType = "captureWallet";
+                        $requestId = time() . "";
+                        $requestType = "captureWallet";
 
-                    //     $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
-                    //     $signature = hash_hmac("sha256", $rawHash, $secretKey);
-                    //     $data = array(
-                    //         'partnerCode' => $partnerCode,
-                    //         'partnerName' => "Test",
-                    //         "storeId" => "MomoTestStore",
-                    //         'requestId' => $requestId,
-                    //         'amount' => $amount,
-                    //         'orderId' => $orderId,
-                    //         'orderInfo' => $orderInfo,
-                    //         'redirectUrl' => $redirectUrl,
-                    //         'ipnUrl' => $ipnUrl,
-                    //         'lang' => 'vi',
-                    //         'extraData' => $extraData,
-                    //         'requestType' => $requestType,
-                    //         'signature' => $signature
-                    //     );
-                    //     $result = execPostRequest($endpoint, json_encode($data));
-                    //     $jsonResult = json_decode($result, true); // decode json
+                        $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
+                        $signature = hash_hmac("sha256", $rawHash, $secretKey);
+                        $data = array(
+                            'partnerCode' => $partnerCode,
+                            'partnerName' => "Test",
+                            "storeId" => "MomoTestStore",
+                            'requestId' => $requestId,
+                            'amount' => $amount,
+                            'orderId' => $orderId,
+                            'orderInfo' => $orderInfo,
+                            'redirectUrl' => $redirectUrl,
+                            'ipnUrl' => $ipnUrl,
+                            'lang' => 'vi',
+                            'extraData' => $extraData,
+                            'requestType' => $requestType,
+                            'signature' => $signature
+                        );
+                        $result = execPostRequest($endpoint, json_encode($data));
+                        $jsonResult = json_decode($result, true); // decode json
 
-                    //     //Just a example, please check more in there
+                        //Just a example, please check more in there
+                        if(isset($_POST['ReceiveTypeID']) && $_POST['ReceiveTypeID'] == 1){
+                            $city = $_POST['city'];
+                            $district = $_POST['district'];
+                            $ward = $_POST['ward'];
+                            $address = $_POST['address'];
+                        }else if(isset($_POST['ReceiveTypeID']) && $_POST['ReceiveTypeID'] == 5){
+                            $city = $_POST['city1'];
+                            $district = $_POST['district1'];
+                            $ward = $_POST['ward1'];
+                            $address = $_POST['address1'];
+                        }
+                        header('Location: ' . $jsonResult['payUrl']);
+                        if( isset($_GET['action'])&& $_GET['action'] == 'payWithApp' && isset($_GET['isScanQR']) && $_GET['isScanQR'] == 'true' && isset($_GET['serviceType']) && $_GET['serviceType'] == 'qr' &&isset($_POST['name']) && $_POST['name'] != '' && isset($_POST['phone']) && $_POST['phone'] != ''&& isset($_POST['email']) && $_POST['email'] != '' && $city != '' && $district != '' && $ward != '' && $address != '' ){
+                            $addCart = mysqli_query($conn, "INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES (NULL,'$userId','".$_POST['name']."','".$_POST['phone']."','".$_POST['email']."','$city','$district','$ward','$address','".$_POST['note']."','$newTotal','$date','1','1','2')");
+                            $cart_id = $conn->insert_id;
+                            $insertString = "";
 
-                    //     header('Location: ' . $jsonResult['payUrl']);
-
-                    //     $addcart = mysqli_query($conn, "INSERT INTO `giohang`(`idgiohang`, `idNguoidung`, `ten`, `sdt`, `gmail`, `tinh`, `huyen`, `xa`, `diachi`, `ghichu`, `tong`, `thoigian`, `idtrangthai`, `idthanhtoan`) VALUES (NULL,'$idnguoidung','" . $_POST['ten'] . "','" . $_POST['sdt'] . "', '" . $_POST['gmail'] . "','" . $_POST['tinh'] . "','" . $_POST['huyen'] . "','" . $_POST['xa'] . "','" . $_POST['diachi'] . "','" . $_POST['ghichu'] . "','" . $total . "','" . date('Y-m-d') . "','1','2')");
-                    //     $cart_id = $conn->insert_id;
-                    //     $insertString = "";
-
-                    //     foreach ($orderProduct as $key => $product) {
-                    //         $insertString .= "(NULL, '" . $cart_id . "', '" . $product['idsanpham'] . "','" . $_POST['quantity'][$product['idsanpham']] . "', '" . $product['giakhuyenmai'] . "')";
-                    //         if ($key != count($orderProduct) - 1) {
-                    //             $insertString .= ",";
-                    //         }
-                    //     }
-
-                    //     $addhd = mysqli_query($conn, "INSERT INTO `chitietgiohang`(`idchitietgiohang`, `idgiohang`, `idsanpham`, `soluong`, `giakhuyenmai`) VALUES " . $insertString . "");
+                            foreach ($orderProduct as $key => $product) {
+                                $insertString .= "(NULL, '" . $cart_id . "', '" . $product['idVersion'] . "','" . $_POST['quantity'][$product['idVersion']] . "', '" . $product['versionPromotionalPrice'] . "')";
+                                if ($key != count($orderProduct) - 1) {
+                                    $insertString .= ",";
+                                }
+                            }
+                            if(isset($addCart)){
+                                $addDetail = mysqli_query($conn, "INSERT INTO `tbl_detailcart`(`id`, `cartId`, `versionId`, `quantity`, `versionPromotionalPrice`) VALUES " . $insertString . "");
+                                if( $addDetail){
+                                    $insert_momo = mysqli_query($conn, "INSERT INTO `tbl_momo`(`id`, `cartId`, `partnerCode`, `orderId`, `amount`, `orderInfo`, `orderType`, `transId`, `payType`) VALUES ('','$cart_id','$partnerCode','$orderId','$amount','$orderInfo','momo_wallet','2147483647','qr')");
+                                    $success = "Order Success";
+                                    if( $insert_momo ){
+                                        unset($_SESSION['cart']);
+                                        unset( $_SESSION['discount']);
+                                        unset($_SESSION['discountCode']);
+                                    }
+                                }
+                            }
+                            
+                        }else{
+                            ?><script>window.alert('<?=$district?>')</script><?php
+                        }
                         
-                    //     $insert_momo = mysqli_query($conn, "INSERT INTO `momo`(`idmomo`, `idgiohang`, `partner_Code`, `order_Id`, `amount`, `order_Info`, `orderType`, `trans_Id`, `pay_Type`) 
-                    //         VALUES ('','$cart_id','$partnerCode','$orderId','$amount','$orderInfo','momo_wallet','2147483647','qr')");
-                    //     $success = "Order Success";
-                    //     unset($_SESSION['cart']);
-
-
-
-                    // }
+                    }
                 }
             }
 
