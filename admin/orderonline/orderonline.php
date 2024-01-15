@@ -87,345 +87,10 @@ if(isset($_GET['action']) && $_GET['id']){
 <body>
     
     <div id="wrapper" class="">
-        
-        <div class="navbar-custom">
-            <ul class="list-unstyled topnav-menu float-right mb-0">
-                <li class="d-none d-sm-block">
-                    <form class="app-search" method="POST">
-                        <div class="app-search-box">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search...">
-                                <div class="input-group-append">
-                                    <button class="btn" name="sbm" type="submit">
-                                        <i class="fe-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <i class="fe-bell noti-icon"></i>
-                        <span class="badge badge-danger rounded-circle noti-icon-badge">5</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-
-                        <div class="dropdown-item noti-title">
-                            <h5 class="m-0 text-white">
-                                <span class="float-right">
-                                    <a href="" class="text-white">
-                                        <small>Delete All</small>
-                                    </a>
-                                </span>Notification
-                            </h5>
-                        </div>
-
-                        <div class="slimscroll noti-scroll">
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                <div class="notify-icon">
-                                    <img src="..\assets\images\users\user-1.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <p class="notify-details">Cristina Pride</p>
-                                <p class="text-muted mb-0 user-msg">
-                                    <small>Hi, How are you? What about our next meeting</small>
-                                </p>
-                            </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-primary">
-                                    <i class="mdi mdi-comment-account-outline"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="text-muted">1 min ago</small>
-                                </p>
-                            </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon">
-                                    <img src="..\assets\images\users\user-4.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <p class="notify-details">Karen Robinson</p>
-                                <p class="text-muted mb-0 user-msg">
-                                    <small>Wow ! this admin looks good and awesome design</small>
-                                </p>
-                            </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-warning">
-                                    <i class="mdi mdi-account-plus"></i>
-                                </div>
-                                <p class="notify-details">New user registered.
-                                    <small class="text-muted">5 hours ago</small>
-                                </p>
-                            </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-info">
-                                    <i class="mdi mdi-comment-account-outline"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="text-muted">4 days ago</small>
-                                </p>
-                            </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-secondary">
-                                    <i class="mdi mdi-heart text-danger"></i>
-                                </div>
-                                <p class="notify-details">Carlos Crouch liked
-                                    <b>Admin</b>
-                                    <small class="text-dark">13 days ago</small>
-                                </p>
-                            </a>
-                        </div>
-
-                        
-                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                            View All
-                            <i class="fi-arrow-right"></i>
-                        </a>
-
-                    </div>
-                </li>
-
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="..\assets\images\users\user-1.jpg" alt="user-image" class="rounded-circle">
-                        <span class="pro-user-name ml-1">
-                            <?php if (isset($_SESSION['user_admin'])) {
-                                echo $_SESSION['fullname_admin'];
-                            } ?> <i class="mdi mdi-chevron-down"></i>
-                        </span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                        <div class="dropdown-item noti-title">
-                            <h5 class="m-0 text-white">
-                                Welcome !
-                            </h5>
-                        </div>
-
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-user"></i>
-                            <span>Account</span>
-                        </a>
-
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-settings"></i>
-                            <span>Setting</span>
-                        </a>
-
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-lock"></i>
-                            <span>Screen Block</span>
-                        </a>
-
-                        <div class="dropdown-divider"></div>
-
-                        <a href="../logout.php" class="dropdown-item notify-item">
-                            <i class="fe-log-out"></i>
-                            <span>Logout</span>
-                        </a>
-
-                    </div>
-                </li>
-
-
-
-
-            </ul>
-
-            
-            <div class="logo-box">
-                <a href="index.php" class="logo text-center">
-                    <span class="logo-lg">
-                        <img src="../../assets/images/logo/logo-dark.png" alt="" height="24">
-                        
-                    </span>
-                    <span class="logo-sm">
-                        
-                        <img src="..\assets\images\logo\favicon.png" alt="" height="28">
-                    </span>
-                </a>
-            </div>
-
-            <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
-                <li>
-                    <button class="button-menu-mobile waves-effect waves-light">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </li>
-
-                <li class="dropdown d-none d-lg-block">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        Report
-                        <i class="mdi mdi-chevron-down"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Financial report
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Báo cáo hàng tháng
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Monthly report
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            Support
-                        </a>
-
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="left-side-menu">
-            <div class="slimscroll-menu">
-                
-                <div id="sidebar-menu">
-                    <ul class="metismenu" id="side-menu">
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="la la-dashboard"></i>
-                                <span class="badge badge-info badge-pill float-right">2</span>
-                                <span> HOME </span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="../index.php">Statistical</a>
-                                </li>
-                                <li>
-                                    <a href="../index2.php">Details Statistical</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <?php
-                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
-                                ?>
-                                    <li>
-                                        <a href="javascript: void(0);">
-                                            <i class="la la-connectdevelop"></i>
-                                            <span> WEB </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <ul class="nav-second-level" aria-expanded="false">
-                                            <li>
-                                                <a href="../web/banner/banner.php">BANNER</a>
-                                            </li>
-                                            <li>
-                                                <a href="email-read.php">Read Email</a>
-                                            </li>
-                                            <li>
-                                                <a href="email-compose.php">Compose Email</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                <?php
-                            }
-                        ?>
-                        <?php
-                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
-                                ?>
-                                    <li>
-                                        <a href="javascript: void(0);">
-                                            <i class="la la-home"></i>
-                                            <span> AGENT </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <ul class="nav-second-level" aria-expanded="false">
-                                            <li>
-                                                <a href="../agent/list-agent/list-agent.php">LIST AGENT</a>
-                                            </li>
-                                            <li>
-                                                <a href="../agent/list-staff/list-staff.php">LIST STAFF</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                <?php
-                            }
-                        ?>
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="la la-cube"></i>
-                                <span> PRODUCTS </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="../categories/categories.php">CATEGORIES</a>
-                                </li>
-                                <li>
-                                    <a href="../brands/brands.php">BRANDS</a>
-                                </li>
-                                <li>
-                                    <a href="../products/products.php">PRODUCTS</a>
-                                </li>
-                                <li>
-                                    <a href="../version/version.php">VERSIONS</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <?php
-                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
-                                ?>
-                                    <li>
-                                        <a href="javascript: void(0);">
-                                            <i class="la la-envelope"></i>
-                                            <span> Comment </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <ul class="nav-second-level" aria-expanded="false">
-                                            <li>
-                                                <a href="../comment/list-comment.php">List Comment</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                <?php
-                            }
-                        ?>
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class=" fab fa-opencart"></i>
-                                <span> Order </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="../order/create-new-order.php">Create New Order</a>
-                                </li>
-                                <li>
-                                    <a href="../order/list-order.php">List Order</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <?php
-                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  1){
-                                ?>
-                                    <li>
-                                        <a href="javascript: void(0);">
-                                            <i class=" fab fa-opencart"></i>
-                                            <span>Online Order </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <ul class="nav-second-level" aria-expanded="false">
-                                            <li>
-                                                <a href="orderonline.php">List Online Order</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </li>
-                                <?php
-                            }
-                        ?>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div>   
-        </div>
+        <?php
+             include '../navbar-custom.php';
+            include '../left-menu.php';
+        ?>
         <div class="content-page">
             <div class="content">
 
@@ -442,7 +107,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                         <li class="breadcrumb-item active">ONLINE ORDERS</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title" onclick=confirm()>ONLINE ORDERS</h4>
+                                <h4 class="page-title" >ONLINE ORDERS</h4>
                             </div>
                         </div>
                     </div>                    <div class="row no-gutters">
@@ -457,12 +122,13 @@ if(isset($_GET['action']) && $_GET['id']){
                                     <div class="col-6">
                                         <div class="text-right">
                                             <h3 class="text-dark mt-1"><span data-plugin="counterup">
-                                                    <?= countListOrder($conn,0) ?>
+                                                    <?= countListOrder($conn,1) ?>
                                                 </span></h3>
-                                            <p class="text-primary mb-1 text-truncate">Total Order</p>
+                                            <p class="text-primary mb-1 text-truncate">Waiting Order</p>
                                         </div>
                                     </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
+                                </div>                             
+                            </div> 
                         </a>
 
                         <a href="orderonline.php?type=confirm" class="col-md-6 col-xl-3">
@@ -481,7 +147,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                             <p class="text-warning mb-1 text-truncate">Confirm Order</p>
                                         </div>
                                     </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
+                                </div>                             </div> 
                         </a>
 
                         <a href="orderonline.php?type=complete" class="col-md-6 col-xl-3">
@@ -500,7 +166,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                             <p class="text-success mb-1 text-truncate">Complete Order</p>
                                         </div>
                                     </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
+                                </div>                             </div> 
                         </a>
 
                         <a href="orderonline.php?type=cancel" class="col-md-6 col-xl-3">
@@ -519,7 +185,7 @@ if(isset($_GET['action']) && $_GET['id']){
                                             <p class="text-danger mb-1 text-truncate">Cancel Tickets</p>
                                         </div>
                                     </div>
-                                </div>                             </div> <!-- end widget-rounded-circle-->
+                                </div>                             </div> 
                         </a>
                     </div>
                     <div class="row">
@@ -574,14 +240,14 @@ if(isset($_GET['action']) && $_GET['id']){
                                                         }
                                                         ?>
                                                     </td>
-                                                    <td><a href="detail_order.php?id=<?= $itemOnlineOrder['cartId'] ?>"><span class="badge badge-light-pink">Detail</span></a></td>
+                                                    <td><a href="detail_order.php?id=<?= $itemOnlineOrder['A'] ?>"><span class="badge badge-light-pink">Detail</span></a></td>
                                                     <td>
                                                         <div class="btn-group dropdown">
                                                             <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
                                                             <div class="dropdown-menu dropdown-menu-right">
-                                                                <?php if($itemOnlineOrder['idstatus']==2){}else{?><a class="dropdown-item"  href="orderonline.php?action=confirm&id=<?= $itemOnlineOrder['cartId'] ?>" ><i  class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Confirm</a><?php }?>
-                                                                <a class="dropdown-item"  href="orderonline.php?action=complete&id=<?= $itemOnlineOrder['cartId'] ?>"><i  class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Complete</a>
-                                                                <a class="dropdown-item"  href="orderonline.php?action=cancel&id=<?= $itemOnlineOrder['cartId'] ?>"><i  class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Cancel</a>
+                                                                <?php if($itemOnlineOrder['idstatus']==2){}else{?><a class="dropdown-item"  href="orderonline.php?action=confirm&id=<?= $itemOnlineOrder['A'] ?>" ><i  class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Confirm</a><?php }?>
+                                                                <a class="dropdown-item"  href="orderonline.php?action=complete&id=<?= $itemOnlineOrder['A'] ?>"><i  class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Complete</a>
+                                                                <a class="dropdown-item"  href="orderonline.php?action=cancel&id=<?= $itemOnlineOrder['A'] ?>"><i  class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Cancel</a>
                                                             </div>
                                                         </div>
                                                     </td>

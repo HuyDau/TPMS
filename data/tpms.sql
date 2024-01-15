@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 13, 2024 lúc 11:16 AM
+-- Thời gian đã tạo: Th1 15, 2024 lúc 07:44 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -223,7 +223,7 @@ CREATE TABLE `tbl_cart` (
 INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES
 (1, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', 'aaa', 65700000, '2024-01-07 10:22:12', 1, 2, 1),
 (5, 9, 'User 2', 98789789, '', 'Thành phố Hà Nội', 'Quận Ba Đình', 'Phường Phúc Xá', 'ádasdas', 'ádasdas', 33190000, '2024-01-07 10:37:58', 1, 3, 1),
-(6, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:43:06', 1, 1, 1),
+(6, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:43:06', 1, 4, 1),
 (7, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-30 19:43:26', 1, 3, 1),
 (8, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-31 19:43:31', 1, 3, 1),
 (9, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-01 19:44:04', 1, 3, 1),
@@ -240,7 +240,8 @@ INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `distr
 (26, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 132080000, '2024-01-12 11:43:48', 1, 1, 1),
 (27, 3, 'User 1', 987654321, 'user1@gmail.com', 'Tỉnh Bắc Giang', 'Thành phố Bắc Giang', 'Phường Thọ Xương', 'Bắc Giang', 'Ship luôn', 32850000, '2024-01-12 18:29:21', 1, 1, 1),
 (41, 9, 'User 2', 98789789, 'user2@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 21290000, '2024-01-13 10:26:23', 1, 1, 2),
-(42, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Tỉnh Hải Dương', 'Huyện Bình Giang', 'Xã Thái Hòa', 'Phủ Bình', 'Chủ Shop Dây', 65540000, '2024-01-13 10:47:34', 1, 1, 1);
+(42, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Tỉnh Hải Dương', 'Huyện Bình Giang', 'Xã Thái Hòa', 'Phủ Bình', 'Chủ Shop Dây', 65540000, '2024-01-13 10:47:34', 1, 1, 1),
+(1511, 0, '', 0, '', '', '', '', '', '', 0, '2024-01-15 19:33:13', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -475,7 +476,8 @@ INSERT INTO `tbl_detailcart` (`id`, `cartId`, `versionId`, `quantity`, `versionP
 (34, 27, 5, 1, 32850000),
 (48, 41, 8, 1, 21790000),
 (49, 42, 5, 1, 32850000),
-(50, 42, 6, 1, 33190000);
+(50, 42, 6, 1, 33190000),
+(51, 1511, 5, 1, 32850000);
 
 -- --------------------------------------------------------
 
@@ -755,9 +757,9 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`Id`, `username`, `password`, `fullname`, `gmail`, `phone`, `permission`) VALUES
 (1, 'admin@tpms.com', 'e3afed0047b08059d0fada10f400c1e5', 'Admin', 'admin@tpms.com', 386131716, 1),
-(2, 'tpms@hanoi.com', 'c3284d0f94606de1fd2af172aba15bf3', 'TPMS - Hà Nội', 'tpms@hanoi.com', 989898989, 2),
-(3, 'tpms@hcm.com', '21232f297a57a5a743894a0e4a801fc3', 'TPMS - Hồ Chí Minh', 'tpms@hcm.com', 88888888, 2),
-(4, 'tpms@haiduong.com', '77e2edcc9b40441200e31dc57dbb8829', 'TPMS HẢI DƯƠNG', 'tpms@haiduong.com', 386131716, 2);
+(2, 'tpms@hanoi.com', 'e3afed0047b08059d0fada10f400c1e5', 'TPMS - Hà Nội', 'tpms@hanoi.com', 989898989, 2),
+(3, 'tpms@hcm.com', 'e3afed0047b08059d0fada10f400c1e5', 'TPMS - Hồ Chí Minh', 'tpms@hcm.com', 88888888, 2),
+(4, 'tpms@haiduong.com', 'e3afed0047b08059d0fada10f400c1e5', 'TPMS HẢI DƯƠNG', 'tpms@haiduong.com', 386131716, 2);
 
 -- --------------------------------------------------------
 
@@ -1013,7 +1015,7 @@ ALTER TABLE `tbl_brands`
 -- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1512;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_categories`
@@ -1049,7 +1051,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_detailcart`
 --
 ALTER TABLE `tbl_detailcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_favorite`
