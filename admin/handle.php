@@ -58,6 +58,11 @@ function getTotal($conn, $a){
     }
     return $total;
 }
+
+// GET TOTAL ORDER
+function getTotalOrderAgent($conn){
+
+}
 // GET TOTAL WEEK
 function getTWeek($conn, $a) {
     $total = 0;

@@ -2,7 +2,7 @@
 
 require_once("../config/config.php");
 include 'handle.php';
-if (!isset($_SESSION['admin_id']) && isset($_SESSION['permission']) && $_SESSION['permission'] != 1) {
+if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSION['permission'] != 1) {
     header("location: login.php");
 }
 ?>
@@ -364,12 +364,12 @@ if (!isset($_SESSION['admin_id']) && isset($_SESSION['permission']) && $_SESSION
                                 <div class="row mb-4">
                                     <div class="col-12">
                                         <p class="text-muted mb-1">This Month</p>
-                                        <h3 class="mt-0 font-20">$<?=number_format(getTotal($conn,1),0,"",".")?> <?php if((getTotal($conn,1)/10 - 100)<0){echo '<small class="badge badge-light-danger font-13">'. (getTotal($conn,1)/10  -100) ."%".'</small>';}else{echo '<small class="badge badge-light-success font-13">'. (getTotal($conn,1)/10  -100)."%" . '</small>';}?></h3>
+                                        <h3 class="mt-0 font-20"><?=number_format(getTotal($conn,1),0,"",".")?> đ<?php if((getTotal($conn,1)/10 - 100)<0){echo '<small class="badge badge-light-danger font-13">'. (getTotal($conn,1)/10  -100) ."%".'</small>';}else{echo '<small class="badge badge-light-success font-13">'. (getTotal($conn,1)/10  -100)."%" . '</small>';}?></h3>
                                     </div>
 
                                     <div class="col-12">
                                         <p class="text-muted mb-1">Last Month</p>
-                                        <h3 class="mt-0 font-20">$<?=number_format(getTotal($conn,2),0,"",".") ?> <?php if((getTotal($conn,2)/10  -100)<0){echo '<small class="badge badge-light-danger font-13">'. (getTotal($conn,2)/10  -100) . "%". '</small>';}else{echo '<small class="badge badge-light-success font-13">'. (getTotal($conn,2)/10  -100). "%" .'</small>';}?></h3>
+                                        <h3 class="mt-0 font-20"><?=number_format(getTotal($conn,2),0,"",".") ?> đ<?php if((getTotal($conn,2)/10  -100)<0){echo '<small class="badge badge-light-danger font-13">'. (getTotal($conn,2)/10  -100) . "%". '</small>';}else{echo '<small class="badge badge-light-success font-13">'. (getTotal($conn,2)/10  -100). "%" .'</small>';}?></h3>
                                     </div>
                                 </div>
                                 <div class="mt-5">
