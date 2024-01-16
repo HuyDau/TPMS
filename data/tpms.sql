@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 15, 2024 lúc 07:44 PM
+-- Thời gian đã tạo: Th1 16, 2024 lúc 08:16 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -213,35 +213,39 @@ CREATE TABLE `tbl_cart` (
   `time` datetime NOT NULL,
   `idtype` int(11) NOT NULL,
   `idstatus` int(11) NOT NULL,
-  `idpayment` int(11) NOT NULL
+  `idpayment` int(11) NOT NULL,
+  `agentId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_cart`
 --
 
-INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES
-(1, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', 'aaa', 65700000, '2024-01-07 10:22:12', 1, 2, 1),
-(5, 9, 'User 2', 98789789, '', 'Thành phố Hà Nội', 'Quận Ba Đình', 'Phường Phúc Xá', 'ádasdas', 'ádasdas', 33190000, '2024-01-07 10:37:58', 1, 3, 1),
-(6, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:43:06', 1, 4, 1),
-(7, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-30 19:43:26', 1, 3, 1),
-(8, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-31 19:43:31', 1, 3, 1),
-(9, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-01 19:44:04', 1, 3, 1),
-(10, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-02 19:44:07', 1, 3, 1),
-(11, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:44:09', 1, 3, 1),
-(12, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-03 19:44:10', 1, 3, 1),
-(13, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-04 19:44:12', 1, 3, 1),
-(14, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-05 19:44:13', 1, 3, 1),
-(15, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-06 19:44:20', 1, 3, 1),
-(16, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-07 19:46:01', 1, 3, 1),
-(17, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-08 19:46:04', 1, 3, 1),
-(18, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:46:05', 1, 3, 1),
-(19, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-10 09:40:41', 1, 1, 1),
-(26, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 132080000, '2024-01-12 11:43:48', 1, 1, 1),
-(27, 3, 'User 1', 987654321, 'user1@gmail.com', 'Tỉnh Bắc Giang', 'Thành phố Bắc Giang', 'Phường Thọ Xương', 'Bắc Giang', 'Ship luôn', 32850000, '2024-01-12 18:29:21', 1, 1, 1),
-(41, 9, 'User 2', 98789789, 'user2@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 21290000, '2024-01-13 10:26:23', 1, 1, 2),
-(42, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Tỉnh Hải Dương', 'Huyện Bình Giang', 'Xã Thái Hòa', 'Phủ Bình', 'Chủ Shop Dây', 65540000, '2024-01-13 10:47:34', 1, 1, 1),
-(1511, 0, '', 0, '', '', '', '', '', '', 0, '2024-01-15 19:33:13', 2, 1, 1);
+INSERT INTO `tbl_cart` (`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`, `agentId`) VALUES
+(1, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', 'aaa', 65700000, '2024-01-07 10:22:12', 1, 2, 1, 0),
+(5, 9, 'User 2', 98789789, '', 'Thành phố Hà Nội', 'Quận Ba Đình', 'Phường Phúc Xá', 'ádasdas', 'ádasdas', 33190000, '2024-01-07 10:37:58', 1, 3, 1, 0),
+(6, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:43:06', 1, 4, 1, 0),
+(7, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-30 19:43:26', 1, 3, 1, 0),
+(8, 3, 'User 1', 987654321, '', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2023-12-31 19:43:31', 1, 3, 1, 0),
+(9, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-01 19:44:04', 1, 3, 1, 0),
+(10, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-02 19:44:07', 1, 3, 1, 0),
+(11, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:44:09', 1, 3, 1, 0),
+(12, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-03 19:44:10', 1, 3, 1, 0),
+(13, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-04 19:44:12', 1, 3, 1, 0),
+(14, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-05 19:44:13', 1, 3, 1, 0),
+(15, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-06 19:44:20', 1, 3, 1, 0),
+(16, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-07 19:46:01', 1, 3, 1, 0),
+(17, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-08 19:46:04', 1, 3, 1, 0),
+(18, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-09 19:46:05', 1, 3, 1, 0),
+(19, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', '123', '123', 69990000, '2024-01-10 09:40:41', 1, 1, 1, 0),
+(26, 3, 'User 1', 987654321, 'user1@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 132080000, '2024-01-12 11:43:48', 1, 1, 1, 0),
+(27, 3, 'User 1', 987654321, 'user1@gmail.com', 'Tỉnh Bắc Giang', 'Thành phố Bắc Giang', 'Phường Thọ Xương', 'Bắc Giang', 'Ship luôn', 32850000, '2024-01-12 18:29:21', 1, 1, 1, 0),
+(41, 9, 'User 2', 98789789, 'user2@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Ngõ 89 Phạm Văn Đồng - Mai Dịch - Cầu Giấy - Hà Nội', '', 21290000, '2024-01-13 10:26:23', 1, 1, 2, 0),
+(42, 9, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Tỉnh Hải Dương', 'Huyện Bình Giang', 'Xã Thái Hòa', 'Phủ Bình', 'Chủ Shop Dây', 65540000, '2024-01-13 10:47:34', 1, 1, 1, 0),
+(1611, 0, 'Vũ Ngọc Quang', 345627105, 'vungocquang@gmail.com', 'Tỉnh Thái Bình', 'Huyện Kiến Xương', 'Xã Quang Trung', 'Thôn Mỹ Nguyên', '', 207810000, '2024-01-16 09:49:42', 2, 3, 1, 2),
+(1613, 0, 'Vũ Ngọc Quang', 123456666, 'vungocquang@gmail.com', 'Tỉnh Bắc Kạn', 'Thành Phố Bắc Kạn', 'Xã Nông Thượng', 'Ngọc Thụy', '', 209970000, '2024-01-16 18:09:27', 2, 3, 1, 2),
+(1614, 0, 'Lê Huy Dậu', 386131716, 'lehuydau2312@gmail.com', 'Thành phố Hà Nội', 'Quận Cầu Giấy', 'Phường Mai Dịch', 'Phạm Văn Đồng', '', 65700000, '2024-01-16 19:08:05', 2, 3, 1, 2),
+(1615, 0, '', 0, '', '', '', '', '', '', 0, '2024-01-16 19:20:59', 2, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -477,7 +481,12 @@ INSERT INTO `tbl_detailcart` (`id`, `cartId`, `versionId`, `quantity`, `versionP
 (48, 41, 8, 1, 21790000),
 (49, 42, 5, 1, 32850000),
 (50, 42, 6, 1, 33190000),
-(51, 1511, 5, 1, 32850000);
+(52, 1611, 12, 2, 17490000),
+(54, 1611, 10, 2, 69990000),
+(55, 1611, 5, 1, 32850000),
+(59, 1613, 10, 3, 69990000),
+(65, 1614, 5, 2, 32850000),
+(68, 1615, 5, 3, 32850000);
 
 -- --------------------------------------------------------
 
@@ -826,9 +835,9 @@ CREATE TABLE `tbl_warehouse` (
 --
 
 INSERT INTO `tbl_warehouse` (`id`, `versionId`, `agentId`, `quantity`) VALUES
-(1, 5, 3, 15),
+(1, 5, 3, 13),
 (4, 6, 2, 5),
-(5, 5, 2, 15);
+(5, 5, 2, 12);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1015,7 +1024,7 @@ ALTER TABLE `tbl_brands`
 -- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1512;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1616;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_categories`
@@ -1051,7 +1060,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_detailcart`
 --
 ALTER TABLE `tbl_detailcart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_favorite`

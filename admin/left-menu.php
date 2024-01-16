@@ -13,9 +13,16 @@
                         <li>
                             <a href="http://localhost/TPMS/admin/index.php">Statistical</a>
                         </li>
-                        <li>
-                            <a href="http://localhost/TPMS/admin/index2.php">Details Statistical</a>
-                        </li>
+                        <?php
+                            if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                                ?>
+                                    <li>
+                                        <a href="http://localhost/TPMS/admin/index1.php">Details Statistical</a>
+                                    </li>
+                                <?php
+                            }
+                        ?>
+                        
                     </ul>
                 </li>
                 <?php
@@ -109,9 +116,9 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li>
-                            <a href="http://localhost/TPMS/admin/order/create-new-order.php">Create New Order</a>
-                        </li>
+                        <?php
+                            if(isset($_SESSION['permission']) && $_SESSION['permission'] ==  2){?><li><a href="http://localhost/TPMS/admin/order/create-new-order.php">Create New Order</a></li><?php }
+                        ?>
                         <li>
                             <a href="http://localhost/TPMS/admin/order/list-order.php">List Order</a>
                         </li>

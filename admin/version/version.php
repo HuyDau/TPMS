@@ -877,9 +877,9 @@ if(isset($_GET['productIdUpdate'])){
     <script src="..\assets\libs\datatables\dataTables.select.min.js"></script>
     <script src="..\assets\libs\pdfmake\pdfmake.min.js"></script>
     <script src="..\assets\libs\pdfmake\vfs_fonts.js"></script>
-    <!-- third party js ends -->
+    
 
-    <!-- Datatables init -->
+    
     <script src="..\assets\js\pages\datatables.init.js"></script>
 
     

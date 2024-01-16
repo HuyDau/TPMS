@@ -489,10 +489,17 @@ if(isset($_GET['offActive'])){
                                                 <th>IMAGE</th>
                                                 <th>PRICE</th>
                                                 <th>PROMOTIONAL PRICE</th>
-                                                <th>ADD VERSION</th>
-                                                <th>VIEW AND EDIT</th>
-                                                <th>ACTIVE</th>
-                                                <th>DELETE</th>
+                                                <?php
+                                                    if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                                                        ?>
+                                                            <th>ADD VERSION</th>
+                                                            <th>VIEW AND EDIT</th>
+                                                            <th>ACTIVE</th>
+                                                            <th>DELETE</th>
+                                                        <?php
+                                                    }
+                                                ?>
+                                                
                                             </tr>
                                         </thead>
 
@@ -553,27 +560,62 @@ if(isset($_GET['offActive'])){
                                                                 ?>
                                                                     <img src="../../uploads/product/watch/<?=$row['productImage']?>" alt="">
                                                                 <?php
+                                                            }else if($row['idCategory'] == 7){
+                                                                ?>
+                                                                    <img src="../../uploads/product/voice/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 8){
+                                                                ?>
+                                                                    <img src="../../uploads/product/smarthome/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 16){
+                                                                ?>
+                                                                    <img src="../../uploads/product/accessory/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 17){
+                                                                ?>
+                                                                    <img src="../../uploads/product/toys/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 18){
+                                                                ?>
+                                                                    <img src="../../uploads/product/driftingmachine/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 19){
+                                                                ?>
+                                                                    <img src="../../uploads/product/repair/<?=$row['productImage']?>" alt="">
+                                                                <?php
+                                                            }else if($row['idCategory'] == 20){
+                                                                ?>
+                                                                    <img src="../../uploads/product/service/<?=$row['productImage']?>" alt="">
+                                                                <?php
                                                             }
                                                         ?>
                                                     </td>
                                                     <td><?= number_format($row['productPrice'],0,"",".") ?></td>
                                                     <td><?= number_format($row['productPromotionalPrice'],0,"",".") ?></td>
-                                                    <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-add las la-plus-circle"></i></a></td>
-                                                    <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
-                                                    <td>
-                                                        <?php 
-                                                            if($row['isActive'] == 0){
-                                                                ?>
-                                                                    <a onclick="return On('<?php echo $row['productName']; ?>')" href="products.php?isActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
-                                                                <?php 
-                                                            }else{
-                                                                ?>
-                                                                    <a onclick="return Off('<?php echo $row['productName']; ?>')" href="products.php?offActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-on.png" alt=""></a>
-                                                                <?php 
-                                                            }
-                                                        ?>
-                                                    </td>
-                                                    <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                    <?php
+                                                        if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                                                            ?>
+                                                                <td><a href="products.php?productId=<?php echo $row['id']; ?>&categoryId=<?php echo $row['idCategory']; ?>"  class="add"><i class="icon-add las la-plus-circle"></i></a></td>
+                                                                <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
+                                                                <td>
+                                                                    <?php 
+                                                                        if($row['isActive'] == 0){
+                                                                            ?>
+                                                                                <a onclick="return On('<?php echo $row['productName']; ?>')" href="products.php?isActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
+                                                                            <?php 
+                                                                        }else{
+                                                                            ?>
+                                                                                <a onclick="return Off('<?php echo $row['productName']; ?>')" href="products.php?offActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-on.png" alt=""></a>
+                                                                            <?php 
+                                                                        }
+                                                                    ?>
+                                                                </td>
+                                                                <td><a onclick="return Del1('<?=$row['productName']?>')" class="delete" href="deleteProduct.php?id=<?=$row['id']; ?>"><i class="icon-delete la la-trash-o"></i></a></td>
+                                                            <?php
+                                                        }
+                                                    ?>
+                                                    
                                                 </tr>
                                             <?php
                                             }
@@ -647,9 +689,9 @@ if(isset($_GET['offActive'])){
     <script src="..\assets\libs\datatables\dataTables.select.min.js"></script>
     <script src="..\assets\libs\pdfmake\pdfmake.min.js"></script>
     <script src="..\assets\libs\pdfmake\vfs_fonts.js"></script>
-    <!-- third party js ends -->
+    
 
-    <!-- Datatables init -->
+    
     <script src="..\assets\js\pages\datatables.init.js"></script>
 
     

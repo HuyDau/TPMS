@@ -26,6 +26,22 @@ function getOnlineOrder($conn,$a){
     return $sqlOnlineOrder;
 }
 
+// GET ORDER OFFLINE
+function getOfflineOrder($conn,$a){
+    if($a == 0){
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2 ");
+    }else if($a == 1){
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+    }else if($a == 2){
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+    }else if($a == 3){
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+    }else if($a == 4){
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+    }
+    return $sqlOnlineOrder;
+}
+
 // COUNT LIST ORDER 
 function countListOrder($conn,$a){
     if($a == 0){
@@ -71,10 +87,7 @@ function getTotal($conn, $a){
     return $total;
 }
 
-// GET TOTAL ORDER
-function getTotalOrderAgent($conn){
 
-}
 // GET TOTAL WEEK
 function getTWeek($conn, $a) {
     $total = 0;
@@ -134,5 +147,38 @@ function getDetailProduct($conn, $a){
     return $info;
 }
 
+// GET LIST PRODUCT INVOICE
+function getListProductInvoice($conn, $a) {
+    $getListProductInvoice = mysqli_query($conn,"SELECT * FROM tbl_detailcart INNER JOIN tbl_versions ON  tbl_detailcart.versionId = tbl_versions.idVersion INNER JOIN tbl_products ON tbl_products.id = tbl_versions.productId WHERE cartId = $a");
+    return  $getListProductInvoice;
+}
+
+/*==============================DASHBOARD============================== */
+// COUNT LIST INVOICE 
+function countListInvoice($conn,$a){
+    $countListInvoice = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a");
+    return mysqli_num_rows($countListInvoice);
+}
+function getProdAgent($conn,$a){
+    $countProdAgent = mysqli_query($conn,"SELECT * FROM tbl_warehouse WHERE agentId = $a");
+    return mysqli_num_rows($countProdAgent);
+}
+function getTotalAgent($conn,$a){
+    $total = 0;
+    $TotalAgent = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a");
+    while($item = mysqli_fetch_assoc($TotalAgent)){
+        $total += $item['total'];
+    }
+    return $total;
+}
+
+function getTotalFollowMonthInvoice($conn,$a,$b){
+    $total = 0;
+    $moneyMonth= mysqli_query($conn, "SELECT * FROM tbl_cart WHERE MONTH(time) = $a AND agentId = $b");
+    while ($row = mysqli_fetch_array($moneyMonth)) {
+        $total += $row['total'];
+    }
+    return $total;
+}
 
 ?>

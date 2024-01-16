@@ -275,7 +275,7 @@ if(isset($_GET['action']) && $_GET['id']){
     <script src="..\assets\js\vendor.min.js"></script>
     
     
-    <!-- third party js -->
+    
     <script src="..\assets\libs\datatables\jquery.dataTables.min.js"></script>
     <script src="..\assets\libs\datatables\dataTables.bootstrap4.js"></script>
     <script src="..\assets\libs\datatables\dataTables.responsive.min.js"></script>
@@ -289,9 +289,9 @@ if(isset($_GET['action']) && $_GET['id']){
     <script src="..\assets\libs\datatables\dataTables.select.min.js"></script>
     <script src="..\assets\libs\pdfmake\pdfmake.min.js"></script>
     <script src="..\assets\libs\pdfmake\vfs_fonts.js"></script>
-    <!-- third party js ends -->
+    
 
-    <!-- Datatables init -->
+    
     <script src="..\assets\js\pages\datatables.init.js"></script>
 
     
