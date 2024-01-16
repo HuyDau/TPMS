@@ -134,17 +134,6 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
         ?>
     </div>
     <div class="rightbar-overlay"></div>
-    <script src="assets\js\vendor.min.js"></script>
-    <script src="assets\libs\jquery-knob\jquery.knob.min.js"></script>
-    <script src="assets\libs\peity\jquery.peity.min.js"></script>
-    <script src="assets\libs\apexcharts\apexcharts.min.js"></script>
-    <script src="assets\libs\datatables\jquery.dataTables.min.js"></script>
-    <script src="assets\libs\datatables\dataTables.bootstrap4.js"></script>
-    <script src="assets\libs\datatables\dataTables.responsive.min.js"></script>
-    <script src="assets\libs\datatables\responsive.bootstrap4.min.js"></script>
-    <script src="assets\js\pages\dashboard-2.init.js"></script>
-    <script src="assets\js\app.min.js"></script>
-    
     <script>
     let myChart = document.getElementById('myChart').getContext('2d');
     // Global Options
@@ -159,7 +148,18 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
         datasets:[{
           label:'Total revenue',
           data:[
-            
+            <?=getTotalMonth($conn,1,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,2,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,3,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,4,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,5,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,6,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,7,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,8,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,9,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,10,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,11,$_SESSION['admin_id'])?>,
+            <?=getTotalMonth($conn,12,$_SESSION['admin_id'])?>,
           ],
           backgroundColor:[
             'rgba(255, 99, 132, 0.6)',
@@ -208,6 +208,16 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
       }
     });
   </script>
+  <script src="assets\js\vendor.min.js"></script>
+  <script src="assets\libs\jquery-knob\jquery.knob.min.js"></script>
+  <script src="assets\libs\peity\jquery.peity.min.js"></script>
+  <script src="assets\libs\apexcharts\apexcharts.min.js"></script>
+  <script src="assets\libs\datatables\jquery.dataTables.min.js"></script>
+  <script src="assets\libs\datatables\dataTables.bootstrap4.js"></script>
+  <script src="assets\libs\datatables\dataTables.responsive.min.js"></script>
+  <script src="assets\libs\datatables\responsive.bootstrap4.min.js"></script>
+  <script src="assets\js\pages\dashboard-2.init.js"></script>
+  <script src="assets\js\app.min.js"></script>
 
 </body>
 

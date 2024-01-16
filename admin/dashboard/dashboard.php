@@ -122,41 +122,27 @@
             <div class="row">
                 <div class="col-xl-4">
                     <div class="card-box">
-                        <div class="dropdown float-right">
-                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                <i class="mdi mdi-dots-horizontal"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                
-                                <a href="javascript:void(0);" class="dropdown-item">Settings</a>
-                                
-                                <a href="javascript:void(0);" class="dropdown-item">Download</a>
-                                
-                                <a href="javascript:void(0);" class="dropdown-item">Upload</a>
-                                
-                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                            </div>
-                        </div>
+                        
                         <h4 class="header-title">Earning Reports</h4>
-                        <p class="text-muted">1 Mar - 31 Mar Showing Data</p>
-                        <h2 class="mb-4"><i class="mdi mdi-currency-usd text-primary"></i><?= $total ?>.00</h2>
+                        <p class="text-muted"></p><?=date("M-Y")?> - Showing Data</p>
+                        <h2 class="mb-4"><i class="mdi mdi-currency-usd text-primary"></i><?=number_format(getTotal($conn, 0,$_SESSION['admin_id']),0,"",".")?>đ</h2>
 
                         <div class="row mb-4">
                             <div class="col-6">
                                 <p class="text-muted mb-1">This Month</p>
-                                <h3 class="mt-0 font-20">$<?php echo $total_month; ?> <?php if (($total_month / 10  - 100) < 0) {
-                                                                                            echo '<small class="badge badge-light-danger font-13">' . ($total_month / 10  - 100) . "%" . '</small>';
+                                <h3 class="mt-0 font-20"><?=number_format(getTotal($conn, 1,$_SESSION['admin_id']),0,"",".")?>đ<?php if ((getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) < 0) {
+                                                                                            echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
                                                                                         } else {
-                                                                                            echo '<small class="badge badge-light-success font-13">' . ($total_month / 10  - 100) . "%" . '</small>';
+                                                                                            echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
                                                                                         } ?></h3>
                             </div>
 
                             <div class="col-6">
                                 <p class="text-muted mb-1">Last Month</p>
-                                <h3 class="mt-0 font-20">$<?php echo $total_last_month; ?> <?php if (($total_last_month / 10  - 100) < 0) {
-                                                                                                echo '<small class="badge badge-light-danger font-13">' . ($total_last_month / 10  - 100) . "%" . '</small>';
+                                <h3 class="mt-0 font-20"><?=number_format(getTotal($conn, 2,$_SESSION['admin_id']),0,"",".")?>đ<?php if ((getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) < 0) {
+                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 2,$_SESSION['admin_id'])/ 10  - 100) . "%" . '</small>';
                                                                                             } else {
-                                                                                                echo '<small class="badge badge-light-success font-13">' . ($total_last_month / 10  - 100) . "%" . '</small>';
+                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 2,$_SESSION['admin_id'])/ 10  - 100) . "%" . '</small>';
                                                                                             } ?></h3>
                             </div>
                         </div>
@@ -189,43 +175,30 @@
                             <table class="table table-centered table-borderless table-hover table-nowrap mb-0" id="datatable">
                                 <thead class="thead-light">
                                     <tr>
+                                        <th>STT</th>
                                         <th class="border-top-0">Name</th>
-                                        <th class="border-top-0">Card</th>
+                                        <th class="border-top-0">Address</th>
                                         <th class="border-top-0">Date</th>
-                                        <th class="border-top-0">Amount</th>
-                                        <th class="border-top-0">Status</th>
+                                        <th class="border-top-0">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql_customer = mysqli_query($conn, "SELECT * FROM cart INNER JOIN status ON cart.id_status = status.id_status LIMIT 10");
                                     $i = 1;
-                                    while ($row = mysqli_fetch_array($sql_customer)) {
+                                    $agentId =  $_SESSION['admin_id'];
+                                    $sqlInvoice = mysqli_query($conn,"SELECT * FROM tbl_cart WHERE agentId = $agentId LIMIT 10");
+                                    while ($row = mysqli_fetch_array($sqlInvoice)) {
                                     ?>
                                         <tr>
+                                            <td><?=$i++?></td>
                                             <td>
-                                                <img src="assets\images\users\user-<?= $i++ ?>.jpg" alt="user-pic" class="rounded-circle avatar-sm">
-                                                <span class="ml-2"><?= $row['name_kh'] ?></span>
+                                                <span class="ml-2"><?= $row['name'] ?></span>
                                             </td>
                                             <td>
-                                                <img src="assets\images\cards\visa.png" alt="user-card" height="24">
-                                                <span class="ml-2">**** 3256</span>
+                                                <span><?=$row['address']?> - <?=$row['ward']?> - <?=$row['district']?> - <?=$row['city']?></span>
                                             </td>
                                             <td><?= date('d-m-Y', strtotime($row['time'])) ?></td>
-                                            <td>$<?= $row['total'] ?>.00</td>
-                                            <td>
-                                                <?php
-                                                if ($row['id_status'] == 1) {
-                                                    echo '<span class="badge badge-pink">' . $row['name_status'] . '</span>';
-                                                } elseif ($row['id_status'] == 2) {
-                                                    echo '<span class="badge badge-warning">' . $row['name_status'] . '</span>';
-                                                } elseif ($row['id_status'] == 3) {
-                                                    echo '<span class="badge badge-success">' . $row['name_status'] . '</span>';
-                                                } else {
-                                                    echo '<span class="badge badge-danger">' . $row['name_status'] . '</span>';
-                                                }
-                                                ?>
-                                            </td>
+                                            <td><?=number_format($row['total'] ,0,"",".")?>đ</td>
                                         </tr>
                                     <?php
                                     }

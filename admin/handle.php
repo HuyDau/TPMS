@@ -61,25 +61,25 @@ function countListOrder($conn,$a){
 
 // GET TOTAL ONLINE ORDER
 
-function getTotal($conn, $a){
+function getTotal($conn, $a, $b){
     $total = 0;
     if($a == 0){
-        $money = mysqli_query($conn, "SELECT * FROM tbl_cart WHERE idstatus = 3");
+        $money = mysqli_query($conn, "SELECT * FROM tbl_cart WHERE idstatus = 3 AND agentId = $b");
         while ($row = mysqli_fetch_array($money)) {
             $total += $row['total'];
         }
     }else if($a == 1){ //GET TOTAL THIS MONTH
-        $money_month = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(now()) AND idstatus = 3");
+        $money_month = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(now()) AND idstatus = 3 AND agentId = $b");
         while ($row_month = mysqli_fetch_array($money_month)) {
             $total += $row_month['total'];
         }
     }else if($a == 2){ //GET TOTAL LAST MONTH
-        $money_last_month = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(DATE_SUB(now(), INTERVAL 1 MONTH)) AND idstatus = 3");
+        $money_last_month = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(DATE_SUB(now(), INTERVAL 1 MONTH)) AND idstatus = 3 AND agentId = $b");
         while ($row_last_month = mysqli_fetch_array($money_last_month)) {
             $total += $row_last_month['total'];
         }
     }else if($a == 4){
-        $money_today = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE DATE(time) = DATE(now()) AND idstatus = 3");
+        $money_today = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE DATE(time) = DATE(now()) AND idstatus = 3 AND agentId = $b");
         while ($row_today = mysqli_fetch_array($money_today)) {
             $total += $row_today['total'];
         }
@@ -122,9 +122,9 @@ function getTotalWeek($conn,$a,$b){
     return $total;
 }
 // GET TOTAL MONTH IN YEAR
-function getTotalMonth($conn, $a) {
+function getTotalMonth($conn, $a, $b) {
     $total = 0;
-    $moneyMonth= mysqli_query($conn, "SELECT * FROM tbl_cart WHERE MONTH(time) = $a AND idstatus = 3");
+    $moneyMonth= mysqli_query($conn, "SELECT * FROM tbl_cart WHERE MONTH(time) = $a AND idstatus = 3 AND agentId = $b");
     while ($row = mysqli_fetch_array($moneyMonth)) {
         $total += $row['total'];
     }
@@ -160,7 +160,7 @@ function countListInvoice($conn,$a){
     return mysqli_num_rows($countListInvoice);
 }
 function getProdAgent($conn,$a){
-    $countProdAgent = mysqli_query($conn,"SELECT * FROM tbl_warehouse WHERE agentId = $a");
+    $countProdAgent = mysqli_query($conn,"SELECT * FROM tbl_versions");
     return mysqli_num_rows($countProdAgent);
 }
 function getTotalAgent($conn,$a){
@@ -168,15 +168,6 @@ function getTotalAgent($conn,$a){
     $TotalAgent = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a");
     while($item = mysqli_fetch_assoc($TotalAgent)){
         $total += $item['total'];
-    }
-    return $total;
-}
-
-function getTotalFollowMonthInvoice($conn,$a,$b){
-    $total = 0;
-    $moneyMonth= mysqli_query($conn, "SELECT * FROM tbl_cart WHERE MONTH(time) = $a AND agentId = $b");
-    while ($row = mysqli_fetch_array($moneyMonth)) {
-        $total += $row['total'];
     }
     return $total;
 }

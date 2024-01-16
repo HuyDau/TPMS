@@ -20,23 +20,23 @@
                     <div class="card-box" style="height: 470px;">
                         <i class="fa fa-info-circle text-muted float-right" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="More Info"></i>
                         <h4 class="mt-0 font-16">Revenue</h4>
-                        <h2 class="text-primary my-4 text-center"><span style="font-size: 23px;"><?= number_format(getTotal($conn, 0), 0, "", ".") ?> đ</span></h2>
+                        <h2 class="text-primary my-4 text-center"><span style="font-size: 23px;"><?= number_format(getTotal($conn, 0,$_SESSION['admin_id']), 0, "", ".") ?> đ</span></h2>
                         <div class="row mb-4">
                             <div class="col-12">
                                 <p class="text-muted mb-1">This Month</p>
-                                <h3 class="mt-0 font-20"><?= number_format(getTotal($conn, 1), 0, "", ".") ?> đ<?php if ((getTotal($conn, 1) / 10 - 100) < 0) {
-                                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 1) / 10  - 100) . "%" . '</small>';
+                                <h3 class="mt-0 font-20"><?= number_format(getTotal($conn, 1,$_SESSION['admin_id']), 0, "", ".") ?> đ<?php if ((getTotal($conn, 1,$_SESSION['admin_id']) / 10 - 100) < 0) {
+                                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
                                                                                                             } else {
-                                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 1) / 10  - 100) . "%" . '</small>';
+                                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
                                                                                                             } ?></h3>
                             </div>
 
                             <div class="col-12">
                                 <p class="text-muted mb-1">Last Month</p>
-                                <h3 class="mt-0 font-20"><?= number_format(getTotal($conn, 2), 0, "", ".") ?> đ<?php if ((getTotal($conn, 2) / 10  - 100) < 0) {
-                                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 2) / 10  - 100) . "%" . '</small>';
+                                <h3 class="mt-0 font-20"><?= number_format(getTotal($conn, 2,$_SESSION['admin_id']), 0, "", ".") ?> đ<?php if ((getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) < 0) {
+                                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
                                                                                                             } else {
-                                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 2) / 10  - 100) . "%" . '</small>';
+                                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
                                                                                                             } ?></h3>
                             </div>
                         </div>
@@ -92,16 +92,16 @@
                             </div>
                             <div class="col-9">
                                 <div class="text-center">
-                                    <h3 class="text-dark my-1"><span style="font-size: 20px;"><?= number_format(getTotal($conn, 1), 0, "", ".") ?> đ</span></h3>
+                                    <h3 class="text-dark my-1"><span style="font-size: 20px;"><?= number_format(getTotal($conn, 1,$_SESSION['admin_id']), 0, "", ".") ?> đ</span></h3>
                                     <p class="text-muted mb-1 text-truncate">Income status</p>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-3">
-                            <h6 class="text-uppercase">Target (1.000.000.000) <span class="float-right"><?= getTotal($conn, 1) / 1000000000 * 100 ?>%</span></h6>
+                            <h6 class="text-uppercase">Target (1.000.000.000) <span class="float-right"><?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>%</span></h6>
                             <div class="progress progress-sm m-0">
-                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="<?= getTotal($conn, 1) / 1000000000 * 100 ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getTotal($conn, 1) / 1000000000 * 100 ?>%">
-                                    <span class="sr-only"><?= getTotal($conn, 1) / 1000000000 * 100 ?>% Complete</span>
+                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="<?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>%">
+                                    <span class="sr-only"><?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>% Complete</span>
                                 </div>
                             </div>
                         </div>
@@ -126,13 +126,13 @@
                                         <div class="col-md-4">
                                             <p class="text-muted mb-0 mt-3">Today's Earning</p>
                                             <h2 class="font-weight-normal mb-3">
-                                                <span style="font-size: 20px;"><?= number_format(getTotal($conn, 4), 0, "", ".") ?>đ</span>
+                                                <span style="font-size: 20px;"><?= number_format(getTotal($conn, 4,$_SESSION['admin_id']), 0, "", ".") ?>đ</span>
                                             </h2>
                                         </div>
                                         <div class="col-md-4">
                                             <p class="text-muted mb-0 mt-3">Current Week</p>
                                             <h2 class="font-weight-normal mb-3">
-                                                <span style="font-size: 20px;"><?= number_format(getTWeek($conn, 1), 0, "", ".") ?>đ</span>
+                                                <span style="font-size: 20px;"><?= number_format(getTWeek($conn, 1,), 0, "", ".") ?>đ</span>
                                             </h2>
                                         </div>
                                         <div class="col-md-4">
