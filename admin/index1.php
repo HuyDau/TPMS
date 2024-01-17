@@ -50,18 +50,18 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
         colors:["#f0643b"],
         series:[{name:"Growth",data:
         [
-            <?=getTotalMonth($conn,1,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,2,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,3,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,4,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,5,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,6,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,7,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,8,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,9,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,10,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,11,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,12,$_SESSION['admin_id'])?>,
+            <?=getTotalMonthAllSystem($conn,1)?>,
+            <?=getTotalMonthAllSystem($conn,2)?>,
+            <?=getTotalMonthAllSystem($conn,3)?>,
+            <?=getTotalMonthAllSystem($conn,4)?>,
+            <?=getTotalMonthAllSystem($conn,5)?>,
+            <?=getTotalMonthAllSystem($conn,6)?>,
+            <?=getTotalMonthAllSystem($conn,7)?>,
+            <?=getTotalMonthAllSystem($conn,8)?>,
+            <?=getTotalMonthAllSystem($conn,9)?>,
+            <?=getTotalMonthAllSystem($conn,10)?>,
+            <?=getTotalMonthAllSystem($conn,11)?>,
+            <?=getTotalMonthAllSystem($conn,12)?>,
         ]
         }],
         grid:{borderColor:"#f1f3fa",padding:{right:0,bottom:0,left:0}},
@@ -105,7 +105,7 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
                 title:{
                     
                     text:"This Week"}},
-                yaxis:{title:{text:"Sales Analytics"},min:50,max:1000},
+                yaxis:{title:{text:"Sales Analytics"},min:0,max:1000000000},
                 legend:{position:"top",horizontalAlign:"right",floating:!0,offsetY:-25,offsetX:-5},
                 responsive:[{breakpoint:600,options:{chart:{toolbar:{show:!1}},legend:{show:!1}}}]};
                 (chart=new ApexCharts(document.querySelector("#apex-line-1"),options)).render();var chart;

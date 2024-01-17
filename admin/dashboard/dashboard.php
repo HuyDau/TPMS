@@ -31,10 +31,10 @@
 
                                     <div class="mt-1">
                                         <div class="float-left" dir="ltr">
-                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#f05050 " data-bgcolor="#48525e" value="<?= $count_customer ?>" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
+                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#f05050 " data-bgcolor="#48525e" value="<?=getCountCustomer($conn)?>" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
                                         </div>
                                         <div class="text-right">
-                                            <h2 class="mt-3 pt-1 mb-1"> <?= $count_customer ?> </h2>
+                                            <h2 class="mt-3 pt-1 mb-1"> <?=getCountCustomer($conn)?> </h2>
                                             <p class="text-muted mb-0">ALL</p>
                                         </div>
                                         <div class="clearfix"></div>
@@ -66,6 +66,34 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                        ?>
+                            <div class="<?php if (isset($_SESSION['permission']) && $_SESSION['permission'] !=1){echo 'col-xl-4';}else{echo 'col-xl-3';} ?> col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal"></i>
+                                        </a>
+                                    </div>
+
+                                    <h4 class="header-title mt-0 mb-3">Online Orders</h4>
+
+                                    <div class="mt-1">
+                                        <div class="float-left" dir="ltr">
+                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#23b397" data-bgcolor="#48525e" value="<?=countOnlineOrder($conn)?>" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
+                                        </div>
+                                        <div class="text-right">
+                                            <h2 class="mt-3 pt-1 mb-1">  <?=countOnlineOrder($conn)?></h2>
+                                            <p class="text-muted mb-0">All Orders</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                ?>
                 <div class="<?php if (isset($_SESSION['permission']) && $_SESSION['permission'] !=1){echo 'col-xl-4';}else{echo 'col-xl-3';} ?> col-md-6">
                     <div class="card-box">
                         <div class="dropdown float-right">
@@ -74,7 +102,7 @@
                             </a>
                         </div>
 
-                        <h4 class="header-title mt-0 mb-3">Online Orders</h4>
+                        <h4 class="header-title mt-0 mb-3">Orders</h4>
 
                         <div class="mt-1">
                             <div class="float-left" dir="ltr">
@@ -88,29 +116,85 @@
                         </div>
                     </div>
                 </div>
-                <div class="<?php if (isset($_SESSION['permission']) && $_SESSION['permission'] !=1){echo 'col-xl-4';}else{echo 'col-xl-3';} ?> col-md-6">
-                    <div class="card-box">
-                        <div class="dropdown float-right">
-                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                <i class="mdi mdi-dots-horizontal"></i>
-                            </a>
+                <?php
+                    if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                        ?>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal"></i>
+                                        </a>
 
-                        </div>
+                                    </div>
 
-                        <h4 class="header-title mt-0 mb-3">Revenue</h4>
+                                    <h4 class="header-title mt-0 mb-3">Online Order Revenue This Month</h4>
 
-                        <div class="mt-1">
-                            <div class="float-left" dir="ltr">
-                                <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#ffbd4a" data-bgcolor="#48525e" value="35" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
+                                    <div class="mt-1">
+                                        <div class="float-left" dir="ltr">
+                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#ffbd4a" data-bgcolor="#48525e" value="35" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
+                                        </div>
+                                        <div class="text-right">
+                                            <h3 class="mt-3 pt-1 mb-1"> <?=number_format(getTotalOrderThisMonth($conn,1),0,"",".")?>  đ</h3>
+                                            <p class="text-muted mb-0">Revenue</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text-right">
-                                <h2 class="mt-3 pt-1 mb-1"> <?=number_format(getTotalAgent($conn,$_SESSION['admin_id']),0,"",".")?>  đ</h2>
-                                <p class="text-muted mb-0">Revenue</p>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <h4 class="header-title mt-0 mb-3">Offline Order Revenue This Month</h4>
+
+                                    <div class="mt-1">
+                                        <div class="float-left" dir="ltr">
+                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#ffbd4a" data-bgcolor="#48525e" value="35" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
+                                        </div>
+                                        <div class="text-right">
+                                            <h3 class="mt-3 pt-1 mb-1"> <?=number_format(getTotalOrderThisMonth($conn,2),0,"",".")?>  đ</h3>
+                                            <p class="text-muted mb-0">Revenue</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+                        <?php
+                    }else{
+                        ?>
+                            <div class="<?php if (isset($_SESSION['permission']) && $_SESSION['permission'] !=1){echo 'col-xl-4';}else{echo 'col-xl-3';} ?> col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <h4 class="header-title mt-0 mb-3">Revenue</h4>
+
+                                    <div class="mt-1">
+                                        <div class="float-left" dir="ltr">
+                                            <input data-plugin="knob" data-width="64" data-height="64" data-fgcolor="#ffbd4a" data-bgcolor="#48525e" value="35" data-skin="tron" data-angleoffset="180" data-readonly="true" data-thickness=".15">
+                                        </div>
+                                        <div class="text-right">
+                                            <h3 class="mt-3 pt-1 mb-1"> <?=number_format(getTotalAgent($conn,$_SESSION['admin_id']),0,"",".")?>  đ</h3>
+                                            <p class="text-muted mb-0">Revenue</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                ?>
+                
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -120,38 +204,92 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4">
-                    <div class="card-box">
-                        
-                        <h4 class="header-title">Earning Reports</h4>
-                        <p class="text-muted"></p><?=date("M-Y")?> - Showing Data</p>
-                        <h2 class="mb-4"><i class="mdi mdi-currency-usd text-primary"></i><?=number_format(getTotal($conn, 0,$_SESSION['admin_id']),0,"",".")?>đ</h2>
+                <?php
+                    if(isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1){
+                        ?>
+                            <div class="col-xl-4">
+                                <div class="card-box">
+                                    
+                                    <h4 class="header-title">Earning Reports</h4>
+                                    <p class="text-muted"></p><?=date("M-Y")?> - Showing Data</p>
+                                    <h2 class="mb-4"><i class="mdi mdi-currency-usd text-primary"></i><?=number_format(getTotalRevenue($conn, 1),0,"",".")?>đ</h2>
 
-                        <div class="row mb-4">
-                            <div class="col-6">
-                                <p class="text-muted mb-1">This Month</p>
-                                <h3 class="mt-0 font-20"><?=number_format(getTotal($conn, 1,$_SESSION['admin_id']),0,"",".")?>đ<?php if ((getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) < 0) {
-                                                                                            echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
-                                                                                        } else {
-                                                                                            echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
-                                                                                        } ?></h3>
-                            </div>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <p class="text-muted mb-1">This Month (1.000.000.000)</p>
+                                            <h3 class="mt-0 font-20"><?=number_format(getTotalRevenue($conn, 1),0,"",".")?>đ</h3>
+                                            <?php
+                                                if((getTotalRevenue($conn, 1) / 1000000000  * 100) > 100){
+                                                    ?><small class="badge badge-light-success font-13"> <?=(getTotalRevenue($conn, 1) / 1000000000  * 100) ?>%</small><?php
+                                                }else{
+                                                    ?><small class="badge badge-light-danger font-13"> <?=(getTotalRevenue($conn, 1) / 1000000000  * 100) ?>%</small><?php
+                                                }
+                                            ?>
+                                        </div>
 
-                            <div class="col-6">
-                                <p class="text-muted mb-1">Last Month</p>
-                                <h3 class="mt-0 font-20"><?=number_format(getTotal($conn, 2,$_SESSION['admin_id']),0,"",".")?>đ<?php if ((getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) < 0) {
-                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 2,$_SESSION['admin_id'])/ 10  - 100) . "%" . '</small>';
-                                                                                            } else {
-                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 2,$_SESSION['admin_id'])/ 10  - 100) . "%" . '</small>';
-                                                                                            } ?></h3>
-                            </div>
-                        </div>
-                        <div class="mt-5">
-                            <span data-plugin="peity-bar" data-colors="#f7b84b,#ebeff2" data-width="100%" data-height="80">5,3,9,6,5,9,7,3,5,2,9,7,2,1,3,5,2,9,7,2,5,3,9,6,5,9,7</span>
-                        </div>
+                                        <div class="col-6">
+                                            <p class="text-muted mb-1">Last Month (1.000.000.000)</p>
+                                            <h3 class="mt-0 font-20"><?=number_format(getTotalRevenue($conn, 2),0,"",".")?>đ</h3>
+                                            <?php
+                                                if((getTotalRevenue($conn, 2) / 1000000000  * 100) > 100){
+                                                    ?><small class="badge badge-light-success font-13"> <?=(getTotalRevenue($conn, 2) / 1000000000  * 100) ?>%</small><?php
+                                                }else{
+                                                    ?><small class="badge badge-light-danger font-13"> <?=(getTotalRevenue($conn, 2) / 1000000000  * 100) ?>%</small><?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <span data-plugin="peity-bar" data-colors="#f7b84b,#ebeff2" data-width="100%" data-height="80">5,3,9,6,5,9,7,3,5,2,9,7,2,1,3,5,2,9,7,2,5,3,9,6,5,9,7</span>
+                                    </div>
 
-                    </div>
-                </div> 
+                                </div>
+                            </div> 
+                        <?php
+                    }else{
+                        ?>
+                            <div class="col-xl-4">
+                                <div class="card-box">
+                                    
+                                    <h4 class="header-title">Earning Reports</h4>
+                                    <p class="text-muted"></p><?=date("M-Y")?> - Showing Data</p>
+                                    <h2 class="mb-4"><i class="mdi mdi-currency-usd text-primary"></i><?=number_format(getTotal($conn, 0,$_SESSION['admin_id']),0,"",".")?>đ</h2>
+
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <p class="text-muted mb-1">This Month (1.000.000.000)</p>
+                                            <h3 class="mt-0 font-20"><?=number_format(getTotal($conn, 1,$_SESSION['admin_id']),0,"",".")?>đ</h3>
+                                            <?php
+                                                if((getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000  * 100) > 100){
+                                                    ?><small class="badge badge-light-success font-13"> <?=(getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000  * 100) ?>%</small><?php
+                                                }else{
+                                                    ?><small class="badge badge-light-danger font-13"> <?=(getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000  * 100) ?>%</small><?php
+                                                }
+                                            ?>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <p class="text-muted mb-1">Last Month (1.000.000.000)</p>
+                                            <h3 class="mt-0 font-20"><?=number_format(getTotal($conn, 2,$_SESSION['admin_id']),0,"",".")?>đ</h3>
+                                            <?php
+                                                if((getTotal($conn, 2,$_SESSION['admin_id'])/ 1000000000  * 100) > 100){
+                                                    ?><small class="badge badge-light-success font-13"> <?=(getTotal($conn, 2,$_SESSION['admin_id']) / 1000000000  * 100) ?>%</small><?php
+                                                }else{
+                                                    ?><small class="badge badge-light-danger font-13"> <?=(getTotal($conn, 2,$_SESSION['admin_id'])/ 1000000000  * 100) ?>%</small><?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <span data-plugin="peity-bar" data-colors="#f7b84b,#ebeff2" data-width="100%" data-height="80">5,3,9,6,5,9,7,3,5,2,9,7,2,1,3,5,2,9,7,2,5,3,9,6,5,9,7</span>
+                                    </div>
+
+                                </div>
+                            </div> 
+                        <?php
+                    }
+                ?>
+                
                 <div class="col-xl-8">
                     <div class="card-box">
                         <div class="dropdown float-right">
@@ -211,5 +349,21 @@
             </div>
         </div> 
 
-    </div> 
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    2023 &copy; Design by <a href="">Le Huy Dau</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-md-right footer-links d-none d-sm-block">
+                        <a href="javascript:void(0);">About Us</a>
+                        <a href="javascript:void(0);">Help</a>
+                        <a href="javascript:void(0);">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
 </div>

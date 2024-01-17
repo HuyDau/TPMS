@@ -795,7 +795,8 @@ if (isset($_GET['like'])) {
                                             <div class="info">
                                                 <p>
                                                     <strong class="name"><?= $itemRepComment['name'] ?></strong>
-                                                    <i class="icon-checked"></i> <span>QTV TPMS</span>
+                                                    <?php if($itemRepComment['permission'] == 1){?><i class="icon-checked"></i> <span>QTV TPMS</span><?php }?>
+                                                    
                                                 </p>
                                                 <p><label><i>1 giờ trước</i></label></p>
                                                 <div class="content">

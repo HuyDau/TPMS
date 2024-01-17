@@ -40,10 +40,10 @@
             </div>
 
             <div class="search-box">
-                <form method="get" action="/tim-kiem" onsubmit="return submitSearch(this);" enctype="application/x-www-form-urlencoded">
+                <form method="POST" action="san-pham.php" onsubmit="return submitSearch(this);" enctype="application/x-www-form-urlencoded">
                     <div class="border">
-                        <input type="text" id="kwd" name="kwd" placeholder="Hôm nay bạn cần tìm gì?" />
-                        <button type="submit" class="search"><i class="icon-search"></i></button>
+                        <input type="text" id="kwd" name="dataSearch" placeholder="Hôm nay bạn cần tìm gì?" />
+                        <button type="submit" name="searchData" class="search"><i class="icon-search"></i></button>
                     </div>
                 </form>
             </div>

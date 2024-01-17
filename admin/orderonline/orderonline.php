@@ -33,10 +33,27 @@ if (isset($_POST['all_prd'])) {
 if(isset($_GET['action']) && $_GET['id']){
     if($_GET['action'] == "confirm"){
         $cartId = $_GET['id'];
-        $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='2' WHERE id = $cartId");
-        if($update){
-            echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
+        $checkProd = mysqli_query($conn,"SELECT * FROM tbl_detailcart WHERE cartId = $cartId");
+        while($item = mysqli_fetch_assoc($checkProd)){
+            $prodId = $item['versionId'];
+            $quantityProdCart = $item['quantity'];
+            $sqlQuantityProd = mysqli_query($conn,"SELECT * FROM tbl_versions WHERE idVersion = '$prodId'");
+            $itemVersion = mysqli_fetch_assoc($sqlQuantityProd);
+            $quantityWareHouse = $itemVersion['quantity'];
+            if( $quantityProdCart <= $quantityWareHouse){
+                $newQuantity = $quantityWareHouse - $quantityProdCart;
+                $updateVersion = mysqli_query($conn,"UPDATE tbl_versions SET quantity = '$newQuantity' WHERE idVersion = '$prodId'");
+                $_SESSION['success'] = true;
+            }
         }
+        if(isset($_SESSION['success']) && $_SESSION['success'] = true){
+            $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='2' WHERE id = $cartId");
+            if($update){
+                unset($_SESSION['success']);
+                echo "<script>window.alert('Update Status Successful !');window.location.href = 'orderonline.php';</script>";
+            }
+        }
+        
     }else if($_GET['action'] == "complete"){
         $cartId = $_GET['id'];
         $update = mysqli_query($conn,"UPDATE `tbl_cart` SET `idstatus`='3' WHERE id = $cartId");

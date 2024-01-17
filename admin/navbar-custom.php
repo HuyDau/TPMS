@@ -128,7 +128,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
 
-                <a href="logout.php" class="dropdown-item notify-item">
+                <a href="http://localhost/TPMS/admin/logout.php" class="dropdown-item notify-item">
                     <i class="fe-log-out"></i>
                     <span>Logout</span>
                 </a>

@@ -10,6 +10,11 @@ function getBrands($conn, $a){
     $getBrand = mysqli_query($conn,"SELECT * FROM tbl_brands WHERE categoryId = $a");
     return $getBrand;
 }
+// GET COUNT CUSTOMER
+function getCountCustomer($conn){
+    $countCustomer = mysqli_query($conn,"SELECT * FROM tbl_customer");
+    return mysqli_num_rows($countCustomer);
+}
 // GET ONLINE ORDER
 function getOnlineOrder($conn,$a){
     if($a == 0){
@@ -28,16 +33,10 @@ function getOnlineOrder($conn,$a){
 
 // GET ORDER OFFLINE
 function getOfflineOrder($conn,$a){
-    if($a == 0){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2 ");
-    }else if($a == 1){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
-    }else if($a == 2){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
-    }else if($a == 3){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
-    }else if($a == 4){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+    if($a == 1){
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2");
+    }else{
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2 AND agentId = $a");
     }
     return $sqlOnlineOrder;
 }
@@ -130,15 +129,7 @@ function getTotalMonth($conn, $a, $b) {
     }
     return $total;
 }
-// GET COUNT ORDER ONLINE
-function getCountOrderOnline($conn,$a){
-    $count = 0;
-    if($a == 0){
-        $slq_car = mysqli_query($conn,"SELECT * FROM tbl_cart");
-        $count =  mysqli_num_rows($slq_car);
-    }
-    return $count;
-}
+
 
 // GET DETAIL PRODUCT
 function getDetailProduct($conn, $a){
@@ -156,8 +147,17 @@ function getListProductInvoice($conn, $a) {
 /*==============================DASHBOARD============================== */
 // COUNT LIST INVOICE 
 function countListInvoice($conn,$a){
-    $countListInvoice = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a");
+    if($a == 1){
+        $countListInvoice = mysqli_query($conn,"SELECT * FROM `tbl_cart`");
+    }else{
+        $countListInvoice = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a");
+    }
+    
     return mysqli_num_rows($countListInvoice);
+}
+function countOnlineOrder($conn){
+    $countOnlineOrder = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE idtype =1");
+    return mysqli_num_rows($countOnlineOrder);
 }
 function getProdAgent($conn,$a){
     $countProdAgent = mysqli_query($conn,"SELECT * FROM tbl_versions");
@@ -165,9 +165,66 @@ function getProdAgent($conn,$a){
 }
 function getTotalAgent($conn,$a){
     $total = 0;
-    $TotalAgent = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a");
-    while($item = mysqli_fetch_assoc($TotalAgent)){
-        $total += $item['total'];
+    $TotalAgent = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE agentId = $a AND idstatus = 3");
+        while($item = mysqli_fetch_assoc($TotalAgent)){
+            $total += $item['total'];
+        }
+    return $total;
+}
+
+// ALL SYSTEM
+function getTotalRevenue($conn, $a){
+    $total = 0;
+    if($a == 0){
+        $getTotalRevenue = mysqli_query($conn,"SELECT * FROM tbl_cart WHERE idstatus = 3");
+        while($item = mysqli_fetch_assoc($getTotalRevenue)){
+            $total += $item['total'];
+        }
+    }else if($a == 1){ //GET TOTAL THIS MONTH
+        $getTotalRevenue = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(now()) AND idstatus = 3");
+        while ($row_month = mysqli_fetch_array($getTotalRevenue)) {
+            $total += $row_month['total'];
+        }
+    }else if($a == 2){ //GET TOTAL LAST MONTH
+        $getTotalRevenue = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(DATE_SUB(now(), INTERVAL 1 MONTH)) AND idstatus = 3 ");
+        while ($row_last_month = mysqli_fetch_array($getTotalRevenue)) {
+            $total += $row_last_month['total'];
+        }
+    }else if($a == 3){
+        $money_today = mysqli_query($conn, "SELECT * FROM `tbl_cart` WHERE DATE(time) = DATE(now()) AND idstatus = 3");
+        while ($row_today = mysqli_fetch_array($money_today)) {
+            $total += $row_today['total'];
+        }
+    }
+    return $total;
+}
+function getCountTotalOrder($conn, $a){
+    $getCountTotalOrder = mysqli_query($conn,"SELECT * FROM tbl_cart WHERE idtype = $a");
+    return mysqli_num_rows($getCountTotalOrder);
+}
+function getTotalMonthAllSystem($conn, $a) {
+    $total = 0;
+    $moneyMonth= mysqli_query($conn, "SELECT * FROM tbl_cart WHERE MONTH(time) = $a AND idstatus = 3");
+    while ($row = mysqli_fetch_array($moneyMonth)) {
+        $total += $row['total'];
+    }
+    return $total;
+}
+
+function getTotalOrderThisMonth($conn,$a){
+    $total = 0;
+    $TotalAgent = mysqli_query($conn,"SELECT * FROM `tbl_cart` WHERE MONTH(time) = MONTH(now()) AND idtype = $a AND idstatus = 3");
+        while($item = mysqli_fetch_assoc($TotalAgent)){
+            $total += $item['total'];
+        }
+    return $total;
+}
+
+function getTotalMonthInYearAllSystem($conn,$a){
+    $total = 0;
+    $moneyMonth= mysqli_query($conn, "SELECT * FROM tbl_cart WHERE MONTH(time) = $a AND idstatus = 3 ");
+    while ($row = mysqli_fetch_array($moneyMonth)) {
+        $total += $row['total'];
     }
     return $total;
 }

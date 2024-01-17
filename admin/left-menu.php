@@ -3,6 +3,7 @@
 
         <div id="sidebar-menu">
             <ul class="metismenu" id="side-menu">
+                <!-- Home -->
                 <li>
                     <a href="javascript: void(0);">
                         <i class="la la-dashboard"></i>
@@ -25,6 +26,7 @@
                         
                     </ul>
                 </li>
+                <!-- WEB -->
                 <?php
                 if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
                 ?>
@@ -49,6 +51,7 @@
                 <?php
                 }
                 ?>
+                <!-- AGENT -->
                 <?php
                 if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
                 ?>
@@ -70,7 +73,11 @@
                 <?php
                 }
                 ?>
-                <li>
+                <!-- PRODUCT -->
+                <?php
+                if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1 || $_SESSION['permission'] ==  2) {
+                ?>
+                    <li>
                     <a href="javascript: void(0);">
                         <i class="la la-cube"></i>
                         <span> PRODUCTS </span>
@@ -92,7 +99,49 @@
                     </ul>
                 </li>
                 <?php
+                }
+                ?>
+                <!-- CUSTOMER -->
+                <?php
                 if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                ?>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="la la-user"></i>
+                            <span> Customer </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="http://localhost/TPMS/admin/customer/customer.php">Customer</a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php
+                }
+                ?>
+                <!-- USER -->
+                <?php
+                if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
+                ?>
+                    <li>
+                        <a href="javascript: void(0);">
+                            <i class="la la-user"></i>
+                            <span> User </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="http://localhost/TPMS/admin/user/user.php">User</a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php
+                }
+                ?>
+                <!-- COMMENT -->
+                <?php
+                if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1 || $_SESSION['permission'] ==  3) {
                 ?>
                     <li>
                         <a href="javascript: void(0);">
@@ -109,7 +158,11 @@
                 <?php
                 }
                 ?>
-                <li>
+                <!-- ORDER -->
+                <?php
+                if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1 || $_SESSION['permission'] ==  2) {
+                ?>
+                    <li>
                     <a href="javascript: void(0);">
                         <i class=" fab fa-opencart"></i>
                         <span> Order </span>
@@ -124,6 +177,10 @@
                         </li>
                     </ul>
                 </li>
+                <?php
+                }
+                ?>
+                
                 <?php
                 if (isset($_SESSION['permission']) && $_SESSION['permission'] ==  1) {
                 ?>

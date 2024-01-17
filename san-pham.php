@@ -351,12 +351,17 @@ include 'handle.php';
                 </h1>
                 <div class="col-content lts-product">
                     <?php
-                        if(isset($_GET['idBrand'])){
-                            $query = getListProduct($conn,$_GET['idCat'],$_GET['idBrand']);
-                        }else{
-                            $query = getListProduct($conn,$_GET['idCat'],0);
-                        }
                         
+                        if(isset($_POST['searchData']) && !empty($_POST['dataSearch'])){
+                            $dataSearch = $_POST['dataSearch'];
+                            $query = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id WHERE tbl_products.isActive = 2 AND versionName LIKE '%$dataSearch%'");
+                        }else{
+                            if(isset($_GET['idBrand'])){
+                                $query = getListProduct($conn,$_GET['idCat'],$_GET['idBrand']);
+                            }else{
+                                $query = getListProduct($conn,$_GET['idCat'],0);
+                            }
+                        }
                         while($itemProduct = mysqli_fetch_assoc($query) ){
                             ?>
                                 <div class="item">

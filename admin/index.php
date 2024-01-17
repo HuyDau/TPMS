@@ -19,73 +19,7 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
 //     $total += $row['total'];
 // }
 
-// $money_dec = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 12 AND id_status = 3");
-// $total_dec = 0;
-// while ($row_dec = mysqli_fetch_array($money_dec)) {
-//     $total_dec += $row_dec['total'];
-// }
 
-// $money_nov = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 11 AND id_status = 3");
-// $total_nov = 0;
-// while ($row_nov = mysqli_fetch_array($money_nov)) {
-//     $total_nov += $row_nov['total'];
-// }
-
-// $money_oct = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 10 AND id_status = 3");
-// $total_oct = 0;
-// while ($row_oct = mysqli_fetch_array($money_oct)) {
-//     $total_oct += $row_oct['total'];
-// }
-
-// $money_sep = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 9 AND id_status = 3");
-// $total_sep = 0;
-// while ($row_sep = mysqli_fetch_array($money_sep)) {
-//     $total_sep += $row_sep['total'];
-// }
-
-// $money_aug = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 8 AND id_status = 3");
-// $total_aug = 0;
-// while ($row_aug = mysqli_fetch_array($money_aug)) {
-//     $total_aug += $row_aug['total'];
-// }
-
-// $money_jul = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 7 AND id_status = 3");
-// $total_jul = 0;
-// while ($row_jul = mysqli_fetch_array($money_jul)) {
-//     $total_jul += $row_jul['total'];
-// }
-
-// $money_jun = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 6 AND id_status = 3");
-// $total_jun = 0;
-// while ($row_jun = mysqli_fetch_array($money_jun)) {
-//     $total_jun += $row_jun['total'];
-// }
-
-// $money_may = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 5 AND id_status = 3");
-// $total_may = 0;
-// while ($row_may = mysqli_fetch_array($money_may)) {
-//     $total_may += $row_may['total'];
-// }
-// $money_apr = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 4 AND id_status = 3");
-// $total_apr = 0;
-// while ($row_apr = mysqli_fetch_array($money_apr)) {
-//     $total_apr += $row_apr['total'];
-// }
-// $money_mar = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 3 AND id_status = 3");
-// $total_mar = 0;
-// while ($row_mar = mysqli_fetch_array($money_mar)) {
-//     $total_mar += $row_mar['total'];
-// }
-// $money_feb = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 2 AND id_status = 3");
-// $total_feb = 0;
-// while ($row_feb = mysqli_fetch_array($money_feb)) {
-//     $total_feb += $row_feb['total'];
-// }
-// $money_jan = mysqli_query($conn, "SELECT * FROM cart WHERE MONTH(time) = 1 AND id_status = 3");
-// $total_jan = 0;
-// while ($row_jan = mysqli_fetch_array($money_jan)) {
-//     $total_jan += $row_jan['total'];
-// }
 
 // $money_month = mysqli_query($conn, "SELECT * FROM `cart` WHERE MONTH(time) = MONTH(now()) AND id_status = 3");
 // $total_month = 0;
@@ -148,18 +82,40 @@ if (!isset($_SESSION['admin_id']) && !isset($_SESSION['permission']) && $_SESSIO
         datasets:[{
           label:'Total revenue',
           data:[
-            <?=getTotalMonth($conn,1,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,2,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,3,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,4,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,5,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,6,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,7,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,8,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,9,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,10,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,11,$_SESSION['admin_id'])?>,
-            <?=getTotalMonth($conn,12,$_SESSION['admin_id'])?>,
+            <?php
+              if(isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1){
+                ?>
+                  <?=getTotalMonthInYearAllSystem($conn,1)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,2)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,3)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,4)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,5)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,6)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,7)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,8)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,9)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,10)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,11)?>,
+                  <?=getTotalMonthInYearAllSystem($conn,12)?>,
+                <?php
+              }else{
+                ?>
+                  <?=getTotalMonth($conn,1,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,2,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,3,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,4,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,5,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,6,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,7,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,8,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,9,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,10,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,11,$_SESSION['admin_id'])?>,
+                  <?=getTotalMonth($conn,12,$_SESSION['admin_id'])?>,
+                <?php
+              }
+            ?>
+            
           ],
           backgroundColor:[
             'rgba(255, 99, 132, 0.6)',

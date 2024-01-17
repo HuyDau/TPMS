@@ -17,28 +17,34 @@
             </div>
             <div class="row">
                 <div class="col-xl-3">
-                    <div class="card-box" style="height: 470px;">
+                    <div class="card-box" style="height: 100%;">
                         <i class="fa fa-info-circle text-muted float-right" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="More Info"></i>
-                        <h4 class="mt-0 font-16">Revenue</h4>
-                        <h2 class="text-primary my-4 text-center"><span style="font-size: 23px;"><?= number_format(getTotal($conn, 0,$_SESSION['admin_id']), 0, "", ".") ?> đ</span></h2>
+                        <h4 class="mt-0 font-16">Total Revenue</h4>
+                        <h2 class="text-primary my-4 text-center"><span style="font-size: 23px;"><?= number_format(getTotalRevenue($conn, 0), 0, "", ".") ?> đ</span></h2>
                         <div class="row mb-4">
                             <div class="col-12">
-                                <p class="text-muted mb-1">This Month</p>
-                                <h3 class="mt-0 font-20"><?= number_format(getTotal($conn, 1,$_SESSION['admin_id']), 0, "", ".") ?> đ<?php if ((getTotal($conn, 1,$_SESSION['admin_id']) / 10 - 100) < 0) {
-                                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
-                                                                                                            } else {
-                                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 1,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
-                                                                                                            } ?></h3>
+                                <p class="text-muted mb-1">This Month (1.000.000.000)</p>
+                                <h3 class="mt-0 font-20"><?= number_format(getTotalRevenue($conn, 1), 0, "", ".") ?> đ</h3>
+                                <?php 
+                                    if ((getTotalRevenue($conn,1) / 1000000000  * 100) < 100) {
+                                        echo '<small class="badge badge-light-danger font-13">' . (getTotalRevenue($conn, 1) / 1000000000  * 100) . "%" . '</small>';
+                                    } else {
+                                        echo '<small class="badge badge-light-success font-13">' . (getTotalRevenue($conn, 1) / 1000000000 * 100) . "%" . '</small>';
+                                    } 
+                                ?>
+                            </div>
+                            <div class="col-12">
+                                <p class="text-muted mb-1">Last Month (1.000.000.000)</p>
+                                <h3 class="mt-0 font-20"><?= number_format(getTotalRevenue($conn, 2), 0, "", ".") ?> đ</h3>
+                                <?php 
+                                    if ((getTotalRevenue($conn, 2) / 1000000000  * 100) < 100) {
+                                        echo '<small class="badge badge-light-danger font-13">' . (getTotalRevenue($conn, 2) / 1000000000  * 100) . "%" . '</small>';
+                                    } else {
+                                        echo '<small class="badge badge-light-success font-13">' . (getTotalRevenue($conn, 2) / 1000000000  * 100) . "%" . '</small>';
+                                    } 
+                                ?>
                             </div>
 
-                            <div class="col-12">
-                                <p class="text-muted mb-1">Last Month</p>
-                                <h3 class="mt-0 font-20"><?= number_format(getTotal($conn, 2,$_SESSION['admin_id']), 0, "", ".") ?> đ<?php if ((getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) < 0) {
-                                                                                                                echo '<small class="badge badge-light-danger font-13">' . (getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
-                                                                                                            } else {
-                                                                                                                echo '<small class="badge badge-light-success font-13">' . (getTotal($conn, 2,$_SESSION['admin_id']) / 10  - 100) . "%" . '</small>';
-                                                                                                            } ?></h3>
-                            </div>
                         </div>
                         <div class="mt-5">
                             <span data-plugin="peity-line" data-fill="#56c2d6" data-stroke="#4297a6" data-width="100%" data-height="50">3,5,2,9,7,2,5,3,9,6,5,9,7</span>
@@ -47,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <div class="card-box" dir="ltr">
+                    <div class="card-box" style="height: 100%;" dir="ltr">
                         <div class="float-right d-none d-md-inline-block">
                             <div class="btn-group mb-2">
                                 <button type="button" class="btn btn-xs btn-light">Today</button>
@@ -69,21 +75,44 @@
                             </div>
                             <div class="col-6">
                                 <div class="text-right">
-                                    <h3 class="text-dark my-1"><span><?= getCountOrderOnline($conn, 0) ?></span></h3>
-                                    <p class="text-muted mb-1 text-truncate">Total Orders</p>
+                                    <h3 class="text-dark my-1"><span><?=getCountTotalOrder($conn,1)?></span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Total Online Orders</p>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-3">
-                            <h6 class="text-uppercase">Target (100) <span class="float-right"><?= getCountOrderOnline($conn, 0) ?>%</span></h6>
+                            <h6 class="text-uppercase">Target (100) <span class="float-right"><?=getCountTotalOrder($conn,1)?>%</span></h6>
                             <div class="progress progress-sm m-0">
-                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="<?= getCountOrderOnline($conn, 0) ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getCountOrderOnline($conn, 0) ?>%">
-                                    <span class="sr-only"><?= getCountOrderOnline($conn, 0) ?>% Complete</span>
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="<?=getCountTotalOrder($conn,1)?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getCountTotalOrder($conn,1) ?>%">
+                                    <span class="sr-only"><?=getCountTotalOrder($conn,1)?>% Complete</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-box">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-sm bg-light rounded">
+                                    <i class="fe-shopping-cart avatar-title font-22 text-success"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark my-1"><span><?=getCountTotalOrder($conn,2)?></span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Total Offline Orders</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h6 class="text-uppercase">Target (100) <span class="float-right"><?=getCountTotalOrder($conn,2)?>%</span></h6>
+                            <div class="progress progress-sm m-0">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="<?=getCountTotalOrder($conn,2)?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getCountTotalOrder($conn,2) ?>%">
+                                    <span class="sr-only"><?=getCountTotalOrder($conn,2)?>% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-box" style="margin-bottom: 0;">
                         <div class="row">
                             <div class="col-3">
                                 <div class="avatar-sm bg-light rounded">
@@ -92,16 +121,16 @@
                             </div>
                             <div class="col-9">
                                 <div class="text-center">
-                                    <h3 class="text-dark my-1"><span style="font-size: 20px;"><?= number_format(getTotal($conn, 1,$_SESSION['admin_id']), 0, "", ".") ?> đ</span></h3>
+                                    <h3 class="text-dark my-1"><span style="font-size: 20px;"><?= number_format(getTotalRevenue($conn, 0), 0, "", ".") ?> đ</span></h3>
                                     <p class="text-muted mb-1 text-truncate">Income status</p>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-3">
-                            <h6 class="text-uppercase">Target (1.000.000.000) <span class="float-right"><?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>%</span></h6>
+                            <h6 class="text-uppercase">Target (100.000.000.000) <span class="float-right"><?= getTotalRevenue($conn, 0) / 100000000000 * 100 ?>%</span></h6>
                             <div class="progress progress-sm m-0">
-                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="<?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>%">
-                                    <span class="sr-only"><?= getTotal($conn, 1,$_SESSION['admin_id']) / 1000000000 * 100 ?>% Complete</span>
+                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="<?= getTotalRevenue($conn, 0) / 100000000000 * 100 ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= getTotalRevenue($conn, 0) / 100000000000 * 100 ?>%">
+                                    <span class="sr-only"><?= getTotalRevenue($conn, 0) / 100000000000 * 100 ?>% Complete</span>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +138,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xl-6">
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body" dir="ltr">
                             <div class="card-widgets">
@@ -126,7 +155,7 @@
                                         <div class="col-md-4">
                                             <p class="text-muted mb-0 mt-3">Today's Earning</p>
                                             <h2 class="font-weight-normal mb-3">
-                                                <span style="font-size: 20px;"><?= number_format(getTotal($conn, 4,$_SESSION['admin_id']), 0, "", ".") ?>đ</span>
+                                                <span style="font-size: 20px;"><?= number_format(getTotalRevenue($conn, 3), 0, "", ".") ?>đ</span>
                                             </h2>
                                         </div>
                                         <div class="col-md-4">

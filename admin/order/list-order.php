@@ -12,7 +12,7 @@ if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
     $totalCategory = mysqli_num_rows($sqlCategory);
 } else {
-    $queryOnlineOrder = getOfflineOrder($conn, 0);
+    $queryOnlineOrder = getOfflineOrder($conn, $_SESSION['admin_id']);
 }
 if (isset($_POST['all_prd'])) {
     unset($_POST['sbm']);
