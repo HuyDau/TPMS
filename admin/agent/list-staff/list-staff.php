@@ -8,7 +8,7 @@ require_once("../../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_staff WHERE bannerTitle LIKE '%$search%' OR bannerContent LIKE'%$search%' ");
+    $sqlStaff = mysqli_query($conn, "SELECT * FROM tbl_staff WHERE staffName LIKE '%$search%' OR staffGmail LIKE'%$search%' ");
 } else {
     $sqlStaff = mysqli_query($conn, "SELECT * FROM tbl_staff ");
 }
@@ -115,7 +115,7 @@ if(isset($_GET['idStaff'])){
                             </div>
                             <div class="form-group">
                                 <label class="control-label">STAFF PHONE: </label>
-                                <input class="form-control form-white" placeholder="Enter Staff Phone ..." type="text" name="phone1" value="<?=$infoStaff['staffPhone']?>" required>
+                                <input class="form-control form-white" placeholder="Enter Staff Phone ..." type="text" name="phone1" value="0<?=$infoStaff['staffPhone']?>" required>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">STAFF ADDRESS: </label>
@@ -290,11 +290,7 @@ if(isset($_GET['idStaff'])){
                             <i class="mdi mdi-plus-circle-outline"></i> Add
                         </a>
                     </div>
-                    <div class="col-lg-2">
-                        <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
-                            <i class="las la-download"></i> Export
-                        </a>
-                    </div>
+                    
                 </div>
             </footer>
             

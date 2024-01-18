@@ -624,12 +624,12 @@ if (isset($_GET["action"])) {
             <i class="iconv2-remove" style="display:block; margin:auto;"></i>
         </a>
         <div style="padding-bottom:10px;">
-            <a href="/kho-san-pham-cu">
+            <a href="">
                 <img src="assets/images/icon/maycugiatot.png" />
             </a>
         </div>
         <div>
-            <a href="/dat-hang/thu-cu-doi-moi-iphone-chinh-hang-vn-a-hoanghamobile">
+            <a href="">
                 <img src="assets/images/icon/thucugiacao.png" />
             </a>
         </div>

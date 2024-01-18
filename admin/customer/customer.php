@@ -8,7 +8,8 @@ require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_staff WHERE bannerTitle LIKE '%$search%' OR bannerContent LIKE'%$search%' ");
+    $sqlCustomer = mysqli_query($conn, "SELECT * FROM tbl_customer WHERE userName  LIKE '%$search%' OR name LIKE '%$search%' OR email LIKE '%$search%'");
+    
 } else {
     $sqlCustomer = mysqli_query($conn, "SELECT * FROM tbl_customer ");
 }

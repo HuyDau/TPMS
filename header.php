@@ -324,7 +324,7 @@
                         </div>
                     </div>
                 </li>
-                <li id="kho-san-pham-cu">
+                <li id="">
                     <a href="san-pham.php?idCat=18" target="_self"><i class="icon icon-maycu"></i><span>Máy trôi</span></a>
                     <div class="sub-container">
                         <div class="sub">

@@ -1,12 +1,12 @@
 <div class="navbar-custom">
     <ul class="list-unstyled topnav-menu float-right mb-0">
         <li class="d-none d-sm-block">
-            <form class="app-search">
+            <form method="POST" class="app-search">
                 <div class="app-search-box">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search...">
+                        <input type="text"  class="form-control" name="search" placeholder="Search...">
                         <div class="input-group-append">
-                            <button class="btn" type="submit">
+                            <button class="btn" type="submit" name="sbm">
                                 <i class="fe-search"></i>
                             </button>
                         </div>

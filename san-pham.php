@@ -66,123 +66,6 @@ include 'handle.php';
             </div>
         </div>
     </section>
-
-    <section>
-        <div class="container">
-            <div class="category-list" style="padding:10px 40px; margin:0;">
-                <ul class="category_type_2 owl-carousel lrs-slider">
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/iphone" title="Apple">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2022/09/07/logoooooooooooooooo.png" />
-                            <label>Apple</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/samsung" title="Samsung">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2020/11/30/samsung-logo-transparent.png" />
-                            <label>Samsung</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/xiaomi" title="Xiaomi">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/07/18/xiaomi-logo.png" />
-                            <label>Xiaomi</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/oppo" title="OPPO">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2020/09/14/brand (3).png" />
-                            <label>OPPO</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/tecno" title="TECNO">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/06/02/tecno.png" />
-                            <label>TECNO</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/honor" title="HONOR">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/06/19/honor-logo-2022-svg.png" />
-                            <label>HONOR</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/realme" title="realme">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2020/09/14/brand (6).png" />
-                            <label>realme</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/vivo" title="Vivo">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2020/11/30/vivo-logo.png" />
-                            <label>Vivo</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/nokia" title="Nokia">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2020/09/14/brand (4).png" />
-                            <label>Nokia</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/htc" title="HTC">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/08/22/htc-new-logo-svg.png" />
-                            <label>HTC</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/infinix" title="Infinix">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/05/26/infinix-logo-svg.png" />
-                            <label>Infinix</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/asus-rog-phone" title="ROG">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/06/12/rog.png" />
-                            <label>ROG</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/xor" title="XOR">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2021/12/24/xorr.png" />
-                            <label>XOR</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/masstel" title="Masstel">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2020/10/30/logo-masstel-4.png" />
-                            <label>Masstel</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/tcl" title="TCL">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/06/02/tcl.png" />
-                            <label>TCL</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/itel" title="Itel">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/03/10/itel-logo.png" />
-                            <label>Itel</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/dien-thoai-di-dong/zte" title="ZTE">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/12/08/zte-logo-svg-1.png" />
-                            <label>ZTE</label>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="/san-pham-sap-ra-mat-tin-don/dien-thoai" title="Mới - tin đồn">
-                            <img src="https://cdn.hoanghamobile.com/i/cat/Uploads/2023/08/02/logo-moi-ra-2.png" />
-                            <label>Mới - tin đồn</label>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <section>
         <div class="container">
             <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -226,55 +109,16 @@ include 'handle.php';
                         <label><a href="javascript:;">Danh mục <i class="icon-rightar"></i></a></label>
                         <div class="sub">
                             <ul>
-                                <li><a href="/dien-thoai-di-dong/iphone">Apple</a></li>
-                                <li><a href="/dien-thoai-di-dong/samsung">Samsung</a></li>
-                                <li><a href="/dien-thoai-di-dong/xiaomi">Xiaomi</a></li>
-                                <li><a href="/dien-thoai-di-dong/oppo">OPPO</a></li>
-                                <li><a href="/dien-thoai-di-dong/tecno">TECNO</a></li>
-                                <li><a href="/dien-thoai-di-dong/honor">HONOR</a></li>
-                                <li><a href="/dien-thoai-di-dong/realme">realme</a></li>
-                                <li><a href="/dien-thoai-di-dong/vivo">Vivo</a></li>
-                                <li><a href="/dien-thoai-di-dong/nokia">Nokia</a></li>
-                                <li><a href="/dien-thoai-di-dong/htc">HTC</a></li>
-                                <li><a href="/dien-thoai-di-dong/infinix">Infinix</a></li>
-                                <li><a href="/dien-thoai-di-dong/asus-rog-phone">ROG</a></li>
-                                <li><a href="/dien-thoai-di-dong/nubia">Nubia</a></li>
-                                <li><a href="/dien-thoai-di-dong/xor">XOR</a></li>
-                                <li><a href="/dien-thoai-di-dong/masstel">Masstel</a></li>
-                                <li><a href="/dien-thoai-di-dong/tcl">TCL</a></li>
-                                <li><a href="/dien-thoai-di-dong/itel">Itel</a></li>
-                                <li><a href="/dien-thoai-di-dong/zte">ZTE</a></li>
-                                <li><a href="/san-pham-sap-ra-mat-tin-don/dien-thoai">Mới - tin đồn</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                                <?php
+                                    $sql = getBrand($conn, $_GET['idCat']);
+                                    $queryBrand = mysqli_query($conn,$sql);
+                                    while($item = mysqli_fetch_assoc($queryBrand)){
+                                        ?>
+                                            <li><a href="san-pham.php?idCat=<?=$_GET['idCat']?>&idBrand=<?=$item['id']?>"><?=$item['brandName']?></a></li>
+                                        <?php
+                                    }
 
-
-                    <div class="facet">
-                        <label>
-                            <a href="javascript:;">Thương hiệu <i class="icon-rightar"></i></a>
-                        </label>
-                        <div class="sub">
-                            <ul>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%224%22%7d&amp;search=true">Samsung <i class="total">(25)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%221%22%7d&amp;search=true">Apple <i class="total">(28)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%223%22%7d&amp;search=true">Xiaomi <i class="total">(19)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%227%22%7d&amp;search=true">OPPO <i class="total">(16)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%22214%22%7d&amp;search=true">TECNO <i class="total">(11)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2212%22%7d&amp;search=true">Vivo <i class="total">(17)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2282%22%7d&amp;search=true">realme <i class="total">(14)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2220%22%7d&amp;search=true">Nokia <i class="total">(13)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%22165%22%7d&amp;search=true">TCL <i class="total">(8)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2296%22%7d&amp;search=true">HONOR <i class="total">(5)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%22301%22%7d&amp;search=true">Infinix <i class="total">(5)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%22114%22%7d&amp;search=true">Itel <i class="total">(4)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%22240%22%7d&amp;search=true">Nubia <i class="total">(4)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%22216%22%7d&amp;search=true">XOR <i class="total">(3)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%226%22%7d&amp;search=true">ZTE <i class="total">(2)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2210%22%7d&amp;search=true">HTC <i class="total">(1)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2224%22%7d&amp;search=true">Philips <i class="total">(1)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%228%22%7d&amp;search=true">ASUS <i class="total">(1)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22brand%22%3a%2211%22%7d&amp;search=true">HUAWEI <i class="total">(1)</i></a></li>
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -284,18 +128,10 @@ include 'handle.php';
                         </label>
                         <div class="sub">
                             <ul>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%221t%22%7d&amp;search=true">Dưới 1 triệu <i class="total">(13)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%221t-2t%22%7d&amp;search=true">1 đến 2 triệu <i class="total">(13)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%222t-3t%22%7d&amp;search=true">2 đến 3 triệu <i class="total">(29)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%223t-4t%22%7d&amp;search=true">3 đến 4 triệu <i class="total">(18)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%224t-5t%22%7d&amp;search=true">4 đến 5 triệu <i class="total">(15)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%225t-6t%22%7d&amp;search=true">5 đến 6 triệu <i class="total">(7)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%226t-8t%22%7d&amp;search=true">6 đến 8 triệu <i class="total">(17)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%228t-10t%22%7d&amp;search=true">8 đến 10 triệu <i class="total">(8)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%2210t-12t%22%7d&amp;search=true">10 đến 12 triệu <i class="total">(6)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%2212t-15t%22%7d&amp;search=true">12 đến 15 triệu <i class="total">(3)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%2215t-20t%22%7d&amp;search=true">15 đến 20 triệu <i class="total">(11)</i></a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22price%22%3a%2220t-100tr%22%7d&amp;search=true">20 đến 100 triệu <i class="total">(31)</i></a></li>
+                                <li><a href="san-pham.php?idCat=<?php if(isset($_GET['idCat'])){echo $_GET['idCat'];}?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?>&min=0&max=1000000">Dưới 1 triệu</a></li>
+                                <li><a href="san-pham.php?idCat=<?php if(isset($_GET['idCat'])){echo $_GET['idCat'];}?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?>&min=1000000&max=10000000">1 đến 10 triệu</a></li>
+                                <li><a href="san-pham.php?idCat=<?php if(isset($_GET['idCat'])){echo $_GET['idCat'];}?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?>&min=10000000&max=50000000">10 đến 50 triệu</a></li>
+                                <li><a href="san-pham.php?idCat=<?php if(isset($_GET['idCat'])){echo $_GET['idCat'];}?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?>&min=50000000&max=100000000">Trên 50 triệu</a></li>
                             </ul>
                         </div>
                     </div>
@@ -306,18 +142,9 @@ include 'handle.php';
                         <label>Sắp xếp <i class="icon-rightar"></i></label>
                         <div class="sub">
                             <ul>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%2212%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Mặc định</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%221%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Sản phẩm mới - cũ</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%222%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Giáthấp đến cao</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%223%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Giácao đến thấp</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%224%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Mới cập nhật</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%225%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Sản phẩm cũ</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%226%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Xem nhiều h&#244;m nay</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%227%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Xem nhiều tuần này</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%228%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Xem nhiều th&#225;ng này</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%2210%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Xem nhiều năm nay</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%229%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Xem nhiều nhất</a></li>
-                                <li><a href="/dien-thoai-di-dong?filters=%7b%22sort%22%3a%2211%22%7d&amp;search=true"><span class="fa fa-angle-right"></span> Kết quả t&#236;m kiếm</a></li>
+                                <li><a href="san-pham.php<?php if(isset($_GET['idCat'])){?>?idCat=<?= $_GET['idCat']?><?php }?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?><?php if(isset($_GET['min'])){?>&min=<?=$_GET['min']?><?php }?><?php if(isset($_GET['max'])){?>&max=<?=$_GET['max']?><?php }?>"><span class="fa fa-angle-right"></span> Mặc định</a></li>
+                                <li><a href="san-pham.php<?php if(isset($_GET['idCat'])){?>?idCat=<?= $_GET['idCat']?><?php }?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?><?php if(isset($_GET['min'])){?>&min=<?=$_GET['min']?><?php }?><?php if(isset($_GET['max'])){?>&max=<?=$_GET['max']?><?php }?>&sort=asc"><span class="fa fa-angle-right"></span> Giá thấp đến cao</a></li>
+                                <li><a href="san-pham.php<?php if(isset($_GET['idCat'])){?>?idCat=<?= $_GET['idCat']?><?php }?><?php if(isset($_GET['idBrand'])){?>&idBrand=<?=$_GET['idBrand']?><?php }?><?php if(isset($_GET['min'])){?>&min=<?=$_GET['min']?><?php }?><?php if(isset($_GET['max'])){?>&max=<?=$_GET['max']?><?php }?>&sort=desc"><span class="fa fa-angle-right"></span> Giá cao đến thấp</a></li>
                             </ul>
                         </div>
                     </div>
@@ -355,7 +182,16 @@ include 'handle.php';
                         if(isset($_POST['searchData']) && !empty($_POST['dataSearch'])){
                             $dataSearch = $_POST['dataSearch'];
                             $query = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id WHERE tbl_products.isActive = 2 AND versionName LIKE '%$dataSearch%'");
-                        }else{
+                        }else if(isset($_GET['min']) && isset($_GET['max'])){
+                            $query = getListProductPrice($conn,$_GET['idCat'],$_GET['idBrand'],$_GET['min'],$_GET['max']);
+                        }else if(isset($_GET['sort'])){
+                            if($_GET['sort'] == 'asc'){
+                                $query = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id ORDER BY versionPromotionalPrice ASC");
+                            }else{
+                                $query = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id ORDER BY versionPromotionalPrice DESC");
+                            }
+                        }
+                        else{
                             if(isset($_GET['idBrand'])){
                                 $query = getListProduct($conn,$_GET['idCat'],$_GET['idBrand']);
                             }else{

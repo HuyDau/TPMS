@@ -50,6 +50,7 @@ if(isset($_GET['productId'])){
         $version1 = $_POST['version1'];
         $price1 = $_POST['price1'];
         $prices1 = $_POST['p-price1'];
+        $quantity1 = $_POST['quantity1'];
         if ($_FILES['image1']['name'] == "") {
             $versionImage = $infoVersion['versionImage'];
         } else {
@@ -75,7 +76,7 @@ if(isset($_GET['productId'])){
         $description1 = $_POST['description1'];
         $specifications = $_POST['specifications'];
         if($prices1 <= $price1){
-            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `versionVersion`='$version1',`productCode`='$code1',`versionName`='$name1',`versionImage`='$versionImage',`versionPrice`='$price1',`versionPromotionalPrice`='$prices1',`versionDescription`='$description1', `versionSpecifications` =  '$specifications' WHERE idVersion = $id");
+            $editVersion = mysqli_query($conn, "UPDATE `tbl_versions` SET `versionVersion`='$version1',`productCode`='$code1',`versionName`='$name1',`versionImage`='$versionImage',`versionPrice`='$price1',`versionPromotionalPrice`='$prices1',`versionDescription`='$description1', `versionSpecifications` =  '$specifications' ,`quantity` =  '$quantity1' WHERE idVersion = $id");
             if($editVersion){
                 header("Location: version.php");
             }
@@ -252,6 +253,10 @@ if(isset($_GET['productIdUpdate'])){
                                     <label class="control-label">Version Iamge: </label>
                                     <input type="file" multiple="multiple" name="image1" class="form-control">
                                     <span><?=$infoVersion['versionImage']?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Quantity: </label>
+                                    <input class="form-control form-white" placeholder="Enter Quantity ..." type="text" name="quantity1" value="<?=$infoVersion['quantity']?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Price: </label>
@@ -694,6 +699,7 @@ if(isset($_GET['productIdUpdate'])){
                                                 <?php
                                                     if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
                                                         ?>
+                                                            <th>QUANTITY</th>
                                                             <th>VIEW AND EDIT VERSION</th>
                                                             <th>ADD SPECIFICATIONS</th>
                                                             <th>VIEW AND EDIT SPECIFICATIONS</th>
@@ -772,6 +778,7 @@ if(isset($_GET['productIdUpdate'])){
                                                     <?php
                                                         if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1){
                                                             ?>
+                                                                <td><?=  $row['quantity'] ; ?></td>
                                                                 <td><a href="version.php?productId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                                 <td><a href="version.php?versionId=<?php echo $row['idVersion']; ?>" name="edit" class="edit"><i class="icon-add las la-plus-circle"></i></a></td>
                                                                 <td><a href="version.php?specificationsId=<?php echo $iSpecifications['specificationsId']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
@@ -828,11 +835,7 @@ if(isset($_GET['productIdUpdate'])){
             <footer class="footer">
                 <div class="row">
                     
-                    <div class="col-lg-2">
-                        <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
-                            <i class="las la-download"></i> Export
-                        </a>
-                    </div>
+                    
                 </div>
             </footer>
             

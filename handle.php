@@ -98,6 +98,16 @@
         }
         return $sqlListProduct;
     }
+
+    // 
+    function getListProductPrice( $conn,$a,$b,$c,$d){
+        if($b!=0){
+            $sqlListProduct = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $a AND tbl_products.idBrand = $b AND tbl_products.isActive = 2 AND versionPromotionalPrice BETWEEN $c AND $d");
+        }else{
+            $sqlListProduct = mysqli_query($conn,"SELECT * FROM `tbl_versions` INNER JOIN tbl_products ON tbl_versions.productId = tbl_products.id WHERE tbl_products.idCategory = $a  AND tbl_products.isActive = 2 versionPromotionalPrice BETWEEN $c AND $d");
+        }
+        return $sqlListProduct;
+    }
     // GET LAPTOP PRODUCTS
 
     function getLaptopProduct($conn, $i){

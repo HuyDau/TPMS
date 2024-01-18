@@ -40,12 +40,6 @@
                             <li>
                                 <a href="http://localhost/TPMS/admin/web/banner/banner.php">BANNER</a>
                             </li>
-                            <li>
-                                <a href="email-read.php">Read Email</a>
-                            </li>
-                            <li>
-                                <a href="email-compose.php">Compose Email</a>
-                            </li>
                         </ul>
                     </li>
                 <?php

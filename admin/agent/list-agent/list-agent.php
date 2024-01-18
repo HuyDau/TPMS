@@ -8,7 +8,7 @@ require_once("../../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlBanner = mysqli_query($conn, "SELECT * FROM tbl_banners WHERE bannerTitle LIKE '%$search%' OR bannerContent LIKE'%$search%' ");
+    $sqlAgents = mysqli_query($conn, "SELECT * FROM tbl_agents WHERE agentName LIKE'%$search%' "); 
 } else {
     $sqlAgents = mysqli_query($conn, "SELECT * FROM tbl_agents");
 }
@@ -279,11 +279,7 @@ if(isset($_GET['id'])){
                             <i class="mdi mdi-plus-circle-outline"></i> Add
                         </a>
                     </div>
-                    <div class="col-lg-2">
-                        <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
-                            <i class="las la-download"></i> Export
-                        </a>
-                    </div>
+                    
                 </div>
             </footer>
             

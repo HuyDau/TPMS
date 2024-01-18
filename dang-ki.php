@@ -1,7 +1,7 @@
 <?php
 require_once("config/config.php");
 include 'handle.php';
-if(isset($_SESSION['add']))
+
 
 if(isset($_POST['register'])){
     $username = $_POST['username'];
@@ -23,9 +23,9 @@ if(isset($_POST['register'])){
     }else{
         $newpassword = md5($password);
         $addCustomer = mysqli_query($conn,"INSERT INTO `tbl_customer`(`id`, `username`, `password`, `name`, `email`, `phone`, `city`, `district`, `ward`, `address`) VALUES (NULL,'$username','$newpassword','$name','$email','$phone','$city','$district','$ward','$address')");
-        $_SESSION['add'] = $addCustomer;
-        if(isset($addCustomer)){
-            $success = "Đăng kí tài khoản thành công";
+        // $_SESSION['add'] = $addCustomer;
+        if($addCustomer){
+            echo "<script>window.alert('Đăng kí tài khoản thành công!');window.location.href = 'dang-nhap.php'</script>";
         }
     }
 }

@@ -6166,12 +6166,12 @@ include 'handle.php';
             <i class="iconv2-remove" style="display:block; margin:auto;"></i>
         </a>
         <div style="padding-bottom:10px;">
-            <a href="/kho-san-pham-cu">
+            <a href="/">
                 <img src="/Content/web/img/maycugiatot.png" />
             </a>
         </div>
         <div>
-            <a href="/dat-hang/thu-cu-doi-moi-iphone-chinh-hang-vn-a-hoanghamobile">
+            <a href="">
                 <img src="/Content/web/img/thucugiacao.png" />
             </a>
         </div>
@@ -6181,24 +6181,6 @@ include 'handle.php';
     <div class="footer-zalo" style="position: fixed; bottom: 110px; right: 33px;">
         <a href="https://oa.zalo.me/262829019064124420" target="_blank"><img src="assets/images/icon/zalo.svg" /></a>
     </div>
-
-
-
-
-    <script type='application/ld+json'>
-        {
-            "@context": "https:\/\/schema.org",
-            "@type": "WebSite",
-            "@id": "#website",
-            "url": "https:\/\/hoanghamobile.com\/",
-            "name": "Ho&#224;ng H&#224; Mobile - Hệ thống b&#225;n lẻ thiết bị di động v&#224; c&#244;ng nghệ ch&#237;nh h&#227;ng gi&#225; tốt",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https:\/\/hoanghamobile.com\/tim-kiem?kwd={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
 
     <!-- analytics -->
     <script>

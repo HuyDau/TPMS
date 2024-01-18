@@ -8,7 +8,7 @@ require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlProduct = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
+    $sqlProduct = mysqli_query($conn, "SELECT * FROM tbl_products WHERE productName LIKE '%$search%' OR productCode LIKE'%$search%' ");
     $totalCategory = mysqli_num_rows($sqlProduct);
 } else {
     $sqlProduct = mysqli_query($conn, "SELECT * FROM tbl_products");
@@ -135,10 +135,11 @@ if(isset($_GET['productId'])){
         $prodPrice = $_POST['prodPrice'];
         $prodPromotionalPrice = $_POST['prodPromotionalPrice'];
         $prodDescription = $_POST['prodDescription'];
+        $prodQuantity = $_POST['prodQuantity'];
         if($prodPromotionalPrice > $prodPrice){
             echo "<script>window.alert('Promotional price cannot be greater than the price!');window.location.href = 'products.php'</script>";
         }else{
-            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`,`versionSpecifications`,`isActive`)  VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription','','2')");
+            $addVersion = mysqli_query($conn, "INSERT INTO `tbl_versions`(`idVersion`, `productId`, `versionVersion`, `productCode`, `versionName`, `quantity`, `versionImage`, `versionPrice`, `versionPromotionalPrice`, `versionDescription`,`versionSpecifications`,`isActive`)  VALUES (NULL,'$prodId','$prodVersion','$prodCode','$prodName', '$prodQuantity','$prodImage','$prodPrice','$prodPromotionalPrice','$prodDescription','','2')");
 
             if($addVersion){
                 header("Location: ../version/version.php");
@@ -329,6 +330,10 @@ if(isset($_GET['offActive'])){
                                 <div class="form-group">
                                     <label class="control-label">Product Image: </label>
                                     <input type="file" multiple="multiple" name="prodImage" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Quantity: </label>
+                                    <input class="form-control form-white" placeholder="Enter Quantity ..." type="text" name="prodQuantity" value="" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Price: </label>
@@ -600,7 +605,7 @@ if(isset($_GET['offActive'])){
                                                                 <td><a href="products.php?id=<?php echo $row['id']; ?>" name="edit" class="edit"><i class="icon-edit la la-edit"></i></a></td>
                                                                 <td>
                                                                     <?php 
-                                                                        if($row['isActive'] == 0){
+                                                                        if($row['isActive'] == 1){
                                                                             ?>
                                                                                 <a onclick="return On('<?php echo $row['productName']; ?>')" href="products.php?isActive=<?php echo $row['id']; ?>" name="edit" class="edit"><img style="width: 30px;" src="../assets/images/icon/switch-off.png" alt=""></a>
                                                                             <?php 
@@ -641,11 +646,7 @@ if(isset($_GET['offActive'])){
                             <i class="mdi mdi-plus-circle-outline"></i> Add
                         </a>
                     </div>
-                    <div class="col-lg-2">
-                        <a href="export_category.php" class="btn btn-lg font-13 btn-primary btn-block  ">
-                            <i class="las la-download"></i> Export
-                        </a>
-                    </div>
+                    
                 </div>
             </footer>
             

@@ -9,8 +9,8 @@ require_once("../../config/config.php");
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
-    $sqlCategory = mysqli_query($conn, "SELECT * FROM tbl_categories WHERE categoryName LIKE '%$search%' OR categoryCode LIKE'%$search%' ");
-    $totalCategory = mysqli_num_rows($sqlCategory);
+    $queryOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE name LIKE '%$search%' OR email LIKE'%$search%' ");
+    // $totalCategory = mysqli_num_rows($sqlCategory);
 } else {
    if(isset($_GET['type'])){
         if($_GET['type'] == "order"){
