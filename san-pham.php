@@ -248,9 +248,7 @@ include 'handle.php';
                                     <div class="promote">
                                         <a href="chi-tiet-san-pham.php?idsanpham=<?=$itemProduct['idVersion']?>">
                                             <ul>
-                                                <li><span class="bag">KM</span> Quà tặng Hoàng Hà: Tặng gói bảo hành Vipcare 1+1</li>
-                                                <li><span class="bag">KM</span> Tặng Gói bảo hành Premium Service OPPO Find N3 trị giá2.500.000đ. </li>
-                                                <li><span class="bag">KM</span> Home PayLater - Trả góp qua Home PayLater giảm tới 1.000.000đ</li>
+                                                <li><span class="bag">KM</span> Quà tặng : Tặng gói bảo hành Vipcare 1+1</li>
                                             </ul>
                                         </a>
                                     </div>
@@ -264,7 +262,7 @@ include 'handle.php';
             <div id="page-holder"></div>
 
             <div class="more-product" id="page-pager">
-                <a href="javascript:getPage(2)">Xem thêm 165 sản phẩm</a>
+                <a href="javascript:getPage(2)">Có <?php echo mysqli_num_rows($query);?> sản phẩm</a>
             </div>
         </div>
     </section>

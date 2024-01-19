@@ -27,34 +27,7 @@ include 'handle.php';
 </head>
 
 <body>
-
-    
-    <!-- <div class="top-link">
-        <span class="pulse"></span>
-        <p><strong>Cơ hội sở hữu Samsung S20 FE 256GB chỉ với 6.990.000đ - SL c&#243; hạn</strong> <a href="https://hoanghamobile.com/dien-thoai-di-dong/samsung-galaxy-s20-fe-256gb-chinh-hang" target="_top">Xem chi tiết</a></p>
-    </div> -->
-    <header>
-        <div class="top-navigation">
-            <div class="container">
-                <ul>
-                    <li><a href="/mobileswitch?mobile=true">Bản mobile</a></li>
-                    <li><a href="gioi-thieu-cong-ty.php">Giới Thiệu</a></li>
-                    <li><a href="/san-pham-da-xem">Sản Phẩm Đã Xem</a></li>
-                    <li><a href="trung-tam-bao-hanh.php">Trung Tâm Bảo Hành</a></li>
-                    <li><a href="/he-thong-cua-hang">Hệ thống 123 si&#234;u thị</a></li>
-                    <li><a href="https://tuyendung.hoanghamobile.com/">Tuyển dụng</a></li>
-                    <li><a href="/order/check">Tra Cứu Đơn Hàng</a></li>
-                    <li><a id="login-modal" href="/Account/Login?ReturnUrl=/trung-tam-bao-hanh">Đăng nhập</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </header>
-
-
-
-
-
+    <?php include 'header.php'; ?>
     <section>
         <div class="container">
             <div class="cart">
@@ -72,7 +45,7 @@ include 'handle.php';
 
                     <div class="just-center">
                         <div class="check-warranty">
-                            <img src="/Content/web/content-icon/care-services.png" />
+                            <img src="assets/images/img/care-services.png" />
                             <h3>Tra cứu bảo hành sản phẩm</h3>
 
                             <div class="search-box">

@@ -290,7 +290,7 @@
                     }
                 ?>
                 
-                <div class="col-xl-8">
+                <div class="col-xl-4">
                     <div class="card-box">
                         <div class="dropdown float-right">
                             <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
@@ -324,7 +324,7 @@
                                     <?php
                                     $i = 1;
                                     $agentId =  $_SESSION['admin_id'];
-                                    $sqlInvoice = mysqli_query($conn,"SELECT * FROM tbl_cart WHERE agentId = $agentId LIMIT 10");
+                                    $sqlInvoice = mysqli_query($conn,"SELECT * FROM tbl_cart WHERE agentId = $agentId ORDER BY id DESC LIMIT 10");
                                     while ($row = mysqli_fetch_array($sqlInvoice)) {
                                     ?>
                                         <tr>
@@ -346,6 +346,176 @@
                         </div> 
                     </div>
                 </div> 
+
+                <?php
+                    if(isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1){
+                        ?>
+                            <div class="col-xl-4">
+                                <div class="card-box">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Download</a>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Upload</a>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="header-title mb-3">TOP SALE</h4>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-centered table-borderless table-hover table-nowrap mb-0" id="datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th class="border-top-0">Name</th>
+                                                    <th class="border-top-0">PRICE</th>
+                                                    <th class="border-top-0">QUANTITY</th>
+                                                    <th class="border-top-0">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $i = 1;
+                                                $agentId =  $_SESSION['admin_id'];
+                                                $sqlTopSale = mysqli_query($conn,"SELECT *,SUM(tbl_detailcart.quantity)AS S FROM `tbl_detailcart` INNER JOIN tbl_versions ON tbl_detailcart.versionId = tbl_versions.idVersion INNER JOIN tbl_cart ON tbl_cart.id = tbl_detailcart.cartId WHERE idtype = 1 GROUP BY versionId ORDER BY SUM(tbl_detailcart.quantity) DESC LIMIT 5");
+                                                while ($row = mysqli_fetch_array($sqlTopSale)) {
+                                                ?>
+                                                    <tr>
+                                                        <td><?=$i++?></td>
+                                                        <td>
+                                                            <span class="ml-2"><?= $row['versionName'] ?></span>
+                                                        </td>
+                                                        <td>
+                                                            <span><?=number_format($row['versionPromotionalPrice'],0,"",".")?>đ</span>
+                                                        </td>
+                                                        <td><?= $row['S'] ?></td>
+                                                        <td><?=number_format($row['versionPromotionalPrice']*$row['S'],0,"",".")?>đ</td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div> 
+                                </div>
+                            </div> 
+                        <?php
+                    }else{
+                        ?>
+                            <div class="col-xl-4">
+                                <div class="card-box">
+                                    <div class="dropdown float-right">
+                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Download</a>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Upload</a>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="header-title mb-3">TOP SALE</h4>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-centered table-borderless table-hover table-nowrap mb-0" id="datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th class="border-top-0">Name</th>
+                                                    <th class="border-top-0">PRICE</th>
+                                                    <th class="border-top-0">QUANTITY</th>
+                                                    <th class="border-top-0">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $i = 1;
+                                                $agentId =  $_SESSION['admin_id'];
+                                                $sqlTopSale = mysqli_query($conn,"SELECT *,SUM(tbl_detailcart.quantity) AS S FROM `tbl_detailcart` INNER JOIN tbl_versions ON tbl_detailcart.versionId = tbl_versions.idVersion INNER JOIN tbl_cart ON tbl_cart.id = tbl_detailcart.cartId WHERE idtype = 2 AND tbl_cart.agentId = $agentId GROUP BY versionId ORDER BY SUM(tbl_detailcart.quantity) DESC LIMIT 5");
+                                                while ($row = mysqli_fetch_array($sqlTopSale)) {
+                                                ?>
+                                                    <tr>
+                                                        <td><?=$i++?></td>
+                                                        <td>
+                                                            <span class="ml-2"><?= $row['versionName'] ?></span>
+                                                        </td>
+                                                        <td>
+                                                            <span><?=number_format($row['versionPromotionalPrice'],0,"",".")?>đ</span>
+                                                        </td>
+                                                        <td><?= $row['S'] ?></td>
+                                                        <td><?=number_format($row['versionPromotionalPrice']*$row['S'],0,"",".")?>đ</td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div> 
+                                </div>
+                            </div> 
+                        <?php
+                    }
+                ?>
+                 <?php
+                    if(isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1){
+                        ?>
+                            <div class="col-xl-4">
+                                <div class="card-box">
+                                    <h4 class="header-title mb-3">PRODUCTS ARE OF INTEREST</h4>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-centered table-borderless table-hover table-nowrap mb-0" id="datatable">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th class="border-top-0">Name</th>
+                                                    <th class="border-top-0">PRICE</th>
+                                                    <th class="border-top-0">PROMOTIONAL PRICE</th>
+                                                    <th class="border-top-0">STAR</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $i = 1;
+                                                $agentId =  $_SESSION['admin_id'];
+                                                $sqlTopSale = mysqli_query($conn,"SELECT *,SUM(star) AS S FROM `tbl_comments` INNER JOIN tbl_versions ON tbl_comments.versionId = tbl_versions.idVersion GROUP BY versionId ORDER BY SUM(star) DESC LIMIT 5");
+                                                while ($row = mysqli_fetch_array($sqlTopSale)) {
+                                                ?>
+                                                    <tr>
+                                                        <td><?=$i++?></td>
+                                                        <td>
+                                                            <span class="ml-2"><?= $row['versionName'] ?></span>
+                                                        </td>
+                                                        <td>
+                                                            <span><?=number_format($row['versionPrice'],0,"",".")?>đ</span>
+                                                        </td>
+                                                        <td><?=number_format($row['versionPromotionalPrice'],0,"",".")?>đ</td>
+                                                        <td><?= $row['S'] ?></td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div> 
+                                </div>
+                            </div> 
+                        <?php
+                    }
+                ?>
+                
             </div>
         </div> 
 

@@ -4,7 +4,27 @@ include '../handle.php';
 if (!isset($_SESSION['admin_user'])) {
     header("location: ../login.php");
 }
-
+function execPostRequest($url, $data){
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt(
+        $ch,
+        CURLOPT_HTTPHEADER,
+        array(
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($data)
+        )
+    );
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+    //execute post
+    $result = curl_exec($ch);
+    //close connection
+    curl_close($ch);
+    return $result;
+}
 
 if (isset($_POST['sbm']) && !empty($_POST['search'])) {
     $search = $_POST['search'];
@@ -30,19 +50,26 @@ if (isset($_POST['all_prd'])) {
 }
 if(isset($_POST['createNew'])){
     $id = $_POST['orderCode'];
-    $_SESSION['orderCode'] = $id;
+    $sqlcheckOrder = mysqli_query($conn,"SELECT * FROM tbl_cart WHERE id = $id");
     $time = date("Y-m-d H:i:s");
     $agentId = $_SESSION['admin_id'];
-    $sqlCreateOrder = mysqli_query($conn,"INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`,`agentId`) VALUES (' $id ','','','','','','','','','','',' $time','2','1','1','$agentId')");
-    if($sqlCreateOrder){
-        header("Location: create-new-order.php");
+    if(mysqli_num_rows($sqlcheckOrder)>0){
+        echo "<script>window.alert('Order Exist!');window.location='create-new-order.php'</script>";
+    }else{
+        $_SESSION['orderCode'] = $id;
+        $sqlCreateOrder = mysqli_query($conn,"INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`,`agentId`) VALUES (' $id ','','','','','','','','','','',' $time','2','1','1','$agentId')");
+        if($sqlCreateOrder){
+            header("Location: create-new-order.php");
+        }
     }
+    
 }
 
 if(isset($_POST['addProduct'])){
     if(!isset($_POST['product'])){
         echo "<script>window.alert('You have not chosen any product!');window.location='create-new-order.php'</script>";
     }else{
+       
         $idAgent = $_SESSION['admin_id'];
         $cartId = $_SESSION['orderCode'];
         $productId = $_POST['product'];
@@ -98,6 +125,7 @@ if(isset($_SESSION['orderCode'])){
 
 if(isset($_POST['confirm'])){
     $cartId = $_SESSION['orderCode'];
+    $payment = $_POST['payment'];
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
@@ -106,12 +134,60 @@ if(isset($_POST['confirm'])){
     $ward = $_POST['ward'];
     $address = $_POST['address'];
     $totalPay = $_POST['totalPay'];
-    
-    $updateCart = mysqli_query($conn,"UPDATE `tbl_cart` SET `name`='$name',`phone`='$phone',`email`='$email',`city`='$city',`district`='$district',`ward`='$ward',`address`='$address',`total`='$totalPay',`idtype`='2',`idstatus`='3' WHERE id = $cartId");
-    if($updateCart){
-        unset($_SESSION['orderCode']);
-        echo "<script>window.alert('Success!');window.location.href = 'create-new-order.php'</script>";
+
+    if($payment == 1){
+        $updateCart = mysqli_query($conn,"UPDATE `tbl_cart` SET `name`='$name',`phone`='$phone',`email`='$email',`city`='$city',`district`='$district',`ward`='$ward',`address`='$address',`total`='$totalPay',`idtype`='2',`idstatus`='3',`idpayment`='1'  WHERE id = $cartId");
+        if($updateCart){
+            unset($_SESSION['orderCode']);
+            echo "<script>window.alert('Success!');window.location.href = 'create-new-order.php'</script>";
+        }
+    }else{
+        $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
+        $partnerCode = 'MOMOBKUN20180529';
+        $accessKey = 'klm05TvNBzhg7h7j';
+        $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
+
+        $orderInfo = "Payment MoMo";
+        $amount = round($totalPay/1000000) ;
+        $orderId = time() . "";
+        $redirectUrl = "http://localhost/TPMS/admin/order/list-order.php";
+        $ipnUrl = "http://localhost/TPMS/admin/order/list-order.php";
+        $extraData = "";
+
+
+        $requestId = time() . "";
+        $requestType = "captureWallet";
+
+        $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
+        $signature = hash_hmac("sha256", $rawHash, $secretKey);
+        $data = array(
+            'partnerCode' => $partnerCode,
+            'partnerName' => "Test",
+            "storeId" => "MomoTestStore",
+            'requestId' => $requestId,
+            'amount' => $amount,
+            'orderId' => $orderId,
+            'orderInfo' => $orderInfo,
+            'redirectUrl' => $redirectUrl,
+            'ipnUrl' => $ipnUrl,
+            'lang' => 'vi',
+            'extraData' => $extraData,
+            'requestType' => $requestType,
+            'signature' => $signature
+        );
+        $result = execPostRequest($endpoint, json_encode($data));
+        $jsonResult = json_decode($result, true); // decode json
+        header('Location: ' . $jsonResult['payUrl']);
+
+        $updateCart = mysqli_query($conn,"UPDATE `tbl_cart` SET `name`='$name',`phone`='$phone',`email`='$email',`city`='$city',`district`='$district',`ward`='$ward',`address`='$address',`total`='$totalPay',`idtype`='2',`idstatus`='3',`idpayment`='2'  WHERE id = $cartId");
+        if($updateCart){
+            unset($_SESSION['orderCode']);
+            echo "<script>window.alert('Success!');window.location.href = 'create-new-order.php'</script>";
+        }
+
     }
+    
+    
 }
 if(isset($_POST['cancelInvoice'])){
     $cartId = $_SESSION['orderCode'];
@@ -327,8 +403,8 @@ if(isset($_POST['cancelInvoice'])){
                                                                             ?>
                                                                         </td>
                                                                         <td><?=number_format($item['versionPromotionalPrice'],0,"",".")?></td>
-                                                                        <td><?=$item['quantity']?></td>
-                                                                        <td><?=number_format($item['versionPromotionalPrice'] * $item['quantity'],0,"",".")?></td>
+                                                                        <td><?=$item['Q']?></td>
+                                                                        <td><?=number_format($item['versionPromotionalPrice'] * $item['Q'],0,"",".")?></td>
                                                                         <td>
                                                                             <div class="btn-group dropdown">
                                                                                 <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
@@ -367,19 +443,19 @@ if(isset($_POST['cancelInvoice'])){
                                                 <div class="form-group">
                                                     <label class="control-label">City: </label>
                                                     <select class="form-control form-white"   id="city" name="city" placeholder="Tỉnh/ Thành phố" required>
-                                                        <option value="" selected>Chọn Tỉnh/ Thành Phố</option>
+                                                        <option value="" selected>Choose City</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label">District: </label>
                                                     <select class="form-control form-white"   id="district" name="district" placeholder="Quận/ Huyện" required>
-                                                        <option value="" selected>Chọn Quận/ huyện</option>
+                                                        <option value="" selected>Choose District</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="control-label">City: </label>
+                                                    <label class="control-label">Ward: </label>
                                                     <select class="form-control form-white"   id="ward" name="ward" placeholder="Phường/ Xã" required>
-                                                        <option value="" selected>Chọn Phường/ Xã</option>
+                                                        <option value="" selected>Choose War</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -392,6 +468,15 @@ if(isset($_POST['cancelInvoice'])){
                                                     <p style="font-size: 16px;">Total Value: <strong class="price"> <?=number_format($totalPay,0,"",".")?> ₫</strong>  </p>
                                                     <p style="font-size: 16px;">Discount: <strong class="price">- 00 ₫</strong></p>
                                                     <p style="font-size: 16px;">Total Payment: <strong class="price text-red"><input name="totalPay" type="text" style="background: none;color: #fff;border: none;" value="<?=$totalPay?>"> ₫</strong></p>
+                                                </div>
+                                                <div class="cart-total">
+                                                    <p style="font-size: 16px;">Select A Payment Method</p>
+                                                    <div class="form-group">
+                                                        <input type="radio" name="payment" id="cash-payment" value="1" checked><label for="cash-payment" style="padding-left: 10px">Cash Payment</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="radio" name="payment" id="momo" value="2"><label for="momo" style="padding-left: 10px">Momo QR Code</label>
+                                                    </div>
                                                 </div>
                                                 <div>
                                                     <button class="btn btn-lg font-16 btn-success btn-block  " type="submit" name="confirm">CONFIRM</button>

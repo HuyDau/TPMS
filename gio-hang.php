@@ -199,7 +199,7 @@ if (isset($_GET["action"])) {
                             $address = $_POST['address1'];
                         }
                         header('Location: ' . $jsonResult['payUrl']);
-                        if( isset($_GET['action'])&& $_GET['action'] == 'payWithApp' && isset($_GET['isScanQR']) && $_GET['isScanQR'] == 'true' && isset($_GET['serviceType']) && $_GET['serviceType'] == 'qr' &&isset($_POST['name']) && $_POST['name'] != '' && isset($_POST['phone']) && $_POST['phone'] != ''&& isset($_POST['email']) && $_POST['email'] != '' && $city != '' && $district != '' && $ward != '' && $address != '' ){
+                        if(isset($_POST['name']) && $_POST['name'] != '' && isset($_POST['phone']) && $_POST['phone'] != ''&& isset($_POST['email']) && $_POST['email'] != '' && $city != '' && $district != '' && $ward != '' && $address != '' ){
                             $addCart = mysqli_query($conn, "INSERT INTO `tbl_cart`(`id`, `userId`, `name`, `phone`, `email`, `city`, `district`, `ward`, `address`, `note`, `total`, `time`, `idtype`, `idstatus`, `idpayment`) VALUES (NULL,'$userId','".$_POST['name']."','".$_POST['phone']."','".$_POST['email']."','$city','$district','$ward','$address','".$_POST['note']."','$newTotal','$date','1','1','2')");
                             $cart_id = $conn->insert_id;
                             $insertString = "";

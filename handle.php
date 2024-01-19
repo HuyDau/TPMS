@@ -135,6 +135,13 @@
         return $sqlSimilarProduct;
     }
 
+    function getSimilarProduct1($conn, $i){
+        $price1 = $i - 5000000;
+        $price2 = $i + 5000000;
+        $sqlSimilarProduct = "SELECT * FROM `tbl_versions` INNER JOIN `tbl_products` ON tbl_versions.productId = tbl_products.id WHERE versionPromotionalPrice BETWEEN $price1 AND $price2 LIMIT 5";
+        return $sqlSimilarProduct;
+    }
+
     // GET LIST VERSION
     function getListVersion($i){
         $sqlGetListVersion = "SELECT * FROM `tbl_versions` WHERE productId = $i";
@@ -211,7 +218,8 @@
         return $sqlDetailProd;
     }
 
-
-   
-
+    function getSpecifications($conn,$a){
+        $getSpecifications = mysqli_query($conn,"SELECT * FROM tbl_specifications WHERE versionId = $a");
+        return $getSpecifications;
+    }
 ?>

@@ -93,7 +93,7 @@ if (isset($_GET['action']) && $_GET['id']) {
                     </div>
                     <div class="row">
                         <div class="col-lg-3">
-                            <a href="export_order.php" class="btn btn-lg font-16 btn-success btn-block  ">
+                            <a href="export-to-excel.php?agentId=<?=$_SESSION['admin_id']?>" class="btn btn-lg font-16 btn-success btn-block  ">
                                 <i class="las la-download"></i> Export
                             </a>
                         </div>
@@ -130,7 +130,7 @@ if (isset($_GET['action']) && $_GET['id']) {
                                                     <td><?= date("H:i:s d-m-Y", strtotime($itemOnlineOrder['time'])) ?></td>
                                                     <td><?= $itemOnlineOrder['paymentName'] ?></td>
                                                     <td><span class="badge badge-success"><?=$itemOnlineOrder['statusName']?></span> </td>
-                                                    <td><a href="detail_order.php?id=<?= $itemOnlineOrder['A'] ?>"><span class="badge badge-light-pink">Detail</span></a></td>
+                                                    <td><a href="detail-order.php?id=<?= $itemOnlineOrder['A'] ?>"><span class="badge badge-light-pink">Detail</span></a></td>
                                                     <td>
                                                         <div class="btn-group dropdown">
                                                             <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>

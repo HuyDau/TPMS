@@ -178,8 +178,14 @@ if(isset($_GET['productIdUpdate'])){
         if(mysqli_num_rows($sqlW) > 0){
             $idW = $infoW['id'];
             $sqlUpdateW = mysqli_query($conn,"UPDATE `tbl_warehouse` SET `quantity`='$newQuantity' WHERE id = $idW");
+            if($sqlUpdateW){
+                echo "<script>window.alert('Successful!');window.location.href = 'version.php'</script>";
+            }
         }else{
             $sqlUpdateW = mysqli_query($conn,"INSERT INTO `tbl_warehouse`(`id`, `versionId`, `agentId`, `quantity`) VALUES (NULL,'$idProduct','$agentId','$newQuantity')");
+            if($sqlUpdateW){
+                echo "<script>window.alert('Successful!');window.location.href = 'version.php'</script>";
+            }
         }
     }
     

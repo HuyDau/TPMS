@@ -439,11 +439,11 @@ if (isset($_GET['like'])) {
 
                                 <li><span class="bag">KM 1</span></li>
                                 <li>
-                                    <a href="https://hoanghamobile.com/tin-tuc/nhan-ma-giam-gia-toi-300-000d-qua-zalopay/" style="font-weight:normal">ZaloPay - Giảm thêm 550.000đ cho đơn hàng mua iPhone 15 series (Áp dụng với hoá đơn trên 20 Triệu).</a>
+                                    <a href="" style="font-weight:normal">ZaloPay - Giảm thêm 550.000đ cho đơn hàng mua iPhone 15 series (Áp dụng với hoá đơn trên 20 Triệu).</a>
                                 </li>
                                 <li><span class="bag">KM 2</span></li>
                                 <li>
-                                    <a href="https://hoanghamobile.com/tin-tuc/chuong-trinh-thu-cu-len-doi-iphone-vn-a-tai-hoang-ha-mobile/" style="font-weight:normal">Giảm thêm 30% giá trị máy cũ, tối đa 2.000.000đ khi tham gia thu cũ, đổi mới iPhone 15 Series.</a>
+                                    <a href="" style="font-weight:normal">Giảm thêm 30% giá trị máy cũ, tối đa 2.000.000đ khi tham gia thu cũ, đổi mới iPhone 15 Series.</a>
                                 </li>
 
                             </ul>
@@ -452,46 +452,9 @@ if (isset($_GET['like'])) {
                         <form action="gio-hang.php?action=add" method="POST" class="product-action">
                             <input hidden type="number" name="quantity[<?= $itemDetailProduct['idVersion'] ?>]" id="" step="1" min="1" value="1" title="SL" size="4">
                             <a title="Mua ngay" data-sku="MU7A3VN" href="javascript:;" class="btn-red btnQuickOrder btnbuy" onclick="showBuy()"><strong>MUA NGAY</strong><span> Giao tận nhà (COD) <br />Hoặc Nhận tại cửa hàng</span></a>
-                            <a title="Mua trả góp" href="/tra-gop/dien-thoai-di-dong/apple-iphone-15-pro-max-256gb-chinh-hang-vn-a" class="btnInstallment btn-green btnbuy"><strong>TRẢ GÓP</strong><span>Công ty Tài chính <br /> Hoặc 0% qua thẻ tín dụng</span></a>
+                            <a title="Mua trả góp" href="" class="btnInstallment btn-green btnbuy"><strong>TRẢ GÓP</strong><span>Công ty Tài chính <br /> Hoặc 0% qua thẻ tín dụng</span></a>
                             <button type="submit" name="addCart" style="width:43px; display:flex; flex-direction:column; max-width:80px; padding:5px;border: none;" title="Thêm vào giỏ hàng" class="add-cart btn-orange btnbuy btn-icon"><i class="icon-cart" style="padding-left: 20px;"></i><span class="cart-plus" style="right:21px;"><i class="icon-plus"></i></span><label style="font-size:11px;">Thêm giỏ hàng</label></button>
                         </form>
-
-
-
-
-                        <div class="product-promotion" style="padding:8px; border-radius:6px; background:#fff; margin-top:15px;">
-                            <div>
-                                <strong class="label">ƯU ĐÃI THANH TOÁN</strong>
-                                <ul>
-
-                                    <li>
-                                        <i class="icon-checked text-green"></i>
-                                        <a href="https://hoanghamobile.com/tin-tuc/mua-sam-do-cong-nghe-tha-ga-nhap-ma-vnpay-giam-them-toi-300k/" style="font-weight:normal">VNPAY - Giảm thêm 300.000đ khi thanh toán qua VNPAY (Áp dụng cho đơn hàng trên 20 Triệu có mua 1 sản phẩm thuộc dòng iPhone 15).</a>
-                                    </li>
-                                    <li>
-                                        <i class="icon-checked text-green"></i>
-                                        <a href="https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-onlineplus-2in1&amp;utm_source=Public_Website&amp;utm_medium=PNS_HoangHaMobile&amp;utm_content=HoangHaMobileVIBQRCode&amp;product=card" style="font-weight:normal">VIB - Nhận Voucher 250.000đ khi mở thẻ tín dụng VIB thành công.</a>
-                                    </li>
-                                    <li>
-                                        <i class="icon-checked text-green"></i>
-                                        <a href="https://hoanghamobile.com/tin-tuc/uu-dai-tra-gop-voi-homepaylater-tai-hoang-ha-mobile" style="font-weight:normal">Home PayLater - Trả góp qua Home PayLater giảm tới 1.000.000đ</a>
-                                    </li>
-                                    <li>
-                                        <i class="icon-checked text-green"></i>
-                                        <a href="https://hoanghamobile.com/tin-tuc/mo-the-vpbank-nhan-uu-dai-toi-15-trieu-dong-tai-hoang-ha-mobile" style="font-weight:normal">VPBank - Mở thẻ VPBank, ưu đãi tới 1.250.000đ.</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <strong class="label">ƯU ĐÃI ĐI KÈM</strong>
-                                <ul>
-
-                                    <li><i class="icon-checked text-green"></i>Ưu đãi giảm ngay 300.000đ khi mua Ốp Lưng Trong Suốt / Silicon MagSafe cho dòng iPhone 15 kèm theo máy.</li>
-                                    <li><i class="icon-checked text-green"></i>Giảm ngay 150.000đ khi mua kèm SIM số đẹp Vinaphone Happy - Ưu đãi 2GB Data/ngày - Miễn phí 1000 phút nội mạng. </li>
-                                </ul>
-                            </div>
-                        </div>
                         <div class="product-promotion">
                             <div class="mg-top15">
                                 <ul>
@@ -584,7 +547,7 @@ if (isset($_GET['like'])) {
                             if ($itemDetailProduct['idCategory'] == 1) {
                             ?><img class="i" src="uploads/product/smartphone/<?= $itemDetailProduct['versionImage'] ?>" /><?php } else if ($itemDetailProduct['idCategory'] == 2) { ?><img class="i" src="uploads/product/laptop/<?= $itemDetailProduct['versionImage'] ?>" /><?php  }?>
                             <img src="uploads/product//" />
-                            <a data-padding="0px" data-width="600px" class="ajax-modal product-specs-button" href="/Ajax/fullspecs/3694"><span class="icon-config"></span> <strong>Cấu hình chi tiết</strong></a>
+                            <a data-padding="0px" data-width="600px" class="ajax-modal product-specs-button" href=""><span class="icon-config"></span> <strong>Cấu hình chi tiết</strong></a>
                         </div>
 
                         <div class="specs-special">
@@ -620,16 +583,176 @@ if (isset($_GET['like'])) {
                             <div class="item">
                                 <div class="img">
                                     <a href="chi-tiet-san-pham.php?idsanpham=<?= $itemSimilarProduct['idVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                    <?php
+                                        if ($itemSimilarProduct['idCategory'] == 1) {
+                                            ?>
+                                                <img src="uploads/product/smartphone/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 2) {
+                                            ?>
+                                                <img src="uploads/product/laptop/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 3) {
+                                            ?>
+                                                <img src="uploads/product/tablet/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 4) {
+                                            ?>
+                                                <img src="uploads/product/monitor/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 5) {
+                                            ?>
+                                                <img src="uploads/product/smarttv/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 6) {
+                                            ?>
+                                                <img src="uploads/product/watch/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 7) {
+                                            ?>
+                                                <img src="uploads/product/voice/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 8) {
+                                            ?>
+                                                <img src="uploads/product/smarthome/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 16) {
+                                            ?>
+                                                <img src="uploads/product/accessory/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 17) {
+                                            ?>
+                                                <img src="uploads/product/toys/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 18) {
+                                            ?>
+                                                <img src="uploads/product/driftingmachine/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 19) {
+                                            ?>
+                                                <img src="uploads/product/repair/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 20) {
+                                            ?>
+                                                <img src="uploads/product/service/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }
+                                        ?>
+                                    </a>
+                                </div>
+                                <?php
+                                if ($itemSimilarProduct['idBrand'] == 1 || $itemSimilarProduct['idBrand'] == 21) {
+                                ?>
+                                    <div class="sticker sticker-left">
+                                        <span><img src="assets/images/icon/apple.png" title="Chính Hãng Apple" /></span>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <div class="info">
+                                    <a href="chi-tiet-san-pham.php?idsanpham=<?= $itemSimilarProduct['idVersion'] ?>" class="title" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>"><?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?></a>
+                                    <span class="price">
+                                        <strong><?= number_format($itemSimilarProduct['versionPromotionalPrice'], 0, "", ".") ?> ₫ </strong>
+                                    </span>
+                                </div>
+
+                                <div class="info-compare">
+                                    <a href="so-sanh.php?sp1=<?= $_GET['idsanpham'] ?>&sp2=<?= $itemSimilarProduct['idVersion'] ?>" title="So sánh Điện thoại với <?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>"><i class="icon-controls"></i> <span>So sánh</span></a>
+                                </div>
+
+                                <div class="promote">
+                                    <a href="chi-tiet-san-pham.php?idsanpham=<?= $itemSimilarProduct['idVersion'] ?>">
+                                        <ul>
+                                            <li><span class="bag">KM</span> Home PayLater - Trả góp qua Home PayLater giảm tới 1.000.000đ</li>
+                                            <li><span class="bag">KM</span> VPBank - Mở thẻ VPBank, ưu đãi tới 1.250.000đ. </li>
+                                            <li><span class="bag">KM</span> ZaloPay - Ưu đãi tới 300.000đ khi thanh toán qua ZaloPay.</li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="full-width-content">
+                <div class="product-quick-compare">
+                    <div class="header">
+                        <h3>So sánh sản phẩm cùng khoảng giá</h3>
+                        <div class="search-box">
+                            <div class="border">
+                                <input id="kwdCompare" type="text" placeholder="Nhập tên sản phẩm cần so sánh" />
+                                <button type="button" class="search"><i class="icon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lts-product lts-product-bgwhite equaHeight" data-obj="a.title">
+                        <?php
+                        $getSimilarProduct1 = mysqli_query($conn, getSimilarProduct1($conn, $itemDetailProduct['versionPromotionalPrice']));
+                        while ($itemSimilarProduct = mysqli_fetch_assoc($getSimilarProduct1)) {
+                        ?>
+                            <div class="item">
+                                <div class="img">
+                                    <a href="chi-tiet-san-pham.php?idsanpham=<?= $itemSimilarProduct['idVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
                                         <?php
                                         if ($itemSimilarProduct['idCategory'] == 1) {
-                                        ?>
-                                            <img src="uploads/product/smartphone/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
-                                        <?php
-                                        }
-                                        if ($itemSimilarProduct['idCategory'] == 2) {
-                                        ?>
-                                            <img src="uploads/product/laptop/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
-                                        <?php
+                                            ?>
+                                                <img src="uploads/product/smartphone/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 2) {
+                                            ?>
+                                                <img src="uploads/product/laptop/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 3) {
+                                            ?>
+                                                <img src="uploads/product/tablet/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 4) {
+                                            ?>
+                                                <img src="uploads/product/monitor/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 5) {
+                                            ?>
+                                                <img src="uploads/product/smarttv/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 6) {
+                                            ?>
+                                                <img src="uploads/product/watch/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 7) {
+                                            ?>
+                                                <img src="uploads/product/voice/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 8) {
+                                            ?>
+                                                <img src="uploads/product/smarthome/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 16) {
+                                            ?>
+                                                <img src="uploads/product/accessory/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 17) {
+                                            ?>
+                                                <img src="uploads/product/toys/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 18) {
+                                            ?>
+                                                <img src="uploads/product/driftingmachine/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 19) {
+                                            ?>
+                                                <img src="uploads/product/repair/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
+                                        }else if ($itemSimilarProduct['idCategory'] == 20) {
+                                            ?>
+                                                <img src="uploads/product/service/<?= $itemSimilarProduct['versionImage'] ?>" alt="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>" title="<?= $itemSimilarProduct['versionName'] ?> - <?= $itemSimilarProduct['versionVersion'] ?>">
+                                            <?php
                                         }
                                         ?>
                                     </a>

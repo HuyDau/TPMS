@@ -11,7 +11,7 @@
                         $infoUser = getInfoUser($conn,$_SESSION['userId']);
                         ?>
                             <li class="member">
-                                <i class="icon-account"></i> <a class="account" href="/Account"><strong><?=$infoUser['name']?></strong></a>
+                                <i class="icon-account"></i> <a class="account" href="bang-dieu-khien.php?page=index"><strong><?=$infoUser['name']?></strong></a>
                                 <div class="sub">
                                     <ul>
                                         <li><a href="bang-dieu-khien.php?page=index"><i class="icon-controls"></i><span>Bảng điều khiển</span></a></li>

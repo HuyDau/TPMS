@@ -18,15 +18,15 @@ function getCountCustomer($conn){
 // GET ONLINE ORDER
 function getOnlineOrder($conn,$a){
     if($a == 0){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id ");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id ORDER BY tbl_cart.id DESC");
     }else if($a == 1){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a ORDER BY tbl_cart.id DESC");
     }else if($a == 2){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a ORDER BY tbl_cart.id DESC");
     }else if($a == 3){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a ORDER BY tbl_cart.id DESC");
     }else if($a == 4){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id  WHERE tbl_cart.idstatus = $a ORDER BY tbl_cart.id DESC");
     }
     return $sqlOnlineOrder;
 }
@@ -34,9 +34,9 @@ function getOnlineOrder($conn,$a){
 // GET ORDER OFFLINE
 function getOfflineOrder($conn,$a){
     if($a == 1){
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2 ORDER BY tbl_cart.id DESC");
     }else{
-        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2 AND agentId = $a");
+        $sqlOnlineOrder = mysqli_query($conn, "SELECT *,tbl_cart.id as A  FROM `tbl_cart` INNER JOIN tbl_status ON tbl_cart.idstatus = tbl_status.id INNER JOIN tbl_payment ON tbl_cart.idpayment = tbl_payment.id WHERE idtype = 2 AND agentId = $a ORDER BY tbl_cart.id DESC");
     }
     return $sqlOnlineOrder;
 }
@@ -140,7 +140,7 @@ function getDetailProduct($conn, $a){
 
 // GET LIST PRODUCT INVOICE
 function getListProductInvoice($conn, $a) {
-    $getListProductInvoice = mysqli_query($conn,"SELECT * FROM tbl_detailcart INNER JOIN tbl_versions ON  tbl_detailcart.versionId = tbl_versions.idVersion INNER JOIN tbl_products ON tbl_products.id = tbl_versions.productId WHERE cartId = $a");
+    $getListProductInvoice = mysqli_query($conn,"SELECT *, tbl_detailcart.quantity AS Q FROM tbl_detailcart INNER JOIN tbl_versions ON  tbl_detailcart.versionId = tbl_versions.idVersion INNER JOIN tbl_products ON tbl_products.id = tbl_versions.productId WHERE cartId = $a");
     return  $getListProductInvoice;
 }
 
